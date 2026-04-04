@@ -586,29 +586,25 @@ class StockService:
     def _build_market_overview_html(self, overview: MarketOverview) -> str:
         """Build HTML section for market overview."""
         
-        def format_index(index, show_price=False):
+        def format_value(index, show_rupee=False):
             if not index:
-                return '<div class="market-item"><div class="label">N/A</div><div class="value">--</div></div>'
-            
+                return '--', '--', ''
             color_class = "up" if index.is_up else "down"
             arrow = "▲" if index.is_up else "▼"
-            
-            if show_price:
-                return f'''
-                <div class="market-item">
-                    <div class="label">{index.name}</div>
-                    <div class="value">₹{index.last_close:.2f}</div>
-                    <div class="change {color_class}">{arrow} {abs(index.change_pct):.2f}%</div>
-                </div>
-                '''
+            if show_rupee:
+                value = f"₹{index.last_close:.2f}"
             else:
-                return f'''
-                <div class="market-item">
-                    <div class="label">{index.name}</div>
-                    <div class="value">{index.last_close:,.2f}</div>
-                    <div class="change {color_class}">{arrow} {abs(index.change_pct):.2f}%</div>
-                </div>
-                '''
+                value = f"{index.last_close:,.2f}"
+            change = f'<span class="{color_class}">{arrow} {abs(index.change_pct):.2f}%</span>'
+            return index.name, value, change
+        
+        # Build table rows
+        dj_name, dj_val, dj_chg = format_value(overview.dow_jones)
+        nq_name, nq_val, nq_chg = format_value(overview.nasdaq)
+        gn_name, gn_val, gn_chg = format_value(overview.gift_nifty)
+        ui_name, ui_val, ui_chg = format_value(overview.usd_inr, show_rupee=True)
+        sx_name, sx_val, sx_chg = format_value(overview.sensex)
+        nf_name, nf_val, nf_chg = format_value(overview.nifty)
         
         # Determine outlook class
         outlook_class = "outlook-neutral"
@@ -621,23 +617,52 @@ class StockService:
         <div class="market-overview">
             <h2>📈 GLOBAL MARKET OVERVIEW</h2>
             
-            <h4 style="margin: 0 0 10px 0; color: #666; font-size: 13px;">US Markets (Previous Close)</h4>
-            <div class="market-grid">
-                {format_index(overview.dow_jones)}
-                {format_index(overview.nasdaq)}
-            </div>
-            
-            <h4 style="margin: 15px 0 10px 0; color: #666; font-size: 13px;">Asian Markets & Currency</h4>
-            <div class="market-grid">
-                {format_index(overview.gift_nifty)}
-                {format_index(overview.usd_inr, show_price=True)}
-            </div>
-            
-            <h4 style="margin: 15px 0 10px 0; color: #666; font-size: 13px;">Indian Markets (Previous Close)</h4>
-            <div class="market-grid">
-                {format_index(overview.sensex)}
-                {format_index(overview.nifty)}
-            </div>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
+                <thead>
+                    <tr style="background: #f8f9fa;">
+                        <th style="padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6;">Market</th>
+                        <th style="padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6;">Index</th>
+                        <th style="padding: 10px; text-align: right; border-bottom: 2px solid #dee2e6;">Last Close</th>
+                        <th style="padding: 10px; text-align: right; border-bottom: 2px solid #dee2e6;">Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2" style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; background: #f8f9fa;">🇺🇸 US Markets</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #eee;">{dj_name}</td>
+                        <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">{dj_val}</td>
+                        <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">{dj_chg}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-bottom: 1px solid #eee;">{nq_name}</td>
+                        <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">{nq_val}</td>
+                        <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">{nq_chg}</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; background: #f8f9fa;">🇮🇳 Indian Markets</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #eee;">{sx_name}</td>
+                        <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">{sx_val}</td>
+                        <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">{sx_chg}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-bottom: 1px solid #eee;">{nf_name}</td>
+                        <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">{nf_val}</td>
+                        <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">{nf_chg}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; background: #f8f9fa;">🌏 GIFT Nifty</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #eee;">{gn_name}</td>
+                        <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">{gn_val}</td>
+                        <td style="padding: 10px; text-align: right; border-bottom: 1px solid #eee;">{gn_chg}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; font-weight: bold; background: #f8f9fa;">💱 Currency</td>
+                        <td style="padding: 10px;">{ui_name}</td>
+                        <td style="padding: 10px; text-align: right;">{ui_val}</td>
+                        <td style="padding: 10px; text-align: right;">{ui_chg}</td>
+                    </tr>
+                </tbody>
+            </table>
             
             <div class="outlook-box {outlook_class}">
                 <div class="outlook-label">TODAY'S MARKET OUTLOOK</div>
