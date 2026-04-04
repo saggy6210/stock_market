@@ -14,6 +14,7 @@ from app.analysis.screener import MarketScreener
 from app.analysis.recovery import RecoveryScreener
 from app.analysis.portfolio import PortfolioAnalyzer
 from app.analysis.market_overview import MarketOverviewFetcher, MarketOverview
+from app.analysis.newsletter import NewsletterGenerator, Newsletter
 from app.notification.emailer import EmailNotifier
 
 logger = logging.getLogger(__name__)
@@ -32,6 +33,7 @@ class StockService:
         )
         self._portfolio_analyzer = PortfolioAnalyzer()
         self._market_overview_fetcher = MarketOverviewFetcher()
+        self._newsletter_generator = NewsletterGenerator()
         self._email_notifier = EmailNotifier(
             smtp_host=settings.smtp_host,
             smtp_port=settings.smtp_port,
@@ -44,6 +46,7 @@ class StockService:
         # Cache last results
         self._last_report: Optional[DailyReport] = None
         self._last_market_overview: Optional[MarketOverview] = None
+        self._last_newsletter: Optional[Newsletter] = None
     
     def run_daily_scan(self, notify: bool = True) -> DailyReport:
         """
@@ -61,6 +64,11 @@ class StockService:
         logger.info("Fetching global market overview...")
         market_overview = self._market_overview_fetcher.get_overview()
         self._last_market_overview = market_overview
+        
+        # Generate newsletter (news, intelligence, predictions)
+        logger.info("Generating market newsletter...")
+        newsletter = self._newsletter_generator.generate()
+        self._last_newsletter = newsletter
         
         # Fetch all stocks
         stocks = self._nse_client.fetch_all_stocks(include_micro=True)
@@ -89,7 +97,7 @@ class StockService:
         
         # Send email notification
         if notify:
-            self._send_report_email(report, market_overview)
+            self._send_report_email(report, market_overview, newsletter)
         
         logger.info(
             f"Scan complete: {len(buy_signals)} buy signals, "
@@ -151,25 +159,30 @@ class StockService:
         except Exception:
             return "Unknown"
     
-    def _send_report_email(self, report: DailyReport, market_overview: Optional[MarketOverview] = None) -> bool:
+    def _send_report_email(self, report: DailyReport, market_overview: Optional[MarketOverview] = None, newsletter: Optional[Newsletter] = None) -> bool:
         """Send daily report via email."""
         subject = f"Stock Market Daily Recommendation - {report.date}"
         
         # Build plain text body
-        body = self._build_text_report(report, market_overview)
+        body = self._build_text_report(report, market_overview, newsletter)
         
         # Build HTML body
-        html_body = self._build_html_report(report, market_overview)
+        html_body = self._build_html_report(report, market_overview, newsletter)
         
         return self._email_notifier.send(subject, body, html_body)
     
-    def _build_text_report(self, report: DailyReport, market_overview: Optional[MarketOverview] = None) -> str:
+    def _build_text_report(self, report: DailyReport, market_overview: Optional[MarketOverview] = None, newsletter: Optional[Newsletter] = None) -> str:
         """Build plain text report with table format."""
         lines = [
             "=" * 70,
             f"STOCK MARKET DAILY RECOMMENDATION - {report.date}",
             "=" * 70,
         ]
+        
+        # Add newsletter text content if available
+        if newsletter:
+            lines.append("")
+            lines.append(newsletter.text_content)
         
         # Add market overview section
         if market_overview:
@@ -274,13 +287,23 @@ class StockService:
         
         return "\n".join(lines)
     
-    def _build_html_report(self, report: DailyReport, market_overview: Optional[MarketOverview] = None) -> str:
+    def _build_html_report(self, report: DailyReport, market_overview: Optional[MarketOverview] = None, newsletter: Optional[Newsletter] = None) -> str:
         """Build HTML report with table format."""
         
         # Build market overview section
         market_section = ""
         if market_overview:
             market_section = self._build_market_overview_html(market_overview)
+        
+        # Build newsletter section
+        newsletter_section = ""
+        newsletter_css = ""
+        if newsletter:
+            newsletter_section = newsletter.html_content
+            newsletter_css = newsletter._newsletter_generator.get_newsletter_css() if hasattr(newsletter, '_newsletter_generator') else ""
+            # Get CSS from the generator
+            from app.analysis.newsletter import NewsletterGenerator
+            newsletter_css = NewsletterGenerator().get_newsletter_css()
         
         # Build buy signals table rows
         buy_rows = ""
@@ -491,6 +514,7 @@ class StockService:
                     border-radius: 8px;
                     border-left: 4px solid #ffc107;
                 }}
+                {newsletter_css}
             </style>
         </head>
         <body>
@@ -506,6 +530,8 @@ class StockService:
             </div>
             
             {market_section}
+            
+            {newsletter_section}
             
             <div class="section buy-section">
                 <h2>🟢 TOP 10 BUY RECOMMENDATIONS</h2>
