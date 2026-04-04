@@ -1,6 +1,6 @@
 """
 Recommendation Engine.
-Generates buy/sell recommendations based on technical analysis.
+Generates buy/sell recommendations based on technical analysis and news sentiment.
 """
 
 import logging
@@ -10,6 +10,7 @@ from app.data.models import (
     StockSnapshot, StockRecommendation, TechnicalIndicators,
     Signal, Trend, RiskLevel,
 )
+from app.analysis.news_sentiment import NewsSentimentAnalyzer, NewsSentiment
 
 logger = logging.getLogger(__name__)
 
@@ -17,24 +18,25 @@ logger = logging.getLogger(__name__)
 class RecommendationEngine:
     """Generate stock recommendations based on analysis."""
     
-    # Score weights
+    # Score weights - including sentiment
     WEIGHTS = {
-        "technical": 0.35,
+        "technical": 0.30,
         "trend": 0.20,
         "momentum": 0.15,
         "volume": 0.15,
-        "valuation": 0.15,
+        "sentiment": 0.20,  # News sentiment weight
     }
     
     def __init__(self):
         """Initialize the recommendation engine."""
-        pass
+        self._news_analyzer = NewsSentimentAnalyzer()
     
     def analyze(
         self,
         stock: StockSnapshot,
         indicators: TechnicalIndicators,
         avg_volume: Optional[float] = None,
+        include_news: bool = True,
     ) -> StockRecommendation:
         """
         Generate recommendation for a stock.
@@ -43,24 +45,35 @@ class RecommendationEngine:
             stock: Stock snapshot
             indicators: Technical indicators
             avg_volume: Average volume for comparison
+            include_news: Whether to include news sentiment analysis
             
         Returns:
             StockRecommendation: Generated recommendation
         """
+        # Get news sentiment
+        sentiment = None
+        sentiment_score = 50  # Default neutral
+        if include_news:
+            try:
+                sentiment = self._news_analyzer.get_stock_sentiment(stock.symbol)
+                # Convert -1 to 1 range to 0 to 100
+                sentiment_score = (sentiment.sentiment_score + 1) * 50
+            except Exception as e:
+                logger.debug(f"Failed to get sentiment for {stock.symbol}: {e}")
+        
         # Calculate component scores
         technical_score = self._calc_technical_score(stock, indicators)
         trend_score = self._calc_trend_score(indicators)
         momentum_score = self._calc_momentum_score(indicators)
         volume_score = self._calc_volume_score(stock, avg_volume)
-        valuation_score = self._calc_valuation_score(stock)
         
-        # Calculate overall score
+        # Calculate overall score with sentiment
         overall_score = (
             technical_score * self.WEIGHTS["technical"]
             + trend_score * self.WEIGHTS["trend"]
             + momentum_score * self.WEIGHTS["momentum"]
             + volume_score * self.WEIGHTS["volume"]
-            + valuation_score * self.WEIGHTS["valuation"]
+            + sentiment_score * self.WEIGHTS["sentiment"]
         )
         
         # Determine signal
@@ -73,8 +86,8 @@ class RecommendationEngine:
         # Determine risk level
         risk_level = self._determine_risk(stock, indicators)
         
-        # Generate reasons
-        reasons = self._generate_reasons(stock, indicators, signal)
+        # Generate reasons including news sentiment
+        reasons = self._generate_reasons(stock, indicators, signal, sentiment)
         
         # MACD signal string
         macd_signal_str = ""
@@ -307,40 +320,71 @@ class RecommendationEngine:
         stock: StockSnapshot,
         indicators: TechnicalIndicators,
         signal: Signal,
+        sentiment: Optional[NewsSentiment] = None,
     ) -> list[str]:
         """Generate list of reasons for the recommendation."""
         reasons = []
         
-        # Trend reason
+        # NEWS AND SENTIMENT REASONS (Priority - most relevant to user)
+        if sentiment:
+            # Sentiment-based reasons
+            if sentiment.sentiment_label == "POSITIVE":
+                reasons.append(f"Positive news sentiment ({sentiment.news_count} news items)")
+            elif sentiment.sentiment_label == "NEGATIVE":
+                reasons.append(f"Negative news sentiment - caution advised")
+            
+            # Key events (most important market movers)
+            event_descriptions = {
+                'acquisition': 'Acquisition/merger news driving momentum',
+                'earnings': 'Recent quarterly results impacting price',
+                'dividend': 'Dividend/bonus announcement',
+                'order': 'New order/contract announced',
+                'regulatory': 'Regulatory/policy news affecting stock',
+                'management': 'Management change news',
+                'fii_dii': 'FII/DII activity reported',
+                'rating': 'Analyst rating change',
+            }
+            for event in sentiment.key_events[:2]:
+                if event in event_descriptions:
+                    reasons.append(event_descriptions[event])
+            
+            # Top headline if relevant
+            if sentiment.top_headlines and len(reasons) < 3:
+                headline = sentiment.top_headlines[0][:60]
+                if len(headline) > 50:
+                    headline = headline[:50] + "..."
+                reasons.append(f"News: {headline}")
+        
+        # TREND AND MOMENTUM REASONS
         if indicators.trend == Trend.STRONG_UPTREND:
             reasons.append("Strong uptrend confirmed by multiple indicators")
         elif indicators.trend == Trend.UPTREND:
             reasons.append("Stock is in an uptrend")
         elif indicators.trend == Trend.STRONG_DOWNTREND:
-            reasons.append("Strong downtrend - caution advised")
+            reasons.append("Strong downtrend - avoid")
         elif indicators.trend == Trend.DOWNTREND:
             reasons.append("Stock showing weakness in trend")
         
         # RSI reason
         if indicators.rsi:
             if indicators.rsi < 30:
-                reasons.append(f"RSI at {indicators.rsi:.0f} indicates oversold condition")
+                reasons.append(f"RSI at {indicators.rsi:.0f} indicates oversold - potential bounce")
             elif indicators.rsi > 70:
-                reasons.append(f"RSI at {indicators.rsi:.0f} indicates overbought condition")
+                reasons.append(f"RSI at {indicators.rsi:.0f} - overbought, may correct")
         
         # MACD reason
         if indicators.macd_histogram is not None:
             if indicators.macd_histogram > 0:
-                reasons.append("MACD showing bullish momentum")
+                reasons.append("MACD bullish crossover")
             else:
-                reasons.append("MACD showing bearish momentum")
+                reasons.append("MACD bearish signal")
         
         # Price vs SMA
         if indicators.sma_200 and stock.price:
             if stock.price > indicators.sma_200:
-                reasons.append("Trading above 200-day SMA (long-term bullish)")
+                reasons.append("Trading above 200 SMA (long-term bullish)")
             else:
-                reasons.append("Trading below 200-day SMA (long-term bearish)")
+                reasons.append("Below 200 SMA (long-term bearish)")
         
         # Support/Resistance
         if indicators.support and stock.price:
@@ -351,8 +395,8 @@ class RecommendationEngine:
         # Valuation
         if stock.pe_ratio:
             if stock.pe_ratio < 15:
-                reasons.append(f"Attractive valuation with P/E of {stock.pe_ratio:.1f}")
-            elif stock.pe_ratio > 30:
-                reasons.append(f"Premium valuation with P/E of {stock.pe_ratio:.1f}")
+                reasons.append(f"Attractive valuation P/E {stock.pe_ratio:.1f}")
+            elif stock.pe_ratio > 35:
+                reasons.append(f"Expensive valuation P/E {stock.pe_ratio:.1f}")
         
-        return reasons[:4]  # Return top 4 reasons
+        return reasons[:3]  # Return top 3 reasons

@@ -13,6 +13,7 @@ from app.data.nse_client import NSEClient
 from app.analysis.screener import MarketScreener
 from app.analysis.recovery import RecoveryScreener
 from app.analysis.portfolio import PortfolioAnalyzer
+from app.analysis.market_overview import MarketOverviewFetcher, MarketOverview
 from app.notification.emailer import EmailNotifier
 
 logger = logging.getLogger(__name__)
@@ -30,6 +31,7 @@ class StockService:
             max_decline_pct=50.0,
         )
         self._portfolio_analyzer = PortfolioAnalyzer()
+        self._market_overview_fetcher = MarketOverviewFetcher()
         self._email_notifier = EmailNotifier(
             smtp_host=settings.smtp_host,
             smtp_port=settings.smtp_port,
@@ -41,6 +43,7 @@ class StockService:
         
         # Cache last results
         self._last_report: Optional[DailyReport] = None
+        self._last_market_overview: Optional[MarketOverview] = None
     
     def run_daily_scan(self, notify: bool = True) -> DailyReport:
         """
@@ -53,6 +56,11 @@ class StockService:
             DailyReport: Results of the scan
         """
         logger.info("Starting daily market scan...")
+        
+        # Fetch market overview (global indices)
+        logger.info("Fetching global market overview...")
+        market_overview = self._market_overview_fetcher.get_overview()
+        self._last_market_overview = market_overview
         
         # Fetch all stocks
         stocks = self._nse_client.fetch_all_stocks(include_micro=True)
@@ -81,7 +89,7 @@ class StockService:
         
         # Send email notification
         if notify:
-            self._send_report_email(report)
+            self._send_report_email(report, market_overview)
         
         logger.info(
             f"Scan complete: {len(buy_signals)} buy signals, "
@@ -143,24 +151,66 @@ class StockService:
         except Exception:
             return "Unknown"
     
-    def _send_report_email(self, report: DailyReport) -> bool:
+    def _send_report_email(self, report: DailyReport, market_overview: Optional[MarketOverview] = None) -> bool:
         """Send daily report via email."""
         subject = f"Stock Market Daily Recommendation - {report.date}"
         
         # Build plain text body
-        body = self._build_text_report(report)
+        body = self._build_text_report(report, market_overview)
         
         # Build HTML body
-        html_body = self._build_html_report(report)
+        html_body = self._build_html_report(report, market_overview)
         
         return self._email_notifier.send(subject, body, html_body)
     
-    def _build_text_report(self, report: DailyReport) -> str:
+    def _build_text_report(self, report: DailyReport, market_overview: Optional[MarketOverview] = None) -> str:
         """Build plain text report with table format."""
         lines = [
             "=" * 70,
             f"STOCK MARKET DAILY RECOMMENDATION - {report.date}",
             "=" * 70,
+        ]
+        
+        # Add market overview section
+        if market_overview:
+            lines.extend([
+                "",
+                "GLOBAL MARKET OVERVIEW",
+                "-" * 70,
+            ])
+            if market_overview.dow_jones:
+                dj = market_overview.dow_jones
+                arrow = "▲" if dj.is_up else "▼"
+                lines.append(f"Dow Jones: {dj.last_close:,.2f} {arrow} {abs(dj.change_pct):.2f}%")
+            if market_overview.nasdaq:
+                nq = market_overview.nasdaq
+                arrow = "▲" if nq.is_up else "▼"
+                lines.append(f"NASDAQ:    {nq.last_close:,.2f} {arrow} {abs(nq.change_pct):.2f}%")
+            if market_overview.gift_nifty:
+                gn = market_overview.gift_nifty
+                arrow = "▲" if gn.is_up else "▼"
+                lines.append(f"GIFT Nifty: {gn.last_close:,.2f} {arrow} {abs(gn.change_pct):.2f}%")
+            if market_overview.usd_inr:
+                ui = market_overview.usd_inr
+                arrow = "▲" if ui.is_up else "▼"
+                lines.append(f"USD/INR:   ₹{ui.last_close:.2f} {arrow} {abs(ui.change_pct):.2f}%")
+            lines.append("-" * 70)
+            if market_overview.sensex:
+                sx = market_overview.sensex
+                arrow = "▲" if sx.is_up else "▼"
+                lines.append(f"Sensex:    {sx.last_close:,.2f} {arrow} {abs(sx.change_pct):.2f}%")
+            if market_overview.nifty:
+                nf = market_overview.nifty
+                arrow = "▲" if nf.is_up else "▼"
+                lines.append(f"Nifty 50:  {nf.last_close:,.2f} {arrow} {abs(nf.change_pct):.2f}%")
+            lines.extend([
+                "-" * 70,
+                f"MARKET OUTLOOK: {market_overview.market_outlook}",
+                f"Reason: {market_overview.outlook_reason}",
+                "=" * 70,
+            ])
+        
+        lines.extend([
             f"Market Status: {report.market_status}",
             f"Stocks Analyzed: {report.total_stocks_analyzed}",
             "",
@@ -169,15 +219,15 @@ class StockService:
             "-" * 70,
             f"{'#':<3} {'Symbol':<12} {'Price':>10} {'Target':>10} {'Signal':<12} {'Confidence':>10}",
             "-" * 70,
-        ]
+        ])
         
         for i, rec in enumerate(report.buy_signals, 1):
             lines.append(
                 f"{i:<3} {rec.symbol:<12} {rec.current_price:>10.2f} {rec.target_price:>10.2f} "
                 f"{rec.signal.value:<12} {rec.confidence:>9.0f}%"
             )
-            if rec.reasons:
-                lines.append(f"    -> {rec.reasons[0]}")
+            for reason in rec.reasons[:3]:
+                lines.append(f"    • {reason}")
         
         lines.extend([
             "",
@@ -193,8 +243,8 @@ class StockService:
                 f"{i:<3} {rec.symbol:<12} {rec.current_price:>10.2f} {rec.target_price:>10.2f} "
                 f"{rec.signal.value:<12} {rec.confidence:>9.0f}%"
             )
-            if rec.reasons:
-                lines.append(f"    -> {rec.reasons[0]}")
+            for reason in rec.reasons[:3]:
+                lines.append(f"    • {reason}")
         
         if report.recovery_candidates:
             lines.extend([
@@ -211,6 +261,8 @@ class StockService:
                     f"{i:<3} {rec.symbol:<12} {rec.current_price:>10.2f} "
                     f"{rec.decline_from_peak_pct:>11.1f}% {rec.recovery_from_low_pct:>11.1f}%"
                 )
+                for reason in rec.reasons[:3]:
+                    lines.append(f"    • {reason}")
         
         lines.extend([
             "",
@@ -222,46 +274,54 @@ class StockService:
         
         return "\n".join(lines)
     
-    def _build_html_report(self, report: DailyReport) -> str:
+    def _build_html_report(self, report: DailyReport, market_overview: Optional[MarketOverview] = None) -> str:
         """Build HTML report with table format."""
+        
+        # Build market overview section
+        market_section = ""
+        if market_overview:
+            market_section = self._build_market_overview_html(market_overview)
         
         # Build buy signals table rows
         buy_rows = ""
         for i, rec in enumerate(report.buy_signals, 1):
+            reasons_html = "<br>".join([f"• {r}" for r in rec.reasons[:3]])
             buy_rows += f"""
             <tr>
                 <td>{i}</td>
                 <td><strong>{rec.symbol}</strong><br><small>{rec.company_name}</small></td>
                 <td>₹{rec.current_price:.2f}</td>
-                <td>₹{rec.target_price:.2f}</td>
+                <td class="target-up">₹{rec.target_price:.2f}</td>
                 <td>₹{rec.stop_loss:.2f}</td>
                 <td><span class="signal-buy">{rec.signal.value}</span></td>
                 <td>{rec.confidence:.0f}%</td>
                 <td>{rec.risk_level.value}</td>
-                <td><small>{'; '.join(rec.reasons[:2])}</small></td>
+                <td class="reasons"><small>{reasons_html}</small></td>
             </tr>
             """
         
         # Build sell signals table rows
         sell_rows = ""
         for i, rec in enumerate(report.sell_signals, 1):
+            reasons_html = "<br>".join([f"• {r}" for r in rec.reasons[:3]])
             sell_rows += f"""
             <tr>
                 <td>{i}</td>
                 <td><strong>{rec.symbol}</strong><br><small>{rec.company_name}</small></td>
                 <td>₹{rec.current_price:.2f}</td>
-                <td>₹{rec.target_price:.2f}</td>
+                <td class="target-down">₹{rec.target_price:.2f}</td>
                 <td>₹{rec.stop_loss:.2f}</td>
                 <td><span class="signal-sell">{rec.signal.value}</span></td>
                 <td>{rec.confidence:.0f}%</td>
                 <td>{rec.risk_level.value}</td>
-                <td><small>{'; '.join(rec.reasons[:2])}</small></td>
+                <td class="reasons"><small>{reasons_html}</small></td>
             </tr>
             """
         
         # Build recovery table rows
         recovery_rows = ""
         for i, rec in enumerate(report.recovery_candidates[:5], 1):
+            reasons_html = "<br>".join([f"• {r}" for r in rec.reasons[:3]])
             recovery_rows += f"""
             <tr>
                 <td>{i}</td>
@@ -270,7 +330,7 @@ class StockService:
                 <td>{rec.decline_from_peak_pct:.1f}%</td>
                 <td>{rec.recovery_from_low_pct:.1f}%</td>
                 <td>{rec.trend.value if rec.trend else 'N/A'}</td>
-                <td><small>{'; '.join(rec.reasons[:2])}</small></td>
+                <td class="reasons"><small>{reasons_html}</small></td>
             </tr>
             """
         
@@ -360,6 +420,68 @@ class StockService:
                     font-size: 11px;
                 }}
                 small {{ color: #666; }}
+                .reasons {{ 
+                    max-width: 250px;
+                    line-height: 1.4;
+                }}
+                .target-up {{ color: #28a745; font-weight: bold; }}
+                .target-down {{ color: #dc3545; font-weight: bold; }}
+                .market-overview {{
+                    background: white;
+                    border-radius: 10px;
+                    padding: 20px;
+                    margin-bottom: 20px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                }}
+                .market-overview h2 {{
+                    margin: 0 0 15px 0;
+                    color: #1a1a2e;
+                    font-size: 18px;
+                    border-bottom: 2px solid #1a1a2e;
+                    padding-bottom: 10px;
+                }}
+                .market-grid {{
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                    gap: 15px;
+                    margin-bottom: 15px;
+                }}
+                .market-item {{
+                    padding: 12px;
+                    border-radius: 8px;
+                    background: #f8f9fa;
+                    text-align: center;
+                }}
+                .market-item .label {{
+                    font-size: 11px;
+                    color: #666;
+                    text-transform: uppercase;
+                    margin-bottom: 5px;
+                }}
+                .market-item .value {{
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #1a1a2e;
+                }}
+                .market-item .change {{
+                    font-size: 14px;
+                    font-weight: bold;
+                    margin-top: 3px;
+                }}
+                .up {{ color: #28a745; }}
+                .down {{ color: #dc3545; }}
+                .outlook-box {{
+                    padding: 15px;
+                    border-radius: 8px;
+                    text-align: center;
+                    margin-top: 15px;
+                }}
+                .outlook-bullish {{ background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border: 2px solid #28a745; }}
+                .outlook-bearish {{ background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border: 2px solid #dc3545; }}
+                .outlook-neutral {{ background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%); border: 2px solid #ffc107; }}
+                .outlook-label {{ font-size: 12px; color: #666; }}
+                .outlook-value {{ font-size: 20px; font-weight: bold; margin: 5px 0; }}
+                .outlook-reason {{ font-size: 12px; color: #555; }}
                 .disclaimer {{ 
                     font-size: 12px; 
                     color: #666; 
@@ -382,6 +504,8 @@ class StockService:
                     <div class="meta-item">🔄 {len(report.recovery_candidates)} Recovery</div>
                 </div>
             </div>
+            
+            {market_section}
             
             <div class="section buy-section">
                 <h2>🟢 TOP 10 BUY RECOMMENDATIONS</h2>
@@ -458,3 +582,67 @@ class StockService:
         </html>
         """
         return html
+    
+    def _build_market_overview_html(self, overview: MarketOverview) -> str:
+        """Build HTML section for market overview."""
+        
+        def format_index(index, show_price=False):
+            if not index:
+                return '<div class="market-item"><div class="label">N/A</div><div class="value">--</div></div>'
+            
+            color_class = "up" if index.is_up else "down"
+            arrow = "▲" if index.is_up else "▼"
+            
+            if show_price:
+                return f'''
+                <div class="market-item">
+                    <div class="label">{index.name}</div>
+                    <div class="value">₹{index.last_close:.2f}</div>
+                    <div class="change {color_class}">{arrow} {abs(index.change_pct):.2f}%</div>
+                </div>
+                '''
+            else:
+                return f'''
+                <div class="market-item">
+                    <div class="label">{index.name}</div>
+                    <div class="value">{index.last_close:,.2f}</div>
+                    <div class="change {color_class}">{arrow} {abs(index.change_pct):.2f}%</div>
+                </div>
+                '''
+        
+        # Determine outlook class
+        outlook_class = "outlook-neutral"
+        if "BULLISH" in overview.market_outlook:
+            outlook_class = "outlook-bullish"
+        elif "BEARISH" in overview.market_outlook:
+            outlook_class = "outlook-bearish"
+        
+        return f'''
+        <div class="market-overview">
+            <h2>📈 GLOBAL MARKET OVERVIEW</h2>
+            
+            <h4 style="margin: 0 0 10px 0; color: #666; font-size: 13px;">US Markets (Previous Close)</h4>
+            <div class="market-grid">
+                {format_index(overview.dow_jones)}
+                {format_index(overview.nasdaq)}
+            </div>
+            
+            <h4 style="margin: 15px 0 10px 0; color: #666; font-size: 13px;">Asian Markets & Currency</h4>
+            <div class="market-grid">
+                {format_index(overview.gift_nifty)}
+                {format_index(overview.usd_inr, show_price=True)}
+            </div>
+            
+            <h4 style="margin: 15px 0 10px 0; color: #666; font-size: 13px;">Indian Markets (Previous Close)</h4>
+            <div class="market-grid">
+                {format_index(overview.sensex)}
+                {format_index(overview.nifty)}
+            </div>
+            
+            <div class="outlook-box {outlook_class}">
+                <div class="outlook-label">TODAY'S MARKET OUTLOOK</div>
+                <div class="outlook-value">{overview.market_outlook}</div>
+                <div class="outlook-reason">{overview.outlook_reason}</div>
+            </div>
+        </div>
+        '''
