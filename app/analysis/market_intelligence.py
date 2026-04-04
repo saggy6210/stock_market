@@ -3,8 +3,11 @@ Market Intelligence Module.
 Fetches fundamental data, ratios, and market indicators from multiple sources.
 
 Sources:
-- Screener.in (fundamentals, ratios)
+- Screener.in (fundamentals, ratios, shareholding)
 - Yahoo Finance (via yfinance)
+- NSE/BSE (FII/DII data)
+- NSDL (FII activity)
+- MoneyControl (institutional data)
 - Investing.com indicators
 - Macroeconomic data
 - Insider trading data
@@ -20,6 +23,53 @@ import yfinance as yf
 from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
+
+
+@dataclass
+class FIIDIIData:
+    """FII/DII activity data."""
+    date: str = ""
+    
+    # Cash Market (Cumulative)
+    fii_buy_value: float = 0.0  # In Crores
+    fii_sell_value: float = 0.0
+    fii_net_value: float = 0.0
+    dii_buy_value: float = 0.0
+    dii_sell_value: float = 0.0
+    dii_net_value: float = 0.0
+    
+    # Monthly cumulative
+    fii_monthly_net: float = 0.0
+    dii_monthly_net: float = 0.0
+    
+    # Year to date
+    fii_ytd_net: float = 0.0
+    dii_ytd_net: float = 0.0
+
+
+@dataclass
+class StockFIIData:
+    """Stock-specific FII/DII holding data."""
+    symbol: str
+    company_name: str = ""
+    
+    # FII Holdings
+    fii_holding_pct: float = 0.0
+    fii_holding_change: float = 0.0  # Change from last quarter
+    
+    # DII Holdings
+    dii_holding_pct: float = 0.0
+    dii_holding_change: float = 0.0
+    
+    # Promoter Holdings
+    promoter_holding_pct: float = 0.0
+    promoter_pledge_pct: float = 0.0
+    
+    # Public Holdings
+    public_holding_pct: float = 0.0
+    
+    # Quarter
+    quarter: str = ""
 
 
 @dataclass
@@ -84,9 +134,16 @@ class MacroIndicator:
 @dataclass
 class MarketIntelligence:
     """Complete market intelligence data."""
-    # FII/DII data
+    # FII/DII data (legacy simple fields)
     fii_net_buy: float = 0.0
     dii_net_buy: float = 0.0
+    
+    # Detailed FII/DII data
+    fii_dii_data: Optional[FIIDIIData] = None
+    
+    # Stock-specific FII/DII holdings (top movers)
+    top_fii_buys: list[StockFIIData] = field(default_factory=list)
+    top_fii_sells: list[StockFIIData] = field(default_factory=list)
     
     # Macro indicators
     macro_indicators: list[MacroIndicator] = field(default_factory=list)
@@ -133,10 +190,16 @@ class MarketIntelligenceService:
         # Fetch India VIX
         intel.india_vix = self._fetch_india_vix()
         
-        # Fetch FII/DII data
+        # Fetch FII/DII data (simple)
         fii, dii = self._fetch_fii_dii_data()
         intel.fii_net_buy = fii
         intel.dii_net_buy = dii
+        
+        # Fetch detailed FII/DII data
+        intel.fii_dii_data = self.get_detailed_fii_dii()
+        
+        # Fetch top FII activity stocks
+        intel.top_fii_buys, intel.top_fii_sells = self.get_top_fii_activity_stocks()
         
         # Fetch commodity prices
         intel.crude_oil = self._fetch_crude_price()
@@ -355,6 +418,339 @@ class MarketIntelligenceService:
         
         return 0.0, 0.0
     
+    def get_detailed_fii_dii(self) -> FIIDIIData:
+        """
+        Fetch detailed FII/DII activity data from multiple sources.
+        
+        Returns:
+            FIIDIIData with cumulative values
+        """
+        data = FIIDIIData(date=datetime.now().strftime("%Y-%m-%d"))
+        
+        # Try NSDL FPI data first (most reliable)
+        nsdl_data = self._fetch_nsdl_fpi_data()
+        if nsdl_data:
+            data.fii_buy_value = nsdl_data.get("fii_buy", 0.0)
+            data.fii_sell_value = nsdl_data.get("fii_sell", 0.0)
+            data.fii_net_value = nsdl_data.get("fii_net", 0.0)
+            data.fii_monthly_net = nsdl_data.get("fii_monthly", 0.0)
+            data.fii_ytd_net = nsdl_data.get("fii_ytd", 0.0)
+        
+        # Try MoneyControl for comprehensive FII/DII
+        mc_data = self._fetch_moneycontrol_fii_dii()
+        if mc_data:
+            if not data.fii_net_value:
+                data.fii_buy_value = mc_data.get("fii_buy", 0.0)
+                data.fii_sell_value = mc_data.get("fii_sell", 0.0)
+                data.fii_net_value = mc_data.get("fii_net", 0.0)
+            
+            data.dii_buy_value = mc_data.get("dii_buy", 0.0)
+            data.dii_sell_value = mc_data.get("dii_sell", 0.0)
+            data.dii_net_value = mc_data.get("dii_net", 0.0)
+            data.dii_monthly_net = mc_data.get("dii_monthly", 0.0)
+        
+        # Try NSE data
+        nse_data = self._fetch_nse_fii_dii()
+        if nse_data:
+            # Use NSE as fallback or supplement
+            if not data.fii_net_value:
+                data.fii_net_value = nse_data.get("fii_net", 0.0)
+            if not data.dii_net_value:
+                data.dii_net_value = nse_data.get("dii_net", 0.0)
+        
+        return data
+    
+    def _fetch_nsdl_fpi_data(self) -> dict:
+        """Fetch FPI data from NSDL."""
+        try:
+            # NSDL FPI data endpoint
+            response = self._session.get(
+                "https://www.fpi.nsdl.co.in/web/Reports/Latest.aspx",
+                timeout=15
+            )
+            
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.text, "html.parser")
+                data = {}
+                
+                # Parse the FPI activity table
+                tables = soup.select("table")
+                for table in tables:
+                    rows = table.select("tr")
+                    for row in rows:
+                        cells = row.select("td")
+                        if len(cells) >= 2:
+                            label = cells[0].get_text(strip=True).lower()
+                            value_text = cells[-1].get_text(strip=True)
+                            
+                            # Parse numeric value
+                            try:
+                                value = float(value_text.replace(",", "").replace("(", "-").replace(")", ""))
+                            except ValueError:
+                                continue
+                            
+                            if "gross purchase" in label or "buy" in label:
+                                data["fii_buy"] = value
+                            elif "gross sale" in label or "sell" in label:
+                                data["fii_sell"] = value
+                            elif "net investment" in label or "net" in label:
+                                data["fii_net"] = value
+                
+                if data.get("fii_buy") and data.get("fii_sell") and not data.get("fii_net"):
+                    data["fii_net"] = data["fii_buy"] - data["fii_sell"]
+                
+                return data
+                
+        except Exception as e:
+            logger.debug(f"Error fetching NSDL FPI data: {e}")
+        
+        return {}
+    
+    def _fetch_moneycontrol_fii_dii(self) -> dict:
+        """Fetch FII/DII data from MoneyControl."""
+        try:
+            response = self._session.get(
+                "https://www.moneycontrol.com/stocks/marketstats/fii_dii_activity/index.php",
+                timeout=15
+            )
+            
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.text, "html.parser")
+                data = {}
+                
+                # Look for FII/DII tables
+                tables = soup.select("table.mctable1, table.tbldata14")
+                
+                for table in tables:
+                    rows = table.select("tr")
+                    for row in rows:
+                        cells = row.select("td")
+                        if len(cells) >= 4:
+                            label = cells[0].get_text(strip=True).lower()
+                            
+                            # Parse buy, sell, net values
+                            try:
+                                buy_val = self._parse_crore_value(cells[1].get_text(strip=True))
+                                sell_val = self._parse_crore_value(cells[2].get_text(strip=True))
+                                net_val = self._parse_crore_value(cells[3].get_text(strip=True))
+                                
+                                if "fii" in label or "fpi" in label:
+                                    data["fii_buy"] = buy_val
+                                    data["fii_sell"] = sell_val
+                                    data["fii_net"] = net_val
+                                elif "dii" in label:
+                                    data["dii_buy"] = buy_val
+                                    data["dii_sell"] = sell_val
+                                    data["dii_net"] = net_val
+                            except (ValueError, IndexError):
+                                continue
+                
+                return data
+                
+        except Exception as e:
+            logger.debug(f"Error fetching MoneyControl FII/DII data: {e}")
+        
+        return {}
+    
+    def _fetch_nse_fii_dii(self) -> dict:
+        """Fetch FII/DII data from NSE India."""
+        try:
+            headers = {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                "Accept": "application/json",
+                "Accept-Language": "en-US,en;q=0.9",
+                "Referer": "https://www.nseindia.com/",
+            }
+            
+            # NSE requires a session cookie
+            session = requests.Session()
+            session.get("https://www.nseindia.com/", headers=headers, timeout=10)
+            
+            response = session.get(
+                "https://www.nseindia.com/api/fiidiiTradeReact",
+                headers=headers,
+                timeout=15
+            )
+            
+            if response.status_code == 200:
+                json_data = response.json()
+                data = {}
+                
+                for item in json_data:
+                    category = item.get("category", "").lower()
+                    
+                    if "fii" in category or "fpi" in category:
+                        data["fii_buy"] = float(item.get("buyValue", 0))
+                        data["fii_sell"] = float(item.get("sellValue", 0))
+                        data["fii_net"] = float(item.get("netValue", 0))
+                    elif "dii" in category:
+                        data["dii_buy"] = float(item.get("buyValue", 0))
+                        data["dii_sell"] = float(item.get("sellValue", 0))
+                        data["dii_net"] = float(item.get("netValue", 0))
+                
+                return data
+                
+        except Exception as e:
+            logger.debug(f"Error fetching NSE FII/DII data: {e}")
+        
+        return {}
+    
+    def _parse_crore_value(self, text: str) -> float:
+        """Parse a crore value from text."""
+        text = text.strip().replace(",", "").replace("₹", "").replace("Rs", "")
+        text = text.replace("(", "-").replace(")", "")
+        
+        # Handle Cr/Crore suffix
+        if "cr" in text.lower():
+            text = text.lower().replace("crore", "").replace("cr", "").strip()
+        
+        return float(text) if text else 0.0
+    
+    def get_stock_fii_holdings(self, symbols: list[str]) -> list[StockFIIData]:
+        """
+        Get FII/DII holdings for specific stocks from Screener.in.
+        
+        Args:
+            symbols: List of stock symbols
+            
+        Returns:
+            List of StockFIIData with shareholding info
+        """
+        holdings = []
+        
+        for symbol in symbols[:10]:  # Limit to 10 to avoid rate limiting
+            try:
+                data = self._fetch_screener_shareholding(symbol)
+                if data:
+                    holdings.append(data)
+            except Exception as e:
+                logger.debug(f"Error fetching holdings for {symbol}: {e}")
+        
+        return holdings
+    
+    def _fetch_screener_shareholding(self, symbol: str) -> Optional[StockFIIData]:
+        """Fetch shareholding pattern from Screener.in."""
+        try:
+            # Try consolidated first, then standalone
+            for suffix in ["/consolidated/", "/"]:
+                url = f"https://www.screener.in/company/{symbol}{suffix}"
+                response = self._session.get(url, timeout=15)
+                
+                if response.status_code == 200:
+                    soup = BeautifulSoup(response.text, "html.parser")
+                    data = StockFIIData(symbol=symbol)
+                    
+                    # Get company name
+                    name_elem = soup.select_one("h1.h2")
+                    if name_elem:
+                        data.company_name = name_elem.get_text(strip=True)
+                    
+                    # Find shareholding section
+                    shareholding_section = soup.select_one("#shareholding")
+                    if shareholding_section:
+                        tables = shareholding_section.select("table")
+                        
+                        for table in tables:
+                            rows = table.select("tr")
+                            for row in rows:
+                                cells = row.select("td")
+                                header = row.select_one("th") or row.select_one("td")
+                                
+                                if header:
+                                    label = header.get_text(strip=True).lower()
+                                    
+                                    # Get latest value and change
+                                    if len(cells) >= 2:
+                                        try:
+                                            current = float(cells[-1].get_text(strip=True).replace("%", "").replace(",", ""))
+                                            prev = float(cells[-2].get_text(strip=True).replace("%", "").replace(",", "")) if len(cells) > 2 else current
+                                            change = current - prev
+                                            
+                                            if "fii" in label or "fpi" in label or "foreign" in label:
+                                                data.fii_holding_pct = current
+                                                data.fii_holding_change = round(change, 2)
+                                            elif "dii" in label or "domestic" in label:
+                                                data.dii_holding_pct = current
+                                                data.dii_holding_change = round(change, 2)
+                                            elif "promoter" in label:
+                                                data.promoter_holding_pct = current
+                                            elif "public" in label:
+                                                data.public_holding_pct = current
+                                        except (ValueError, IndexError):
+                                            continue
+                    
+                    # Get quarter
+                    quarter_elem = soup.select_one(".flex-row .number")
+                    if quarter_elem:
+                        data.quarter = quarter_elem.get_text(strip=True)
+                    
+                    if data.fii_holding_pct > 0 or data.dii_holding_pct > 0:
+                        return data
+            
+        except Exception as e:
+            logger.debug(f"Error fetching Screener shareholding for {symbol}: {e}")
+        
+        return None
+    
+    def get_top_fii_activity_stocks(self) -> tuple[list[StockFIIData], list[StockFIIData]]:
+        """
+        Get stocks with highest FII buying and selling activity.
+        
+        Returns:
+            Tuple of (top_buys, top_sells) lists
+        """
+        try:
+            # Try to fetch from Trendlyne or similar service
+            response = self._session.get(
+                "https://trendlyne.com/equity/fiidii-activity/",
+                timeout=15
+            )
+            
+            top_buys = []
+            top_sells = []
+            
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.text, "html.parser")
+                
+                # Parse FII buying stocks
+                buy_section = soup.select_one(".fii-buying")
+                if buy_section:
+                    for row in buy_section.select("tr")[:5]:
+                        cells = row.select("td")
+                        if len(cells) >= 3:
+                            symbol = cells[0].get_text(strip=True)
+                            try:
+                                change = float(cells[-1].get_text(strip=True).replace("%", ""))
+                                top_buys.append(StockFIIData(
+                                    symbol=symbol,
+                                    fii_holding_change=change
+                                ))
+                            except ValueError:
+                                continue
+                
+                # Parse FII selling stocks
+                sell_section = soup.select_one(".fii-selling")
+                if sell_section:
+                    for row in sell_section.select("tr")[:5]:
+                        cells = row.select("td")
+                        if len(cells) >= 3:
+                            symbol = cells[0].get_text(strip=True)
+                            try:
+                                change = float(cells[-1].get_text(strip=True).replace("%", ""))
+                                top_sells.append(StockFIIData(
+                                    symbol=symbol,
+                                    fii_holding_change=change
+                                ))
+                            except ValueError:
+                                continue
+            
+            return top_buys, top_sells
+            
+        except Exception as e:
+            logger.debug(f"Error fetching top FII activity: {e}")
+        
+        return [], []
+    
     def _fetch_crude_price(self) -> float:
         """Fetch crude oil price."""
         try:
@@ -390,32 +786,78 @@ class MarketIntelligenceService:
     
     def get_screener_data(self, symbol: str) -> dict:
         """
-        Fetch data from Screener.in (if available).
+        Fetch comprehensive data from Screener.in.
         
         Args:
             symbol: Stock symbol
             
         Returns:
-            Dictionary with screener data
+            Dictionary with screener data including ratios, shareholding, financials
         """
-        data = {}
+        data = {
+            "ratios": {},
+            "shareholding": {},
+            "financials": {},
+            "peers": [],
+        }
         
         try:
-            response = self._session.get(
-                f"https://www.screener.in/company/{symbol}/consolidated/",
-                timeout=10
-            )
-            
-            if response.status_code == 200:
-                soup = BeautifulSoup(response.text, "html.parser")
+            # Try consolidated first, then standalone
+            for suffix in ["/consolidated/", "/"]:
+                url = f"https://www.screener.in/company/{symbol}{suffix}"
+                response = self._session.get(url, timeout=15)
                 
-                # Parse key ratios
-                ratios = soup.select("#top-ratios li")
-                for ratio in ratios:
-                    name = ratio.select_one(".name")
-                    value = ratio.select_one(".value")
-                    if name and value:
-                        data[name.get_text(strip=True)] = value.get_text(strip=True)
+                if response.status_code == 200:
+                    soup = BeautifulSoup(response.text, "html.parser")
+                    
+                    # Parse key ratios (top section)
+                    ratios_section = soup.select_one("#top-ratios")
+                    if ratios_section:
+                        for item in ratios_section.select("li"):
+                            name = item.select_one(".name")
+                            value = item.select_one(".value, .number")
+                            if name and value:
+                                ratio_name = name.get_text(strip=True)
+                                ratio_value = value.get_text(strip=True)
+                                data["ratios"][ratio_name] = ratio_value
+                    
+                    # Parse shareholding pattern
+                    shareholding_section = soup.select_one("#shareholding")
+                    if shareholding_section:
+                        for row in shareholding_section.select("tr"):
+                            header = row.select_one("th, td.text")
+                            cells = row.select("td")
+                            
+                            if header and len(cells) >= 1:
+                                label = header.get_text(strip=True)
+                                value = cells[-1].get_text(strip=True)
+                                data["shareholding"][label] = value
+                    
+                    # Parse quarterly results
+                    quarters_section = soup.select_one("#quarters")
+                    if quarters_section:
+                        headers = [th.get_text(strip=True) for th in quarters_section.select("th")]
+                        
+                        for row in quarters_section.select("tr"):
+                            cells = row.select("td")
+                            row_header = row.select_one("td.text")
+                            
+                            if row_header and len(cells) >= 2:
+                                metric = row_header.get_text(strip=True)
+                                latest_value = cells[-1].get_text(strip=True) if cells else ""
+                                data["financials"][metric] = latest_value
+                    
+                    # Parse peer comparison
+                    peers_section = soup.select_one("#peers")
+                    if peers_section:
+                        for row in peers_section.select("tr")[1:6]:  # Limit to 5 peers
+                            cells = row.select("td")
+                            if len(cells) >= 2:
+                                peer_name = cells[0].get_text(strip=True)
+                                data["peers"].append(peer_name)
+                    
+                    if data["ratios"]:
+                        break
                         
         except Exception as e:
             logger.warning(f"Error fetching Screener data for {symbol}: {e}")

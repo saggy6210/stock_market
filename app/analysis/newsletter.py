@@ -13,6 +13,8 @@ from app.analysis.market_intelligence import (
     MarketIntelligenceService, 
     MarketIntelligence,
     FundamentalData,
+    FIIDIIData,
+    StockFIIData,
 )
 
 logger = logging.getLogger(__name__)
@@ -136,7 +138,7 @@ class NewsletterGenerator:
             {insider_html}
             
             <div class="newsletter-footer">
-                <p><strong>Sources:</strong> MoneyControl, Economic Times, BSE, NSE, Yahoo Finance</p>
+                <p><strong>Sources:</strong> MoneyControl, Economic Times, Mint, Pulse by Zerodha, Groww, BSE, NSE, Yahoo Finance</p>
                 <p><em>News aggregated automatically. Verify from original sources before making investment decisions.</em></p>
             </div>
         </div>
@@ -190,59 +192,217 @@ class NewsletterGenerator:
         """
     
     def _build_macro_section(self, intel: MarketIntelligence) -> str:
-        """Build macro indicators section."""
-        indicators_html = ""
+        """Build macro indicators section in table format with detailed FII/DII data."""
         
-        for indicator in intel.macro_indicators[:4]:
-            color = "#28a745" if indicator.trend == "up" else "#dc3545" if indicator.trend == "down" else "#6c757d"
-            arrow = "▲" if indicator.trend == "up" else "▼" if indicator.trend == "down" else "●"
-            impact_badge = f'<span class="impact-{indicator.impact}">{indicator.impact.upper()}</span>'
-            
-            indicators_html += f"""
-            <div class="macro-item">
-                <div class="macro-name">{indicator.name}</div>
-                <div class="macro-value">{indicator.value}</div>
-                <div class="macro-change" style="color: {color};">{arrow} {abs(indicator.change_pct):.2f}%</div>
-                <div class="macro-impact">{impact_badge}</div>
-            </div>
-            """
-        
-        # Add FII/DII
+        # FII/DII colors
         fii_color = "#28a745" if intel.fii_net_buy > 0 else "#dc3545"
         dii_color = "#28a745" if intel.dii_net_buy > 0 else "#dc3545"
+        fii_sign = "+" if intel.fii_net_buy > 0 else ""
+        dii_sign = "+" if intel.dii_net_buy > 0 else ""
         
-        market_data = f"""
-        <div class="market-data-row">
-            <div class="market-data-item">
-                <span class="label">India VIX</span>
-                <span class="value">{intel.india_vix}</span>
-            </div>
-            <div class="market-data-item">
-                <span class="label">FII Net</span>
-                <span class="value" style="color: {fii_color};">₹{intel.fii_net_buy:,.0f} Cr</span>
-            </div>
-            <div class="market-data-item">
-                <span class="label">DII Net</span>
-                <span class="value" style="color: {dii_color};">₹{intel.dii_net_buy:,.0f} Cr</span>
-            </div>
-            <div class="market-data-item">
-                <span class="label">Crude Oil</span>
-                <span class="value">${intel.crude_oil}</span>
-            </div>
-            <div class="market-data-item">
-                <span class="label">Gold</span>
-                <span class="value">${intel.gold}</span>
-            </div>
-        </div>
-        """
+        # Build indicator rows for the table
+        indicator_rows = ""
+        for indicator in intel.macro_indicators[:4]:
+            color = "#28a745" if indicator.trend == "up" else "#dc3545"
+            arrow = "▲" if indicator.trend == "up" else "▼"
+            impact_color = "#28a745" if indicator.impact == "positive" else "#dc3545" if indicator.impact == "negative" else "#6c757d"
+            
+            indicator_rows += f"""
+                <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>{indicator.name}</strong></td>
+                    <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: right;">{indicator.value}</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: right; color: {color};">{arrow} {abs(indicator.change_pct):.2f}%</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: center;"><span style="background: {impact_color}; color: white; padding: 2px 8px; border-radius: 3px; font-size: 10px;">{indicator.impact.upper()}</span></td>
+                </tr>
+            """
+        
+        # Detailed FII/DII section
+        fii_dii_html = self._build_fii_dii_detail_section(intel)
+        
+        # Top FII activity stocks
+        fii_activity_html = self._build_fii_activity_section(intel)
         
         return f"""
         <div class="newsletter-section macro-section">
             <h3>🌍 MACRO INDICATORS & MARKET DATA</h3>
-            {market_data}
-            <div class="macro-grid">
-                {indicators_html}
+            
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
+                <thead>
+                    <tr style="background: #f8f9fa;">
+                        <th style="padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6;">Indicator</th>
+                        <th style="padding: 10px; text-align: right; border-bottom: 2px solid #dee2e6;">Value</th>
+                        <th style="padding: 10px; text-align: right; border-bottom: 2px solid #dee2e6;">India VIX</th>
+                        <th style="padding: 10px; text-align: right; border-bottom: 2px solid #dee2e6;">FII Net</th>
+                        <th style="padding: 10px; text-align: right; border-bottom: 2px solid #dee2e6;">DII Net</th>
+                        <th style="padding: 10px; text-align: right; border-bottom: 2px solid #dee2e6;">Crude Oil</th>
+                        <th style="padding: 10px; text-align: right; border-bottom: 2px solid #dee2e6;">Gold</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 10px; text-align: center; font-weight: bold; background: #f8f9fa;">Current</td>
+                        <td style="padding: 10px; text-align: right;"></td>
+                        <td style="padding: 10px; text-align: right; font-weight: bold;">{intel.india_vix}</td>
+                        <td style="padding: 10px; text-align: right; font-weight: bold; color: {fii_color};">{fii_sign}₹{abs(intel.fii_net_buy):,.0f} Cr</td>
+                        <td style="padding: 10px; text-align: right; font-weight: bold; color: {dii_color};">{dii_sign}₹{abs(intel.dii_net_buy):,.0f} Cr</td>
+                        <td style="padding: 10px; text-align: right; font-weight: bold;">${intel.crude_oil}</td>
+                        <td style="padding: 10px; text-align: right; font-weight: bold;">${intel.gold}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            {fii_dii_html}
+            
+            {fii_activity_html}
+            
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background: #e9ecef;">
+                        <th style="padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6;">Global Indicator</th>
+                        <th style="padding: 10px; text-align: right; border-bottom: 2px solid #dee2e6;">Value</th>
+                        <th style="padding: 10px; text-align: right; border-bottom: 2px solid #dee2e6;">Change</th>
+                        <th style="padding: 10px; text-align: center; border-bottom: 2px solid #dee2e6;">Market Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {indicator_rows}
+                </tbody>
+            </table>
+        </div>
+        """
+    
+    def _build_fii_dii_detail_section(self, intel: MarketIntelligence) -> str:
+        """Build detailed FII/DII activity section."""
+        fii_dii = intel.fii_dii_data
+        if not fii_dii:
+            return ""
+        
+        # Calculate colors based on net values
+        def get_color(val):
+            return "#28a745" if val > 0 else "#dc3545" if val < 0 else "#6c757d"
+        
+        def format_val(val):
+            sign = "+" if val > 0 else ""
+            return f"{sign}₹{abs(val):,.0f} Cr"
+        
+        return f"""
+        <div style="margin: 15px 0; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+            <h4 style="margin: 0 0 10px 0; color: #333;">📊 DETAILED FII/DII ACTIVITY</h4>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background: #e9ecef;">
+                        <th style="padding: 8px; text-align: left; border-bottom: 2px solid #dee2e6;">Category</th>
+                        <th style="padding: 8px; text-align: right; border-bottom: 2px solid #dee2e6;">Buy</th>
+                        <th style="padding: 8px; text-align: right; border-bottom: 2px solid #dee2e6;">Sell</th>
+                        <th style="padding: 8px; text-align: right; border-bottom: 2px solid #dee2e6;">Net</th>
+                        <th style="padding: 8px; text-align: right; border-bottom: 2px solid #dee2e6;">Monthly</th>
+                        <th style="padding: 8px; text-align: right; border-bottom: 2px solid #dee2e6;">YTD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>FII/FPI</strong></td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 1px solid #eee;">₹{fii_dii.fii_buy_value:,.0f} Cr</td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 1px solid #eee;">₹{fii_dii.fii_sell_value:,.0f} Cr</td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 1px solid #eee; font-weight: bold; color: {get_color(fii_dii.fii_net_value)};">{format_val(fii_dii.fii_net_value)}</td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 1px solid #eee; color: {get_color(fii_dii.fii_monthly_net)};">{format_val(fii_dii.fii_monthly_net)}</td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 1px solid #eee; color: {get_color(fii_dii.fii_ytd_net)};">{format_val(fii_dii.fii_ytd_net)}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>DII</strong></td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 1px solid #eee;">₹{fii_dii.dii_buy_value:,.0f} Cr</td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 1px solid #eee;">₹{fii_dii.dii_sell_value:,.0f} Cr</td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 1px solid #eee; font-weight: bold; color: {get_color(fii_dii.dii_net_value)};">{format_val(fii_dii.dii_net_value)}</td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 1px solid #eee; color: {get_color(fii_dii.dii_monthly_net)};">{format_val(fii_dii.dii_monthly_net)}</td>
+                        <td style="padding: 8px; text-align: right; border-bottom: 1px solid #eee;">-</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin: 10px 0 0 0; font-size: 11px; color: #666;">
+                Data as of {fii_dii.date}. Source: NSDL, NSE, MoneyControl
+            </p>
+        </div>
+        """
+    
+    def _build_fii_activity_section(self, intel: MarketIntelligence) -> str:
+        """Build top FII buying/selling stocks section."""
+        if not intel.top_fii_buys and not intel.top_fii_sells:
+            return ""
+        
+        buy_rows = ""
+        for stock in intel.top_fii_buys[:5]:
+            change_color = "#28a745" if stock.fii_holding_change > 0 else "#dc3545"
+            change_sign = "+" if stock.fii_holding_change > 0 else ""
+            buy_rows += f"""
+                <tr>
+                    <td style="padding: 6px; border-bottom: 1px solid #eee;">{stock.symbol}</td>
+                    <td style="padding: 6px; text-align: right; border-bottom: 1px solid #eee;">{stock.fii_holding_pct:.1f}%</td>
+                    <td style="padding: 6px; text-align: right; border-bottom: 1px solid #eee; color: {change_color};">{change_sign}{stock.fii_holding_change:.2f}%</td>
+                </tr>
+            """
+        
+        sell_rows = ""
+        for stock in intel.top_fii_sells[:5]:
+            change_color = "#28a745" if stock.fii_holding_change > 0 else "#dc3545"
+            change_sign = "+" if stock.fii_holding_change > 0 else ""
+            sell_rows += f"""
+                <tr>
+                    <td style="padding: 6px; border-bottom: 1px solid #eee;">{stock.symbol}</td>
+                    <td style="padding: 6px; text-align: right; border-bottom: 1px solid #eee;">{stock.fii_holding_pct:.1f}%</td>
+                    <td style="padding: 6px; text-align: right; border-bottom: 1px solid #eee; color: {change_color};">{change_sign}{stock.fii_holding_change:.2f}%</td>
+                </tr>
+            """
+        
+        buy_section = ""
+        if buy_rows:
+            buy_section = f"""
+            <div style="flex: 1; min-width: 200px;">
+                <h5 style="margin: 0 0 8px 0; color: #28a745;">🔼 FII Buying</h5>
+                <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                    <thead>
+                        <tr style="background: #e8f5e9;">
+                            <th style="padding: 6px; text-align: left;">Stock</th>
+                            <th style="padding: 6px; text-align: right;">Holding</th>
+                            <th style="padding: 6px; text-align: right;">Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {buy_rows}
+                    </tbody>
+                </table>
             </div>
+            """
+        
+        sell_section = ""
+        if sell_rows:
+            sell_section = f"""
+            <div style="flex: 1; min-width: 200px;">
+                <h5 style="margin: 0 0 8px 0; color: #dc3545;">🔽 FII Selling</h5>
+                <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                    <thead>
+                        <tr style="background: #ffebee;">
+                            <th style="padding: 6px; text-align: left;">Stock</th>
+                            <th style="padding: 6px; text-align: right;">Holding</th>
+                            <th style="padding: 6px; text-align: right;">Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {sell_rows}
+                    </tbody>
+                </table>
+            </div>
+            """
+        
+        return f"""
+        <div style="margin: 15px 0; padding: 15px; background: #fff; border: 1px solid #e0e0e0; border-radius: 8px;">
+            <h4 style="margin: 0 0 15px 0; color: #333;">🏦 FII STOCK-WISE ACTIVITY (QoQ Change)</h4>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                {buy_section}
+                {sell_section}
+            </div>
+            <p style="margin: 10px 0 0 0; font-size: 11px; color: #666;">
+                Based on latest quarterly shareholding data from Screener.in/NSDL
+            </p>
         </div>
         """
     
@@ -308,6 +468,42 @@ class NewsletterGenerator:
             "",
         ]
         
+        # Detailed FII/DII data
+        if intel.fii_dii_data:
+            fii_dii = intel.fii_dii_data
+            lines.extend([
+                "DETAILED FII/DII ACTIVITY",
+                "-" * 40,
+                f"FII/FPI:",
+                f"  Buy: ₹{fii_dii.fii_buy_value:,.0f} Cr | Sell: ₹{fii_dii.fii_sell_value:,.0f} Cr | Net: ₹{fii_dii.fii_net_value:,.0f} Cr",
+                f"  Monthly: ₹{fii_dii.fii_monthly_net:,.0f} Cr | YTD: ₹{fii_dii.fii_ytd_net:,.0f} Cr",
+                f"DII:",
+                f"  Buy: ₹{fii_dii.dii_buy_value:,.0f} Cr | Sell: ₹{fii_dii.dii_sell_value:,.0f} Cr | Net: ₹{fii_dii.dii_net_value:,.0f} Cr",
+                f"  Monthly: ₹{fii_dii.dii_monthly_net:,.0f} Cr",
+                "",
+            ])
+        
+        # FII stock activity
+        if intel.top_fii_buys:
+            lines.extend([
+                "TOP FII BUYING STOCKS",
+                "-" * 40,
+            ])
+            for stock in intel.top_fii_buys[:5]:
+                sign = "+" if stock.fii_holding_change > 0 else ""
+                lines.append(f"  {stock.symbol}: {stock.fii_holding_pct:.1f}% ({sign}{stock.fii_holding_change:.2f}%)")
+            lines.append("")
+        
+        if intel.top_fii_sells:
+            lines.extend([
+                "TOP FII SELLING STOCKS",
+                "-" * 40,
+            ])
+            for stock in intel.top_fii_sells[:5]:
+                sign = "+" if stock.fii_holding_change > 0 else ""
+                lines.append(f"  {stock.symbol}: {stock.fii_holding_pct:.1f}% ({sign}{stock.fii_holding_change:.2f}%)")
+            lines.append("")
+        
         # Stock Predictions
         if news.stock_movements:
             lines.extend([
@@ -353,7 +549,8 @@ class NewsletterGenerator:
         
         lines.extend([
             "=" * 60,
-            "Sources: MoneyControl, Economic Times, BSE, NSE, Yahoo Finance",
+            "Sources: MoneyControl, Economic Times, Mint, Pulse by Zerodha,",
+            "         Groww, BSE, NSE, NSDL, Screener.in, Yahoo Finance",
             "=" * 60,
         ])
         

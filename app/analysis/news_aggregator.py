@@ -49,9 +49,11 @@ class NewsAggregator:
     Sources:
     - MoneyControl
     - Economic Times Markets
-    - Mint
-    - Business Standard
-    - Screener.in (for corporate announcements)
+    - Mint (LiveMint)
+    - Pulse by Zerodha
+    - Groww
+    - BSE/NSE Announcements
+    - Yahoo Finance
     """
     
     # News source configurations
@@ -67,10 +69,21 @@ class NewsAggregator:
         },
         "mint": {
             "base_url": "https://www.livemint.com",
-            "markets_url": "https://www.livemint.com/market",
+            "markets_url": "https://www.livemint.com/market/stock-market-news",
+        },
+        "pulse_zerodha": {
+            "base_url": "https://pulse.zerodha.com",
+            "news_url": "https://pulse.zerodha.com/",
+        },
+        "groww": {
+            "base_url": "https://groww.in",
+            "news_url": "https://groww.in/blog/category/market-news",
         },
         "bse": {
             "announcements_url": "https://www.bseindia.com/corporates/ann.html",
+        },
+        "nse": {
+            "announcements_url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements",
         },
     }
     
@@ -115,9 +128,12 @@ class NewsAggregator:
         # Fetch from different sources
         mc_news = self._fetch_moneycontrol_news()
         et_news = self._fetch_et_news()
+        mint_news = self._fetch_mint_news()
+        pulse_news = self._fetch_pulse_zerodha_news()
+        groww_news = self._fetch_groww_news()
         
         # Combine and categorize
-        all_news = mc_news + et_news
+        all_news = mc_news + et_news + mint_news + pulse_news + groww_news
         
         for item in all_news:
             self._categorize_news(item)
@@ -225,6 +241,114 @@ class NewsAggregator:
                         
         except Exception as e:
             logger.warning(f"Error fetching ET news: {e}")
+        
+        return news_items
+    
+    def _fetch_mint_news(self) -> list[NewsItem]:
+        """Fetch news from LiveMint."""
+        news_items = []
+        
+        try:
+            response = self._session.get(
+                self.SOURCES["mint"]["markets_url"],
+                timeout=10
+            )
+            
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.text, "html.parser")
+                
+                # Parse news articles
+                articles = soup.select(".headline, .listingNew a, article a")
+                
+                for article in articles[:15]:
+                    try:
+                        headline = article.get_text(strip=True)
+                        url = article.get("href", "")
+                        
+                        if headline and len(headline) > 20:
+                            news_items.append(NewsItem(
+                                headline=headline,
+                                source="Mint",
+                                url=url if url.startswith("http") else f"https://www.livemint.com{url}",
+                                category="general",
+                            ))
+                    except Exception:
+                        continue
+                        
+        except Exception as e:
+            logger.warning(f"Error fetching Mint news: {e}")
+        
+        return news_items
+    
+    def _fetch_pulse_zerodha_news(self) -> list[NewsItem]:
+        """Fetch news from Pulse by Zerodha."""
+        news_items = []
+        
+        try:
+            response = self._session.get(
+                self.SOURCES["pulse_zerodha"]["news_url"],
+                timeout=10
+            )
+            
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.text, "html.parser")
+                
+                # Parse news articles
+                articles = soup.select(".post-title a, .entry-title a, article a")
+                
+                for article in articles[:15]:
+                    try:
+                        headline = article.get_text(strip=True)
+                        url = article.get("href", "")
+                        
+                        if headline and len(headline) > 20:
+                            news_items.append(NewsItem(
+                                headline=headline,
+                                source="Pulse (Zerodha)",
+                                url=url if url.startswith("http") else f"https://pulse.zerodha.com{url}",
+                                category="general",
+                            ))
+                    except Exception:
+                        continue
+                        
+        except Exception as e:
+            logger.warning(f"Error fetching Pulse news: {e}")
+        
+        return news_items
+    
+    def _fetch_groww_news(self) -> list[NewsItem]:
+        """Fetch news from Groww."""
+        news_items = []
+        
+        try:
+            response = self._session.get(
+                self.SOURCES["groww"]["news_url"],
+                timeout=10
+            )
+            
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.text, "html.parser")
+                
+                # Parse news articles
+                articles = soup.select(".post-card a, .blog-card a, article a")
+                
+                for article in articles[:10]:
+                    try:
+                        headline = article.get_text(strip=True)
+                        url = article.get("href", "")
+                        
+                        if headline and len(headline) > 20:
+                            news_items.append(NewsItem(
+                                headline=headline,
+                                source="Groww",
+                                url=url if url.startswith("http") else f"https://groww.in{url}",
+                                category="general",
+                            ))
+                    except Exception:
+                        continue
+                        
+        except Exception as e:
+            logger.warning(f"Error fetching Groww news: {e}")
         
         return news_items
     

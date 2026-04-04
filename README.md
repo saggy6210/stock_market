@@ -26,9 +26,11 @@ Automated stock market analysis with daily recommendations, market intelligence,
 |--------|-----------|
 | MoneyControl | Market news, FII/DII |
 | Economic Times | Stock news, earnings |
+| Mint (LiveMint) | Market analysis, news |
+| Pulse by Zerodha | Trading insights |
+| Groww | Market news, analysis |
 | BSE/NSE | Corporate announcements |
 | Yahoo Finance | Fundamentals, technicals |
-| Screener.in | Ratios, balance sheet |
 
 ## Quick Start
 

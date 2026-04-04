@@ -11,7 +11,13 @@ from app.analysis.portfolio import PortfolioAnalyzer
 from app.analysis.news_sentiment import NewsSentimentAnalyzer
 from app.analysis.market_overview import MarketOverviewFetcher, MarketOverview
 from app.analysis.news_aggregator import NewsAggregator, MarketNews
-from app.analysis.market_intelligence import MarketIntelligenceService, MarketIntelligence
+from app.analysis.market_intelligence import (
+    MarketIntelligenceService,
+    MarketIntelligence,
+    FIIDIIData,
+    StockFIIData,
+    FundamentalData,
+)
 from app.analysis.newsletter import NewsletterGenerator, Newsletter
 
 __all__ = [
@@ -27,6 +33,9 @@ __all__ = [
     "MarketNews",
     "MarketIntelligenceService",
     "MarketIntelligence",
+    "FIIDIIData",
+    "StockFIIData",
+    "FundamentalData",
     "NewsletterGenerator",
     "Newsletter",
 ]
