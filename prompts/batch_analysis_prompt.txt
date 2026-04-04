@@ -1,0 +1,4 @@
+# TODO: Define batch analysis prompt template
+# - Schema template for stock analyses with field descriptions
+# - Fields: business_summary, valuation_view, profitability_view, 
+#   shareholding_view, key_points[], risks[]

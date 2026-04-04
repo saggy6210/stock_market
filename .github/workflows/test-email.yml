@@ -1,0 +1,61 @@
+name: Test Email
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test-email:
+    name: Send Test Email
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install fastapi uvicorn
+
+      - name: Start API
+        env:
+          SMTP_USER: ${{ vars.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_FROM: ${{ vars.EMAIL_FROM }}
+          EMAIL_TO: ${{ vars.EMAIL_TO }}
+        run: |
+          python run.py > app.log 2>&1 &
+          echo $! > app.pid
+
+      - name: Wait for API
+        run: |
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8000/health; then
+              echo "API is ready"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "API did not become ready in time."
+          cat app.log
+          exit 1
+
+      - name: Send test email
+        run: |
+          curl -fsS http://127.0.0.1:8000/test-email
+
+      - name: Stop API
+        if: always()
+        run: |
+          if [ -f app.pid ]; then
+            kill "$(cat app.pid)" || true
+          fi
+          echo "=== Application Logs ==="
+          if [ -f app.log ]; then
+            cat app.log || true
+          fi

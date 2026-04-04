@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ENABLE_SCHEDULER=false
+    # TODO: Add environment variables and volumes
+    # env_file:
+    #   - .env

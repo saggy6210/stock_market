@@ -1,0 +1,14 @@
+[project]
+name = "stock-market"
+version = "0.1.0"
+description = "Stock Market Screening and Analysis Service"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

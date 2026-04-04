@@ -1,0 +1,2 @@
+# TODO: Define system prompt instructions
+# - Instructions: simple English, use web info, return JSON when asked
