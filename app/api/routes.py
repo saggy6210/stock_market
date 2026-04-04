@@ -38,6 +38,8 @@ def root():
             "/buy-signals": "Get top buy signals",
             "/sell-signals": "Get top sell signals",
             "/analyze-portfolio": "Upload CSV to analyze portfolio (POST)",
+            "/portfolio-insights": "Run portfolio analysis with insights (GET)",
+            "/portfolio-last": "Get last portfolio insights",
             "/report": "Get last generated report",
             "/test-email": "Send test email",
         }
@@ -243,4 +245,81 @@ def get_last_report():
         "buy_signals_count": len(report.buy_signals),
         "sell_signals_count": len(report.sell_signals),
         "recovery_candidates_count": len(report.recovery_candidates),
+    }
+
+
+@router.get("/portfolio-insights")
+def run_portfolio_insights(send_email: bool = True):
+    """
+    Run portfolio analysis and generate insights.
+    
+    Analyzes holdings.csv and provides:
+    - Portfolio summary (value, P/L, allocation, risk flags)
+    - Top 20 stock movement predictions
+    - Relevant news for portfolio stocks
+    - Buy/Hold/Sell signals for each stock
+    
+    Args:
+        send_email: Whether to send email notification (default: True)
+    """
+    service = get_service()
+    insights = service.run_portfolio_analysis(notify=send_email)
+    
+    return {
+        "date": insights.date,
+        "summary": {
+            "total_investment": insights.summary.total_investment,
+            "current_value": insights.summary.current_value,
+            "total_pnl": insights.summary.total_pnl,
+            "total_pnl_pct": insights.summary.total_pnl_pct,
+            "day_change_pct": insights.summary.day_change_pct,
+            "total_stocks": insights.summary.total_stocks,
+            "profitable_stocks": insights.summary.profitable_stocks,
+            "loss_making_stocks": insights.summary.loss_making_stocks,
+            "overall_risk_level": insights.summary.overall_risk_level.value,
+            "risk_flags": insights.summary.risk_flags.get_flags(),
+        },
+        "signals": {
+            "aggressive_buy": [
+                {"symbol": h.symbol, "pnl_pct": h.pnl_pct, "score": h.fundamental_score, "reasons": h.reasons}
+                for h in insights.aggressive_buy_stocks[:5]
+            ],
+            "buy_on_dip": [h.symbol for h in insights.buy_on_dip_stocks[:5]],
+            "hold": [h.symbol for h in insights.hold_stocks[:10]],
+            "reduce": [h.symbol for h in insights.reduce_stocks[:5]],
+            "exit": [
+                {"symbol": h.symbol, "pnl_pct": h.pnl_pct, "score": h.fundamental_score, "reasons": h.reasons}
+                for h in insights.exit_stocks
+            ],
+        },
+        "predictions": [
+            {
+                "symbol": h.symbol,
+                "direction": h.predicted_direction,
+                "confidence": h.predicted_confidence,
+                "reason": h.prediction_reason,
+            }
+            for h in insights.predictions[:10]
+        ],
+        "market_outlook": insights.market_outlook,
+        "strategy_notes": insights.strategy_notes,
+        "email_sent": send_email,
+    }
+
+
+@router.get("/portfolio-last")
+def get_last_portfolio_insights():
+    """Get the last generated portfolio insights."""
+    service = get_service()
+    insights = service.get_last_portfolio_insights()
+    
+    if not insights:
+        return {"message": "No portfolio insights available. Run /portfolio-insights first."}
+    
+    return {
+        "date": insights.date,
+        "total_stocks": insights.summary.total_stocks,
+        "total_pnl_pct": insights.summary.total_pnl_pct,
+        "aggressive_buy_count": len(insights.aggressive_buy_stocks),
+        "exit_count": len(insights.exit_stocks),
     }

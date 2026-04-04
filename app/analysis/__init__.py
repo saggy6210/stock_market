@@ -19,6 +19,15 @@ from app.analysis.market_intelligence import (
     FundamentalData,
 )
 from app.analysis.newsletter import NewsletterGenerator, Newsletter
+from app.analysis.portfolio_insights import (
+    PortfolioInsightsGenerator,
+    PortfolioInsights,
+    HoldingAnalysis,
+    PortfolioSignal,
+    DeclineSummary,
+    DetailedBuyRecommendation,
+)
+from app.analysis.portfolio_email import PortfolioEmailGenerator
 
 __all__ = [
     "TechnicalAnalyzer",
@@ -38,4 +47,11 @@ __all__ = [
     "FundamentalData",
     "NewsletterGenerator",
     "Newsletter",
+    "PortfolioInsightsGenerator",
+    "PortfolioInsights",
+    "HoldingAnalysis",
+    "PortfolioSignal",
+    "DeclineSummary",
+    "DetailedBuyRecommendation",
+    "PortfolioEmailGenerator",
 ]

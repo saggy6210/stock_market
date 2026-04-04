@@ -43,8 +43,24 @@ def create_scheduler(service) -> BackgroundScheduler:
         replace_existing=True,
     )
     
+    # Add portfolio analysis job at 7:05 AM IST, every day (5 minutes after daily scan)
+    scheduler.add_job(
+        func=lambda: _run_portfolio_analysis(service),
+        trigger=CronTrigger(
+            hour=settings.schedule_hour,
+            minute=settings.schedule_minute + 5,  # 5 minutes after market scan
+            timezone="Asia/Kolkata",
+        ),
+        id="portfolio-analysis",
+        name="Portfolio Analysis and Recommendations",
+        replace_existing=True,
+    )
+    
     logger.info(
         f"Scheduler configured: Daily scan at {settings.schedule_hour:02d}:{settings.schedule_minute:02d} IST (Daily)"
+    )
+    logger.info(
+        f"Scheduler configured: Portfolio analysis at {settings.schedule_hour:02d}:{settings.schedule_minute + 5:02d} IST (Daily)"
     )
     
     return scheduler
@@ -73,6 +89,36 @@ def _run_daily_scan(service) -> None:
         
     except Exception as e:
         logger.error(f"Daily scan failed: {e}", exc_info=True)
+
+
+def _run_portfolio_analysis(service) -> None:
+    """
+    Job function for portfolio analysis.
+    
+    Sends a separate email with:
+    - Portfolio summary and P/L
+    - Stock movement predictions for portfolio holdings
+    - Relevant news for portfolio stocks
+    - Buy/Hold/Sell signals for each stock
+    
+    Args:
+        service: StockService instance
+    """
+    logger.info(f"Starting scheduled portfolio analysis at {datetime.now()}")
+    
+    try:
+        insights = service.run_portfolio_analysis(notify=True)
+        
+        logger.info(
+            f"Portfolio analysis completed: "
+            f"{len(insights.holdings)} holdings, "
+            f"P/L: {insights.summary.total_pnl_pct:.2f}%, "
+            f"Aggressive Buy: {len(insights.aggressive_buy_stocks)}, "
+            f"Exit: {len(insights.exit_stocks)}"
+        )
+        
+    except Exception as e:
+        logger.error(f"Portfolio analysis failed: {e}", exc_info=True)
 
 
 def start_scheduler(scheduler: BackgroundScheduler) -> None:

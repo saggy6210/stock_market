@@ -15,6 +15,8 @@ from app.analysis.recovery import RecoveryScreener
 from app.analysis.portfolio import PortfolioAnalyzer
 from app.analysis.market_overview import MarketOverviewFetcher, MarketOverview
 from app.analysis.newsletter import NewsletterGenerator, Newsletter
+from app.analysis.portfolio_insights import PortfolioInsightsGenerator, PortfolioInsights
+from app.analysis.portfolio_email import PortfolioEmailGenerator
 from app.notification.emailer import EmailNotifier
 
 logger = logging.getLogger(__name__)
@@ -34,6 +36,8 @@ class StockService:
         self._portfolio_analyzer = PortfolioAnalyzer()
         self._market_overview_fetcher = MarketOverviewFetcher()
         self._newsletter_generator = NewsletterGenerator()
+        self._portfolio_insights_generator = PortfolioInsightsGenerator()
+        self._portfolio_email_generator = PortfolioEmailGenerator()
         self._email_notifier = EmailNotifier(
             smtp_host=settings.smtp_host,
             smtp_port=settings.smtp_port,
@@ -47,6 +51,7 @@ class StockService:
         self._last_report: Optional[DailyReport] = None
         self._last_market_overview: Optional[MarketOverview] = None
         self._last_newsletter: Optional[Newsletter] = None
+        self._last_portfolio_insights: Optional[PortfolioInsights] = None
     
     def run_daily_scan(self, notify: bool = True) -> DailyReport:
         """
@@ -148,6 +153,58 @@ class StockService:
     
     def get_last_report(self) -> Optional[DailyReport]:
         """Get the last generated report."""
+        return self._last_report
+    
+    def run_portfolio_analysis(self, notify: bool = True) -> PortfolioInsights:
+        """
+        Run portfolio analysis and send email.
+        
+        This is separate from the daily scan and sends an email with:
+        - Portfolio summary (value, P/L, allocation, risk flags)
+        - Top 20 stock movement predictions for portfolio stocks
+        - Relevant news for portfolio stocks
+        - Buy/Hold/Sell signals for each holding
+        
+        Args:
+            notify: Send email notification
+            
+        Returns:
+            PortfolioInsights: Complete portfolio analysis
+        """
+        logger.info("Running portfolio analysis...")
+        
+        # Generate portfolio insights
+        insights = self._portfolio_insights_generator.generate()
+        self._last_portfolio_insights = insights
+        
+        # Send email notification
+        if notify:
+            self._send_portfolio_email(insights)
+        
+        logger.info(
+            f"Portfolio analysis complete: {len(insights.holdings)} holdings, "
+            f"P/L: {insights.summary.total_pnl_pct:.2f}%, "
+            f"Aggressive Buy: {len(insights.aggressive_buy_stocks)}, "
+            f"Exit: {len(insights.exit_stocks)}"
+        )
+        
+        return insights
+    
+    def _send_portfolio_email(self, insights: PortfolioInsights) -> bool:
+        """Send portfolio analysis email."""
+        subject = f"Portfolio Analysis and Recommendations - {insights.date}"
+        
+        # Build plain text body
+        body = self._portfolio_email_generator.generate_text(insights)
+        
+        # Build HTML body
+        html_body = self._portfolio_email_generator.generate_html(insights)
+        
+        return self._email_notifier.send(subject, body, html_body)
+    
+    def get_last_portfolio_insights(self) -> Optional[PortfolioInsights]:
+        """Get the last generated portfolio insights."""
+        return self._last_portfolio_insights
         return self._last_report
     
     def _get_market_status(self) -> str:
