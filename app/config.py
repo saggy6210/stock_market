@@ -48,8 +48,8 @@ class Settings:
         self.near_52_week_low_pct = float(os.getenv("NEAR_52_WEEK_LOW_PCT", "5.0"))
         self.segment_top_n = int(os.getenv("SEGMENT_TOP_N", "20"))
         
-        # Scheduler settings (9:00 AM IST default)
-        self.schedule_hour = int(os.getenv("SCHEDULE_HOUR", "9"))
+        # Scheduler settings (7:00 AM IST default)
+        self.schedule_hour = int(os.getenv("SCHEDULE_HOUR", "7"))
         self.schedule_minute = int(os.getenv("SCHEDULE_MINUTE", "0"))
     
     def _parse_list(self, value: str) -> list[str]:

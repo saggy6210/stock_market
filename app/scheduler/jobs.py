@@ -30,13 +30,12 @@ def create_scheduler(service) -> BackgroundScheduler:
     """
     scheduler = BackgroundScheduler(timezone="Asia/Kolkata")
     
-    # Add daily scan job at 9:00 AM IST, Monday to Friday
+    # Add daily scan job at 7:00 AM IST, every day
     scheduler.add_job(
         func=lambda: _run_daily_scan(service),
         trigger=CronTrigger(
             hour=settings.schedule_hour,
             minute=settings.schedule_minute,
-            day_of_week="mon-fri",
             timezone="Asia/Kolkata",
         ),
         id="daily-stock-scan",
@@ -45,7 +44,7 @@ def create_scheduler(service) -> BackgroundScheduler:
     )
     
     logger.info(
-        f"Scheduler configured: Daily scan at {settings.schedule_hour:02d}:{settings.schedule_minute:02d} IST (Mon-Fri)"
+        f"Scheduler configured: Daily scan at {settings.schedule_hour:02d}:{settings.schedule_minute:02d} IST (Daily)"
     )
     
     return scheduler
