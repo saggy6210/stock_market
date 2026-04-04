@@ -3,109 +3,174 @@ Pydantic Data Models.
 Defines the core data structures used throughout the application.
 """
 
-# TODO: Implement the following Pydantic models:
-# - StockSnapshot: symbol, company_name, segment, price, fifty_two_week_low, 
-#   near_wkl_pct, pe_ratio
-# - AnalysisResult: extends StockSnapshot + business_summary, valuation_view, 
-#   profitability_view, shareholding_view, key_points[], risks[], raw_text
-# - PipelineRunResult: scanned_count, near_low_stocks[], analyses[], 
-#   gemini_failed, gemini_failure_reason
+from dataclasses import dataclass, field
+from typing import Optional
+from enum import Enum
 
 
+class Signal(Enum):
+    STRONG_BUY = "STRONG_BUY"
+    BUY = "BUY"
+    HOLD = "HOLD"
+    SELL = "SELL"
+    STRONG_SELL = "STRONG_SELL"
+
+
+class Trend(Enum):
+    STRONG_UPTREND = "STRONG_UPTREND"
+    UPTREND = "UPTREND"
+    SIDEWAYS = "SIDEWAYS"
+    DOWNTREND = "DOWNTREND"
+    STRONG_DOWNTREND = "STRONG_DOWNTREND"
+
+
+class RiskLevel(Enum):
+    LOW = "LOW"
+    MEDIUM = "MEDIUM"
+    HIGH = "HIGH"
+
+
+@dataclass
 class StockSnapshot:
     """Represents a stock's current market snapshot."""
+    symbol: str = ""
+    company_name: str = ""
+    sector: str = ""
+    segment: str = ""  # Large/Mid/Small/Micro cap
+    price: float = 0.0
+    open_price: float = 0.0
+    high: float = 0.0
+    low: float = 0.0
+    prev_close: float = 0.0
+    change: float = 0.0
+    change_pct: float = 0.0
+    volume: int = 0
+    fifty_two_week_high: float = 0.0
+    fifty_two_week_low: float = 0.0
+    pe_ratio: Optional[float] = None
+    market_cap: Optional[float] = None
+
+
+@dataclass
+class TechnicalIndicators:
+    """Technical analysis indicators for a stock."""
+    # Moving Averages
+    sma_20: Optional[float] = None
+    sma_50: Optional[float] = None
+    sma_200: Optional[float] = None
+    ema_12: Optional[float] = None
+    ema_26: Optional[float] = None
     
-    def __init__(
-        self,
-        symbol: str = "",
-        company_name: str = "",
-        segment: str = "",
-        price: float = 0.0,
-        fifty_two_week_low: float = 0.0,
-        near_wkl_pct: float = 0.0,
-        pe_ratio: float | None = None,
-    ):
-        """
-        Initialize a stock snapshot.
-        
-        Args:
-            symbol: Stock symbol
-            company_name: Company name
-            segment: Market segment (e.g., NIFTY 100)
-            price: Current price
-            fifty_two_week_low: 52-week low price
-            near_wkl_pct: Percentage above 52-week low
-            pe_ratio: Price-to-earnings ratio
-        """
-        self.symbol = symbol
-        self.company_name = company_name
-        self.segment = segment
-        self.price = price
-        self.fifty_two_week_low = fifty_two_week_low
-        self.near_wkl_pct = near_wkl_pct
-        self.pe_ratio = pe_ratio
-
-
-class AnalysisResult(StockSnapshot):
-    """Extends StockSnapshot with AI analysis results."""
+    # Momentum
+    rsi: Optional[float] = None
+    macd: Optional[float] = None
+    macd_signal: Optional[float] = None
+    macd_histogram: Optional[float] = None
     
-    def __init__(
-        self,
-        business_summary: str = "",
-        valuation_view: str = "",
-        profitability_view: str = "",
-        shareholding_view: str = "",
-        key_points: list[str] = None,
-        risks: list[str] = None,
-        raw_text: str = "",
-        **kwargs,
-    ):
-        """
-        Initialize an analysis result.
-        
-        Args:
-            business_summary: Summary of the business
-            valuation_view: Valuation analysis
-            profitability_view: Profitability analysis
-            shareholding_view: Shareholding pattern analysis
-            key_points: List of key investment points
-            risks: List of identified risks
-            raw_text: Raw analysis text
-            **kwargs: Arguments passed to StockSnapshot
-        """
-        super().__init__(**kwargs)
-        self.business_summary = business_summary
-        self.valuation_view = valuation_view
-        self.profitability_view = profitability_view
-        self.shareholding_view = shareholding_view
-        self.key_points = key_points or []
-        self.risks = risks or []
-        self.raw_text = raw_text
-
-
-class PipelineRunResult:
-    """Result of a pipeline run."""
+    # Trend
+    adx: Optional[float] = None
+    trend: Optional[Trend] = None
     
-    def __init__(
-        self,
-        scanned_count: int = 0,
-        near_low_stocks: list[StockSnapshot] = None,
-        analyses: list[AnalysisResult] = None,
-        gemini_failed: bool = False,
-        gemini_failure_reason: str = "",
-    ):
-        """
-        Initialize a pipeline run result.
-        
-        Args:
-            scanned_count: Total stocks scanned
-            near_low_stocks: Stocks near 52-week low
-            analyses: Analysis results
-            gemini_failed: Whether Gemini analysis failed
-            gemini_failure_reason: Reason for Gemini failure
-        """
-        self.scanned_count = scanned_count
-        self.near_low_stocks = near_low_stocks or []
-        self.analyses = analyses or []
-        self.gemini_failed = gemini_failed
-        self.gemini_failure_reason = gemini_failure_reason
+    # Support/Resistance
+    support: Optional[float] = None
+    resistance: Optional[float] = None
+    
+    # Volatility
+    atr: Optional[float] = None
+    bollinger_upper: Optional[float] = None
+    bollinger_lower: Optional[float] = None
+
+
+@dataclass
+class StockRecommendation:
+    """Stock recommendation with analysis."""
+    symbol: str
+    company_name: str
+    sector: str = ""
+    segment: str = ""
+    
+    # Prices
+    current_price: float = 0.0
+    target_price: float = 0.0
+    stop_loss: float = 0.0
+    expected_return: float = 0.0
+    
+    # Scores (0-100)
+    overall_score: float = 0.0
+    technical_score: float = 0.0
+    trend_score: float = 0.0
+    momentum_score: float = 0.0
+    volume_score: float = 0.0
+    
+    # Signals
+    signal: Signal = Signal.HOLD
+    risk_level: RiskLevel = RiskLevel.MEDIUM
+    confidence: float = 0.0
+    
+    # Indicators
+    rsi: Optional[float] = None
+    trend: Optional[Trend] = None
+    macd_signal: str = ""
+    
+    # Reasons
+    reasons: list[str] = field(default_factory=list)
+
+
+@dataclass
+class RecoveryCandidate:
+    """Stock showing recovery potential."""
+    symbol: str
+    company_name: str
+    sector: str = ""
+    
+    current_price: float = 0.0
+    reference_price: float = 0.0  # Price on reference date
+    peak_price: float = 0.0
+    low_price: float = 0.0
+    
+    decline_from_ref_pct: float = 0.0
+    decline_from_peak_pct: float = 0.0
+    recovery_from_low_pct: float = 0.0
+    recent_change_pct: float = 0.0  # Last 5 days
+    
+    trend: Optional[Trend] = None
+    rsi: Optional[float] = None
+    
+    is_recovering: bool = False
+    reasons: list[str] = field(default_factory=list)
+
+
+@dataclass
+class PortfolioHolding:
+    """Single holding in portfolio."""
+    symbol: str
+    quantity: int = 0
+    avg_cost: float = 0.0
+    current_price: float = 0.0
+    investment: float = 0.0
+    current_value: float = 0.0
+    pnl: float = 0.0
+    pnl_pct: float = 0.0
+    recommendation: Optional[StockRecommendation] = None
+
+
+@dataclass
+class DailyReport:
+    """Daily market analysis report."""
+    date: str
+    market_status: str = ""
+    
+    # Top picks
+    buy_signals: list[StockRecommendation] = field(default_factory=list)
+    sell_signals: list[StockRecommendation] = field(default_factory=list)
+    
+    # Recovery stocks
+    recovery_candidates: list[RecoveryCandidate] = field(default_factory=list)
+    
+    # Portfolio (if provided)
+    portfolio_analysis: list[PortfolioHolding] = field(default_factory=list)
+    
+    # Summary
+    total_stocks_analyzed: int = 0
+    strong_buys: int = 0
+    strong_sells: int = 0

@@ -3,10 +3,9 @@ Fundamentals Client.
 Handles data enrichment and building stock snapshots from raw data.
 """
 
-# TODO: Implement FundamentalsClient class with:
-# - build_snapshot() - Converts raw NSE metadata -> StockSnapshot
-# - Safely extracts: price, 52-week low, nearWKL percentage
-# - Handles missing data gracefully
+from typing import Optional
+
+from app.data.models import StockSnapshot
 
 
 class FundamentalsClient:
@@ -16,7 +15,7 @@ class FundamentalsClient:
         """Initialize the fundamentals client."""
         pass
     
-    def build_snapshot(self, raw_data: dict, segment: str) -> "StockSnapshot":
+    def build_snapshot(self, raw_data: dict, segment: str) -> StockSnapshot:
         """
         Build a StockSnapshot from raw NSE data.
         

@@ -4,6 +4,16 @@ Manages all configuration options with environment variable overrides.
 """
 
 import os
+from pathlib import Path
+
+# Load .env file if present
+try:
+    from dotenv import load_dotenv
+    env_path = Path(__file__).parent.parent / ".env"
+    if env_path.exists():
+        load_dotenv(env_path)
+except ImportError:
+    pass  # python-dotenv not installed
 
 
 class Settings:
@@ -38,8 +48,8 @@ class Settings:
         self.near_52_week_low_pct = float(os.getenv("NEAR_52_WEEK_LOW_PCT", "5.0"))
         self.segment_top_n = int(os.getenv("SEGMENT_TOP_N", "20"))
         
-        # Scheduler settings
-        self.schedule_hour = int(os.getenv("SCHEDULE_HOUR", "4"))
+        # Scheduler settings (9:00 AM IST default)
+        self.schedule_hour = int(os.getenv("SCHEDULE_HOUR", "9"))
         self.schedule_minute = int(os.getenv("SCHEDULE_MINUTE", "0"))
     
     def _parse_list(self, value: str) -> list[str]:
