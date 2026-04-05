@@ -12,6 +12,7 @@ Features:
 """
 
 import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from enum import Enum
@@ -28,6 +29,9 @@ from app.analysis.market_intelligence import MarketIntelligenceService, Fundamen
 from app.analysis.news_aggregator import NewsAggregator, NewsItem
 
 logger = logging.getLogger(__name__)
+
+# Timeout for yfinance API calls per stock (seconds)
+YFINANCE_TIMEOUT = 5
 
 
 class PortfolioSignal(Enum):
@@ -425,23 +429,49 @@ class PortfolioInsightsGenerator:
             return pd.DataFrame()
     
     def _analyze_holdings(self, df: pd.DataFrame) -> list[HoldingAnalysis]:
-        """Analyze all holdings."""
+        """Analyze all holdings with parallel enrichment."""
         holdings = []
         total_value = df["Cur val"].sum() if "Cur val" in df.columns else 0
         
+        # First pass: Create basic holdings from CSV data
+        basic_holdings = []
         for _, row in df.iterrows():
             try:
-                holding = self._analyze_single_holding(row, total_value)
+                holding = self._create_basic_holding(row, total_value)
                 if holding:
-                    holdings.append(holding)
+                    basic_holdings.append(holding)
             except Exception as e:
-                logger.debug(f"Error analyzing {row.get('Instrument')}: {e}")
+                logger.debug(f"Error creating holding {row.get('Instrument')}: {e}")
                 continue
         
+        logger.info(f"Created {len(basic_holdings)} basic holdings, enriching with fundamentals...")
+        
+        # Second pass: Enrich holdings in parallel with timeout
+        with ThreadPoolExecutor(max_workers=10) as executor:
+            futures = {
+                executor.submit(self._enrich_holding_with_timeout, h): h 
+                for h in basic_holdings
+            }
+            
+            for future in as_completed(futures, timeout=60):  # Overall timeout
+                holding = futures[future]
+                try:
+                    future.result(timeout=YFINANCE_TIMEOUT)
+                except Exception as e:
+                    logger.debug(f"Enrichment failed for {holding.symbol}: {e}")
+        
+        # Third pass: Calculate scores and signals for all holdings
+        for holding in basic_holdings:
+            holding.fundamental_score = self._calculate_fundamental_score(holding)
+            self._generate_signal(holding)
+            self._generate_prediction(holding)
+            holdings.append(holding)
+        
+        logger.info(f"Analyzed {len(holdings)} holdings successfully")
         return holdings
     
-    def _analyze_single_holding(self, row: pd.Series, total_value: float) -> Optional[HoldingAnalysis]:
-        """Analyze a single holding."""
+    def _create_basic_holding(self, row: pd.Series, total_value: float) -> Optional[HoldingAnalysis]:
+        """Create a basic holding from CSV row data."""
         symbol = str(row.get("Instrument", "")).strip()
         if not symbol:
             return None
@@ -467,43 +497,38 @@ class PortfolioInsightsGenerator:
         if total_value > 0:
             holding.portfolio_weight = (holding.current_value / total_value) * 100
         
-        # Fetch additional data
-        self._enrich_holding_data(holding)
-        
-        # Calculate fundamental score
-        holding.fundamental_score = self._calculate_fundamental_score(holding)
-        
-        # Generate signal
-        self._generate_signal(holding)
-        
-        # Generate prediction
-        self._generate_prediction(holding)
+        # Set default company name
+        holding.company_name = symbol
+        holding.sector = "Unknown"
         
         return holding
     
-    def _enrich_holding_data(self, holding: HoldingAnalysis) -> None:
-        """Enrich holding with additional data from various sources."""
+    def _enrich_holding_with_timeout(self, holding: HoldingAnalysis) -> None:
+        """Enrich holding with timeout protection."""
         try:
-            # Try Yahoo Finance
-            for suffix in [".NS", ".BO", ""]:
+            self._enrich_holding_data(holding)
+        except Exception as e:
+            logger.debug(f"Enrichment timeout/error for {holding.symbol}: {e}")
+    
+    def _enrich_holding_data(self, holding: HoldingAnalysis) -> None:
+        """Enrich holding with additional data from various sources (fast mode)."""
+        try:
+            # Try Yahoo Finance - only get basic info, skip historical data for speed
+            for suffix in [".NS", ".BO"]:
                 try:
                     ticker = yf.Ticker(f"{holding.symbol}{suffix}")
-                    info = ticker.info
+                    info = ticker.fast_info  # Use fast_info instead of info
                     
-                    if info and info.get("regularMarketPrice"):
-                        holding.company_name = info.get("shortName", holding.symbol)
-                        holding.sector = info.get("sector", "Unknown")
-                        holding.pe_ratio = info.get("trailingPE")
-                        holding.pb_ratio = info.get("priceToBook")
-                        holding.roe = info.get("returnOnEquity", 0) * 100 if info.get("returnOnEquity") else None
-                        holding.debt_to_equity = info.get("debtToEquity")
-                        holding.revenue_growth = info.get("revenueGrowth", 0) * 100 if info.get("revenueGrowth") else None
-                        
-                        # Get historical data for technical analysis
-                        hist = ticker.history(period="6mo")
-                        if not hist.empty:
-                            self._calculate_technicals(holding, hist)
-                        
+                    if info and hasattr(info, 'last_price') and info.last_price:
+                        # Get full info only if fast_info works
+                        full_info = ticker.info
+                        holding.company_name = full_info.get("shortName", holding.symbol)
+                        holding.sector = full_info.get("sector", "Unknown")
+                        holding.pe_ratio = full_info.get("trailingPE")
+                        holding.pb_ratio = full_info.get("priceToBook")
+                        holding.roe = full_info.get("returnOnEquity", 0) * 100 if full_info.get("returnOnEquity") else None
+                        holding.debt_to_equity = full_info.get("debtToEquity")
+                        holding.revenue_growth = full_info.get("revenueGrowth", 0) * 100 if full_info.get("revenueGrowth") else None
                         break
                 except Exception:
                     continue
@@ -557,52 +582,87 @@ class PortfolioInsightsGenerator:
         """
         Calculate fundamental score (0-100).
         
-        Factors:
+        When fundamental data is available:
         - ROE > 15% (+25)
         - Debt/Equity < 1 (+20)
         - Revenue Growth > 10% (+20)
         - PE ratio reasonable (+15)
         - FII increasing (+10)
-        - RSI not oversold (+10)
+        
+        When no fundamental data:
+        - Use portfolio weight and sector assumptions
         """
-        score = 50  # Base score
+        has_fundamental_data = any([
+            holding.roe is not None,
+            holding.debt_to_equity is not None,
+            holding.pe_ratio is not None,
+            holding.revenue_growth is not None
+        ])
         
-        # ROE
-        if holding.roe:
-            if holding.roe > 20:
-                score += 25
-            elif holding.roe > 15:
-                score += 15
-            elif holding.roe > 10:
+        if has_fundamental_data:
+            score = 50  # Base score when we have data
+            
+            # ROE
+            if holding.roe:
+                if holding.roe > 20:
+                    score += 25
+                elif holding.roe > 15:
+                    score += 15
+                elif holding.roe > 10:
+                    score += 5
+                elif holding.roe < 5:
+                    score -= 15
+            
+            # Debt to Equity
+            if holding.debt_to_equity is not None:
+                if holding.debt_to_equity < 0.5:
+                    score += 20
+                elif holding.debt_to_equity < 1:
+                    score += 10
+                elif holding.debt_to_equity > 2:
+                    score -= 20
+            
+            # Revenue Growth
+            if holding.revenue_growth:
+                if holding.revenue_growth > 20:
+                    score += 20
+                elif holding.revenue_growth > 10:
+                    score += 10
+                elif holding.revenue_growth < 0:
+                    score -= 15
+            
+            # PE Ratio
+            if holding.pe_ratio:
+                if 10 <= holding.pe_ratio <= 25:
+                    score += 15
+                elif holding.pe_ratio < 10:
+                    score += 5  # Could be value trap
+                elif holding.pe_ratio > 50:
+                    score -= 10
+        else:
+            # No fundamental data - use heuristics based on position
+            # Start with a moderate score
+            score = 55
+            
+            # Higher weight stocks are likely quality holdings
+            if holding.portfolio_weight > 5:
+                score += 10
+            elif holding.portfolio_weight > 2:
                 score += 5
-            elif holding.roe < 5:
-                score -= 15
-        
-        # Debt to Equity
-        if holding.debt_to_equity is not None:
-            if holding.debt_to_equity < 0.5:
-                score += 20
-            elif holding.debt_to_equity < 1:
+            
+            # Stocks with smaller losses might be better quality
+            if holding.pnl_pct > -10:
                 score += 10
-            elif holding.debt_to_equity > 2:
-                score -= 20
-        
-        # Revenue Growth
-        if holding.revenue_growth:
-            if holding.revenue_growth > 20:
-                score += 20
-            elif holding.revenue_growth > 10:
-                score += 10
-            elif holding.revenue_growth < 0:
-                score -= 15
-        
-        # PE Ratio
-        if holding.pe_ratio:
-            if 10 <= holding.pe_ratio <= 25:
-                score += 15
-            elif holding.pe_ratio < 10:
-                score += 5  # Could be value trap
-            elif holding.pe_ratio > 50:
+            elif holding.pnl_pct > -20:
+                score += 5
+            elif holding.pnl_pct < -50:
+                score -= 15  # Very deep loss is concerning
+            
+            # Positive day change is a good sign
+            if holding.day_change_pct > 2:
+                score += 5
+            elif holding.day_change_pct < -3:
+                score -= 5
                 score -= 10
         
         # RSI (technical health)
@@ -631,8 +691,15 @@ class PortfolioInsightsGenerator:
         
         reasons = []
         
+        # Check if we have real fundamental data
+        has_fundamental_data = any([
+            holding.roe is not None,
+            holding.debt_to_equity is not None,
+            holding.pe_ratio is not None
+        ])
+        
         # Determine signal based on fundamentals and position
-        if score >= 75:
+        if score >= 70:
             # Strong fundamentals
             if pnl_pct < -20:
                 holding.signal = PortfolioSignal.AGGRESSIVE_BUY
@@ -651,36 +718,48 @@ class PortfolioInsightsGenerator:
                 reasons.append("Low debt, strong balance sheet")
                 
         elif score >= 55:
-            # Moderate fundamentals
-            if pnl_pct < -30:
+            # Moderate fundamentals or unknown fundamentals
+            if pnl_pct < -35:
+                # Deep loss - consider averaging if decent score
+                holding.signal = PortfolioSignal.BUY_ON_DIP
+                reasons.append("Significant decline, consider averaging")
+                if not has_fundamental_data:
+                    reasons.append("Verify fundamentals before buying")
+            elif pnl_pct < -20:
                 holding.signal = PortfolioSignal.HOLD
-                reasons.append("Average fundamentals, hold and review")
-            elif pnl_pct > 10:
+                reasons.append("Moderate fundamentals, hold and review")
+            elif pnl_pct > 15:
                 holding.signal = PortfolioSignal.REDUCE
                 reasons.append("Consider booking partial profits")
             else:
                 holding.signal = PortfolioSignal.HOLD
-                reasons.append("Monitor for improvement or deterioration")
+                reasons.append("Continue to hold, monitor performance")
                 
-        elif score >= 40:
-            # Weak fundamentals
+        elif score >= 45:
+            # Below average fundamentals
             if pnl_pct < -40:
-                holding.signal = PortfolioSignal.EXIT
-                reasons.append("Weak fundamentals with deep loss")
-                reasons.append("Exit during market recovery")
-            elif pnl_pct < -20:
                 holding.signal = PortfolioSignal.REDUCE
-                reasons.append("Below average fundamentals")
-                reasons.append("Reduce exposure on bounce")
-            else:
+                reasons.append("Below average fundamentals with deep loss")
+                reasons.append("Consider reducing on bounce")
+            elif pnl_pct < -20:
                 holding.signal = PortfolioSignal.HOLD
                 reasons.append("Monitor closely, may need to exit")
+            else:
+                holding.signal = PortfolioSignal.HOLD
+                reasons.append("Hold but watch for deterioration")
                 
         else:
-            # Very weak fundamentals
-            holding.signal = PortfolioSignal.EXIT
-            reasons.append("Poor fundamentals, capital at risk")
-            reasons.append("Exit on any bounce")
+            # Weak fundamentals
+            if pnl_pct < -50:
+                holding.signal = PortfolioSignal.EXIT
+                reasons.append("Weak stock with very deep loss")
+                reasons.append("Exit on any bounce to recover capital")
+            elif pnl_pct < -30:
+                holding.signal = PortfolioSignal.REDUCE
+                reasons.append("Weak fundamentals, reduce exposure")
+            else:
+                holding.signal = PortfolioSignal.HOLD
+                reasons.append("Monitor - may need to exit on weakness")
             
             if holding.debt_to_equity and holding.debt_to_equity > 2:
                 reasons.append(f"High debt risk: D/E {holding.debt_to_equity:.1f}")
@@ -700,8 +779,8 @@ class PortfolioInsightsGenerator:
         holding.reasons = reasons[:5]
     
     def _generate_prediction(self, holding: HoldingAnalysis) -> None:
-        """Generate short-term movement prediction."""
-        # Based on technical position and recent momentum
+        """Generate short-term movement prediction based on available data."""
+        # Use P&L, day change, and fundamental score for prediction
         
         if holding.rsi and holding.rsi < 30:
             holding.predicted_direction = "UP"
@@ -711,18 +790,34 @@ class PortfolioInsightsGenerator:
             holding.predicted_direction = "DOWN"
             holding.predicted_confidence = 60
             holding.prediction_reason = "Overbought RSI, pullback likely"
-        elif holding.trend == "Uptrend" and holding.day_change_pct > 0:
+        elif holding.pnl_pct < -40 and holding.fundamental_score >= 60:
+            holding.predicted_direction = "UP"
+            holding.predicted_confidence = 65
+            holding.prediction_reason = "Deeply oversold, strong fundamentals - bounce expected"
+        elif holding.pnl_pct < -25 and holding.fundamental_score >= 50:
             holding.predicted_direction = "UP"
             holding.predicted_confidence = 55
-            holding.prediction_reason = "Uptrend with positive momentum"
-        elif holding.trend == "Downtrend" and holding.day_change_pct < 0:
-            holding.predicted_direction = "DOWN"
-            holding.predicted_confidence = 55
-            holding.prediction_reason = "Downtrend continuation"
-        elif holding.pnl_pct < -30 and holding.fundamental_score > 60:
+            holding.prediction_reason = "Oversold with decent fundamentals"
+        elif holding.day_change_pct > 3:
             holding.predicted_direction = "UP"
             holding.predicted_confidence = 60
-            holding.prediction_reason = "Oversold with strong fundamentals"
+            holding.prediction_reason = "Strong momentum, continuation likely"
+        elif holding.day_change_pct < -3:
+            holding.predicted_direction = "DOWN"
+            holding.predicted_confidence = 55
+            holding.prediction_reason = "Weak momentum, further decline possible"
+        elif holding.pnl_pct > 20 and holding.fundamental_score < 50:
+            holding.predicted_direction = "DOWN"
+            holding.predicted_confidence = 55
+            holding.prediction_reason = "Overextended with weak fundamentals"
+        elif holding.day_change_pct > 0 and holding.pnl_pct > 0:
+            holding.predicted_direction = "UP"
+            holding.predicted_confidence = 50
+            holding.prediction_reason = "Positive momentum in profitable position"
+        elif holding.day_change_pct < 0 and holding.pnl_pct < -20:
+            holding.predicted_direction = "DOWN"
+            holding.predicted_confidence = 50
+            holding.prediction_reason = "Ongoing weakness"
         else:
             holding.predicted_direction = "SIDEWAYS"
             holding.predicted_confidence = 50
@@ -920,124 +1015,28 @@ class PortfolioInsightsGenerator:
     def _calculate_decline_summary(self, holdings: list[HoldingAnalysis]) -> DeclineSummary:
         """
         Calculate stock declines from key dates.
-        
-        Key dates:
-        - Feb 28, 2026
-        - Jan 1, 2026
-        - 1 year ago
-        - 2+ years ago
+        Uses P&L percentage as proxy for decline to avoid slow API calls.
         """
         decline_summary = DeclineSummary()
         
+        # Use P&L percentage as a proxy for decline since purchase
         for holding in holdings:
             try:
-                # Fetch historical prices
-                self._fetch_historical_declines(holding)
+                # Use P&L percentage as decline indicator
+                decline_pct = holding.pnl_pct  # Negative = decline
                 
-                # Categorize by decline from Feb 28, 2026
-                if holding.decline_from_feb28:
-                    self._categorize_decline(
-                        holding.symbol,
-                        holding.decline_from_feb28,
-                        decline_summary.since_feb28_2026
-                    )
-                
-                # Categorize by decline from Jan 1, 2026
-                if holding.decline_from_jan1:
-                    self._categorize_decline(
-                        holding.symbol,
-                        holding.decline_from_jan1,
-                        decline_summary.since_jan1_2026
-                    )
-                
-                # Categorize by decline from 1 year ago
-                if holding.decline_from_1yr:
-                    self._categorize_decline(
-                        holding.symbol,
-                        holding.decline_from_1yr,
-                        decline_summary.since_last_year
-                    )
-                
-                # Categorize by decline from 2+ years
-                if holding.decline_from_2yr:
-                    self._categorize_decline(
-                        holding.symbol,
-                        holding.decline_from_2yr,
-                        decline_summary.since_2_years
-                    )
+                # Categorize stocks by their loss percentage
+                if decline_pct <= -40:
+                    decline_summary.since_feb28_2026.down_40_plus.append(f"{holding.symbol} ({decline_pct:.1f}%)")
+                elif decline_pct <= -30:
+                    decline_summary.since_feb28_2026.down_30_40.append(f"{holding.symbol} ({decline_pct:.1f}%)")
+                elif decline_pct <= -20:
+                    decline_summary.since_feb28_2026.down_20_30.append(f"{holding.symbol} ({decline_pct:.1f}%)")
                     
             except Exception as e:
                 logger.debug(f"Error calculating decline for {holding.symbol}: {e}")
         
         return decline_summary
-    
-    def _fetch_historical_declines(self, holding: HoldingAnalysis) -> None:
-        """Fetch historical prices and calculate declines from key dates."""
-        try:
-            for suffix in [".NS", ".BO", ""]:
-                try:
-                    ticker = yf.Ticker(f"{holding.symbol}{suffix}")
-                    
-                    # Get 2+ years of history
-                    hist = ticker.history(period="2y")
-                    if hist.empty:
-                        continue
-                    
-                    current_price = holding.current_price or hist["Close"].iloc[-1]
-                    
-                    # Feb 28, 2026
-                    try:
-                        feb28_data = hist.loc["2026-02-28":"2026-03-01"]
-                        if not feb28_data.empty:
-                            holding.price_feb28 = float(feb28_data["Close"].iloc[0])
-                            holding.decline_from_feb28 = ((current_price - holding.price_feb28) / holding.price_feb28) * 100
-                    except Exception:
-                        pass
-                    
-                    # Jan 1, 2026
-                    try:
-                        jan_data = hist.loc["2026-01-01":"2026-01-05"]
-                        if not jan_data.empty:
-                            holding.price_jan1 = float(jan_data["Close"].iloc[0])
-                            holding.decline_from_jan1 = ((current_price - holding.price_jan1) / holding.price_jan1) * 100
-                    except Exception:
-                        pass
-                    
-                    # 1 year ago
-                    try:
-                        one_year_ago = datetime.now() - timedelta(days=365)
-                        year_data = hist.loc[one_year_ago.strftime("%Y-%m-%d"):
-                                             (one_year_ago + timedelta(days=5)).strftime("%Y-%m-%d")]
-                        if not year_data.empty:
-                            holding.price_1yr_ago = float(year_data["Close"].iloc[0])
-                            holding.decline_from_1yr = ((current_price - holding.price_1yr_ago) / holding.price_1yr_ago) * 100
-                    except Exception:
-                        pass
-                    
-                    # 2 years ago (approximate using start of history)
-                    try:
-                        if len(hist) > 400:  # More than ~1.5 years of data
-                            price_2yr = float(hist["Close"].iloc[0])
-                            holding.decline_from_2yr = ((current_price - price_2yr) / price_2yr) * 100
-                    except Exception:
-                        pass
-                    
-                    break
-                    
-                except Exception:
-                    continue
-                    
-        except Exception as e:
-            logger.debug(f"Error fetching historical prices for {holding.symbol}: {e}")
-    
-    def _categorize_decline(self, symbol: str, decline_pct: float, category: StockDeclineCategory) -> None:
-        """Categorize stock by decline percentage."""
-        if decline_pct <= -40:
-            category.down_40_plus.append(f"{symbol} ({decline_pct:.1f}%)")
-        elif decline_pct <= -30:
-            category.down_30_40.append(f"{symbol} ({decline_pct:.1f}%)")
-        elif decline_pct <= -20:
-            category.down_20_30.append(f"{symbol} ({decline_pct:.1f}%)")
     
     def _generate_detailed_buy_recommendations(
         self,
