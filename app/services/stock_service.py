@@ -100,9 +100,19 @@ class StockService:
         
         self._last_report = report
         
-        # Send email notification
+        # Generate portfolio insights if holdings file exists
+        portfolio_insights = None
+        try:
+            logger.info("Generating portfolio insights...")
+            portfolio_insights = self._portfolio_insights_generator.generate()
+            self._last_portfolio_insights = portfolio_insights
+            logger.info(f"Portfolio analysis: {len(portfolio_insights.holdings)} holdings, P/L: {portfolio_insights.summary.total_pnl_pct:.2f}%")
+        except Exception as e:
+            logger.warning(f"Portfolio insights generation failed: {e}")
+        
+        # Send email notification (includes portfolio analysis at the end)
         if notify:
-            self._send_report_email(report, market_overview, newsletter)
+            self._send_report_email(report, market_overview, newsletter, portfolio_insights)
         
         logger.info(
             f"Scan complete: {len(buy_signals)} buy signals, "
@@ -205,7 +215,6 @@ class StockService:
     def get_last_portfolio_insights(self) -> Optional[PortfolioInsights]:
         """Get the last generated portfolio insights."""
         return self._last_portfolio_insights
-        return self._last_report
     
     def _get_market_status(self) -> str:
         """Get current market status."""
@@ -216,19 +225,19 @@ class StockService:
         except Exception:
             return "Unknown"
     
-    def _send_report_email(self, report: DailyReport, market_overview: Optional[MarketOverview] = None, newsletter: Optional[Newsletter] = None) -> bool:
-        """Send daily report via email."""
+    def _send_report_email(self, report: DailyReport, market_overview: Optional[MarketOverview] = None, newsletter: Optional[Newsletter] = None, portfolio_insights: Optional[PortfolioInsights] = None) -> bool:
+        """Send daily report via email (includes portfolio analysis at the end)."""
         subject = f"Stock Market Daily Recommendation - {report.date}"
         
         # Build plain text body
-        body = self._build_text_report(report, market_overview, newsletter)
+        body = self._build_text_report(report, market_overview, newsletter, portfolio_insights)
         
         # Build HTML body
-        html_body = self._build_html_report(report, market_overview, newsletter)
+        html_body = self._build_html_report(report, market_overview, newsletter, portfolio_insights)
         
         return self._email_notifier.send(subject, body, html_body)
     
-    def _build_text_report(self, report: DailyReport, market_overview: Optional[MarketOverview] = None, newsletter: Optional[Newsletter] = None) -> str:
+    def _build_text_report(self, report: DailyReport, market_overview: Optional[MarketOverview] = None, newsletter: Optional[Newsletter] = None, portfolio_insights: Optional[PortfolioInsights] = None) -> str:
         """Build plain text report with table format."""
         lines = [
             "=" * 70,
@@ -334,6 +343,11 @@ class StockService:
                 for reason in rec.reasons[:3]:
                     lines.append(f"    • {reason}")
         
+        # Add portfolio analysis section at the end
+        if portfolio_insights:
+            lines.append("")
+            lines.append(self._portfolio_email_generator.generate_text(portfolio_insights))
+        
         lines.extend([
             "",
             "=" * 70,
@@ -344,7 +358,7 @@ class StockService:
         
         return "\n".join(lines)
     
-    def _build_html_report(self, report: DailyReport, market_overview: Optional[MarketOverview] = None, newsletter: Optional[Newsletter] = None) -> str:
+    def _build_html_report(self, report: DailyReport, market_overview: Optional[MarketOverview] = None, newsletter: Optional[Newsletter] = None, portfolio_insights: Optional[PortfolioInsights] = None) -> str:
         """Build HTML report with table format."""
         
         # Build market overview section
@@ -361,6 +375,22 @@ class StockService:
             # Get CSS from the generator
             from app.analysis.newsletter import NewsletterGenerator
             newsletter_css = NewsletterGenerator().get_newsletter_css()
+        
+        # Build portfolio analysis section (appended at the end)
+        portfolio_section = ""
+        if portfolio_insights:
+            # Extract just the body content from the portfolio HTML (remove head/html tags)
+            portfolio_html = self._portfolio_email_generator.generate_html(portfolio_insights)
+            # The portfolio email generator returns complete HTML, we need just the body content
+            # Use a simple extraction or wrap it in a section
+            portfolio_section = f'''
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 3px solid #1a1a2e;">
+                <h2 style="color: #1a1a2e; text-align: center; margin-bottom: 20px;">
+                    📊 PORTFOLIO ANALYSIS AND RECOMMENDATIONS
+                </h2>
+                {self._extract_portfolio_html_content(portfolio_insights)}
+            </div>
+            '''
         
         # Build buy signals table rows
         buy_rows = ""
@@ -656,6 +686,8 @@ class StockService:
             </div>
             '''}
             
+            {portfolio_section}
+            
             <div class="disclaimer">
                 ⚠️ <strong>Disclaimer:</strong> This report is for informational purposes only and should not be considered as investment advice. 
                 Past performance is not indicative of future results. Please do your own research and consult a financial advisor before making investment decisions.
@@ -752,5 +784,248 @@ class StockService:
                 <div class="outlook-value">{overview.market_outlook}</div>
                 <div class="outlook-reason">{overview.outlook_reason}</div>
             </div>
+        </div>
+        '''
+    
+    def _extract_portfolio_html_content(self, insights: PortfolioInsights) -> str:
+        """Build portfolio analysis HTML content for embedding in daily report."""
+        summary = insights.summary
+        
+        # Portfolio summary cards
+        pnl_color = "#28a745" if summary.total_pnl >= 0 else "#dc3545"
+        pnl_sign = "+" if summary.total_pnl >= 0 else ""
+        day_color = "#28a745" if summary.day_change >= 0 else "#dc3545"
+        day_sign = "+" if summary.day_change >= 0 else ""
+        
+        summary_html = f'''
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 25px;">
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 12px; color: #666; margin-bottom: 5px;">Total Investment</div>
+                <div style="font-size: 18px; font-weight: bold;">₹{summary.total_investment:,.0f}</div>
+            </div>
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 12px; color: #666; margin-bottom: 5px;">Current Value</div>
+                <div style="font-size: 18px; font-weight: bold;">₹{summary.current_value:,.0f}</div>
+            </div>
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 12px; color: #666; margin-bottom: 5px;">Total P&L</div>
+                <div style="font-size: 18px; font-weight: bold; color: {pnl_color};">
+                    {pnl_sign}₹{abs(summary.total_pnl):,.0f} ({pnl_sign}{summary.total_pnl_pct:.2f}%)
+                </div>
+            </div>
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center;">
+                <div style="font-size: 12px; color: #666; margin-bottom: 5px;">Day Change</div>
+                <div style="font-size: 18px; font-weight: bold; color: {day_color};">
+                    {day_sign}{summary.day_change_pct:.2f}%
+                </div>
+            </div>
+        </div>
+        
+        <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 25px;">
+            <div style="text-align: center;">
+                <span style="font-size: 24px; font-weight: bold;">{summary.total_stocks}</span>
+                <span style="font-size: 12px; color: #666; display: block;">Total Stocks</span>
+            </div>
+            <div style="text-align: center;">
+                <span style="font-size: 24px; font-weight: bold; color: #28a745;">{summary.profitable_stocks}</span>
+                <span style="font-size: 12px; color: #666; display: block;">Profitable</span>
+            </div>
+            <div style="text-align: center;">
+                <span style="font-size: 24px; font-weight: bold; color: #dc3545;">{summary.loss_making_stocks}</span>
+                <span style="font-size: 12px; color: #666; display: block;">Loss Making</span>
+            </div>
+        </div>
+        '''
+        
+        # Risk flags
+        risk_flags_html = ""
+        flags = summary.risk_flags.get_flags()
+        if flags:
+            risk_items = "".join([f'<li style="margin: 5px 0;">{flag}</li>' for flag in flags])
+            risk_flags_html = f'''
+            <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                <strong>⚠️ Risk Flags</strong>
+                <ul style="margin: 10px 0 0 20px; padding: 0;">{risk_items}</ul>
+            </div>
+            '''
+        
+        # Top 20 predictions table
+        predictions_html = ""
+        if insights.predictions:
+            pred_rows = ""
+            for i, h in enumerate(insights.predictions[:20], 1):
+                direction_color = "#28a745" if h.predicted_direction == "UP" else "#dc3545" if h.predicted_direction == "DOWN" else "#666"
+                arrow = "▲" if h.predicted_direction == "UP" else "▼" if h.predicted_direction == "DOWN" else "●"
+                pnl_color = "#28a745" if h.pnl_pct >= 0 else "#dc3545"
+                pnl_sign = "+" if h.pnl_pct >= 0 else ""
+                pred_rows += f'''
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 8px;">{i}</td>
+                    <td style="padding: 8px;"><strong>{h.symbol}</strong></td>
+                    <td style="padding: 8px;">₹{h.current_price:,.2f}</td>
+                    <td style="padding: 8px; color: {pnl_color};">{pnl_sign}{h.pnl_pct:.1f}%</td>
+                    <td style="padding: 8px; color: {direction_color}; font-weight: bold;">{arrow} {h.predicted_direction}</td>
+                    <td style="padding: 8px;">{h.predicted_confidence:.0f}%</td>
+                    <td style="padding: 8px; font-size: 12px;">{h.prediction_reason}</td>
+                </tr>
+                '''
+            predictions_html = f'''
+            <div style="margin-bottom: 25px;">
+                <h3 style="color: #1a1a2e; margin-bottom: 15px;">📈 Top 20 Stock Movement Predictions</h3>
+                <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                    <thead>
+                        <tr style="background: #f8f9fa;">
+                            <th style="padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6;">#</th>
+                            <th style="padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6;">Symbol</th>
+                            <th style="padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6;">Price</th>
+                            <th style="padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6;">P&L</th>
+                            <th style="padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6;">Direction</th>
+                            <th style="padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6;">Confidence</th>
+                            <th style="padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6;">Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>{pred_rows}</tbody>
+                </table>
+            </div>
+            '''
+        
+        # Portfolio news
+        news_html = ""
+        if insights.portfolio_news:
+            news_items = ""
+            for item in insights.portfolio_news[:10]:
+                sentiment_color = "#28a745" if item.sentiment == "positive" else "#dc3545" if item.sentiment == "negative" else "#666"
+                sentiment_icon = "+" if item.sentiment == "positive" else "-" if item.sentiment == "negative" else "•"
+                news_items += f'''
+                <div style="padding: 10px; border-bottom: 1px solid #eee;">
+                    <span style="color: {sentiment_color}; font-weight: bold;">[{sentiment_icon}]</span>
+                    {item.headline}
+                    <span style="font-size: 11px; color: #999; display: block; margin-top: 3px;">Source: {item.source}</span>
+                </div>
+                '''
+            news_html = f'''
+            <div style="margin-bottom: 25px;">
+                <h3 style="color: #1a1a2e; margin-bottom: 15px;">📰 Relevant News for Your Portfolio</h3>
+                <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden;">
+                    {news_items}
+                </div>
+            </div>
+            '''
+        
+        # Buy/Hold/Sell signals
+        signals_html = self._build_portfolio_signals_html(insights)
+        
+        return summary_html + risk_flags_html + predictions_html + news_html + signals_html
+    
+    def _build_portfolio_signals_html(self, insights: PortfolioInsights) -> str:
+        """Build Buy/Hold/Sell signals HTML section."""
+        sections = []
+        
+        # Aggressive Buy section
+        if insights.aggressive_buy_stocks:
+            rows = ""
+            for h in insights.aggressive_buy_stocks[:5]:
+                reasons_html = "<br>".join([f"• {r}" for r in h.reasons[:2]])
+                rows += f'''
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 10px;"><strong>{h.symbol}</strong></td>
+                    <td style="padding: 10px;">₹{h.current_price:,.2f}</td>
+                    <td style="padding: 10px; color: {"#28a745" if h.pnl_pct >= 0 else "#dc3545"};">{h.pnl_pct:+.1f}%</td>
+                    <td style="padding: 10px;">{h.fundamental_score:.0f}/100</td>
+                    <td style="padding: 10px; font-size: 11px;">{reasons_html}</td>
+                </tr>
+                '''
+            sections.append(f'''
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: #28a745; margin-bottom: 10px;">🟢 AGGRESSIVE BUY (Average on Dips)</h4>
+                <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                    <thead><tr style="background: #d4edda;">
+                        <th style="padding: 8px; text-align: left;">Symbol</th>
+                        <th style="padding: 8px; text-align: left;">Price</th>
+                        <th style="padding: 8px; text-align: left;">P&L</th>
+                        <th style="padding: 8px; text-align: left;">Score</th>
+                        <th style="padding: 8px; text-align: left;">Reasons</th>
+                    </tr></thead>
+                    <tbody>{rows}</tbody>
+                </table>
+            </div>
+            ''')
+        
+        # Buy on Dip section
+        if insights.buy_on_dip_stocks:
+            symbols = ", ".join([h.symbol for h in insights.buy_on_dip_stocks[:10]])
+            sections.append(f'''
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: #17a2b8; margin-bottom: 10px;">🔵 BUY ON DIP</h4>
+                <p style="background: #d1ecf1; padding: 12px; border-radius: 4px;">{symbols}</p>
+            </div>
+            ''')
+        
+        # Hold section
+        if insights.hold_stocks:
+            symbols = ", ".join([h.symbol for h in insights.hold_stocks[:15]])
+            sections.append(f'''
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: #6c757d; margin-bottom: 10px;">⚪ HOLD</h4>
+                <p style="background: #e9ecef; padding: 12px; border-radius: 4px;">{symbols}</p>
+            </div>
+            ''')
+        
+        # Reduce section
+        if insights.reduce_stocks:
+            symbols = ", ".join([h.symbol for h in insights.reduce_stocks[:10]])
+            sections.append(f'''
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: #ffc107; margin-bottom: 10px;">🟡 REDUCE (Book Partial Profits)</h4>
+                <p style="background: #fff3cd; padding: 12px; border-radius: 4px;">{symbols}</p>
+            </div>
+            ''')
+        
+        # Exit section
+        if insights.exit_stocks:
+            rows = ""
+            for h in insights.exit_stocks:
+                reasons_html = "<br>".join([f"⚠️ {r}" for r in h.reasons[:2]])
+                rows += f'''
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 10px;"><strong>{h.symbol}</strong></td>
+                    <td style="padding: 10px;">₹{h.current_price:,.2f}</td>
+                    <td style="padding: 10px; color: #dc3545;">{h.pnl_pct:+.1f}%</td>
+                    <td style="padding: 10px;">{h.fundamental_score:.0f}/100</td>
+                    <td style="padding: 10px; font-size: 11px;">{reasons_html}</td>
+                </tr>
+                '''
+            sections.append(f'''
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: #dc3545; margin-bottom: 10px;">🔴 EXIT (Weak Fundamentals)</h4>
+                <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                    <thead><tr style="background: #f8d7da;">
+                        <th style="padding: 8px; text-align: left;">Symbol</th>
+                        <th style="padding: 8px; text-align: left;">Price</th>
+                        <th style="padding: 8px; text-align: left;">P&L</th>
+                        <th style="padding: 8px; text-align: left;">Score</th>
+                        <th style="padding: 8px; text-align: left;">Reasons</th>
+                    </tr></thead>
+                    <tbody>{rows}</tbody>
+                </table>
+            </div>
+            ''')
+        
+        # Strategy notes
+        strategy_html = f'''
+        <div style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); padding: 20px; border-radius: 8px; margin-top: 20px;">
+            <h4 style="color: #1565c0; margin: 0 0 10px 0;">📋 Strategy Notes</h4>
+            <p style="margin: 0; color: #1a1a2e;">{insights.market_outlook}</p>
+            <p style="margin: 10px 0 0 0; font-size: 13px; color: #555;">{insights.strategy_notes}</p>
+        </div>
+        '''
+        
+        return f'''
+        <div style="margin-top: 25px;">
+            <h3 style="color: #1a1a2e; margin-bottom: 15px; border-bottom: 2px solid #1a1a2e; padding-bottom: 10px;">
+                📊 BUY / HOLD / SELL SIGNALS
+            </h3>
+            {"".join(sections)}
+            {strategy_html}
         </div>
         '''
