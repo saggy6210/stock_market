@@ -322,9 +322,19 @@ class PortfolioInsightsGenerator:
     - Buy/Hold/Sell recommendations
     """
     
+    # Default holdings filename (relative to project root)
+    DEFAULT_HOLDINGS_FILE = "holdings.csv"
+    
     def __init__(self, holdings_path: str = None):
         """Initialize the portfolio insights generator."""
-        self._holdings_path = holdings_path or "/home/sachavan/github/stock_market/holdings.csv"
+        if holdings_path:
+            self._holdings_path = holdings_path
+        else:
+            # Find holdings.csv relative to project root
+            import os
+            project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            self._holdings_path = os.path.join(project_root, self.DEFAULT_HOLDINGS_FILE)
+        
         self._nse_client = NSEClient()
         self._technical = TechnicalAnalyzer()
         self._recommendation = RecommendationEngine()

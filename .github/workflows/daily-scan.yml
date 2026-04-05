@@ -32,6 +32,7 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           EMAIL_FROM: ${{ vars.EMAIL_FROM }}
           EMAIL_TO: ${{ vars.EMAIL_TO }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ENABLE_SCHEDULER: "false"
         run: |
           python run.py > app.log 2>&1 &
