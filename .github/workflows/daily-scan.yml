@@ -12,6 +12,13 @@ jobs:
   daily-scan:
     name: Run Daily Stock Scan
     runs-on: ubuntu-latest
+    env:
+      SMTP_USER: ${{ vars.SMTP_USER }}
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      EMAIL_FROM: ${{ vars.EMAIL_FROM }}
+      EMAIL_TO: ${{ vars.EMAIL_TO }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      ENABLE_SCHEDULER: "false"
 
     steps:
       - name: Checkout
@@ -26,14 +33,14 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Verify email config
+        run: |
+          echo "SMTP_USER configured: $([[ -n \"$SMTP_USER\" ]] && echo 'YES' || echo 'NO')"
+          echo "SMTP_PASSWORD configured: $([[ -n \"$SMTP_PASSWORD\" ]] && echo 'YES' || echo 'NO')"
+          echo "EMAIL_FROM configured: $([[ -n \"$EMAIL_FROM\" ]] && echo 'YES' || echo 'NO')"
+          echo "EMAIL_TO configured: $([[ -n \"$EMAIL_TO\" ]] && echo 'YES' || echo 'NO')"
+
       - name: Start API
-        env:
-          SMTP_USER: ${{ vars.SMTP_USER }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          EMAIL_FROM: ${{ vars.EMAIL_FROM }}
-          EMAIL_TO: ${{ vars.EMAIL_TO }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          ENABLE_SCHEDULER: "false"
         run: |
           python run.py > app.log 2>&1 &
           echo $! > app.pid
@@ -65,3 +72,6 @@ jobs:
           if [ -f app.log ]; then
             cat app.log || true
           fi
+          echo ""
+          echo "=== Email Status ==="
+          grep -i "email\|smtp\|mail" app.log || echo "No email-related logs found"
