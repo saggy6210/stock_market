@@ -1,6 +1,11 @@
 """
 Recommendation Engine.
 Generates buy/sell recommendations based on technical analysis and news sentiment.
+
+OPTIMIZED FOR MEDIUM-TERM HOLDING (weeks/months):
+- Reduced weight on short-term momentum indicators
+- Increased weight on trend and valuation
+- News sentiment captures market perception
 """
 
 import logging
@@ -16,15 +21,17 @@ logger = logging.getLogger(__name__)
 
 
 class RecommendationEngine:
-    """Generate stock recommendations based on analysis."""
+    """Generate stock recommendations based on analysis for medium-term holding."""
     
-    # Score weights - including sentiment
+    # Score weights optimized for medium-term (weeks/months) holding
+    # Reduced short-term factors, increased fundamental/trend factors
     WEIGHTS = {
-        "technical": 0.30,
-        "trend": 0.20,
-        "momentum": 0.15,
-        "volume": 0.15,
-        "sentiment": 0.20,  # News sentiment weight
+        "technical": 0.25,     # Price vs moving averages, bollinger bands
+        "trend": 0.30,         # Trend strength and direction (most important for medium-term)
+        "momentum": 0.10,      # RSI, MACD (reduced weight - less relevant for medium-term)
+        "volume": 0.10,        # Volume patterns (reduced weight)
+        "sentiment": 0.15,     # News sentiment
+        "valuation": 0.10,     # PE ratio assessment (new for medium-term)
     }
     
     def __init__(self):
@@ -66,20 +73,22 @@ class RecommendationEngine:
         trend_score = self._calc_trend_score(indicators)
         momentum_score = self._calc_momentum_score(indicators)
         volume_score = self._calc_volume_score(stock, avg_volume)
+        valuation_score = self._calc_valuation_score(stock)  # New for medium-term
         
-        # Calculate overall score with sentiment
+        # Calculate overall score with all components (medium-term optimized weights)
         overall_score = (
             technical_score * self.WEIGHTS["technical"]
             + trend_score * self.WEIGHTS["trend"]
             + momentum_score * self.WEIGHTS["momentum"]
             + volume_score * self.WEIGHTS["volume"]
             + sentiment_score * self.WEIGHTS["sentiment"]
+            + valuation_score * self.WEIGHTS["valuation"]
         )
         
         # Determine signal
         signal = self._determine_signal(overall_score)
         
-        # Calculate targets
+        # Calculate targets (medium-term focused)
         target_price, stop_loss = self._calc_targets(stock, indicators, signal)
         expected_return = ((target_price - stock.price) / stock.price * 100) if stock.price > 0 else 0
         
@@ -228,25 +237,99 @@ class RecommendationEngine:
         return 50
     
     def _calc_valuation_score(self, stock: StockSnapshot) -> float:
-        """Calculate valuation score based on P/E ratio."""
+        """
+        Calculate valuation score based on P/E ratio with sector adjustment.
+        
+        Sector-aware PE thresholds for more accurate valuation assessment:
+        - Tech/IT: Higher PE acceptable (15-35)
+        - Banks/Finance: Lower PE expected (8-18)
+        - FMCG/Consumer: Premium PE acceptable (25-45)
+        - Industrials/Capital Goods: Moderate PE (12-25)
+        - Default: Standard PE (10-25)
+        
+        Returns 0-100 score where:
+        - 80-100: Significantly undervalued
+        - 60-80: Reasonably valued with upside
+        - 40-60: Fairly valued
+        - 20-40: Somewhat expensive
+        - 0-20: Very expensive
+        """
         if not stock.pe_ratio or stock.pe_ratio <= 0:
-            return 50
+            return 50  # Neutral when no data
         
         pe = stock.pe_ratio
+        sector = (stock.sector or "").lower()
         
-        # Lower P/E generally better (with limits)
-        if pe < 10:
-            return 85
-        elif pe < 15:
-            return 75
-        elif pe < 20:
-            return 65
-        elif pe < 25:
-            return 50
-        elif pe < 35:
-            return 35
+        # Sector-adjusted PE thresholds
+        if "tech" in sector or "it" in sector or "software" in sector:
+            # Tech stocks can trade at higher multiples
+            if pe < 12:
+                return 90  # Deep value for tech
+            elif pe < 18:
+                return 80
+            elif pe < 25:
+                return 65
+            elif pe < 35:
+                return 50
+            elif pe < 50:
+                return 35
+            else:
+                return 20
+                
+        elif "bank" in sector or "financial" in sector or "nbfc" in sector:
+            # Banks typically trade at lower PE
+            if pe < 6:
+                return 85  # Could be stressed, check NPA
+            elif pe < 10:
+                return 80
+            elif pe < 15:
+                return 65
+            elif pe < 20:
+                return 50
+            elif pe < 25:
+                return 35
+            else:
+                return 20
+                
+        elif "fmcg" in sector or "consumer" in sector:
+            # FMCG commands premium valuations
+            if pe < 20:
+                return 85  # Undervalued for FMCG
+            elif pe < 30:
+                return 70
+            elif pe < 40:
+                return 55
+            elif pe < 50:
+                return 40
+            else:
+                return 25
+                
+        elif "pharma" in sector or "healthcare" in sector:
+            if pe < 15:
+                return 80
+            elif pe < 22:
+                return 65
+            elif pe < 30:
+                return 50
+            elif pe < 40:
+                return 35
+            else:
+                return 20
+                
         else:
-            return 20
+            # Default scoring for other sectors
+            if pe < 8:
+                return 80  # Check for value trap
+            elif pe < 12:
+                return 75
+            elif pe < 18:
+                return 65
+            elif pe < 25:
+                return 50
+            elif pe < 35:
+                return 35
+            else:
+                return 20
     
     def _determine_signal(self, score: float) -> Signal:
         """Determine buy/sell signal from overall score."""

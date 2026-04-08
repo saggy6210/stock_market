@@ -1,4 +1,69 @@
-# TODO: Define batch analysis prompt template
-# - Schema template for stock analyses with field descriptions
-# - Fields: business_summary, valuation_view, profitability_view, 
-#   shareholding_view, key_points[], risks[]
+# Stock Analysis Prompt for Medium-Term Investment (4-12 weeks holding)
+
+## Analysis Framework
+
+For each stock, provide analysis in the following JSON schema:
+
+```json
+{
+  "symbol": "STOCKNAME",
+  "analysis": {
+    "business_summary": "Brief 2-3 line summary of the business model, competitive advantages, and market position",
+    "valuation_view": {
+      "pe_ratio": 0.0,
+      "pb_ratio": 0.0,
+      "peg_ratio": 0.0,
+      "assessment": "UNDERVALUED | FAIRLY_VALUED | OVERVALUED",
+      "reasoning": "Brief explanation comparing to sector peers and historical average"
+    },
+    "profitability_view": {
+      "roe": 0.0,
+      "roce": 0.0,
+      "operating_margin": 0.0,
+      "profit_growth_3yr": 0.0,
+      "assessment": "STRONG | MODERATE | WEAK",
+      "reasoning": "Brief explanation of profitability trends"
+    },
+    "shareholding_view": {
+      "promoter_holding": 0.0,
+      "fii_holding": 0.0,
+      "fii_change_qoq": 0.0,
+      "dii_holding": 0.0,
+      "assessment": "BULLISH | NEUTRAL | BEARISH",
+      "reasoning": "Explanation of institutional activity"
+    },
+    "key_catalysts": [
+      "List 3-5 potential positive catalysts for medium-term"
+    ],
+    "key_risks": [
+      "List 3-5 key risks for medium-term holding"
+    ],
+    "medium_term_outlook": {
+      "direction": "BULLISH | NEUTRAL | BEARISH",
+      "confidence": 0-100,
+      "target_return_pct": 0.0,
+      "holding_period": "4-6 weeks | 6-8 weeks | 8-12 weeks",
+      "reasoning": "Brief explanation of medium-term thesis"
+    }
+  }
+}
+```
+
+## Key Principles for Medium-Term Analysis:
+
+1. **Focus on Fundamentals over Technicals**: For 4-12 week holding, fundamentals matter more than daily price movements.
+
+2. **Valuation Sensitivity**: Entry valuation significantly impacts medium-term returns. Prefer stocks trading below historical averages.
+
+3. **Institutional Flow**: FII/DII accumulation is a strong signal for medium-term performance.
+
+4. **Catalyst Identification**: Identify upcoming events (earnings, AGM, orders, policy changes) that could move the stock.
+
+5. **Risk Management**: Always consider downside before upside. What could go wrong in the next 3 months?
+
+## Instruction:
+- Use simple, clear English
+- Cite specific data points and numbers where available
+- Consider current market conditions and sector trends
+- Return valid JSON when asked
+- Be conservative with confidence scores (avoid >80% unless very strong thesis)

@@ -590,17 +590,27 @@ class PortfolioInsightsGenerator:
     
     def _calculate_fundamental_score(self, holding: HoldingAnalysis) -> float:
         """
-        Calculate fundamental score (0-100).
+        Calculate fundamental score (0-100) optimized for medium-term holding (weeks/months).
         
-        When fundamental data is available:
-        - ROE > 15% (+25)
-        - Debt/Equity < 1 (+20)
-        - Revenue Growth > 10% (+20)
-        - PE ratio reasonable (+15)
-        - FII increasing (+10)
+        ENHANCED SCORING FOR MEDIUM-TERM INVESTMENTS:
+        
+        Quality Metrics (60 points max):
+        - ROE > 15% (+20) - Profitability and efficiency
+        - Debt/Equity < 1 (+15) - Balance sheet strength
+        - Revenue Growth > 10% (+10) - Growth trajectory
+        - PE ratio reasonable (+10) - Valuation
+        - Profit margin stability (+5) - Business moat
+        
+        Institutional Support (20 points max):
+        - FII holding > 15% (+10) - Smart money confidence
+        - FII increasing (+10) - Positive momentum
+        
+        Risk Adjustment (20 points max):
+        - Low volatility bonus (+10)
+        - Market cap size (+10) - Large caps safer for medium-term
         
         When no fundamental data:
-        - Use portfolio weight and sector assumptions
+        - Conservative scoring with sector/position heuristics
         """
         has_fundamental_data = any([
             holding.roe is not None,
@@ -610,91 +620,188 @@ class PortfolioInsightsGenerator:
         ])
         
         if has_fundamental_data:
-            score = 50  # Base score when we have data
+            score = 40  # Base score when we have data (more conservative start)
             
-            # ROE
+            # === QUALITY METRICS (60 points max) ===
+            
+            # ROE - Key profitability metric for medium-term (max +20)
             if holding.roe:
-                if holding.roe > 20:
-                    score += 25
-                elif holding.roe > 15:
-                    score += 15
-                elif holding.roe > 10:
-                    score += 5
+                if holding.roe > 25:
+                    score += 20  # Excellent profitability
+                elif holding.roe > 18:
+                    score += 15  # Very good
+                elif holding.roe > 12:
+                    score += 10  # Good
+                elif holding.roe > 8:
+                    score += 5   # Acceptable
                 elif holding.roe < 5:
-                    score -= 15
+                    score -= 10  # Poor profitability - risky for medium-term
             
-            # Debt to Equity
+            # Debt to Equity - Balance sheet health crucial for medium-term (max +15)
             if holding.debt_to_equity is not None:
-                if holding.debt_to_equity < 0.5:
-                    score += 20
-                elif holding.debt_to_equity < 1:
-                    score += 10
+                if holding.debt_to_equity < 0.3:
+                    score += 15  # Very strong balance sheet
+                elif holding.debt_to_equity < 0.7:
+                    score += 10  # Good
+                elif holding.debt_to_equity < 1.2:
+                    score += 5   # Acceptable
                 elif holding.debt_to_equity > 2:
-                    score -= 20
+                    score -= 15  # High leverage risk
+                elif holding.debt_to_equity > 1.5:
+                    score -= 8   # Moderate debt concern
             
-            # Revenue Growth
+            # Revenue Growth - Growth momentum for medium-term (max +10)
             if holding.revenue_growth:
-                if holding.revenue_growth > 20:
-                    score += 20
-                elif holding.revenue_growth > 10:
-                    score += 10
+                if holding.revenue_growth > 25:
+                    score += 10  # High growth
+                elif holding.revenue_growth > 15:
+                    score += 8   # Good growth
+                elif holding.revenue_growth > 8:
+                    score += 5   # Moderate growth
+                elif holding.revenue_growth > 0:
+                    score += 2   # Positive but low
+                elif holding.revenue_growth < -10:
+                    score -= 12  # Declining revenue - major red flag
                 elif holding.revenue_growth < 0:
-                    score -= 15
+                    score -= 6   # Negative growth
             
-            # PE Ratio
+            # PE Ratio - Valuation check for entry timing (max +10)
             if holding.pe_ratio:
-                if 10 <= holding.pe_ratio <= 25:
-                    score += 15
-                elif holding.pe_ratio < 10:
-                    score += 5  # Could be value trap
-                elif holding.pe_ratio > 50:
-                    score -= 10
+                sector = (holding.sector or "").lower()
+                # Sector-adjusted PE thresholds
+                if "tech" in sector or "it" in sector:
+                    fair_pe_low, fair_pe_high = 15, 35
+                elif "bank" in sector or "financial" in sector:
+                    fair_pe_low, fair_pe_high = 8, 20
+                elif "fmcg" in sector or "consumer" in sector:
+                    fair_pe_low, fair_pe_high = 20, 40
+                else:
+                    fair_pe_low, fair_pe_high = 10, 25  # Default
+                
+                if fair_pe_low <= holding.pe_ratio <= fair_pe_high:
+                    score += 10  # Fairly valued
+                elif holding.pe_ratio < fair_pe_low:
+                    # Low PE - could be value or value trap
+                    if holding.revenue_growth and holding.revenue_growth > 5:
+                        score += 8  # Undervalued with growth
+                    else:
+                        score += 3  # Potential value trap
+                elif holding.pe_ratio > fair_pe_high * 1.5:
+                    score -= 8  # Very expensive
+                elif holding.pe_ratio > fair_pe_high:
+                    score -= 4  # Somewhat expensive
+            
+            # === INSTITUTIONAL SUPPORT (20 points max) ===
+            
+            if holding.fii_holding_pct:
+                if holding.fii_holding_pct > 25:
+                    score += 10  # High institutional interest
+                elif holding.fii_holding_pct > 15:
+                    score += 7
+                elif holding.fii_holding_pct > 8:
+                    score += 4
+            
+            if holding.fii_change:
+                if holding.fii_change > 2:
+                    score += 10  # FII accumulating
+                elif holding.fii_change > 0.5:
+                    score += 6
+                elif holding.fii_change < -2:
+                    score -= 8  # FII selling - bearish signal
+                elif holding.fii_change < -0.5:
+                    score -= 4
+            
+            # === RISK ADJUSTMENT (max +10) ===
+            
+            # Market cap consideration (larger = safer for medium-term)
+            # Use investment amount as proxy for market cap exposure
+            if holding.investment > 50000:
+                score += 5  # Likely large cap holding
+            elif holding.investment > 20000:
+                score += 3
+            
         else:
-            # No fundamental data - use heuristics based on position
-            # Start with a moderate score
-            score = 55
+            # No fundamental data - use conservative heuristics
+            score = 45  # Start lower without data (more conservative)
             
-            # Higher weight stocks are likely quality holdings
-            if holding.portfolio_weight > 5:
-                score += 10
-            elif holding.portfolio_weight > 2:
-                score += 5
+            # Sector-based scoring (some sectors safer for medium-term)
+            sector = (holding.sector or "").lower()
+            if any(s in sector for s in ["bank", "financial", "it", "tech", "pharma", "fmcg"]):
+                score += 10  # Established sectors
+            elif any(s in sector for s in ["infra", "industrial", "auto"]):
+                score += 5   # Cyclical but established
+            elif any(s in sector for s in ["micro", "small", "penny"]):
+                score -= 10  # Higher risk small/micro caps
             
-            # Stocks with smaller losses might be better quality
-            if holding.pnl_pct > -10:
-                score += 10
-            elif holding.pnl_pct > -20:
-                score += 5
+            # Position health indicators
+            if holding.pnl_pct > 0:
+                score += 8   # Profitable position suggests quality
+            elif holding.pnl_pct > -15:
+                score += 4
             elif holding.pnl_pct < -50:
-                score -= 15  # Very deep loss is concerning
-            
-            # Positive day change is a good sign
-            if holding.day_change_pct > 2:
-                score += 5
-            elif holding.day_change_pct < -3:
+                score -= 12  # Very deep loss is concerning
+            elif holding.pnl_pct < -30:
                 score -= 5
-                score -= 10
+            
+            # Portfolio weight as quality proxy
+            if holding.portfolio_weight > 5:
+                score += 8   # Significant allocation = likely quality
+            elif holding.portfolio_weight > 2:
+                score += 4
+            elif holding.portfolio_weight < 0.5:
+                score -= 3   # Very small position = potentially speculative
+            
+            # Day change shows current market sentiment
+            if holding.day_change_pct > 4:
+                score += 5   # Strong momentum
+            elif holding.day_change_pct > 2:
+                score += 3
+            elif holding.day_change_pct < -4:
+                score -= 5   # Weak sentiment
         
-        # RSI (technical health)
+        # === TECHNICAL HEALTH ADJUSTMENT ===
+        
         if holding.rsi:
-            if 40 <= holding.rsi <= 60:
-                score += 10
-            elif holding.rsi < 30:
-                score += 5  # Oversold, potential bounce
-            elif holding.rsi > 70:
-                score -= 5  # Overbought
+            # RSI for medium-term: prefer stocks not at extremes
+            if 45 <= holding.rsi <= 55:
+                score += 8   # Neutral zone - good entry for medium-term
+            elif 35 <= holding.rsi <= 65:
+                score += 5   # Acceptable range
+            elif holding.rsi < 25:
+                score += 3   # Deeply oversold - potential bounce but risky
+            elif holding.rsi < 35:
+                score += 5   # Oversold - good accumulation zone
+            elif holding.rsi > 75:
+                score -= 8   # Very overbought - not ideal entry
+            elif holding.rsi > 65:
+                score -= 3   # Somewhat expensive technically
+        
+        # Trend alignment bonus for medium-term
+        if hasattr(holding, 'trend'):
+            if holding.trend == "Uptrend":
+                score += 5   # Trend following works for medium-term
+            elif holding.trend == "Downtrend":
+                score -= 5   # Fighting the trend is risky
         
         return max(0, min(100, score))
     
     def _generate_signal(self, holding: HoldingAnalysis) -> None:
         """
-        Generate Buy/Hold/Sell signal for a holding.
+        Generate Buy/Hold/Sell signal for a holding optimized for MEDIUM-TERM (weeks/months).
         
-        Strategy context:
-        - Expecting short-term downside (10-20%)
-        - Strong recovery afterward
-        - Identify weak stocks to exit during recovery
-        - Identify strong stocks to average on dips
+        KEY PRINCIPLES FOR MEDIUM-TERM SIGNALS:
+        1. Focus on fundamental quality over short-term price moves
+        2. Consider valuation attractiveness (decline from cost)
+        3. Account for sector/market cycles
+        4. Prioritize risk-adjusted returns
+        5. Factor in institutional positioning
+        
+        Signal Meanings:
+        - AGGRESSIVE BUY: High conviction, average aggressively (2-3x position size over weeks)
+        - BUY ON DIP: Good opportunity, add 25-50% on further weakness
+        - HOLD: Maintain position, no action needed
+        - REDUCE: Take partial profits or reduce exposure by 25-50%
+        - EXIT: Complete exit recommended over 2-4 weeks
         """
         score = holding.fundamental_score
         pnl_pct = holding.pnl_pct
@@ -708,130 +815,329 @@ class PortfolioInsightsGenerator:
             holding.pe_ratio is not None
         ])
         
-        # Determine signal based on fundamentals and position
+        # Technical context
+        is_oversold = holding.rsi and holding.rsi < 35
+        is_overbought = holding.rsi and holding.rsi > 65
+        in_uptrend = hasattr(holding, 'trend') and holding.trend == "Uptrend"
+        in_downtrend = hasattr(holding, 'trend') and holding.trend == "Downtrend"
+        
+        # === STRONG FUNDAMENTALS (Score >= 70) ===
         if score >= 70:
-            # Strong fundamentals
-            if pnl_pct < -20:
+            if pnl_pct < -35 and is_oversold:
                 holding.signal = PortfolioSignal.AGGRESSIVE_BUY
-                reasons.append("Strong fundamentals despite price decline")
-                reasons.append("Excellent opportunity to average down")
-            elif pnl_pct < 0:
+                reasons.append("💎 Premium quality at deep discount - aggressive accumulation zone")
+                reasons.append(f"Down {abs(pnl_pct):.0f}% with strong fundamentals")
+            elif pnl_pct < -25:
+                holding.signal = PortfolioSignal.AGGRESSIVE_BUY
+                reasons.append("Strong fundamentals at attractive valuation")
+                reasons.append("Ideal for systematic accumulation over weeks")
+            elif pnl_pct < -10:
                 holding.signal = PortfolioSignal.BUY_ON_DIP
-                reasons.append("Solid fundamentals, buy on further weakness")
+                reasons.append("Quality stock, add on further weakness")
+            elif pnl_pct > 40 and is_overbought:
+                holding.signal = PortfolioSignal.REDUCE
+                reasons.append("Strong gains, consider partial profit booking")
             else:
                 holding.signal = PortfolioSignal.HOLD
-                reasons.append("Strong stock, hold through volatility")
+                reasons.append("Core holding, maintain for long-term wealth creation")
             
-            if holding.roe and holding.roe > 15:
-                reasons.append(f"High ROE: {holding.roe:.1f}%")
-            if holding.debt_to_equity and holding.debt_to_equity < 0.5:
-                reasons.append("Low debt, strong balance sheet")
+            # Add specific fundamental highlights
+            if holding.roe and holding.roe > 18:
+                reasons.append(f"Excellent capital efficiency (ROE: {holding.roe:.1f}%)")
+            if holding.debt_to_equity is not None and holding.debt_to_equity < 0.5:
+                reasons.append("Strong balance sheet, low leverage risk")
+            if holding.revenue_growth and holding.revenue_growth > 15:
+                reasons.append(f"Healthy growth trajectory ({holding.revenue_growth:.0f}% revenue growth)")
                 
+        # === GOOD FUNDAMENTALS (Score 55-70) ===
         elif score >= 55:
-            # Moderate fundamentals or unknown fundamentals
-            if pnl_pct < -35:
-                # Deep loss - consider averaging if decent score
+            if pnl_pct < -40 and is_oversold:
                 holding.signal = PortfolioSignal.BUY_ON_DIP
-                reasons.append("Significant decline, consider averaging")
+                reasons.append("Good fundamentals at significant discount")
                 if not has_fundamental_data:
-                    reasons.append("Verify fundamentals before buying")
-            elif pnl_pct < -20:
+                    reasons.append("⚠️ Verify fundamentals before averaging")
+            elif pnl_pct < -25:
+                holding.signal = PortfolioSignal.BUY_ON_DIP
+                reasons.append("Reasonable entry point for medium-term")
+            elif pnl_pct < -10:
                 holding.signal = PortfolioSignal.HOLD
-                reasons.append("Moderate fundamentals, hold and review")
-            elif pnl_pct > 15:
+                reasons.append("Decent fundamentals, hold through correction")
+            elif pnl_pct > 25 and is_overbought:
                 holding.signal = PortfolioSignal.REDUCE
-                reasons.append("Consider booking partial profits")
+                reasons.append("Book partial profits, maintain core position")
+            elif pnl_pct > 35:
+                holding.signal = PortfolioSignal.REDUCE
+                reasons.append("Extended gains, trim 25-30% to lock profits")
             else:
                 holding.signal = PortfolioSignal.HOLD
-                reasons.append("Continue to hold, monitor performance")
+                reasons.append("Maintain position, monitor quarterly results")
                 
+        # === AVERAGE FUNDAMENTALS (Score 45-55) ===
         elif score >= 45:
-            # Below average fundamentals
-            if pnl_pct < -40:
-                holding.signal = PortfolioSignal.REDUCE
-                reasons.append("Below average fundamentals with deep loss")
-                reasons.append("Consider reducing on bounce")
-            elif pnl_pct < -20:
-                holding.signal = PortfolioSignal.HOLD
-                reasons.append("Monitor closely, may need to exit")
-            else:
-                holding.signal = PortfolioSignal.HOLD
-                reasons.append("Hold but watch for deterioration")
-                
-        else:
-            # Weak fundamentals
             if pnl_pct < -50:
-                holding.signal = PortfolioSignal.EXIT
-                reasons.append("Weak stock with very deep loss")
-                reasons.append("Exit on any bounce to recover capital")
-            elif pnl_pct < -30:
                 holding.signal = PortfolioSignal.REDUCE
-                reasons.append("Weak fundamentals, reduce exposure")
+                reasons.append("Very deep loss with average fundamentals")
+                reasons.append("Consider reducing on bounce to redeploy capital")
+            elif pnl_pct < -30:
+                holding.signal = PortfolioSignal.HOLD
+                reasons.append("Hold but set strict review timeline (4-6 weeks)")
+                reasons.append("Exit if no fundamental improvement seen")
+            elif pnl_pct > 20:
+                holding.signal = PortfolioSignal.REDUCE
+                reasons.append("Book profits in average-quality stock")
             else:
                 holding.signal = PortfolioSignal.HOLD
-                reasons.append("Monitor - may need to exit on weakness")
+                reasons.append("Watchlist candidate - monitor closely")
+                
+        # === WEAK FUNDAMENTALS (Score < 45) ===
+        else:
+            if pnl_pct < -60:
+                holding.signal = PortfolioSignal.EXIT
+                reasons.append("🚨 Weak fundamentals + severe loss - exit priority")
+                reasons.append("Redeploy capital to quality stocks")
+            elif pnl_pct < -40:
+                holding.signal = PortfolioSignal.EXIT
+                reasons.append("Quality concerns with deep loss - exit on bounce")
+                reasons.append("Capital better deployed elsewhere")
+            elif pnl_pct < -25:
+                holding.signal = PortfolioSignal.REDUCE
+                reasons.append("Weak fundamentals, reduce exposure gradually")
+            elif pnl_pct > 10:
+                holding.signal = PortfolioSignal.REDUCE
+                reasons.append("Book profits in weak fundamental stock")
+            else:
+                holding.signal = PortfolioSignal.HOLD
+                reasons.append("⚠️ Monitor closely, prepare exit plan")
             
             if holding.debt_to_equity and holding.debt_to_equity > 2:
-                reasons.append(f"High debt risk: D/E {holding.debt_to_equity:.1f}")
+                reasons.append(f"⚠️ High debt risk (D/E: {holding.debt_to_equity:.1f})")
+            if in_downtrend:
+                reasons.append("Technical downtrend adding to risk")
         
-        # Risk level
+        # === TECHNICAL OVERLAY FOR TIMING ===
+        if holding.signal in [PortfolioSignal.AGGRESSIVE_BUY, PortfolioSignal.BUY_ON_DIP]:
+            if is_oversold:
+                reasons.append(f"📊 RSI oversold ({holding.rsi:.0f}) - good entry timing")
+            if in_uptrend:
+                reasons.append("📈 Uptrend intact - momentum supportive")
+        
+        if holding.signal in [PortfolioSignal.REDUCE, PortfolioSignal.EXIT]:
+            if is_overbought:
+                reasons.append("📉 RSI overbought - good exit timing")
+            if in_downtrend:
+                reasons.append("⬇️ Downtrend - accelerate exit plan")
+        
+        # === RISK LEVEL ASSESSMENT ===
         if score >= 70 and (holding.debt_to_equity is None or holding.debt_to_equity < 1):
             holding.risk_level = RiskLevel.LOW
-        elif score >= 50:
+        elif score >= 55 and (holding.debt_to_equity is None or holding.debt_to_equity < 1.5):
             holding.risk_level = RiskLevel.MEDIUM
-        elif score >= 30:
+        elif score >= 40:
             holding.risk_level = RiskLevel.HIGH
         else:
             holding.risk_level = RiskLevel.VERY_HIGH
         
-        # Confidence
-        holding.confidence = min(95, holding.fundamental_score + 10)
-        holding.reasons = reasons[:5]
+        # Adjust risk for position size
+        if holding.portfolio_weight > 10:
+            holding.risk_level = RiskLevel(min(holding.risk_level.value, RiskLevel.MEDIUM.value))
+            reasons.append("⚠️ Position concentration risk")
+        
+        # Confidence calculation
+        base_confidence = holding.fundamental_score
+        # Boost confidence if technical confirms fundamental view
+        if (score >= 60 and is_oversold) or (score < 40 and is_overbought):
+            base_confidence += 10
+        holding.confidence = min(90, base_confidence + 5)
+        holding.reasons = reasons[:6]
     
     def _generate_prediction(self, holding: HoldingAnalysis) -> None:
-        """Generate short-term movement prediction based on available data."""
-        # Use P&L, day change, and fundamental score for prediction
+        """
+        Generate medium-term (weeks/months) movement prediction.
         
-        if holding.rsi and holding.rsi < 30:
+        IMPROVED PREDICTION LOGIC FOR MEDIUM-TERM:
+        
+        Factors considered (weighted scoring):
+        1. Fundamental Score (40% weight) - Quality of the business
+        2. Technical Position (25% weight) - RSI, trend, support/resistance
+        3. P&L Recovery Potential (20% weight) - Mean reversion opportunity
+        4. Institutional Interest (15% weight) - Smart money positioning
+        
+        Confidence calibration:
+        - Base confidence: 50%
+        - Adjustments based on factor alignment
+        - Capped at 85% (acknowledging market uncertainty)
+        """
+        # Initialize scores
+        fundamental_signal = 0  # -100 to +100
+        technical_signal = 0
+        recovery_signal = 0
+        institutional_signal = 0
+        
+        reasons = []
+        
+        # === FUNDAMENTAL ANALYSIS (40% weight) ===
+        if holding.fundamental_score >= 75:
+            fundamental_signal = 60
+            reasons.append("Strong business fundamentals support upside")
+        elif holding.fundamental_score >= 60:
+            fundamental_signal = 35
+            reasons.append("Good fundamentals favor medium-term growth")
+        elif holding.fundamental_score >= 45:
+            fundamental_signal = 10
+            reasons.append("Moderate fundamentals, limited conviction")
+        elif holding.fundamental_score >= 30:
+            fundamental_signal = -20
+            reasons.append("Weak fundamentals suggest continued pressure")
+        else:
+            fundamental_signal = -50
+            reasons.append("Poor fundamentals, high downside risk")
+        
+        # === TECHNICAL ANALYSIS (25% weight) ===
+        
+        # RSI analysis for medium-term
+        if holding.rsi:
+            if holding.rsi < 25:
+                technical_signal += 35
+                reasons.append(f"Deeply oversold (RSI {holding.rsi:.0f}), strong bounce potential")
+            elif holding.rsi < 35:
+                technical_signal += 25
+                reasons.append(f"Oversold (RSI {holding.rsi:.0f}), accumulation zone")
+            elif holding.rsi < 45:
+                technical_signal += 10
+                reasons.append("RSI in neutral-bullish zone")
+            elif holding.rsi > 80:
+                technical_signal -= 30
+                reasons.append(f"Extremely overbought (RSI {holding.rsi:.0f}), pullback likely")
+            elif holding.rsi > 70:
+                technical_signal -= 15
+                reasons.append(f"Overbought (RSI {holding.rsi:.0f}), consolidation expected")
+            elif holding.rsi > 60:
+                technical_signal -= 5
+        
+        # Trend analysis
+        if hasattr(holding, 'trend') and holding.trend:
+            if holding.trend == "Uptrend":
+                technical_signal += 20
+                reasons.append("Technical uptrend intact, momentum favorable")
+            elif holding.trend == "Downtrend":
+                technical_signal -= 20
+                reasons.append("Technical downtrend, wait for reversal signal")
+        
+        # Support proximity (good entry for medium-term)
+        if holding.support and holding.current_price > 0:
+            support_distance = ((holding.current_price - holding.support) / holding.current_price) * 100
+            if support_distance < 5:
+                technical_signal += 15
+                reasons.append(f"Trading near strong support (₹{holding.support:.2f})")
+            elif support_distance > 20:
+                technical_signal -= 5  # Far from support
+        
+        # === MEAN REVERSION / RECOVERY POTENTIAL (20% weight) ===
+        
+        if holding.pnl_pct < -50 and holding.fundamental_score >= 55:
+            recovery_signal = 50
+            reasons.append("Significant mean reversion potential with decent fundamentals")
+        elif holding.pnl_pct < -40 and holding.fundamental_score >= 50:
+            recovery_signal = 40
+            reasons.append("Deep discount to cost, recovery probable")
+        elif holding.pnl_pct < -30 and holding.fundamental_score >= 45:
+            recovery_signal = 30
+            reasons.append("Substantial decline creates opportunity")
+        elif holding.pnl_pct < -20 and holding.fundamental_score >= 45:
+            recovery_signal = 20
+            reasons.append("Moderate pullback, accumulation opportunity")
+        elif holding.pnl_pct < -10:
+            recovery_signal = 10
+        elif holding.pnl_pct > 30:
+            recovery_signal = -15  # Extended gains, profit booking risk
+            reasons.append("Extended gains, partial profit booking possible")
+        elif holding.pnl_pct > 20:
+            recovery_signal = -10
+        
+        # === INSTITUTIONAL SIGNAL (15% weight) ===
+        
+        if holding.fii_change:
+            if holding.fii_change > 3:
+                institutional_signal = 40
+                reasons.append("Strong FII accumulation ongoing")
+            elif holding.fii_change > 1:
+                institutional_signal = 25
+                reasons.append("FII buying, institutional support")
+            elif holding.fii_change > 0:
+                institutional_signal = 10
+            elif holding.fii_change < -3:
+                institutional_signal = -35
+                reasons.append("FII selling pressure, caution warranted")
+            elif holding.fii_change < -1:
+                institutional_signal = -20
+                reasons.append("FII reducing exposure")
+        elif holding.fii_holding_pct:
+            if holding.fii_holding_pct > 30:
+                institutional_signal = 20
+            elif holding.fii_holding_pct > 15:
+                institutional_signal = 10
+            elif holding.fii_holding_pct < 5:
+                institutional_signal = -10
+        
+        # === CALCULATE WEIGHTED DIRECTION ===
+        
+        total_signal = (
+            fundamental_signal * 0.40 +
+            technical_signal * 0.25 +
+            recovery_signal * 0.20 +
+            institutional_signal * 0.15
+        )
+        
+        # === DETERMINE DIRECTION AND CONFIDENCE ===
+        
+        if total_signal > 25:
             holding.predicted_direction = "UP"
-            holding.predicted_confidence = 65
-            holding.prediction_reason = "Oversold RSI, bounce expected"
-        elif holding.rsi and holding.rsi > 70:
+            # Confidence scales with signal strength
+            base_confidence = 55 + (total_signal - 25) * 0.5
+            # Boost confidence if multiple factors align
+            factor_count = sum([
+                fundamental_signal > 20,
+                technical_signal > 10,
+                recovery_signal > 15,
+                institutional_signal > 10
+            ])
+            confidence_boost = factor_count * 5
+            holding.predicted_confidence = min(85, base_confidence + confidence_boost)
+        elif total_signal < -20:
             holding.predicted_direction = "DOWN"
-            holding.predicted_confidence = 60
-            holding.prediction_reason = "Overbought RSI, pullback likely"
-        elif holding.pnl_pct < -40 and holding.fundamental_score >= 60:
-            holding.predicted_direction = "UP"
-            holding.predicted_confidence = 65
-            holding.prediction_reason = "Deeply oversold, strong fundamentals - bounce expected"
-        elif holding.pnl_pct < -25 and holding.fundamental_score >= 50:
-            holding.predicted_direction = "UP"
-            holding.predicted_confidence = 55
-            holding.prediction_reason = "Oversold with decent fundamentals"
-        elif holding.day_change_pct > 3:
-            holding.predicted_direction = "UP"
-            holding.predicted_confidence = 60
-            holding.prediction_reason = "Strong momentum, continuation likely"
-        elif holding.day_change_pct < -3:
-            holding.predicted_direction = "DOWN"
-            holding.predicted_confidence = 55
-            holding.prediction_reason = "Weak momentum, further decline possible"
-        elif holding.pnl_pct > 20 and holding.fundamental_score < 50:
-            holding.predicted_direction = "DOWN"
-            holding.predicted_confidence = 55
-            holding.prediction_reason = "Overextended with weak fundamentals"
-        elif holding.day_change_pct > 0 and holding.pnl_pct > 0:
-            holding.predicted_direction = "UP"
-            holding.predicted_confidence = 50
-            holding.prediction_reason = "Positive momentum in profitable position"
-        elif holding.day_change_pct < 0 and holding.pnl_pct < -20:
-            holding.predicted_direction = "DOWN"
-            holding.predicted_confidence = 50
-            holding.prediction_reason = "Ongoing weakness"
+            base_confidence = 55 + abs(total_signal + 20) * 0.4
+            factor_count = sum([
+                fundamental_signal < -15,
+                technical_signal < -10,
+                recovery_signal < -5,
+                institutional_signal < -10
+            ])
+            confidence_boost = factor_count * 4
+            holding.predicted_confidence = min(80, base_confidence + confidence_boost)
         else:
             holding.predicted_direction = "SIDEWAYS"
-            holding.predicted_confidence = 50
-            holding.prediction_reason = "Consolidation expected"
+            holding.predicted_confidence = 50 + abs(total_signal) * 0.3
+        
+        # === SET PREDICTION REASON (pick best reason) ===
+        
+        # Prioritize reasons by importance
+        reason_priorities = [
+            "Deeply oversold", "Strong FII accumulation", "Significant mean reversion",
+            "Strong business fundamentals", "Technical uptrend", "FII selling",
+            "Poor fundamentals", "Extremely overbought", "Trading near strong support"
+        ]
+        
+        primary_reason = reasons[0] if reasons else "Mixed signals, sideways expected"
+        for priority in reason_priorities:
+            for r in reasons:
+                if priority.lower() in r.lower():
+                    primary_reason = r
+                    break
+            else:
+                continue
+            break
+        
+        holding.prediction_reason = primary_reason
     
     def _calculate_summary(self, holdings: list[HoldingAnalysis]) -> PortfolioSummary:
         """Calculate portfolio summary."""
@@ -1054,29 +1360,78 @@ class PortfolioInsightsGenerator:
         news_items: list[NewsItem]
     ) -> list[DetailedBuyRecommendation]:
         """
-        Generate top 10 detailed strong buy recommendations.
+        Generate top 10 detailed buy recommendations for MEDIUM-TERM holding (weeks/months).
         
-        Includes:
-        - Quantity to buy
-        - Detailed reasons (FII, govt policy, earnings, orders, news)
-        - Related news
+        IMPROVED SELECTION CRITERIA:
+        1. Minimum fundamental score of 55 (quality threshold)
+        2. Meaningful decline (-15% or more) for value opportunity
+        3. Reasonable position size for averaging
+        4. Diversification across sectors
+        
+        RANKING ALGORITHM:
+        - Composite score = (Fundamental Score * 0.5) + (Discount Factor * 0.3) + (Sector Bonus * 0.2)
+        - Discount Factor: More discount = higher score (capped at 50% decline)
+        - Sector Bonus: Favor underrepresented quality sectors
         """
         recommendations = []
         
-        # Filter for strong buy candidates
+        # Filter for strong buy candidates with stricter criteria
         candidates = [
             h for h in holdings
             if h.signal in [PortfolioSignal.AGGRESSIVE_BUY, PortfolioSignal.BUY_ON_DIP]
-            and h.fundamental_score >= 50
+            and h.fundamental_score >= 55  # Higher threshold for medium-term
+            and h.pnl_pct < -10  # Must have meaningful discount
         ]
         
-        # Sort by score and decline (deeper decline = better opportunity)
-        candidates.sort(
-            key=lambda x: (x.fundamental_score, -x.pnl_pct),
-            reverse=True
-        )
+        # Calculate composite score for ranking
+        def calc_composite_score(h: HoldingAnalysis) -> float:
+            # Fundamental score (50% weight)
+            fund_component = h.fundamental_score * 0.5
+            
+            # Discount factor (30% weight) - deeper discount = higher score
+            # Cap at 50% decline, normalize to 0-100
+            discount_pct = min(abs(h.pnl_pct), 50)
+            discount_component = (discount_pct / 50) * 100 * 0.3
+            
+            # Technical timing bonus (10% weight)
+            tech_component = 0
+            if h.rsi and h.rsi < 35:
+                tech_component = 25  # Oversold bonus
+            elif h.rsi and h.rsi < 45:
+                tech_component = 15  # Neutral-bullish
+            elif h.rsi and h.rsi > 65:
+                tech_component = -10  # Overbought penalty
+            tech_component *= 0.1
+            
+            # Position size factor (10% weight) - prefer larger positions for averaging
+            size_component = 0
+            if h.investment > 30000:
+                size_component = 20
+            elif h.investment > 15000:
+                size_component = 15
+            elif h.investment > 5000:
+                size_component = 10
+            else:
+                size_component = 5  # Small position, less averaging benefit
+            size_component *= 0.1
+            
+            return fund_component + discount_component + tech_component + size_component
         
-        for holding in candidates[:10]:
+        # Sort by composite score
+        candidates.sort(key=calc_composite_score, reverse=True)
+        
+        # Diversification: limit to 2 stocks per sector
+        sector_counts = {}
+        selected = []
+        for h in candidates:
+            sector = h.sector or "Unknown"
+            if sector_counts.get(sector, 0) < 2:
+                selected.append(h)
+                sector_counts[sector] = sector_counts.get(sector, 0) + 1
+                if len(selected) >= 10:
+                    break
+        
+        for holding in selected:
             rec = self._build_detailed_recommendation(holding, news_items)
             recommendations.append(rec)
         
@@ -1087,7 +1442,15 @@ class PortfolioInsightsGenerator:
         holding: HoldingAnalysis,
         news_items: list[NewsItem]
     ) -> DetailedBuyRecommendation:
-        """Build a detailed recommendation for a single stock."""
+        """
+        Build a detailed recommendation for medium-term holding (weeks/months).
+        
+        Includes:
+        - Suggested holding period based on decline and fundamentals
+        - Phased buying recommendation (not all at once)
+        - Risk-adjusted position sizing
+        - Clear target and stop-loss levels
+        """
         rec = DetailedBuyRecommendation(
             symbol=holding.symbol,
             company_name=holding.company_name,
@@ -1097,130 +1460,207 @@ class PortfolioInsightsGenerator:
             current_avg_cost=holding.avg_cost,
         )
         
-        # Calculate recommended quantity (based on how much to average)
-        # Target: Average down to reduce avg cost by ~10-15%
+        # === POSITION SIZING BASED ON FUNDAMENTAL QUALITY AND DECLINE ===
         current_investment = holding.investment
         
-        if holding.pnl_pct < -30:
-            # Deep loss: Suggest investing 50% of current position
-            rec.recommended_investment = current_investment * 0.5
-            rec.signal = "AGGRESSIVE BUY"
-        elif holding.pnl_pct < -20:
-            # Moderate loss: Suggest investing 30% of current position
-            rec.recommended_investment = current_investment * 0.3
-            rec.signal = "STRONG BUY"
+        # Quality-adjusted position sizing
+        if holding.fundamental_score >= 70:
+            # High quality - can be more aggressive
+            if holding.pnl_pct < -40:
+                rec.recommended_investment = current_investment * 0.6  # 60% of position
+                rec.signal = "AGGRESSIVE BUY"
+            elif holding.pnl_pct < -25:
+                rec.recommended_investment = current_investment * 0.4
+                rec.signal = "STRONG BUY"
+            else:
+                rec.recommended_investment = current_investment * 0.25
+                rec.signal = "BUY ON DIP"
+        elif holding.fundamental_score >= 55:
+            # Medium quality - moderate sizing
+            if holding.pnl_pct < -35:
+                rec.recommended_investment = current_investment * 0.35
+                rec.signal = "STRONG BUY"
+            elif holding.pnl_pct < -20:
+                rec.recommended_investment = current_investment * 0.25
+                rec.signal = "BUY ON DIP"
+            else:
+                rec.recommended_investment = current_investment * 0.15
+                rec.signal = "SMALL ADD"
         else:
-            # Small loss or profit: Suggest investing 20% of current position
-            rec.recommended_investment = current_investment * 0.2
-            rec.signal = "BUY ON DIP"
+            # Lower quality - conservative
+            rec.recommended_investment = current_investment * 0.15
+            rec.signal = "CAUTIOUS BUY"
         
-        # Cap at ₹50,000 per recommendation
-        rec.recommended_investment = min(rec.recommended_investment, 50000)
+        # Cap based on risk management (max ₹75K for high quality, ₹40K for others)
+        max_investment = 75000 if holding.fundamental_score >= 70 else 40000
+        rec.recommended_investment = min(rec.recommended_investment, max_investment)
         
         # Calculate quantity
         if holding.current_price > 0:
             rec.recommended_qty = int(rec.recommended_investment / holding.current_price)
             rec.recommended_investment = rec.recommended_qty * holding.current_price
         
-        # Entry range (current price +/- 3%)
-        rec.entry_price_range = f"₹{holding.current_price * 0.97:.2f} - ₹{holding.current_price * 1.03:.2f}"
+        # Entry range - widen for high volatility stocks (using day change as proxy)
+        volatility_factor = max(3, min(8, abs(holding.day_change_pct) * 1.5 + 3))
+        rec.entry_price_range = (
+            f"₹{holding.current_price * (1 - volatility_factor/100):.2f} - "
+            f"₹{holding.current_price * (1 + volatility_factor/100):.2f}"
+        )
         
-        # Targets
-        rec.target_price = holding.target_price or holding.current_price * 1.25
-        rec.stop_loss = holding.stop_loss or holding.current_price * 0.90
+        # === MEDIUM-TERM TARGETS (optimized for weeks/months holding) ===
+        
+        # Target based on fundamentals and decline
+        if holding.pnl_pct < -40 and holding.fundamental_score >= 65:
+            # Deep value: expect 30-40% recovery over 3-6 months
+            rec.target_price = holding.current_price * 1.35
+        elif holding.pnl_pct < -25 and holding.fundamental_score >= 60:
+            # Good value: expect 20-30% over 2-4 months
+            rec.target_price = holding.current_price * 1.25
+        elif holding.pnl_pct < -15:
+            # Moderate discount: expect 15-20% over 1-3 months
+            rec.target_price = holding.current_price * 1.18
+        else:
+            # Small discount: expect 10-15% over 1-2 months
+            rec.target_price = holding.current_price * 1.12
+        
+        # Override with technical resistance if available
+        if holding.resistance and holding.resistance > holding.current_price:
+            rec.target_price = max(rec.target_price, holding.resistance)
+        
+        # Stop-loss based on support or percentage
+        if holding.support and holding.support < holding.current_price:
+            # Use 5% below support
+            rec.stop_loss = holding.support * 0.95
+        else:
+            # Default: 12% below current for medium-term
+            rec.stop_loss = holding.current_price * 0.88
+        
         rec.expected_return_pct = ((rec.target_price - holding.current_price) / holding.current_price) * 100
         
         # Decline metrics
-        rec.decline_from_high = holding.pnl_pct  # Using P&L as proxy for decline
+        rec.decline_from_high = holding.pnl_pct
         rec.decline_from_feb28 = holding.decline_from_feb28 or 0
         rec.decline_from_jan1 = holding.decline_from_jan1 or 0
         
-        # Scores
+        # === SCORING ===
         rec.fundamental_score = holding.fundamental_score
+        
+        # Technical score with more nuanced calculation
         rec.technical_score = 50  # Base score
-        if holding.rsi and holding.rsi < 30:
-            rec.technical_score += 30
-        elif holding.rsi and holding.rsi < 40:
-            rec.technical_score += 15
+        if holding.rsi:
+            if holding.rsi < 25:
+                rec.technical_score += 35  # Deeply oversold
+            elif holding.rsi < 35:
+                rec.technical_score += 25
+            elif holding.rsi < 45:
+                rec.technical_score += 10
+            elif holding.rsi > 70:
+                rec.technical_score -= 15
+        
         if holding.trend == "Uptrend":
-            rec.technical_score += 10
+            rec.technical_score += 15
+        elif holding.trend == "Downtrend":
+            rec.technical_score -= 10
         
-        rec.overall_confidence = (rec.fundamental_score + rec.technical_score) / 2
+        rec.overall_confidence = (rec.fundamental_score * 0.6 + rec.technical_score * 0.4)
         
-        # Generate detailed reasons
+        # === GENERATE DETAILED REASONS ===
         reasons = []
         
-        # FII/DII activity
-        if holding.fii_change and holding.fii_change > 0:
+        # FII/DII activity (high priority for medium-term)
+        if holding.fii_change and holding.fii_change > 1:
             rec.fii_dii_activity = f"FII increased stake by {holding.fii_change:.1f}% last quarter"
-            reasons.append(f"📈 FII Buying: {rec.fii_dii_activity}")
-        elif holding.fii_holding_pct and holding.fii_holding_pct > 20:
-            rec.fii_dii_activity = f"High FII holding: {holding.fii_holding_pct:.1f}%"
+            reasons.append(f"📈 Smart Money: {rec.fii_dii_activity}")
+        elif holding.fii_change and holding.fii_change > 0:
+            rec.fii_dii_activity = f"FII marginally increased ({holding.fii_change:.1f}%)"
+            reasons.append(f"🏦 {rec.fii_dii_activity}")
+        elif holding.fii_holding_pct and holding.fii_holding_pct > 25:
+            rec.fii_dii_activity = f"Strong FII base: {holding.fii_holding_pct:.1f}%"
             reasons.append(f"🏦 Institutional Support: {rec.fii_dii_activity}")
         
-        # Fundamental reasons
-        if holding.roe and holding.roe > 15:
-            rec.earnings_profit = f"Strong ROE of {holding.roe:.1f}%"
+        # Fundamental quality reasons
+        if holding.roe and holding.roe > 18:
+            rec.earnings_profit = f"Excellent capital efficiency (ROE: {holding.roe:.1f}%)"
+            reasons.append(f"💰 {rec.earnings_profit}")
+        elif holding.roe and holding.roe > 12:
+            rec.earnings_profit = f"Good ROE of {holding.roe:.1f}%"
             reasons.append(f"💰 {rec.earnings_profit}")
         
-        if holding.revenue_growth and holding.revenue_growth > 10:
-            reasons.append(f"📊 Revenue growth: {holding.revenue_growth:.1f}%")
+        if holding.revenue_growth and holding.revenue_growth > 15:
+            reasons.append(f"📊 Strong growth: {holding.revenue_growth:.1f}% revenue increase")
+        elif holding.revenue_growth and holding.revenue_growth > 8:
+            reasons.append(f"📊 Steady growth: {holding.revenue_growth:.1f}% revenue increase")
         
-        if holding.debt_to_equity is not None and holding.debt_to_equity < 0.5:
-            reasons.append(f"🛡️ Low debt (D/E: {holding.debt_to_equity:.2f})")
+        if holding.debt_to_equity is not None and holding.debt_to_equity < 0.3:
+            reasons.append(f"🛡️ Very low debt (D/E: {holding.debt_to_equity:.2f}) - safe for medium-term")
+        elif holding.debt_to_equity is not None and holding.debt_to_equity < 0.7:
+            reasons.append(f"🛡️ Manageable debt (D/E: {holding.debt_to_equity:.2f})")
         
-        if holding.pe_ratio and 10 <= holding.pe_ratio <= 25:
-            reasons.append(f"📉 Attractive valuation (PE: {holding.pe_ratio:.1f})")
+        # Valuation reasons
+        if holding.pe_ratio:
+            sector = (holding.sector or "").lower()
+            if "tech" in sector or "it" in sector:
+                if holding.pe_ratio < 25:
+                    reasons.append(f"📉 Attractive tech valuation (PE: {holding.pe_ratio:.1f})")
+            elif "bank" in sector or "financial" in sector:
+                if holding.pe_ratio < 15:
+                    reasons.append(f"📉 Value pricing for financials (PE: {holding.pe_ratio:.1f})")
+            elif holding.pe_ratio < 20:
+                reasons.append(f"📉 Reasonable valuation (PE: {holding.pe_ratio:.1f})")
         
-        # Technical reasons
-        if holding.rsi and holding.rsi < 35:
-            rec.technical_reason = f"Oversold (RSI: {holding.rsi:.0f})"
-            reasons.append(f"📉 {rec.technical_reason}")
+        # Technical timing reasons
+        if holding.rsi and holding.rsi < 30:
+            rec.technical_reason = f"Deeply oversold (RSI: {holding.rsi:.0f}) - strong bounce potential"
+            reasons.append(f"📊 {rec.technical_reason}")
+        elif holding.rsi and holding.rsi < 40:
+            rec.technical_reason = f"Oversold zone (RSI: {holding.rsi:.0f}) - accumulation area"
+            reasons.append(f"📊 {rec.technical_reason}")
         
         if holding.trend == "Uptrend":
-            reasons.append("📈 Technical uptrend intact")
+            reasons.append("📈 Technical uptrend - momentum supportive")
         
-        # Decline-based reasons
-        if holding.pnl_pct < -30:
-            reasons.append(f"💎 Down {abs(holding.pnl_pct):.1f}% from cost - deep value opportunity")
-        
-        if holding.decline_from_feb28 and holding.decline_from_feb28 < -20:
-            reasons.append(f"📅 Down {abs(holding.decline_from_feb28):.1f}% since Feb 28 - recovery expected")
+        # Discount-based reasons (key for medium-term value)
+        if holding.pnl_pct < -40:
+            reasons.append(f"💎 DEEP VALUE: Down {abs(holding.pnl_pct):.0f}% - significant recovery potential")
+        elif holding.pnl_pct < -25:
+            reasons.append(f"💎 VALUE: Down {abs(holding.pnl_pct):.0f}% from cost - attractive entry")
         
         # Default reasons if none found
         if not reasons:
             reasons = [
-                "Strong sector positioning",
-                "Quality management track record",
-                "Market leader in segment"
+                "Strong sector positioning for medium-term",
+                "Quality business with growth runway",
+                "Market correction creates opportunity"
             ]
         
-        rec.reasons = reasons[:6]  # Top 6 reasons
+        rec.reasons = reasons[:6]
         
-        # Related news
+        # Related news (important for medium-term catalyst)
         symbol_upper = holding.symbol.upper()
-        for news in news_items[:10]:
+        for news in news_items[:15]:
             if symbol_upper in news.headline.upper() or symbol_upper in [s.upper() for s in news.stocks_mentioned]:
-                rec.related_news.append(news.headline[:80])
-                if len(rec.related_news) >= 3:
-                    break
+                # Prioritize positive news
+                if news.sentiment == "positive" or len(rec.related_news) < 2:
+                    rec.related_news.append(news.headline[:80])
+                    if len(rec.related_news) >= 3:
+                        break
         
-        # Add sector/policy-related catalyst
+        # Sector/policy catalyst (important for medium-term thesis)
         if holding.sector:
             sector_lower = holding.sector.lower()
             if "tech" in sector_lower or "it" in sector_lower:
-                rec.government_policy = "Digital India push, IT export benefits"
-                reasons.append(f"🏛️ Policy Support: {rec.government_policy}")
+                rec.government_policy = "Digital India, AI/Cloud adoption, IT export growth"
             elif "infra" in sector_lower or "construction" in sector_lower:
-                rec.government_policy = "Infra capex push, highway projects"
-                reasons.append(f"🏛️ Policy Support: {rec.government_policy}")
+                rec.government_policy = "PM Gati Shakti, ₹10L Cr Infra push, highway projects"
             elif "green" in sector_lower or "energy" in sector_lower or "renewable" in sector_lower:
-                rec.government_policy = "Green energy incentives, PLI schemes"
-                reasons.append(f"🏛️ Policy Support: {rec.government_policy}")
+                rec.government_policy = "500 GW renewable by 2030, PLI for solar, EV incentives"
             elif "bank" in sector_lower or "financial" in sector_lower:
-                rec.government_policy = "Credit growth, banking reforms"
+                rec.government_policy = "Credit growth, NPA cleanup, financial inclusion"
             elif "defence" in sector_lower:
-                rec.government_policy = "Make in India defence push, export orders"
-                reasons.append(f"🏛️ Defence Boost: {rec.government_policy}")
+                rec.government_policy = "Atmanirbhar Bharat, defence exports, modernization"
+            elif "pharma" in sector_lower or "health" in sector_lower:
+                rec.government_policy = "Healthcare expansion, API self-reliance, Ayushman"
+            elif "auto" in sector_lower:
+                rec.government_policy = "EV transition, FAME subsidies, export growth"
         
         return rec
