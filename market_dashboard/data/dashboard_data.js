@@ -1,0 +1,87 @@
+// Auto-generated on 2026-04-11T20:13:42.149756
+const DASHBOARD_DATA = {
+  "timestamp": "2026-04-11T20:13:41.384703",
+  "indices": {},
+  "commodities": {},
+  "screener": {
+    "feb26": [],
+    "jan26": [],
+    "may25": [],
+    "jan25": []
+  },
+  "fii_dii": {
+    "last_sessions": [
+      {
+        "date": "11 Apr 2026",
+        "fii_net": 672.09,
+        "dii_net": 410.05
+      },
+      {
+        "date": "10 Apr 2026",
+        "fii_net": -1711.19,
+        "dii_net": 955.9
+      },
+      {
+        "date": "09 Apr 2026",
+        "fii_net": -2811.97,
+        "dii_net": 4168.17
+      }
+    ],
+    "weekly": {
+      "fii": -23706,
+      "dii": 28408
+    },
+    "monthly": {
+      "fii": -53821,
+      "dii": 61012
+    }
+  },
+  "market_outlook": {
+    "sentiment": "NEUTRAL",
+    "badge_class": "neutral",
+    "vix": {
+      "value": 20,
+      "change_pct": 0
+    },
+    "reasons": [],
+    "factors": [
+      {
+        "icon": "\ud83d\udcc9",
+        "label": "VIX 20.00",
+        "status": "negative"
+      },
+      {
+        "icon": "\u26fd",
+        "label": "Crude 0.0%",
+        "status": "negative"
+      }
+    ]
+  },
+  "predictions": [
+    {
+      "symbol": "RELIANCE",
+      "direction": "UP",
+      "reason": "Oil refining margins improve, Jio momentum"
+    },
+    {
+      "symbol": "INFY",
+      "direction": "UP",
+      "reason": "NASDAQ positive, large deal wins"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "direction": "UP",
+      "reason": "Strong credit growth, NIM stability"
+    },
+    {
+      "symbol": "TATASTEEL",
+      "direction": "DOWN",
+      "reason": "Steel prices under pressure"
+    },
+    {
+      "symbol": "ONGC",
+      "direction": "UP",
+      "reason": "Crude stabilizing benefits O&G sector"
+    }
+  ]
+};
