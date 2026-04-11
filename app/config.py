@@ -37,6 +37,12 @@ class Settings:
         self.email_from = os.getenv("EMAIL_FROM", "")
         self.email_to = self._parse_list(os.getenv("EMAIL_TO", ""))
         
+        # Dashboard settings
+        self.dashboard_url = os.getenv(
+            "DASHBOARD_URL", 
+            "https://saggy6210.github.io/stock_market/"
+        )
+        
         # Gemini settings (placeholder)
         self.gemini_api_keys = self._parse_list(os.getenv("GEMINI_API_KEY", ""))
         self.gemini_model = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")

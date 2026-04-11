@@ -6,6 +6,7 @@ Generates HTML and text emails for portfolio analysis.
 import logging
 from datetime import datetime
 
+from app.config import settings
 from app.analysis.portfolio_insights import (
     PortfolioInsights,
     PortfolioSignal,
@@ -74,6 +75,7 @@ class PortfolioEmailGenerator:
                 
                 <div class="footer">
                     <p>Generated on {insights.date} | Data from NSE, Yahoo Finance, Screener.in</p>
+                    <p><a href="{settings.dashboard_url}" target="_blank" style="color: #1a237e; font-weight: bold;">📈 View Full Market Dashboard</a></p>
                     <p><em>This is for informational purposes only. Do your own research before making investment decisions.</em></p>
                 </div>
             </div>
@@ -247,6 +249,10 @@ class PortfolioEmailGenerator:
             insights.strategy_notes,
             "",
             "=" * 70,
+            "",
+            f"📈 VIEW FULL MARKET DASHBOARD: {settings.dashboard_url}",
+            "",
+            "=" * 70,
         ])
         
         return "\n".join(lines)
@@ -264,6 +270,7 @@ class PortfolioEmailGenerator:
         <div class="header">
             <h1>📊 Portfolio Analysis and Recommendations</h1>
             <p class="date">{insights.date}</p>
+            <a href="{settings.dashboard_url}" target="_blank" class="dashboard-btn">🌐 View Live Dashboard</a>
         </div>
         
         <div class="summary-grid">
@@ -599,6 +606,22 @@ class PortfolioEmailGenerator:
             .date {
                 margin: 10px 0 0 0;
                 opacity: 0.9;
+            }
+            .dashboard-btn {
+                display: inline-block;
+                margin-top: 15px;
+                padding: 12px 24px;
+                background: #fff;
+                color: #1a237e;
+                text-decoration: none;
+                border-radius: 25px;
+                font-weight: 600;
+                font-size: 14px;
+                transition: all 0.3s ease;
+            }
+            .dashboard-btn:hover {
+                background: #e8eaf6;
+                transform: scale(1.05);
             }
             .summary-grid {
                 display: grid;

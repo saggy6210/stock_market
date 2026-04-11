@@ -323,3 +323,421 @@ def get_last_portfolio_insights():
         "aggressive_buy_count": len(insights.aggressive_buy_stocks),
         "exit_count": len(insights.exit_stocks),
     }
+
+
+@router.get("/stock/{symbol}")
+def get_stock_price(symbol: str):
+    """
+    Get current stock price for a symbol using NSE direct API.
+    
+    Args:
+        symbol: Stock symbol (e.g., HDFCBANK, RELIANCE)
+    """
+    from app.data.nse_client import NSEClient
+    
+    # Remove .NS suffix if present
+    clean_symbol = symbol.replace(".NS", "").replace(".BO", "").upper()
+    
+    nse = NSEClient()
+    
+    try:
+        # Try to get quote directly from NSE
+        url = f"{nse.BASE_URL}/api/quote-equity?symbol={clean_symbol}"
+        nse._set_cookies()
+        response = nse._session.get(url, timeout=15)
+        
+        if response.status_code == 200:
+            data = response.json()
+            price_info = data.get("priceInfo", {})
+            
+            return {
+                "symbol": clean_symbol,
+                "price": price_info.get("lastPrice", 0),
+                "change": price_info.get("change", 0),
+                "change_pct": price_info.get("pChange", 0),
+                "open": price_info.get("open", 0),
+                "high": price_info.get("intraDayHighLow", {}).get("max", 0),
+                "low": price_info.get("intraDayHighLow", {}).get("min", 0),
+                "prev_close": price_info.get("previousClose", 0),
+                "source": "NSE"
+            }
+    except Exception as e:
+        pass
+    
+    # Fallback to yfinance
+    try:
+        import yfinance as yf
+        ticker = yf.Ticker(f"{clean_symbol}.NS")
+        hist = ticker.history(period="1d")
+        
+        if not hist.empty:
+            return {
+                "symbol": clean_symbol,
+                "price": round(float(hist['Close'].iloc[-1]), 2),
+                "source": "Yahoo Finance"
+            }
+    except:
+        pass
+    
+    raise HTTPException(status_code=404, detail=f"No data found for {symbol}")
+
+
+@router.get("/nse-prices")
+def get_nse_prices(symbols: str = None):
+    """
+    Get real-time prices for multiple stocks from NSE.
+    
+    Args:
+        symbols: Comma-separated list of symbols (e.g., HDFCBANK,RELIANCE,TCS)
+                If not provided, returns Nifty 50 stocks
+    """
+    from app.data.nse_client import NSEClient
+    
+    nse = NSEClient()
+    
+    if symbols:
+        # Fetch specific symbols
+        symbol_list = [s.strip().upper() for s in symbols.split(",")]
+        results = {}
+        
+        for symbol in symbol_list:
+            try:
+                url = f"{nse.BASE_URL}/api/quote-equity?symbol={symbol}"
+                nse._set_cookies()
+                response = nse._session.get(url, timeout=15)
+                
+                if response.status_code == 200:
+                    data = response.json()
+                    price_info = data.get("priceInfo", {})
+                    
+                    results[symbol] = {
+                        "price": price_info.get("lastPrice", 0),
+                        "change": price_info.get("change", 0),
+                        "change_pct": price_info.get("pChange", 0),
+                    }
+            except:
+                results[symbol] = {"error": "Failed to fetch"}
+        
+        return {"stocks": results, "source": "NSE Direct"}
+    else:
+        # Fetch Nifty 50 stocks
+        stocks = nse.fetch_index_stocks("NIFTY 50")
+        results = {}
+        
+        for stock in stocks:
+            symbol = stock.get("symbol", "")
+            if symbol:
+                results[symbol] = {
+                    "price": stock.get("lastPrice", 0),
+                    "change": stock.get("change", 0),
+                    "change_pct": stock.get("pChange", 0),
+                    "open": stock.get("open", 0),
+                    "high": stock.get("dayHigh", 0),
+                    "low": stock.get("dayLow", 0),
+                }
+        
+        return {"stocks": results, "count": len(results), "source": "NSE Direct"}
+
+
+@router.get("/dashboard-data")
+def get_dashboard_data():
+    """
+    Get complete dashboard data including:
+    - Market indices (real-time from NSE)
+    - Commodity prices
+    - All stock prices for recommendations
+    """
+    from app.data.nse_client import NSEClient
+    from datetime import datetime
+    import yfinance as yf
+    
+    nse = NSEClient()
+    
+    def fetch_nse_index(index_name):
+        """Fetch index data from NSE."""
+        try:
+            stocks = nse.fetch_index_stocks(index_name)
+            if stocks:
+                # First item is usually the index itself
+                for item in stocks:
+                    if item.get("symbol") == index_name.replace(" ", ""):
+                        return {
+                            "name": index_name,
+                            "value": item.get("lastPrice", 0),
+                            "change": item.get("change", 0),
+                            "change_pct": item.get("pChange", 0),
+                            "is_positive": item.get("change", 0) >= 0
+                        }
+        except:
+            pass
+        return None
+    
+    def fetch_yf_index(symbol, name):
+        """Fallback to Yahoo Finance for indices."""
+        try:
+            ticker = yf.Ticker(symbol)
+            hist = ticker.history(period="2d")
+            if hist.empty or len(hist) < 2:
+                return None
+            
+            last_close = float(hist['Close'].iloc[-1])
+            prev_close = float(hist['Close'].iloc[-2])
+            change = last_close - prev_close
+            change_pct = (change / prev_close) * 100
+            
+            return {
+                "name": name,
+                "value": round(last_close, 2),
+                "change": round(change, 2),
+                "change_pct": round(change_pct, 2),
+                "is_positive": change >= 0
+            }
+        except:
+            return None
+    
+    # Fetch Indian indices from NSE
+    indices = {
+        "nifty": fetch_nse_index("NIFTY 50") or fetch_yf_index("^NSEI", "Nifty 50"),
+        "nifty_bank": fetch_nse_index("NIFTY BANK") or fetch_yf_index("^NSEBANK", "Nifty Bank"),
+        "nifty_it": fetch_nse_index("NIFTY IT") or fetch_yf_index("^CNXIT", "Nifty IT"),
+    }
+    
+    # US indices from Yahoo Finance
+    indices["dow_jones"] = fetch_yf_index("^DJI", "Dow Jones")
+    indices["nasdaq"] = fetch_yf_index("^IXIC", "NASDAQ")
+    indices["sensex"] = fetch_yf_index("^BSESN", "Sensex")
+    indices["india_vix"] = fetch_yf_index("^INDIAVIX", "India VIX")
+    indices["usd_inr"] = fetch_yf_index("USDINR=X", "USD/INR")
+    
+    # Fetch commodities from Yahoo Finance
+    commodities = {
+        "gold": fetch_yf_index("GC=F", "Gold"),
+        "silver": fetch_yf_index("SI=F", "Silver"),
+        "copper": fetch_yf_index("HG=F", "Copper"),
+        "crude_oil": fetch_yf_index("CL=F", "Crude Oil"),
+        "natural_gas": fetch_yf_index("NG=F", "Natural Gas"),
+    }
+    
+    # Fetch all recommendation stocks from NSE
+    rec_symbols = [
+        "HDFCBANK", "RELIANCE", "INFY", "TCS", "BAJFINANCE",
+        "BHARTIARTL", "ICICIBANK", "MARUTI", "TITAN", "LT",
+        "PAYTM", "ZOMATO", "WIPRO", "TATASTEEL", "HINDPETRO",
+        "BPCL", "IOC", "VEDL", "SAIL", "COALINDIA"
+    ]
+    
+    stock_prices = {}
+    for symbol in rec_symbols:
+        try:
+            url = f"{nse.BASE_URL}/api/quote-equity?symbol={symbol}"
+            nse._set_cookies()
+            response = nse._session.get(url, timeout=10)
+            
+            if response.status_code == 200:
+                data = response.json()
+                price_info = data.get("priceInfo", {})
+                stock_prices[symbol.lower()] = {
+                    "price": price_info.get("lastPrice", 0),
+                    "change_pct": price_info.get("pChange", 0),
+                }
+        except:
+            pass
+    
+    return {
+        "generated_at": datetime.now().isoformat(),
+        "indices": indices,
+        "commodities": commodities,
+        "stock_prices": stock_prices,
+        "source": "NSE Direct + Yahoo Finance"
+    }
+
+
+@router.get("/screener-data")
+def get_screener_data(period: str = "1m"):
+    """
+    Get top fallen stocks data.
+    
+    Args:
+        period: Time period - 1m (1 month), 3m, 6m, 1y
+    """
+    from app.data.nse_client import NSEClient
+    import yfinance as yf
+    from datetime import datetime, timedelta
+    
+    nse = NSEClient()
+    
+    # Calculate date range
+    period_map = {
+        "1m": 30,
+        "3m": 90,
+        "6m": 180,
+        "1y": 365
+    }
+    days = period_map.get(period, 30)
+    start_date = datetime.now() - timedelta(days=days)
+    
+    # Get Nifty 500 stocks
+    all_stocks = nse.fetch_index_stocks("NIFTY 500")
+    
+    fallen_stocks = []
+    
+    for stock in all_stocks[:100]:  # Limit to top 100 for performance
+        symbol = stock.get("symbol", "")
+        current_price = stock.get("lastPrice", 0)
+        
+        if not symbol or not current_price:
+            continue
+        
+        try:
+            # Fetch historical price
+            ticker = yf.Ticker(f"{symbol}.NS")
+            hist = ticker.history(start=start_date.strftime("%Y-%m-%d"))
+            
+            if not hist.empty:
+                old_price = float(hist['Close'].iloc[0])
+                if old_price > 0:
+                    fall_pct = ((current_price - old_price) / old_price) * 100
+                    
+                    if fall_pct < -10:  # Only stocks with >10% fall
+                        fallen_stocks.append({
+                            "symbol": symbol,
+                            "company": stock.get("companyName", symbol),
+                            "sector": stock.get("industry", ""),
+                            "old_price": round(old_price, 2),
+                            "current_price": current_price,
+                            "fall_pct": round(fall_pct, 2)
+                        })
+        except:
+            continue
+    
+    # Sort by fall percentage
+    fallen_stocks.sort(key=lambda x: x["fall_pct"])
+    
+    return {
+        "period": period,
+        "start_date": start_date.strftime("%Y-%m-%d"),
+        "stocks": fallen_stocks[:10],
+        "total_found": len(fallen_stocks)
+    }
+
+
+@router.get("/fii-dii")
+def get_fii_dii_data():
+    """
+    Get FII/DII activity data from NSE.
+    """
+    from app.data.nse_client import NSEClient
+    from datetime import datetime, timedelta
+    
+    nse = NSEClient()
+    
+    # Try to fetch from NSE
+    try:
+        url = f"{nse.BASE_URL}/api/fiidiiTradeReact"
+        nse._set_cookies()
+        response = nse._session.get(url, timeout=15)
+        
+        if response.status_code == 200:
+            data = response.json()
+            return {
+                "data": data,
+                "source": "NSE Direct"
+            }
+    except:
+        pass
+    
+    # Fallback to simulated data
+    today = datetime.now()
+    daily_data = []
+    
+    for i in range(5):
+        date = today - timedelta(days=i)
+        if date.weekday() < 5:
+            daily_data.append({
+                "date": date.strftime("%d %b %Y"),
+                "fii_buy": 7500 + (i * 200) + (500 if i % 2 == 0 else -200),
+                "fii_sell": 9000 + (i * 150) + (300 if i % 2 == 1 else -100),
+                "fii_net": -1500 - (i * 50) + (200 if i % 2 == 0 else -100),
+                "dii_buy": 8500 + (i * 180) + (400 if i % 2 == 1 else -150),
+                "dii_sell": 6000 + (i * 120) + (200 if i % 2 == 0 else -50),
+                "dii_net": 2500 + (i * 60) + (200 if i % 2 == 1 else -100),
+            })
+    
+    return {
+        "daily": daily_data,
+        "monthly": {"fii_net": -15234, "dii_net": 18567},
+        "ytd": {"fii_net": -45890, "dii_net": 52345},
+        "source": "Simulated Data"
+    }
+
+
+@router.post("/generate-dashboard-data")
+def generate_dashboard_data():
+    """
+    Manually trigger the dashboard data generation pipeline.
+    This fetches all data from various sources and generates the dashboard JSON.
+    
+    Can be called via:
+    - POST /api/generate-dashboard-data
+    - Or scheduled via cron jobs
+    """
+    from app.analysis.dashboard_pipeline import run_pipeline
+    import logging
+    
+    logger = logging.getLogger(__name__)
+    
+    try:
+        logger.info("Dashboard data generation triggered via API")
+        data = run_pipeline()
+        
+        return {
+            "status": "success",
+            "message": "Dashboard data generated successfully",
+            "timestamp": data.get("timestamp"),
+            "sections_generated": list(data.keys()),
+            "indices_count": len(data.get("indices", {})),
+            "commodities_count": len(data.get("commodities", {})),
+            "screener_periods": list(data.get("screener", {}).keys())
+        }
+    except Exception as e:
+        logger.error(f"Dashboard generation failed: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/dashboard-status")
+def get_dashboard_status():
+    """
+    Check the status of the last generated dashboard data.
+    Returns when it was last generated and basic info.
+    """
+    import json
+    from pathlib import Path
+    from datetime import datetime
+    
+    data_file = Path(__file__).parent.parent.parent / "market_dashboard" / "data" / "dashboard_data.json"
+    
+    if not data_file.exists():
+        return {
+            "status": "not_generated",
+            "message": "Dashboard data has not been generated yet. Call POST /api/generate-dashboard-data to generate."
+        }
+    
+    try:
+        with open(data_file, "r") as f:
+            data = json.load(f)
+        
+        timestamp = data.get("timestamp", "Unknown")
+        
+        return {
+            "status": "available",
+            "last_generated": timestamp,
+            "file_path": str(data_file),
+            "sections": list(data.keys()),
+            "indices": list(data.get("indices", {}).keys()),
+            "commodities": list(data.get("commodities", {}).keys())
+        }
+    except Exception as e:
+        return {
+            "status": "error",
+            "message": str(e)
+        }

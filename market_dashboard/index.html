@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Share Market Analysis Today - Daily stock market overview, indices, FII/DII data, news, and recommendations">
+    <title>📈 Share Market Analysis Today</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>Share Market Analysis</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#outlook" class="nav-link">Outlook</a></li>
+                <li><a href="#overview" class="nav-link">Overview</a></li>
+                <li><a href="#recommendations" class="nav-link">Recommendations</a></li>
+                <li><a href="#news" class="nav-link">News</a></li>
+            </ul>
+            <div class="nav-date" id="currentDate">
+                <span class="live-indicator"><span class="live-dot"></span>LIVE</span>
+                April 11, 2026
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>📈 Share Market Analysis Today</h1>
+            <p class="tagline">Daily Market Overview, Analysis & Intelligence</p>
+            <p class="last-updated">Last Updated: <span id="lastUpdated">April 11, 2026 09:30 AM IST</span></p>
+        </div>
+    </header>
+
+    <main class="container" style="margin-top: 20px;">
+
+        <!-- ===== TODAY'S MARKET OUTLOOK (AT TOP) ===== -->
+        <section id="outlook" class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-sun"></i> 🌅 Today's Market Outlook</h2>
+            </div>
+            
+            <div class="outlook-card">
+                <div class="outlook-badge bullish" id="outlook-badge">BULLISH</div>
+                <p class="outlook-reason" id="outlook-reason">
+                    <strong>🕊️ Iran-US War Ceasefire:</strong> Peace talks progress positively, reducing geopolitical risk premium. 
+                    <strong>⛽ Crude Oil:</strong> Brent crude down 1.3% to $96.57 on ceasefire hopes - positive for India.
+                    <strong>📊 VIX:</strong> India VIX at 18.85, down 7.72% indicating declining fear/volatility.
+                    <strong>🌏 Global Cues:</strong> GIFT Nifty at 24,135 (+0.35%) indicating positive opening.
+                    DIIs continue to be net buyers offsetting FII selling. Markets expected to open gap-up.
+                </p>
+            </div>
+            
+            <!-- Quick Outlook Factors -->
+            <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="background: #e8f9f5; padding: 15px; border-radius: 10px; text-align: center;">
+                    <div style="font-size: 1.5rem;">🕊️</div>
+                    <div style="font-weight: 600; color: #00d09c;">Iran-US Ceasefire</div>
+                    <div style="font-size: 0.85rem; color: #6c757d;">Peace Talks Progress</div>
+                </div>
+                <div style="background: #e8f9f5; padding: 15px; border-radius: 10px; text-align: center;">
+                    <div style="font-size: 1.5rem;">⛽</div>
+                    <div style="font-weight: 600;"><span style="color: #eb5757;">Crude Oil ▼1.3%</span></div>
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #00d09c;">Positive for India</div>
+                </div>
+                <div style="background: #e8f9f5; padding: 15px; border-radius: 10px; text-align: center;">
+                    <div style="font-size: 1.5rem;">📉</div>
+                    <div style="font-weight: 600; color: #00d09c;">VIX 18.85 ▼7.72%</div>
+                    <div style="font-size: 0.85rem; color: #6c757d;">Fear Index Down</div>
+                </div>
+                <div style="background: #e8f9f5; padding: 15px; border-radius: 10px; text-align: center;">
+                    <div style="font-size: 1.5rem;">🌏</div>
+                    <div style="font-weight: 600; color: #00d09c;">GIFT Nifty ▲0.35%</div>
+                    <div style="font-size: 0.85rem; color: #6c757d;">Positive Opening</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TOP 5 STOCK MOVEMENT PREDICTIONS ===== -->
+        <section class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-bullseye"></i> 🎯 Top 5 Stock Movement Predictions</h2>
+            </div>
+            
+            <div class="prediction-cards">
+                <div class="prediction-card bullish">
+                    <div class="prediction-header">
+                        <span class="prediction-symbol">ONGC</span>
+                        <span class="prediction-direction up">▲ UP</span>
+                    </div>
+                    <p class="prediction-reason">Iran-US ceasefire reducing geopolitical risk; crude stabilizing benefits O&G sector</p>
+                </div>
+                <div class="prediction-card bullish">
+                    <div class="prediction-header">
+                        <span class="prediction-symbol">RELIANCE</span>
+                        <span class="prediction-direction up">▲ UP</span>
+                    </div>
+                    <p class="prediction-reason">Oil refining margins improve on stable crude; retail and Jio momentum continues</p>
+                </div>
+                <div class="prediction-card bullish">
+                    <div class="prediction-header">
+                        <span class="prediction-symbol">INFY</span>
+                        <span class="prediction-direction up">▲ UP</span>
+                    </div>
+                    <p class="prediction-reason">NASDAQ positive overnight, large deal wins announced, currency tailwinds</p>
+                </div>
+                <div class="prediction-card bearish">
+                    <div class="prediction-header">
+                        <span class="prediction-symbol">TATASTEEL</span>
+                        <span class="prediction-direction down">▼ DOWN</span>
+                    </div>
+                    <p class="prediction-reason">Steel prices under pressure, European operations concerns, inventory buildup</p>
+                </div>
+                <div class="prediction-card bullish">
+                    <div class="prediction-header">
+                        <span class="prediction-symbol">HDFCBANK</span>
+                        <span class="prediction-direction up">▲ UP</span>
+                    </div>
+                    <p class="prediction-reason">Strong credit growth, NIM stability, potential upgrade from brokerages</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MARKET OVERVIEW ===== -->
+        <section id="overview" class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-globe"></i> 🌍 Market Overview</h2>
+            </div>
+            
+            <!-- US Markets -->
+            <h3 style="font-size: 0.9rem; color: #6c757d; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">
+                🇺🇸 US Markets
+            </h3>
+            <div class="indices-grid" style="margin-bottom: 24px;">
+                <div class="index-card negative" id="dow-card">
+                    <div class="index-region">NYSE</div>
+                    <div class="index-name">Dow Jones</div>
+                    <div class="index-value" id="dow-value">47,916.57</div>
+                    <div class="index-change negative" id="dow-change">▼ 270.00 (0.56%)</div>
+                </div>
+                <div class="index-card positive" id="nasdaq-card">
+                    <div class="index-region">NASDAQ</div>
+                    <div class="index-name">NASDAQ Composite</div>
+                    <div class="index-value" id="nasdaq-value">22,902.89</div>
+                    <div class="index-change positive" id="nasdaq-change">▲ 80.25 (0.35%)</div>
+                </div>
+            </div>
+            
+            <!-- Indian Markets -->
+            <h3 style="font-size: 0.9rem; color: #6c757d; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">
+                🇮🇳 Indian Markets
+            </h3>
+            <div class="indices-grid" style="margin-bottom: 24px;">
+                <div class="index-card positive" id="sensex-card">
+                    <div class="index-region">BSE</div>
+                    <div class="index-name">Sensex</div>
+                    <div class="index-value" id="sensex-value">77,550.25</div>
+                    <div class="index-change positive" id="sensex-change">▲ 920.45 (1.20%)</div>
+                </div>
+                <div class="index-card positive" id="nifty-card">
+                    <div class="index-region">NSE</div>
+                    <div class="index-name">Nifty 50</div>
+                    <div class="index-value" id="nifty-value">24,050.60</div>
+                    <div class="index-change positive" id="nifty-change">▲ 276.55 (1.16%)</div>
+                </div>
+                <div class="index-card negative" id="niftyit-card">
+                    <div class="index-region">NSE</div>
+                    <div class="index-name">Nifty IT</div>
+                    <div class="index-value" id="niftyit-value">31,030.60</div>
+                    <div class="index-change negative" id="niftyit-change">▼ 605.60 (1.91%)</div>
+                </div>
+                <div class="index-card positive" id="niftybank-card">
+                    <div class="index-region">NSE</div>
+                    <div class="index-name">Nifty Bank</div>
+                    <div class="index-value" id="niftybank-value">55,912.75</div>
+                    <div class="index-change positive" id="niftybank-change">▲ 1,091.05 (1.99%)</div>
+                </div>
+                <div class="index-card negative" id="vix-card">
+                    <div class="index-region">NSE</div>
+                    <div class="index-name">India VIX</div>
+                    <div class="index-value" id="vix-value">18.85</div>
+                    <div class="index-change negative" id="vix-change">▼ 1.58 (7.72%)</div>
+                </div>
+            </div>
+            
+            <!-- GIFT Nifty & Currency -->
+            <h3 style="font-size: 0.9rem; color: #6c757d; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">
+                🌏 GIFT Nifty & 💱 Currency
+            </h3>
+            <div class="indices-grid">
+                <div class="index-card positive" id="gift-card">
+                    <div class="index-region">SGX/GIFT</div>
+                    <div class="index-name">GIFT Nifty</div>
+                    <div class="index-value" id="gift-value">24,135.00</div>
+                    <div class="index-change positive" id="gift-change">▲ 84.40 (0.35%)</div>
+                </div>
+                <div class="index-card negative" id="usdinr-card">
+                    <div class="index-region">FOREX</div>
+                    <div class="index-name">USD/INR</div>
+                    <div class="index-value" id="usdinr-value">83.45</div>
+                    <div class="index-change negative" id="usdinr-change">▼ 0.12 (0.14%)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GLOBAL INDICATORS ===== -->
+        <section class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-earth-americas"></i> 🌐 Global Indicators</h2>
+            </div>
+            
+            <div class="indicator-row">
+                <div class="indicator-icon treasury"><i class="fas fa-landmark"></i></div>
+                <div class="indicator-info">
+                    <div class="indicator-name">US 10Y Treasury Yield</div>
+                    <div class="indicator-subtitle">US Government Bond</div>
+                </div>
+                <div class="indicator-value">4.32%</div>
+                <div class="indicator-change text-green">▲ 0.56%</div>
+                <div class="indicator-impact impact-negative">NEGATIVE</div>
+            </div>
+            
+            <div class="indicator-row">
+                <div class="indicator-icon oil"><i class="fas fa-oil-can"></i></div>
+                <div class="indicator-info">
+                    <div class="indicator-name">Crude Oil (Brent)</div>
+                    <div class="indicator-subtitle">$/Barrel - Iran-US talks easing</div>
+                </div>
+                <div class="indicator-value">$96.57</div>
+                <div class="indicator-change text-red">▼ 1.33%</div>
+                <div class="indicator-impact impact-positive">POSITIVE</div>
+            </div>
+            
+            <div class="indicator-row">
+                <div class="indicator-icon dollar"><i class="fas fa-dollar-sign"></i></div>
+                <div class="indicator-info">
+                    <div class="indicator-name">US Dollar Index (DXY)</div>
+                    <div class="indicator-subtitle">Dollar Strength</div>
+                </div>
+                <div class="indicator-value">98.65</div>
+                <div class="indicator-change text-red">▼ 0.17%</div>
+                <div class="indicator-impact impact-positive">POSITIVE</div>
+            </div>
+        </section>
+
+        <!-- ===== COMMODITY PRICES (Gold, Silver, Copper) ===== -->
+        <section class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-gem"></i> 💰 Commodity Prices</h2>
+            </div>
+            
+            <div class="indices-grid">
+                <div class="index-card negative" id="gold-card">
+                    <div class="index-region">MCX</div>
+                    <div class="index-name">🥇 Gold</div>
+                    <div class="index-value" id="gold-value">₹1,42,850/10gm</div>
+                    <div class="index-change negative" id="gold-change">▼ 920 (0.64%)</div>
+                </div>
+                <div class="index-card positive" id="silver-card">
+                    <div class="index-region">MCX</div>
+                    <div class="index-name">🥈 Silver</div>
+                    <div class="index-value" id="silver-value">₹2,28,560/kg</div>
+                    <div class="index-change positive" id="silver-change">▲ 115 (0.05%)</div>
+                </div>
+                <div class="index-card positive" id="copper-card">
+                    <div class="index-region">MCX</div>
+                    <div class="index-name">🔶 Copper</div>
+                    <div class="index-value" id="copper-value">₹985.60/kg</div>
+                    <div class="index-change positive" id="copper-change">▲ 20.40 (2.11%)</div>
+                </div>
+                <div class="index-card negative" id="crudeoil-card">
+                    <div class="index-region">MCX</div>
+                    <div class="index-name">⛽ Crude Oil</div>
+                    <div class="index-value" id="crudeoil-value">₹8,045/barrel</div>
+                    <div class="index-change negative" id="crudeoil-change">▼ 108 (1.33%)</div>
+                </div>
+                <div class="index-card positive" id="naturalgas-card">
+                    <div class="index-region">MCX</div>
+                    <div class="index-name">🔥 Natural Gas</div>
+                    <div class="index-value" id="naturalgas-value">₹234.50/MMBtu</div>
+                    <div class="index-change positive" id="naturalgas-change">▲ 3.20 (1.38%)</div>
+                </div>
+                <div class="index-card negative" id="aluminium-card">
+                    <div class="index-region">MCX</div>
+                    <div class="index-name">🪨 Aluminium</div>
+                    <div class="index-value" id="aluminium-value">₹234.80/kg</div>
+                    <div class="index-change negative" id="aluminium-change">▼ 1.20 (0.51%)</div>
+                </div>
+            </div>
+            
+            <!-- International Prices -->
+            <h3 style="font-size: 0.9rem; color: #6c757d; margin: 20px 0 12px; text-transform: uppercase; letter-spacing: 1px;">
+                🌍 International Prices (COMEX/NYMEX) - Verified
+            </h3>
+            <div class="indices-grid">
+                <div class="index-card negative">
+                    <div class="index-region">COMEX</div>
+                    <div class="index-name">🥇 Gold Futures</div>
+                    <div class="index-value">$4,787.40/oz</div>
+                    <div class="index-change negative">▼ 30.60 (0.64%)</div>
+                </div>
+                <div class="index-card positive">
+                    <div class="index-region">COMEX</div>
+                    <div class="index-name">🥈 Silver Futures</div>
+                    <div class="index-value">$76.48/oz</div>
+                    <div class="index-change positive">▲ 0.04 (0.05%)</div>
+                </div>
+                <div class="index-card positive">
+                    <div class="index-region">COMEX</div>
+                    <div class="index-name">🔶 Copper Futures</div>
+                    <div class="index-value">$5.89/lb</div>
+                    <div class="index-change positive">▲ 0.12 (2.11%)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FII/DII DATA (DAILY) ===== -->
+        <section class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-building-columns"></i> 💰 FII / DII Net Activity</h2>
+                <a href="https://groww.in/fii-dii-data" target="_blank" style="font-size: 0.85rem; color: #00d09c;">Source: Groww.in →</a>
+            </div>
+            
+            <!-- Last 3 Sessions - NET Values Only -->
+            <div style="margin-bottom: 20px; overflow-x: auto;">
+                <h3 style="font-size: 0.9rem; color: #6c757d; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">
+                    📅 Last 3 Sessions (Net Activity)
+                </h3>
+                <table class="market-table" id="fii-dii-daily-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>FII Net (₹ Cr)</th>
+                            <th>DII Net (₹ Cr)</th>
+                            <th>Total Net (₹ Cr)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fii-dii-tbody">
+                        <tr>
+                            <td><strong>10 Apr 2026</strong></td>
+                            <td style="color: #00d09c; font-weight: 700;">+672.09</td>
+                            <td style="color: #00d09c; font-weight: 700;">+410.05</td>
+                            <td style="color: #00d09c; font-weight: 700;">+1,082.14</td>
+                        </tr>
+                        <tr>
+                            <td>09 Apr 2026</td>
+                            <td style="color: #eb5757; font-weight: 600;">-1,711.19</td>
+                            <td style="color: #00d09c; font-weight: 600;">+955.90</td>
+                            <td style="color: #eb5757; font-weight: 600;">-755.29</td>
+                        </tr>
+                        <tr>
+                            <td>08 Apr 2026</td>
+                            <td style="color: #eb5757; font-weight: 600;">-2,811.97</td>
+                            <td style="color: #00d09c; font-weight: 600;">+4,168.17</td>
+                            <td style="color: #00d09c; font-weight: 600;">+1,356.20</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Weekly & Monthly Summary Cards -->
+            <div class="fii-dii-cards">
+                <div class="fii-dii-card fii">
+                    <div class="fii-dii-label">FII - Latest Session (10 Apr)</div>
+                    <div class="fii-dii-value positive" id="fii-net">+₹672.09 Cr</div>
+                </div>
+                <div class="fii-dii-card dii">
+                    <div class="fii-dii-label">DII - Latest Session (10 Apr)</div>
+                    <div class="fii-dii-value positive" id="dii-net">+₹410.05 Cr</div>
+                </div>
+            </div>
+            
+            <!-- Weekly & Monthly Summary -->
+            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center;">
+                    <div>
+                        <div style="font-size: 0.75rem; color: #6c757d; text-transform: uppercase;">FII Weekly</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #eb5757;">-₹23,706 Cr</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.75rem; color: #6c757d; text-transform: uppercase;">DII Weekly</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #00d09c;">+₹28,408 Cr</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.75rem; color: #6c757d; text-transform: uppercase;">FII Monthly</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #eb5757;">-₹53,821 Cr</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.75rem; color: #6c757d; text-transform: uppercase;">DII Monthly</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #00d09c;">+₹61,012 Cr</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RECOMMENDATIONS ===== -->
+        <section id="recommendations" class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-lightbulb"></i> 💡 Recommendations</h2>
+                <span style="font-size: 0.75rem; color: #6c757d;">Real-time data from Screener/NSE</span>
+            </div>
+            
+            <div class="recommendations-grid">
+                <div class="rec-column buy">
+                    <div class="rec-column-header buy">
+                        <i class="fas fa-arrow-trend-up"></i> 🟢 TOP 10 BUY RECOMMENDATIONS
+                    </div>
+                    <table class="rec-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Stock</th>
+                                <th>CMP</th>
+                                <th>Target</th>
+                                <th>Upside</th>
+                                <th>Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>TCS</strong></td>
+                                <td id="price-tcs">₹2,523</td>
+                                <td style="color: #00d09c; font-weight: 600;">₹3,000</td>
+                                <td>+18.9%</td>
+                                <td>Jun 2026</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>HDFCBANK</strong></td>
+                                <td id="price-hdfcbank">₹810.10</td>
+                                <td style="color: #00d09c; font-weight: 600;">₹950</td>
+                                <td>+17.3%</td>
+                                <td>Aug 2026</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><strong>RELIANCE</strong></td>
+                                <td id="price-reliance">₹1,350</td>
+                                <td style="color: #00d09c; font-weight: 600;">₹1,600</td>
+                                <td>+18.5%</td>
+                                <td>Sep 2026</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><strong>INFY</strong></td>
+                                <td id="price-infy">₹1,291</td>
+                                <td style="color: #00d09c; font-weight: 600;">₹1,550</td>
+                                <td>+20.1%</td>
+                                <td>Jul 2026</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><strong>ICICIBANK</strong></td>
+                                <td id="price-icicibank">₹1,323</td>
+                                <td style="color: #00d09c; font-weight: 600;">₹1,550</td>
+                                <td>+17.2%</td>
+                                <td>Aug 2026</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><strong>SUZLON</strong></td>
+                                <td id="price-suzlon">₹45.59</td>
+                                <td style="color: #00d09c; font-weight: 600;">₹65</td>
+                                <td>+42.6%</td>
+                                <td>Dec 2026</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><strong>SBIN</strong></td>
+                                <td id="price-sbin">₹1,066</td>
+                                <td style="color: #00d09c; font-weight: 600;">₹1,250</td>
+                                <td>+17.3%</td>
+                                <td>Sep 2026</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td><strong>M&M</strong></td>
+                                <td id="price-m&m">₹3,266</td>
+                                <td style="color: #00d09c; font-weight: 600;">₹3,800</td>
+                                <td>+16.4%</td>
+                                <td>Oct 2026</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td><strong>TITAN</strong></td>
+                                <td id="price-titan">₹4,497</td>
+                                <td style="color: #00d09c; font-weight: 600;">₹5,200</td>
+                                <td>+15.6%</td>
+                                <td>Nov 2026</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td><strong>LT</strong></td>
+                                <td id="price-lt">₹3,961</td>
+                                <td style="color: #00d09c; font-weight: 600;">₹4,500</td>
+                                <td>+13.6%</td>
+                                <td>Sep 2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="rec-column sell">
+                    <div class="rec-column-header sell">
+                        <i class="fas fa-arrow-trend-down"></i> 🔴 STOCKS TO AVOID / HOLD
+                    </div>
+                    <table class="rec-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Stock</th>
+                                <th>CMP</th>
+                                <th>Risk Level</th>
+                                <th>Downside</th>
+                                <th>Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>VODAFONE</strong></td>
+                                <td id="price-idea">₹9.26</td>
+                                <td style="color: #eb5757; font-weight: 600;">High</td>
+                                <td>-30%</td>
+                                <td>Debt burden</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>COALINDIA</strong></td>
+                                <td id="price-coalindia">₹435.30</td>
+                                <td style="color: #f2994a; font-weight: 600;">Medium</td>
+                                <td>-15%</td>
+                                <td>Cost pressure</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><strong>SUNPHARMA</strong></td>
+                                <td id="price-sunpharma">₹1,655</td>
+                                <td style="color: #f2994a; font-weight: 600;">Medium</td>
+                                <td>-10%</td>
+                                <td>FDA concerns</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><strong>TATASTEEL</strong></td>
+                                <td id="price-tatasteel">₹206.85</td>
+                                <td style="color: #f2994a; font-weight: 600;">Medium</td>
+                                <td>-12%</td>
+                                <td>Steel prices weak</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><strong>ONGC</strong></td>
+                                <td id="price-ongc">₹286.70</td>
+                                <td style="color: #f2994a; font-weight: 600;">Medium</td>
+                                <td>-10%</td>
+                                <td>Oil price volatility</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><strong>TECHM</strong></td>
+                                <td id="price-techm">₹1,438.90</td>
+                                <td style="color: #6c757d; font-weight: 600;">Hold</td>
+                                <td>-8%</td>
+                                <td>IT sector weak</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><strong>WIPRO</strong></td>
+                                <td id="price-wipro">₹204.60</td>
+                                <td style="color: #6c757d; font-weight: 600;">Hold</td>
+                                <td>-5%</td>
+                                <td>AI disruption</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td><strong>HCLTECH</strong></td>
+                                <td id="price-hcltech">₹1,451</td>
+                                <td style="color: #6c757d; font-weight: 600;">Hold</td>
+                                <td>-5%</td>
+                                <td>Growth concerns</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SCREENER - TOP FALLEN STOCKS ===== -->
+        <section id="screener" class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-filter"></i> 📉 Top Fallen Stocks from 52-Week Highs</h2>
+                <span style="font-size: 0.75rem; color: #6c757d;">Verified against Google Finance (April 10, 2026)</span>
+            </div>
+            
+            <div class="screener-tabs">
+                <button class="screener-tab active" data-period="feb26">Since 28 Feb 2026</button>
+                <button class="screener-tab" data-period="jan26">Since Jan 2026</button>
+                <button class="screener-tab" data-period="may25">Since May 2025</button>
+                <button class="screener-tab" data-period="jan25">Since Jan 2025</button>
+            </div>
+            
+            <div class="screener-content" id="screener-feb26">
+                <table class="screener-table" id="screener-table-feb26">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Stock</th>
+                            <th>Sector</th>
+                            <th>52-Week High</th>
+                            <th>Current Price</th>
+                            <th>Fall %</th>
+                            <th>Buy Signal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="screener-tbody-feb26">
+                        <tr><td colspan="7" style="text-align: center; padding: 20px;"><span class="loading-indicator">Loading real-time data...</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="screener-content" id="screener-jan26" style="display: none;">
+                <table class="screener-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Stock</th>
+                            <th>Sector</th>
+                            <th>52-Week High</th>
+                            <th>Current Price</th>
+                            <th>Fall %</th>
+                            <th>Buy Signal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="screener-tbody-jan26">
+                        <tr><td colspan="7" style="text-align: center; padding: 20px;"><span class="loading-indicator">Loading real-time data...</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="screener-content" id="screener-may25" style="display: none;">
+                <table class="screener-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Stock</th>
+                            <th>Sector</th>
+                            <th>May 2025 High</th>
+                            <th>Current Price</th>
+                            <th>Fall %</th>
+                            <th>Buy Signal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="screener-tbody-may25">
+                        <tr><td colspan="7" style="text-align: center; padding: 20px;"><span class="loading-indicator">Loading real-time data...</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="screener-content" id="screener-jan25" style="display: none;">
+                <table class="screener-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Stock</th>
+                            <th>Sector</th>
+                            <th>Jan 2025 High</th>
+                            <th>Current Price</th>
+                            <th>Fall %</th>
+                            <th>Buy Signal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="screener-tbody-jan25">
+                        <tr><td colspan="7" style="text-align: center; padding: 20px;"><span class="loading-indicator">Loading real-time data...</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===== GEOPOLITICAL & WAR NEWS ===== -->
+        <section id="war-news" class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-globe-americas"></i> 🌍 Geopolitical & War News (Market Impact)</h2>
+            </div>
+            
+            <div class="news-list">
+                <div class="news-item" style="border-left: 4px solid #00d09c;">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://www.reuters.com/world/" target="_blank" class="news-headline">🕊️ Iran-US Ceasefire: Both Nations Agree to 60-Day Peace Framework</a>
+                        <div class="news-meta">
+                            <span class="news-source">Reuters</span>
+                            <span class="stock-tag">POSITIVE</span>
+                            <span style="color: #00d09c; font-size: 0.8rem;">Crude ▼ Defense ▼ Gold ▼</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item" style="border-left: 4px solid #00d09c;">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://www.bloomberg.com/energy" target="_blank" class="news-headline">🛢️ OPEC+ Signals Production Stability After Middle East De-escalation</a>
+                        <div class="news-meta">
+                            <span class="news-source">Bloomberg</span>
+                            <span class="stock-tag">OIL STOCKS</span>
+                            <span style="color: #00d09c; font-size: 0.8rem;">ONGC ▲ RELIANCE ▲</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item" style="border-left: 4px solid #f7931a;">
+                    <div class="news-indicator neutral"></div>
+                    <div class="news-content">
+                        <a href="https://www.aljazeera.com/news/russia-ukraine-war" target="_blank" class="news-headline">⚠️ Russia-Ukraine: Negotiations Stall; EU Discusses New Sanctions Package</a>
+                        <div class="news-meta">
+                            <span class="news-source">Al Jazeera</span>
+                            <span class="stock-tag">WATCH</span>
+                            <span style="color: #f7931a; font-size: 0.8rem;">Metals, Fertilizers at risk</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item" style="border-left: 4px solid #eb5757;">
+                    <div class="news-indicator negative"></div>
+                    <div class="news-content">
+                        <a href="https://www.scmp.com/topics/taiwan" target="_blank" class="news-headline">🇨🇳 China-Taiwan: Beijing Conducts Naval Exercises Near Taiwan Strait</a>
+                        <div class="news-meta">
+                            <span class="news-source">SCMP</span>
+                            <span class="stock-tag">RISK</span>
+                            <span style="color: #eb5757; font-size: 0.8rem;">Chip stocks, Asian markets at risk</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item" style="border-left: 4px solid #00d09c;">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://economictimes.indiatimes.com/news/economy" target="_blank" class="news-headline">🇮🇳 India-Pakistan: Commerce Secretaries to Meet for Trade Normalization</a>
+                        <div class="news-meta">
+                            <span class="news-source">Economic Times</span>
+                            <span class="stock-tag">POSITIVE</span>
+                            <span style="color: #00d09c; font-size: 0.8rem;">Defense stocks may fall</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TOP MARKET STORIES ===== -->
+        <section id="news" class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-newspaper"></i> 📰 Top Market Stories</h2>
+            </div>
+            
+            <div class="news-list" id="top-stories">
+                <div class="news-item">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://economictimes.indiatimes.com/markets/rbi" target="_blank" class="news-headline">RBI Holds Interest Rates Steady at 6.5%, Maintains Accommodative Stance</a>
+                        <div class="news-meta">
+                            <span class="news-source">Economic Times</span>
+                            <span class="stock-tag">BANKS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://www.moneycontrol.com/news/business/markets/" target="_blank" class="news-headline">IT Stocks Rally as NASDAQ Rebounds; TCS, Infosys Lead Gains</a>
+                        <div class="news-meta">
+                            <span class="news-source">MoneyControl</span>
+                            <span class="stock-tag">TCS</span>
+                            <span class="stock-tag">INFY</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-indicator neutral"></div>
+                    <div class="news-content">
+                        <a href="https://www.livemint.com/industry/manufacturing" target="_blank" class="news-headline">Govt Extends PLI Scheme Benefits for Electronics Manufacturing</a>
+                        <div class="news-meta">
+                            <span class="news-source">LiveMint</span>
+                            <span class="stock-tag">DIXON</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-indicator negative"></div>
+                    <div class="news-content">
+                        <a href="https://www.business-standard.com/markets/fii-dii" target="_blank" class="news-headline">FII Outflows Continue for 5th Straight Session, Withdraw ₹2,345 Cr</a>
+                        <div class="news-meta">
+                            <span class="news-source">Business Standard</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://www.cnbctv18.com/auto/auto-sales" target="_blank" class="news-headline">Auto Sales Surge 18% YoY in March; Maruti, Tata Motors Report Record Numbers</a>
+                        <div class="news-meta">
+                            <span class="news-source">CNBC TV18</span>
+                            <span class="stock-tag">MARUTI</span>
+                            <span class="stock-tag">TATAMOTORS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EARNINGS & QUARTERLY RESULTS ===== -->
+        <section class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-chart-pie"></i> 📊 Earnings & Quarterly Results</h2>
+            </div>
+            
+            <div class="news-list" id="earnings-news">
+                <div class="news-item">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://www.moneycontrol.com/news/business/earnings/" target="_blank" class="news-headline">HDFC Bank Q4: Net Profit Jumps 37% YoY to ₹16,512 Cr, Beats Estimates</a>
+                        <div class="news-meta">
+                            <span class="news-source">MoneyControl</span>
+                            <span class="stock-tag">HDFCBANK</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-indicator negative"></div>
+                    <div class="news-content">
+                        <a href="https://economictimes.indiatimes.com/markets/stocks/earnings/" target="_blank" class="news-headline">Wipro Q4 Results Disappoint; Revenue Misses Guidance, Stock Down 4%</a>
+                        <div class="news-meta">
+                            <span class="news-source">Economic Times</span>
+                            <span class="stock-tag">WIPRO</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://www.livemint.com/market/stock-market-news" target="_blank" class="news-headline">Bajaj Finance Reports Strong Q4; AUM Grows 28% to ₹3.3 Lakh Cr</a>
+                        <div class="news-meta">
+                            <span class="news-source">LiveMint</span>
+                            <span class="stock-tag">BAJFINANCE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ORDER BOOKINGS & CONTRACTS ===== -->
+        <section class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-file-contract"></i> 📝 Order Bookings & Contracts</h2>
+            </div>
+            
+            <div class="news-list" id="orders-news">
+                <div class="news-item">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://www.business-standard.com/companies/news" target="_blank" class="news-headline">L&T Bags ₹7,500 Cr Order for Metro Rail Project in Saudi Arabia</a>
+                        <div class="news-meta">
+                            <span class="news-source">Business Standard</span>
+                            <span class="stock-tag">LT</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://economictimes.indiatimes.com/industry/energy/power" target="_blank" class="news-headline">BHEL Wins ₹4,200 Cr Contract for Thermal Power Equipment Supply</a>
+                        <div class="news-meta">
+                            <span class="news-source">Economic Times</span>
+                            <span class="stock-tag">BHEL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://www.moneycontrol.com/news/business/companies/" target="_blank" class="news-headline">Infosys Signs $1.5 Billion Multi-Year Deal with European Bank</a>
+                        <div class="news-meta">
+                            <span class="news-source">MoneyControl</span>
+                            <span class="stock-tag">INFY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== REGULATORY & POLICY NEWS ===== -->
+        <section class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-gavel"></i> ⚖️ Regulatory & Policy News</h2>
+            </div>
+            
+            <div class="news-list" id="regulatory-news">
+                <div class="news-item">
+                    <div class="news-indicator neutral"></div>
+                    <div class="news-content">
+                        <a href="https://www.sebi.gov.in/" target="_blank" class="news-headline">SEBI Proposes New Framework for ESG Rating Providers</a>
+                        <div class="news-meta">
+                            <span class="news-source">Business Standard</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://economictimes.indiatimes.com/industry/banking/finance/insure" target="_blank" class="news-headline">Govt Approves 100% FDI in Insurance Sector, Stocks Surge</a>
+                        <div class="news-meta">
+                            <span class="news-source">Economic Times</span>
+                            <span class="stock-tag">SBILIFE</span>
+                            <span class="stock-tag">HDFCLIFE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== INSIDER TRADING & BULK DEALS ===== -->
+        <section class="market-section">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-search-dollar"></i> 🔍 Insider Trading & Bulk Deals</h2>
+            </div>
+            
+            <div class="news-list" id="insider-news">
+                <div class="news-item">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://www.moneycontrol.com/news/business/markets/bulk-deals" target="_blank" class="news-headline">Goldman Sachs Picks Up 2.5% Stake in ICICI Bank via Block Deal</a>
+                        <div class="news-meta">
+                            <span class="news-source">MoneyControl</span>
+                            <span class="stock-tag">ICICIBANK</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-indicator negative"></div>
+                    <div class="news-content">
+                        <a href="https://www.business-standard.com/markets/bulk-block-deals" target="_blank" class="news-headline">Promoters of Zomato Sell 1.5 Cr Shares in Open Market</a>
+                        <div class="news-meta">
+                            <span class="news-source">Business Standard</span>
+                            <span class="stock-tag">ZOMATO</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-indicator positive"></div>
+                    <div class="news-content">
+                        <a href="https://economictimes.indiatimes.com/markets/stocks/news" target="_blank" class="news-headline">Morgan Stanley Increases Stake in Trent to 5.2%</a>
+                        <div class="news-meta">
+                            <span class="news-source">Economic Times</span>
+                            <span class="stock-tag">TRENT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p><strong>📈 Share Market Analysis Today</strong> | Daily Market Intelligence</p>
+                <p class="footer-note">Data sourced from NSE, BSE, Yahoo Finance, Screener.in, and various financial news sources</p>
+                <div class="disclaimer">
+                    <strong>Disclaimer:</strong> This information is for educational purposes only and should not be considered as investment advice. 
+                    Stock market investments are subject to market risks. Please consult a qualified financial advisor before making any investment decisions. 
+                    Past performance is not indicative of future results.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

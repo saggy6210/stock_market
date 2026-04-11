@@ -10,6 +10,10 @@ on:
     branches: [main, master]
   workflow_dispatch:
 
+# Permissions for pushing dashboard data
+permissions:
+  contents: write
+
 jobs:
   daily-scan:
     name: Run Daily Stock Scan
@@ -63,6 +67,18 @@ jobs:
       - name: Run daily scan
         run: |
           curl -fsS http://127.0.0.1:8000/run | python -m json.tool
+
+      - name: Generate dashboard data
+        run: |
+          python generate_dashboard.py --verbose
+
+      - name: Commit and push dashboard data
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add market_dashboard/data/
+          git diff --staged --quiet || git commit -m "📊 Update dashboard data [skip ci]"
+          git push || echo "No changes to push"
 
       - name: Stop API
         if: always()

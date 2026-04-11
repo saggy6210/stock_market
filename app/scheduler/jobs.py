@@ -56,14 +56,73 @@ def create_scheduler(service) -> BackgroundScheduler:
         replace_existing=True,
     )
     
+    # Add dashboard data generation job at 6:55 AM IST (before market opens)
+    scheduler.add_job(
+        func=_run_dashboard_pipeline,
+        trigger=CronTrigger(
+            hour=6,
+            minute=55,
+            timezone="Asia/Kolkata",
+        ),
+        id="dashboard-data-generation",
+        name="Dashboard Data Generation",
+        replace_existing=True,
+    )
+    
+    # Also run dashboard pipeline at 3:35 PM IST (after market closes)
+    scheduler.add_job(
+        func=_run_dashboard_pipeline,
+        trigger=CronTrigger(
+            hour=15,
+            minute=35,
+            timezone="Asia/Kolkata",
+        ),
+        id="dashboard-data-generation-eod",
+        name="Dashboard Data Generation (EOD)",
+        replace_existing=True,
+    )
+    
     logger.info(
         f"Scheduler configured: Daily scan at {settings.schedule_hour:02d}:{settings.schedule_minute:02d} IST (Daily)"
     )
     logger.info(
         f"Scheduler configured: Portfolio analysis at {settings.schedule_hour:02d}:{settings.schedule_minute + 5:02d} IST (Daily)"
     )
+    logger.info(
+        "Scheduler configured: Dashboard data generation at 06:55 and 15:35 IST (Daily)"
+    )
     
     return scheduler
+
+
+def _run_dashboard_pipeline() -> None:
+    """
+    Job function for dashboard data generation.
+    
+    Generates all data needed for the market dashboard:
+    - Index prices (NIFTY, SENSEX, etc.)
+    - Commodity prices
+    - Screener data (fallen stocks)
+    - FII/DII activity
+    - Market outlook
+    - Predictions
+    """
+    logger.info(f"Starting dashboard data pipeline at {datetime.now()}")
+    
+    try:
+        from app.analysis.dashboard_pipeline import run_pipeline
+        
+        data = run_pipeline()
+        
+        logger.info(
+            f"Dashboard data generation completed: "
+            f"{len(data.get('indices', {}))} indices, "
+            f"{len(data.get('commodities', {}))} commodities, "
+            f"{len(data.get('screener', {}).get('feb26', []))} screener stocks"
+        )
+        
+    except Exception as e:
+        logger.error(f"Dashboard data generation failed: {e}", exc_info=True)
 
 
 def _run_daily_scan(service) -> None:
