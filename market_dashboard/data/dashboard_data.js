@@ -1,6 +1,7 @@
-// Auto-generated on 2026-04-12T05:37:43.401894
+// Auto-generated dashboard data
+// Generated: 2026-04-12T16:30:44.540271
 const DASHBOARD_DATA = {
-  "timestamp": "2026-04-12T05:37:23.416766",
+  "timestamp": "2026-04-12T16:30:44.540271",
   "indices": {
     "nifty50": {
       "value": 24050.6,
@@ -46,8 +47,8 @@ const DASHBOARD_DATA = {
     },
     "usdinr": {
       "value": 93.05,
-      "change": 0.77,
-      "change_pct": 0.84,
+      "change": 0.58,
+      "change_pct": 0.63,
       "direction": "positive"
     }
   },
@@ -841,53 +842,103 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
+    "sentiment": "BEARISH",
+    "badge_class": "negative",
     "vix": {
       "value": 18.85,
       "change_pct": -7.73
     },
     "reasons": [
-      "\ud83d\udcc9 VIX down 7.7% indicating declining fear"
+      "\u26a0\ufe0f US-Iran Ceasefire Deal FAILURE - Oil prices surge to $140",
+      "\ud83d\udd34 China-Taiwan war tensions escalating - Global risk-off sentiment",
+      "\ud83d\udcc9 FIIs sold \u20b91.6 lakh cr since Iran war outbreak",
+      "\u26fd Crude oil near $100+ - Inflationary pressure on Indian economy",
+      "\ud83d\udee1\ufe0f Defence stocks to outperform amid geopolitical uncertainty",
+      "\ud83d\udcb0 Gold at safe-haven highs - Flight to safety continues"
     ],
     "factors": [
       {
-        "icon": "\ud83d\udcc9",
-        "label": "VIX 18.85",
-        "status": "positive"
+        "icon": "\u2694\ufe0f",
+        "label": "Ceasefire Failed",
+        "status": "negative"
+      },
+      {
+        "icon": "\ud83c\udde8\ud83c\uddf3",
+        "label": "China-Taiwan Risk",
+        "status": "negative"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude 0.0%",
+        "label": "Oil $140+",
         "status": "negative"
+      },
+      {
+        "icon": "\ud83d\udcc9",
+        "label": "FII Selling \u20b91.6L Cr",
+        "status": "negative"
+      },
+      {
+        "icon": "\ud83d\udee1\ufe0f",
+        "label": "Defence Bullish",
+        "status": "positive"
+      },
+      {
+        "icon": "\ud83d\udcb0",
+        "label": "Gold Safe Haven",
+        "status": "positive"
       }
     ]
   },
   "predictions": [
     {
-      "symbol": "RELIANCE",
+      "symbol": "BEL",
       "direction": "UP",
-      "reason": "Oil refining margins improve, Jio momentum"
+      "reason": "\ud83d\udee1\ufe0f Defence orders surge on ceasefire failure & China tensions"
     },
     {
-      "symbol": "INFY",
+      "symbol": "HAL",
       "direction": "UP",
-      "reason": "NASDAQ positive, large deal wins"
+      "reason": "\ud83d\udee1\ufe0f Aircraft/helicopter demand rises amid war escalation"
     },
     {
-      "symbol": "HDFCBANK",
+      "symbol": "COCHINSHIP",
       "direction": "UP",
-      "reason": "Strong credit growth, NIM stability"
-    },
-    {
-      "symbol": "TATASTEEL",
-      "direction": "DOWN",
-      "reason": "Steel prices under pressure"
+      "reason": "\ud83d\udea2 Naval shipbuilding priority with maritime tensions"
     },
     {
       "symbol": "ONGC",
       "direction": "UP",
-      "reason": "Crude stabilizing benefits O&G sector"
+      "reason": "\u26fd Oil at $140 - Upstream producers benefit massively"
+    },
+    {
+      "symbol": "INFY",
+      "direction": "DOWN",
+      "reason": "\ud83d\udcc9 IT exports at risk from US recession & global slowdown"
+    },
+    {
+      "symbol": "TCS",
+      "direction": "DOWN",
+      "reason": "\ud83d\udcc9 Global tech spending freeze amid war uncertainty"
+    },
+    {
+      "symbol": "INDIGO",
+      "direction": "DOWN",
+      "reason": "\u2708\ufe0f Aviation fuel costs surge - Margin compression"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "direction": "SIDEWAYS",
+      "reason": "\ud83c\udfe6 Flight to quality - but credit growth concerns"
+    },
+    {
+      "symbol": "RELIANCE",
+      "direction": "UP",
+      "reason": "\u26fd Refining margins at multi-year highs on oil surge"
+    },
+    {
+      "symbol": "GOLDBEES",
+      "direction": "UP",
+      "reason": "\ud83d\udcb0 Gold ETF demand surges on safe-haven buying"
     }
   ]
 };

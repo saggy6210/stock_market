@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-12T05:37:23.416766",
+  "timestamp": "2026-04-12T16:30:44.540271",
   "indices": {
     "nifty50": {
       "value": 24050.6,
@@ -45,8 +45,8 @@
     },
     "usdinr": {
       "value": 93.05,
-      "change": 0.77,
-      "change_pct": 0.84,
+      "change": 0.58,
+      "change_pct": 0.63,
       "direction": "positive"
     }
   },
@@ -840,53 +840,103 @@
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
+    "sentiment": "BEARISH",
+    "badge_class": "negative",
     "vix": {
       "value": 18.85,
       "change_pct": -7.73
     },
     "reasons": [
-      "\ud83d\udcc9 VIX down 7.7% indicating declining fear"
+      "⚠️ US-Iran Ceasefire Deal FAILURE - Oil prices surge to $140",
+      "🔴 China-Taiwan war tensions escalating - Global risk-off sentiment",
+      "📉 FIIs sold ₹1.6 lakh cr since Iran war outbreak",
+      "⛽ Crude oil near $100+ - Inflationary pressure on Indian economy",
+      "🛡️ Defence stocks to outperform amid geopolitical uncertainty",
+      "💰 Gold at safe-haven highs - Flight to safety continues"
     ],
     "factors": [
       {
-        "icon": "\ud83d\udcc9",
-        "label": "VIX 18.85",
+        "icon": "⚔️",
+        "label": "Ceasefire Failed",
+        "status": "negative"
+      },
+      {
+        "icon": "🇨🇳",
+        "label": "China-Taiwan Risk",
+        "status": "negative"
+      },
+      {
+        "icon": "⛽",
+        "label": "Oil $140+",
+        "status": "negative"
+      },
+      {
+        "icon": "📉",
+        "label": "FII Selling ₹1.6L Cr",
+        "status": "negative"
+      },
+      {
+        "icon": "🛡️",
+        "label": "Defence Bullish",
         "status": "positive"
       },
       {
-        "icon": "\u26fd",
-        "label": "Crude 0.0%",
-        "status": "negative"
+        "icon": "💰",
+        "label": "Gold Safe Haven",
+        "status": "positive"
       }
     ]
   },
   "predictions": [
     {
-      "symbol": "RELIANCE",
+      "symbol": "BEL",
       "direction": "UP",
-      "reason": "Oil refining margins improve, Jio momentum"
+      "reason": "🛡️ Defence orders surge on ceasefire failure & China tensions"
     },
     {
-      "symbol": "INFY",
+      "symbol": "HAL",
       "direction": "UP",
-      "reason": "NASDAQ positive, large deal wins"
+      "reason": "🛡️ Aircraft/helicopter demand rises amid war escalation"
     },
     {
-      "symbol": "HDFCBANK",
+      "symbol": "COCHINSHIP",
       "direction": "UP",
-      "reason": "Strong credit growth, NIM stability"
-    },
-    {
-      "symbol": "TATASTEEL",
-      "direction": "DOWN",
-      "reason": "Steel prices under pressure"
+      "reason": "🚢 Naval shipbuilding priority with maritime tensions"
     },
     {
       "symbol": "ONGC",
       "direction": "UP",
-      "reason": "Crude stabilizing benefits O&G sector"
+      "reason": "⛽ Oil at $140 - Upstream producers benefit massively"
+    },
+    {
+      "symbol": "INFY",
+      "direction": "DOWN",
+      "reason": "📉 IT exports at risk from US recession & global slowdown"
+    },
+    {
+      "symbol": "TCS",
+      "direction": "DOWN",
+      "reason": "📉 Global tech spending freeze amid war uncertainty"
+    },
+    {
+      "symbol": "INDIGO",
+      "direction": "DOWN",
+      "reason": "✈️ Aviation fuel costs surge - Margin compression"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "direction": "SIDEWAYS",
+      "reason": "🏦 Flight to quality - but credit growth concerns"
+    },
+    {
+      "symbol": "RELIANCE",
+      "direction": "UP",
+      "reason": "⛽ Refining margins at multi-year highs on oil surge"
+    },
+    {
+      "symbol": "GOLDBEES",
+      "direction": "UP",
+      "reason": "💰 Gold ETF demand surges on safe-haven buying"
     }
   ]
 }
