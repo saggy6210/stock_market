@@ -1,6 +1,6 @@
-// Auto-generated on 2026-04-12T23:05:39.238145
+// Auto-generated on 2026-04-13T04:45:09.056547
 const DASHBOARD_DATA = {
-  "timestamp": "2026-04-12T23:05:38.404073",
+  "timestamp": "2026-04-13T04:45:07.772101",
   "indices": {},
   "commodities": {},
   "screener": {
@@ -12,17 +12,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "12 Apr 2026",
+        "date": "13 Apr 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "11 Apr 2026",
+        "date": "12 Apr 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "10 Apr 2026",
+        "date": "11 Apr 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
