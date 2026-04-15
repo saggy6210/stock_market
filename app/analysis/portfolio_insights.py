@@ -23,6 +23,7 @@ import pandas as pd
 import yfinance as yf
 
 from app.data.nse_client import NSEClient
+from app.data.google_finance_client import get_google_finance_client, GoogleFinanceData
 from app.analysis.technical import TechnicalAnalyzer
 from app.analysis.recommendation import RecommendationEngine
 from app.analysis.market_intelligence import MarketIntelligenceService, FundamentalData
@@ -30,8 +31,10 @@ from app.analysis.news_aggregator import NewsAggregator, NewsItem
 
 logger = logging.getLogger(__name__)
 
-# Timeout for yfinance API calls per stock (seconds)
+# Timeout for API calls per stock (seconds)
 YFINANCE_TIMEOUT = 5
+# Use Google Finance as primary data source for analysis
+USE_GOOGLE_FINANCE = True
 
 
 class PortfolioSignal(Enum):
@@ -521,9 +524,28 @@ class PortfolioInsightsGenerator:
             logger.debug(f"Enrichment timeout/error for {holding.symbol}: {e}")
     
     def _enrich_holding_data(self, holding: HoldingAnalysis) -> None:
-        """Enrich holding with additional data from various sources (fast mode)."""
+        """Enrich holding with additional data from various sources (fast mode).
+        
+        Uses Google Finance as primary source when USE_GOOGLE_FINANCE is True,
+        falls back to Yahoo Finance for additional data.
+        """
         try:
-            # Try Yahoo Finance - only get basic info, skip historical data for speed
+            # Try Google Finance first if enabled
+            if USE_GOOGLE_FINANCE:
+                try:
+                    gf_client = get_google_finance_client()
+                    gf_data = gf_client.get_stock_data(holding.symbol, "NSE")
+                    
+                    if gf_data and gf_data.current_price > 0:
+                        holding.company_name = gf_data.company_name or holding.symbol
+                        holding.sector = gf_data.sector if gf_data.sector != "Unknown" else holding.sector
+                        if gf_data.pe_ratio:
+                            holding.pe_ratio = gf_data.pe_ratio
+                        logger.debug(f"Got {holding.symbol} data from Google Finance")
+                except Exception as e:
+                    logger.debug(f"Google Finance failed for {holding.symbol}: {e}")
+            
+            # Supplement with Yahoo Finance for additional fundamentals
             for suffix in [".NS", ".BO"]:
                 try:
                     ticker = yf.Ticker(f"{holding.symbol}{suffix}")
@@ -532,9 +554,12 @@ class PortfolioInsightsGenerator:
                     if info and hasattr(info, 'last_price') and info.last_price:
                         # Get full info only if fast_info works
                         full_info = ticker.info
-                        holding.company_name = full_info.get("shortName", holding.symbol)
-                        holding.sector = full_info.get("sector", "Unknown")
-                        holding.pe_ratio = full_info.get("trailingPE")
+                        if not holding.company_name or holding.company_name == holding.symbol:
+                            holding.company_name = full_info.get("shortName", holding.symbol)
+                        if holding.sector == "Unknown":
+                            holding.sector = full_info.get("sector", "Unknown")
+                        if not holding.pe_ratio:
+                            holding.pe_ratio = full_info.get("trailingPE")
                         holding.pb_ratio = full_info.get("priceToBook")
                         holding.roe = full_info.get("returnOnEquity", 0) * 100 if full_info.get("returnOnEquity") else None
                         holding.debt_to_equity = full_info.get("debtToEquity")
