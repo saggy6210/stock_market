@@ -1,6 +1,6 @@
-// Auto-generated on 2026-04-15T17:12:34.487959
+// Auto-generated on 2026-04-15T17:19:17.494508
 const DASHBOARD_DATA = {
-  "timestamp": "2026-04-15T17:12:11.262541",
+  "timestamp": "2026-04-15T17:18:42.988087",
   "indices": {
     "nifty50": {
       "value": 24231.3,
@@ -33,53 +33,53 @@ const DASHBOARD_DATA = {
       "direction": "negative"
     },
     "dow": {
-      "value": 48369.09,
-      "change": -166.9,
-      "change_pct": -0.34,
+      "value": 48382.11,
+      "change": -153.88,
+      "change_pct": -0.32,
       "direction": "negative"
     },
     "nasdaq": {
-      "value": 23854.71,
-      "change": 215.63,
-      "change_pct": 0.91,
+      "value": 23856.7,
+      "change": 217.62,
+      "change_pct": 0.92,
       "direction": "positive"
     },
     "usdinr": {
-      "value": 93.22,
-      "change": -1.73,
-      "change_pct": -1.82,
+      "value": 93.23,
+      "change": -1.72,
+      "change_pct": -1.81,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4825.6,
-      "change": 0.6,
-      "change_pct": 0.01,
-      "direction": "positive"
+      "value": 4822.7,
+      "change": -2.3,
+      "change_pct": -0.05,
+      "direction": "negative"
     },
     "silver": {
-      "value": 79.37,
-      "change": -0.02,
-      "change_pct": -0.03,
+      "value": 79.29,
+      "change": -0.11,
+      "change_pct": -0.13,
       "direction": "negative"
     },
     "copper": {
-      "value": 6.08,
-      "change": 0.01,
-      "change_pct": 0.23,
+      "value": 6.09,
+      "change": 0.02,
+      "change_pct": 0.3,
       "direction": "positive"
     },
     "crude": {
-      "value": 91.79,
-      "change": 0.51,
-      "change_pct": 0.56,
+      "value": 91.6,
+      "change": 0.32,
+      "change_pct": 0.35,
       "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.6,
-      "change": 0.0,
-      "change_pct": 0.08,
+      "value": 2.61,
+      "change": 0.01,
+      "change_pct": 0.23,
       "direction": "positive"
     }
   },
@@ -858,7 +858,7 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude 0.6%",
+        "label": "Crude 0.3%",
         "status": "negative"
       }
     ]
