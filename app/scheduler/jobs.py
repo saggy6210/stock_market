@@ -30,69 +30,73 @@ def create_scheduler(service) -> BackgroundScheduler:
     """
     scheduler = BackgroundScheduler(timezone="Asia/Kolkata")
     
-    # Add daily scan job at 7:00 AM IST, every day
+    # Single daily job at 6:55 AM IST - runs all tasks in sequence
     scheduler.add_job(
-        func=lambda: _run_daily_scan(service),
-        trigger=CronTrigger(
-            hour=settings.schedule_hour,
-            minute=settings.schedule_minute,
-            timezone="Asia/Kolkata",
-        ),
-        id="daily-stock-scan",
-        name="Daily Stock Market Scan",
-        replace_existing=True,
-    )
-    
-    # Add portfolio analysis job at 7:05 AM IST, every day (5 minutes after daily scan)
-    scheduler.add_job(
-        func=lambda: _run_portfolio_analysis(service),
-        trigger=CronTrigger(
-            hour=settings.schedule_hour,
-            minute=settings.schedule_minute + 5,  # 5 minutes after market scan
-            timezone="Asia/Kolkata",
-        ),
-        id="portfolio-analysis",
-        name="Portfolio Analysis and Recommendations",
-        replace_existing=True,
-    )
-    
-    # Add dashboard data generation job at 6:55 AM IST (before market opens)
-    scheduler.add_job(
-        func=_run_dashboard_pipeline,
+        func=lambda: _run_complete_daily_analysis(service),
         trigger=CronTrigger(
             hour=6,
             minute=55,
             timezone="Asia/Kolkata",
         ),
-        id="dashboard-data-generation",
-        name="Dashboard Data Generation",
-        replace_existing=True,
-    )
-    
-    # Also run dashboard pipeline at 3:35 PM IST (after market closes)
-    scheduler.add_job(
-        func=_run_dashboard_pipeline,
-        trigger=CronTrigger(
-            hour=15,
-            minute=35,
-            timezone="Asia/Kolkata",
-        ),
-        id="dashboard-data-generation-eod",
-        name="Dashboard Data Generation (EOD)",
+        id="daily-complete-analysis",
+        name="Daily Complete Analysis (Dashboard + Scan + Portfolio)",
         replace_existing=True,
     )
     
     logger.info(
-        f"Scheduler configured: Daily scan at {settings.schedule_hour:02d}:{settings.schedule_minute:02d} IST (Daily)"
-    )
-    logger.info(
-        f"Scheduler configured: Portfolio analysis at {settings.schedule_hour:02d}:{settings.schedule_minute + 5:02d} IST (Daily)"
-    )
-    logger.info(
-        "Scheduler configured: Dashboard data generation at 06:55 and 15:35 IST (Daily)"
+        "Scheduler configured: Complete daily analysis at 06:55 AM IST"
     )
     
     return scheduler
+
+
+def _run_complete_daily_analysis(service) -> None:
+    """
+    Single job that runs all daily tasks in sequence:
+    1. Dashboard data generation
+    2. Daily market scan
+    3. Portfolio analysis with email
+    
+    Args:
+        service: StockService instance
+    """
+    logger.info(f"Starting complete daily analysis at {datetime.now()}")
+    
+    # Step 1: Generate dashboard data
+    try:
+        logger.info("Step 1/3: Generating dashboard data...")
+        from app.analysis.dashboard_pipeline import run_pipeline
+        data = run_pipeline()
+        logger.info(
+            f"Dashboard data generated: {len(data.get('indices', {}))} indices, "
+            f"{len(data.get('commodities', {}))} commodities"
+        )
+    except Exception as e:
+        logger.error(f"Dashboard generation failed: {e}", exc_info=True)
+    
+    # Step 2: Run daily market scan (without notification - portfolio will send combined email)
+    try:
+        logger.info("Step 2/3: Running daily market scan...")
+        report = service.run_daily_scan(notify=False)
+        logger.info(
+            f"Daily scan completed: {len(report.buy_signals)} buy signals, "
+            f"{len(report.sell_signals)} sell signals"
+        )
+    except Exception as e:
+        logger.error(f"Daily scan failed: {e}", exc_info=True)
+    
+    # Step 3: Run portfolio analysis with email notification
+    try:
+        logger.info("Step 3/3: Running portfolio analysis...")
+        insights = service.run_portfolio_analysis(notify=True)
+        logger.info(
+            f"Portfolio analysis completed: {len(insights.holdings)} holdings, "
+            f"P/L: {insights.summary.total_pnl_pct:.2f}%"
+        )
+    except Exception as e:
+        logger.error(f"Portfolio analysis failed: {e}", exc_info=True)
+    
+    logger.info(f"Complete daily analysis finished at {datetime.now()}")
 
 
 def _run_dashboard_pipeline() -> None:
