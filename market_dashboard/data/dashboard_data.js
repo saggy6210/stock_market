@@ -1,6 +1,6 @@
-// Auto-generated on 2026-04-15T17:19:17.494508
+// Auto-generated on 2026-04-15T17:24:00.920968
 const DASHBOARD_DATA = {
-  "timestamp": "2026-04-15T17:18:42.988087",
+  "timestamp": "2026-04-15T17:23:44.278798",
   "indices": {
     "nifty50": {
       "value": 24231.3,
@@ -33,53 +33,53 @@ const DASHBOARD_DATA = {
       "direction": "negative"
     },
     "dow": {
-      "value": 48382.11,
-      "change": -153.88,
-      "change_pct": -0.32,
+      "value": 48362.65,
+      "change": -173.34,
+      "change_pct": -0.36,
       "direction": "negative"
     },
     "nasdaq": {
-      "value": 23856.7,
-      "change": 217.62,
-      "change_pct": 0.92,
+      "value": 23848.27,
+      "change": 209.19,
+      "change_pct": 0.88,
       "direction": "positive"
     },
     "usdinr": {
-      "value": 93.23,
-      "change": -1.72,
-      "change_pct": -1.81,
+      "value": 93.24,
+      "change": -1.71,
+      "change_pct": -1.8,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4822.7,
-      "change": -2.3,
-      "change_pct": -0.05,
+      "value": 4821.9,
+      "change": -3.1,
+      "change_pct": -0.06,
       "direction": "negative"
     },
     "silver": {
-      "value": 79.29,
-      "change": -0.11,
-      "change_pct": -0.13,
+      "value": 79.25,
+      "change": -0.14,
+      "change_pct": -0.18,
       "direction": "negative"
     },
     "copper": {
       "value": 6.09,
       "change": 0.02,
-      "change_pct": 0.3,
+      "change_pct": 0.26,
       "direction": "positive"
     },
     "crude": {
-      "value": 91.6,
-      "change": 0.32,
-      "change_pct": 0.35,
+      "value": 91.93,
+      "change": 0.65,
+      "change_pct": 0.71,
       "direction": "positive"
     },
     "naturalgas": {
       "value": 2.61,
       "change": 0.01,
-      "change_pct": 0.23,
+      "change_pct": 0.31,
       "direction": "positive"
     }
   },
@@ -858,7 +858,7 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude 0.3%",
+        "label": "Crude 0.7%",
         "status": "negative"
       }
     ]
