@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-18T04:17:26.658569",
+  "timestamp": "2026-04-18T05:24:21.434020",
   "indices": {
     "nifty50": {
       "value": 24353.55,
@@ -238,15 +238,6 @@
         "buy_signal": "Buy"
       },
       {
-        "symbol": "MARUTI",
-        "sector": "Consumer Cyclical",
-        "old_price": 17370.0,
-        "current_price": 13453.0,
-        "low_52w": 11168.12,
-        "fall_pct": -22.55,
-        "buy_signal": "Buy"
-      },
-      {
         "symbol": "IOC",
         "sector": "Energy",
         "old_price": 186.61,
@@ -262,6 +253,15 @@
         "current_price": 799.9,
         "low_52w": 726.65,
         "fall_pct": -21.62,
+        "buy_signal": "Buy"
+      },
+      {
+        "symbol": "BPCL",
+        "sector": "Energy",
+        "old_price": 391.65,
+        "current_price": 312.1,
+        "low_52w": 266.6,
+        "fall_pct": -20.31,
         "buy_signal": "Buy"
       }
     ],
@@ -375,15 +375,6 @@
         "buy_signal": "Buy"
       },
       {
-        "symbol": "MARUTI",
-        "sector": "Consumer Cyclical",
-        "old_price": 17370.0,
-        "current_price": 13453.0,
-        "low_52w": 11168.12,
-        "fall_pct": -22.55,
-        "buy_signal": "Buy"
-      },
-      {
         "symbol": "IOC",
         "sector": "Energy",
         "old_price": 186.61,
@@ -444,6 +435,15 @@
         "current_price": 1442.3,
         "low_52w": 1297.7,
         "fall_pct": -18.98,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "MPHASIS",
+        "sector": "Technology",
+        "old_price": 3037.2,
+        "current_price": 2462.2,
+        "low_52w": 2013.0,
+        "fall_pct": -18.93,
         "buy_signal": "Hold"
       }
     ],
@@ -512,15 +512,6 @@
         "buy_signal": "Buy"
       },
       {
-        "symbol": "MARUTI",
-        "sector": "Consumer Cyclical",
-        "old_price": 17370.0,
-        "current_price": 13453.0,
-        "low_52w": 11168.12,
-        "fall_pct": -22.55,
-        "buy_signal": "Buy"
-      },
-      {
         "symbol": "IOC",
         "sector": "Energy",
         "old_price": 186.61,
@@ -602,15 +593,6 @@
         "buy_signal": "Hold"
       },
       {
-        "symbol": "BAJFINANCE",
-        "sector": "Financial Services",
-        "old_price": 1102.5,
-        "current_price": 908.25,
-        "low_52w": 787.9,
-        "fall_pct": -17.62,
-        "buy_signal": "Hold"
-      },
-      {
         "symbol": "PERSISTENT",
         "sector": "Technology",
         "old_price": 6575.41,
@@ -626,6 +608,24 @@
         "current_price": 383.6,
         "low_52w": 345.5,
         "fall_pct": -16.58,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "PAYTM",
+        "sector": "Technology",
+        "old_price": 1381.8,
+        "current_price": 1161.65,
+        "low_52w": 808.0,
+        "fall_pct": -15.93,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "RELIANCE",
+        "sector": "Energy",
+        "old_price": 1611.8,
+        "current_price": 1365.0,
+        "low_52w": 1222.72,
+        "fall_pct": -15.31,
         "buy_signal": "Hold"
       }
     ],
@@ -649,15 +649,6 @@
         "buy_signal": "Buy"
       },
       {
-        "symbol": "MARUTI",
-        "sector": "Consumer Cyclical",
-        "old_price": 17370.0,
-        "current_price": 13453.0,
-        "low_52w": 11168.12,
-        "fall_pct": -22.55,
-        "buy_signal": "Buy"
-      },
-      {
         "symbol": "IOC",
         "sector": "Energy",
         "old_price": 186.61,
@@ -736,15 +727,6 @@
         "current_price": 1511.4,
         "low_52w": 1240.02,
         "fall_pct": -18.48,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "BAJFINANCE",
-        "sector": "Financial Services",
-        "old_price": 1102.5,
-        "current_price": 908.25,
-        "low_52w": 787.9,
-        "fall_pct": -17.62,
         "buy_signal": "Hold"
       },
       {
@@ -808,6 +790,24 @@
         "current_price": 373.3,
         "low_52w": 304.05,
         "fall_pct": -12.17,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "ICICIBANK",
+        "sector": "Financial Services",
+        "old_price": 1488.51,
+        "current_price": 1346.8,
+        "low_52w": 1187.6,
+        "fall_pct": -9.52,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "COALINDIA",
+        "sector": "Energy",
+        "old_price": 476.0,
+        "current_price": 438.75,
+        "low_52w": 345.88,
+        "fall_pct": -7.83,
         "buy_signal": "Hold"
       }
     ]
