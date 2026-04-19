@@ -1,6 +1,6 @@
-// Auto-generated on 2026-04-19T05:43:27.979068
+// Auto-generated on 2026-04-19T23:08:09.634588
 const DASHBOARD_DATA = {
-  "timestamp": "2026-04-19T05:43:04.940337",
+  "timestamp": "2026-04-19T23:07:39.468008",
   "indices": {
     "nifty50": {
       "value": 24353.55,
@@ -46,29 +46,29 @@ const DASHBOARD_DATA = {
     },
     "usdinr": {
       "value": 92.57,
-      "change": -0.81,
-      "change_pct": -0.87,
+      "change": -0.47,
+      "change_pct": -0.51,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4879.6,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 4800.9,
+      "change": -56.7,
+      "change_pct": -1.17,
+      "direction": "negative"
     },
     "silver": {
-      "value": 81.84,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 79.68,
+      "change": -2.06,
+      "change_pct": -2.52,
+      "direction": "negative"
     },
     "copper": {
-      "value": 6.11,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 6.03,
+      "change": -0.07,
+      "change_pct": -1.21,
+      "direction": "negative"
     },
     "crude": {
       "value": 82.59,
