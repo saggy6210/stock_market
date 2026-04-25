@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-25T04:22:01.276808",
+  "timestamp": "2026-04-25T05:29:19.795792",
   "indices": {
     "nifty50": {
       "value": 23897.95,
@@ -411,6 +411,15 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "MARUTI",
+        "sector": "Consumer Cyclical",
+        "old_price": 17370.0,
+        "current_price": 13048.0,
+        "low_52w": 11168.12,
+        "fall_pct": -24.88,
+        "buy_signal": "Buy"
+      },
+      {
         "symbol": "IOC",
         "sector": "Energy",
         "old_price": 186.61,
@@ -436,15 +445,6 @@
         "low_52w": 266.6,
         "fall_pct": -21.33,
         "buy_signal": "Buy"
-      },
-      {
-        "symbol": "RELIANCE",
-        "sector": "Energy",
-        "old_price": 1611.8,
-        "current_price": 1327.8,
-        "low_52w": 1282.98,
-        "fall_pct": -17.62,
-        "buy_signal": "Hold"
       }
     ],
     "may25": [
@@ -548,6 +548,15 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "MARUTI",
+        "sector": "Consumer Cyclical",
+        "old_price": 17370.0,
+        "current_price": 13048.0,
+        "low_52w": 11168.12,
+        "fall_pct": -24.88,
+        "buy_signal": "Buy"
+      },
+      {
         "symbol": "IOC",
         "sector": "Energy",
         "old_price": 186.61,
@@ -573,6 +582,15 @@
         "low_52w": 266.6,
         "fall_pct": -21.33,
         "buy_signal": "Buy"
+      },
+      {
+        "symbol": "KOTAKBANK",
+        "sector": "Financial Services",
+        "old_price": 453.2,
+        "current_price": 370.85,
+        "low_52w": 345.5,
+        "fall_pct": -18.17,
+        "buy_signal": "Hold"
       },
       {
         "symbol": "RELIANCE",
@@ -602,30 +620,12 @@
         "buy_signal": "Hold"
       },
       {
-        "symbol": "GAIL",
-        "sector": "Utilities",
-        "old_price": 195.53,
-        "current_price": 165.61,
-        "low_52w": 134.36,
-        "fall_pct": -15.3,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "HUDCO",
+        "symbol": "BAJFINANCE",
         "sector": "Financial Services",
-        "old_price": 246.85,
-        "current_price": 211.37,
-        "low_52w": 159.0,
-        "fall_pct": -14.37,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "POLICYBZR",
-        "sector": "Financial Services",
-        "old_price": 1978.0,
-        "current_price": 1696.7,
-        "low_52w": 1364.0,
-        "fall_pct": -14.22,
+        "old_price": 1102.5,
+        "current_price": 921.55,
+        "low_52w": 787.9,
+        "fall_pct": -16.41,
         "buy_signal": "Hold"
       }
     ],
@@ -685,6 +685,15 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "MARUTI",
+        "sector": "Consumer Cyclical",
+        "old_price": 17370.0,
+        "current_price": 13048.0,
+        "low_52w": 11168.12,
+        "fall_pct": -24.88,
+        "buy_signal": "Buy"
+      },
+      {
         "symbol": "IOC",
         "sector": "Energy",
         "old_price": 186.61,
@@ -712,6 +721,15 @@
         "buy_signal": "Buy"
       },
       {
+        "symbol": "KOTAKBANK",
+        "sector": "Financial Services",
+        "old_price": 453.2,
+        "current_price": 370.85,
+        "low_52w": 345.5,
+        "fall_pct": -18.17,
+        "buy_signal": "Hold"
+      },
+      {
         "symbol": "RELIANCE",
         "sector": "Energy",
         "old_price": 1611.8,
@@ -736,6 +754,15 @@
         "current_price": 1814.5,
         "low_52w": 1746.9,
         "fall_pct": -16.56,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "BAJFINANCE",
+        "sector": "Financial Services",
+        "old_price": 1102.5,
+        "current_price": 921.55,
+        "low_52w": 787.9,
+        "fall_pct": -16.41,
         "buy_signal": "Hold"
       },
       {
@@ -766,48 +793,21 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "SUNPHARMA",
+        "sector": "Healthcare",
+        "old_price": 1843.0,
+        "current_price": 1620.4,
+        "low_52w": 1538.01,
+        "fall_pct": -12.08,
+        "buy_signal": "Hold"
+      },
+      {
         "symbol": "RECLTD",
         "sector": "Financial Services",
         "old_price": 422.09,
         "current_price": 374.0,
         "low_52w": 304.05,
         "fall_pct": -11.39,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "ICICIBANK",
-        "sector": "Financial Services",
-        "old_price": 1488.51,
-        "current_price": 1326.2,
-        "low_52w": 1187.6,
-        "fall_pct": -10.9,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "NHPC",
-        "sector": "Utilities",
-        "old_price": 90.16,
-        "current_price": 80.66,
-        "low_52w": 71.62,
-        "fall_pct": -10.53,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "DELHIVERY",
-        "sector": "Industrials",
-        "old_price": 490.0,
-        "current_price": 449.7,
-        "low_52w": 295.4,
-        "fall_pct": -8.22,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "NYKAA",
-        "sector": "Consumer Cyclical",
-        "old_price": 285.6,
-        "current_price": 262.79,
-        "low_52w": 188.12,
-        "fall_pct": -7.99,
         "buy_signal": "Hold"
       }
     ]
