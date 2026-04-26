@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-25T23:07:22.585946",
+  "timestamp": "2026-04-26T23:09:05.458566",
   "indices": {
     "nifty50": {
       "value": 23897.95,
@@ -52,34 +52,34 @@
   },
   "commodities": {
     "gold": {
-      "value": 4722.3,
-      "change": 17.2,
-      "change_pct": 0.37,
-      "direction": "positive"
+      "value": 4700.1,
+      "change": -22.2,
+      "change_pct": -0.47,
+      "direction": "negative"
     },
     "silver": {
-      "value": 76.38,
-      "change": 0.92,
-      "change_pct": 1.22,
-      "direction": "positive"
+      "value": 75.12,
+      "change": -1.26,
+      "change_pct": -1.65,
+      "direction": "negative"
     },
     "copper": {
       "value": 6.02,
-      "change": -0.05,
-      "change_pct": -0.86,
+      "change": -0.01,
+      "change_pct": -0.09,
       "direction": "negative"
     },
     "crude": {
-      "value": 94.4,
-      "change": -1.45,
-      "change_pct": -1.51,
-      "direction": "negative"
+      "value": 96.16,
+      "change": 1.76,
+      "change_pct": 1.86,
+      "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.52,
-      "change": -0.09,
-      "change_pct": -3.48,
-      "direction": "negative"
+      "value": 2.69,
+      "change": 0.17,
+      "change_pct": 6.82,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -815,17 +815,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "25 Apr 2026",
+        "date": "26 Apr 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "24 Apr 2026",
+        "date": "25 Apr 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "23 Apr 2026",
+        "date": "24 Apr 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -846,9 +846,7 @@
       "value": 19.71,
       "change_pct": 6.02
     },
-    "reasons": [
-      "\u26fd Crude oil down 1.5% - positive for India"
-    ],
+    "reasons": [],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
@@ -857,8 +855,8 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -1.5%",
-        "status": "positive"
+        "label": "Crude 1.9%",
+        "status": "negative"
       }
     ]
   },
