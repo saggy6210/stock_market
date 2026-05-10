@@ -1,6 +1,6 @@
-// Auto-generated on 2026-05-09T23:14:51.594589
+// Auto-generated on 2026-05-10T23:28:39.483726
 const DASHBOARD_DATA = {
-  "timestamp": "2026-05-09T23:14:37.453192",
+  "timestamp": "2026-05-10T23:28:25.388937",
   "indices": {
     "nifty50": {
       "value": 24176.15,
@@ -45,42 +45,42 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "usdinr": {
-      "value": 94.47,
-      "change": -0.14,
-      "change_pct": -0.15,
-      "direction": "negative"
+      "value": 94.37,
+      "change": 0.12,
+      "change_pct": 0.13,
+      "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4720.4,
-      "change": 20.6,
-      "change_pct": 0.44,
-      "direction": "positive"
+      "value": 4702.2,
+      "change": -18.2,
+      "change_pct": -0.39,
+      "direction": "negative"
     },
     "silver": {
-      "value": 80.39,
-      "change": 0.69,
-      "change_pct": 0.87,
+      "value": 80.68,
+      "change": 0.29,
+      "change_pct": 0.36,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.25,
-      "change": 0.12,
-      "change_pct": 1.98,
+      "value": 6.29,
+      "change": 0.04,
+      "change_pct": 0.59,
       "direction": "positive"
     },
     "crude": {
-      "value": 95.42,
-      "change": 0.61,
-      "change_pct": 0.64,
+      "value": 98.23,
+      "change": 2.81,
+      "change_pct": 2.94,
       "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.76,
-      "change": -0.01,
-      "change_pct": -0.43,
-      "direction": "negative"
+      "value": 2.8,
+      "change": 0.04,
+      "change_pct": 1.52,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "09 May 2026",
+        "date": "10 May 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "08 May 2026",
+        "date": "09 May 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "07 May 2026",
+        "date": "08 May 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -856,7 +856,7 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude 0.6%",
+        "label": "Crude 2.9%",
         "status": "negative"
       }
     ]
