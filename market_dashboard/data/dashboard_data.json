@@ -1,50 +1,50 @@
 {
-  "timestamp": "2026-05-12T23:38:08.175459",
+  "timestamp": "2026-05-13T23:40:26.353809",
   "indices": {
     "nifty50": {
-      "value": 23815.85,
+      "value": 23379.55,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 76015.28,
+      "value": 74559.24,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 54439.9,
+      "value": 53555.2,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 29329.45,
+      "value": 28234.9,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 18.55,
+      "value": 19.28,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 49760.56,
-      "change": 56.09,
-      "change_pct": 0.11,
-      "direction": "positive"
-    },
-    "nasdaq": {
-      "value": 26088.2,
-      "change": -185.93,
-      "change_pct": -0.71,
+      "value": 49693.2,
+      "change": -67.36,
+      "change_pct": -0.14,
       "direction": "negative"
     },
+    "nasdaq": {
+      "value": 26402.34,
+      "change": 314.14,
+      "change_pct": 1.2,
+      "direction": "positive"
+    },
     "usdinr": {
-      "value": 95.39,
+      "value": 95.63,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
@@ -52,34 +52,34 @@
   },
   "commodities": {
     "gold": {
-      "value": 4727.6,
-      "change": 8.9,
-      "change_pct": 0.19,
+      "value": 4703.5,
+      "change": 25.9,
+      "change_pct": 0.55,
       "direction": "positive"
     },
     "silver": {
-      "value": 87.5,
-      "change": 2.01,
-      "change_pct": 2.36,
+      "value": 88.33,
+      "change": 3.21,
+      "change_pct": 3.76,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.63,
-      "change": 0.22,
-      "change_pct": 3.45,
+      "value": 6.62,
+      "change": 0.14,
+      "change_pct": 2.1,
       "direction": "positive"
     },
     "crude": {
-      "value": 102.02,
-      "change": 3.95,
-      "change_pct": 4.03,
-      "direction": "positive"
+      "value": 100.99,
+      "change": -1.19,
+      "change_pct": -1.16,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.83,
-      "change": -0.08,
-      "change_pct": -2.82,
-      "direction": "negative"
+      "value": 2.87,
+      "change": 0.03,
+      "change_pct": 1.06,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -168,9 +168,9 @@
       {
         "symbol": "TCS",
         "sector": "Technology",
-        "old_price": 3509.22,
+        "old_price": 3501.97,
         "current_price": NaN,
-        "low_52w": 2346.2,
+        "low_52w": 2283.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -251,7 +251,7 @@
         "sector": "Basic Materials",
         "old_price": 758.83,
         "current_price": NaN,
-        "low_52w": 210.68,
+        "low_52w": 219.61,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -260,7 +260,7 @@
         "sector": "Technology",
         "old_price": 1728.0,
         "current_price": NaN,
-        "low_52w": 1149.8,
+        "low_52w": 1123.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       }
@@ -305,9 +305,9 @@
       {
         "symbol": "TCS",
         "sector": "Technology",
-        "old_price": 3509.22,
+        "old_price": 3501.97,
         "current_price": NaN,
-        "low_52w": 2346.2,
+        "low_52w": 2283.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -388,7 +388,7 @@
         "sector": "Basic Materials",
         "old_price": 758.83,
         "current_price": NaN,
-        "low_52w": 210.68,
+        "low_52w": 219.61,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -397,7 +397,7 @@
         "sector": "Technology",
         "old_price": 1728.0,
         "current_price": NaN,
-        "low_52w": 1149.8,
+        "low_52w": 1123.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -415,7 +415,7 @@
         "sector": "Technology",
         "old_price": 1746.66,
         "current_price": NaN,
-        "low_52w": 1176.8,
+        "low_52w": 1142.6,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -525,7 +525,7 @@
         "sector": "Basic Materials",
         "old_price": 758.83,
         "current_price": NaN,
-        "low_52w": 210.68,
+        "low_52w": 219.61,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -534,7 +534,7 @@
         "sector": "Technology",
         "old_price": 1728.0,
         "current_price": NaN,
-        "low_52w": 1149.8,
+        "low_52w": 1123.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -552,7 +552,7 @@
         "sector": "Technology",
         "old_price": 1746.66,
         "current_price": NaN,
-        "low_52w": 1176.8,
+        "low_52w": 1142.6,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -615,7 +615,7 @@
         "sector": "Industrials",
         "old_price": 490.0,
         "current_price": NaN,
-        "low_52w": 304.05,
+        "low_52w": 311.25,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -624,7 +624,7 @@
         "sector": "Financial Services",
         "old_price": 586.25,
         "current_price": NaN,
-        "low_52w": 367.35,
+        "low_52w": 370.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       }
@@ -662,7 +662,7 @@
         "sector": "Basic Materials",
         "old_price": 758.83,
         "current_price": NaN,
-        "low_52w": 210.68,
+        "low_52w": 219.61,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -671,7 +671,7 @@
         "sector": "Technology",
         "old_price": 1728.0,
         "current_price": NaN,
-        "low_52w": 1149.8,
+        "low_52w": 1123.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -689,7 +689,7 @@
         "sector": "Technology",
         "old_price": 1746.66,
         "current_price": NaN,
-        "low_52w": 1176.8,
+        "low_52w": 1142.6,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -752,7 +752,7 @@
         "sector": "Industrials",
         "old_price": 490.0,
         "current_price": NaN,
-        "low_52w": 304.05,
+        "low_52w": 311.25,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -761,7 +761,7 @@
         "sector": "Financial Services",
         "old_price": 586.25,
         "current_price": NaN,
-        "low_52w": 367.35,
+        "low_52w": 370.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -815,17 +815,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "12 May 2026",
+        "date": "13 May 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "11 May 2026",
+        "date": "12 May 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "10 May 2026",
+        "date": "11 May 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -843,20 +843,22 @@
     "sentiment": "NEUTRAL",
     "badge_class": "neutral",
     "vix": {
-      "value": 18.55,
+      "value": 19.28,
       "change_pct": 0.0
     },
-    "reasons": [],
+    "reasons": [
+      "\u26fd Crude oil down 1.2% - positive for India"
+    ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 18.55",
+        "label": "VIX 19.28",
         "status": "negative"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude 4.0%",
-        "status": "negative"
+        "label": "Crude -1.2%",
+        "status": "positive"
       }
     ]
   },
