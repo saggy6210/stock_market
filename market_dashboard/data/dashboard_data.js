@@ -1,6 +1,6 @@
-// Auto-generated on 2026-05-23T23:30:20.434687
+// Auto-generated on 2026-05-24T23:33:42.044091
 const DASHBOARD_DATA = {
-  "timestamp": "2026-05-23T23:30:03.988409",
+  "timestamp": "2026-05-24T23:33:18.543597",
   "indices": {
     "nifty50": {
       "value": 23719.3,
@@ -53,34 +53,34 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4521.0,
-      "change": -18.8,
-      "change_pct": -0.41,
-      "direction": "negative"
+      "value": 4523.2,
+      "change": 2.2,
+      "change_pct": 0.05,
+      "direction": "positive"
     },
     "silver": {
-      "value": 75.89,
-      "change": -0.52,
-      "change_pct": -0.68,
-      "direction": "negative"
+      "value": 76.2,
+      "change": 0.31,
+      "change_pct": 0.4,
+      "direction": "positive"
     },
     "copper": {
-      "value": 6.34,
-      "change": 0.09,
-      "change_pct": 1.36,
+      "value": 6.38,
+      "change": 0.04,
+      "change_pct": 0.58,
       "direction": "positive"
     },
     "crude": {
       "value": 96.6,
-      "change": 0.25,
-      "change_pct": 0.26,
+      "change": 0.0,
+      "change_pct": 0.0,
       "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.91,
-      "change": -0.11,
-      "change_pct": -3.68,
-      "direction": "negative"
+      "value": 3.02,
+      "change": 0.11,
+      "change_pct": 3.92,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -133,9 +133,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "TCS",
         "sector": "Technology",
-        "old_price": 3450.21,
-        "current_price": 2317.3,
-        "low_52w": 2206.4,
+        "old_price": 3404.06,
+        "current_price": 2286.3,
+        "low_52w": 2176.88,
         "fall_pct": -32.84,
         "buy_signal": "Avoid"
       },
@@ -270,9 +270,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "TCS",
         "sector": "Technology",
-        "old_price": 3450.21,
-        "current_price": 2317.3,
-        "low_52w": 2206.4,
+        "old_price": 3404.06,
+        "current_price": 2286.3,
+        "low_52w": 2176.88,
         "fall_pct": -32.84,
         "buy_signal": "Avoid"
       },
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "23 May 2026",
+        "date": "24 May 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "22 May 2026",
+        "date": "23 May 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "21 May 2026",
+        "date": "22 May 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -856,7 +856,7 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude 0.3%",
+        "label": "Crude 0.0%",
         "status": "negative"
       }
     ]
