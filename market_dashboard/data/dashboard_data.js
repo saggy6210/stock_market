@@ -1,85 +1,85 @@
-// Auto-generated on 2026-05-25T23:39:58.573955
+// Auto-generated on 2026-05-26T23:40:23.851892
 const DASHBOARD_DATA = {
-  "timestamp": "2026-05-25T23:39:39.224886",
+  "timestamp": "2026-05-26T23:40:03.983089",
   "indices": {
     "nifty50": {
-      "value": 23719.3,
+      "value": 24031.7,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 75415.35,
+      "value": 76488.96,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 54055.35,
+      "value": 55293.65,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 28912.5,
+      "value": 28979.85,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 17.91,
+      "value": 16.7,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 50579.7,
-      "change": 294.04,
-      "change_pct": 0.58,
-      "direction": "positive"
+      "value": 50461.68,
+      "change": -118.02,
+      "change_pct": -0.23,
+      "direction": "negative"
     },
     "nasdaq": {
-      "value": 26343.97,
-      "change": 50.87,
-      "change_pct": 0.19,
+      "value": 26656.18,
+      "change": 312.21,
+      "change_pct": 1.19,
       "direction": "positive"
     },
     "usdinr": {
-      "value": 95.22,
-      "change": -0.5,
-      "change_pct": -0.52,
-      "direction": "negative"
+      "value": 95.25,
+      "change": 0.0,
+      "change_pct": 0.0,
+      "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4569.7,
-      "change": 48.7,
-      "change_pct": 1.08,
+      "value": 4512.0,
+      "change": 0.0,
+      "change_pct": 0.0,
       "direction": "positive"
     },
     "silver": {
-      "value": 78.26,
-      "change": 2.37,
-      "change_pct": 3.12,
+      "value": 77.58,
+      "change": 0.0,
+      "change_pct": 0.0,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.46,
-      "change": 0.12,
-      "change_pct": 1.84,
+      "value": 6.43,
+      "change": 0.0,
+      "change_pct": 0.0,
       "direction": "positive"
     },
     "crude": {
-      "value": 90.93,
-      "change": -5.67,
-      "change_pct": -5.87,
-      "direction": "negative"
+      "value": 93.34,
+      "change": 0.0,
+      "change_pct": 0.0,
+      "direction": "positive"
     },
     "naturalgas": {
-      "value": 3.04,
-      "change": 0.13,
-      "change_pct": 4.51,
+      "value": 3.01,
+      "change": 0.0,
+      "change_pct": 0.0,
       "direction": "positive"
     }
   },
@@ -106,7 +106,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "BSE",
         "sector": "Financial Services",
-        "old_price": 4298.9,
+        "old_price": 4303.0,
         "current_price": NaN,
         "low_52w": 2021.5,
         "fall_pct": NaN,
@@ -124,7 +124,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "IDEA",
         "sector": "Communication Services",
-        "old_price": 13.99,
+        "old_price": 14.09,
         "current_price": NaN,
         "low_52w": 6.12,
         "fall_pct": NaN,
@@ -778,7 +778,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "ADANIPOWER",
         "sector": "Utilities",
-        "old_price": 234.4,
+        "old_price": 234.6,
         "current_price": NaN,
         "low_52w": 105.42,
         "fall_pct": NaN,
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "25 May 2026",
+        "date": "26 May 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "24 May 2026",
+        "date": "25 May 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "23 May 2026",
+        "date": "24 May 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -844,22 +844,20 @@ const DASHBOARD_DATA = {
     "sentiment": "NEUTRAL",
     "badge_class": "neutral",
     "vix": {
-      "value": 17.91,
+      "value": 16.7,
       "change_pct": 0.0
     },
-    "reasons": [
-      "\u26fd Crude oil down 5.9% - positive for India"
-    ],
+    "reasons": [],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 17.91",
+        "label": "VIX 16.70",
         "status": "negative"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -5.9%",
-        "status": "positive"
+        "label": "Crude 0.0%",
+        "status": "negative"
       }
     ]
   },
