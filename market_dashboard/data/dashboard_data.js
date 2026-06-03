@@ -1,86 +1,86 @@
-// Auto-generated on 2026-06-01T23:50:59.692854
+// Auto-generated on 2026-06-03T00:11:04.925736
 const DASHBOARD_DATA = {
-  "timestamp": "2026-06-01T23:50:35.872937",
+  "timestamp": "2026-06-03T00:10:47.984772",
   "indices": {
     "nifty50": {
-      "value": 23547.75,
+      "value": 23382.6,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 74775.74,
+      "value": 74267.34,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 54239.2,
+      "value": 53643.1,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 29080.15,
+      "value": 29854.25,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 16.19,
+      "value": 16.54,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 51078.88,
-      "change": 46.42,
-      "change_pct": 0.09,
+      "value": 51307.79,
+      "change": 228.91,
+      "change_pct": 0.45,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 27086.81,
-      "change": 114.19,
-      "change_pct": 0.42,
+      "value": 27093.9,
+      "change": 7.09,
+      "change_pct": 0.03,
       "direction": "positive"
     },
     "usdinr": {
-      "value": 95.0,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 95.25,
+      "change": -0.3,
+      "change_pct": -0.31,
+      "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4514.9,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 4506.2,
+      "change": 31.0,
+      "change_pct": 0.69,
       "direction": "positive"
     },
     "silver": {
-      "value": 75.39,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 75.19,
+      "change": 0.18,
+      "change_pct": 0.24,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.57,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 6.66,
+      "change": 0.14,
+      "change_pct": 2.16,
       "direction": "positive"
     },
     "crude": {
-      "value": 91.83,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 94.41,
+      "change": 2.25,
+      "change_pct": 2.44,
       "direction": "positive"
     },
     "naturalgas": {
-      "value": 3.18,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 3.17,
+      "change": -0.01,
+      "change_pct": -0.41,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -198,7 +198,7 @@ const DASHBOARD_DATA = {
         "sector": "Industrials",
         "old_price": 439.12,
         "current_price": NaN,
-        "low_52w": 243.0,
+        "low_52w": 240.8,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -335,7 +335,7 @@ const DASHBOARD_DATA = {
         "sector": "Industrials",
         "old_price": 439.12,
         "current_price": NaN,
-        "low_52w": 243.0,
+        "low_52w": 240.8,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -472,7 +472,7 @@ const DASHBOARD_DATA = {
         "sector": "Industrials",
         "old_price": 439.12,
         "current_price": NaN,
-        "low_52w": 243.0,
+        "low_52w": 240.8,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -771,7 +771,7 @@ const DASHBOARD_DATA = {
         "sector": "Financial Services",
         "old_price": 1023.66,
         "current_price": NaN,
-        "low_52w": 612.1,
+        "low_52w": 607.8,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "01 Jun 2026",
+        "date": "03 Jun 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "31 May 2026",
+        "date": "02 Jun 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "30 May 2026",
+        "date": "01 Jun 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -844,19 +844,19 @@ const DASHBOARD_DATA = {
     "sentiment": "NEUTRAL",
     "badge_class": "neutral",
     "vix": {
-      "value": 16.19,
+      "value": 16.54,
       "change_pct": 0.0
     },
     "reasons": [],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 16.19",
+        "label": "VIX 16.54",
         "status": "negative"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude 0.0%",
+        "label": "Crude 2.4%",
         "status": "negative"
       }
     ]
