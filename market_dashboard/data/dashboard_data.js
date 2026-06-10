@@ -1,51 +1,51 @@
-// Auto-generated on 2026-06-09T23:51:57.625081
+// Auto-generated on 2026-06-10T23:56:49.941771
 const DASHBOARD_DATA = {
-  "timestamp": "2026-06-09T23:51:39.698593",
+  "timestamp": "2026-06-10T23:56:32.087373",
   "indices": {
     "nifty50": {
-      "value": 23123.0,
+      "value": 23242.1,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 73524.26,
+      "value": 73918.76,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 54063.75,
+      "value": 55194.5,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 28653.55,
+      "value": 28516.25,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 17.03,
+      "value": 15.58,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 50872.11,
-      "change": 86.1,
-      "change_pct": 0.17,
-      "direction": "positive"
+      "value": 49918.78,
+      "change": -953.33,
+      "change_pct": -1.87,
+      "direction": "negative"
     },
     "nasdaq": {
-      "value": 25678.82,
-      "change": -250.84,
-      "change_pct": -0.97,
+      "value": 25169.5,
+      "change": -509.32,
+      "change_pct": -1.98,
       "direction": "negative"
     },
     "usdinr": {
-      "value": 95.69,
+      "value": 95.36,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
@@ -53,34 +53,34 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4245.0,
-      "change": -90.9,
-      "change_pct": -2.1,
+      "value": 4075.6,
+      "change": -184.4,
+      "change_pct": -4.33,
       "direction": "negative"
     },
     "silver": {
-      "value": 64.88,
-      "change": -3.55,
-      "change_pct": -5.18,
+      "value": 62.63,
+      "change": -2.46,
+      "change_pct": -3.78,
       "direction": "negative"
     },
     "copper": {
-      "value": 6.33,
-      "change": -0.0,
-      "change_pct": -0.02,
+      "value": 6.19,
+      "change": -0.11,
+      "change_pct": -1.81,
       "direction": "negative"
     },
     "crude": {
-      "value": 89.07,
-      "change": -2.23,
-      "change_pct": -2.44,
-      "direction": "negative"
+      "value": 92.97,
+      "change": 4.77,
+      "change_pct": 5.41,
+      "direction": "positive"
     },
     "naturalgas": {
-      "value": 3.13,
-      "change": -0.01,
-      "change_pct": -0.38,
-      "direction": "negative"
+      "value": 3.19,
+      "change": 0.05,
+      "change_pct": 1.56,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -97,7 +97,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "IRFC",
         "sector": "Financial Services",
-        "old_price": 146.15,
+        "old_price": 145.03,
         "current_price": NaN,
         "low_52w": 87.0,
         "fall_pct": NaN,
@@ -142,7 +142,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NBCC",
         "sector": "Industrials",
-        "old_price": 129.86,
+        "old_price": 128.58,
         "current_price": NaN,
         "low_52w": 77.18,
         "fall_pct": NaN,
@@ -151,7 +151,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NHPC",
         "sector": "Utilities",
-        "old_price": 90.16,
+        "old_price": 89.34,
         "current_price": NaN,
         "low_52w": 71.62,
         "fall_pct": NaN,
@@ -171,14 +171,14 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 3404.06,
         "current_price": NaN,
-        "low_52w": 2143.3,
+        "low_52w": 2132.8,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
       {
         "symbol": "RECLTD",
         "sector": "Financial Services",
-        "old_price": 406.72,
+        "old_price": 406.53,
         "current_price": NaN,
         "low_52w": 304.05,
         "fall_pct": NaN,
@@ -196,7 +196,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "RVNL",
         "sector": "Industrials",
-        "old_price": 439.12,
+        "old_price": 434.11,
         "current_price": NaN,
         "low_52w": 227.01,
         "fall_pct": NaN,
@@ -214,7 +214,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
-        "old_price": 2404.12,
+        "old_price": 2316.05,
         "current_price": NaN,
         "low_52w": 1187.0,
         "fall_pct": NaN,
@@ -223,7 +223,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "IREDA",
         "sector": "Financial Services",
-        "old_price": 185.6,
+        "old_price": 184.96,
         "current_price": NaN,
         "low_52w": 108.08,
         "fall_pct": NaN,
@@ -232,7 +232,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "HUDCO",
         "sector": "Financial Services",
-        "old_price": 244.69,
+        "old_price": 242.66,
         "current_price": NaN,
         "low_52w": 159.0,
         "fall_pct": NaN,
@@ -241,7 +241,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 239.76,
+        "old_price": 239.41,
         "current_price": NaN,
         "low_52w": 130.0,
         "fall_pct": NaN,
@@ -259,9 +259,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "INFY",
         "sector": "Technology",
-        "old_price": 1728.0,
+        "old_price": 1691.4,
         "current_price": NaN,
-        "low_52w": 1089.0,
+        "low_52w": 1065.93,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       }
@@ -279,7 +279,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NBCC",
         "sector": "Industrials",
-        "old_price": 129.86,
+        "old_price": 128.58,
         "current_price": NaN,
         "low_52w": 77.18,
         "fall_pct": NaN,
@@ -288,7 +288,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NHPC",
         "sector": "Utilities",
-        "old_price": 90.16,
+        "old_price": 89.34,
         "current_price": NaN,
         "low_52w": 71.62,
         "fall_pct": NaN,
@@ -308,14 +308,14 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 3404.06,
         "current_price": NaN,
-        "low_52w": 2143.3,
+        "low_52w": 2132.8,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
       {
         "symbol": "RECLTD",
         "sector": "Financial Services",
-        "old_price": 406.72,
+        "old_price": 406.53,
         "current_price": NaN,
         "low_52w": 304.05,
         "fall_pct": NaN,
@@ -333,7 +333,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "RVNL",
         "sector": "Industrials",
-        "old_price": 439.12,
+        "old_price": 434.11,
         "current_price": NaN,
         "low_52w": 227.01,
         "fall_pct": NaN,
@@ -351,7 +351,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
-        "old_price": 2404.12,
+        "old_price": 2316.05,
         "current_price": NaN,
         "low_52w": 1187.0,
         "fall_pct": NaN,
@@ -360,7 +360,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "IREDA",
         "sector": "Financial Services",
-        "old_price": 185.6,
+        "old_price": 184.96,
         "current_price": NaN,
         "low_52w": 108.08,
         "fall_pct": NaN,
@@ -369,7 +369,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "HUDCO",
         "sector": "Financial Services",
-        "old_price": 244.69,
+        "old_price": 242.66,
         "current_price": NaN,
         "low_52w": 159.0,
         "fall_pct": NaN,
@@ -378,7 +378,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 239.76,
+        "old_price": 239.41,
         "current_price": NaN,
         "low_52w": 130.0,
         "fall_pct": NaN,
@@ -396,9 +396,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "INFY",
         "sector": "Technology",
-        "old_price": 1728.0,
+        "old_price": 1691.4,
         "current_price": NaN,
-        "low_52w": 1089.0,
+        "low_52w": 1065.93,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -407,7 +407,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 266.23,
         "current_price": NaN,
-        "low_52w": 181.0,
+        "low_52w": 180.6,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -452,7 +452,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "RECLTD",
         "sector": "Financial Services",
-        "old_price": 406.72,
+        "old_price": 406.53,
         "current_price": NaN,
         "low_52w": 304.05,
         "fall_pct": NaN,
@@ -470,7 +470,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "RVNL",
         "sector": "Industrials",
-        "old_price": 439.12,
+        "old_price": 434.11,
         "current_price": NaN,
         "low_52w": 227.01,
         "fall_pct": NaN,
@@ -488,7 +488,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
-        "old_price": 2404.12,
+        "old_price": 2316.05,
         "current_price": NaN,
         "low_52w": 1187.0,
         "fall_pct": NaN,
@@ -497,7 +497,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "IREDA",
         "sector": "Financial Services",
-        "old_price": 185.6,
+        "old_price": 184.96,
         "current_price": NaN,
         "low_52w": 108.08,
         "fall_pct": NaN,
@@ -506,7 +506,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "HUDCO",
         "sector": "Financial Services",
-        "old_price": 244.69,
+        "old_price": 242.66,
         "current_price": NaN,
         "low_52w": 159.0,
         "fall_pct": NaN,
@@ -515,7 +515,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 239.76,
+        "old_price": 239.41,
         "current_price": NaN,
         "low_52w": 130.0,
         "fall_pct": NaN,
@@ -533,9 +533,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "INFY",
         "sector": "Technology",
-        "old_price": 1728.0,
+        "old_price": 1691.4,
         "current_price": NaN,
-        "low_52w": 1089.0,
+        "low_52w": 1065.93,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -544,7 +544,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 266.23,
         "current_price": NaN,
-        "low_52w": 181.0,
+        "low_52w": 180.6,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -634,7 +634,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "IREDA",
         "sector": "Financial Services",
-        "old_price": 185.6,
+        "old_price": 184.96,
         "current_price": NaN,
         "low_52w": 108.08,
         "fall_pct": NaN,
@@ -643,7 +643,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "HUDCO",
         "sector": "Financial Services",
-        "old_price": 244.69,
+        "old_price": 242.66,
         "current_price": NaN,
         "low_52w": 159.0,
         "fall_pct": NaN,
@@ -652,7 +652,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 239.76,
+        "old_price": 239.41,
         "current_price": NaN,
         "low_52w": 130.0,
         "fall_pct": NaN,
@@ -670,9 +670,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "INFY",
         "sector": "Technology",
-        "old_price": 1728.0,
+        "old_price": 1691.4,
         "current_price": NaN,
-        "low_52w": 1089.0,
+        "low_52w": 1065.93,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -681,7 +681,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 266.23,
         "current_price": NaN,
-        "low_52w": 181.0,
+        "low_52w": 180.6,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -787,7 +787,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "ADANIGREEN",
         "sector": "Utilities",
-        "old_price": 1532.5,
+        "old_price": 1544.8,
         "current_price": NaN,
         "low_52w": 765.0,
         "fall_pct": NaN,
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "09 Jun 2026",
+        "date": "10 Jun 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "08 Jun 2026",
+        "date": "09 Jun 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "07 Jun 2026",
+        "date": "08 Jun 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -841,25 +841,23 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
+    "sentiment": "BEARISH",
+    "badge_class": "bearish",
     "vix": {
-      "value": 17.03,
+      "value": 15.58,
       "change_pct": 0.0
     },
-    "reasons": [
-      "\u26fd Crude oil down 2.4% - positive for India"
-    ],
+    "reasons": [],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 17.03",
+        "label": "VIX 15.58",
         "status": "negative"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -2.4%",
-        "status": "positive"
+        "label": "Crude 5.4%",
+        "status": "negative"
       }
     ]
   },
