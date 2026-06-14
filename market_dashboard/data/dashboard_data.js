@@ -1,6 +1,6 @@
-// Auto-generated on 2026-06-13T23:40:45.221307
+// Auto-generated on 2026-06-14T23:47:06.915506
 const DASHBOARD_DATA = {
-  "timestamp": "2026-06-13T23:40:28.988498",
+  "timestamp": "2026-06-14T23:46:50.115467",
   "indices": {
     "nifty50": {
       "value": 23622.9,
@@ -46,41 +46,41 @@ const DASHBOARD_DATA = {
     },
     "usdinr": {
       "value": 95.1,
-      "change": -0.54,
-      "change_pct": -0.57,
+      "change": -0.66,
+      "change_pct": -0.69,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4215.0,
-      "change": 124.7,
-      "change_pct": 3.05,
+      "value": 4304.7,
+      "change": 89.7,
+      "change_pct": 2.13,
       "direction": "positive"
     },
     "silver": {
-      "value": 67.86,
-      "change": 3.97,
-      "change_pct": 6.22,
+      "value": 70.02,
+      "change": 2.16,
+      "change_pct": 3.18,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.43,
-      "change": 0.17,
-      "change_pct": 2.74,
+      "value": 6.51,
+      "change": 0.08,
+      "change_pct": 1.22,
       "direction": "positive"
     },
     "crude": {
-      "value": 84.88,
-      "change": -2.83,
-      "change_pct": -3.23,
+      "value": 81.12,
+      "change": -3.76,
+      "change_pct": -4.43,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.12,
-      "change": 0.03,
-      "change_pct": 1.07,
-      "direction": "positive"
+      "value": 3.07,
+      "change": -0.05,
+      "change_pct": -1.67,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "13 Jun 2026",
+        "date": "14 Jun 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "12 Jun 2026",
+        "date": "13 Jun 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "11 Jun 2026",
+        "date": "12 Jun 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -849,7 +849,7 @@ const DASHBOARD_DATA = {
     },
     "reasons": [
       "\ud83d\udcc9 VIX down 5.7% indicating declining fear",
-      "\u26fd Crude oil down 3.2% - positive for India"
+      "\u26fd Crude oil down 4.4% - positive for India"
     ],
     "factors": [
       {
@@ -859,7 +859,7 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -3.2%",
+        "label": "Crude -4.4%",
         "status": "positive"
       }
     ]
