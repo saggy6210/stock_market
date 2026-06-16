@@ -1,85 +1,85 @@
-// Auto-generated on 2026-06-16T00:11:06.638126
+// Auto-generated on 2026-06-16T23:56:13.519464
 const DASHBOARD_DATA = {
-  "timestamp": "2026-06-16T00:10:51.740294",
+  "timestamp": "2026-06-16T23:55:52.153701",
   "indices": {
     "nifty50": {
-      "value": 23622.9,
+      "value": 23853.9,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 75527.95,
+      "value": 76264.33,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 56814.8,
+      "value": 57198.8,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 27795.75,
+      "value": 28067.9,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 14.72,
+      "value": 14.35,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 51671.03,
-      "change": 468.77,
-      "change_pct": 0.92,
+      "value": 51999.67,
+      "change": 328.64,
+      "change_pct": 0.64,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 26683.94,
-      "change": 795.1,
-      "change_pct": 3.07,
-      "direction": "positive"
+      "value": 26376.34,
+      "change": -307.6,
+      "change_pct": -1.15,
+      "direction": "negative"
     },
     "usdinr": {
-      "value": 94.7,
-      "change": -0.41,
-      "change_pct": -0.43,
-      "direction": "negative"
+      "value": 94.74,
+      "change": 0.0,
+      "change_pct": 0.0,
+      "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4338.4,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 4352.6,
+      "change": 24.6,
+      "change_pct": 0.57,
       "direction": "positive"
     },
     "silver": {
-      "value": 69.99,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 70.04,
+      "change": -0.02,
+      "change_pct": -0.03,
+      "direction": "negative"
     },
     "copper": {
-      "value": 6.48,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 6.49,
+      "change": 0.01,
+      "change_pct": 0.16,
       "direction": "positive"
     },
     "crude": {
-      "value": 81.43,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 75.81,
+      "change": -4.94,
+      "change_pct": -6.12,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.16,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 3.25,
+      "change": 0.11,
+      "change_pct": 3.4,
       "direction": "positive"
     }
   },
@@ -124,7 +124,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "IDEA",
         "sector": "Communication Services",
-        "old_price": 15.25,
+        "old_price": 15.34,
         "current_price": NaN,
         "low_52w": 6.12,
         "fall_pct": NaN,
@@ -841,23 +841,25 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
+    "sentiment": "BULLISH",
+    "badge_class": "bullish",
     "vix": {
-      "value": 14.72,
+      "value": 14.35,
       "change_pct": 0.0
     },
-    "reasons": [],
+    "reasons": [
+      "\u26fd Crude oil down 6.1% - positive for India"
+    ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 14.72",
+        "label": "VIX 14.35",
         "status": "negative"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude 0.0%",
-        "status": "negative"
+        "label": "Crude -6.1%",
+        "status": "positive"
       }
     ]
   },
