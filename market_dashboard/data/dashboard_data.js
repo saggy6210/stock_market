@@ -1,33 +1,33 @@
-// Auto-generated on 2026-06-19T00:09:34.260994
+// Auto-generated on 2026-06-19T23:36:19.486365
 const DASHBOARD_DATA = {
-  "timestamp": "2026-06-19T00:09:10.168809",
+  "timestamp": "2026-06-19T23:36:01.297824",
   "indices": {
     "nifty50": {
-      "value": 24085.7,
+      "value": 24168.0,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 77155.62,
+      "value": 77409.98,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57585.05,
+      "value": 57963.8,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 28809.55,
+      "value": 28466.45,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 13.19,
+      "value": 12.67,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
@@ -45,42 +45,42 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "usdinr": {
-      "value": 94.86,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 94.31,
+      "change": -0.55,
+      "change_pct": -0.58,
+      "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4206.8,
-      "change": -152.1,
-      "change_pct": -3.49,
+      "value": 4172.9,
+      "change": -51.2,
+      "change_pct": -1.21,
       "direction": "negative"
     },
     "silver": {
-      "value": 65.37,
-      "change": -5.33,
-      "change_pct": -7.53,
+      "value": 64.91,
+      "change": -1.34,
+      "change_pct": -2.03,
       "direction": "negative"
     },
     "copper": {
-      "value": 6.37,
-      "change": -0.11,
-      "change_pct": -1.75,
+      "value": 6.34,
+      "change": -0.04,
+      "change_pct": -0.59,
       "direction": "negative"
     },
     "crude": {
-      "value": 75.38,
-      "change": -1.41,
-      "change_pct": -1.84,
+      "value": 76.54,
+      "change": -0.06,
+      "change_pct": -0.08,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.21,
-      "change": 0.07,
-      "change_pct": 2.07,
-      "direction": "positive"
+      "value": 3.2,
+      "change": -0.04,
+      "change_pct": -1.08,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -88,7 +88,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "RAILTEL",
         "sector": "Communication Services",
-        "old_price": 439.33,
+        "old_price": 432.74,
         "current_price": NaN,
         "low_52w": 245.0,
         "fall_pct": NaN,
@@ -135,7 +135,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1381.8,
         "current_price": NaN,
-        "low_52w": 859.0,
+        "low_52w": 859.15,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -169,7 +169,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "TCS",
         "sector": "Technology",
-        "old_price": 3404.05,
+        "old_price": 3357.78,
         "current_price": NaN,
         "low_52w": 2110.0,
         "fall_pct": NaN,
@@ -272,7 +272,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1381.8,
         "current_price": NaN,
-        "low_52w": 859.0,
+        "low_52w": 859.15,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -306,7 +306,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "TCS",
         "sector": "Technology",
-        "old_price": 3404.05,
+        "old_price": 3357.78,
         "current_price": NaN,
         "low_52w": 2110.0,
         "fall_pct": NaN,
@@ -605,7 +605,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NYKAA",
         "sector": "Consumer Cyclical",
-        "old_price": 285.6,
+        "old_price": 303.75,
         "current_price": NaN,
         "low_52w": 193.14,
         "fall_pct": NaN,
@@ -742,7 +742,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NYKAA",
         "sector": "Consumer Cyclical",
-        "old_price": 285.6,
+        "old_price": 303.75,
         "current_price": NaN,
         "low_52w": 193.14,
         "fall_pct": NaN,
@@ -844,21 +844,21 @@ const DASHBOARD_DATA = {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
     "vix": {
-      "value": 13.19,
+      "value": 12.67,
       "change_pct": 0.0
     },
     "reasons": [
-      "\u26fd Crude oil down 1.8% - positive for India"
+      "\u26fd Crude oil down 0.1% - positive for India"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 13.19",
+        "label": "VIX 12.67",
         "status": "negative"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -1.8%",
+        "label": "Crude -0.1%",
         "status": "positive"
       }
     ]
