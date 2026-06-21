@@ -1,86 +1,86 @@
-// Auto-generated on 2026-06-20T23:45:34.578727
+// Auto-generated on 2026-06-21T23:51:23.130703
 const DASHBOARD_DATA = {
-  "timestamp": "2026-06-20T23:45:16.806323",
+  "timestamp": "2026-06-21T23:51:05.558635",
   "indices": {
     "nifty50": {
       "value": 24013.1,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "change": -154.9,
+      "change_pct": -0.64,
+      "direction": "negative"
     },
     "sensex": {
       "value": 76802.9,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "change": -607.08,
+      "change_pct": -0.78,
+      "direction": "negative"
     },
     "niftybank": {
       "value": 57685.75,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "change": -278.05,
+      "change_pct": -0.48,
+      "direction": "negative"
     },
     "niftyit": {
       "value": 27426.85,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "change": -1039.6,
+      "change_pct": -3.65,
+      "direction": "negative"
     },
     "vix": {
       "value": 12.97,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "change": 0.3,
+      "change_pct": 2.37,
       "direction": "positive"
     },
     "dow": {
-      "value": NaN,
-      "change": NaN,
-      "change_pct": NaN,
-      "direction": "negative"
+      "value": 51564.7,
+      "change": 72.15,
+      "change_pct": 0.14,
+      "direction": "positive"
     },
     "nasdaq": {
-      "value": NaN,
-      "change": NaN,
-      "change_pct": NaN,
-      "direction": "negative"
+      "value": 26517.93,
+      "change": 496.27,
+      "change_pct": 1.91,
+      "direction": "positive"
     },
     "usdinr": {
       "value": 94.31,
-      "change": -0.55,
-      "change_pct": -0.58,
+      "change": -0.03,
+      "change_pct": -0.03,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4172.9,
-      "change": -51.2,
-      "change_pct": -1.21,
+      "value": 4158.7,
+      "change": -65.4,
+      "change_pct": -1.55,
       "direction": "negative"
     },
     "silver": {
-      "value": 64.91,
-      "change": -1.34,
-      "change_pct": -2.03,
+      "value": 64.5,
+      "change": -1.76,
+      "change_pct": -2.66,
       "direction": "negative"
     },
     "copper": {
-      "value": 6.34,
-      "change": -0.04,
-      "change_pct": -0.59,
+      "value": 6.32,
+      "change": -0.05,
+      "change_pct": -0.81,
       "direction": "negative"
     },
     "crude": {
-      "value": 76.54,
-      "change": -0.06,
-      "change_pct": -0.08,
-      "direction": "negative"
+      "value": 77.82,
+      "change": 1.22,
+      "change_pct": 1.59,
+      "direction": "positive"
     },
     "naturalgas": {
-      "value": 3.2,
-      "change": -0.04,
-      "change_pct": -1.08,
-      "direction": "negative"
+      "value": 3.28,
+      "change": 0.04,
+      "change_pct": 1.33,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "20 Jun 2026",
+        "date": "21 Jun 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "19 Jun 2026",
+        "date": "20 Jun 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "18 Jun 2026",
+        "date": "19 Jun 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -841,15 +841,13 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "BULLISH",
-    "badge_class": "bullish",
+    "sentiment": "NEUTRAL",
+    "badge_class": "neutral",
     "vix": {
       "value": 12.97,
-      "change_pct": 0.0
+      "change_pct": 2.37
     },
-    "reasons": [
-      "\u26fd Crude oil down 0.1% - positive for India"
-    ],
+    "reasons": [],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
@@ -858,8 +856,8 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -0.1%",
-        "status": "positive"
+        "label": "Crude 1.6%",
+        "status": "negative"
       }
     ]
   },
