@@ -1,86 +1,86 @@
-// Auto-generated on 2026-06-22T23:50:49.436049
+// Auto-generated on 2026-06-23T23:35:56.478941
 const DASHBOARD_DATA = {
-  "timestamp": "2026-06-22T23:50:28.526555",
+  "timestamp": "2026-06-23T23:35:36.763938",
   "indices": {
     "nifty50": {
-      "value": 24013.1,
+      "value": 24102.9,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 76802.9,
+      "value": 77094.07,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57685.75,
+      "value": 57935.6,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 27426.85,
+      "value": 27628.55,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 12.97,
+      "value": 12.84,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 51712.71,
-      "change": 148.01,
-      "change_pct": 0.29,
-      "direction": "positive"
+      "value": 51666.84,
+      "change": -45.87,
+      "change_pct": -0.09,
+      "direction": "negative"
     },
     "nasdaq": {
-      "value": 26166.6,
-      "change": -351.33,
-      "change_pct": -1.32,
+      "value": 25587.04,
+      "change": -579.56,
+      "change_pct": -2.21,
       "direction": "negative"
     },
     "usdinr": {
-      "value": 94.67,
-      "change": 0.34,
-      "change_pct": 0.36,
+      "value": 94.72,
+      "change": 0.02,
+      "change_pct": 0.03,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4212.7,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 4116.5,
+      "change": -65.4,
+      "change_pct": -1.56,
+      "direction": "negative"
     },
     "silver": {
-      "value": 65.19,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 61.35,
+      "change": -4.18,
+      "change_pct": -6.38,
+      "direction": "negative"
     },
     "copper": {
-      "value": 6.36,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 6.13,
+      "change": -0.23,
+      "change_pct": -3.63,
+      "direction": "negative"
     },
     "crude": {
-      "value": 74.15,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 72.88,
+      "change": -1.94,
+      "change_pct": -2.59,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.26,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 3.19,
+      "change": -0.06,
+      "change_pct": -1.84,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -605,7 +605,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NYKAA",
         "sector": "Consumer Cyclical",
-        "old_price": 303.75,
+        "old_price": 307.0,
         "current_price": NaN,
         "low_52w": 194.6,
         "fall_pct": NaN,
@@ -614,7 +614,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "DELHIVERY",
         "sector": "Industrials",
-        "old_price": 490.0,
+        "old_price": 491.7,
         "current_price": NaN,
         "low_52w": 355.1,
         "fall_pct": NaN,
@@ -742,7 +742,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NYKAA",
         "sector": "Consumer Cyclical",
-        "old_price": 303.75,
+        "old_price": 307.0,
         "current_price": NaN,
         "low_52w": 194.6,
         "fall_pct": NaN,
@@ -751,7 +751,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "DELHIVERY",
         "sector": "Industrials",
-        "old_price": 490.0,
+        "old_price": 491.7,
         "current_price": NaN,
         "low_52w": 355.1,
         "fall_pct": NaN,
@@ -787,7 +787,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "ADANIGREEN",
         "sector": "Utilities",
-        "old_price": 1544.8,
+        "old_price": 1555.0,
         "current_price": NaN,
         "low_52w": 765.0,
         "fall_pct": NaN,
@@ -805,9 +805,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "TATAPOWER",
         "sector": "Utilities",
-        "old_price": 464.9,
+        "old_price": 462.04,
         "current_price": NaN,
-        "low_52w": 342.5,
+        "low_52w": 340.39,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       }
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "22 Jun 2026",
+        "date": "23 Jun 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "21 Jun 2026",
+        "date": "22 Jun 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "20 Jun 2026",
+        "date": "21 Jun 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -841,23 +841,25 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
+    "sentiment": "BULLISH",
+    "badge_class": "bullish",
     "vix": {
-      "value": 12.97,
+      "value": 12.84,
       "change_pct": 0.0
     },
-    "reasons": [],
+    "reasons": [
+      "\u26fd Crude oil down 2.6% - positive for India"
+    ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 12.97",
+        "label": "VIX 12.84",
         "status": "negative"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude 0.0%",
-        "status": "negative"
+        "label": "Crude -2.6%",
+        "status": "positive"
       }
     ]
   },
