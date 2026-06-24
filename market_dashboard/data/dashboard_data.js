@@ -1,86 +1,86 @@
-// Auto-generated on 2026-06-23T23:35:56.478941
+// Auto-generated on 2026-06-24T23:42:55.356699
 const DASHBOARD_DATA = {
-  "timestamp": "2026-06-23T23:35:36.763938",
+  "timestamp": "2026-06-24T23:42:37.955239",
   "indices": {
     "nifty50": {
-      "value": 24102.9,
+      "value": 23824.1,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 77094.07,
+      "value": 76200.68,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57935.6,
+      "value": 57183.75,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 27628.55,
+      "value": 27012.05,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 12.84,
+      "value": 13.94,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 51666.84,
-      "change": -45.87,
-      "change_pct": -0.09,
-      "direction": "negative"
+      "value": 51848.9,
+      "change": 182.06,
+      "change_pct": 0.35,
+      "direction": "positive"
     },
     "nasdaq": {
-      "value": 25587.04,
-      "change": -579.56,
-      "change_pct": -2.21,
+      "value": 25476.63,
+      "change": -110.4,
+      "change_pct": -0.43,
       "direction": "negative"
     },
     "usdinr": {
-      "value": 94.72,
-      "change": 0.02,
-      "change_pct": 0.03,
+      "value": 95.18,
+      "change": 0.0,
+      "change_pct": 0.0,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4116.5,
-      "change": -65.4,
-      "change_pct": -1.56,
+      "value": 4015.5,
+      "change": -114.4,
+      "change_pct": -2.77,
       "direction": "negative"
     },
     "silver": {
-      "value": 61.35,
-      "change": -4.18,
-      "change_pct": -6.38,
+      "value": 57.58,
+      "change": -4.44,
+      "change_pct": -7.15,
       "direction": "negative"
     },
     "copper": {
-      "value": 6.13,
-      "change": -0.23,
-      "change_pct": -3.63,
+      "value": 5.98,
+      "change": -0.16,
+      "change_pct": -2.62,
       "direction": "negative"
     },
     "crude": {
-      "value": 72.88,
-      "change": -1.94,
-      "change_pct": -2.59,
+      "value": 69.97,
+      "change": -3.24,
+      "change_pct": -4.43,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.19,
-      "change": -0.06,
-      "change_pct": -1.84,
-      "direction": "negative"
+      "value": 3.27,
+      "change": 0.12,
+      "change_pct": 3.97,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -135,7 +135,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1381.8,
         "current_price": NaN,
-        "low_52w": 862.0,
+        "low_52w": 886.45,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -171,7 +171,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 3357.78,
         "current_price": NaN,
-        "low_52w": 2059.9,
+        "low_52w": 2055.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -261,7 +261,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1691.4,
         "current_price": NaN,
-        "low_52w": 1030.0,
+        "low_52w": 1026.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       }
@@ -272,7 +272,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1381.8,
         "current_price": NaN,
-        "low_52w": 862.0,
+        "low_52w": 886.45,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -308,7 +308,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 3357.78,
         "current_price": NaN,
-        "low_52w": 2059.9,
+        "low_52w": 2055.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -398,7 +398,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1691.4,
         "current_price": NaN,
-        "low_52w": 1030.0,
+        "low_52w": 1026.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -407,7 +407,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 266.23,
         "current_price": NaN,
-        "low_52w": 174.89,
+        "low_52w": 174.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -535,7 +535,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1691.4,
         "current_price": NaN,
-        "low_52w": 1030.0,
+        "low_52w": 1026.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -544,7 +544,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 266.23,
         "current_price": NaN,
-        "low_52w": 174.89,
+        "low_52w": 174.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -605,9 +605,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NYKAA",
         "sector": "Consumer Cyclical",
-        "old_price": 307.0,
+        "old_price": 308.95,
         "current_price": NaN,
-        "low_52w": 194.6,
+        "low_52w": 196.27,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -616,14 +616,14 @@ const DASHBOARD_DATA = {
         "sector": "Industrials",
         "old_price": 491.7,
         "current_price": NaN,
-        "low_52w": 355.1,
+        "low_52w": 362.3,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
       {
         "symbol": "STARHEALTH",
         "sector": "Financial Services",
-        "old_price": 595.8,
+        "old_price": 597.4,
         "current_price": NaN,
         "low_52w": 412.6,
         "fall_pct": NaN,
@@ -672,7 +672,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1691.4,
         "current_price": NaN,
-        "low_52w": 1030.0,
+        "low_52w": 1026.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -681,7 +681,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 266.23,
         "current_price": NaN,
-        "low_52w": 174.89,
+        "low_52w": 174.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -742,9 +742,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NYKAA",
         "sector": "Consumer Cyclical",
-        "old_price": 307.0,
+        "old_price": 308.95,
         "current_price": NaN,
-        "low_52w": 194.6,
+        "low_52w": 196.27,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -753,14 +753,14 @@ const DASHBOARD_DATA = {
         "sector": "Industrials",
         "old_price": 491.7,
         "current_price": NaN,
-        "low_52w": 355.1,
+        "low_52w": 362.3,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
       {
         "symbol": "STARHEALTH",
         "sector": "Financial Services",
-        "old_price": 595.8,
+        "old_price": 597.4,
         "current_price": NaN,
         "low_52w": 412.6,
         "fall_pct": NaN,
@@ -780,14 +780,14 @@ const DASHBOARD_DATA = {
         "sector": "Utilities",
         "old_price": 254.2,
         "current_price": NaN,
-        "low_52w": 105.65,
+        "low_52w": 107.74,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
       {
         "symbol": "ADANIGREEN",
         "sector": "Utilities",
-        "old_price": 1555.0,
+        "old_price": 1557.0,
         "current_price": NaN,
         "low_52w": 765.0,
         "fall_pct": NaN,
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "23 Jun 2026",
+        "date": "24 Jun 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "22 Jun 2026",
+        "date": "23 Jun 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "21 Jun 2026",
+        "date": "22 Jun 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -844,21 +844,21 @@ const DASHBOARD_DATA = {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
     "vix": {
-      "value": 12.84,
+      "value": 13.94,
       "change_pct": 0.0
     },
     "reasons": [
-      "\u26fd Crude oil down 2.6% - positive for India"
+      "\u26fd Crude oil down 4.4% - positive for India"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 12.84",
+        "label": "VIX 13.94",
         "status": "negative"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -2.6%",
+        "label": "Crude -4.4%",
         "status": "positive"
       }
     ]
