@@ -1,51 +1,51 @@
-// Auto-generated on 2026-06-24T23:42:55.356699
+// Auto-generated on 2026-06-25T23:53:11.834843
 const DASHBOARD_DATA = {
-  "timestamp": "2026-06-24T23:42:37.955239",
+  "timestamp": "2026-06-25T23:52:54.076398",
   "indices": {
     "nifty50": {
-      "value": 23824.1,
+      "value": 24021.65,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 76200.68,
+      "value": 76991.22,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57183.75,
+      "value": 58150.35,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 27012.05,
+      "value": 27566.7,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 13.94,
+      "value": 13.39,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 51848.9,
-      "change": 182.06,
-      "change_pct": 0.35,
+      "value": 51920.62,
+      "change": 71.72,
+      "change_pct": 0.14,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25476.63,
-      "change": -110.4,
-      "change_pct": -0.43,
+      "value": 25358.6,
+      "change": -118.04,
+      "change_pct": -0.46,
       "direction": "negative"
     },
     "usdinr": {
-      "value": 95.18,
+      "value": 94.44,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
@@ -53,33 +53,33 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4015.5,
-      "change": -114.4,
-      "change_pct": -2.77,
-      "direction": "negative"
+      "value": 4039.0,
+      "change": 48.7,
+      "change_pct": 1.22,
+      "direction": "positive"
     },
     "silver": {
-      "value": 57.58,
-      "change": -4.44,
-      "change_pct": -7.15,
+      "value": 57.92,
+      "change": -0.13,
+      "change_pct": -0.23,
       "direction": "negative"
     },
     "copper": {
-      "value": 5.98,
-      "change": -0.16,
-      "change_pct": -2.62,
-      "direction": "negative"
+      "value": 6.12,
+      "change": 0.18,
+      "change_pct": 3.01,
+      "direction": "positive"
     },
     "crude": {
-      "value": 69.97,
-      "change": -3.24,
-      "change_pct": -4.43,
-      "direction": "negative"
+      "value": 71.49,
+      "change": 1.15,
+      "change_pct": 1.63,
+      "direction": "positive"
     },
     "naturalgas": {
-      "value": 3.27,
-      "change": 0.12,
-      "change_pct": 3.97,
+      "value": 3.26,
+      "change": 0.04,
+      "change_pct": 1.33,
       "direction": "positive"
     }
   },
@@ -135,7 +135,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1381.8,
         "current_price": NaN,
-        "low_52w": 886.45,
+        "low_52w": 889.1,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -214,7 +214,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
-        "old_price": 2264.36,
+        "old_price": 2172.91,
         "current_price": NaN,
         "low_52w": 1187.0,
         "fall_pct": NaN,
@@ -272,7 +272,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1381.8,
         "current_price": NaN,
-        "low_52w": 886.45,
+        "low_52w": 889.1,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -351,7 +351,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
-        "old_price": 2264.36,
+        "old_price": 2172.91,
         "current_price": NaN,
         "low_52w": 1187.0,
         "fall_pct": NaN,
@@ -407,7 +407,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 266.23,
         "current_price": NaN,
-        "low_52w": 174.0,
+        "low_52w": 171.49,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -488,7 +488,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
-        "old_price": 2264.36,
+        "old_price": 2172.91,
         "current_price": NaN,
         "low_52w": 1187.0,
         "fall_pct": NaN,
@@ -544,7 +544,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 266.23,
         "current_price": NaN,
-        "low_52w": 174.0,
+        "low_52w": 171.49,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -605,9 +605,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NYKAA",
         "sector": "Consumer Cyclical",
-        "old_price": 308.95,
+        "old_price": 309.75,
         "current_price": NaN,
-        "low_52w": 196.27,
+        "low_52w": 197.62,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -616,7 +616,7 @@ const DASHBOARD_DATA = {
         "sector": "Industrials",
         "old_price": 491.7,
         "current_price": NaN,
-        "low_52w": 362.3,
+        "low_52w": 374.45,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -681,7 +681,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 266.23,
         "current_price": NaN,
-        "low_52w": 174.0,
+        "low_52w": 171.49,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -742,9 +742,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NYKAA",
         "sector": "Consumer Cyclical",
-        "old_price": 308.95,
+        "old_price": 309.75,
         "current_price": NaN,
-        "low_52w": 196.27,
+        "low_52w": 197.62,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -753,7 +753,7 @@ const DASHBOARD_DATA = {
         "sector": "Industrials",
         "old_price": 491.7,
         "current_price": NaN,
-        "low_52w": 362.3,
+        "low_52w": 374.45,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -780,7 +780,7 @@ const DASHBOARD_DATA = {
         "sector": "Utilities",
         "old_price": 254.2,
         "current_price": NaN,
-        "low_52w": 107.74,
+        "low_52w": 109.75,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "24 Jun 2026",
+        "date": "25 Jun 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "23 Jun 2026",
+        "date": "24 Jun 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "22 Jun 2026",
+        "date": "23 Jun 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -841,25 +841,23 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "BULLISH",
-    "badge_class": "bullish",
+    "sentiment": "NEUTRAL",
+    "badge_class": "neutral",
     "vix": {
-      "value": 13.94,
+      "value": 13.39,
       "change_pct": 0.0
     },
-    "reasons": [
-      "\u26fd Crude oil down 4.4% - positive for India"
-    ],
+    "reasons": [],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 13.94",
+        "label": "VIX 13.39",
         "status": "negative"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -4.4%",
-        "status": "positive"
+        "label": "Crude 1.6%",
+        "status": "negative"
       }
     ]
   },
