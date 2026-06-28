@@ -1,6 +1,6 @@
-// Auto-generated on 2026-06-27T23:34:57.618498
+// Auto-generated on 2026-06-28T23:38:14.040267
 const DASHBOARD_DATA = {
-  "timestamp": "2026-06-27T23:34:38.125026",
+  "timestamp": "2026-06-28T23:37:57.918786",
   "indices": {
     "nifty50": {
       "value": 24056.0,
@@ -45,42 +45,42 @@ const DASHBOARD_DATA = {
       "direction": "negative"
     },
     "usdinr": {
-      "value": 94.3,
-      "change": -0.14,
-      "change_pct": -0.15,
+      "value": 94.39,
+      "change": -0.02,
+      "change_pct": -0.02,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4078.7,
-      "change": 48.2,
-      "change_pct": 1.2,
-      "direction": "positive"
+      "value": 4071.0,
+      "change": -7.7,
+      "change_pct": -0.19,
+      "direction": "negative"
     },
     "silver": {
-      "value": 59.22,
-      "change": 0.87,
-      "change_pct": 1.49,
-      "direction": "positive"
+      "value": 59.08,
+      "change": -0.14,
+      "change_pct": -0.24,
+      "direction": "negative"
     },
     "copper": {
-      "value": 6.14,
-      "change": 0.07,
-      "change_pct": 1.17,
+      "value": 6.19,
+      "change": 0.05,
+      "change_pct": 0.81,
       "direction": "positive"
     },
     "crude": {
-      "value": 69.23,
-      "change": -2.69,
-      "change_pct": -3.74,
-      "direction": "negative"
+      "value": 69.95,
+      "change": 0.72,
+      "change_pct": 1.04,
+      "direction": "positive"
     },
     "naturalgas": {
-      "value": 3.23,
-      "change": -0.11,
-      "change_pct": -3.35,
-      "direction": "negative"
+      "value": 3.3,
+      "change": 0.06,
+      "change_pct": 1.98,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "27 Jun 2026",
+        "date": "28 Jun 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "26 Jun 2026",
+        "date": "27 Jun 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "25 Jun 2026",
+        "date": "26 Jun 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -841,15 +841,13 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "BULLISH",
-    "badge_class": "bullish",
+    "sentiment": "NEUTRAL",
+    "badge_class": "neutral",
     "vix": {
       "value": 13.05,
       "change_pct": 0.0
     },
-    "reasons": [
-      "\u26fd Crude oil down 3.7% - positive for India"
-    ],
+    "reasons": [],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
@@ -858,8 +856,8 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -3.7%",
-        "status": "positive"
+        "label": "Crude 1.0%",
+        "status": "negative"
       }
     ]
   },
