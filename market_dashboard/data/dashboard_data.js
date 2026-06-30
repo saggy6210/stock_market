@@ -1,6 +1,6 @@
-// Auto-generated on 2026-06-29T23:34:42.108971
+// Auto-generated on 2026-06-30T23:44:56.159037
 const DASHBOARD_DATA = {
-  "timestamp": "2026-06-29T23:34:23.536831",
+  "timestamp": "2026-06-30T23:44:37.105412",
   "indices": {
     "nifty50": {
       "value": 23946.25,
@@ -33,19 +33,19 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "dow": {
-      "value": 52182.74,
-      "change": 306.63,
-      "change_pct": 0.59,
+      "value": 52319.2,
+      "change": 136.46,
+      "change_pct": 0.26,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25820.14,
-      "change": 522.53,
-      "change_pct": 2.07,
+      "value": 26213.72,
+      "change": 393.58,
+      "change_pct": 1.52,
       "direction": "positive"
     },
     "usdinr": {
-      "value": 94.36,
+      "value": 94.79,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
@@ -53,33 +53,33 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4032.8,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 4024.8,
+      "change": 2.5,
+      "change_pct": 0.06,
       "direction": "positive"
     },
     "silver": {
-      "value": 58.95,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 59.05,
+      "change": 0.88,
+      "change_pct": 1.5,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.18,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 6.25,
+      "change": 0.15,
+      "change_pct": 2.51,
       "direction": "positive"
     },
     "crude": {
-      "value": 70.26,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 70.05,
+      "change": -0.7,
+      "change_pct": -0.99,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.18,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 3.26,
+      "change": 0.08,
+      "change_pct": 2.36,
       "direction": "positive"
     }
   },
@@ -416,7 +416,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1746.66,
         "current_price": NaN,
-        "low_52w": 1089.5,
+        "low_52w": 1086.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -553,7 +553,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1746.66,
         "current_price": NaN,
-        "low_52w": 1089.5,
+        "low_52w": 1086.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -589,7 +589,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 6575.41,
         "current_price": NaN,
-        "low_52w": 4449.1,
+        "low_52w": 4265.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -690,7 +690,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 1746.66,
         "current_price": NaN,
-        "low_52w": 1089.5,
+        "low_52w": 1086.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -726,7 +726,7 @@ const DASHBOARD_DATA = {
         "sector": "Technology",
         "old_price": 6575.41,
         "current_price": NaN,
-        "low_52w": 4449.1,
+        "low_52w": 4265.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "29 Jun 2026",
+        "date": "30 Jun 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "28 Jun 2026",
+        "date": "29 Jun 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "27 Jun 2026",
+        "date": "28 Jun 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -841,13 +841,15 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
+    "sentiment": "BULLISH",
+    "badge_class": "bullish",
     "vix": {
       "value": 13.61,
       "change_pct": 0.0
     },
-    "reasons": [],
+    "reasons": [
+      "\u26fd Crude oil down 1.0% - positive for India"
+    ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
@@ -856,8 +858,8 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude 0.0%",
-        "status": "negative"
+        "label": "Crude -1.0%",
+        "status": "positive"
       }
     ]
   },
