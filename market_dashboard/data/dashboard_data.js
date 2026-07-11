@@ -1,6 +1,6 @@
-// Auto-generated on 2026-07-11T15:07:19.771742
+// Auto-generated on 2026-07-11T23:26:44.612235
 const DASHBOARD_DATA = {
-  "timestamp": "2026-07-11T15:07:02.054905",
+  "timestamp": "2026-07-11T23:26:28.923139",
   "indices": {
     "nifty50": {
       "value": 24206.9,
