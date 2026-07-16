@@ -1,51 +1,51 @@
-// Auto-generated on 2026-07-15T23:28:44.932528
+// Auto-generated on 2026-07-16T23:25:28.157846
 const DASHBOARD_DATA = {
-  "timestamp": "2026-07-15T23:28:16.513937",
+  "timestamp": "2026-07-16T23:25:00.091951",
   "indices": {
     "nifty50": {
-      "value": 24052.05,
+      "value": 24078.5,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 77054.94,
+      "value": 77185.43,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57462.3,
+      "value": 57757.85,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 28724.75,
+      "value": 28532.25,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 13.75,
+      "value": 13.27,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 52658.64,
-      "change": 150.37,
-      "change_pct": 0.29,
-      "direction": "positive"
+      "value": 52552.97,
+      "change": -105.67,
+      "change_pct": -0.2,
+      "direction": "negative"
     },
     "nasdaq": {
-      "value": 26269.23,
-      "change": 162.22,
-      "change_pct": 0.62,
-      "direction": "positive"
+      "value": 25881.95,
+      "change": -387.28,
+      "change_pct": -1.47,
+      "direction": "negative"
     },
     "usdinr": {
-      "value": 96.43,
+      "value": 96.5,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
@@ -53,34 +53,34 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4064.5,
-      "change": 3.4,
-      "change_pct": 0.08,
-      "direction": "positive"
+      "value": 3983.6,
+      "change": -60.4,
+      "change_pct": -1.49,
+      "direction": "negative"
     },
     "silver": {
-      "value": 58.12,
-      "change": -0.65,
-      "change_pct": -1.11,
+      "value": 55.79,
+      "change": -1.32,
+      "change_pct": -2.31,
       "direction": "negative"
     },
     "copper": {
-      "value": 6.38,
-      "change": 0.05,
-      "change_pct": 0.83,
-      "direction": "positive"
+      "value": 6.29,
+      "change": -0.01,
+      "change_pct": -0.1,
+      "direction": "negative"
     },
     "crude": {
-      "value": 80.25,
-      "change": 0.91,
-      "change_pct": 1.15,
-      "direction": "positive"
+      "value": 78.99,
+      "change": -0.61,
+      "change_pct": -0.77,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.91,
-      "change": 0.01,
-      "change_pct": 0.21,
-      "direction": "positive"
+      "value": 2.89,
+      "change": -0.03,
+      "change_pct": -1.06,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -88,7 +88,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "RAILTEL",
         "sector": "Communication Services",
-        "old_price": 422.33,
+        "old_price": 414.8,
         "current_price": NaN,
         "low_52w": 245.0,
         "fall_pct": NaN,
@@ -133,7 +133,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "PAYTM",
         "sector": "Technology",
-        "old_price": 1397.4,
+        "old_price": 1407.0,
         "current_price": NaN,
         "low_52w": 930.6,
         "fall_pct": NaN,
@@ -270,7 +270,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "PAYTM",
         "sector": "Technology",
-        "old_price": 1397.4,
+        "old_price": 1407.0,
         "current_price": NaN,
         "low_52w": 930.6,
         "fall_pct": NaN,
@@ -816,17 +816,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "15 Jul 2026",
+        "date": "16 Jul 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "14 Jul 2026",
+        "date": "15 Jul 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "13 Jul 2026",
+        "date": "14 Jul 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -841,23 +841,25 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
+    "sentiment": "BULLISH",
+    "badge_class": "bullish",
     "vix": {
-      "value": 13.75,
+      "value": 13.27,
       "change_pct": 0.0
     },
-    "reasons": [],
+    "reasons": [
+      "\u26fd Crude oil down 0.8% - positive for India"
+    ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 13.75",
+        "label": "VIX 13.27",
         "status": "negative"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude 1.1%",
-        "status": "negative"
+        "label": "Crude -0.8%",
+        "status": "positive"
       }
     ]
   },
