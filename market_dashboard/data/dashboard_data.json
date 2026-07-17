@@ -1,85 +1,85 @@
 {
-  "timestamp": "2026-07-16T23:25:00.091951",
+  "timestamp": "2026-07-17T23:26:26.450980",
   "indices": {
     "nifty50": {
-      "value": 24078.5,
+      "value": 24072.75,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 77185.43,
+      "value": 77186.87,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57757.85,
+      "value": 57582.25,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 28532.25,
+      "value": 28722.6,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 13.27,
+      "value": 12.88,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 52552.97,
-      "change": -105.67,
-      "change_pct": -0.2,
+      "value": 52146.42,
+      "change": -406.55,
+      "change_pct": -0.77,
       "direction": "negative"
     },
     "nasdaq": {
-      "value": 25881.95,
-      "change": -387.28,
-      "change_pct": -1.47,
+      "value": 25520.24,
+      "change": -361.71,
+      "change_pct": -1.4,
       "direction": "negative"
     },
     "usdinr": {
-      "value": 96.5,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 96.27,
+      "change": -0.23,
+      "change_pct": -0.24,
+      "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 3983.6,
-      "change": -60.4,
-      "change_pct": -1.49,
-      "direction": "negative"
+      "value": 4023.0,
+      "change": 37.4,
+      "change_pct": 0.94,
+      "direction": "positive"
     },
     "silver": {
-      "value": 55.79,
-      "change": -1.32,
-      "change_pct": -2.31,
-      "direction": "negative"
+      "value": 56.22,
+      "change": 0.32,
+      "change_pct": 0.58,
+      "direction": "positive"
     },
     "copper": {
-      "value": 6.29,
-      "change": -0.01,
-      "change_pct": -0.1,
+      "value": 6.27,
+      "change": -0.03,
+      "change_pct": -0.41,
       "direction": "negative"
     },
     "crude": {
-      "value": 78.99,
-      "change": -0.61,
-      "change_pct": -0.77,
-      "direction": "negative"
+      "value": 81.77,
+      "change": 2.82,
+      "change_pct": 3.57,
+      "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.89,
-      "change": -0.03,
-      "change_pct": -1.06,
-      "direction": "negative"
+      "value": 2.92,
+      "change": 0.06,
+      "change_pct": 2.03,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -87,7 +87,7 @@
       {
         "symbol": "RAILTEL",
         "sector": "Communication Services",
-        "old_price": 414.8,
+        "old_price": 411.82,
         "current_price": NaN,
         "low_52w": 245.0,
         "fall_pct": NaN,
@@ -114,7 +114,7 @@
       {
         "symbol": "SUZLON",
         "sector": "Industrials",
-        "old_price": 68.3,
+        "old_price": 67.14,
         "current_price": NaN,
         "low_52w": 38.19,
         "fall_pct": NaN,
@@ -413,9 +413,9 @@
       {
         "symbol": "HCLTECH",
         "sector": "Technology",
-        "old_price": 1746.66,
+        "old_price": 1729.01,
         "current_price": NaN,
-        "low_52w": 1030.0,
+        "low_52w": 1019.59,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -550,9 +550,9 @@
       {
         "symbol": "HCLTECH",
         "sector": "Technology",
-        "old_price": 1746.66,
+        "old_price": 1729.01,
         "current_price": NaN,
-        "low_52w": 1030.0,
+        "low_52w": 1019.59,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -687,9 +687,9 @@
       {
         "symbol": "HCLTECH",
         "sector": "Technology",
-        "old_price": 1746.66,
+        "old_price": 1729.01,
         "current_price": NaN,
-        "low_52w": 1030.0,
+        "low_52w": 1019.59,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -815,17 +815,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "16 Jul 2026",
+        "date": "17 Jul 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "15 Jul 2026",
+        "date": "16 Jul 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "14 Jul 2026",
+        "date": "15 Jul 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -840,25 +840,23 @@
     }
   },
   "market_outlook": {
-    "sentiment": "BULLISH",
-    "badge_class": "bullish",
+    "sentiment": "NEUTRAL",
+    "badge_class": "neutral",
     "vix": {
-      "value": 13.27,
+      "value": 12.88,
       "change_pct": 0.0
     },
-    "reasons": [
-      "\u26fd Crude oil down 0.8% - positive for India"
-    ],
+    "reasons": [],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 13.27",
+        "label": "VIX 12.88",
         "status": "negative"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -0.8%",
-        "status": "positive"
+        "label": "Crude 3.6%",
+        "status": "negative"
       }
     ]
   },
