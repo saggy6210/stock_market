@@ -1,6 +1,6 @@
-// Auto-generated on 2026-07-29T19:01:51.223842
+// Auto-generated on 2026-07-29T19:03:43.905312
 const DASHBOARD_DATA = {
-  "timestamp": "2026-07-29T19:01:14.848384",
+  "timestamp": "2026-07-29T19:03:24.083889",
   "indices": {
     "nifty50": {
       "value": 23985.35,
@@ -33,15 +33,15 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "dow": {
-      "value": 52183.69,
-      "change": -563.63,
-      "change_pct": -1.07,
+      "value": 52187.59,
+      "change": -559.73,
+      "change_pct": -1.06,
       "direction": "negative"
     },
     "nasdaq": {
-      "value": 25001.49,
-      "change": 124.58,
-      "change_pct": 0.5,
+      "value": 25015.26,
+      "change": 138.35,
+      "change_pct": 0.56,
       "direction": "positive"
     },
     "usdinr": {
@@ -53,33 +53,33 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4158.4,
-      "change": 122.1,
-      "change_pct": 3.03,
+      "value": 4162.6,
+      "change": 126.3,
+      "change_pct": 3.13,
       "direction": "positive"
     },
     "silver": {
-      "value": 59.19,
-      "change": 1.89,
-      "change_pct": 3.31,
+      "value": 59.28,
+      "change": 1.98,
+      "change_pct": 3.46,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.41,
-      "change": 0.09,
-      "change_pct": 1.44,
+      "value": 6.42,
+      "change": 0.1,
+      "change_pct": 1.51,
       "direction": "positive"
     },
     "crude": {
-      "value": 84.67,
-      "change": 5.41,
-      "change_pct": 6.83,
+      "value": 84.66,
+      "change": 5.4,
+      "change_pct": 6.81,
       "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.73,
+      "value": 2.72,
       "change": 0.06,
-      "change_pct": 2.4,
+      "change_pct": 2.33,
       "direction": "positive"
     }
   },
