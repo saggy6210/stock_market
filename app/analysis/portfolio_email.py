@@ -1,10 +1,12 @@
 """
 Portfolio Email Generator.
 Generates HTML and text emails for portfolio analysis.
+Uses modern inline CSS template for email client compatibility.
 """
 
 import logging
 from datetime import datetime
+from typing import Optional
 
 from app.config import settings
 from app.analysis.portfolio_insights import (
@@ -20,70 +22,812 @@ logger = logging.getLogger(__name__)
 
 
 class PortfolioEmailGenerator:
-    """Generate portfolio analysis emails."""
+    """Generate portfolio analysis emails with modern template."""
     
     def generate_html(self, insights: PortfolioInsights) -> str:
-        """Generate HTML email content."""
+        """Generate HTML email content using Sample 5 template."""
         summary = insights.summary
         
-        # Portfolio header with key metrics
-        header_html = self._build_header(insights)
+        # Fetch market overview data
+        market_data = self._fetch_market_overview()
         
-        # Risk flags section
-        risk_flags_html = self._build_risk_flags(summary)
-        
-        # Decline summary from key dates
-        decline_html = self._build_decline_summary(insights.decline_summary)
-        
-        # Top 10 detailed buy recommendations
-        detailed_recs_html = self._build_detailed_recommendations(insights.detailed_buy_recommendations)
-        
-        # Sector allocation
-        sector_html = self._build_sector_allocation(summary)
-        
-        # Top 20 predictions
-        predictions_html = self._build_predictions(insights.predictions)
-        
-        # Relevant news
-        news_html = self._build_portfolio_news(insights.portfolio_news)
-        
-        # Buy/Hold/Sell signals
-        signals_html = self._build_signals_section(insights)
-        
-        # Strategy notes
+        # Build email sections
+        header_html = self._build_modern_header(insights, market_data)
+        outlook_html = self._build_market_outlook(insights, market_data)
+        indices_html = self._build_global_indices(market_data)
+        indicators_html = self._build_market_indicators(market_data)
+        predictions_html = self._build_top5_predictions(insights)
+        headlines_html = self._build_news_headlines(insights)
+        earnings_html = self._build_earnings_news(insights)
+        regulatory_html = self._build_regulatory_news(insights)
+        portfolio_analysis_html = self._build_portfolio_analysis(insights)
+        action_alerts_html = self._build_action_alerts(insights)
+        holdings_predictions_html = self._build_holdings_predictions(insights)
+        gainers_losers_html = self._build_gainers_losers(insights)
+        risk_alerts_html = self._build_risk_alerts(insights)
         strategy_html = self._build_strategy_section(insights)
+        footer_html = self._build_footer(insights)
         
-        html = f"""
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            {self._get_css()}
-        </head>
-        <body>
-            <div class="container">
-                {header_html}
-                {risk_flags_html}
-                {decline_html}
-                {detailed_recs_html}
-                {sector_html}
-                {predictions_html}
-                {news_html}
-                {signals_html}
-                {strategy_html}
-                
-                <div class="footer">
-                    <p>Generated on {insights.date} | Data from NSE, Yahoo Finance, Screener.in</p>
-                    <p><a href="{settings.dashboard_url}" target="_blank" style="color: #1a237e; font-weight: bold;">📈 View Full Market Dashboard</a></p>
-                    <p><em>This is for informational purposes only. Do your own research before making investment decisions.</em></p>
-                </div>
-            </div>
-        </body>
-        </html>
-        """
+        html = f"""<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Daily Prediction</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f5f5f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5;">
+        <tr>
+            <td align="center" style="padding: 16px;">
+                <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 12px; overflow: hidden;">
+                    
+                    {header_html}
+                    {outlook_html}
+                    {indices_html}
+                    {indicators_html}
+                    {predictions_html}
+                    {headlines_html}
+                    {earnings_html}
+                    {regulatory_html}
+                    {portfolio_analysis_html}
+                    {action_alerts_html}
+                    {holdings_predictions_html}
+                    {gainers_losers_html}
+                    {risk_alerts_html}
+                    {strategy_html}
+                    {footer_html}
+
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>"""
         
         return html
+    
+    def _fetch_market_overview(self) -> dict:
+        """Fetch live market data."""
+        try:
+            from app.analysis.market_overview import MarketOverviewFetcher
+            from app.analysis.market_intelligence import MarketIntelligenceService
+            
+            # Fetch market overview
+            overview_fetcher = MarketOverviewFetcher()
+            overview = overview_fetcher.get_overview()
+            
+            # Fetch market intelligence (FII/DII, VIX, etc.)
+            intel_service = MarketIntelligenceService()
+            intel = intel_service.get_market_intelligence()
+            
+            return {
+                "sensex": overview.sensex,
+                "nifty": overview.nifty,
+                "dow": overview.dow_jones,
+                "nasdaq": overview.nasdaq,
+                "usd_inr": overview.usd_inr,
+                "market_outlook": overview.market_outlook,
+                "outlook_reason": overview.outlook_reason,
+                "fii_net": intel.fii_net_buy if intel else 0,
+                "dii_net": intel.dii_net_buy if intel else 0,
+                "vix": intel.india_vix if intel else 0,
+                "crude": intel.crude_oil if intel else 0,
+                "gold": intel.gold if intel else 0,
+            }
+        except Exception as e:
+            logger.warning(f"Failed to fetch market data: {e}")
+            return {}
+    
+    def _build_modern_header(self, insights: PortfolioInsights, market_data: dict) -> str:
+        """Build modern header with portfolio summary."""
+        summary = insights.summary
+        pnl_color = "#f87171" if summary.total_pnl < 0 else "#4ade80"
+        pnl_sign = "" if summary.total_pnl < 0 else "+"
+        
+        return f"""
+                    <!-- Header -->
+                    <tr>
+                        <td style="background: #0f172a; padding: 20px 24px;">
+                            <table role="presentation" width="100%">
+                                <tr>
+                                    <td>
+                                        <span style="font-size: 20px; font-weight: 700; color: #ffffff;">📈 Daily Market Prediction</span>
+                                        <span style="display: block; color: #94a3b8; font-size: 13px; margin-top: 4px;">{insights.date}</span>
+                                    </td>
+                                    <td style="text-align: right;">
+                                        <span style="display: block; color: #fbbf24; font-size: 11px;">Your Portfolio</span>
+                                        <span style="color: {pnl_color}; font-size: 14px; font-weight: 700;">₹{summary.current_value/100000:.2f}L ({pnl_sign}{summary.total_pnl_pct:.1f}%)</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_market_outlook(self, insights: PortfolioInsights, market_data: dict) -> str:
+        """Build market outlook banner."""
+        outlook = market_data.get("market_outlook", "NEUTRAL")
+        reason = market_data.get("outlook_reason", "")
+        
+        # Determine color based on outlook
+        if "BULLISH" in outlook.upper():
+            bg_color = "linear-gradient(135deg, #059669 0%, #10b981 100%)"
+            emoji = "🚀"
+        elif "BEARISH" in outlook.upper():
+            bg_color = "linear-gradient(135deg, #dc2626 0%, #ef4444 100%)"
+            emoji = "📉"
+        else:
+            bg_color = "linear-gradient(135deg, #d97706 0%, #f59e0b 100%)"
+            emoji = "⚖️"
+        
+        # Build subtitle with market cues
+        dow = market_data.get("dow")
+        nasdaq = market_data.get("nasdaq")
+        subtitle_parts = []
+        if dow:
+            arrow = "▲" if dow.is_up else "▼"
+            subtitle_parts.append(f"Dow {arrow}{abs(dow.change_pct):.1f}%")
+        if nasdaq:
+            arrow = "▲" if nasdaq.is_up else "▼"
+            subtitle_parts.append(f"NASDAQ {arrow}{abs(nasdaq.change_pct):.1f}%")
+        subtitle = " • ".join(subtitle_parts) if subtitle_parts else ""
+        
+        return f"""
+                    <!-- Market Outlook Banner -->
+                    <tr>
+                        <td style="padding: 16px;">
+                            <table role="presentation" width="100%" style="background: {bg_color}; border-radius: 10px;">
+                                <tr>
+                                    <td style="padding: 16px; text-align: center;">
+                                        <span style="color: rgba(255,255,255,0.85); font-size: 11px; text-transform: uppercase; letter-spacing: 2px;">Today's Outlook</span>
+                                        <span style="display: block; color: #ffffff; font-size: 26px; font-weight: 800; margin: 4px 0;">{emoji} {outlook}</span>
+                                        <span style="color: rgba(255,255,255,0.9); font-size: 12px;">{subtitle}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_global_indices(self, market_data: dict) -> str:
+        """Build global market indices row."""
+        def build_index_cell(idx, label: str, emoji: str) -> str:
+            if not idx:
+                return f"""
+                                    <td width="20%" style="background: #f1f5f9; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase;">{emoji} {label}</span>
+                                        <span style="display: block; font-size: 15px; font-weight: 700; color: #0f172a;">--</span>
+                                        <span style="font-size: 11px; color: #64748b; font-weight: 600;">--</span>
+                                    </td>"""
+            
+            change_color = "#22c55e" if idx.is_up else "#ef4444"
+            arrow = "▲" if idx.is_up else "▼"
+            
+            # Format value based on type
+            if label == "USD/INR":
+                value = f"₹{idx.last_close:.2f}"
+            else:
+                value = f"{idx.last_close:,.0f}"
+            
+            return f"""
+                                    <td width="20%" style="background: #f1f5f9; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase;">{emoji} {label}</span>
+                                        <span style="display: block; font-size: 15px; font-weight: 700; color: #0f172a;">{value}</span>
+                                        <span style="font-size: 11px; color: {change_color}; font-weight: 600;">{arrow} {abs(idx.change_pct):.2f}%</span>
+                                    </td>"""
+        
+        sensex_cell = build_index_cell(market_data.get("sensex"), "Sensex", "🇮🇳")
+        nifty_cell = build_index_cell(market_data.get("nifty"), "Nifty", "🇮🇳")
+        dow_cell = build_index_cell(market_data.get("dow"), "Dow", "🇺🇸")
+        nasdaq_cell = build_index_cell(market_data.get("nasdaq"), "NASDAQ", "🇺🇸")
+        usd_cell = build_index_cell(market_data.get("usd_inr"), "USD/INR", "💱")
+        
+        return f"""
+                    <!-- Global Markets - Compact Pills -->
+                    <tr>
+                        <td style="padding: 0 16px 16px 16px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="4">
+                                <tr>
+                                    {sensex_cell}
+                                    {nifty_cell}
+                                    {dow_cell}
+                                    {nasdaq_cell}
+                                    {usd_cell}
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_market_indicators(self, market_data: dict) -> str:
+        """Build market indicators row (VIX, FII, DII, Crude, Gold)."""
+        vix = market_data.get("vix", 0)
+        fii = market_data.get("fii_net", 0)
+        dii = market_data.get("dii_net", 0)
+        crude = market_data.get("crude", 0)
+        gold = market_data.get("gold", 0)
+        
+        # Determine colors based on values
+        vix_bg = "#ecfdf5" if vix < 18 else "#fef2f2" if vix > 25 else "#f1f5f9"
+        vix_color = "#059669" if vix < 18 else "#dc2626" if vix > 25 else "#64748b"
+        
+        fii_bg = "#ecfdf5" if fii > 0 else "#fef2f2"
+        fii_color = "#059669" if fii > 0 else "#dc2626"
+        fii_sign = "+" if fii >= 0 else ""
+        
+        dii_bg = "#ecfdf5" if dii > 0 else "#fef2f2"
+        dii_color = "#059669" if dii > 0 else "#dc2626"
+        dii_sign = "+" if dii >= 0 else ""
+        
+        return f"""
+                    <!-- Institutional Activity - Icon Pills -->
+                    <tr>
+                        <td style="padding: 0 16px 16px 16px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="4">
+                                <tr>
+                                    <td width="20%" style="background: {vix_bg}; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 18px;">😌</span>
+                                        <span style="display: block; font-size: 10px; color: {vix_color}; font-weight: 600;">VIX</span>
+                                        <span style="display: block; font-size: 14px; font-weight: 700; color: {vix_color};">{vix:.2f}</span>
+                                    </td>
+                                    <td width="20%" style="background: {fii_bg}; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 18px;">🏦</span>
+                                        <span style="display: block; font-size: 10px; color: {fii_color}; font-weight: 600;">FII</span>
+                                        <span style="display: block; font-size: 14px; font-weight: 700; color: {fii_color};">{fii_sign}₹{abs(fii):.0f}Cr</span>
+                                    </td>
+                                    <td width="20%" style="background: {dii_bg}; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 18px;">🏠</span>
+                                        <span style="display: block; font-size: 10px; color: {dii_color}; font-weight: 600;">DII</span>
+                                        <span style="display: block; font-size: 14px; font-weight: 700; color: {dii_color};">{dii_sign}₹{abs(dii):.0f}Cr</span>
+                                    </td>
+                                    <td width="20%" style="background: #f1f5f9; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 18px;">🛢️</span>
+                                        <span style="display: block; font-size: 10px; color: #64748b; font-weight: 600;">Crude</span>
+                                        <span style="display: block; font-size: 14px; font-weight: 700; color: #0f172a;">${crude:.2f}</span>
+                                    </td>
+                                    <td width="20%" style="background: #fef3c7; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 18px;">🥇</span>
+                                        <span style="display: block; font-size: 10px; color: #b45309; font-weight: 600;">Gold</span>
+                                        <span style="display: block; font-size: 14px; font-weight: 700; color: #b45309;">${gold:,.0f}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_top5_predictions(self, insights: PortfolioInsights) -> str:
+        """Build top 5 general stock movement predictions."""
+        predictions = insights.predictions[:5] if insights.predictions else []
+        if not predictions:
+            return ""
+        
+        rows = ""
+        for h in predictions:
+            if h.predicted_direction == "UP":
+                arrow = "▲"
+                color = "#22c55e"
+                bg = "#22c55e"
+            elif h.predicted_direction == "DOWN":
+                arrow = "▼"
+                color = "#ef4444"
+                bg = "#ef4444"
+            else:
+                arrow = "●"
+                color = "#f59e0b"
+                bg = "#f59e0b"
+            
+            rows += f"""
+                                            <tr>
+                                                <td style="padding: 8px 0; border-bottom: 1px solid #1e293b;">
+                                                    <table role="presentation" width="100%">
+                                                        <tr>
+                                                            <td width="8%" style="text-align: center;"><span style="color: {color}; font-size: 16px;">{arrow}</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">{h.symbol}</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: {bg}; color: #ffffff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">{h.predicted_confidence:.0f}% CONF</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">{h.prediction_reason[:30]}</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>"""
+        
+        return f"""
+                    <!-- 🎯 TOP 5 STOCK MOVEMENT PREDICTIONS -->
+                    <tr>
+                        <td style="padding: 0 16px 16px 16px;">
+                            <table role="presentation" width="100%" style="background: #0f172a; border-radius: 10px;">
+                                <tr>
+                                    <td style="padding: 14px;">
+                                        <span style="display: block; color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">🎯 Top 5 Stock Movement Predictions</span>
+                                        
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                            {rows}
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_news_headlines(self, insights: PortfolioInsights) -> str:
+        """Build today's headlines section."""
+        # Filter general market news
+        news = [n for n in insights.portfolio_news if n.sentiment in ["positive", "neutral"]][:4]
+        if not news:
+            return ""
+        
+        rows = ""
+        for item in news:
+            if item.sentiment == "positive":
+                color = "#22c55e"
+                icon = "▲"
+            elif item.sentiment == "negative":
+                color = "#ef4444"
+                icon = "▼"
+            else:
+                color = "#64748b"
+                icon = "●"
+            
+            # Truncate headline
+            headline = item.headline[:70] + "..." if len(item.headline) > 70 else item.headline
+            
+            rows += f"""
+                                <tr>
+                                    <td style="padding: 10px 12px; border-bottom: 1px solid #e2e8f0;">
+                                        <span style="color: {color}; font-weight: 700; margin-right: 6px;">{icon}</span>
+                                        <a href="{item.url}" style="color: #0f172a; font-size: 13px; text-decoration: none;">{headline}</a>
+                                        <span style="color: #94a3b8; font-size: 10px;"> — {item.source}</span>
+                                    </td>
+                                </tr>"""
+        
+        return f"""
+                    <!-- 📰 Today's Headlines -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <span style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">📰 Today's Headlines</span>
+                            
+                            <table role="presentation" width="100%" style="background: #f8fafc; border-radius: 8px;">
+                                {rows}
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_earnings_news(self, insights: PortfolioInsights) -> str:
+        """Build earnings & quarterly results section."""
+        # Filter earnings-related news
+        earnings_keywords = ["Q1", "Q2", "Q3", "Q4", "quarterly", "results", "earnings", "profit", "revenue"]
+        earnings_news = []
+        
+        for item in insights.portfolio_news:
+            if any(kw.lower() in item.headline.lower() for kw in earnings_keywords):
+                earnings_news.append(item)
+        
+        if not earnings_news:
+            return ""
+        
+        rows = ""
+        for item in earnings_news[:3]:
+            if item.sentiment == "positive":
+                color = "#22c55e"
+                icon = "▲"
+            elif item.sentiment == "negative":
+                color = "#ef4444"
+                icon = "▼"
+            else:
+                color = "#64748b"
+                icon = "●"
+            
+            headline = item.headline[:65] + "..." if len(item.headline) > 65 else item.headline
+            stocks = " ".join([f"<span style='color: #991b1b; font-size: 10px;'>⚠️ You hold {s}</span>" for s in item.stocks_mentioned[:1]]) if item.stocks_mentioned else ""
+            
+            rows += f"""
+                                <tr>
+                                    <td style="padding: 10px 12px; border-bottom: 1px solid #fecaca;">
+                                        <span style="color: {color}; font-weight: 700; margin-right: 6px;">{icon}</span>
+                                        <a href="{item.url}" style="color: #0f172a; font-size: 13px; text-decoration: none;">{headline}</a>
+                                        <span style="display: block; color: #64748b; font-size: 10px; margin-top: 2px;">{stocks}</span>
+                                    </td>
+                                </tr>"""
+        
+        return f"""
+                    <!-- 📊 Earnings & Quarterly Results -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <span style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">📊 Earnings & Quarterly Results</span>
+                            
+                            <table role="presentation" width="100%" style="background: #fef2f2; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                {rows}
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_regulatory_news(self, insights: PortfolioInsights) -> str:
+        """Build regulatory & policy news section."""
+        # Filter regulatory news
+        reg_keywords = ["SEBI", "RBI", "government", "regulation", "policy", "IPO", "DRHP", "banking"]
+        reg_news = []
+        
+        for item in insights.portfolio_news:
+            if any(kw.lower() in item.headline.lower() for kw in reg_keywords):
+                reg_news.append(item)
+        
+        if not reg_news:
+            return ""
+        
+        rows = ""
+        for item in reg_news[:2]:
+            headline = item.headline[:65] + "..." if len(item.headline) > 65 else item.headline
+            
+            rows += f"""
+                                <tr>
+                                    <td style="padding: 10px 12px; border-bottom: 1px solid #e2e8f0;">
+                                        <span style="color: #64748b; font-weight: 700; margin-right: 6px;">●</span>
+                                        <a href="{item.url}" style="color: #0f172a; font-size: 13px; text-decoration: none;">{headline}</a>
+                                        <span style="display: block; color: #64748b; font-size: 10px; margin-top: 2px;">{item.source}</span>
+                                    </td>
+                                </tr>"""
+        
+        return f"""
+                    <!-- ⚖️ Regulatory & Policy News -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <span style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">⚖️ Regulatory & Policy News</span>
+                            
+                            <table role="presentation" width="100%" style="background: #f8fafc; border-radius: 8px;">
+                                {rows}
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_portfolio_analysis(self, insights: PortfolioInsights) -> str:
+        """Build portfolio analysis card."""
+        summary = insights.summary
+        
+        pnl_bg = "rgba(239,68,68,0.3)" if summary.total_pnl < 0 else "rgba(34,197,94,0.3)"
+        pnl_color = "#fca5a5" if summary.total_pnl < 0 else "#86efac"
+        pnl_sign = "" if summary.total_pnl < 0 else "+"
+        
+        day_color = "#86efac" if summary.day_change >= 0 else "#fca5a5"
+        day_sign = "+" if summary.day_change >= 0 else ""
+        
+        return f"""
+                    <!-- 📊 PORTFOLIO ANALYSIS -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <table role="presentation" width="100%" style="background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); border-radius: 10px;">
+                                <tr>
+                                    <td style="padding: 16px;">
+                                        <span style="display: block; color: rgba(255,255,255,0.9); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">📊 Portfolio Analysis</span>
+                                        
+                                        <!-- Portfolio Summary Row -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="6" style="margin-bottom: 12px;">
+                                            <tr>
+                                                <td width="25%" style="background: rgba(255,255,255,0.15); border-radius: 8px; padding: 10px; text-align: center;">
+                                                    <span style="display: block; color: rgba(255,255,255,0.7); font-size: 10px;">Invested</span>
+                                                    <span style="display: block; color: #ffffff; font-size: 16px; font-weight: 700;">₹{summary.total_investment/100000:.2f}L</span>
+                                                </td>
+                                                <td width="25%" style="background: rgba(255,255,255,0.15); border-radius: 8px; padding: 10px; text-align: center;">
+                                                    <span style="display: block; color: rgba(255,255,255,0.7); font-size: 10px;">Current</span>
+                                                    <span style="display: block; color: #ffffff; font-size: 16px; font-weight: 700;">₹{summary.current_value/100000:.2f}L</span>
+                                                </td>
+                                                <td width="25%" style="background: {pnl_bg}; border-radius: 8px; padding: 10px; text-align: center;">
+                                                    <span style="display: block; color: rgba(255,255,255,0.7); font-size: 10px;">P&L</span>
+                                                    <span style="display: block; color: {pnl_color}; font-size: 16px; font-weight: 700;">{pnl_sign}₹{abs(summary.total_pnl)/100000:.2f}L</span>
+                                                </td>
+                                                <td width="25%" style="background: {pnl_bg}; border-radius: 8px; padding: 10px; text-align: center;">
+                                                    <span style="display: block; color: rgba(255,255,255,0.7); font-size: 10px;">Returns</span>
+                                                    <span style="display: block; color: {pnl_color}; font-size: 16px; font-weight: 700;">{pnl_sign}{summary.total_pnl_pct:.1f}%</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Holdings Stats -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="6">
+                                            <tr>
+                                                <td width="33%" style="background: rgba(34,197,94,0.2); border-radius: 6px; padding: 8px; text-align: center;">
+                                                    <span style="color: #86efac; font-size: 18px; font-weight: 700;">{summary.profitable_stocks}</span>
+                                                    <span style="display: block; color: #86efac; font-size: 10px;">Stocks in Profit</span>
+                                                </td>
+                                                <td width="33%" style="background: rgba(239,68,68,0.2); border-radius: 6px; padding: 8px; text-align: center;">
+                                                    <span style="color: #fca5a5; font-size: 18px; font-weight: 700;">{summary.loss_making_stocks}</span>
+                                                    <span style="display: block; color: #fca5a5; font-size: 10px;">Stocks in Loss</span>
+                                                </td>
+                                                <td width="33%" style="background: rgba(255,255,255,0.15); border-radius: 6px; padding: 8px; text-align: center;">
+                                                    <span style="color: #ffffff; font-size: 18px; font-weight: 700;">{summary.total_stocks}</span>
+                                                    <span style="display: block; color: rgba(255,255,255,0.7); font-size: 10px;">Total Holdings</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Today's Change -->
+                                        <table role="presentation" width="100%" style="margin-top: 10px;">
+                                            <tr>
+                                                <td style="text-align: center;">
+                                                    <span style="color: rgba(255,255,255,0.7); font-size: 11px;">Today's Change: </span>
+                                                    <span style="color: {day_color}; font-size: 13px; font-weight: 700;">{"▲" if summary.day_change >= 0 else "▼"} {day_sign}₹{abs(summary.day_change):,.0f} ({day_sign}{summary.day_change_pct:.2f}%)</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_action_alerts(self, insights: PortfolioInsights) -> str:
+        """Build action alerts section (BUY/EXIT/BOOK PROFIT)."""
+        alerts = []
+        
+        # BUY recommendation
+        if insights.aggressive_buy_stocks:
+            top_buy = insights.aggressive_buy_stocks[0]
+            alerts.append(f"""
+                                <tr>
+                                    <td>
+                                        <table role="presentation" width="100%" style="background: #dcfce7; border: 2px solid #22c55e; border-radius: 8px;">
+                                            <tr>
+                                                <td style="padding: 12px;">
+                                                    <span style="display: inline-block; background: #22c55e; color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 800;">✅ BUY</span>
+                                                    <span style="color: #166534; font-size: 14px; font-weight: 700; margin-left: 8px;">{top_buy.symbol} @ ₹{top_buy.current_price:,.0f}</span>
+                                                    <span style="color: #15803d; font-size: 12px;"> — {top_buy.pnl_pct:+.0f}% • {top_buy.reasons[0] if top_buy.reasons else "Strong fundamentals"}</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>""")
+        
+        # ALSO BUY
+        if insights.buy_on_dip_stocks:
+            dip_stocks = [f"{h.symbol} ({h.pnl_pct:+.0f}%)" for h in insights.buy_on_dip_stocks[:4]]
+            alerts.append(f"""
+                                <tr>
+                                    <td>
+                                        <table role="presentation" width="100%" style="background: #dbeafe; border-radius: 8px;">
+                                            <tr>
+                                                <td style="padding: 10px 12px;">
+                                                    <span style="color: #1d4ed8; font-size: 11px; font-weight: 700;">📥 ALSO BUY ON DIP:</span>
+                                                    <span style="color: #1e40af; font-size: 12px;"> {" • ".join(dip_stocks)}</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>""")
+        
+        # EXIT
+        if insights.exit_stocks:
+            exit_stocks = [f"{h.symbol} ({h.pnl_pct:+.0f}%)" for h in insights.exit_stocks[:3]]
+            alerts.append(f"""
+                                <tr>
+                                    <td>
+                                        <table role="presentation" width="100%" style="background: #fef2f2; border: 2px solid #ef4444; border-radius: 8px;">
+                                            <tr>
+                                                <td style="padding: 10px 12px;">
+                                                    <span style="display: inline-block; background: #ef4444; color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 800;">🚨 EXIT</span>
+                                                    <span style="color: #991b1b; font-size: 12px; margin-left: 8px;">{" • ".join(exit_stocks)} — Book loss, weak fundamentals</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>""")
+        
+        # BOOK PROFIT
+        if insights.reduce_stocks:
+            profit_stocks = [f"{h.symbol} ({h.pnl_pct:+.0f}%)" for h in insights.reduce_stocks[:4]]
+            alerts.append(f"""
+                                <tr>
+                                    <td>
+                                        <table role="presentation" width="100%" style="background: #fef3c7; border-radius: 8px;">
+                                            <tr>
+                                                <td style="padding: 10px 12px;">
+                                                    <span style="color: #92400e; font-size: 11px; font-weight: 700;">💰 BOOK PROFIT:</span>
+                                                    <span style="color: #78350f; font-size: 12px;"> {" • ".join(profit_stocks)}</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>""")
+        
+        if not alerts:
+            return ""
+        
+        return f"""
+                    <!-- 🚨 ACTION ALERTS -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="6">
+                                {"".join(alerts)}
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_holdings_predictions(self, insights: PortfolioInsights) -> str:
+        """Build top 5 holdings predictions."""
+        predictions = insights.predictions[:5] if insights.predictions else []
+        if not predictions:
+            return ""
+        
+        rows = ""
+        for h in predictions:
+            if h.predicted_direction == "UP":
+                arrow = "▲"
+                color = "#22c55e"
+                bg = "#22c55e"
+                label = "CONF"
+            elif h.predicted_direction == "DOWN":
+                arrow = "▼"
+                color = "#ef4444"
+                bg = "#ef4444"
+                label = "CONF"
+            else:
+                arrow = "●"
+                color = "#f59e0b"
+                bg = "#f59e0b"
+                label = "HOLD"
+            
+            rows += f"""
+                                            <tr>
+                                                <td style="padding: 8px 0; border-bottom: 1px solid #1e293b;">
+                                                    <table role="presentation" width="100%">
+                                                        <tr>
+                                                            <td width="8%" style="text-align: center;"><span style="color: {color}; font-size: 16px;">{arrow}</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">{h.symbol}</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: {bg}; color: #ffffff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">{h.predicted_confidence:.0f}% {label}</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">{h.prediction_reason[:25]}</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>"""
+        
+        return f"""
+                    <!-- 🎯 TOP 5 STOCK PREDICTIONS (Your Holdings) -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <table role="presentation" width="100%" style="background: #0f172a; border-radius: 10px;">
+                                <tr>
+                                    <td style="padding: 14px;">
+                                        <span style="display: block; color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">🎯 Top 5 Stock Predictions (Your Holdings)</span>
+                                        
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                            {rows}
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_gainers_losers(self, insights: PortfolioInsights) -> str:
+        """Build gainers/losers side by side."""
+        # Sort holdings by P&L
+        sorted_holdings = sorted(insights.holdings, key=lambda h: h.pnl_pct, reverse=True)
+        top_gainers = sorted_holdings[:4]
+        top_losers = sorted_holdings[-4:][::-1]  # Reverse to get worst first
+        
+        gainers_rows = ""
+        for h in top_gainers:
+            gainers_rows += f"""<tr><td style="padding: 6px 10px; border-bottom: 1px solid #a7f3d0;"><span style="color: #166534; font-size: 12px;">{h.symbol}</span></td><td style="text-align: right; padding: 6px 10px; border-bottom: 1px solid #a7f3d0;"><span style="color: #166534; font-size: 12px; font-weight: 700;">{h.pnl_pct:+.0f}%</span></td></tr>"""
+        
+        losers_rows = ""
+        for h in top_losers:
+            losers_rows += f"""<tr><td style="padding: 6px 10px; border-bottom: 1px solid #fecaca;"><span style="color: #991b1b; font-size: 12px;">{h.symbol}</span></td><td style="text-align: right; padding: 6px 10px; border-bottom: 1px solid #fecaca;"><span style="color: #dc2626; font-size: 12px; font-weight: 700;">{h.pnl_pct:+.0f}%</span></td></tr>"""
+        
+        return f"""
+                    <!-- 🏆 Your Top Gainers / Losers -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="8">
+                                <tr>
+                                    <td width="48%" style="vertical-align: top;">
+                                        <span style="display: block; font-size: 10px; font-weight: 700; color: #059669; text-transform: uppercase; margin-bottom: 6px;">🏆 Your Top Gainers</span>
+                                        <table role="presentation" width="100%" style="background: #ecfdf5; border-radius: 8px;">
+                                            {gainers_rows}
+                                        </table>
+                                    </td>
+                                    <td width="48%" style="vertical-align: top;">
+                                        <span style="display: block; font-size: 10px; font-weight: 700; color: #dc2626; text-transform: uppercase; margin-bottom: 6px;">📉 Your Top Losers</span>
+                                        <table role="presentation" width="100%" style="background: #fef2f2; border-radius: 8px;">
+                                            {losers_rows}
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_risk_alerts(self, insights: PortfolioInsights) -> str:
+        """Build risk alerts section."""
+        risk_items = []
+        
+        # Add exit stocks as risks
+        for h in insights.exit_stocks[:3]:
+            reason = h.reasons[0] if h.reasons else "Weak fundamentals"
+            risk_items.append(f"<strong>{h.symbol}:</strong> {reason}")
+        
+        if not risk_items:
+            return ""
+        
+        alerts = "<br>• ".join(risk_items)
+        
+        return f"""
+                    <!-- ⚠️ Risk Alerts -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <table role="presentation" width="100%" style="background: #fef2f2; border-left: 4px solid #ef4444; border-radius: 8px;">
+                                <tr>
+                                    <td style="padding: 12px;">
+                                        <span style="display: block; font-size: 11px; font-weight: 700; color: #991b1b; text-transform: uppercase; margin-bottom: 6px;">⚠️ Risk Alerts</span>
+                                        <span style="display: block; color: #7f1d1d; font-size: 12px; line-height: 1.6;">
+                                            • {alerts}
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_strategy_section(self, insights: PortfolioInsights) -> str:
+        """Build strategy note section."""
+        # Build do/don't recommendations
+        do_stocks = [h.symbol for h in insights.aggressive_buy_stocks[:3]]
+        dont_stocks = [h.symbol for h in insights.exit_stocks[:3]]
+        
+        do_text = f"Average {', '.join(do_stocks)} on dips" if do_stocks else "Focus on quality stocks"
+        dont_text = f"Average {', '.join(dont_stocks)} — book loss" if dont_stocks else "Avoid weak fundamentals"
+        
+        return f"""
+                    <!-- 💡 Strategy Note -->
+                    <tr>
+                        <td style="padding: 0 16px 16px 16px;">
+                            <table role="presentation" width="100%" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 8px;">
+                                <tr>
+                                    <td style="padding: 14px;">
+                                        <span style="display: block; font-size: 11px; font-weight: 700; color: #92400e; text-transform: uppercase; letter-spacing: 1px;">💡 Strategy Note</span>
+                                        <p style="margin: 8px 0 0 0; color: #78350f; font-size: 13px; line-height: 1.6;">
+                                            {insights.market_outlook}<br><br>
+                                            ✅ <strong>Do:</strong> {do_text}<br>
+                                            ❌ <strong>Don't:</strong> {dont_text}<br>
+                                            💰 <strong>Fresh capital:</strong> {insights.strategy_notes}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>"""
+    
+    def _build_footer(self, insights: PortfolioInsights) -> str:
+        """Build email footer."""
+        profit_loss_url = settings.dashboard_url.rstrip('/') + "/profit-loss.html"
+        
+        return f"""
+                    <!-- CTA Buttons -->
+                    <tr>
+                        <td style="padding: 0 16px 20px 16px; text-align: center;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="8">
+                                <tr>
+                                    <td width="50%" style="text-align: right;">
+                                        <a href="{settings.dashboard_url}" style="display: inline-block; background: #0f172a; color: #ffffff; padding: 14px 24px; text-decoration: none; font-size: 12px; font-weight: 700; border-radius: 8px;">
+                                            📊 Dashboard →
+                                        </a>
+                                    </td>
+                                    <td width="50%" style="text-align: left;">
+                                        <a href="{profit_loss_url}" style="display: inline-block; background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: #ffffff; padding: 14px 24px; text-decoration: none; font-size: 12px; font-weight: 700; border-radius: 8px;">
+                                            💰 P&L Report →
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding: 16px; background: #f1f5f9; text-align: center; border-top: 1px solid #e2e8f0;">
+                            <p style="margin: 0; color: #64748b; font-size: 10px;">
+                                NSE • Yahoo Finance • MoneyControl • Economic Times
+                            </p>
+                            <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 9px;">
+                                Generated {insights.date} • For informational purposes only. DYOR.
+                            </p>
+                        </td>
+                    </tr>"""
     
     def generate_text(self, insights: PortfolioInsights) -> str:
         """Generate plain text email content."""

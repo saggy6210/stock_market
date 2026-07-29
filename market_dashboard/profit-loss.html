@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit & Loss Report | Stock Market Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Grand Total Card */
+        .grand-total {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+        }
+        
+        .grand-total .label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .grand-total .amount {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 10px 0;
+        }
+        
+        .grand-total .trades {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .summary-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .summary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .summary-card .fy-label {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .summary-card .fy-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4ade80;
+            margin-bottom: 8px;
+        }
+        
+        .summary-card .fy-trades {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        .summary-card .progress-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            margin-top: 16px;
+            overflow: hidden;
+        }
+        
+        .summary-card .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4ade80, #22c55e);
+            border-radius: 3px;
+            transition: width 1s ease-out;
+        }
+        
+        /* Suggestions Section */
+        .suggestions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .suggestion-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .suggestion-card h3 {
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .suggestion-card.long-term h3 { color: #4ade80; }
+        .suggestion-card.short-term h3 { color: #fbbf24; }
+        
+        .suggestion-card .stocks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .suggestion-card .stock-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            transition: all 0.2s;
+        }
+        
+        .suggestion-card.long-term .stock-tag:hover {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+        }
+        
+        .suggestion-card.short-term .stock-tag:hover {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+        
+        /* Top Performers */
+        .top-performers {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .top-performers h2 {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .performer-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        
+        .performer-item {
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(74, 222, 128, 0.2);
+        }
+        
+        .performer-item .rank {
+            width: 28px;
+            height: 28px;
+            background: #4ade80;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-right: 12px;
+        }
+        
+        .performer-item .symbol {
+            font-weight: 700;
+            color: #ffffff;
+            flex: 1;
+        }
+        
+        .performer-item .return {
+            font-weight: 700;
+            color: #4ade80;
+            font-size: 1.1rem;
+        }
+        
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #94a3b8;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .tab:hover {
+            background: rgba(255,255,255,0.1);
+            color: #ffffff;
+        }
+        
+        .tab.active {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            color: #ffffff;
+            border-color: transparent;
+        }
+        
+        /* Table Container */
+        .table-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            background: rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .table-header h2 {
+            font-size: 1.25rem;
+            color: #ffffff;
+        }
+        
+        .table-header .summary-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .table-header .stat {
+            text-align: center;
+        }
+        
+        .table-header .stat-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        
+        .table-header .stat-value.profit { color: #4ade80; }
+        .table-header .stat-value.loss { color: #f87171; }
+        
+        .table-header .stat-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        
+        /* Search */
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box input {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #ffffff;
+            padding: 10px 16px 10px 40px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            width: 200px;
+            transition: all 0.3s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #7c3aed;
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .search-box::before {
+            content: '🔍';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+        
+        /* Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .data-table th {
+            background: rgba(255,255,255,0.05);
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        
+        .data-table th:hover {
+            background: rgba(255,255,255,0.1);
+            color: #ffffff;
+        }
+        
+        .data-table th.sorted-asc::after { content: ' ↑'; color: #7c3aed; }
+        .data-table th.sorted-desc::after { content: ' ↓'; color: #7c3aed; }
+        
+        .data-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
+            color: #e2e8f0;
+        }
+        
+        .data-table tr:hover td {
+            background: rgba(255,255,255,0.03);
+        }
+        
+        .data-table .symbol {
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .data-table .positive {
+            color: #4ade80;
+            font-weight: 600;
+        }
+        
+        .data-table .negative {
+            color: #f87171;
+            font-weight: 600;
+        }
+        
+        .data-table .money {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+        }
+        
+        /* Responsive */
+        .table-scroll {
+            overflow-x: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+        
+        .footer a {
+            color: #7c3aed;
+            text-decoration: none;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7c3aed;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+        
+        .back-link:hover {
+            color: #a78bfa;
+        }
+        
+        /* Hide inactive tables */
+        .fy-table { display: none; }
+        .fy-table.active { display: block; }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8rem; }
+            .grand-total .amount { font-size: 2.5rem; }
+            .summary-card .fy-amount { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+        
+        <div class="header">
+            <h1>📊 Profit & Loss Report</h1>
+            <p>Complete Trading Performance Analysis</p>
+        </div>
+        
+        <!-- Grand Total -->
+        <div class="grand-total">
+            <div class="label">Total Realised P&L (All Time)</div>
+            <div class="amount">₹5,34,649.75</div>
+            <div class="trades">148 Total Trades • 144 Profitable • 4 Loss</div>
+        </div>
+        
+        <!-- FY Summary Cards -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="fy-label">FY 2026-27 (Current)</div>
+                <div class="fy-amount">₹1,17,575.82</div>
+                <div class="fy-trades">42 Trades • 40 Profit • 2 Loss</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 22%"></div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="fy-label">FY 2025-26</div>
+                <div class="fy-amount">₹2,71,000.00</div>
+                <div class="fy-trades">53 Trades • 52 Profit • 1 Loss</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 51%"></div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="fy-label">FY 2025 & Before</div>
+                <div class="fy-amount">₹1,46,073.93</div>
+                <div class="fy-trades">53 Trades • 52 Profit • 1 Loss</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 27%"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Suggestions -->
+        <div class="suggestions">
+            <div class="suggestion-card long-term">
+                <h3>🌱 Long Term Holdings</h3>
+                <div class="stocks">
+                    <span class="stock-tag">HINDCOPPER</span>
+                    <span class="stock-tag">YASHO</span>
+                    <span class="stock-tag">INDIANB</span>
+                    <span class="stock-tag">BHEL</span>
+                    <span class="stock-tag">TVSMOTOR</span>
+                    <span class="stock-tag">BSE</span>
+                    <span class="stock-tag">APOLLO</span>
+                    <span class="stock-tag">LLOYDSME</span>
+                </div>
+            </div>
+            <div class="suggestion-card short-term">
+                <h3>⚡ Short Term Picks</h3>
+                <div class="stocks">
+                    <span class="stock-tag">ZENTEC</span>
+                    <span class="stock-tag">PERSISTENT</span>
+                    <span class="stock-tag">PRESTIGE</span>
+                    <span class="stock-tag">DEEPAKFERT</span>
+                    <span class="stock-tag">GVT&D</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Top Performers -->
+        <div class="top-performers">
+            <h2>🏆 Top 10 Performers (All Time)</h2>
+            <div class="performer-list">
+                <div class="performer-item">
+                    <span class="rank">1</span>
+                    <span class="symbol">SILVERCASE-E</span>
+                    <span class="return">+99.17%</span>
+                </div>
+                <div class="performer-item">
+                    <span class="rank">2</span>
+                    <span class="symbol">TMCV</span>
+                    <span class="return">+97.33%</span>
+                </div>
+                <div class="performer-item">
+                    <span class="rank">3</span>
+                    <span class="symbol">ENRIN</span>
+                    <span class="return">+71.64%</span>
+                </div>
+                <div class="performer-item">
+                    <span class="rank">4</span>
+                    <span class="symbol">GVPIL</span>
+                    <span class="return">+69.08%</span>
+                </div>
+                <div class="performer-item">
+                    <span class="rank">5</span>
+                    <span class="symbol">RELINFRA</span>
+                    <span class="return">+66.99%</span>
+                </div>
+                <div class="performer-item">
+                    <span class="rank">6</span>
+                    <span class="symbol">PARAS</span>
+                    <span class="return">+49.10%</span>
+                </div>
+                <div class="performer-item">
+                    <span class="rank">7</span>
+                    <span class="symbol">MANGLMCEM</span>
+                    <span class="return">+39.51%</span>
+                </div>
+                <div class="performer-item">
+                    <span class="rank">8</span>
+                    <span class="symbol">ZENSARTECH</span>
+                    <span class="return">+39.29%</span>
+                </div>
+                <div class="performer-item">
+                    <span class="rank">9</span>
+                    <span class="symbol">ETERNAL</span>
+                    <span class="return">+37.28%</span>
+                </div>
+                <div class="performer-item">
+                    <span class="rank">10</span>
+                    <span class="symbol">M&M</span>
+                    <span class="return">+36.84%</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FY Tabs -->
+        <div class="tabs">
+            <button class="tab active" data-fy="fy2627">FY 2026-27</button>
+            <button class="tab" data-fy="fy2526">FY 2025-26</button>
+            <button class="tab" data-fy="fy2425">FY 2025 & Before</button>
+        </div>
+        
+        <!-- FY 2026-27 Table -->
+        <div class="table-container fy-table active" id="fy2627">
+            <div class="table-header">
+                <h2>FY 2026-27 Trades</h2>
+                <div class="summary-stats">
+                    <div class="stat">
+                        <div class="stat-value profit">₹1,23,698</div>
+                        <div class="stat-label">Profit</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value loss">-₹6,122</div>
+                        <div class="stat-label">Loss</div>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Search symbol..." onkeyup="filterTable(this, 'table-fy2627')">
+                </div>
+            </div>
+            <div class="table-scroll">
+                <table class="data-table" id="table-fy2627">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(this, 0)">Symbol</th>
+                            <th onclick="sortTable(this, 1)">Qty</th>
+                            <th onclick="sortTable(this, 2)">Buy Avg</th>
+                            <th onclick="sortTable(this, 3)">Buy Value</th>
+                            <th onclick="sortTable(this, 4)">Sell Avg</th>
+                            <th onclick="sortTable(this, 5)">Sell Value</th>
+                            <th onclick="sortTable(this, 6)">P&L</th>
+                            <th onclick="sortTable(this, 7)">% Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="symbol">GVPIL</td><td>13</td><td class="money">₹499.44</td><td class="money">₹6,492.75</td><td class="money">₹844.47</td><td class="money">₹10,978.10</td><td class="money positive">+₹4,485.35</td><td class="positive">+69.08%</td></tr>
+                        <tr><td class="symbol">PARAS</td><td>13</td><td class="money">₹700.08</td><td class="money">₹9,101.10</td><td class="money">₹1,043.82</td><td class="money">₹13,569.70</td><td class="money positive">+₹4,468.60</td><td class="positive">+49.10%</td></tr>
+                        <tr><td class="symbol">HFCL</td><td>1200</td><td class="money">₹80.50</td><td class="money">₹96,599.89</td><td class="money">₹108.99</td><td class="money">₹1,30,786.52</td><td class="money positive">+₹34,186.63</td><td class="positive">+35.39%</td></tr>
+                        <tr><td class="symbol">BANKA-BE</td><td>812</td><td class="money">₹67.29</td><td class="money">₹54,637.84</td><td class="money">₹90.01</td><td class="money">₹73,087.45</td><td class="money positive">+₹18,449.61</td><td class="positive">+33.77%</td></tr>
+                        <tr><td class="symbol">TEJASNET</td><td>12</td><td class="money">₹448.02</td><td class="money">₹5,376.25</td><td class="money">₹592.55</td><td class="money">₹7,110.60</td><td class="money positive">+₹1,734.35</td><td class="positive">+32.26%</td></tr>
+                        <tr><td class="symbol">THERMAX</td><td>2</td><td class="money">₹3,324.50</td><td class="money">₹6,649.00</td><td class="money">₹4,371.40</td><td class="money">₹8,742.80</td><td class="money positive">+₹2,093.80</td><td class="positive">+31.49%</td></tr>
+                        <tr><td class="symbol">IDEA</td><td>2000</td><td class="money">₹9.17</td><td class="money">₹18,339.83</td><td class="money">₹11.92</td><td class="money">₹23,840.00</td><td class="money positive">+₹5,500.17</td><td class="positive">+29.99%</td></tr>
+                        <tr><td class="symbol">GVT&D</td><td>2</td><td class="money">₹3,437.70</td><td class="money">₹6,875.40</td><td class="money">₹4,331.10</td><td class="money">₹8,662.20</td><td class="money positive">+₹1,786.80</td><td class="positive">+25.99%</td></tr>
+                        <tr><td class="symbol">ASIANPAINT</td><td>2</td><td class="money">₹2,177.90</td><td class="money">₹4,355.80</td><td class="money">₹2,732.65</td><td class="money">₹5,465.30</td><td class="money positive">+₹1,109.50</td><td class="positive">+25.47%</td></tr>
+                        <tr><td class="symbol">INDIGO</td><td>1</td><td class="money">₹4,251.80</td><td class="money">₹4,251.80</td><td class="money">₹5,330.00</td><td class="money">₹5,330.00</td><td class="money positive">+₹1,078.20</td><td class="positive">+25.36%</td></tr>
+                        <tr><td class="symbol">BSE</td><td>19</td><td class="money">₹2,904.26</td><td class="money">₹55,180.90</td><td class="money">₹3,625.22</td><td class="money">₹68,879.10</td><td class="money positive">+₹13,698.20</td><td class="positive">+24.82%</td></tr>
+                        <tr><td class="symbol">ENRIN</td><td>2</td><td class="money">₹2,581.80</td><td class="money">₹5,163.60</td><td class="money">₹3,160.35</td><td class="money">₹6,320.70</td><td class="money positive">+₹1,157.10</td><td class="positive">+22.41%</td></tr>
+                        <tr><td class="symbol">ACUTAAS</td><td>3</td><td class="money">₹2,266.48</td><td class="money">₹6,799.45</td><td class="money">₹2,743.20</td><td class="money">₹8,229.60</td><td class="money positive">+₹1,430.15</td><td class="positive">+21.03%</td></tr>
+                        <tr><td class="symbol">PRESTIGE</td><td>10</td><td class="money">₹1,383.71</td><td class="money">₹13,837.15</td><td class="money">₹1,672.30</td><td class="money">₹16,723.00</td><td class="money positive">+₹2,885.85</td><td class="positive">+20.86%</td></tr>
+                        <tr><td class="symbol">OLECTRA</td><td>2</td><td class="money">₹1,015.85</td><td class="money">₹2,031.70</td><td class="money">₹1,199.30</td><td class="money">₹2,398.60</td><td class="money positive">+₹366.90</td><td class="positive">+18.06%</td></tr>
+                        <tr><td class="symbol">LLOYDSME</td><td>7</td><td class="money">₹1,297.69</td><td class="money">₹9,083.80</td><td class="money">₹1,502.16</td><td class="money">₹10,515.10</td><td class="money positive">+₹1,431.30</td><td class="positive">+15.76%</td></tr>
+                        <tr><td class="symbol">DEEPAKNTR</td><td>11</td><td class="money">₹1,518.02</td><td class="money">₹16,698.25</td><td class="money">₹1,725.17</td><td class="money">₹18,976.90</td><td class="money positive">+₹2,278.65</td><td class="positive">+13.65%</td></tr>
+                        <tr><td class="symbol">WAAREERTL</td><td>10</td><td class="money">₹912.49</td><td class="money">₹9,124.85</td><td class="money">₹1,031.70</td><td class="money">₹10,317.00</td><td class="money positive">+₹1,192.15</td><td class="positive">+13.06%</td></tr>
+                        <tr><td class="symbol">IDFCFIRSTB</td><td>185</td><td class="money">₹70.26</td><td class="money">₹12,997.90</td><td class="money">₹78.28</td><td class="money">₹14,481.80</td><td class="money positive">+₹1,483.90</td><td class="positive">+11.42%</td></tr>
+                        <tr><td class="symbol">KALYANKJIL</td><td>78</td><td class="money">₹405.01</td><td class="money">₹31,590.60</td><td class="money">₹449.14</td><td class="money">₹35,032.85</td><td class="money positive">+₹3,442.25</td><td class="positive">+10.90%</td></tr>
+                        <tr><td class="symbol">APOLLO</td><td>85</td><td class="money">₹265.47</td><td class="money">₹22,564.76</td><td class="money">₹294.33</td><td class="money">₹25,018.40</td><td class="money positive">+₹2,453.64</td><td class="positive">+10.87%</td></tr>
+                        <tr><td class="symbol">HAL</td><td>4</td><td class="money">₹4,189.90</td><td class="money">₹16,759.60</td><td class="money">₹4,620.30</td><td class="money">₹18,481.20</td><td class="money positive">+₹1,721.60</td><td class="positive">+10.27%</td></tr>
+                        <tr><td class="symbol">DEEPAKFERT</td><td>31</td><td class="money">₹1,045.96</td><td class="money">₹32,424.70</td><td class="money">₹1,136.72</td><td class="money">₹35,238.35</td><td class="money positive">+₹2,813.65</td><td class="positive">+8.68%</td></tr>
+                        <tr><td class="symbol">BHARATAGRI-X</td><td>250</td><td class="money">₹26.63</td><td class="money">₹6,658.00</td><td class="money">₹28.93</td><td class="money">₹7,232.78</td><td class="money positive">+₹574.78</td><td class="positive">+8.63%</td></tr>
+                        <tr><td class="symbol">CAMS</td><td>20</td><td class="money">₹704.75</td><td class="money">₹14,095.00</td><td class="money">₹761.00</td><td class="money">₹15,220.00</td><td class="money positive">+₹1,125.00</td><td class="positive">+7.98%</td></tr>
+                        <tr><td class="symbol">COCHINSHIP</td><td>3</td><td class="money">₹1,342.60</td><td class="money">₹4,027.80</td><td class="money">₹1,445.60</td><td class="money">₹4,336.80</td><td class="money positive">+₹309.00</td><td class="positive">+7.67%</td></tr>
+                        <tr><td class="symbol">EXIDEIND</td><td>107</td><td class="money">₹383.68</td><td class="money">₹41,053.30</td><td class="money">₹412.10</td><td class="money">₹44,094.70</td><td class="money positive">+₹3,041.40</td><td class="positive">+7.41%</td></tr>
+                        <tr><td class="symbol">BHARATFORG</td><td>17</td><td class="money">₹1,738.22</td><td class="money">₹29,549.80</td><td class="money">₹1,865.08</td><td class="money">₹31,706.40</td><td class="money positive">+₹2,156.60</td><td class="positive">+7.30%</td></tr>
+                        <tr><td class="symbol">SPICEJET</td><td>260</td><td class="money">₹13.08</td><td class="money">₹3,401.27</td><td class="money">₹14.00</td><td class="money">₹3,640.00</td><td class="money positive">+₹238.73</td><td class="positive">+7.02%</td></tr>
+                        <tr><td class="symbol">SUNPHARMA</td><td>2</td><td class="money">₹1,726.60</td><td class="money">₹3,453.20</td><td class="money">₹1,837.10</td><td class="money">₹3,674.20</td><td class="money positive">+₹221.00</td><td class="positive">+6.40%</td></tr>
+                        <tr><td class="symbol">LT</td><td>7</td><td class="money">₹3,723.64</td><td class="money">₹26,065.50</td><td class="money">₹3,938.01</td><td class="money">₹27,566.10</td><td class="money positive">+₹1,500.60</td><td class="positive">+5.76%</td></tr>
+                        <tr><td class="symbol">INDIANB</td><td>26</td><td class="money">₹883.53</td><td class="money">₹22,971.75</td><td class="money">₹934.11</td><td class="money">₹24,286.75</td><td class="money positive">+₹1,315.00</td><td class="positive">+5.72%</td></tr>
+                        <tr><td class="symbol">IRFC</td><td>20</td><td class="money">₹92.84</td><td class="money">₹1,856.80</td><td class="money">₹97.81</td><td class="money">₹1,956.20</td><td class="money positive">+₹99.40</td><td class="positive">+5.35%</td></tr>
+                        <tr><td class="symbol">MON100-E</td><td>10</td><td class="money">₹308.39</td><td class="money">₹3,083.87</td><td class="money">₹324.22</td><td class="money">₹3,242.20</td><td class="money positive">+₹158.33</td><td class="positive">+5.13%</td></tr>
+                        <tr><td class="symbol">ADANIGREEN</td><td>2</td><td class="money">₹1,420.10</td><td class="money">₹2,840.20</td><td class="money">₹1,486.10</td><td class="money">₹2,972.20</td><td class="money positive">+₹132.00</td><td class="positive">+4.65%</td></tr>
+                        <tr><td class="symbol">VEDL</td><td>12</td><td class="money">₹315.80</td><td class="money">₹3,789.55</td><td class="money">₹326.90</td><td class="money">₹3,922.80</td><td class="money positive">+₹133.25</td><td class="positive">+3.52%</td></tr>
+                        <tr><td class="symbol">WIPRO</td><td>25</td><td class="money">₹196.68</td><td class="money">₹4,916.90</td><td class="money">₹201.90</td><td class="money">₹5,047.50</td><td class="money positive">+₹130.60</td><td class="positive">+2.66%</td></tr>
+                        <tr><td class="symbol">ZENTEC</td><td>65</td><td class="money">₹1,620.68</td><td class="money">₹1,05,343.95</td><td class="money">₹1,661.98</td><td class="money">₹1,08,028.80</td><td class="money positive">+₹2,684.85</td><td class="positive">+2.55%</td></tr>
+                        <tr><td class="symbol">BDL</td><td>10</td><td class="money">₹1,361.30</td><td class="money">₹13,613.00</td><td class="money">₹1,395.27</td><td class="money">₹13,952.70</td><td class="money positive">+₹339.70</td><td class="positive">+2.50%</td></tr>
+                        <tr><td class="symbol">DMART</td><td>1</td><td class="money">₹4,479.90</td><td class="money">₹4,479.90</td><td class="money">₹4,570.40</td><td class="money">₹4,570.40</td><td class="money positive">+₹90.50</td><td class="positive">+2.02%</td></tr>
+                        <tr><td class="symbol">FINCABLES</td><td>2</td><td class="money">₹1,152.95</td><td class="money">₹2,305.90</td><td class="money">₹1,152.20</td><td class="money">₹2,304.40</td><td class="money negative">-₹1.50</td><td class="negative">-0.07%</td></tr>
+                        <tr><td class="symbol">DHARAN-Z</td><td>8528</td><td class="money">₹0.85</td><td class="money">₹7,229.53</td><td class="money">₹0.13</td><td class="money">₹1,108.64</td><td class="money negative">-₹6,120.89</td><td class="negative">-84.67%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- FY 2025-26 Table -->
+        <div class="table-container fy-table" id="fy2526">
+            <div class="table-header">
+                <h2>FY 2025-26 Trades</h2>
+                <div class="summary-stats">
+                    <div class="stat">
+                        <div class="stat-value profit">₹2,71,094</div>
+                        <div class="stat-label">Profit</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value loss">-₹94</div>
+                        <div class="stat-label">Loss</div>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Search symbol..." onkeyup="filterTable(this, 'table-fy2526')">
+                </div>
+            </div>
+            <div class="table-scroll">
+                <table class="data-table" id="table-fy2526">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(this, 0)">Symbol</th>
+                            <th onclick="sortTable(this, 1)">Qty</th>
+                            <th onclick="sortTable(this, 2)">Buy Avg</th>
+                            <th onclick="sortTable(this, 3)">Buy Value</th>
+                            <th onclick="sortTable(this, 4)">Sell Avg</th>
+                            <th onclick="sortTable(this, 5)">Sell Value</th>
+                            <th onclick="sortTable(this, 6)">P&L</th>
+                            <th onclick="sortTable(this, 7)">% Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="symbol">SILVERCASE-E</td><td>2800</td><td class="money">₹15.83</td><td class="money">₹44,328.88</td><td class="money">₹31.53</td><td class="money">₹88,287.84</td><td class="money positive">+₹43,958.96</td><td class="positive">+99.17%</td></tr>
+                        <tr><td class="symbol">TMCV</td><td>52</td><td class="money">₹243.79</td><td class="money">₹12,676.89</td><td class="money">₹481.07</td><td class="money">₹25,015.85</td><td class="money positive">+₹12,338.96</td><td class="positive">+97.33%</td></tr>
+                        <tr><td class="symbol">ENRIN</td><td>11</td><td class="money">₹1,619.01</td><td class="money">₹17,809.15</td><td class="money">₹2,778.85</td><td class="money">₹30,567.40</td><td class="money positive">+₹12,758.25</td><td class="positive">+71.64%</td></tr>
+                        <tr><td class="symbol">ETERNAL</td><td>16</td><td class="money">₹247.48</td><td class="money">₹3,959.70</td><td class="money">₹339.75</td><td class="money">₹5,436.00</td><td class="money positive">+₹1,476.30</td><td class="positive">+37.28%</td></tr>
+                        <tr><td class="symbol">M&M</td><td>3</td><td class="money">₹2,613.00</td><td class="money">₹7,839.00</td><td class="money">₹3,575.50</td><td class="money">₹10,726.50</td><td class="money positive">+₹2,887.50</td><td class="positive">+36.84%</td></tr>
+                        <tr><td class="symbol">ZENTEC</td><td>36</td><td class="money">₹1,464.32</td><td class="money">₹52,715.55</td><td class="money">₹1,982.10</td><td class="money">₹71,355.60</td><td class="money positive">+₹18,640.05</td><td class="positive">+35.36%</td></tr>
+                        <tr><td class="symbol">GVT&D</td><td>10</td><td class="money">₹1,911.97</td><td class="money">₹19,119.75</td><td class="money">₹2,577.57</td><td class="money">₹25,775.70</td><td class="money positive">+₹6,655.95</td><td class="positive">+34.81%</td></tr>
+                        <tr><td class="symbol">TATAGOLD-E</td><td>960</td><td class="money">₹11.37</td><td class="money">₹10,918.70</td><td class="money">₹15.11</td><td class="money">₹14,506.20</td><td class="money positive">+₹3,587.50</td><td class="positive">+32.86%</td></tr>
+                        <tr><td class="symbol">DEEPAKFERT</td><td>20</td><td class="money">₹1,152.64</td><td class="money">₹23,052.85</td><td class="money">₹1,511.64</td><td class="money">₹30,232.80</td><td class="money positive">+₹7,179.95</td><td class="positive">+31.15%</td></tr>
+                        <tr><td class="symbol">BHARATFORG</td><td>13</td><td class="money">₹1,078.55</td><td class="money">₹14,021.10</td><td class="money">₹1,409.23</td><td class="money">₹18,320.00</td><td class="money positive">+₹4,298.90</td><td class="positive">+30.66%</td></tr>
+                        <tr><td class="symbol">CDSL</td><td>10</td><td class="money">₹1,299.60</td><td class="money">₹12,996.00</td><td class="money">₹1,645.20</td><td class="money">₹16,452.00</td><td class="money positive">+₹3,456.00</td><td class="positive">+26.59%</td></tr>
+                        <tr><td class="symbol">INDIANB</td><td>35</td><td class="money">₹556.64</td><td class="money">₹19,482.50</td><td class="money">₹699.84</td><td class="money">₹24,494.35</td><td class="money positive">+₹5,011.85</td><td class="positive">+25.72%</td></tr>
+                        <tr><td class="symbol">PRESTIGE</td><td>15</td><td class="money">₹1,409.78</td><td class="money">₹21,146.65</td><td class="money">₹1,718.56</td><td class="money">₹25,778.35</td><td class="money positive">+₹4,631.70</td><td class="positive">+21.90%</td></tr>
+                        <tr><td class="symbol">HDFCLIFE</td><td>32</td><td class="money">₹631.83</td><td class="money">₹20,218.45</td><td class="money">₹757.05</td><td class="money">₹24,225.60</td><td class="money positive">+₹4,007.15</td><td class="positive">+19.82%</td></tr>
+                        <tr><td class="symbol">BEL</td><td>169</td><td class="money">₹356.52</td><td class="money">₹60,251.09</td><td class="money">₹425.47</td><td class="money">₹71,903.80</td><td class="money positive">+₹11,652.71</td><td class="positive">+19.34%</td></tr>
+                        <tr><td class="symbol">JSWINFRA</td><td>25</td><td class="money">₹253.47</td><td class="money">₹6,336.80</td><td class="money">₹298.20</td><td class="money">₹7,455.00</td><td class="money positive">+₹1,118.20</td><td class="positive">+17.65%</td></tr>
+                        <tr><td class="symbol">TATASTEEL</td><td>12</td><td class="money">₹160.89</td><td class="money">₹1,930.72</td><td class="money">₹188.70</td><td class="money">₹2,264.45</td><td class="money positive">+₹333.73</td><td class="positive">+17.29%</td></tr>
+                        <tr><td class="symbol">ITI</td><td>42</td><td class="money">₹261.11</td><td class="money">₹10,966.56</td><td class="money">₹305.30</td><td class="money">₹12,822.50</td><td class="money positive">+₹1,855.94</td><td class="positive">+16.92%</td></tr>
+                        <tr><td class="symbol">BANKA</td><td>212</td><td class="money">₹78.58</td><td class="money">₹16,657.99</td><td class="money">₹91.55</td><td class="money">₹19,408.23</td><td class="money positive">+₹2,750.24</td><td class="positive">+16.51%</td></tr>
+                        <tr><td class="symbol">OIL</td><td>72</td><td class="money">₹403.47</td><td class="money">₹29,049.85</td><td class="money">₹469.30</td><td class="money">₹33,789.60</td><td class="money positive">+₹4,739.75</td><td class="positive">+16.32%</td></tr>
+                        <tr><td class="symbol">LLOYDSME</td><td>20</td><td class="money">₹1,264.71</td><td class="money">₹25,294.30</td><td class="money">₹1,467.80</td><td class="money">₹29,356.00</td><td class="money positive">+₹4,061.70</td><td class="positive">+16.06%</td></tr>
+                        <tr><td class="symbol">YESBANK</td><td>100</td><td class="money">₹16.69</td><td class="money">₹1,669.00</td><td class="money">₹19.37</td><td class="money">₹1,937.00</td><td class="money positive">+₹268.00</td><td class="positive">+16.06%</td></tr>
+                        <tr><td class="symbol">HINDCOPPER</td><td>155</td><td class="money">₹292.13</td><td class="money">₹45,279.76</td><td class="money">₹338.05</td><td class="money">₹52,397.50</td><td class="money positive">+₹7,117.74</td><td class="positive">+15.72%</td></tr>
+                        <tr><td class="symbol">IDEA</td><td>17900</td><td class="money">₹7.74</td><td class="money">₹1,38,617.96</td><td class="money">₹8.94</td><td class="money">₹1,60,057.00</td><td class="money positive">+₹21,439.04</td><td class="positive">+15.47%</td></tr>
+                        <tr><td class="symbol">ADANIGREEN</td><td>5</td><td class="money">₹955.20</td><td class="money">₹4,776.00</td><td class="money">₹1,096.20</td><td class="money">₹5,481.00</td><td class="money positive">+₹705.00</td><td class="positive">+14.76%</td></tr>
+                        <tr><td class="symbol">PERSISTENT</td><td>7</td><td class="money">₹5,124.84</td><td class="money">₹35,873.85</td><td class="money">₹5,868.04</td><td class="money">₹41,076.30</td><td class="money positive">+₹5,202.45</td><td class="positive">+14.50%</td></tr>
+                        <tr><td class="symbol">GOLDCASE-E</td><td>250</td><td class="money">₹19.60</td><td class="money">₹4,899.00</td><td class="money">₹22.42</td><td class="money">₹5,605.00</td><td class="money positive">+₹706.00</td><td class="positive">+14.41%</td></tr>
+                        <tr><td class="symbol">AXISBANK</td><td>4</td><td class="money">₹1,041.03</td><td class="money">₹4,164.10</td><td class="money">₹1,189.70</td><td class="money">₹4,758.80</td><td class="money positive">+₹594.70</td><td class="positive">+14.28%</td></tr>
+                        <tr><td class="symbol">SUZLON</td><td>500</td><td class="money">₹54.96</td><td class="money">₹27,479.43</td><td class="money">₹62.56</td><td class="money">₹31,280.00</td><td class="money positive">+₹3,800.57</td><td class="positive">+13.83%</td></tr>
+                        <tr><td class="symbol">TATAPOWER</td><td>17</td><td class="money">₹338.93</td><td class="money">₹5,761.75</td><td class="money">₹384.80</td><td class="money">₹6,541.60</td><td class="money positive">+₹779.85</td><td class="positive">+13.53%</td></tr>
+                        <tr><td class="symbol">APOLLO</td><td>21</td><td class="money">₹288.00</td><td class="money">₹6,048.05</td><td class="money">₹326.88</td><td class="money">₹6,864.45</td><td class="money positive">+₹816.40</td><td class="positive">+13.50%</td></tr>
+                        <tr><td class="symbol">BHEL-BL</td><td>61</td><td class="money">₹219.23</td><td class="money">₹13,373.24</td><td class="money">₹248.55</td><td class="money">₹15,161.35</td><td class="money positive">+₹1,788.11</td><td class="positive">+13.37%</td></tr>
+                        <tr><td class="symbol">EASEMYTRIP</td><td>1930</td><td class="money">₹8.47</td><td class="money">₹16,345.95</td><td class="money">₹9.60</td><td class="money">₹18,529.70</td><td class="money positive">+₹2,183.75</td><td class="positive">+13.36%</td></tr>
+                        <tr><td class="symbol">PNB</td><td>20</td><td class="money">₹98.07</td><td class="money">₹1,961.40</td><td class="money">₹111.10</td><td class="money">₹2,222.00</td><td class="money positive">+₹260.60</td><td class="positive">+13.29%</td></tr>
+                        <tr><td class="symbol">ZENSARTECH</td><td>44</td><td class="money">₹745.99</td><td class="money">₹32,823.75</td><td class="money">₹842.98</td><td class="money">₹37,091.05</td><td class="money positive">+₹4,267.30</td><td class="positive">+13.00%</td></tr>
+                        <tr><td class="symbol">CAMS</td><td>5</td><td class="money">₹3,545.73</td><td class="money">₹17,728.65</td><td class="money">₹4,006.22</td><td class="money">₹20,031.10</td><td class="money positive">+₹2,302.45</td><td class="positive">+12.99%</td></tr>
+                        <tr><td class="symbol">OLAELEC</td><td>20</td><td class="money">₹50.57</td><td class="money">₹1,011.33</td><td class="money">₹57.07</td><td class="money">₹1,141.40</td><td class="money positive">+₹130.07</td><td class="positive">+12.86%</td></tr>
+                        <tr><td class="symbol">GMDCLTD</td><td>2</td><td class="money">₹540.13</td><td class="money">₹1,080.25</td><td class="money">₹608.55</td><td class="money">₹1,217.10</td><td class="money positive">+₹136.85</td><td class="positive">+12.67%</td></tr>
+                        <tr><td class="symbol">IDBI</td><td>1051</td><td class="money">₹88.27</td><td class="money">₹92,771.04</td><td class="money">₹99.23</td><td class="money">₹1,04,286.82</td><td class="money positive">+₹11,515.78</td><td class="positive">+12.41%</td></tr>
+                        <tr><td class="symbol">LTM</td><td>4</td><td class="money">₹4,780.75</td><td class="money">₹19,123.00</td><td class="money">₹5,360.50</td><td class="money">₹21,442.00</td><td class="money positive">+₹2,319.00</td><td class="positive">+12.13%</td></tr>
+                        <tr><td class="symbol">ADANIPOWER</td><td>70</td><td class="money">₹148.71</td><td class="money">₹10,410.00</td><td class="money">₹166.60</td><td class="money">₹11,662.00</td><td class="money positive">+₹1,252.00</td><td class="positive">+12.03%</td></tr>
+                        <tr><td class="symbol">ASTRAL</td><td>25</td><td class="money">₹1,386.86</td><td class="money">₹34,671.50</td><td class="money">₹1,533.38</td><td class="money">₹38,334.60</td><td class="money positive">+₹3,663.10</td><td class="positive">+10.57%</td></tr>
+                        <tr><td class="symbol">MOTHERSON</td><td>10</td><td class="money">₹97.78</td><td class="money">₹977.80</td><td class="money">₹108.00</td><td class="money">₹1,080.00</td><td class="money positive">+₹102.20</td><td class="positive">+10.45%</td></tr>
+                        <tr><td class="symbol">BSE</td><td>68</td><td class="money">₹2,504.39</td><td class="money">₹1,70,298.60</td><td class="money">₹2,754.54</td><td class="money">₹1,87,308.70</td><td class="money positive">+₹17,010.10</td><td class="positive">+9.99%</td></tr>
+                        <tr><td class="symbol">TECHM</td><td>4</td><td class="money">₹1,536.15</td><td class="money">₹6,144.60</td><td class="money">₹1,686.40</td><td class="money">₹6,745.60</td><td class="money positive">+₹601.00</td><td class="positive">+9.78%</td></tr>
+                        <tr><td class="symbol">HINDZINC</td><td>115</td><td class="money">₹517.66</td><td class="money">₹59,531.15</td><td class="money">₹567.80</td><td class="money">₹65,296.50</td><td class="money positive">+₹5,765.35</td><td class="positive">+9.68%</td></tr>
+                        <tr><td class="symbol">PRINCEPIPE</td><td>30</td><td class="money">₹307.28</td><td class="money">₹9,218.50</td><td class="money">₹336.46</td><td class="money">₹10,093.75</td><td class="money positive">+₹875.25</td><td class="positive">+9.49%</td></tr>
+                        <tr><td class="symbol">ALKALI</td><td>1464</td><td class="money">₹90.87</td><td class="money">₹1,33,038.01</td><td class="money">₹97.69</td><td class="money">₹1,43,018.98</td><td class="money positive">+₹9,980.97</td><td class="positive">+7.50%</td></tr>
+                        <tr><td class="symbol">KPITTECH</td><td>32</td><td class="money">₹1,296.77</td><td class="money">₹41,496.70</td><td class="money">₹1,385.00</td><td class="money">₹44,320.00</td><td class="money positive">+₹2,823.30</td><td class="positive">+6.80%</td></tr>
+                        <tr><td class="symbol">EQUITASBNK</td><td>62</td><td class="money">₹59.20</td><td class="money">₹3,670.46</td><td class="money">₹62.91</td><td class="money">₹3,900.42</td><td class="money positive">+₹229.96</td><td class="positive">+6.27%</td></tr>
+                        <tr><td class="symbol">MAZDOCK</td><td>2</td><td class="money">₹2,763.40</td><td class="money">₹5,526.80</td><td class="money">₹2,934.90</td><td class="money">₹5,869.80</td><td class="money positive">+₹343.00</td><td class="positive">+6.21%</td></tr>
+                        <tr><td class="symbol">KWIL</td><td>9</td><td class="money">₹34.82</td><td class="money">₹313.42</td><td class="money">₹24.37</td><td class="money">₹219.33</td><td class="money negative">-₹94.09</td><td class="negative">-30.02%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- FY 2025 & Before Table -->
+        <div class="table-container fy-table" id="fy2425">
+            <div class="table-header">
+                <h2>FY 2025 & Before</h2>
+                <div class="summary-stats">
+                    <div class="stat">
+                        <div class="stat-value profit">₹1,46,338</div>
+                        <div class="stat-label">Profit</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value loss">-₹264</div>
+                        <div class="stat-label">Loss</div>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Search symbol..." onkeyup="filterTable(this, 'table-fy2425')">
+                </div>
+            </div>
+            <div class="table-scroll">
+                <table class="data-table" id="table-fy2425">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(this, 0)">Symbol</th>
+                            <th onclick="sortTable(this, 1)">Qty</th>
+                            <th onclick="sortTable(this, 2)">Buy Avg</th>
+                            <th onclick="sortTable(this, 3)">Buy Value</th>
+                            <th onclick="sortTable(this, 4)">Sell Avg</th>
+                            <th onclick="sortTable(this, 5)">Sell Value</th>
+                            <th onclick="sortTable(this, 6)">P&L</th>
+                            <th onclick="sortTable(this, 7)">% Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="symbol">RELINFRA</td><td>5</td><td class="money">₹149.50</td><td class="money">₹747.50</td><td class="money">₹249.65</td><td class="money">₹1,248.25</td><td class="money positive">+₹500.75</td><td class="positive">+66.99%</td></tr>
+                        <tr><td class="symbol">MANGLMCEM</td><td>10</td><td class="money">₹516.00</td><td class="money">₹5,160.00</td><td class="money">₹719.85</td><td class="money">₹7,198.50</td><td class="money positive">+₹2,038.50</td><td class="positive">+39.51%</td></tr>
+                        <tr><td class="symbol">ZENSARTECH</td><td>46</td><td class="money">₹507.62</td><td class="money">₹23,350.50</td><td class="money">₹707.04</td><td class="money">₹32,524.05</td><td class="money positive">+₹9,173.55</td><td class="positive">+39.29%</td></tr>
+                        <tr><td class="symbol">ITI-T</td><td>40</td><td class="money">₹275.63</td><td class="money">₹11,025.25</td><td class="money">₹370.35</td><td class="money">₹14,814.05</td><td class="money positive">+₹3,788.80</td><td class="positive">+34.36%</td></tr>
+                        <tr><td class="symbol">HINDCOPPER</td><td>10</td><td class="money">₹217.20</td><td class="money">₹2,172.00</td><td class="money">₹268.00</td><td class="money">₹2,680.00</td><td class="money positive">+₹508.00</td><td class="positive">+23.39%</td></tr>
+                        <tr><td class="symbol">ZENTEC</td><td>362</td><td class="money">₹252.31</td><td class="money">₹91,337.75</td><td class="money">₹305.96</td><td class="money">₹1,10,758.00</td><td class="money positive">+₹19,420.25</td><td class="positive">+21.26%</td></tr>
+                        <tr><td class="symbol">IDEA</td><td>9849</td><td class="money">₹10.12</td><td class="money">₹99,670.35</td><td class="money">₹12.23</td><td class="money">₹1,20,414.47</td><td class="money positive">+₹20,744.12</td><td class="positive">+20.81%</td></tr>
+                        <tr><td class="symbol">TRIDENT</td><td>2771</td><td class="money">₹44.73</td><td class="money">₹1,23,955.47</td><td class="money">₹52.05</td><td class="money">₹1,44,241.40</td><td class="money positive">+₹20,285.93</td><td class="positive">+16.37%</td></tr>
+                        <tr><td class="symbol">CAMS</td><td>1</td><td class="money">₹3,714.30</td><td class="money">₹3,714.30</td><td class="money">₹4,300.00</td><td class="money">₹4,300.00</td><td class="money positive">+₹585.70</td><td class="positive">+15.77%</td></tr>
+                        <tr><td class="symbol">AMIORG</td><td>38</td><td class="money">₹1,210.13</td><td class="money">₹45,984.75</td><td class="money">₹1,400.39</td><td class="money">₹53,215.00</td><td class="money positive">+₹7,230.25</td><td class="positive">+15.72%</td></tr>
+                        <tr><td class="symbol">ALKALI</td><td>418</td><td class="money">₹107.46</td><td class="money">₹44,916.75</td><td class="money">₹123.64</td><td class="money">₹51,682.31</td><td class="money positive">+₹6,765.56</td><td class="positive">+15.06%</td></tr>
+                        <tr><td class="symbol">DISHTV</td><td>1011</td><td class="money">₹18.66</td><td class="money">₹18,868.90</td><td class="money">₹21.40</td><td class="money">₹21,639.76</td><td class="money positive">+₹2,770.86</td><td class="positive">+14.68%</td></tr>
+                        <tr><td class="symbol">ADANIGREEN</td><td>5</td><td class="money">₹999.70</td><td class="money">₹4,998.50</td><td class="money">₹1,140.15</td><td class="money">₹5,700.75</td><td class="money positive">+₹702.25</td><td class="positive">+14.05%</td></tr>
+                        <tr><td class="symbol">SBICARD</td><td>2</td><td class="money">₹943.95</td><td class="money">₹1,887.90</td><td class="money">₹1,070.55</td><td class="money">₹2,141.10</td><td class="money positive">+₹253.20</td><td class="positive">+13.41%</td></tr>
+                        <tr><td class="symbol">ASHOKLEY</td><td>10</td><td class="money">₹128.60</td><td class="money">₹1,286.00</td><td class="money">₹144.30</td><td class="money">₹1,443.00</td><td class="money positive">+₹157.00</td><td class="positive">+12.21%</td></tr>
+                        <tr><td class="symbol">OIL</td><td>29</td><td class="money">₹215.46</td><td class="money">₹6,248.45</td><td class="money">₹240.92</td><td class="money">₹6,986.75</td><td class="money positive">+₹738.30</td><td class="positive">+11.82%</td></tr>
+                        <tr><td class="symbol">PNB</td><td>50</td><td class="money">₹52.59</td><td class="money">₹2,629.40</td><td class="money">₹58.70</td><td class="money">₹2,935.00</td><td class="money positive">+₹305.60</td><td class="positive">+11.62%</td></tr>
+                        <tr><td class="symbol">CESC</td><td>151</td><td class="money">₹89.67</td><td class="money">₹13,540.55</td><td class="money">₹99.45</td><td class="money">₹15,016.95</td><td class="money positive">+₹1,476.40</td><td class="positive">+10.90%</td></tr>
+                        <tr><td class="symbol">PERSISTENT</td><td>3</td><td class="money">₹3,128.00</td><td class="money">₹9,384.00</td><td class="money">₹3,459.92</td><td class="money">₹10,379.75</td><td class="money positive">+₹995.75</td><td class="positive">+10.61%</td></tr>
+                        <tr><td class="symbol">SUZLON</td><td>1000</td><td class="money">₹7.02</td><td class="money">₹7,019.00</td><td class="money">₹7.76</td><td class="money">₹7,760.00</td><td class="money positive">+₹741.00</td><td class="positive">+10.56%</td></tr>
+                        <tr><td class="symbol">SOUTHBANK</td><td>242</td><td class="money">₹17.08</td><td class="money">₹4,133.18</td><td class="money">₹18.81</td><td class="money">₹4,552.02</td><td class="money positive">+₹418.84</td><td class="positive">+10.13%</td></tr>
+                        <tr><td class="symbol">ZOMATO</td><td>10</td><td class="money">₹142.20</td><td class="money">₹1,422.00</td><td class="money">₹156.60</td><td class="money">₹1,566.00</td><td class="money positive">+₹144.00</td><td class="positive">+10.13%</td></tr>
+                        <tr><td class="symbol">INOXWIND</td><td>10</td><td class="money">₹440.05</td><td class="money">₹4,400.50</td><td class="money">₹483.80</td><td class="money">₹4,838.00</td><td class="money positive">+₹437.50</td><td class="positive">+9.94%</td></tr>
+                        <tr><td class="symbol">TATAMOTORS</td><td>170</td><td class="money">₹415.10</td><td class="money">₹70,566.35</td><td class="money">₹455.87</td><td class="money">₹77,497.50</td><td class="money positive">+₹6,931.15</td><td class="positive">+9.82%</td></tr>
+                        <tr><td class="symbol">YESBANK</td><td>500</td><td class="money">₹12.92</td><td class="money">₹6,459.00</td><td class="money">₹14.12</td><td class="money">₹7,060.00</td><td class="money positive">+₹601.00</td><td class="positive">+9.30%</td></tr>
+                        <tr><td class="symbol">BEL</td><td>5</td><td class="money">₹240.50</td><td class="money">₹1,202.50</td><td class="money">₹262.40</td><td class="money">₹1,312.00</td><td class="money positive">+₹109.50</td><td class="positive">+9.11%</td></tr>
+                        <tr><td class="symbol">IRCTC</td><td>114</td><td class="money">₹1,974.03</td><td class="money">₹2,25,039.10</td><td class="money">₹2,146.26</td><td class="money">₹2,44,673.70</td><td class="money positive">+₹19,634.60</td><td class="positive">+8.72%</td></tr>
+                        <tr><td class="symbol">INDIACEM</td><td>5</td><td class="money">₹346.90</td><td class="money">₹1,734.50</td><td class="money">₹376.95</td><td class="money">₹1,884.75</td><td class="money positive">+₹150.25</td><td class="positive">+8.66%</td></tr>
+                        <tr><td class="symbol">TEJASNET</td><td>10</td><td class="money">₹456.90</td><td class="money">₹4,569.00</td><td class="money">₹496.24</td><td class="money">₹4,962.35</td><td class="money positive">+₹393.35</td><td class="positive">+8.61%</td></tr>
+                        <tr><td class="symbol">VBL</td><td>27</td><td class="money">₹1,079.54</td><td class="money">₹29,147.45</td><td class="money">₹1,164.81</td><td class="money">₹31,449.85</td><td class="money positive">+₹2,302.40</td><td class="positive">+7.90%</td></tr>
+                        <tr><td class="symbol">DLF</td><td>30</td><td class="money">₹404.82</td><td class="money">₹12,144.50</td><td class="money">₹436.63</td><td class="money">₹13,099.00</td><td class="money positive">+₹954.50</td><td class="positive">+7.86%</td></tr>
+                        <tr><td class="symbol">PRESTIGE</td><td>7</td><td class="money">₹882.76</td><td class="money">₹6,179.30</td><td class="money">₹952.08</td><td class="money">₹6,664.55</td><td class="money positive">+₹485.25</td><td class="positive">+7.85%</td></tr>
+                        <tr><td class="symbol">ZEEL</td><td>156</td><td class="money">₹278.35</td><td class="money">₹43,422.40</td><td class="money">₹299.81</td><td class="money">₹46,770.90</td><td class="money positive">+₹3,348.50</td><td class="positive">+7.71%</td></tr>
+                        <tr><td class="symbol">NATIONALUM</td><td>38</td><td class="money">₹102.22</td><td class="money">₹3,884.50</td><td class="money">₹109.95</td><td class="money">₹4,178.10</td><td class="money positive">+₹293.60</td><td class="positive">+7.56%</td></tr>
+                        <tr><td class="symbol">TVSMOTOR</td><td>10</td><td class="money">₹550.55</td><td class="money">₹5,505.50</td><td class="money">₹589.45</td><td class="money">₹5,894.50</td><td class="money positive">+₹389.00</td><td class="positive">+7.07%</td></tr>
+                        <tr><td class="symbol">INDHOTEL</td><td>155</td><td class="money">₹191.55</td><td class="money">₹29,690.75</td><td class="money">₹205.00</td><td class="money">₹31,774.50</td><td class="money positive">+₹2,083.75</td><td class="positive">+7.02%</td></tr>
+                        <tr><td class="symbol">PNCINFRA</td><td>5</td><td class="money">₹359.75</td><td class="money">₹1,798.75</td><td class="money">₹383.85</td><td class="money">₹1,919.25</td><td class="money positive">+₹120.50</td><td class="positive">+6.70%</td></tr>
+                        <tr><td class="symbol">BPL</td><td>30</td><td class="money">₹64.13</td><td class="money">₹1,924.00</td><td class="money">₹68.25</td><td class="money">₹2,047.50</td><td class="money positive">+₹123.50</td><td class="positive">+6.42%</td></tr>
+                        <tr><td class="symbol">YASHO</td><td>78</td><td class="money">₹762.27</td><td class="money">₹59,457.35</td><td class="money">₹811.18</td><td class="money">₹63,271.70</td><td class="money positive">+₹3,814.35</td><td class="positive">+6.42%</td></tr>
+                        <tr><td class="symbol">LICHSGFIN</td><td>30</td><td class="money">₹428.20</td><td class="money">₹12,846.00</td><td class="money">₹454.60</td><td class="money">₹13,638.00</td><td class="money positive">+₹792.00</td><td class="positive">+6.17%</td></tr>
+                        <tr><td class="symbol">INDIANB</td><td>25</td><td class="money">₹259.77</td><td class="money">₹6,494.25</td><td class="money">₹275.60</td><td class="money">₹6,890.00</td><td class="money positive">+₹395.75</td><td class="positive">+6.09%</td></tr>
+                        <tr><td class="symbol">KPITTECH</td><td>292</td><td class="money">₹429.47</td><td class="money">₹1,25,406.15</td><td class="money">₹454.67</td><td class="money">₹1,32,763.00</td><td class="money positive">+₹7,356.85</td><td class="positive">+5.87%</td></tr>
+                        <tr><td class="symbol">SBIN</td><td>2</td><td class="money">₹421.65</td><td class="money">₹843.30</td><td class="money">₹445.75</td><td class="money">₹891.50</td><td class="money positive">+₹48.20</td><td class="positive">+5.72%</td></tr>
+                        <tr><td class="symbol">EASEMYTRIP</td><td>20</td><td class="money">₹312.45</td><td class="money">₹6,249.00</td><td class="money">₹330.11</td><td class="money">₹6,602.20</td><td class="money positive">+₹353.20</td><td class="positive">+5.65%</td></tr>
+                        <tr><td class="symbol">BHARTIARTL</td><td>70</td><td class="money">₹695.50</td><td class="money">₹48,685.00</td><td class="money">₹733.67</td><td class="money">₹51,357.10</td><td class="money positive">+₹2,672.10</td><td class="positive">+5.49%</td></tr>
+                        <tr><td class="symbol">BHEL</td><td>27</td><td class="money">₹81.58</td><td class="money">₹2,202.60</td><td class="money">₹86.05</td><td class="money">₹2,323.31</td><td class="money positive">+₹120.71</td><td class="positive">+5.48%</td></tr>
+                        <tr><td class="symbol">IOC</td><td>20</td><td class="money">₹124.20</td><td class="money">₹2,484.00</td><td class="money">₹130.85</td><td class="money">₹2,617.00</td><td class="money positive">+₹133.00</td><td class="positive">+5.35%</td></tr>
+                        <tr><td class="symbol">IDBI</td><td>2349</td><td class="money">₹53.30</td><td class="money">₹1,25,206.57</td><td class="money">₹55.93</td><td class="money">₹1,31,378.68</td><td class="money positive">+₹6,172.11</td><td class="positive">+4.93%</td></tr>
+                        <tr><td class="symbol">ONGC</td><td>110</td><td class="money">₹147.48</td><td class="money">₹16,222.50</td><td class="money">₹154.38</td><td class="money">₹16,982.00</td><td class="money positive">+₹759.50</td><td class="positive">+4.68%</td></tr>
+                        <tr><td class="symbol">ADANIENT</td><td>4</td><td class="money">₹1,573.20</td><td class="money">₹6,292.80</td><td class="money">₹1,645.66</td><td class="money">₹6,582.65</td><td class="money positive">+₹289.85</td><td class="positive">+4.61%</td></tr>
+                        <tr><td class="symbol">TATAPOWER</td><td>305</td><td class="money">₹236.55</td><td class="money">₹72,146.25</td><td class="money">₹244.93</td><td class="money">₹74,704.15</td><td class="money positive">+₹2,557.90</td><td class="positive">+3.55%</td></tr>
+                        <tr><td class="symbol">TCS</td><td>3</td><td class="money">₹3,840.00</td><td class="money">₹11,520.00</td><td class="money">₹3,891.50</td><td class="money">₹11,674.50</td><td class="money positive">+₹154.50</td><td class="positive">+1.34%</td></tr>
+                        <tr><td class="symbol">AGRITECH</td><td>103</td><td class="money">₹76.58</td><td class="money">₹7,888.25</td><td class="money">₹74.02</td><td class="money">₹7,624.00</td><td class="money negative">-₹264.25</td><td class="negative">-3.35%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Data from Zerodha • Updated July 2026</p>
+            <p><a href="index.html">← Back to Dashboard</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.fy-table').forEach(t => t.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.fy).classList.add('active');
+            });
+        });
+        
+        // Table sorting
+        function sortTable(header, colIndex) {
+            const table = header.closest('table');
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            const isAsc = header.classList.contains('sorted-asc');
+            
+            // Remove sort indicators from all headers
+            table.querySelectorAll('th').forEach(th => {
+                th.classList.remove('sorted-asc', 'sorted-desc');
+            });
+            
+            rows.sort((a, b) => {
+                let aVal = a.cells[colIndex].textContent.trim();
+                let bVal = b.cells[colIndex].textContent.trim();
+                
+                // Parse numbers
+                const aNum = parseFloat(aVal.replace(/[₹,%+]/g, '').replace(/,/g, ''));
+                const bNum = parseFloat(bVal.replace(/[₹,%+]/g, '').replace(/,/g, ''));
+                
+                if (!isNaN(aNum) && !isNaN(bNum)) {
+                    return isAsc ? aNum - bNum : bNum - aNum;
+                }
+                
+                return isAsc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+            });
+            
+            header.classList.add(isAsc ? 'sorted-desc' : 'sorted-asc');
+            rows.forEach(row => tbody.appendChild(row));
+        }
+        
+        // Table filtering
+        function filterTable(input, tableId) {
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById(tableId);
+            const rows = table.querySelectorAll('tbody tr');
+            
+            rows.forEach(row => {
+                const symbol = row.cells[0].textContent.toLowerCase();
+                row.style.display = symbol.includes(filter) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
