@@ -1,5 +1,23 @@
 # Profit & Loss Report
 
+Long term Suggestion Holding 
+HINDCOPPER
+YASHO
+INDIANB
+BHEL
+TVSMOTOR
+BSE
+APOLLO
+LLOYDSME
+
+Short term 
+ZENTEC
+PERSISTENT
+PRESTIGE
+DEEPAKFERT
+GVT&D
+
+
 ## Summary
 
 | Financial Year | Total Realised P&L | Total Trades |

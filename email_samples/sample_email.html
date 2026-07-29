@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Daily Prediction</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f5f5f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5;">
+        <tr>
+            <td align="center" style="padding: 16px;">
+                <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 12px; overflow: hidden;">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td style="background: #0f172a; padding: 20px 24px;">
+                            <table role="presentation" width="100%">
+                                <tr>
+                                    <td>
+                                        <span style="font-size: 20px; font-weight: 700; color: #ffffff;">📈 Daily Market Prediction</span>
+                                        <span style="display: block; color: #94a3b8; font-size: 13px; margin-top: 4px;">July 29, 2026 • Tuesday</span>
+                                    </td>
+                                    <td style="text-align: right;">
+                                        <span style="display: block; color: #fbbf24; font-size: 11px;">Your Portfolio</span>
+                                        <span style="color: #f87171; font-size: 14px; font-weight: 700;">₹28.03L (-7.5%)</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Market Outlook Banner -->
+                    <tr>
+                        <td style="padding: 16px;">
+                            <table role="presentation" width="100%" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); border-radius: 10px;">
+                                <tr>
+                                    <td style="padding: 16px; text-align: center;">
+                                        <span style="color: rgba(255,255,255,0.85); font-size: 11px; text-transform: uppercase; letter-spacing: 2px;">Today's Outlook</span>
+                                        <span style="display: block; color: #ffffff; font-size: 26px; font-weight: 800; margin: 4px 0;">🚀 STRONGLY BULLISH</span>
+                                        <span style="color: rgba(255,255,255,0.9); font-size: 12px;">Dow ▲1.0% • NASDAQ ▼0.2% • GIFT Nifty ▲ • VIX Low</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Global Markets - Compact Pills -->
+                    <tr>
+                        <td style="padding: 0 16px 16px 16px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="4">
+                                <tr>
+                                    <td width="20%" style="background: #f1f5f9; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase;">🇮🇳 Sensex</span>
+                                        <span style="display: block; font-size: 15px; font-weight: 700; color: #0f172a;">76,835</span>
+                                        <span style="font-size: 11px; color: #22c55e; font-weight: 600;">▲ 1.02%</span>
+                                    </td>
+                                    <td width="20%" style="background: #f1f5f9; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase;">🇮🇳 Nifty</span>
+                                        <span style="display: block; font-size: 15px; font-weight: 700; color: #0f172a;">23,995</span>
+                                        <span style="font-size: 11px; color: #22c55e; font-weight: 600;">▲ 0.96%</span>
+                                    </td>
+                                    <td width="20%" style="background: #f1f5f9; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase;">🇺🇸 Dow</span>
+                                        <span style="display: block; font-size: 15px; font-weight: 700; color: #0f172a;">52,747</span>
+                                        <span style="font-size: 11px; color: #22c55e; font-weight: 600;">▲ 1.03%</span>
+                                    </td>
+                                    <td width="20%" style="background: #f1f5f9; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase;">🇺🇸 NASDAQ</span>
+                                        <span style="display: block; font-size: 15px; font-weight: 700; color: #0f172a;">24,876</span>
+                                        <span style="font-size: 11px; color: #ef4444; font-weight: 600;">▼ 0.22%</span>
+                                    </td>
+                                    <td width="20%" style="background: #f1f5f9; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 10px; color: #64748b; text-transform: uppercase;">💱 USD/INR</span>
+                                        <span style="display: block; font-size: 15px; font-weight: 700; color: #0f172a;">₹95.77</span>
+                                        <span style="font-size: 11px; color: #22c55e; font-weight: 600;">▼ 0.82%</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Institutional Activity - Icon Pills -->
+                    <tr>
+                        <td style="padding: 0 16px 16px 16px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="4">
+                                <tr>
+                                    <td width="20%" style="background: #ecfdf5; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 18px;">😌</span>
+                                        <span style="display: block; font-size: 10px; color: #059669; font-weight: 600;">VIX</span>
+                                        <span style="display: block; font-size: 14px; font-weight: 700; color: #059669;">12.56</span>
+                                    </td>
+                                    <td width="20%" style="background: #ecfdf5; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 18px;">🏦</span>
+                                        <span style="display: block; font-size: 10px; color: #059669; font-weight: 600;">FII</span>
+                                        <span style="display: block; font-size: 14px; font-weight: 700; color: #059669;">+₹755Cr</span>
+                                    </td>
+                                    <td width="20%" style="background: #ecfdf5; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 18px;">🏠</span>
+                                        <span style="display: block; font-size: 10px; color: #059669; font-weight: 600;">DII</span>
+                                        <span style="display: block; font-size: 14px; font-weight: 700; color: #059669;">+₹1,664Cr</span>
+                                    </td>
+                                    <td width="20%" style="background: #f1f5f9; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 18px;">🛢️</span>
+                                        <span style="display: block; font-size: 10px; color: #64748b; font-weight: 600;">Crude</span>
+                                        <span style="display: block; font-size: 14px; font-weight: 700; color: #0f172a;">$82.54</span>
+                                    </td>
+                                    <td width="20%" style="background: #fef3c7; border-radius: 8px; padding: 10px 6px; text-align: center;">
+                                        <span style="display: block; font-size: 18px;">🥇</span>
+                                        <span style="display: block; font-size: 10px; color: #b45309; font-weight: 600;">Gold</span>
+                                        <span style="display: block; font-size: 14px; font-weight: 700; color: #b45309;">$4,015</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- 🎯 TOP 5 STOCK MOVEMENT PREDICTIONS (General Market) -->
+                    <tr>
+                        <td style="padding: 0 16px 16px 16px;">
+                            <table role="presentation" width="100%" style="background: #0f172a; border-radius: 10px;">
+                                <tr>
+                                    <td style="padding: 14px;">
+                                        <span style="display: block; color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">🎯 Top 5 Stock Movement Predictions</span>
+                                        
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td style="padding: 8px 0; border-bottom: 1px solid #1e293b;">
+                                                    <table role="presentation" width="100%">
+                                                        <tr>
+                                                            <td width="8%" style="text-align: center;"><span style="color: #22c55e; font-size: 16px;">▲</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">TCS</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: #22c55e; color: #ffffff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">60% CONF</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">Strong Q1 results</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 0; border-bottom: 1px solid #1e293b;">
+                                                    <table role="presentation" width="100%">
+                                                        <tr>
+                                                            <td width="8%" style="text-align: center;"><span style="color: #22c55e; font-size: 16px;">▲</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">ETERNAL</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: #22c55e; color: #ffffff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">58% CONF</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">Positive momentum</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 0; border-bottom: 1px solid #1e293b;">
+                                                    <table role="presentation" width="100%">
+                                                        <tr>
+                                                            <td width="8%" style="text-align: center;"><span style="color: #ef4444; font-size: 16px;">▼</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">SUZLON</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: #ef4444; color: #ffffff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">72% CONF</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">Weak Q1 results</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 0; border-bottom: 1px solid #1e293b;">
+                                                    <table role="presentation" width="100%">
+                                                        <tr>
+                                                            <td width="8%" style="text-align: center;"><span style="color: #22c55e; font-size: 16px;">▲</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">TVS MOTOR</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: #22c55e; color: #ffffff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">65% CONF</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">52-week high</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 0;">
+                                                    <table role="presentation" width="100%">
+                                                        <tr>
+                                                            <td width="8%" style="text-align: center;"><span style="color: #f59e0b; font-size: 16px;">●</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">HDFC BANK</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: #f59e0b; color: #0f172a; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">55% CONF</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">Banking rally</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- 📰 Today's Headlines - WITH CLICKABLE LINKS -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <span style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">📰 Today's Headlines</span>
+                            
+                            <table role="presentation" width="100%" style="background: #f8fafc; border-radius: 8px;">
+                                <tr>
+                                    <td style="padding: 10px 12px; border-bottom: 1px solid #e2e8f0;">
+                                        <span style="color: #22c55e; font-weight: 700; margin-right: 6px;">▲</span>
+                                        <a href="https://economictimes.indiatimes.com/markets/stocks/news/tvs-motor-company-among-9-stocks-to-hit-52-week-highs-amp-rally-up-to-15-in-a-month/slideshow/132686439.cms" style="color: #0f172a; font-size: 13px; text-decoration: none;">TVS Motor among 9 stocks to hit 52-week highs, rally up to 15%</a>
+                                        <span style="color: #94a3b8; font-size: 10px;"> — Economic Times</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px 12px; border-bottom: 1px solid #e2e8f0;">
+                                        <span style="color: #22c55e; font-weight: 700; margin-right: 6px;">▲</span>
+                                        <a href="https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-leading-airline-for-a-4-35-rise-a-mid-cap-it-services-stock-for-an-almost-7-upmove/articleshow/132686850.cms" style="color: #0f172a; font-size: 13px; text-decoration: none;">Two Trades for Today: Airline for 4.35% rise, mid-cap IT for 7% upmove</a>
+                                        <span style="color: #94a3b8; font-size: 10px;"> — Economic Times</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px 12px; border-bottom: 1px solid #e2e8f0;">
+                                        <span style="color: #22c55e; font-weight: 700; margin-right: 6px;">▲</span>
+                                        <a href="https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-tcs-eternal-hul-bel-among-top-gainers-and-losers-on-nifty-and-sensex-on-tuesday/articleshow/132684231.cms" style="color: #0f172a; font-size: 13px; text-decoration: none;">Market wrap: TCS, Eternal, HUL, BEL among top gainers on Tuesday</a>
+                                        <span style="color: #94a3b8; font-size: 10px;"> — Economic Times</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px 12px;">
+                                        <span style="color: #64748b; font-weight: 700; margin-right: 6px;">●</span>
+                                        <a href="https://economictimes.indiatimes.com/markets/stocks/news/mfs-kept-buying-these-13-smallcap-stocks-for-4-straight-quarters-shares-surged-up-to-111/slideshow/132681828.cms" style="color: #0f172a; font-size: 13px; text-decoration: none;">MFs kept buying 13 smallcap stocks for 4 straight quarters; up to 111%</a>
+                                        <span style="color: #94a3b8; font-size: 10px;"> — Economic Times</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- 📊 Earnings & Quarterly Results - WITH CLICKABLE LINKS -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <span style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">📊 Earnings & Quarterly Results</span>
+                            
+                            <table role="presentation" width="100%" style="background: #fef2f2; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                <tr>
+                                    <td style="padding: 10px 12px; border-bottom: 1px solid #fecaca;">
+                                        <span style="color: #ef4444; font-weight: 700; margin-right: 6px;">▼</span>
+                                        <a href="https://economictimes.indiatimes.com/markets/stocks/news/suzlon-energy-shares-crash-10-to-3-month-low-after-q1-results-whats-spooking-investors/articleshow/132681258.cms" style="color: #0f172a; font-size: 13px; text-decoration: none;"><strong>Suzlon</strong> shares crash 10% to 3-month low after Q1 results</a>
+                                        <span style="display: block; color: #991b1b; font-size: 10px; margin-top: 2px;">⚠️ You hold 3,460 shares — Q1 Results</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px 12px; border-bottom: 1px solid #fecaca;">
+                                        <span style="color: #ef4444; font-weight: 700; margin-right: 6px;">▼</span>
+                                        <a href="https://economictimes.indiatimes.com/markets/stocks/news/vijay-kedia-sells-4-lakh-shares-of-this-microcap-facade-maker-in-q1-stock-down-35-in-6-months-do-you-own/articleshow/132680256.cms" style="color: #0f172a; font-size: 13px; text-decoration: none;"><strong>Vijay Kedia</strong> sells 4L shares of microcap facade maker, down 35%</a>
+                                        <span style="display: block; color: #64748b; font-size: 10px; margin-top: 2px;">Insider Activity</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px 12px;">
+                                        <span style="color: #64748b; font-weight: 700; margin-right: 6px;">●</span>
+                                        <a href="https://economictimes.indiatimes.com/markets/stocks/news/nithin-kamath-warns-closing-auction-session-may-hit-zerodhas-revenue-from-august-3/articleshow/132686172.cms" style="color: #0f172a; font-size: 13px; text-decoration: none;">Nithin Kamath warns closing auction may hit Zerodha's revenue from Aug 3</a>
+                                        <span style="display: block; color: #64748b; font-size: 10px; margin-top: 2px;">Industry Update</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ⚖️ Regulatory & Policy News - WITH CLICKABLE LINKS -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <span style="display: block; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">⚖️ Regulatory & Policy News</span>
+                            
+                            <table role="presentation" width="100%" style="background: #f8fafc; border-radius: 8px;">
+                                <tr>
+                                    <td style="padding: 10px 12px; border-bottom: 1px solid #e2e8f0;">
+                                        <span style="color: #64748b; font-weight: 700; margin-right: 6px;">●</span>
+                                        <a href="https://economictimes.indiatimes.com/markets/stocks/news/these-7-private-and-public-banking-stocks-have-an-upside-of-up-to-29-in-one-year-according-to-analysts/articleshow/132690964.cms" style="color: #0f172a; font-size: 13px; text-decoration: none;">7 private & public banking stocks with upside of up to 29%: Analysts</a>
+                                        <span style="display: block; color: #64748b; font-size: 10px; margin-top: 2px;">Banking Sector — You hold INDIANB, ICICIBANK</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px 12px;">
+                                        <span style="color: #64748b; font-weight: 700; margin-right: 6px;">●</span>
+                                        <a href="https://economictimes.indiatimes.com/markets/stocks/news/ipo-pipeline-robust-with-245-drhps-filed-with-sebi-175-receive-observations-equirus/articleshow/132682968.cms" style="color: #0f172a; font-size: 13px; text-decoration: none;">IPO pipeline robust: 245 DRHPs filed with SEBI, 175 receive observations</a>
+                                        <span style="display: block; color: #64748b; font-size: 10px; margin-top: 2px;">SEBI/IPO Update</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ═══════════════════════════════════════════════════════════ -->
+                    <!-- 📊 PORTFOLIO ANALYSIS -->
+                    <!-- ═══════════════════════════════════════════════════════════ -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <table role="presentation" width="100%" style="background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); border-radius: 10px;">
+                                <tr>
+                                    <td style="padding: 16px;">
+                                        <span style="display: block; color: rgba(255,255,255,0.9); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">📊 Portfolio Analysis</span>
+                                        
+                                        <!-- Portfolio Summary Row -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="6" style="margin-bottom: 12px;">
+                                            <tr>
+                                                <td width="25%" style="background: rgba(255,255,255,0.15); border-radius: 8px; padding: 10px; text-align: center;">
+                                                    <span style="display: block; color: rgba(255,255,255,0.7); font-size: 10px;">Invested</span>
+                                                    <span style="display: block; color: #ffffff; font-size: 16px; font-weight: 700;">₹30.30L</span>
+                                                </td>
+                                                <td width="25%" style="background: rgba(255,255,255,0.15); border-radius: 8px; padding: 10px; text-align: center;">
+                                                    <span style="display: block; color: rgba(255,255,255,0.7); font-size: 10px;">Current</span>
+                                                    <span style="display: block; color: #ffffff; font-size: 16px; font-weight: 700;">₹28.03L</span>
+                                                </td>
+                                                <td width="25%" style="background: rgba(239,68,68,0.3); border-radius: 8px; padding: 10px; text-align: center;">
+                                                    <span style="display: block; color: rgba(255,255,255,0.7); font-size: 10px;">P&L</span>
+                                                    <span style="display: block; color: #fca5a5; font-size: 16px; font-weight: 700;">-₹2.27L</span>
+                                                </td>
+                                                <td width="25%" style="background: rgba(239,68,68,0.3); border-radius: 8px; padding: 10px; text-align: center;">
+                                                    <span style="display: block; color: rgba(255,255,255,0.7); font-size: 10px;">Returns</span>
+                                                    <span style="display: block; color: #fca5a5; font-size: 16px; font-weight: 700;">-7.5%</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Holdings Stats -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="6">
+                                            <tr>
+                                                <td width="33%" style="background: rgba(34,197,94,0.2); border-radius: 6px; padding: 8px; text-align: center;">
+                                                    <span style="color: #86efac; font-size: 18px; font-weight: 700;">32</span>
+                                                    <span style="display: block; color: #86efac; font-size: 10px;">Stocks in Profit</span>
+                                                </td>
+                                                <td width="33%" style="background: rgba(239,68,68,0.2); border-radius: 6px; padding: 8px; text-align: center;">
+                                                    <span style="color: #fca5a5; font-size: 18px; font-weight: 700;">63</span>
+                                                    <span style="display: block; color: #fca5a5; font-size: 10px;">Stocks in Loss</span>
+                                                </td>
+                                                <td width="33%" style="background: rgba(255,255,255,0.15); border-radius: 6px; padding: 8px; text-align: center;">
+                                                    <span style="color: #ffffff; font-size: 18px; font-weight: 700;">95</span>
+                                                    <span style="display: block; color: rgba(255,255,255,0.7); font-size: 10px;">Total Holdings</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Today's Change -->
+                                        <table role="presentation" width="100%" style="margin-top: 10px;">
+                                            <tr>
+                                                <td style="text-align: center;">
+                                                    <span style="color: rgba(255,255,255,0.7); font-size: 11px;">Today's Change: </span>
+                                                    <span style="color: #86efac; font-size: 13px; font-weight: 700;">▲ +₹45,230 (+1.64%)</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ═══════════════════════════════════════════════════════════ -->
+                    <!-- YOUR PORTFOLIO SECTION -->
+                    <!-- ═══════════════════════════════════════════════════════════ -->
+
+                    <!-- 🚨 ACTION ALERTS -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="6">
+                                <!-- BUY -->
+                                <tr>
+                                    <td>
+                                        <table role="presentation" width="100%" style="background: #dcfce7; border: 2px solid #22c55e; border-radius: 8px;">
+                                            <tr>
+                                                <td style="padding: 12px;">
+                                                    <span style="display: inline-block; background: #22c55e; color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 800;">✅ BUY</span>
+                                                    <span style="color: #166534; font-size: 14px; font-weight: 700; margin-left: 8px;">IRCTC @ ₹503</span>
+                                                    <span style="color: #15803d; font-size: 12px;"> — Down 27% • Monopoly • Strong fundamentals</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- ALSO BUY -->
+                                <tr>
+                                    <td>
+                                        <table role="presentation" width="100%" style="background: #dbeafe; border-radius: 8px;">
+                                            <tr>
+                                                <td style="padding: 10px 12px;">
+                                                    <span style="color: #1d4ed8; font-size: 11px; font-weight: 700;">📥 ALSO BUY ON DIP:</span>
+                                                    <span style="color: #1e40af; font-size: 12px;"> KPITTECH (-30%) • HAPPSTMNDS (-29%) • TCS (-13%)</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- EXIT -->
+                                <tr>
+                                    <td>
+                                        <table role="presentation" width="100%" style="background: #fef2f2; border: 2px solid #ef4444; border-radius: 8px;">
+                                            <tr>
+                                                <td style="padding: 10px 12px;">
+                                                    <span style="display: inline-block; background: #ef4444; color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 800;">🚨 EXIT</span>
+                                                    <span style="color: #991b1b; font-size: 12px; margin-left: 8px;">DISHTV (-40%) • RPOWER (-29%) — Book loss, weak fundamentals</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- BOOK PROFIT -->
+                                <tr>
+                                    <td>
+                                        <table role="presentation" width="100%" style="background: #fef3c7; border-radius: 8px;">
+                                            <tr>
+                                                <td style="padding: 10px 12px;">
+                                                    <span style="color: #92400e; font-size: 11px; font-weight: 700;">💰 BOOK PROFIT:</span>
+                                                    <span style="color: #78350f; font-size: 12px;"> BANKA (+58%) • ZENTEC (+41%) • ATHERENERG (+33%) • HFCL (+33%)</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- 🎯 TOP 5 STOCK PREDICTIONS (Your Holdings) -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <table role="presentation" width="100%" style="background: #0f172a; border-radius: 10px;">
+                                <tr>
+                                    <td style="padding: 14px;">
+                                        <span style="display: block; color: #ffffff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">🎯 Top 5 Stock Predictions (Your Holdings)</span>
+                                        
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td style="padding: 8px 0; border-bottom: 1px solid #1e293b;">
+                                                    <table role="presentation" width="100%">
+                                                        <tr>
+                                                            <td width="8%" style="text-align: center;"><span style="color: #22c55e; font-size: 16px;">▲</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">IRCTC</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: #22c55e; color: #ffffff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">66% CONF</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">Monopoly + 27% below avg</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 0; border-bottom: 1px solid #1e293b;">
+                                                    <table role="presentation" width="100%">
+                                                        <tr>
+                                                            <td width="8%" style="text-align: center;"><span style="color: #ef4444; font-size: 16px;">▼</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">SUZLON</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: #ef4444; color: #ffffff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">72% CONF</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">Weak Q1, crashed 10%</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 0; border-bottom: 1px solid #1e293b;">
+                                                    <table role="presentation" width="100%">
+                                                        <tr>
+                                                            <td width="8%" style="text-align: center;"><span style="color: #22c55e; font-size: 16px;">▲</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">INDIANB</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: #22c55e; color: #ffffff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">65% CONF</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">Banking rally +10%</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 0; border-bottom: 1px solid #1e293b;">
+                                                    <table role="presentation" width="100%">
+                                                        <tr>
+                                                            <td width="8%" style="text-align: center;"><span style="color: #22c55e; font-size: 16px;">▲</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">TCS</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: #22c55e; color: #ffffff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">60% CONF</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">Strong Q1 results</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 8px 0;">
+                                                    <table role="presentation" width="100%">
+                                                        <tr>
+                                                            <td width="8%" style="text-align: center;"><span style="color: #f59e0b; font-size: 16px;">●</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">ZEEL</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: #f59e0b; color: #0f172a; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">55% HOLD</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">Merger uncertainty</span></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- 🏆 Your Top Gainers / Losers -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="8">
+                                <tr>
+                                    <td width="48%" style="vertical-align: top;">
+                                        <span style="display: block; font-size: 10px; font-weight: 700; color: #059669; text-transform: uppercase; margin-bottom: 6px;">🏆 Your Top Gainers</span>
+                                        <table role="presentation" width="100%" style="background: #ecfdf5; border-radius: 8px;">
+                                            <tr><td style="padding: 6px 10px; border-bottom: 1px solid #a7f3d0;"><span style="color: #166534; font-size: 12px;">BANKA</span></td><td style="text-align: right; padding: 6px 10px; border-bottom: 1px solid #a7f3d0;"><span style="color: #166534; font-size: 12px; font-weight: 700;">+58%</span></td></tr>
+                                            <tr><td style="padding: 6px 10px; border-bottom: 1px solid #a7f3d0;"><span style="color: #166534; font-size: 12px;">ZENTEC</span></td><td style="text-align: right; padding: 6px 10px; border-bottom: 1px solid #a7f3d0;"><span style="color: #166534; font-size: 12px; font-weight: 700;">+41%</span></td></tr>
+                                            <tr><td style="padding: 6px 10px; border-bottom: 1px solid #a7f3d0;"><span style="color: #166534; font-size: 12px;">ATHERENERG</span></td><td style="text-align: right; padding: 6px 10px; border-bottom: 1px solid #a7f3d0;"><span style="color: #166534; font-size: 12px; font-weight: 700;">+33%</span></td></tr>
+                                            <tr><td style="padding: 6px 10px;"><span style="color: #166534; font-size: 12px;">HFCL</span></td><td style="text-align: right; padding: 6px 10px;"><span style="color: #166534; font-size: 12px; font-weight: 700;">+33%</span></td></tr>
+                                        </table>
+                                    </td>
+                                    <td width="48%" style="vertical-align: top;">
+                                        <span style="display: block; font-size: 10px; font-weight: 700; color: #dc2626; text-transform: uppercase; margin-bottom: 6px;">📉 Your Top Losers</span>
+                                        <table role="presentation" width="100%" style="background: #fef2f2; border-radius: 8px;">
+                                            <tr><td style="padding: 6px 10px; border-bottom: 1px solid #fecaca;"><span style="color: #991b1b; font-size: 12px;">DISHTV</span></td><td style="text-align: right; padding: 6px 10px; border-bottom: 1px solid #fecaca;"><span style="color: #dc2626; font-size: 12px; font-weight: 700;">-40%</span></td></tr>
+                                            <tr><td style="padding: 6px 10px; border-bottom: 1px solid #fecaca;"><span style="color: #991b1b; font-size: 12px;">KPITTECH</span></td><td style="text-align: right; padding: 6px 10px; border-bottom: 1px solid #fecaca;"><span style="color: #dc2626; font-size: 12px; font-weight: 700;">-30%</span></td></tr>
+                                            <tr><td style="padding: 6px 10px; border-bottom: 1px solid #fecaca;"><span style="color: #991b1b; font-size: 12px;">RPOWER</span></td><td style="text-align: right; padding: 6px 10px; border-bottom: 1px solid #fecaca;"><span style="color: #dc2626; font-size: 12px; font-weight: 700;">-29%</span></td></tr>
+                                            <tr><td style="padding: 6px 10px;"><span style="color: #991b1b; font-size: 12px;">IRCTC</span></td><td style="text-align: right; padding: 6px 10px;"><span style="color: #dc2626; font-size: 12px; font-weight: 700;">-27%</span></td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ⚠️ Risk Alerts -->
+                    <tr>
+                        <td style="padding: 0 16px 12px 16px;">
+                            <table role="presentation" width="100%" style="background: #fef2f2; border-left: 4px solid #ef4444; border-radius: 8px;">
+                                <tr>
+                                    <td style="padding: 12px;">
+                                        <span style="display: block; font-size: 11px; font-weight: 700; color: #991b1b; text-transform: uppercase; margin-bottom: 6px;">⚠️ Risk Alerts</span>
+                                        <span style="display: block; color: #7f1d1d; font-size: 12px; line-height: 1.6;">
+                                            • <strong>DISHTV:</strong> Financial distress, avoid averaging<br>
+                                            • <strong>RPOWER:</strong> Debt issues, weak order book<br>
+                                            • <strong>JPPOWER:</strong> No near-term catalysts
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- 💡 Strategy Note -->
+                    <tr>
+                        <td style="padding: 0 16px 16px 16px;">
+                            <table role="presentation" width="100%" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 8px;">
+                                <tr>
+                                    <td style="padding: 14px;">
+                                        <span style="display: block; font-size: 11px; font-weight: 700; color: #92400e; text-transform: uppercase; letter-spacing: 1px;">💡 Strategy Note</span>
+                                        <p style="margin: 8px 0 0 0; color: #78350f; font-size: 13px; line-height: 1.6;">
+                                            <strong>CAUTIOUS OPTIMISM:</strong> Short-term volatility expected due to geopolitical tensions. Portfolio at -7.5% — use market corrections to improve position quality.<br><br>
+                                            ✅ <strong>Do:</strong> Average IRCTC, TCS, KPITTECH on dips<br>
+                                            ❌ <strong>Don't:</strong> Average DISHTV, RPOWER — book loss<br>
+                                            💰 <strong>Fresh capital:</strong> Wait for 10-15% correction before deploying ₹2-5L. Focus on large-cap quality names.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- CTA Button -->
+                    <tr>
+                        <td style="padding: 0 16px 20px 16px; text-align: center;">
+                            <a href="https://saggy6210.github.io/stock_market/" style="display: inline-block; background: #0f172a; color: #ffffff; padding: 14px 32px; text-decoration: none; font-size: 13px; font-weight: 700; border-radius: 8px;">
+                                View Full Dashboard →
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding: 16px; background: #f1f5f9; text-align: center; border-top: 1px solid #e2e8f0;">
+                            <p style="margin: 0; color: #64748b; font-size: 10px;">
+                                NSE • Yahoo Finance • MoneyControl • Economic Times
+                            </p>
+                            <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 9px;">
+                                For informational purposes only. DYOR.
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
