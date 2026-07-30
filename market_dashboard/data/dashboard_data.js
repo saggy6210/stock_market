@@ -1,6 +1,6 @@
-// Auto-generated on 2026-07-30T16:57:48.345199
+// Auto-generated on 2026-07-30T16:59:39.028607
 const DASHBOARD_DATA = {
-  "timestamp": "2026-07-30T16:56:24.468045",
+  "timestamp": "2026-07-30T16:59:10.466508",
   "indices": {
     "nifty50": {
       "value": 24317.15,
@@ -33,15 +33,15 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "dow": {
-      "value": 52101.49,
-      "change": 507.35,
-      "change_pct": 0.98,
+      "value": 52086.51,
+      "change": 492.37,
+      "change_pct": 0.95,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25037.48,
-      "change": 594.54,
-      "change_pct": 2.43,
+      "value": 25035.48,
+      "change": 592.54,
+      "change_pct": 2.42,
       "direction": "positive"
     },
     "usdinr": {
@@ -53,9 +53,9 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4166.5,
-      "change": 131.8,
-      "change_pct": 3.27,
+      "value": 4167.9,
+      "change": 133.2,
+      "change_pct": 3.3,
       "direction": "positive"
     },
     "silver": {
@@ -67,13 +67,13 @@ const DASHBOARD_DATA = {
     "copper": {
       "value": 6.48,
       "change": 0.2,
-      "change_pct": 3.25,
+      "change_pct": 3.22,
       "direction": "positive"
     },
     "crude": {
-      "value": 83.86,
-      "change": -0.6,
-      "change_pct": -0.71,
+      "value": 83.8,
+      "change": -0.66,
+      "change_pct": -0.78,
       "direction": "negative"
     },
     "naturalgas": {
@@ -1093,17 +1093,17 @@ const DASHBOARD_DATA = {
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +2.4%",
+    "summary": "\ud83c\udf0f US markets positive: Dow +0.9%, NASDAQ +2.4%",
     "vix": {
       "value": 12.15,
       "change_pct": 1.21
     },
     "crude": {
-      "value": 83.86,
-      "change_pct": -0.71
+      "value": 83.8,
+      "change_pct": -0.78
     },
     "reasons": [
-      "\ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +2.4%"
+      "\ud83c\udf0f US markets positive: Dow +0.9%, NASDAQ +2.4%"
     ],
     "factors": [
       {
@@ -1114,13 +1114,13 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $83.86",
-        "sublabel": "-0.7%",
+        "label": "Crude $83.80",
+        "sublabel": "-0.8%",
         "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow +1.0%",
+        "label": "Dow +0.9%",
         "sublabel": "US Markets",
         "status": "positive"
       },
@@ -1213,16 +1213,6 @@ const DASHBOARD_DATA = {
         "url": "https://www.moneycontrol.com/news/business/earnings/hyundai-motor-india-q1-net-profit-drops-35-percent-to-rs-889-crore-revenue-marginally-lower-13988920.html",
         "sentiment": "negative",
         "stocks": [],
-        "category": "earnings"
-      },
-      {
-        "headline": "Vedanta Aluminium Metal Q1 net profit rises 34% QoQ to Rs 5,629 crore; revenue climbs 12%",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/earnings/vedanta-aluminium-metal-q1-net-profit-rises-34-qoq-to-rs-5-629-crore-revenue-climbs-12-13988775.html",
-        "sentiment": "positive",
-        "stocks": [
-          "VEDANTA"
-        ],
         "category": "earnings"
       },
       {
