@@ -53,7 +53,7 @@ def create_scheduler(service) -> BackgroundScheduler:
 def _run_complete_daily_analysis(service) -> None:
     """
     Single job that runs all daily tasks in sequence:
-    1. Dashboard data generation
+    1. Dashboard data generation + GitHub push
     2. Daily market scan
     3. Portfolio analysis with email
     
@@ -62,13 +62,13 @@ def _run_complete_daily_analysis(service) -> None:
     """
     logger.info(f"Starting complete daily analysis at {datetime.now()}")
     
-    # Step 1: Generate dashboard data
+    # Step 1: Generate dashboard data and push to GitHub
     try:
-        logger.info("Step 1/3: Generating dashboard data...")
+        logger.info("Step 1/3: Generating dashboard data and deploying to GitHub Pages...")
         from app.analysis.dashboard_pipeline import run_pipeline
-        data = run_pipeline()
+        data = run_pipeline(push_to_github=True)
         logger.info(
-            f"Dashboard data generated: {len(data.get('indices', {}))} indices, "
+            f"Dashboard data generated and pushed: {len(data.get('indices', {}))} indices, "
             f"{len(data.get('commodities', {}))} commodities"
         )
     except Exception as e:
@@ -87,7 +87,7 @@ def _run_complete_daily_analysis(service) -> None:
     
     # Step 3: Run portfolio analysis with email notification
     try:
-        logger.info("Step 3/3: Running portfolio analysis...")
+        logger.info("Step 3/3: Running portfolio analysis and sending email...")
         insights = service.run_portfolio_analysis(notify=True)
         logger.info(
             f"Portfolio analysis completed: {len(insights.holdings)} holdings, "

@@ -45,6 +45,11 @@ def main():
         action="store_true",
         help="Enable verbose logging"
     )
+    parser.add_argument(
+        "--push", "-p",
+        action="store_true",
+        help="Push changes to GitHub after generating data"
+    )
     
     args = parser.parse_args()
     
@@ -63,7 +68,7 @@ def main():
     
     try:
         print("\n🔄 Running pipeline...")
-        data = run_pipeline(args.output_dir)
+        data = run_pipeline(args.output_dir, push_to_github=args.push)
         
         print("\n✅ Pipeline completed successfully!")
         print("\n📈 Generated Data Summary:")
@@ -81,6 +86,10 @@ def main():
         print(f"\n📁 Output files saved to: {output_dir}")
         print(f"   - dashboard_data.json")
         print(f"   - dashboard_data.js")
+        
+        if args.push:
+            print("\n🚀 Dashboard pushed to GitHub Pages!")
+            print("   - URL: https://saggy6210.github.io/stock_market/")
         
         print("\n" + "=" * 60)
         print("✨ Dashboard data is ready!")

@@ -322,17 +322,87 @@ class DashboardDataPipeline:
         logger.info(f"JavaScript data saved to {js_file}")
 
 
-def run_pipeline(output_dir: str = None) -> Dict[str, Any]:
+def push_dashboard_to_github() -> bool:
+    """
+    Push dashboard changes to GitHub to update the GitHub Pages site.
+    
+    Returns:
+        bool: True if successful, False otherwise
+    """
+    import subprocess
+    
+    repo_dir = Path(__file__).parent.parent.parent  # stock_market root
+    
+    try:
+        logger.info("Pushing dashboard updates to GitHub...")
+        
+        # Pull latest changes first to avoid conflicts
+        subprocess.run(
+            ["git", "pull", "--rebase"],
+            cwd=repo_dir,
+            check=True,
+            capture_output=True
+        )
+        
+        # Stage dashboard files
+        subprocess.run(
+            ["git", "add", "market_dashboard/"],
+            cwd=repo_dir,
+            check=True,
+            capture_output=True
+        )
+        
+        # Create commit with timestamp
+        commit_msg = f"Auto-update dashboard data - {datetime.now().strftime('%Y-%m-%d %H:%M IST')}"
+        result = subprocess.run(
+            ["git", "commit", "-m", commit_msg],
+            cwd=repo_dir,
+            capture_output=True,
+            text=True
+        )
+        
+        # Check if there were changes to commit
+        if result.returncode != 0 and "nothing to commit" in result.stdout:
+            logger.info("No dashboard changes to commit")
+            return True
+        
+        # Push to origin
+        subprocess.run(
+            ["git", "push"],
+            cwd=repo_dir,
+            check=True,
+            capture_output=True
+        )
+        
+        logger.info("Dashboard successfully pushed to GitHub")
+        return True
+        
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Git operation failed: {e.stderr if hasattr(e, 'stderr') else e}")
+        return False
+    except Exception as e:
+        logger.error(f"Failed to push to GitHub: {e}")
+        return False
+
+
+def run_pipeline(output_dir: str = None, push_to_github: bool = False) -> Dict[str, Any]:
     """Run the dashboard data pipeline.
     
     Args:
         output_dir: Optional output directory
+        push_to_github: If True, automatically push changes to GitHub
         
     Returns:
         Generated dashboard data
     """
     pipeline = DashboardDataPipeline(output_dir)
-    return pipeline.run()
+    data = pipeline.run()
+    
+    # Optionally push to GitHub
+    if push_to_github:
+        push_dashboard_to_github()
+    
+    return data
 
 
 if __name__ == "__main__":
