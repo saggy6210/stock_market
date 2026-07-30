@@ -1,6 +1,6 @@
-// Auto-generated on 2026-07-30T15:47:56.590505
+// Auto-generated on 2026-07-30T15:55:08.079632
 const DASHBOARD_DATA = {
-  "timestamp": "2026-07-30T15:47:08.370771",
+  "timestamp": "2026-07-30T15:54:14.872011",
   "indices": {
     "nifty50": {
       "value": 24317.15,
@@ -33,15 +33,15 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "dow": {
-      "value": 51900.65,
-      "change": 306.51,
-      "change_pct": 0.59,
+      "value": 51918.1,
+      "change": 323.96,
+      "change_pct": 0.63,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25016.68,
-      "change": 573.74,
-      "change_pct": 2.35,
+      "value": 24995.54,
+      "change": 552.6,
+      "change_pct": 2.26,
       "direction": "positive"
     },
     "usdinr": {
@@ -53,33 +53,33 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4158.7,
-      "change": 124.0,
-      "change_pct": 3.07,
+      "value": 4165.3,
+      "change": 130.6,
+      "change_pct": 3.24,
       "direction": "positive"
     },
     "silver": {
-      "value": 58.72,
-      "change": 0.85,
-      "change_pct": 1.47,
+      "value": 58.78,
+      "change": 0.92,
+      "change_pct": 1.59,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.46,
-      "change": 0.18,
-      "change_pct": 2.9,
+      "value": 6.47,
+      "change": 0.19,
+      "change_pct": 3.1,
       "direction": "positive"
     },
     "crude": {
-      "value": 84.36,
-      "change": -0.1,
-      "change_pct": -0.12,
+      "value": 83.71,
+      "change": -0.75,
+      "change_pct": -0.89,
       "direction": "negative"
     },
     "naturalgas": {
       "value": 2.77,
       "change": 0.04,
-      "change_pct": 1.47,
+      "change_pct": 1.61,
       "direction": "positive"
     }
   },
@@ -848,7 +848,7 @@ const DASHBOARD_DATA = {
       "change_pct": 1.21
     },
     "reasons": [
-      "\u26fd Crude oil down 0.1% - positive for India"
+      "\u26fd Crude oil down 0.9% - positive for India"
     ],
     "factors": [
       {
@@ -858,7 +858,7 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -0.1%",
+        "label": "Crude -0.9%",
         "status": "positive"
       }
     ]
