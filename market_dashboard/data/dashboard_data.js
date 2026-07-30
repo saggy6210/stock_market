@@ -1,6 +1,6 @@
-// Auto-generated on 2026-07-30T16:02:56.697400
+// Auto-generated on 2026-07-30T16:04:50.161130
 const DASHBOARD_DATA = {
-  "timestamp": "2026-07-30T16:02:12.620974",
+  "timestamp": "2026-07-30T16:04:31.213305",
   "indices": {
     "nifty50": {
       "value": 24317.15,
@@ -33,15 +33,15 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "dow": {
-      "value": 51942.42,
-      "change": 348.28,
-      "change_pct": 0.68,
+      "value": 51960.91,
+      "change": 366.77,
+      "change_pct": 0.71,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25007.43,
-      "change": 564.49,
-      "change_pct": 2.31,
+      "value": 25043.19,
+      "change": 600.25,
+      "change_pct": 2.46,
       "direction": "positive"
     },
     "usdinr": {
@@ -53,33 +53,33 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4165.4,
-      "change": 130.7,
-      "change_pct": 3.24,
+      "value": 4164.2,
+      "change": 129.5,
+      "change_pct": 3.21,
       "direction": "positive"
     },
     "silver": {
-      "value": 58.81,
-      "change": 0.95,
-      "change_pct": 1.64,
+      "value": 58.79,
+      "change": 0.93,
+      "change_pct": 1.61,
       "direction": "positive"
     },
     "copper": {
       "value": 6.47,
-      "change": 0.2,
-      "change_pct": 3.12,
+      "change": 0.19,
+      "change_pct": 3.1,
       "direction": "positive"
     },
     "crude": {
-      "value": 83.88,
-      "change": -0.58,
-      "change_pct": -0.69,
+      "value": 84.03,
+      "change": -0.43,
+      "change_pct": -0.51,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.76,
-      "change": 0.04,
-      "change_pct": 1.43,
+      "value": 2.77,
+      "change": 0.05,
+      "change_pct": 1.72,
       "direction": "positive"
     }
   },
@@ -848,7 +848,7 @@ const DASHBOARD_DATA = {
       "change_pct": 1.21
     },
     "reasons": [
-      "\u26fd Crude oil down 0.7% - positive for India"
+      "\u26fd Crude oil down 0.5% - positive for India"
     ],
     "factors": [
       {
@@ -858,7 +858,7 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -0.7%",
+        "label": "Crude -0.5%",
         "status": "positive"
       }
     ]
