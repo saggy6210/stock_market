@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
  * Update date/time display
  */
 function updateDateTime() {
-    const now = new Date();
     const options = { 
         year: 'numeric', 
         month: 'long', 
@@ -49,8 +48,26 @@ function updateDateTime() {
     };
     
     const lastUpdatedEl = document.getElementById('lastUpdated');
+    const currentDateEl = document.getElementById('currentDate');
+    
+    // Use DASHBOARD_DATA timestamp if available, otherwise use current time
+    let displayDate;
+    if (typeof DASHBOARD_DATA !== 'undefined' && DASHBOARD_DATA.timestamp) {
+        displayDate = new Date(DASHBOARD_DATA.timestamp);
+    } else {
+        displayDate = new Date();
+    }
+    
     if (lastUpdatedEl) {
-        lastUpdatedEl.textContent = now.toLocaleString('en-IN', options) + ' IST';
+        lastUpdatedEl.textContent = displayDate.toLocaleString('en-IN', options) + ' IST';
+    }
+    
+    // Update navbar date
+    if (currentDateEl) {
+        const dateOnlyOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        const existingText = currentDateEl.innerHTML;
+        const liveIndicator = existingText.includes('LIVE') ? '<span class="live-indicator"><span class="live-dot"></span>LIVE</span>' : '';
+        currentDateEl.innerHTML = liveIndicator + displayDate.toLocaleDateString('en-IN', dateOnlyOptions);
     }
 }
 
@@ -221,6 +238,51 @@ function updateStockPrices(prices) {
 }
 
 /**
+ * Update market outlook section
+ */
+function updateMarketOutlook(outlook) {
+    const badgeEl = document.getElementById('outlook-badge');
+    const reasonEl = document.getElementById('outlook-reason');
+    
+    if (badgeEl && outlook.sentiment) {
+        badgeEl.textContent = outlook.sentiment;
+        badgeEl.className = `outlook-badge ${outlook.badge_class || outlook.sentiment.toLowerCase()}`;
+    }
+    
+    if (reasonEl && outlook.reasons) {
+        const reasonsHtml = outlook.reasons.map(r => `<strong>${r}</strong>`).join(' ');
+        reasonEl.innerHTML = reasonsHtml;
+    }
+}
+
+/**
+ * Update predictions section
+ */
+function updatePredictions(predictions) {
+    const cardsContainer = document.querySelector('.prediction-cards');
+    if (!cardsContainer || !predictions || predictions.length === 0) return;
+    
+    let html = '';
+    for (const pred of predictions) {
+        const isUp = pred.direction === 'UP';
+        const dirClass = isUp ? 'bullish' : 'bearish';
+        const arrow = isUp ? '▲ UP' : '▼ DOWN';
+        
+        html += `
+            <div class="prediction-card ${dirClass}">
+                <div class="prediction-header">
+                    <span class="prediction-symbol">${pred.symbol}</span>
+                    <span class="prediction-direction ${isUp ? 'up' : 'down'}">${arrow}</span>
+                </div>
+                <p class="prediction-reason">${pred.reason}</p>
+            </div>
+        `;
+    }
+    
+    cardsContainer.innerHTML = html;
+}
+
+/**
  * Load screener data (top fallen stocks)
  */
 async function loadScreenerData() {
@@ -252,12 +314,79 @@ async function loadScreenerData() {
 
 /**
  * Load fallback data when API is unavailable
- * Data as of April 10, 2026 from NSE/Google Finance
+ * Uses DASHBOARD_DATA from dashboard_data.js if available
  */
 function loadFallbackData() {
     console.log('📊 Loading fallback market data...');
     
-    // Real data from April 10, 2026
+    // Use DASHBOARD_DATA from dashboard_data.js if available
+    if (typeof DASHBOARD_DATA !== 'undefined') {
+        console.log('📊 Using generated DASHBOARD_DATA from:', DASHBOARD_DATA.timestamp);
+        
+        // Convert DASHBOARD_DATA format to expected format
+        if (DASHBOARD_DATA.indices) {
+            const indices = {};
+            for (const [key, data] of Object.entries(DASHBOARD_DATA.indices)) {
+                const keyMap = {
+                    'nifty50': 'nifty',
+                    'niftybank': 'nifty_bank',
+                    'niftyit': 'nifty_it',
+                    'vix': 'india_vix',
+                    'dow': 'dow_jones',
+                    'usdinr': 'usd_inr'
+                };
+                const mappedKey = keyMap[key] || key;
+                indices[mappedKey] = {
+                    value: data.value,
+                    change: data.change,
+                    change_pct: data.change_pct,
+                    is_positive: data.direction === 'positive'
+                };
+            }
+            updateIndices(indices);
+        }
+        
+        // Update commodities
+        if (DASHBOARD_DATA.commodities) {
+            const commodities = {};
+            for (const [key, data] of Object.entries(DASHBOARD_DATA.commodities)) {
+                const keyMap = {
+                    'crude': 'crude_oil',
+                    'naturalgas': 'natural_gas'
+                };
+                const mappedKey = keyMap[key] || key;
+                commodities[mappedKey] = {
+                    value: data.value,
+                    change_pct: data.change_pct,
+                    is_positive: data.direction === 'positive'
+                };
+            }
+            updateCommodities(commodities);
+        }
+        
+        // Update market outlook
+        if (DASHBOARD_DATA.market_outlook) {
+            updateMarketOutlook(DASHBOARD_DATA.market_outlook);
+        }
+        
+        // Update predictions
+        if (DASHBOARD_DATA.predictions) {
+            updatePredictions(DASHBOARD_DATA.predictions);
+        }
+        
+        // Update screener with generated data
+        if (DASHBOARD_DATA.screener) {
+            for (const [periodKey, stocks] of Object.entries(DASHBOARD_DATA.screener)) {
+                if (stocks && stocks.length > 0) {
+                    populateScreenerTable(periodKey, stocks, periodKey);
+                }
+            }
+        }
+        
+        return;
+    }
+    
+    // Fallback to hardcoded data if DASHBOARD_DATA not available
     const fallbackIndices = {
         nifty: { value: 24050.60, change: 275.50, change_pct: 1.16, is_positive: true },
         sensex: { value: 77550.25, change: 920.45, change_pct: 1.20, is_positive: true },
