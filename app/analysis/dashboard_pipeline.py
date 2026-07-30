@@ -83,6 +83,7 @@ class DashboardDataPipeline:
             self.data["indices"] = self._fetch_indices()
             self.data["commodities"] = self._fetch_commodities()
             self.data["screener"] = self._fetch_screener_data()
+            self.data["recommendations"] = self._generate_recommendations()
             self.data["fii_dii"] = self._fetch_fii_dii_data()
             self.data["market_outlook"] = self._generate_market_outlook()
             self.data["predictions"] = self._generate_predictions()
@@ -233,6 +234,131 @@ class DashboardDataPipeline:
         else:
             return "Hold"
     
+    def _generate_recommendations(self) -> Dict[str, List[Dict]]:
+        """Generate buy and avoid recommendations based on technical analysis."""
+        logger.info("Generating recommendations...")
+        
+        buy_recommendations = []
+        avoid_recommendations = []
+        
+        # Extended list of stocks for recommendations
+        RECOMMENDATION_STOCKS = [
+            # Large Caps - Banking
+            ("HDFCBANK.NS", "Banking", "Strong fundamentals, market leader"),
+            ("ICICIBANK.NS", "Banking", "Digital banking growth"),
+            ("SBIN.NS", "Banking", "PSU bank recovery play"),
+            ("KOTAKBANK.NS", "Banking", "Asset quality improvement"),
+            ("AXISBANK.NS", "Banking", "Corporate banking recovery"),
+            
+            # IT
+            ("TCS.NS", "IT", "Stable deal wins, AI investments"),
+            ("INFY.NS", "IT", "Large deal momentum"),
+            ("WIPRO.NS", "IT", "Margin recovery focus"),
+            ("TECHM.NS", "IT", "5G and enterprise growth"),
+            ("HCLTECH.NS", "IT", "Products and services mix"),
+            
+            # Energy
+            ("RELIANCE.NS", "Energy", "Jio and retail growth"),
+            ("ONGC.NS", "Oil & Gas", "Crude price exposure"),
+            ("NTPC.NS", "Power", "Capacity addition"),
+            ("POWERGRID.NS", "Power", "Transmission monopoly"),
+            ("TATAPOWER.NS", "Power", "Clean energy transition"),
+            
+            # Auto
+            ("TATAMOTORS.NS", "Auto", "JLR turnaround, EV growth"),
+            ("MARUTI.NS", "Auto", "SUV portfolio expansion"),
+            ("M&M.NS", "Auto", "Farm + auto strength"),
+            
+            # Others
+            ("TITAN.NS", "Retail", "Jewellery market leader"),
+            ("BAJFINANCE.NS", "Finance", "Consumer lending growth"),
+            ("LT.NS", "Infrastructure", "Order book strength"),
+            ("BHARTIARTL.NS", "Telecom", "ARPU improvement, 5G"),
+            ("SUNPHARMA.NS", "Pharma", "Specialty pharma focus"),
+            ("COALINDIA.NS", "Mining", "Dividend yield play"),
+            ("ADANIPORTS.NS", "Infrastructure", "Port capacity growth"),
+            ("SUZLON.NS", "Renewable", "Wind energy revival"),
+            ("IDEA.NS", "Telecom", "Debt restructuring risk"),
+        ]
+        
+        for symbol, sector, base_reason in RECOMMENDATION_STOCKS:
+            try:
+                ticker = yf.Ticker(symbol)
+                hist = ticker.history(period="1y")
+                info = ticker.info
+                
+                if len(hist) < 10:
+                    continue
+                    
+                current_price = hist['Close'].iloc[-1]
+                high_52w = hist['High'].max()
+                low_52w = hist['Low'].min()
+                
+                # Calculate technical metrics
+                fall_pct = ((current_price - high_52w) / high_52w * 100) if high_52w > 0 else 0
+                position = (current_price - low_52w) / (high_52w - low_52w) if high_52w != low_52w else 0.5
+                
+                # Calculate RSI (simple)
+                price_changes = hist['Close'].diff()
+                gains = price_changes.where(price_changes > 0, 0).rolling(14).mean()
+                losses = (-price_changes.where(price_changes < 0, 0)).rolling(14).mean()
+                rs = gains / losses
+                rsi = 100 - (100 / (1 + rs)).iloc[-1] if losses.iloc[-1] != 0 else 50
+                
+                # Calculate target based on position and fall
+                if fall_pct <= -25 and position > 0.15:
+                    target_pct = 25
+                    signal = "Strong Buy"
+                elif fall_pct <= -15 and position > 0.2:
+                    target_pct = 18
+                    signal = "Buy"
+                elif fall_pct <= -10 and position > 0.3:
+                    target_pct = 12
+                    signal = "Buy"
+                elif position < 0.15 or rsi < 30:
+                    signal = "Avoid"
+                    downside_pct = min(15, abs(fall_pct) * 0.3)
+                else:
+                    signal = "Hold"
+                    downside_pct = 8
+                
+                stock_data = {
+                    "symbol": symbol.replace(".NS", ""),
+                    "sector": sector,
+                    "current_price": round(current_price, 2),
+                    "high_52w": round(high_52w, 2),
+                    "low_52w": round(low_52w, 2),
+                    "fall_pct": round(fall_pct, 2),
+                    "rsi": round(rsi, 1) if not pd.isna(rsi) else 50,
+                }
+                
+                if signal in ["Strong Buy", "Buy"]:
+                    target_price = current_price * (1 + target_pct / 100)
+                    stock_data["target_price"] = round(target_price, 2)
+                    stock_data["upside_pct"] = round(target_pct, 1)
+                    stock_data["signal"] = signal
+                    stock_data["reason"] = base_reason
+                    stock_data["timeframe"] = "3-6 months"
+                    buy_recommendations.append(stock_data)
+                else:
+                    stock_data["risk_level"] = "High" if position < 0.1 else "Medium" if signal == "Avoid" else "Low"
+                    stock_data["downside_pct"] = round(downside_pct, 1) if 'downside_pct' in locals() else 10
+                    stock_data["signal"] = signal
+                    stock_data["reason"] = base_reason
+                    avoid_recommendations.append(stock_data)
+                    
+            except Exception as e:
+                logger.warning(f"Failed to analyze {symbol}: {e}")
+        
+        # Sort and limit
+        buy_recommendations.sort(key=lambda x: x.get("upside_pct", 0), reverse=True)
+        avoid_recommendations.sort(key=lambda x: x.get("downside_pct", 0), reverse=True)
+        
+        return {
+            "buy": buy_recommendations[:10],
+            "avoid": avoid_recommendations[:8]
+        }
+    
     def _fetch_fii_dii_data(self) -> Dict[str, Any]:
         """Fetch FII/DII data (placeholder - needs real data source)."""
         logger.info("Fetching FII/DII data...")
@@ -351,50 +477,173 @@ class DashboardDataPipeline:
         
         # Analyze crude oil
         crude_data = self.data.get("commodities", {}).get("crude", {})
+        crude_value = crude_data.get("value", 80)
         crude_change = crude_data.get("change_pct", 0)
         
+        # Analyze NIFTY
+        nifty_data = self.data.get("indices", {}).get("nifty50", {})
+        nifty_change = nifty_data.get("change_pct", 0)
+        
+        # Analyze global indices
+        dow_data = self.data.get("indices", {}).get("dow", {})
+        dow_change = dow_data.get("change_pct", 0)
+        nasdaq_data = self.data.get("indices", {}).get("nasdaq", {})
+        nasdaq_change = nasdaq_data.get("change_pct", 0)
+        
+        # Calculate overall score
+        score = 0
+        if vix_value < 18: score += 2
+        elif vix_value < 22: score += 1
+        elif vix_value > 25: score -= 2
+        
+        if crude_change < -1: score += 2
+        elif crude_change < 0: score += 1
+        elif crude_change > 2: score -= 2
+        
+        if dow_change > 0.5: score += 1
+        elif dow_change < -0.5: score -= 1
+        
+        if nasdaq_change > 0.5: score += 1
+        elif nasdaq_change < -0.5: score -= 1
+        
         # Determine overall sentiment
-        if vix_value < 15 and crude_change < 0:
+        if score >= 3:
             sentiment = "BULLISH"
             badge_class = "bullish"
-        elif vix_value > 25 or crude_change > 5:
+        elif score <= -2:
             sentiment = "BEARISH"
             badge_class = "bearish"
         else:
             sentiment = "NEUTRAL"
             badge_class = "neutral"
         
-        # Generate reason
+        # Generate reasons dynamically
         reasons = []
-        if vix_change < -5:
-            reasons.append(f"📉 VIX down {abs(vix_change):.1f}% indicating declining fear")
-        if crude_change < 0:
-            reasons.append(f"⛽ Crude oil down {abs(crude_change):.1f}% - positive for India")
+        if vix_change < -3:
+            reasons.append(f"📉 VIX down {abs(vix_change):.1f}% indicating declining volatility/fear")
+        elif vix_change > 3:
+            reasons.append(f"📈 VIX up {vix_change:.1f}% indicating rising market uncertainty")
+        
+        if crude_change < -1:
+            reasons.append(f"⛽ Crude oil down {abs(crude_change):.1f}% - positive for India (import dependent)")
+        elif crude_change > 2:
+            reasons.append(f"⛽ Crude oil up {crude_change:.1f}% - negative for India's trade balance")
+        
+        if dow_change > 0.5 or nasdaq_change > 0.5:
+            reasons.append(f"🌏 US markets positive: Dow {dow_change:+.1f}%, NASDAQ {nasdaq_change:+.1f}%")
+        elif dow_change < -0.5:
+            reasons.append(f"🌏 US markets weak: Dow {dow_change:.1f}%, NASDAQ {nasdaq_change:.1f}%")
+        
+        if not reasons:
+            reasons.append("📊 Markets trading sideways with mixed global cues")
+        
+        # Build outlook summary
+        summary = ". ".join(reasons)
+        
+        # Generate outlook factors for display
+        factors = [
+            {
+                "icon": "📉" if vix_change <= 0 else "📈",
+                "label": f"VIX {vix_value:.2f}",
+                "sublabel": f"{vix_change:+.1f}%",
+                "status": "positive" if vix_value < 20 and vix_change <= 0 else "negative" if vix_value > 22 else "neutral"
+            },
+            {
+                "icon": "⛽",
+                "label": f"Crude ${crude_value:.2f}",
+                "sublabel": f"{crude_change:+.1f}%",
+                "status": "positive" if crude_change < 0 else "negative"
+            },
+            {
+                "icon": "🇺🇸",
+                "label": f"Dow {dow_change:+.1f}%",
+                "sublabel": "US Markets",
+                "status": "positive" if dow_change > 0 else "negative"
+            },
+            {
+                "icon": "📊",
+                "label": f"NASDAQ {nasdaq_change:+.1f}%",
+                "sublabel": "Tech Sentiment",
+                "status": "positive" if nasdaq_change > 0 else "negative"
+            }
+        ]
         
         return {
             "sentiment": sentiment,
             "badge_class": badge_class,
+            "summary": summary,
             "vix": {"value": vix_value, "change_pct": vix_change},
+            "crude": {"value": crude_value, "change_pct": crude_change},
             "reasons": reasons,
-            "factors": [
-                {"icon": "📉", "label": f"VIX {vix_value:.2f}", "status": "positive" if vix_change < 0 else "negative"},
-                {"icon": "⛽", "label": f"Crude {crude_change:.1f}%", "status": "positive" if crude_change < 0 else "negative"}
-            ]
+            "factors": factors,
+            "score": score
         }
     
     def _generate_predictions(self) -> List[Dict]:
-        """Generate stock movement predictions."""
+        """Generate stock movement predictions based on sector analysis."""
         logger.info("Generating predictions...")
         
-        predictions = [
-            {"symbol": "RELIANCE", "direction": "UP", "reason": "Oil refining margins improve, Jio momentum"},
-            {"symbol": "INFY", "direction": "UP", "reason": "NASDAQ positive, large deal wins"},
-            {"symbol": "HDFCBANK", "direction": "UP", "reason": "Strong credit growth, NIM stability"},
-            {"symbol": "TATASTEEL", "direction": "DOWN", "reason": "Steel prices under pressure"},
-            {"symbol": "ONGC", "direction": "UP", "reason": "Crude stabilizing benefits O&G sector"}
-        ]
+        predictions = []
         
-        return predictions
+        # Get market data for context
+        crude_data = self.data.get("commodities", {}).get("crude", {})
+        crude_change = crude_data.get("change_pct", 0)
+        
+        dow_data = self.data.get("indices", {}).get("dow", {})
+        dow_change = dow_data.get("change_pct", 0)
+        
+        nasdaq_data = self.data.get("indices", {}).get("nasdaq", {})
+        nasdaq_change = nasdaq_data.get("change_pct", 0)
+        
+        # Oil & Gas - depends on crude
+        if crude_change > 1:
+            predictions.append({
+                "symbol": "ONGC",
+                "direction": "UP",
+                "reason": f"Crude up {crude_change:.1f}%, benefits upstream O&G"
+            })
+            predictions.append({
+                "symbol": "RELIANCE",
+                "direction": "UP",
+                "reason": "Refining margins improve on higher crude"
+            })
+        else:
+            predictions.append({
+                "symbol": "RELIANCE",
+                "direction": "UP",
+                "reason": "Lower crude costs benefit refining; Jio/retail growth"
+            })
+        
+        # IT - depends on NASDAQ
+        if nasdaq_change > 0.3:
+            predictions.append({
+                "symbol": "INFY",
+                "direction": "UP",
+                "reason": f"NASDAQ +{nasdaq_change:.1f}%, positive for IT sentiment"
+            })
+        else:
+            predictions.append({
+                "symbol": "TCS",
+                "direction": "UP" if nasdaq_change > -0.5 else "DOWN",
+                "reason": "Stable deal pipeline, currency tailwinds" if nasdaq_change > -0.5 else "Tech sector weakness affects sentiment"
+            })
+        
+        # Banking - always key sector
+        predictions.append({
+            "symbol": "HDFCBANK",
+            "direction": "UP",
+            "reason": "Strong credit growth, stable NIM, market leader"
+        })
+        
+        # Add a bearish prediction for balance
+        predictions.append({
+            "symbol": "TATASTEEL",
+            "direction": "DOWN",
+            "reason": "Global steel prices under pressure, European ops concerns"
+        })
+        
+        # Limit to 5 predictions
+        return predictions[:5]
     
     def _save_data(self) -> None:
         """Save generated data to JSON file."""

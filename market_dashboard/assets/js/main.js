@@ -243,15 +243,40 @@ function updateStockPrices(prices) {
 function updateMarketOutlook(outlook) {
     const badgeEl = document.getElementById('outlook-badge');
     const reasonEl = document.getElementById('outlook-reason');
+    const factorsEl = document.getElementById('outlook-factors');
     
     if (badgeEl && outlook.sentiment) {
         badgeEl.textContent = outlook.sentiment;
         badgeEl.className = `outlook-badge ${outlook.badge_class || outlook.sentiment.toLowerCase()}`;
     }
     
-    if (reasonEl && outlook.reasons) {
-        const reasonsHtml = outlook.reasons.map(r => `<strong>${r}</strong>`).join(' ');
-        reasonEl.innerHTML = reasonsHtml;
+    if (reasonEl) {
+        if (outlook.summary) {
+            reasonEl.innerHTML = `<strong>${outlook.summary}</strong>`;
+        } else if (outlook.reasons) {
+            const reasonsHtml = outlook.reasons.map(r => `<strong>${r}</strong>`).join(' ');
+            reasonEl.innerHTML = reasonsHtml;
+        }
+    }
+    
+    // Update outlook factors grid
+    if (factorsEl && outlook.factors) {
+        let html = '';
+        for (const factor of outlook.factors) {
+            const statusColor = factor.status === 'positive' ? '#00d09c' : 
+                               factor.status === 'negative' ? '#eb5757' : '#6c757d';
+            const bgColor = factor.status === 'positive' ? '#e8f9f5' : 
+                           factor.status === 'negative' ? '#fef2f2' : '#f5f5f5';
+            
+            html += `
+                <div style="background: ${bgColor}; padding: 15px; border-radius: 10px; text-align: center;">
+                    <div style="font-size: 1.5rem;">${factor.icon}</div>
+                    <div style="font-weight: 600; color: ${statusColor};">${factor.label}</div>
+                    <div style="font-size: 0.85rem; color: #6c757d;">${factor.sublabel || ''}</div>
+                </div>
+            `;
+        }
+        factorsEl.innerHTML = html;
     }
 }
 
@@ -280,6 +305,56 @@ function updatePredictions(predictions) {
     }
     
     cardsContainer.innerHTML = html;
+}
+
+/**
+ * Update recommendations section (buy and avoid)
+ */
+function updateRecommendations(recommendations) {
+    if (!recommendations) return;
+    
+    // Update buy recommendations
+    const buyTbody = document.getElementById('buy-recommendations-tbody');
+    if (buyTbody && recommendations.buy) {
+        let html = '';
+        recommendations.buy.forEach((stock, index) => {
+            html += `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td><strong>${stock.symbol}</strong></td>
+                    <td>₹${formatIndianNumber(stock.current_price)}</td>
+                    <td style="color: #00d09c; font-weight: 600;">₹${formatIndianNumber(stock.target_price)}</td>
+                    <td>+${stock.upside_pct}%</td>
+                    <td>${stock.timeframe}</td>
+                </tr>
+            `;
+        });
+        buyTbody.innerHTML = html;
+    }
+    
+    // Update avoid recommendations
+    const avoidTbody = document.getElementById('avoid-recommendations-tbody');
+    if (avoidTbody && recommendations.avoid) {
+        let html = '';
+        recommendations.avoid.forEach((stock, index) => {
+            // Color based on risk level
+            let riskColor = '#6c757d'; // Hold - grey
+            if (stock.risk_level === 'High') riskColor = '#eb5757'; // red
+            else if (stock.risk_level === 'Medium') riskColor = '#f2994a'; // orange
+            
+            html += `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td><strong>${stock.symbol}</strong></td>
+                    <td>₹${formatIndianNumber(stock.current_price)}</td>
+                    <td style="color: ${riskColor}; font-weight: 600;">${stock.risk_level || stock.signal}</td>
+                    <td>-${stock.downside_pct}%</td>
+                    <td>${stock.reason}</td>
+                </tr>
+            `;
+        });
+        avoidTbody.innerHTML = html;
+    }
 }
 
 /**
@@ -566,6 +641,11 @@ function loadFallbackData() {
         // Update predictions
         if (DASHBOARD_DATA.predictions) {
             updatePredictions(DASHBOARD_DATA.predictions);
+        }
+        
+        // Update recommendations
+        if (DASHBOARD_DATA.recommendations) {
+            updateRecommendations(DASHBOARD_DATA.recommendations);
         }
         
         // Update screener with generated data

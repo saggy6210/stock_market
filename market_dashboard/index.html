@@ -52,36 +52,14 @@
             <div class="outlook-card">
                 <div class="outlook-badge bullish" id="outlook-badge">BULLISH</div>
                 <p class="outlook-reason" id="outlook-reason">
-                    <strong>🕊️ Iran-US War Ceasefire:</strong> Peace talks progress positively, reducing geopolitical risk premium. 
-                    <strong>⛽ Crude Oil:</strong> Brent crude down 1.3% to $96.57 on ceasefire hopes - positive for India.
-                    <strong>📊 VIX:</strong> India VIX at 18.85, down 7.72% indicating declining fear/volatility.
-                    <strong>🌏 Global Cues:</strong> GIFT Nifty at 24,135 (+0.35%) indicating positive opening.
-                    DIIs continue to be net buyers offsetting FII selling. Markets expected to open gap-up.
+                    <!-- Populated dynamically by JavaScript -->
+                    Loading market outlook...
                 </p>
             </div>
             
-            <!-- Quick Outlook Factors -->
-            <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                <div style="background: #e8f9f5; padding: 15px; border-radius: 10px; text-align: center;">
-                    <div style="font-size: 1.5rem;">🕊️</div>
-                    <div style="font-weight: 600; color: #00d09c;">Iran-US Ceasefire</div>
-                    <div style="font-size: 0.85rem; color: #6c757d;">Peace Talks Progress</div>
-                </div>
-                <div style="background: #e8f9f5; padding: 15px; border-radius: 10px; text-align: center;">
-                    <div style="font-size: 1.5rem;">⛽</div>
-                    <div style="font-weight: 600;"><span style="color: #eb5757;">Crude Oil ▼1.3%</span></div>
-                    <div style="font-size: 0.85rem; font-weight: 600; color: #00d09c;">Positive for India</div>
-                </div>
-                <div style="background: #e8f9f5; padding: 15px; border-radius: 10px; text-align: center;">
-                    <div style="font-size: 1.5rem;">📉</div>
-                    <div style="font-weight: 600; color: #00d09c;">VIX 18.85 ▼7.72%</div>
-                    <div style="font-size: 0.85rem; color: #6c757d;">Fear Index Down</div>
-                </div>
-                <div style="background: #e8f9f5; padding: 15px; border-radius: 10px; text-align: center;">
-                    <div style="font-size: 1.5rem;">🌏</div>
-                    <div style="font-weight: 600; color: #00d09c;">GIFT Nifty ▲0.35%</div>
-                    <div style="font-size: 0.85rem; color: #6c757d;">Positive Opening</div>
-                </div>
+            <!-- Quick Outlook Factors - Populated dynamically -->
+            <div id="outlook-factors" style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <!-- Populated dynamically by JavaScript -->
             </div>
         </section>
 
@@ -408,7 +386,8 @@
                                 <th>Timeline</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="buy-recommendations-tbody">
+                            <!-- Populated dynamically by JavaScript -->
                             <tr>
                                 <td>1</td>
                                 <td><strong>TCS</strong></td>
@@ -508,7 +487,8 @@
                                 <th>Reason</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="avoid-recommendations-tbody">
+                            <!-- Populated dynamically by JavaScript -->
                             <tr>
                                 <td>1</td>
                                 <td><strong>VODAFONE</strong></td>
@@ -583,14 +563,14 @@
         <section id="screener" class="market-section">
             <div class="section-header">
                 <h2 class="section-title"><i class="fas fa-filter"></i> 📉 Top Fallen Stocks from 52-Week Highs</h2>
-                <span style="font-size: 0.75rem; color: #6c757d;">Verified against Google Finance (April 10, 2026)</span>
+                <span id="screener-date" style="font-size: 0.75rem; color: #6c757d;">Data from Yahoo Finance</span>
             </div>
             
             <div class="screener-tabs">
-                <button class="screener-tab active" data-period="feb26">Since 28 Feb 2026</button>
-                <button class="screener-tab" data-period="jan26">Since Jan 2026</button>
-                <button class="screener-tab" data-period="may25">Since May 2025</button>
-                <button class="screener-tab" data-period="jan25">Since Jan 2025</button>
+                <button class="screener-tab active" data-period="feb26">Most Fallen</button>
+                <button class="screener-tab" data-period="jan26">High Potential</button>
+                <button class="screener-tab" data-period="may25">Recovery Picks</button>
+                <button class="screener-tab" data-period="jan25">Value Stocks</button>
             </div>
             
             <div class="screener-content" id="screener-feb26">

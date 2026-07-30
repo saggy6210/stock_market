@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-30T16:26:10.492465",
+  "timestamp": "2026-07-30T16:39:02.152028",
   "indices": {
     "nifty50": {
       "value": 24317.15,
@@ -32,15 +32,15 @@
       "direction": "positive"
     },
     "dow": {
-      "value": 52007.06,
-      "change": 412.92,
-      "change_pct": 0.8,
+      "value": 52026.62,
+      "change": 432.48,
+      "change_pct": 0.84,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25059.82,
-      "change": 616.88,
-      "change_pct": 2.52,
+      "value": 25041.85,
+      "change": 598.91,
+      "change_pct": 2.45,
       "direction": "positive"
     },
     "usdinr": {
@@ -52,33 +52,33 @@
   },
   "commodities": {
     "gold": {
-      "value": 4173.6,
-      "change": 138.9,
-      "change_pct": 3.44,
+      "value": 4175.2,
+      "change": 140.5,
+      "change_pct": 3.48,
       "direction": "positive"
     },
     "silver": {
-      "value": 59.09,
+      "value": 59.1,
       "change": 1.23,
-      "change_pct": 2.12,
+      "change_pct": 2.13,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.47,
+      "value": 6.48,
       "change": 0.2,
-      "change_pct": 3.2,
+      "change_pct": 3.22,
       "direction": "positive"
     },
     "crude": {
-      "value": 84.06,
-      "change": -0.4,
-      "change_pct": -0.47,
+      "value": 83.62,
+      "change": -0.84,
+      "change_pct": -0.99,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.77,
-      "change": 0.04,
-      "change_pct": 1.58,
+      "value": 2.75,
+      "change": 0.02,
+      "change_pct": 0.77,
       "direction": "positive"
     }
   },
@@ -812,6 +812,256 @@
       }
     ]
   },
+  "recommendations": {
+    "buy": [
+      {
+        "symbol": "TCS",
+        "sector": "IT",
+        "current_price": 2431.8,
+        "high_52w": 3287.16,
+        "low_52w": 1966.02,
+        "fall_pct": -26.02,
+        "rsi": 85.6,
+        "target_price": 3039.75,
+        "upside_pct": 25,
+        "signal": "Strong Buy",
+        "reason": "Stable deal wins, AI investments",
+        "timeframe": "3-6 months"
+      },
+      {
+        "symbol": "INFY",
+        "sector": "IT",
+        "current_price": 1155.1,
+        "high_52w": 1691.4,
+        "low_52w": 982.4,
+        "fall_pct": -31.71,
+        "rsi": 67.3,
+        "target_price": 1443.87,
+        "upside_pct": 25,
+        "signal": "Strong Buy",
+        "reason": "Large deal momentum",
+        "timeframe": "3-6 months"
+      },
+      {
+        "symbol": "WIPRO",
+        "sector": "IT",
+        "current_price": 186.33,
+        "high_52w": 263.22,
+        "low_52w": 167.09,
+        "fall_pct": -29.21,
+        "rsi": 73.3,
+        "target_price": 232.91,
+        "upside_pct": 25,
+        "signal": "Strong Buy",
+        "reason": "Margin recovery focus",
+        "timeframe": "3-6 months"
+      },
+      {
+        "symbol": "SUZLON",
+        "sector": "Renewable",
+        "current_price": 47.4,
+        "high_52w": 66.81,
+        "low_52w": 38.19,
+        "fall_pct": -29.05,
+        "rsi": 19.4,
+        "target_price": 59.25,
+        "upside_pct": 25,
+        "signal": "Strong Buy",
+        "reason": "Wind energy revival",
+        "timeframe": "3-6 months"
+      },
+      {
+        "symbol": "SBIN",
+        "sector": "Banking",
+        "current_price": 1025.3,
+        "high_52w": 1212.84,
+        "low_52w": 772.62,
+        "fall_pct": -15.46,
+        "rsi": 46.2,
+        "target_price": 1209.85,
+        "upside_pct": 18,
+        "signal": "Buy",
+        "reason": "PSU bank recovery play",
+        "timeframe": "3-6 months"
+      },
+      {
+        "symbol": "HCLTECH",
+        "sector": "IT",
+        "current_price": 1352.7,
+        "high_52w": 1729.01,
+        "low_52w": 1019.59,
+        "fall_pct": -21.76,
+        "rsi": 82.0,
+        "target_price": 1596.19,
+        "upside_pct": 18,
+        "signal": "Buy",
+        "reason": "Products and services mix",
+        "timeframe": "3-6 months"
+      },
+      {
+        "symbol": "ONGC",
+        "sector": "Oil & Gas",
+        "current_price": 241.59,
+        "high_52w": 307.5,
+        "low_52w": 219.43,
+        "fall_pct": -21.43,
+        "rsi": 44.3,
+        "target_price": 285.08,
+        "upside_pct": 18,
+        "signal": "Buy",
+        "reason": "Crude price exposure",
+        "timeframe": "3-6 months"
+      },
+      {
+        "symbol": "NTPC",
+        "sector": "Power",
+        "current_price": 344.85,
+        "high_52w": 414.4,
+        "low_52w": 313.19,
+        "fall_pct": -16.78,
+        "rsi": 50.4,
+        "target_price": 406.92,
+        "upside_pct": 18,
+        "signal": "Buy",
+        "reason": "Capacity addition",
+        "timeframe": "3-6 months"
+      },
+      {
+        "symbol": "TATAPOWER",
+        "sector": "Power",
+        "current_price": 375.95,
+        "high_52w": 462.04,
+        "low_52w": 340.39,
+        "fall_pct": -18.63,
+        "rsi": 43.9,
+        "target_price": 443.62,
+        "upside_pct": 18,
+        "signal": "Buy",
+        "reason": "Clean energy transition",
+        "timeframe": "3-6 months"
+      },
+      {
+        "symbol": "MARUTI",
+        "sector": "Auto",
+        "current_price": 14188.0,
+        "high_52w": 17370.0,
+        "low_52w": 12201.0,
+        "fall_pct": -18.32,
+        "rsi": 58.2,
+        "target_price": 16741.84,
+        "upside_pct": 18,
+        "signal": "Buy",
+        "reason": "SUV portfolio expansion",
+        "timeframe": "3-6 months"
+      }
+    ],
+    "avoid": [
+      {
+        "symbol": "ICICIBANK",
+        "sector": "Banking",
+        "current_price": 1433.9,
+        "high_52w": 1483.06,
+        "low_52w": 1187.6,
+        "fall_pct": -3.31,
+        "rsi": 62.2,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "Digital banking growth"
+      },
+      {
+        "symbol": "TECHM",
+        "sector": "IT",
+        "current_price": 1669.0,
+        "high_52w": 1807.04,
+        "low_52w": 1271.07,
+        "fall_pct": -7.64,
+        "rsi": 86.2,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "5G and enterprise growth"
+      },
+      {
+        "symbol": "TITAN",
+        "sector": "Retail",
+        "current_price": 4850.0,
+        "high_52w": 4869.9,
+        "low_52w": 3292.3,
+        "fall_pct": -0.41,
+        "rsi": 84.0,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "Jewellery market leader"
+      },
+      {
+        "symbol": "BAJFINANCE",
+        "sector": "Finance",
+        "current_price": 1053.5,
+        "high_52w": 1095.76,
+        "low_52w": 783.09,
+        "fall_pct": -3.86,
+        "rsi": 59.2,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "Consumer lending growth"
+      },
+      {
+        "symbol": "BHARTIARTL",
+        "sector": "Telecom",
+        "current_price": 1956.8,
+        "high_52w": 2147.47,
+        "low_52w": 1718.87,
+        "fall_pct": -8.88,
+        "rsi": 63.8,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "ARPU improvement, 5G"
+      },
+      {
+        "symbol": "SUNPHARMA",
+        "sector": "Pharma",
+        "current_price": 2001.1,
+        "high_52w": 2017.3,
+        "low_52w": 1533.99,
+        "fall_pct": -0.8,
+        "rsi": 66.8,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "Specialty pharma focus"
+      },
+      {
+        "symbol": "HDFCBANK",
+        "sector": "Banking",
+        "current_price": 753.95,
+        "high_52w": 1003.9,
+        "low_52w": 714.83,
+        "fall_pct": -24.9,
+        "rsi": 25.1,
+        "risk_level": "Medium",
+        "downside_pct": 7.5,
+        "signal": "Avoid",
+        "reason": "Strong fundamentals, market leader"
+      },
+      {
+        "symbol": "RELIANCE",
+        "sector": "Energy",
+        "current_price": 1292.9,
+        "high_52w": 1604.38,
+        "low_52w": 1249.8,
+        "fall_pct": -19.41,
+        "rsi": 45.0,
+        "risk_level": "Medium",
+        "downside_pct": 5.8,
+        "signal": "Avoid",
+        "reason": "Jio and retail growth"
+      }
+    ]
+  },
   "fii_dii": {
     "last_sessions": [
       {
@@ -842,55 +1092,78 @@
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
+    "summary": "\ud83c\udf0f US markets positive: Dow +0.8%, NASDAQ +2.5%",
     "vix": {
       "value": 12.15,
       "change_pct": 1.21
     },
+    "crude": {
+      "value": 83.62,
+      "change_pct": -0.99
+    },
     "reasons": [
-      "\u26fd Crude oil down 0.5% - positive for India"
+      "\ud83c\udf0f US markets positive: Dow +0.8%, NASDAQ +2.5%"
     ],
     "factors": [
       {
-        "icon": "\ud83d\udcc9",
+        "icon": "\ud83d\udcc8",
         "label": "VIX 12.15",
-        "status": "negative"
+        "sublabel": "+1.2%",
+        "status": "neutral"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude -0.5%",
+        "label": "Crude $83.62",
+        "sublabel": "-1.0%",
+        "status": "positive"
+      },
+      {
+        "icon": "\ud83c\uddfa\ud83c\uddf8",
+        "label": "Dow +0.8%",
+        "sublabel": "US Markets",
+        "status": "positive"
+      },
+      {
+        "icon": "\ud83d\udcca",
+        "label": "NASDAQ +2.5%",
+        "sublabel": "Tech Sentiment",
         "status": "positive"
       }
-    ]
+    ],
+    "score": 5
   },
   "predictions": [
     {
       "symbol": "RELIANCE",
       "direction": "UP",
-      "reason": "Oil refining margins improve, Jio momentum"
+      "reason": "Lower crude costs benefit refining; Jio/retail growth"
     },
     {
       "symbol": "INFY",
       "direction": "UP",
-      "reason": "NASDAQ positive, large deal wins"
+      "reason": "NASDAQ +2.5%, positive for IT sentiment"
     },
     {
       "symbol": "HDFCBANK",
       "direction": "UP",
-      "reason": "Strong credit growth, NIM stability"
+      "reason": "Strong credit growth, stable NIM, market leader"
     },
     {
       "symbol": "TATASTEEL",
       "direction": "DOWN",
-      "reason": "Steel prices under pressure"
-    },
-    {
-      "symbol": "ONGC",
-      "direction": "UP",
-      "reason": "Crude stabilizing benefits O&G sector"
+      "reason": "Global steel prices under pressure, European ops concerns"
     }
   ],
   "news": {
     "top_stories": [
+      {
+        "headline": "Taking Stock: Nifty above 24,300, Sensex jumps 273 pts in volatile trade; auto stocks rally",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/taking-stock-nifty-above-24-300-sensex-jumps-273-pts-in-volatile-trade-auto-stocks-rally-13988808.html",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
       {
         "headline": "Sun Pharma among 7 stocks to hit 52-week highs & surge up to 20% in a month",
         "source": "Economic Times",
@@ -900,37 +1173,26 @@
         "category": "general"
       },
       {
-        "headline": "Two Trades for Today: A leading hospital chain for a 5.65% rise, a mid-cap pharma stock for an almost 7% upmove",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-leading-hospital-chain-for-a-5-65-rise-a-mid-cap-pharma-stock-for-an-almost-7-upmove/articleshow/132744009.cms",
+        "headline": "Nasdaq 100 gains 3% as buyers emerge after AI rout",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/nasdaq-100-gains-3-as-buyers-emerge-after-ai-rout-13989368.html",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Market wrap: M&M, Coal India, Adani Ports among top gainers and losers on Nifty and Sensex on Thursday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-mm-coal-india-adani-ports-among-top-gainers-and-losers-on-nifty-and-sensex-on-thursday/articleshow/132738781.cms",
-        "sentiment": "positive",
-        "stocks": [
-          "ADANI",
-          "COAL"
-        ],
-        "category": "general"
-      },
-      {
-        "headline": "Ahead of Market: 10 things that will decide stock market action on Friday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-friday/articleshow/132744947.cms",
-        "sentiment": "neutral",
+        "headline": "Poojaa Precision Engg's Rs 160 crore SME IPO receives bids worth Rs 30,000 crore on final day of subscription; GMP declines",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/ipo/poojaa-precision-engg-s-rs-160-crore-sme-ipo-receives-bids-worth-rs-30-000-crore-on-final-day-of-subscription-gmp-declines-13989114.html",
+        "sentiment": "negative",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Weekly Top Picks: These stocks scored 10 on 10 on Stock Reports Plus",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/weekly-top-picks-these-stocks-scored-10-on-10-on-stock-reports-plus/articleshow/132741605.cms",
-        "sentiment": "neutral",
+        "headline": "Swiggy 'recognises need to accelerate growth' of quick commerce arm Instamart",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/swiggy-recognises-need-to-accelerate-growth-of-quick-commerce-arm-instamart-13989135.html",
+        "sentiment": "positive",
         "stocks": [],
         "category": "general"
       }
@@ -942,6 +1204,24 @@
         "url": "https://economictimes.indiatimes.com/markets/stocks/news/balkrishnaindustriessharesjump8-afterq1netprofitrises50-yoytors432crore/articleshow/132734741.cms",
         "sentiment": "positive",
         "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Hyundai Motor India Q1 net profit falls 35% to Rs 889 crore as production disruption, weak exports weigh",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/earnings/hyundai-motor-india-q1-net-profit-drops-35-percent-to-rs-889-crore-revenue-marginally-lower-13988920.html",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Vedanta Aluminium Metal Q1 net profit rises 34% QoQ to Rs 5,629 crore; revenue climbs 12%",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/earnings/vedanta-aluminium-metal-q1-net-profit-rises-34-qoq-to-rs-5-629-crore-revenue-climbs-12-13988775.html",
+        "sentiment": "positive",
+        "stocks": [
+          "VEDANTA"
+        ],
         "category": "earnings"
       },
       {
@@ -964,6 +1244,38 @@
     "orders": [],
     "regulatory": [
       {
+        "headline": "SEBI agrees to settle NSE co-location, dark fibre cases for Rs 1,491 crore, issues demand letter",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-agrees-to-settle-nse-co-location-dark-fibre-cases-for-rs-1491-crore-issues-demand-letter-13989376.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "SEBI rolls out GARUDA mechanism to fast-track AIF launches; regular schemes can go live after 10 working days of filing PPM",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-rolls-out-garuda-mechanism-to-fast-track-aif-launches-regular-schemes-can-go-live-after-10-working-days-of-filing-ppm-13989238.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Technical View: Nifty 50 needs a decisive breakout above 24,400 for further upside; Bank Nifty remains listless below 57,300",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/technical-view-nifty-50-needs-a-decisive-breakout-above-24-400-for-further-upside-bank-nifty-remains-listless-below-57-300-13989010.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Closing Auction Session\u00a0kicks in from Monday: Arbitrage funds, brokers brace for shift as exchanges overhaul mechanism",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/closing-auction-session-kicks-in-from-monday-arbitrage-funds-brokers-brace-for-shift-as-exchanges-overhaul-mechanism-13988952.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
         "headline": "Bank of England policymakers keep rates on hold but more back hike",
         "source": "Economic Times",
         "url": "https://economictimes.indiatimes.com/markets/stocks/news/bank-of-england-policymakers-keep-rates-on-hold-but-more-back-hike/articleshow/132740548.cms",
@@ -973,6 +1285,14 @@
       }
     ],
     "insider": [
+      {
+        "headline": "Bulk deals: Fairfax India sells Rs 374-crore stake in IIFL Finance; Abakkus buys\u00a0nearly 3% Bai-Kakaji shares",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/bulk-deals-fairfax-india-sells-rs-374-crore-stake-in-iifl-finance-abakkus-buys-nearly-3-bai-kakaji-shares-13989320.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "insider"
+      },
       {
         "headline": "Vedanta announces demerger of real estate business into new listed company",
         "source": "Economic Times",
