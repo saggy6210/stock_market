@@ -553,8 +553,15 @@ function updateNewsSection(containerId, newsItems) {
 
 /**
  * Load screener data (top fallen stocks)
+ * Priority: 1) API, 2) DASHBOARD_DATA.screener, 3) hardcoded SCREENER_DATA
  */
 async function loadScreenerData() {
+    // If DASHBOARD_DATA.screener already loaded, skip (already handled in loadFallbackData)
+    if (typeof DASHBOARD_DATA !== 'undefined' && DASHBOARD_DATA.screener) {
+        console.log('📊 Screener data already loaded from DASHBOARD_DATA');
+        return;
+    }
+    
     const periods = [
         { key: 'feb26', apiPeriod: '1m', label: '28 Feb 2026' },
         { key: 'jan26', apiPeriod: '3m', label: 'Jan 2026' },
@@ -576,8 +583,10 @@ async function loadScreenerData() {
             console.log(`⚠️ Failed to load screener data for ${period.key}`);
         }
         
-        // Use fallback data
-        populateScreenerTable(period.key, SCREENER_DATA[period.key], period.label);
+        // Use hardcoded fallback data only if DASHBOARD_DATA unavailable
+        if (SCREENER_DATA[period.key]) {
+            populateScreenerTable(period.key, SCREENER_DATA[period.key], period.label);
+        }
     }
 }
 

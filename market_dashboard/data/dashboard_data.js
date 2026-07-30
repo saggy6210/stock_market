@@ -1,6 +1,6 @@
-// Auto-generated on 2026-07-30T16:59:39.028607
+// Auto-generated on 2026-07-30T17:07:10.123506
 const DASHBOARD_DATA = {
-  "timestamp": "2026-07-30T16:59:10.466508",
+  "timestamp": "2026-07-30T17:06:04.333697",
   "indices": {
     "nifty50": {
       "value": 24317.15,
@@ -33,15 +33,15 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "dow": {
-      "value": 52086.51,
-      "change": 492.37,
-      "change_pct": 0.95,
+      "value": 52152.19,
+      "change": 558.05,
+      "change_pct": 1.08,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25035.48,
-      "change": 592.54,
-      "change_pct": 2.42,
+      "value": 25072.87,
+      "change": 629.93,
+      "change_pct": 2.58,
       "direction": "positive"
     },
     "usdinr": {
@@ -53,15 +53,15 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4167.9,
-      "change": 133.2,
-      "change_pct": 3.3,
+      "value": 4168.7,
+      "change": 134.0,
+      "change_pct": 3.32,
       "direction": "positive"
     },
     "silver": {
-      "value": 58.88,
-      "change": 1.01,
-      "change_pct": 1.75,
+      "value": 58.91,
+      "change": 1.05,
+      "change_pct": 1.81,
       "direction": "positive"
     },
     "copper": {
@@ -71,15 +71,15 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "crude": {
-      "value": 83.8,
-      "change": -0.66,
-      "change_pct": -0.78,
+      "value": 83.92,
+      "change": -0.54,
+      "change_pct": -0.64,
       "direction": "negative"
     },
     "naturalgas": {
       "value": 2.76,
-      "change": 0.03,
-      "change_pct": 1.1,
+      "change": 0.04,
+      "change_pct": 1.28,
       "direction": "positive"
     }
   },
@@ -1093,17 +1093,17 @@ const DASHBOARD_DATA = {
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\ud83c\udf0f US markets positive: Dow +0.9%, NASDAQ +2.4%",
+    "summary": "\ud83c\udf0f US markets positive: Dow +1.1%, NASDAQ +2.6%",
     "vix": {
       "value": 12.15,
       "change_pct": 1.21
     },
     "crude": {
-      "value": 83.8,
-      "change_pct": -0.78
+      "value": 83.92,
+      "change_pct": -0.64
     },
     "reasons": [
-      "\ud83c\udf0f US markets positive: Dow +0.9%, NASDAQ +2.4%"
+      "\ud83c\udf0f US markets positive: Dow +1.1%, NASDAQ +2.6%"
     ],
     "factors": [
       {
@@ -1114,19 +1114,19 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $83.80",
-        "sublabel": "-0.8%",
+        "label": "Crude $83.92",
+        "sublabel": "-0.6%",
         "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow +0.9%",
+        "label": "Dow +1.1%",
         "sublabel": "US Markets",
         "status": "positive"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ +2.4%",
+        "label": "NASDAQ +2.6%",
         "sublabel": "Tech Sentiment",
         "status": "positive"
       }
@@ -1142,7 +1142,7 @@ const DASHBOARD_DATA = {
     {
       "symbol": "INFY",
       "direction": "UP",
-      "reason": "NASDAQ +2.4%, positive for IT sentiment"
+      "reason": "NASDAQ +2.6%, positive for IT sentiment"
     },
     {
       "symbol": "HDFCBANK",
