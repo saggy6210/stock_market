@@ -749,99 +749,14 @@ function loadFallbackData() {
 }
 
 /**
- * Fallback screener data - Stocks fallen from 52-week highs
- * Verified against Google Finance (April 10, 2026)
- * Each stock includes buy_signal: 'Strong Buy', 'Buy', 'Hold', 'Avoid'
+ * Fallback screener data - Empty arrays
+ * Fresh data is generated daily by the pipeline from Yahoo Finance (DASHBOARD_DATA.screener)
  */
 const SCREENER_DATA = {
-    feb26: [
-        { symbol: 'RAILTEL', sector: 'IT Services', old_price: 478.95, current_price: 287.90, buy_signal: 'Strong Buy' },
-        { symbol: 'IRFC', sector: 'Finance', old_price: 148.95, current_price: 100.39, buy_signal: 'Strong Buy' },
-        { symbol: 'BSE', sector: 'Financial Services', old_price: 3330.00, current_price: 3279.80, buy_signal: 'Hold' },
-        { symbol: 'SUZLON', sector: 'Energy', old_price: 74.30, current_price: 45.59, buy_signal: 'Strong Buy' },
-        { symbol: 'VODAFONE', sector: 'Telecom', old_price: 18.80, current_price: 9.26, buy_signal: 'Avoid' },
-        { symbol: 'PAYTM', sector: 'Fintech', old_price: 1381.80, current_price: 1120.00, buy_signal: 'Buy' },
-        { symbol: 'NBCC', sector: 'Construction', old_price: 145.00, current_price: 89.15, buy_signal: 'Strong Buy' },
-        { symbol: 'NHPC', sector: 'Power', old_price: 112.00, current_price: 78.25, buy_signal: 'Buy' },
-        { symbol: 'COALINDIA', sector: 'Mining', old_price: 476.00, current_price: 435.30, buy_signal: 'Hold' },
-        { symbol: 'TCS', sector: 'IT Services', old_price: 3630.50, current_price: 2523.00, buy_signal: 'Strong Buy' },
-        { symbol: 'RECLTD', sector: 'Finance', old_price: 585.00, current_price: 455.20, buy_signal: 'Buy' },
-        { symbol: 'PFC', sector: 'Finance', old_price: 512.00, current_price: 415.60, buy_signal: 'Buy' },
-        { symbol: 'RVNL', sector: 'Infrastructure', old_price: 649.95, current_price: 354.80, buy_signal: 'Strong Buy' },
-        { symbol: 'SJVN', sector: 'Power', old_price: 152.00, current_price: 87.45, buy_signal: 'Strong Buy' },
-        { symbol: 'COCHINSHIP', sector: 'Defense', old_price: 2890.00, current_price: 1562.00, buy_signal: 'Buy' },
-        { symbol: 'IREDA', sector: 'Finance', old_price: 265.00, current_price: 165.80, buy_signal: 'Strong Buy' },
-        { symbol: 'HUDCO', sector: 'Finance', old_price: 310.00, current_price: 198.50, buy_signal: 'Buy' },
-        { symbol: 'NCC', sector: 'Construction', old_price: 345.00, current_price: 225.60, buy_signal: 'Buy' },
-        { symbol: 'HINDCOPPER', sector: 'Metal', old_price: 410.00, current_price: 287.30, buy_signal: 'Buy' },
-        { symbol: 'MAZAGON', sector: 'Defense', old_price: 4950.00, current_price: 2685.00, buy_signal: 'Strong Buy' }
-    ],
-    jan26: [
-        { symbol: 'INFY', sector: 'IT Services', old_price: 1728.00, current_price: 1291.40, buy_signal: 'Strong Buy' },
-        { symbol: 'WIPRO', sector: 'IT Services', old_price: 273.10, current_price: 204.60, buy_signal: 'Buy' },
-        { symbol: 'HCLTECH', sector: 'IT Services', old_price: 1780.10, current_price: 1451.00, buy_signal: 'Buy' },
-        { symbol: 'TECHM', sector: 'IT Services', old_price: 1780.00, current_price: 1438.90, buy_signal: 'Buy' },
-        { symbol: 'RAILTEL', sector: 'IT Services', old_price: 478.95, current_price: 287.90, buy_signal: 'Strong Buy' },
-        { symbol: 'IRFC', sector: 'Finance', old_price: 148.95, current_price: 100.39, buy_signal: 'Strong Buy' },
-        { symbol: 'SUZLON', sector: 'Energy', old_price: 74.30, current_price: 45.59, buy_signal: 'Strong Buy' },
-        { symbol: 'VODAFONE', sector: 'Telecom', old_price: 18.80, current_price: 9.26, buy_signal: 'Avoid' },
-        { symbol: 'BSE', sector: 'Financial Services', old_price: 3330.00, current_price: 3279.80, buy_signal: 'Hold' },
-        { symbol: 'SUNPHARMA', sector: 'Pharma', old_price: 1850.00, current_price: 1655.00, buy_signal: 'Hold' },
-        { symbol: 'MPHASIS', sector: 'IT Services', old_price: 3120.00, current_price: 2365.00, buy_signal: 'Buy' },
-        { symbol: 'LTIM', sector: 'IT Services', old_price: 6200.00, current_price: 4890.00, buy_signal: 'Buy' },
-        { symbol: 'COFORGE', sector: 'IT Services', old_price: 10250.00, current_price: 7845.00, buy_signal: 'Buy' },
-        { symbol: 'PERSISTENT', sector: 'IT Services', old_price: 6450.00, current_price: 4685.00, buy_signal: 'Strong Buy' },
-        { symbol: 'ZOMATO', sector: 'Consumer', old_price: 295.00, current_price: 212.40, buy_signal: 'Buy' },
-        { symbol: 'POLICYBZR', sector: 'Fintech', old_price: 2150.00, current_price: 1565.00, buy_signal: 'Buy' },
-        { symbol: 'NYKAA', sector: 'Consumer', old_price: 225.00, current_price: 156.80, buy_signal: 'Hold' },
-        { symbol: 'DELHIVERY', sector: 'Logistics', old_price: 485.00, current_price: 325.60, buy_signal: 'Buy' },
-        { symbol: 'STARHEALTH', sector: 'Insurance', old_price: 720.00, current_price: 485.30, buy_signal: 'Buy' },
-        { symbol: 'SBICARD', sector: 'Finance', old_price: 825.00, current_price: 665.80, buy_signal: 'Buy' }
-    ],
-    may25: [
-        { symbol: 'TCS', sector: 'IT Services', old_price: 3630.50, current_price: 2523.00, buy_signal: 'Strong Buy' },
-        { symbol: 'INFY', sector: 'IT Services', old_price: 1728.00, current_price: 1291.40, buy_signal: 'Strong Buy' },
-        { symbol: 'WIPRO', sector: 'IT Services', old_price: 273.10, current_price: 204.60, buy_signal: 'Buy' },
-        { symbol: 'HCLTECH', sector: 'IT Services', old_price: 1780.10, current_price: 1451.00, buy_signal: 'Buy' },
-        { symbol: 'TECHM', sector: 'IT Services', old_price: 1780.00, current_price: 1438.90, buy_signal: 'Buy' },
-        { symbol: 'RAILTEL', sector: 'IT Services', old_price: 478.95, current_price: 287.90, buy_signal: 'Strong Buy' },
-        { symbol: 'IRFC', sector: 'Finance', old_price: 148.95, current_price: 100.39, buy_signal: 'Strong Buy' },
-        { symbol: 'SUZLON', sector: 'Energy', old_price: 74.30, current_price: 45.59, buy_signal: 'Strong Buy' },
-        { symbol: 'VODAFONE', sector: 'Telecom', old_price: 18.80, current_price: 9.26, buy_signal: 'Avoid' },
-        { symbol: 'COALINDIA', sector: 'Mining', old_price: 476.00, current_price: 435.30, buy_signal: 'Hold' },
-        { symbol: 'ADANIPOWER', sector: 'Power', old_price: 890.00, current_price: 545.60, buy_signal: 'Buy' },
-        { symbol: 'ADANIGREEN', sector: 'Energy', old_price: 2350.00, current_price: 1465.00, buy_signal: 'Buy' },
-        { symbol: 'ADANIPORTS', sector: 'Infrastructure', old_price: 1620.00, current_price: 1185.50, buy_signal: 'Buy' },
-        { symbol: 'TATAPOWER', sector: 'Power', old_price: 485.00, current_price: 399.50, buy_signal: 'Buy' },
-        { symbol: 'NTPC', sector: 'Power', old_price: 425.00, current_price: 368.90, buy_signal: 'Buy' },
-        { symbol: 'POWERGRID', sector: 'Power', old_price: 365.00, current_price: 298.45, buy_signal: 'Buy' },
-        { symbol: 'GAIL', sector: 'Oil & Gas', old_price: 248.00, current_price: 185.60, buy_signal: 'Strong Buy' },
-        { symbol: 'IOC', sector: 'Oil & Gas', old_price: 175.00, current_price: 128.45, buy_signal: 'Buy' },
-        { symbol: 'BPCL', sector: 'Oil & Gas', old_price: 385.00, current_price: 295.80, buy_signal: 'Buy' },
-        { symbol: 'ONGC', sector: 'Oil & Gas', old_price: 345.00, current_price: 286.70, buy_signal: 'Buy' }
-    ],
-    jan25: [
-        { symbol: 'RAILTEL', sector: 'IT Services', old_price: 478.95, current_price: 287.90, buy_signal: 'Strong Buy' },
-        { symbol: 'IRFC', sector: 'Finance', old_price: 148.95, current_price: 100.39, buy_signal: 'Strong Buy' },
-        { symbol: 'SUZLON', sector: 'Energy', old_price: 74.30, current_price: 45.59, buy_signal: 'Strong Buy' },
-        { symbol: 'VODAFONE', sector: 'Telecom', old_price: 18.80, current_price: 9.26, buy_signal: 'Avoid' },
-        { symbol: 'TCS', sector: 'IT Services', old_price: 3630.50, current_price: 2523.00, buy_signal: 'Strong Buy' },
-        { symbol: 'INFY', sector: 'IT Services', old_price: 1728.00, current_price: 1291.40, buy_signal: 'Strong Buy' },
-        { symbol: 'WIPRO', sector: 'IT Services', old_price: 273.10, current_price: 204.60, buy_signal: 'Buy' },
-        { symbol: 'HCLTECH', sector: 'IT Services', old_price: 1780.10, current_price: 1451.00, buy_signal: 'Buy' },
-        { symbol: 'COALINDIA', sector: 'Mining', old_price: 476.00, current_price: 435.30, buy_signal: 'Hold' },
-        { symbol: 'SUNPHARMA', sector: 'Pharma', old_price: 1850.00, current_price: 1655.00, buy_signal: 'Hold' },
-        { symbol: 'BHARTIARTL', sector: 'Telecom', old_price: 1890.00, current_price: 1645.80, buy_signal: 'Hold' },
-        { symbol: 'RELIANCE', sector: 'Conglomerate', old_price: 1615.00, current_price: 1350.00, buy_signal: 'Buy' },
-        { symbol: 'HDFCBANK', sector: 'Banking', old_price: 1785.00, current_price: 1625.50, buy_signal: 'Buy' },
-        { symbol: 'ICICIBANK', sector: 'Banking', old_price: 1450.00, current_price: 1323.40, buy_signal: 'Buy' },
-        { symbol: 'SBIN', sector: 'Banking', old_price: 1125.00, current_price: 1066.20, buy_signal: 'Buy' },
-        { symbol: 'AXISBANK', sector: 'Banking', old_price: 1285.00, current_price: 1095.60, buy_signal: 'Buy' },
-        { symbol: 'KOTAKBANK', sector: 'Banking', old_price: 1920.00, current_price: 1865.40, buy_signal: 'Hold' },
-        { symbol: 'BAJFINANCE', sector: 'Finance', old_price: 8450.00, current_price: 7620.00, buy_signal: 'Hold' },
-        { symbol: 'TATAMOTORS', sector: 'Auto', old_price: 1085.00, current_price: 695.80, buy_signal: 'Strong Buy' },
-        { symbol: 'MARUTI', sector: 'Auto', old_price: 13250.00, current_price: 11560.00, buy_signal: 'Buy' }
-    ]
+    feb26: [],
+    jan26: [],
+    may25: [],
+    jan25: []
 };
 
 /**

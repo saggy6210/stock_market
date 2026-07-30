@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-30T17:08:24.356715",
+  "timestamp": "2026-07-30T17:54:30.887346",
   "indices": {
     "nifty50": {
       "value": 24317.15,
@@ -32,15 +32,15 @@
       "direction": "positive"
     },
     "dow": {
-      "value": 52123.27,
-      "change": 529.13,
-      "change_pct": 1.03,
+      "value": 52146.15,
+      "change": 552.01,
+      "change_pct": 1.07,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25067.92,
-      "change": 624.98,
-      "change_pct": 2.56,
+      "value": 25077.74,
+      "change": 634.8,
+      "change_pct": 2.6,
       "direction": "positive"
     },
     "usdinr": {
@@ -52,33 +52,33 @@
   },
   "commodities": {
     "gold": {
-      "value": 4168.1,
-      "change": 133.4,
-      "change_pct": 3.31,
+      "value": 4164.9,
+      "change": 130.2,
+      "change_pct": 3.23,
       "direction": "positive"
     },
     "silver": {
-      "value": 58.91,
-      "change": 1.05,
-      "change_pct": 1.81,
+      "value": 59.06,
+      "change": 1.2,
+      "change_pct": 2.08,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.47,
+      "value": 6.48,
       "change": 0.2,
-      "change_pct": 3.21,
+      "change_pct": 3.24,
       "direction": "positive"
     },
     "crude": {
-      "value": 84.09,
-      "change": -0.37,
-      "change_pct": -0.44,
+      "value": 83.85,
+      "change": -0.61,
+      "change_pct": -0.72,
       "direction": "negative"
     },
     "naturalgas": {
       "value": 2.76,
-      "change": 0.04,
-      "change_pct": 1.43,
+      "change": 0.03,
+      "change_pct": 1.21,
       "direction": "positive"
     }
   },
@@ -1092,17 +1092,17 @@
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +2.6%",
+    "summary": "\ud83c\udf0f US markets positive: Dow +1.1%, NASDAQ +2.6%",
     "vix": {
       "value": 12.15,
       "change_pct": 1.21
     },
     "crude": {
-      "value": 84.09,
-      "change_pct": -0.44
+      "value": 83.85,
+      "change_pct": -0.72
     },
     "reasons": [
-      "\ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +2.6%"
+      "\ud83c\udf0f US markets positive: Dow +1.1%, NASDAQ +2.6%"
     ],
     "factors": [
       {
@@ -1113,13 +1113,13 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $84.09",
-        "sublabel": "-0.4%",
+        "label": "Crude $83.85",
+        "sublabel": "-0.7%",
         "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow +1.0%",
+        "label": "Dow +1.1%",
         "sublabel": "US Markets",
         "status": "positive"
       },
@@ -1198,6 +1198,14 @@
       }
     ],
     "earnings": [
+      {
+        "headline": "IPO-bound NSE\u2019s profit rises as trading activity jumps",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/earnings/ipo-bound-nse-s-profit-rises-as-trading-activity-jumps-13989420.html",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
       {
         "headline": "Balkrishna Industries shares jump 8% after Q1 net profit rises 50% YoY to Rs 432 crore",
         "source": "Economic Times",
