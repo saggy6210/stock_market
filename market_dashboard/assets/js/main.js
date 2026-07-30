@@ -283,6 +283,96 @@ function updatePredictions(predictions) {
 }
 
 /**
+ * Update FII/DII data section
+ */
+function updateFiiDiiData(fiiDii) {
+    // Update last 3 sessions table
+    const tbody = document.getElementById('fii-dii-tbody');
+    if (tbody && fiiDii.last_sessions) {
+        let html = '';
+        fiiDii.last_sessions.forEach((session, index) => {
+            const fiiColor = session.fii_net >= 0 ? '#00d09c' : '#eb5757';
+            const diiColor = session.dii_net >= 0 ? '#00d09c' : '#eb5757';
+            const total = session.fii_net + session.dii_net;
+            const totalColor = total >= 0 ? '#00d09c' : '#eb5757';
+            const fiiSign = session.fii_net >= 0 ? '+' : '';
+            const diiSign = session.dii_net >= 0 ? '+' : '';
+            const totalSign = total >= 0 ? '+' : '';
+            const isFirst = index === 0;
+            
+            html += `
+                <tr>
+                    <td>${isFirst ? '<strong>' : ''}${session.date}${isFirst ? '</strong>' : ''}</td>
+                    <td style="color: ${fiiColor}; font-weight: ${isFirst ? '700' : '600'};">${fiiSign}${session.fii_net.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                    <td style="color: ${diiColor}; font-weight: ${isFirst ? '700' : '600'};">${diiSign}${session.dii_net.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                    <td style="color: ${totalColor}; font-weight: ${isFirst ? '700' : '600'};">${totalSign}${total.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                </tr>
+            `;
+        });
+        tbody.innerHTML = html;
+    }
+    
+    // Update latest session cards
+    if (fiiDii.last_sessions && fiiDii.last_sessions.length > 0) {
+        const latest = fiiDii.last_sessions[0];
+        const fiiNetEl = document.getElementById('fii-net');
+        const diiNetEl = document.getElementById('dii-net');
+        const fiiLabelEl = document.getElementById('fii-net-label');
+        const diiLabelEl = document.getElementById('dii-net-label');
+        
+        if (fiiNetEl) {
+            const sign = latest.fii_net >= 0 ? '+' : '';
+            fiiNetEl.textContent = `${sign}₹${Math.abs(latest.fii_net).toLocaleString('en-IN', {minimumFractionDigits: 2})} Cr`;
+            fiiNetEl.className = `fii-dii-value ${latest.fii_net >= 0 ? 'positive' : 'negative'}`;
+        }
+        if (diiNetEl) {
+            const sign = latest.dii_net >= 0 ? '+' : '';
+            diiNetEl.textContent = `${sign}₹${Math.abs(latest.dii_net).toLocaleString('en-IN', {minimumFractionDigits: 2})} Cr`;
+            diiNetEl.className = `fii-dii-value ${latest.dii_net >= 0 ? 'positive' : 'negative'}`;
+        }
+        if (fiiLabelEl) {
+            fiiLabelEl.textContent = `FII - Latest Session (${latest.date})`;
+        }
+        if (diiLabelEl) {
+            diiLabelEl.textContent = `DII - Latest Session (${latest.date})`;
+        }
+    }
+    
+    // Update weekly/monthly summary
+    if (fiiDii.weekly) {
+        const fiiWeeklyEl = document.getElementById('fii-weekly');
+        const diiWeeklyEl = document.getElementById('dii-weekly');
+        
+        if (fiiWeeklyEl) {
+            const sign = fiiDii.weekly.fii >= 0 ? '+' : '';
+            fiiWeeklyEl.textContent = `${sign}₹${Math.abs(fiiDii.weekly.fii).toLocaleString('en-IN')} Cr`;
+            fiiWeeklyEl.style.color = fiiDii.weekly.fii >= 0 ? '#00d09c' : '#eb5757';
+        }
+        if (diiWeeklyEl) {
+            const sign = fiiDii.weekly.dii >= 0 ? '+' : '';
+            diiWeeklyEl.textContent = `${sign}₹${Math.abs(fiiDii.weekly.dii).toLocaleString('en-IN')} Cr`;
+            diiWeeklyEl.style.color = fiiDii.weekly.dii >= 0 ? '#00d09c' : '#eb5757';
+        }
+    }
+    
+    if (fiiDii.monthly) {
+        const fiiMonthlyEl = document.getElementById('fii-monthly');
+        const diiMonthlyEl = document.getElementById('dii-monthly');
+        
+        if (fiiMonthlyEl) {
+            const sign = fiiDii.monthly.fii >= 0 ? '+' : '';
+            fiiMonthlyEl.textContent = `${sign}₹${Math.abs(fiiDii.monthly.fii).toLocaleString('en-IN')} Cr`;
+            fiiMonthlyEl.style.color = fiiDii.monthly.fii >= 0 ? '#00d09c' : '#eb5757';
+        }
+        if (diiMonthlyEl) {
+            const sign = fiiDii.monthly.dii >= 0 ? '+' : '';
+            diiMonthlyEl.textContent = `${sign}₹${Math.abs(fiiDii.monthly.dii).toLocaleString('en-IN')} Cr`;
+            diiMonthlyEl.style.color = fiiDii.monthly.dii >= 0 ? '#00d09c' : '#eb5757';
+        }
+    }
+}
+
+/**
  * Load screener data (top fallen stocks)
  */
 async function loadScreenerData() {
@@ -381,6 +471,11 @@ function loadFallbackData() {
                     populateScreenerTable(periodKey, stocks, periodKey);
                 }
             }
+        }
+        
+        // Update FII/DII data
+        if (DASHBOARD_DATA.fii_dii) {
+            updateFiiDiiData(DASHBOARD_DATA.fii_dii);
         }
         
         return;

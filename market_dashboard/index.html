@@ -345,24 +345,7 @@
                         </tr>
                     </thead>
                     <tbody id="fii-dii-tbody">
-                        <tr>
-                            <td><strong>10 Apr 2026</strong></td>
-                            <td style="color: #00d09c; font-weight: 700;">+672.09</td>
-                            <td style="color: #00d09c; font-weight: 700;">+410.05</td>
-                            <td style="color: #00d09c; font-weight: 700;">+1,082.14</td>
-                        </tr>
-                        <tr>
-                            <td>09 Apr 2026</td>
-                            <td style="color: #eb5757; font-weight: 600;">-1,711.19</td>
-                            <td style="color: #00d09c; font-weight: 600;">+955.90</td>
-                            <td style="color: #eb5757; font-weight: 600;">-755.29</td>
-                        </tr>
-                        <tr>
-                            <td>08 Apr 2026</td>
-                            <td style="color: #eb5757; font-weight: 600;">-2,811.97</td>
-                            <td style="color: #00d09c; font-weight: 600;">+4,168.17</td>
-                            <td style="color: #00d09c; font-weight: 600;">+1,356.20</td>
-                        </tr>
+                        <!-- Populated dynamically by JavaScript -->
                     </tbody>
                 </table>
             </div>
@@ -370,11 +353,11 @@
             <!-- Weekly & Monthly Summary Cards -->
             <div class="fii-dii-cards">
                 <div class="fii-dii-card fii">
-                    <div class="fii-dii-label">FII - Latest Session (10 Apr)</div>
+                    <div class="fii-dii-label" id="fii-net-label">FII - Latest Session</div>
                     <div class="fii-dii-value positive" id="fii-net">+₹672.09 Cr</div>
                 </div>
                 <div class="fii-dii-card dii">
-                    <div class="fii-dii-label">DII - Latest Session (10 Apr)</div>
+                    <div class="fii-dii-label" id="dii-net-label">DII - Latest Session</div>
                     <div class="fii-dii-value positive" id="dii-net">+₹410.05 Cr</div>
                 </div>
             </div>
@@ -384,19 +367,19 @@
                 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center;">
                     <div>
                         <div style="font-size: 0.75rem; color: #6c757d; text-transform: uppercase;">FII Weekly</div>
-                        <div style="font-size: 1.1rem; font-weight: 700; color: #eb5757;">-₹23,706 Cr</div>
+                        <div style="font-size: 1.1rem; font-weight: 700;" id="fii-weekly">-₹23,706 Cr</div>
                     </div>
                     <div>
                         <div style="font-size: 0.75rem; color: #6c757d; text-transform: uppercase;">DII Weekly</div>
-                        <div style="font-size: 1.1rem; font-weight: 700; color: #00d09c;">+₹28,408 Cr</div>
+                        <div style="font-size: 1.1rem; font-weight: 700;" id="dii-weekly">+₹28,408 Cr</div>
                     </div>
                     <div>
                         <div style="font-size: 0.75rem; color: #6c757d; text-transform: uppercase;">FII Monthly</div>
-                        <div style="font-size: 1.1rem; font-weight: 700; color: #eb5757;">-₹53,821 Cr</div>
+                        <div style="font-size: 1.1rem; font-weight: 700;" id="fii-monthly">-₹53,821 Cr</div>
                     </div>
                     <div>
                         <div style="font-size: 0.75rem; color: #6c757d; text-transform: uppercase;">DII Monthly</div>
-                        <div style="font-size: 1.1rem; font-weight: 700; color: #00d09c;">+₹61,012 Cr</div>
+                        <div style="font-size: 1.1rem; font-weight: 700;" id="dii-monthly">+₹61,012 Cr</div>
                     </div>
                 </div>
             </div>
