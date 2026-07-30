@@ -336,15 +336,7 @@ def push_dashboard_to_github() -> bool:
     try:
         logger.info("Pushing dashboard updates to GitHub...")
         
-        # Pull latest changes first to avoid conflicts
-        subprocess.run(
-            ["git", "pull", "--rebase"],
-            cwd=repo_dir,
-            check=True,
-            capture_output=True
-        )
-        
-        # Stage dashboard files
+        # Stage dashboard files first
         subprocess.run(
             ["git", "add", "market_dashboard/"],
             cwd=repo_dir,
@@ -365,6 +357,20 @@ def push_dashboard_to_github() -> bool:
         if result.returncode != 0 and "nothing to commit" in result.stdout:
             logger.info("No dashboard changes to commit")
             return True
+        
+        # Pull latest changes with rebase to handle any remote changes
+        pull_result = subprocess.run(
+            ["git", "pull", "--rebase"],
+            cwd=repo_dir,
+            capture_output=True,
+            text=True
+        )
+        
+        if pull_result.returncode != 0:
+            logger.warning(f"Git pull had issues: {pull_result.stderr}")
+            # If rebase fails due to conflicts, abort and try without rebase
+            subprocess.run(["git", "rebase", "--abort"], cwd=repo_dir, capture_output=True)
+            subprocess.run(["git", "pull"], cwd=repo_dir, capture_output=True)
         
         # Push to origin
         subprocess.run(
