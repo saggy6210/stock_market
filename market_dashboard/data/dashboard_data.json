@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-30T16:04:31.213305",
+  "timestamp": "2026-07-30T16:12:23.217611",
   "indices": {
     "nifty50": {
       "value": 24317.15,
@@ -32,15 +32,15 @@
       "direction": "positive"
     },
     "dow": {
-      "value": 51960.91,
-      "change": 366.77,
-      "change_pct": 0.71,
+      "value": 51979.91,
+      "change": 385.77,
+      "change_pct": 0.75,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25043.19,
-      "change": 600.25,
-      "change_pct": 2.46,
+      "value": 25066.01,
+      "change": 623.07,
+      "change_pct": 2.55,
       "direction": "positive"
     },
     "usdinr": {
@@ -52,33 +52,33 @@
   },
   "commodities": {
     "gold": {
-      "value": 4164.2,
-      "change": 129.5,
-      "change_pct": 3.21,
+      "value": 4171.5,
+      "change": 136.8,
+      "change_pct": 3.39,
       "direction": "positive"
     },
     "silver": {
-      "value": 58.79,
-      "change": 0.93,
-      "change_pct": 1.61,
+      "value": 58.96,
+      "change": 1.1,
+      "change_pct": 1.9,
       "direction": "positive"
     },
     "copper": {
       "value": 6.47,
-      "change": 0.19,
-      "change_pct": 3.1,
+      "change": 0.2,
+      "change_pct": 3.16,
       "direction": "positive"
     },
     "crude": {
-      "value": 84.03,
-      "change": -0.43,
-      "change_pct": -0.51,
+      "value": 84.02,
+      "change": -0.44,
+      "change_pct": -0.52,
       "direction": "negative"
     },
     "naturalgas": {
       "value": 2.77,
       "change": 0.05,
-      "change_pct": 1.72,
+      "change_pct": 1.65,
       "direction": "positive"
     }
   },
