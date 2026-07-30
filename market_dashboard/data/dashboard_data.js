@@ -1,6 +1,6 @@
-// Auto-generated on 2026-07-30T17:07:10.123506
+// Auto-generated on 2026-07-30T17:08:52.420201
 const DASHBOARD_DATA = {
-  "timestamp": "2026-07-30T17:06:04.333697",
+  "timestamp": "2026-07-30T17:08:24.356715",
   "indices": {
     "nifty50": {
       "value": 24317.15,
@@ -33,15 +33,15 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "dow": {
-      "value": 52152.19,
-      "change": 558.05,
-      "change_pct": 1.08,
+      "value": 52123.27,
+      "change": 529.13,
+      "change_pct": 1.03,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25072.87,
-      "change": 629.93,
-      "change_pct": 2.58,
+      "value": 25067.92,
+      "change": 624.98,
+      "change_pct": 2.56,
       "direction": "positive"
     },
     "usdinr": {
@@ -53,9 +53,9 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4168.7,
-      "change": 134.0,
-      "change_pct": 3.32,
+      "value": 4168.1,
+      "change": 133.4,
+      "change_pct": 3.31,
       "direction": "positive"
     },
     "silver": {
@@ -65,21 +65,21 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "copper": {
-      "value": 6.48,
+      "value": 6.47,
       "change": 0.2,
-      "change_pct": 3.22,
+      "change_pct": 3.21,
       "direction": "positive"
     },
     "crude": {
-      "value": 83.92,
-      "change": -0.54,
-      "change_pct": -0.64,
+      "value": 84.09,
+      "change": -0.37,
+      "change_pct": -0.44,
       "direction": "negative"
     },
     "naturalgas": {
       "value": 2.76,
       "change": 0.04,
-      "change_pct": 1.28,
+      "change_pct": 1.43,
       "direction": "positive"
     }
   },
@@ -1093,17 +1093,17 @@ const DASHBOARD_DATA = {
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\ud83c\udf0f US markets positive: Dow +1.1%, NASDAQ +2.6%",
+    "summary": "\ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +2.6%",
     "vix": {
       "value": 12.15,
       "change_pct": 1.21
     },
     "crude": {
-      "value": 83.92,
-      "change_pct": -0.64
+      "value": 84.09,
+      "change_pct": -0.44
     },
     "reasons": [
-      "\ud83c\udf0f US markets positive: Dow +1.1%, NASDAQ +2.6%"
+      "\ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +2.6%"
     ],
     "factors": [
       {
@@ -1114,13 +1114,13 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $83.92",
-        "sublabel": "-0.6%",
+        "label": "Crude $84.09",
+        "sublabel": "-0.4%",
         "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow +1.1%",
+        "label": "Dow +1.0%",
         "sublabel": "US Markets",
         "status": "positive"
       },
