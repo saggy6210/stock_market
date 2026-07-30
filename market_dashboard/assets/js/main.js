@@ -373,6 +373,110 @@ function updateFiiDiiData(fiiDii) {
 }
 
 /**
+ * Update all news sections with data from DASHBOARD_DATA
+ */
+function updateAllNewsSections(news) {
+    console.log('📰 Updating news sections...');
+    
+    // Update geopolitical/war news
+    if (news.geopolitical) {
+        updateGeopoliticalNews(news.geopolitical);
+    }
+    
+    // Update top stories
+    if (news.top_stories) {
+        updateNewsSection('top-stories', news.top_stories);
+    }
+    
+    // Update earnings news
+    if (news.earnings) {
+        updateNewsSection('earnings-news', news.earnings);
+    }
+    
+    // Update orders news
+    if (news.orders) {
+        updateNewsSection('orders-news', news.orders);
+    }
+    
+    // Update regulatory news
+    if (news.regulatory) {
+        updateNewsSection('regulatory-news', news.regulatory);
+    }
+    
+    // Update insider trading news
+    if (news.insider) {
+        updateNewsSection('insider-news', news.insider);
+    }
+}
+
+/**
+ * Update geopolitical news section with special formatting
+ */
+function updateGeopoliticalNews(newsItems) {
+    const container = document.getElementById('geopolitical-news');
+    if (!container || !newsItems || newsItems.length === 0) return;
+    
+    let html = '';
+    for (const item of newsItems) {
+        const borderColor = item.sentiment === 'positive' ? '#00d09c' : 
+                           item.sentiment === 'negative' ? '#eb5757' : '#f7931a';
+        const indicatorClass = item.sentiment || 'neutral';
+        const impactColor = item.sentiment === 'positive' ? '#00d09c' : 
+                           item.sentiment === 'negative' ? '#eb5757' : '#f7931a';
+        
+        html += `
+            <div class="news-item" style="border-left: 4px solid ${borderColor};">
+                <div class="news-indicator ${indicatorClass}"></div>
+                <div class="news-content">
+                    <a href="${item.url || '#'}" target="_blank" class="news-headline">${item.headline}</a>
+                    <div class="news-meta">
+                        <span class="news-source">${item.source}</span>
+                        ${item.sentiment ? `<span class="stock-tag">${item.sentiment.toUpperCase()}</span>` : ''}
+                        ${item.impact ? `<span style="color: ${impactColor}; font-size: 0.8rem;">${item.impact}</span>` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    container.innerHTML = html;
+}
+
+/**
+ * Update a standard news section
+ */
+function updateNewsSection(containerId, newsItems) {
+    const container = document.getElementById(containerId);
+    if (!container || !newsItems || newsItems.length === 0) {
+        if (container) {
+            container.innerHTML = '<p style="color: #6c757d; text-align: center; padding: 20px;">No news available</p>';
+        }
+        return;
+    }
+    
+    let html = '';
+    for (const item of newsItems) {
+        const indicatorClass = item.sentiment || 'neutral';
+        const stockTags = (item.stocks || []).map(s => `<span class="stock-tag">${s}</span>`).join('');
+        
+        html += `
+            <div class="news-item">
+                <div class="news-indicator ${indicatorClass}"></div>
+                <div class="news-content">
+                    <a href="${item.url || '#'}" target="_blank" class="news-headline">${item.headline}</a>
+                    <div class="news-meta">
+                        <span class="news-source">${item.source}</span>
+                        ${stockTags}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    container.innerHTML = html;
+}
+
+/**
  * Load screener data (top fallen stocks)
  */
 async function loadScreenerData() {
@@ -476,6 +580,11 @@ function loadFallbackData() {
         // Update FII/DII data
         if (DASHBOARD_DATA.fii_dii) {
             updateFiiDiiData(DASHBOARD_DATA.fii_dii);
+        }
+        
+        // Update all news sections
+        if (DASHBOARD_DATA.news) {
+            updateAllNewsSections(DASHBOARD_DATA.news);
         }
         
         return;
