@@ -1,6 +1,6 @@
-// Auto-generated on 2026-07-30T16:41:59.688978
+// Auto-generated on 2026-07-30T16:57:48.345199
 const DASHBOARD_DATA = {
-  "timestamp": "2026-07-30T16:41:34.630025",
+  "timestamp": "2026-07-30T16:56:24.468045",
   "indices": {
     "nifty50": {
       "value": 24317.15,
@@ -33,15 +33,15 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "dow": {
-      "value": 52017.46,
-      "change": 423.32,
-      "change_pct": 0.82,
+      "value": 52101.49,
+      "change": 507.35,
+      "change_pct": 0.98,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25005.27,
-      "change": 562.33,
-      "change_pct": 2.3,
+      "value": 25037.48,
+      "change": 594.54,
+      "change_pct": 2.43,
       "direction": "positive"
     },
     "usdinr": {
@@ -53,33 +53,33 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4174.3,
-      "change": 139.6,
-      "change_pct": 3.46,
+      "value": 4166.5,
+      "change": 131.8,
+      "change_pct": 3.27,
       "direction": "positive"
     },
     "silver": {
-      "value": 59.07,
-      "change": 1.21,
-      "change_pct": 2.09,
+      "value": 58.88,
+      "change": 1.01,
+      "change_pct": 1.75,
       "direction": "positive"
     },
     "copper": {
       "value": 6.48,
       "change": 0.2,
-      "change_pct": 3.24,
+      "change_pct": 3.25,
       "direction": "positive"
     },
     "crude": {
-      "value": 83.56,
-      "change": -0.9,
-      "change_pct": -1.07,
+      "value": 83.86,
+      "change": -0.6,
+      "change_pct": -0.71,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.75,
-      "change": 0.02,
-      "change_pct": 0.84,
+      "value": 2.76,
+      "change": 0.03,
+      "change_pct": 1.1,
       "direction": "positive"
     }
   },
@@ -1093,18 +1093,17 @@ const DASHBOARD_DATA = {
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\u26fd Crude oil down 1.1% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +0.8%, NASDAQ +2.3%",
+    "summary": "\ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +2.4%",
     "vix": {
       "value": 12.15,
       "change_pct": 1.21
     },
     "crude": {
-      "value": 83.56,
-      "change_pct": -1.07
+      "value": 83.86,
+      "change_pct": -0.71
     },
     "reasons": [
-      "\u26fd Crude oil down 1.1% - positive for India (import dependent)",
-      "\ud83c\udf0f US markets positive: Dow +0.8%, NASDAQ +2.3%"
+      "\ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +2.4%"
     ],
     "factors": [
       {
@@ -1115,24 +1114,24 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $83.56",
-        "sublabel": "-1.1%",
+        "label": "Crude $83.86",
+        "sublabel": "-0.7%",
         "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow +0.8%",
+        "label": "Dow +1.0%",
         "sublabel": "US Markets",
         "status": "positive"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ +2.3%",
+        "label": "NASDAQ +2.4%",
         "sublabel": "Tech Sentiment",
         "status": "positive"
       }
     ],
-    "score": 6
+    "score": 5
   },
   "predictions": [
     {
@@ -1143,7 +1142,7 @@ const DASHBOARD_DATA = {
     {
       "symbol": "INFY",
       "direction": "UP",
-      "reason": "NASDAQ +2.3%, positive for IT sentiment"
+      "reason": "NASDAQ +2.4%, positive for IT sentiment"
     },
     {
       "symbol": "HDFCBANK",
@@ -1159,6 +1158,14 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
+        "headline": "Taking Stock: Nifty above 24,300, Sensex jumps 273 pts in volatile trade; auto stocks rally",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/taking-stock-nifty-above-24-300-sensex-jumps-273-pts-in-volatile-trade-auto-stocks-rally-13988808.html",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
         "headline": "Sun Pharma among 7 stocks to hit 52-week highs & surge up to 20% in a month",
         "source": "Economic Times",
         "url": "https://economictimes.indiatimes.com/markets/stocks/news/sun-pharma-among-7-stocks-to-hit-52-week-highs-amp-surge-up-to-20-in-a-month/slideshow/132739738.cms",
@@ -1167,37 +1174,26 @@ const DASHBOARD_DATA = {
         "category": "general"
       },
       {
-        "headline": "Two Trades for Today: A leading hospital chain for a 5.65% rise, a mid-cap pharma stock for an almost 7% upmove",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-leading-hospital-chain-for-a-5-65-rise-a-mid-cap-pharma-stock-for-an-almost-7-upmove/articleshow/132744009.cms",
+        "headline": "Nasdaq 100 gains 3% as buyers emerge after AI rout",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/nasdaq-100-gains-3-as-buyers-emerge-after-ai-rout-13989368.html",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Market wrap: M&M, Coal India, Adani Ports among top gainers and losers on Nifty and Sensex on Thursday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-mm-coal-india-adani-ports-among-top-gainers-and-losers-on-nifty-and-sensex-on-thursday/articleshow/132738781.cms",
-        "sentiment": "positive",
-        "stocks": [
-          "ADANI",
-          "COAL"
-        ],
-        "category": "general"
-      },
-      {
-        "headline": "Ahead of Market: 10 things that will decide stock market action on Friday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-friday/articleshow/132744947.cms",
-        "sentiment": "neutral",
+        "headline": "Poojaa Precision Engg's Rs 160 crore SME IPO receives bids worth Rs 30,000 crore on final day of subscription; GMP declines",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/ipo/poojaa-precision-engg-s-rs-160-crore-sme-ipo-receives-bids-worth-rs-30-000-crore-on-final-day-of-subscription-gmp-declines-13989114.html",
+        "sentiment": "negative",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Weekly Top Picks: These stocks scored 10 on 10 on Stock Reports Plus",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/weekly-top-picks-these-stocks-scored-10-on-10-on-stock-reports-plus/articleshow/132741605.cms",
-        "sentiment": "neutral",
+        "headline": "Swiggy 'recognises need to accelerate growth' of quick commerce arm Instamart",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/swiggy-recognises-need-to-accelerate-growth-of-quick-commerce-arm-instamart-13989135.html",
+        "sentiment": "positive",
         "stocks": [],
         "category": "general"
       }
@@ -1209,6 +1205,24 @@ const DASHBOARD_DATA = {
         "url": "https://economictimes.indiatimes.com/markets/stocks/news/balkrishnaindustriessharesjump8-afterq1netprofitrises50-yoytors432crore/articleshow/132734741.cms",
         "sentiment": "positive",
         "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Hyundai Motor India Q1 net profit falls 35% to Rs 889 crore as production disruption, weak exports weigh",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/earnings/hyundai-motor-india-q1-net-profit-drops-35-percent-to-rs-889-crore-revenue-marginally-lower-13988920.html",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Vedanta Aluminium Metal Q1 net profit rises 34% QoQ to Rs 5,629 crore; revenue climbs 12%",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/earnings/vedanta-aluminium-metal-q1-net-profit-rises-34-qoq-to-rs-5-629-crore-revenue-climbs-12-13988775.html",
+        "sentiment": "positive",
+        "stocks": [
+          "VEDANTA"
+        ],
         "category": "earnings"
       },
       {
@@ -1231,6 +1245,38 @@ const DASHBOARD_DATA = {
     "orders": [],
     "regulatory": [
       {
+        "headline": "SEBI agrees to settle NSE co-location, dark fibre cases for Rs 1,491 crore, issues demand letter",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-agrees-to-settle-nse-co-location-dark-fibre-cases-for-rs-1491-crore-issues-demand-letter-13989376.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "SEBI rolls out GARUDA mechanism to fast-track AIF launches; regular schemes can go live after 10 working days of filing PPM",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-rolls-out-garuda-mechanism-to-fast-track-aif-launches-regular-schemes-can-go-live-after-10-working-days-of-filing-ppm-13989238.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Technical View: Nifty 50 needs a decisive breakout above 24,400 for further upside; Bank Nifty remains listless below 57,300",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/technical-view-nifty-50-needs-a-decisive-breakout-above-24-400-for-further-upside-bank-nifty-remains-listless-below-57-300-13989010.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Closing Auction Session\u00a0kicks in from Monday: Arbitrage funds, brokers brace for shift as exchanges overhaul mechanism",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/closing-auction-session-kicks-in-from-monday-arbitrage-funds-brokers-brace-for-shift-as-exchanges-overhaul-mechanism-13988952.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
         "headline": "Bank of England policymakers keep rates on hold but more back hike",
         "source": "Economic Times",
         "url": "https://economictimes.indiatimes.com/markets/stocks/news/bank-of-england-policymakers-keep-rates-on-hold-but-more-back-hike/articleshow/132740548.cms",
@@ -1240,6 +1286,14 @@ const DASHBOARD_DATA = {
       }
     ],
     "insider": [
+      {
+        "headline": "Bulk deals: Fairfax India sells Rs 374-crore stake in IIFL Finance; Abakkus buys\u00a0nearly 3% Bai-Kakaji shares",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/bulk-deals-fairfax-india-sells-rs-374-crore-stake-in-iifl-finance-abakkus-buys-nearly-3-bai-kakaji-shares-13989320.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "insider"
+      },
       {
         "headline": "Vedanta announces demerger of real estate business into new listed company",
         "source": "Economic Times",
