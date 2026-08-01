@@ -1,36 +1,36 @@
-// Auto-generated on 2026-07-31T23:33:16.276081
+// Auto-generated on 2026-08-01T23:29:27.456589
 const DASHBOARD_DATA = {
-  "timestamp": "2026-07-31T23:32:52.315956",
+  "timestamp": "2026-08-01T23:28:55.327593",
   "indices": {
     "nifty50": {
-      "value": 24317.15,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 24383.6,
+      "change": 66.45,
+      "change_pct": 0.27,
       "direction": "positive"
     },
     "sensex": {
-      "value": 77928.15,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 78094.64,
+      "change": 166.49,
+      "change_pct": 0.21,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57147.5,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 57264.85,
+      "change": 117.35,
+      "change_pct": 0.21,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 31194.55,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 30708.95,
+      "change": -485.6,
+      "change_pct": -1.56,
+      "direction": "negative"
     },
     "vix": {
-      "value": 12.16,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 11.76,
+      "change": -0.4,
+      "change_pct": -3.29,
+      "direction": "negative"
     },
     "dow": {
       "value": 52485.03,
@@ -45,42 +45,42 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "usdinr": {
-      "value": 95.38,
-      "change": -0.35,
-      "change_pct": -0.36,
+      "value": 95.39,
+      "change": -0.29,
+      "change_pct": -0.31,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4098.6,
-      "change": -1.5,
-      "change_pct": -0.04,
+      "value": 4049.1,
+      "change": -51.0,
+      "change_pct": -1.24,
       "direction": "negative"
     },
     "silver": {
-      "value": 57.78,
-      "change": -1.04,
-      "change_pct": -1.77,
+      "value": 57.59,
+      "change": -1.22,
+      "change_pct": -2.08,
       "direction": "negative"
     },
     "copper": {
-      "value": 6.51,
-      "change": 0.06,
-      "change_pct": 0.98,
-      "direction": "positive"
+      "value": 6.44,
+      "change": -0.01,
+      "change_pct": -0.13,
+      "direction": "negative"
     },
     "crude": {
-      "value": 86.8,
-      "change": 3.21,
-      "change_pct": 3.84,
+      "value": 84.67,
+      "change": 1.08,
+      "change_pct": 1.29,
       "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.79,
-      "change": 0.03,
-      "change_pct": 1.23,
-      "direction": "positive"
+      "value": 2.75,
+      "change": -0.01,
+      "change_pct": -0.4,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -1066,17 +1066,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "31 Jul 2026",
+        "date": "01 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "30 Jul 2026",
+        "date": "31 Jul 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "29 Jul 2026",
+        "date": "30 Jul 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1091,32 +1091,32 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
-    "summary": "\u26fd Crude oil up 3.8% - negative for India's trade balance. \ud83c\udf0f US markets positive: Dow +0.5%, NASDAQ +1.0%",
+    "sentiment": "BULLISH",
+    "badge_class": "bullish",
+    "summary": "\ud83d\udcc9 VIX down 3.3% indicating declining volatility/fear. \ud83c\udf0f US markets positive: Dow +0.5%, NASDAQ +1.0%",
     "vix": {
-      "value": 12.16,
-      "change_pct": 0.0
+      "value": 11.76,
+      "change_pct": -3.29
     },
     "crude": {
-      "value": 86.8,
-      "change_pct": 3.84
+      "value": 84.67,
+      "change_pct": 1.29
     },
     "reasons": [
-      "\u26fd Crude oil up 3.8% - negative for India's trade balance",
+      "\ud83d\udcc9 VIX down 3.3% indicating declining volatility/fear",
       "\ud83c\udf0f US markets positive: Dow +0.5%, NASDAQ +1.0%"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 12.16",
-        "sublabel": "+0.0%",
+        "label": "VIX 11.76",
+        "sublabel": "-3.3%",
         "status": "positive"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $86.80",
-        "sublabel": "+3.8%",
+        "label": "Crude $84.67",
+        "sublabel": "+1.3%",
         "status": "negative"
       },
       {
@@ -1132,13 +1132,13 @@ const DASHBOARD_DATA = {
         "status": "positive"
       }
     ],
-    "score": 2
+    "score": 4
   },
   "predictions": [
     {
       "symbol": "ONGC",
       "direction": "UP",
-      "reason": "Crude up 3.8%, benefits upstream O&G"
+      "reason": "Crude up 1.3%, benefits upstream O&G"
     },
     {
       "symbol": "RELIANCE",
@@ -1164,123 +1164,108 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
-        "headline": "Bajaj Finance among 9 stocks hitting 52-week highs; surge up to 25% in a month",
+        "headline": "Concurrent Gainers: 15 stocks rally for five straight sessions, surge up to 20%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-among-9-stocks-hitting-52-week-highs-surge-up-to-25-in-a-month/slideshow/132769084.cms",
-        "sentiment": "positive",
-        "stocks": [
-          "BAJAJ"
-        ],
-        "category": "general"
-      },
-      {
-        "headline": "Market wrap: Bajaj Finance, Bajaj Finserv, TCS among top gainers and losers on Nifty and Sensex on Friday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-bajaj-finance-bajaj-finserv-tcs-among-top-gainers-and-losers-on-nifty-and-sensex-on-friday/articleshow/132766933.cms",
-        "sentiment": "positive",
-        "stocks": [
-          "TCS",
-          "BAJAJ"
-        ],
-        "category": "general"
-      },
-      {
-        "headline": "Sedemac Mechatronics shares can rally to Rs 3,700? Here\u2019s why HSBC initiated coverage on the stock",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sedemac-mechatronics-shares-can-rally-to-rs-3700-heres-why-hsbc-initiated-coverage-on-the-stock/articleshow/132764683.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-15-stocks-rally-for-five-straight-sessions-surge-up-to-20/slideshow/132782299.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "10 microcap stocks surged up to 170% in 6 months; 5 turned multibaggers",
+        "headline": "Jio Financial Services sets record date for dividend. Check details",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/10-microcap-stocks-surged-up-to-170-in-6-months-5-turned-multibaggers/slideshow/132764066.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jio-financial-services-sets-record-date-for-dividend-check-details/articleshow/132783869.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Cube Highways Trust InvIT debuts with 2% premium over issue price of Rs 152",
+        "headline": "Maharashtra-based SME stock plunges 20% as MD gets shot, director taken in police custody",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/cube-highways-trust-invit-debuts-with-2-premium-over-issue-price-of-rs-152/articleshow/132762831.cms",
-        "sentiment": "positive",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/maharashtra-based-sme-stock-plunges-20-as-md-gets-shot-director-taken-in-police-custody/articleshow/132781857.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "For investors with some patience: 6 mid-cap stocks from different sectors with upside potential of up to 20%",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/for-investors-with-some-patience-6-mid-cap-stocks-from-different-sectors-with-upside-potential-of-up-to-20/articleshow/132794515.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "A simple guide to start investing in Indian share market",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/a-simple-guide-to-start-investing-in-the-indian-share-market/articleshow/132783471.cms",
+        "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       }
     ],
     "earnings": [
       {
-        "headline": "Swiggy contra view: Why JM Financial downgraded the stock to 'sell' despite strong Q1 results",
+        "headline": "Sunil Singhania's Abakkus portfolio: 5 stocks rally up to 105% in CY26; 2 new buys added in Q1",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/swiggy-contra-view-why-jm-financial-downgraded-the-stock-to-sell-despite-strong-q1-results/articleshow/132760664.cms",
-        "sentiment": "negative",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sunil-singhanias-abakkus-portfolio-5-stocks-rally-up-to-105-in-cy26-2-new-buys-added-in-q1/slideshow/132784682.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Strong earnings, FPI inflows keep Indian equities resilient despite global risks",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/indices-close-the-week-and-july-on-a-strong-note/articleshow/132779549.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
       }
     ],
-    "orders": [
-      {
-        "headline": "SC stays CIC order declaring NSE 'public authority' under RTI Act",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sc-stays-cic-order-declaring-nsei-public-authority-under-rti-act/articleshow/132768946.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "orders"
-      }
-    ],
+    "orders": [],
     "regulatory": [
       {
-        "headline": "Sebi imposes penalty of Rs 1.48 crore on Zee Entertainment",
+        "headline": "Sebi bans Zee's Subhash Chandra, Punit Goenka from markets for a year",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-imposes-penalty-of-rs-1-48-crore-on-zee-entertainment/articleshow/132772624.cms",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi extends deadline till Oct-end to complete digital accessibility audits, resolve platform issues",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-extends-deadline-till-oct-end-to-complete-digital-accessibility-audits-resolve-platform-issues/articleshow/132770963.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-bans-zees-subhash-chandra-punit-goenka-from-markets-for-a-year/articleshow/132780173.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Sebi clarifies off-market sale of unlisted shares to up to 200 buyers not a public issue",
+        "headline": "IDBI's unlisted share sales not a public issue: Sebi",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-clarifies-off-market-sale-of-unlisted-shares-to-up-to-200-buyers-not-a-public-issue/articleshow/132770952.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/idbis-unlisted-share-sales-not-a-public-issue-sebi/articleshow/132779761.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Sebi penalises SME firm Kalahridhaan Trendz, promoters for misleading disclosures",
+        "headline": "Sebi disposes of case against Religare Enterprises, Saluja, other persons",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-penalises-sme-firm-kalahridhaan-trendz-promoters-for-misleading-disclosures/articleshow/132770934.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      }
-    ],
-    "insider": [
-      {
-        "headline": "Zee shareholders approve Rs 3,143 crore promoter fund infusion, ESOP plan",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/zee-shareholders-approve-rs-3143-crore-promoter-fund-infusion-esop-plan/articleshow/132772857.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "insider"
-      },
-      {
-        "headline": "Why high-conviction investor Cathie Wood bought Nvidia after it erased billions from May high",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/why-high-conviction-investor-cathie-wood-bought-nvidia-after-it-erased-billions-from-may-high/articleshow/132761211.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-disposes-of-case-against-religare-enterprises-saluja-other-persons/articleshow/132779713.cms",
         "sentiment": "positive",
         "stocks": [],
-        "category": "insider"
+        "category": "regulatory"
+      },
+      {
+        "headline": "Deposit rates rise as banks fight for funds",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/deposit-rates-rise-as-banks-fight-for-funds/articleshow/132779638.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Bank credit to industry up 19%, personal loans stay strong",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bank-credit-to-industry-up-19-personal-loans-stay-strong/articleshow/132779540.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "regulatory"
       }
     ],
+    "insider": [],
     "geopolitical": [
       {
         "headline": "\ud83d\udd4a\ufe0f Global Markets Rally on Easing Geopolitical Tensions",
