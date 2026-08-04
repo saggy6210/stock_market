@@ -1,50 +1,50 @@
 {
-  "timestamp": "2026-08-03T23:35:38.758953",
+  "timestamp": "2026-08-04T23:33:01.032756",
   "indices": {
     "nifty50": {
-      "value": 24383.6,
+      "value": 24774.3,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 78094.64,
+      "value": 78639.03,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57264.85,
+      "value": 58247.95,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 30708.95,
+      "value": 31715.25,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 11.76,
+      "value": 11.93,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 53178.41,
-      "change": 693.38,
-      "change_pct": 1.32,
+      "value": 54085.88,
+      "change": 907.47,
+      "change_pct": 1.71,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25913.9,
-      "change": 540.05,
-      "change_pct": 2.13,
+      "value": 26584.99,
+      "change": 671.09,
+      "change_pct": 2.59,
       "direction": "positive"
     },
     "usdinr": {
-      "value": 95.4,
+      "value": 95.33,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
@@ -52,34 +52,34 @@
   },
   "commodities": {
     "gold": {
-      "value": 4107.8,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 4126.5,
+      "change": 92.8,
+      "change_pct": 2.3,
       "direction": "positive"
     },
     "silver": {
-      "value": 58.32,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 59.71,
+      "change": 2.04,
+      "change_pct": 3.53,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.55,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 6.63,
+      "change": 0.11,
+      "change_pct": 1.73,
       "direction": "positive"
     },
     "crude": {
-      "value": 79.94,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 75.12,
+      "change": -5.22,
+      "change_pct": -6.5,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.77,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 2.69,
+      "change": -0.09,
+      "change_pct": -3.34,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -132,7 +132,7 @@
       {
         "symbol": "PAYTM",
         "sector": "Technology",
-        "old_price": 1407.0,
+        "old_price": 1437.6,
         "current_price": NaN,
         "low_52w": 930.6,
         "fall_pct": NaN,
@@ -269,7 +269,7 @@
       {
         "symbol": "PAYTM",
         "sector": "Technology",
-        "old_price": 1407.0,
+        "old_price": 1437.6,
         "current_price": NaN,
         "low_52w": 930.6,
         "fall_pct": NaN,
@@ -604,7 +604,7 @@
       {
         "symbol": "NYKAA",
         "sector": "Consumer Cyclical",
-        "old_price": 338.0,
+        "old_price": 344.9,
         "current_price": NaN,
         "low_52w": 200.14,
         "fall_pct": NaN,
@@ -741,7 +741,7 @@
       {
         "symbol": "NYKAA",
         "sector": "Consumer Cyclical",
-        "old_price": 338.0,
+        "old_price": 344.9,
         "current_price": NaN,
         "low_52w": 200.14,
         "fall_pct": NaN,
@@ -822,24 +822,11 @@
         "high_52w": 1003.9,
         "low_52w": 714.83,
         "fall_pct": NaN,
-        "rsi": 27.0,
+        "rsi": 26.3,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
         "reason": "Strong fundamentals, market leader"
-      },
-      {
-        "symbol": "AXISBANK",
-        "sector": "Banking",
-        "current_price": NaN,
-        "high_52w": 1417.21,
-        "low_52w": 1041.7,
-        "fall_pct": NaN,
-        "rsi": 23.8,
-        "risk_level": "Medium",
-        "downside_pct": 15,
-        "signal": "Avoid",
-        "reason": "Corporate banking recovery"
       },
       {
         "symbol": "ADANIPORTS",
@@ -848,7 +835,7 @@
         "high_52w": 1891.1,
         "low_52w": 1285.08,
         "fall_pct": NaN,
-        "rsi": 25.7,
+        "rsi": 24.9,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -861,7 +848,7 @@
         "high_52w": 66.81,
         "low_52w": 38.19,
         "fall_pct": NaN,
-        "rsi": 27.3,
+        "rsi": 28.1,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -874,7 +861,7 @@
         "high_52w": 15.34,
         "low_52w": 6.12,
         "fall_pct": NaN,
-        "rsi": 27.7,
+        "rsi": 27.9,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -887,7 +874,7 @@
         "high_52w": 1467.63,
         "low_52w": 1177.67,
         "fall_pct": NaN,
-        "rsi": 61.0,
+        "rsi": 68.2,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -900,7 +887,7 @@
         "high_52w": 1212.84,
         "low_52w": 772.62,
         "fall_pct": NaN,
-        "rsi": 54.9,
+        "rsi": 56.0,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -913,28 +900,41 @@
         "high_52w": 452.42,
         "low_52w": 344.9,
         "fall_pct": NaN,
-        "rsi": 64.5,
+        "rsi": 70.0,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
         "reason": "Asset quality improvement"
+      },
+      {
+        "symbol": "AXISBANK",
+        "sector": "Banking",
+        "current_price": NaN,
+        "high_52w": 1417.21,
+        "low_52w": 1041.7,
+        "fall_pct": NaN,
+        "rsi": 40.2,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "Corporate banking recovery"
       }
     ]
   },
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "03 Aug 2026",
+        "date": "04 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "02 Aug 2026",
+        "date": "03 Aug 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "01 Aug 2026",
+        "date": "02 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -951,45 +951,46 @@
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\ud83c\udf0f US markets positive: Dow +1.3%, NASDAQ +2.1%",
+    "summary": "\u26fd Crude oil down 6.5% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +1.7%, NASDAQ +2.6%",
     "vix": {
-      "value": 11.76,
+      "value": 11.93,
       "change_pct": 0.0
     },
     "crude": {
-      "value": 79.94,
-      "change_pct": 0.0
+      "value": 75.12,
+      "change_pct": -6.5
     },
     "reasons": [
-      "\ud83c\udf0f US markets positive: Dow +1.3%, NASDAQ +2.1%"
+      "\u26fd Crude oil down 6.5% - positive for India (import dependent)",
+      "\ud83c\udf0f US markets positive: Dow +1.7%, NASDAQ +2.6%"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 11.76",
+        "label": "VIX 11.93",
         "sublabel": "+0.0%",
         "status": "positive"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $79.94",
-        "sublabel": "+0.0%",
-        "status": "negative"
+        "label": "Crude $75.12",
+        "sublabel": "-6.5%",
+        "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow +1.3%",
+        "label": "Dow +1.7%",
         "sublabel": "US Markets",
         "status": "positive"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ +2.1%",
+        "label": "NASDAQ +2.6%",
         "sublabel": "Tech Sentiment",
         "status": "positive"
       }
     ],
-    "score": 4
+    "score": 6
   },
   "predictions": [
     {
@@ -1000,7 +1001,7 @@
     {
       "symbol": "INFY",
       "direction": "UP",
-      "reason": "NASDAQ +2.1%, positive for IT sentiment"
+      "reason": "NASDAQ +2.6%, positive for IT sentiment"
     },
     {
       "symbol": "HDFCBANK",
@@ -1016,78 +1017,78 @@
   "news": {
     "top_stories": [
       {
-        "headline": "Divi's Laboratories among 7 stocks to hit 52-week highs and surge up to 25% in a month",
+        "headline": "Two Trades for Today: A leading technology firm for a 5% gain, a mid-cap capital goods stock for a rise of about 6%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/divis-laboratories-among-7-stocks-to-hit-52-week-highs-and-surge-up-to-25-in-a-month/slideshow/132832705.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-leading-technology-firm-for-a-5-gain-a-mid-cap-capital-goods-stock-for-a-rise-of-about-6/articleshow/132867164.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Two Trades for Today: A metals major for a 11% surge, a mid-cap auto ancillary stock for a gain of about 6%",
+        "headline": "TVS Motor Company among 7 stocks hitting 52-week highs; surge up to 20% in a month",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-metals-major-for-a-11-surge-a-mid-cap-auto-ancillary-stock-for-a-gain-of-about-6/articleshow/132833485.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/tvs-motor-company-among-7-stocks-hitting-52-week-highs-surge-up-to-20-in-a-month/slideshow/132860377.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "200 point-jump in 2 minutes: Why Nifty made a surprising surge before closing bell",
+        "headline": "Traders on edge! Why Nifty jumped 150 points in final minutes again",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/200-point-jump-in-2-minutes-why-nifty-made-a-surprising-surge-near-the-closing-bell/articleshow/132829268.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/traders-on-edge-why-nifty-jumped-150-points-in-final-minutes-again/articleshow/132862330.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Market wrap: TCS, IndiGo, Sun Pharma among top gainers and losers on Nifty and Sensex on Monday",
+        "headline": "Market wrap: RIL, Hindalco, Trent among top gainers and losers on Nifty and Sensex on Tuesday",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-tcs-indigo-sun-pharma-among-top-gainers-and-losers-on-nifty-and-sensex-on-monday/articleshow/132831712.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-ril-hindalco-trent-among-top-gainers-and-losers-on-nifty-and-sensex-on-tuesday/articleshow/132861901.cms",
         "sentiment": "positive",
         "stocks": [
-          "TCS"
+          "HINDALCO"
         ],
         "category": "general"
       },
       {
-        "headline": "Titagarh Rail, RITES, other railway stocks rise up to 4%. Here\u2019s why",
+        "headline": "Filatex India shares can rally to Rs 118? Why Equirus Prive initiated coverage on the stock",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/titagarh-rail-rites-other-railway-stocks-rise-up-to-4-heres-why/articleshow/132826761.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/filatex-india-shares-can-rally-to-rs-118-why-equirus-prive-initiated-coverage-on-the-stock/articleshow/132861716.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       }
     ],
-    "earnings": [],
+    "earnings": [
+      {
+        "headline": "India's hospitality companies' revenue to grow 7-9% in FY27, West Asia conflict poses downside risks: ICRA",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/indias-hospitality-companies-revenue-to-grow-7-9-in-fy27-west-asia-conflict-poses-downside-risks-icra/articleshow/132859668.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "earnings"
+      }
+    ],
     "orders": [],
     "regulatory": [
       {
-        "headline": "Muthoot Microfin case: Sebi exempts six family trusts from open offer obligation",
+        "headline": "These 7 banking stocks have an upside potential of up to 25% in 1 year, according to analysts",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/muthoot-microfin-case-sebi-exempts-six-family-trusts-from-open-offer-obligation/articleshow/132838278.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-7-banking-stocks-have-an-upside-potential-of-up-to-25-in-1-year-according-to-analysts/articleshow/132868184.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Sebi extends PaRRVA enrollment deadline to Sep 3 for investment advisers, research analysts",
+        "headline": "Sebi proposes depository receipts against REITs, InvITs units",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-extends-parrva-enrollment-deadline-to-sep-3-for-investment-advisers-research-analysts/articleshow/132834953.cms",
-        "sentiment": "neutral",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-proposes-depository-receipts-against-reits-invits-units/articleshow/132862848.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "regulatory"
       }
     ],
-    "insider": [
-      {
-        "headline": "LIC OFS opens on August 4 as govt looks to sell up to 6.5% stake. Check details",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/lic-ofs-opens-tomorrow-as-govt-looks-to-sell-up-to-6-5-stake-check-details/articleshow/132835659.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "insider"
-      }
-    ],
+    "insider": [],
     "geopolitical": [
       {
         "headline": "\ud83d\udd4a\ufe0f Global Markets Rally on Easing Geopolitical Tensions",
