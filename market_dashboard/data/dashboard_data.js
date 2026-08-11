@@ -1,86 +1,86 @@
-// Auto-generated on 2026-08-10T23:06:37.067728
+// Auto-generated on 2026-08-11T23:12:41.620927
 const DASHBOARD_DATA = {
-  "timestamp": "2026-08-10T23:06:21.011801",
+  "timestamp": "2026-08-11T23:12:10.893389",
   "indices": {
     "nifty50": {
-      "value": 24570.65,
+      "value": 24583.8,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 78499.17,
+      "value": 78542.44,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57746.45,
+      "value": 57686.95,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 31547.7,
+      "value": 31631.45,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 12.16,
+      "value": 12.25,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 53975.98,
-      "change": -60.95,
-      "change_pct": -0.11,
+      "value": 53791.85,
+      "change": -184.13,
+      "change_pct": -0.34,
       "direction": "negative"
     },
     "nasdaq": {
-      "value": 26605.36,
-      "change": -85.26,
-      "change_pct": -0.32,
+      "value": 26445.45,
+      "change": -159.91,
+      "change_pct": -0.6,
       "direction": "negative"
     },
     "usdinr": {
-      "value": 95.21,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 95.43,
+      "change": 0.03,
+      "change_pct": 0.03,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4458.5,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 4427.0,
+      "change": 65.2,
+      "change_pct": 1.49,
       "direction": "positive"
     },
     "silver": {
-      "value": 66.04,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 64.96,
+      "change": -0.15,
+      "change_pct": -0.22,
+      "direction": "negative"
     },
     "copper": {
       "value": 6.63,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "change": 0.04,
+      "change_pct": 0.6,
       "direction": "positive"
     },
     "crude": {
-      "value": 82.11,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 83.5,
+      "change": 1.37,
+      "change_pct": 1.67,
       "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.77,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 2.75,
+      "change": -0.04,
+      "change_pct": -1.57,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -133,7 +133,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "PAYTM",
         "sector": "Technology",
-        "old_price": 1459.5,
+        "old_price": 1598.5,
         "current_price": NaN,
         "low_52w": 930.6,
         "fall_pct": NaN,
@@ -270,7 +270,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "PAYTM",
         "sector": "Technology",
-        "old_price": 1459.5,
+        "old_price": 1598.5,
         "current_price": NaN,
         "low_52w": 930.6,
         "fall_pct": NaN,
@@ -823,7 +823,7 @@ const DASHBOARD_DATA = {
         "high_52w": 307.5,
         "low_52w": 219.45,
         "fall_pct": NaN,
-        "rsi": 29.7,
+        "rsi": 27.0,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -836,7 +836,7 @@ const DASHBOARD_DATA = {
         "high_52w": 324.95,
         "low_52w": 247.22,
         "fall_pct": NaN,
-        "rsi": 28.7,
+        "rsi": 22.1,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -849,7 +849,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1891.1,
         "low_52w": 1285.08,
         "fall_pct": NaN,
-        "rsi": 19.5,
+        "rsi": 20.7,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -862,24 +862,11 @@ const DASHBOARD_DATA = {
         "high_52w": 64.95,
         "low_52w": 38.19,
         "fall_pct": NaN,
-        "rsi": 20.6,
+        "rsi": 19.5,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
         "reason": "Wind energy revival"
-      },
-      {
-        "symbol": "IDEA",
-        "sector": "Telecom",
-        "current_price": NaN,
-        "high_52w": 15.34,
-        "low_52w": 6.12,
-        "fall_pct": NaN,
-        "rsi": 26.5,
-        "risk_level": "Medium",
-        "downside_pct": 15,
-        "signal": "Avoid",
-        "reason": "Debt restructuring risk"
       },
       {
         "symbol": "HDFCBANK",
@@ -888,7 +875,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1003.9,
         "low_52w": 714.83,
         "fall_pct": NaN,
-        "rsi": 30.3,
+        "rsi": 33.9,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -901,7 +888,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1467.63,
         "low_52w": 1177.67,
         "fall_pct": NaN,
-        "rsi": 40.7,
+        "rsi": 51.1,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -914,28 +901,41 @@ const DASHBOARD_DATA = {
         "high_52w": 1212.84,
         "low_52w": 784.36,
         "fall_pct": NaN,
-        "rsi": 69.4,
+        "rsi": 66.1,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
         "reason": "PSU bank recovery play"
+      },
+      {
+        "symbol": "KOTAKBANK",
+        "sector": "Banking",
+        "current_price": NaN,
+        "high_52w": 452.42,
+        "low_52w": 344.9,
+        "fall_pct": NaN,
+        "rsi": 68.9,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "Asset quality improvement"
       }
     ]
   },
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "10 Aug 2026",
+        "date": "11 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "09 Aug 2026",
+        "date": "10 Aug 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "08 Aug 2026",
+        "date": "09 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -954,12 +954,12 @@ const DASHBOARD_DATA = {
     "badge_class": "neutral",
     "summary": "\ud83d\udcca Markets trading sideways with mixed global cues",
     "vix": {
-      "value": 12.16,
+      "value": 12.25,
       "change_pct": 0.0
     },
     "crude": {
-      "value": 82.11,
-      "change_pct": 0.0
+      "value": 83.5,
+      "change_pct": 1.67
     },
     "reasons": [
       "\ud83d\udcca Markets trading sideways with mixed global cues"
@@ -967,41 +967,46 @@ const DASHBOARD_DATA = {
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 12.16",
+        "label": "VIX 12.25",
         "sublabel": "+0.0%",
         "status": "positive"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $82.11",
-        "sublabel": "+0.0%",
+        "label": "Crude $83.50",
+        "sublabel": "+1.7%",
         "status": "negative"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow -0.1%",
+        "label": "Dow -0.3%",
         "sublabel": "US Markets",
         "status": "negative"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ -0.3%",
+        "label": "NASDAQ -0.6%",
         "sublabel": "Tech Sentiment",
         "status": "negative"
       }
     ],
-    "score": 2
+    "score": 1
   },
   "predictions": [
     {
+      "symbol": "ONGC",
+      "direction": "UP",
+      "reason": "Crude up 1.7%, benefits upstream O&G"
+    },
+    {
       "symbol": "RELIANCE",
       "direction": "UP",
-      "reason": "Lower crude costs benefit refining; Jio/retail growth"
+      "reason": "Refining margins improve on higher crude"
     },
     {
       "symbol": "TCS",
-      "direction": "UP",
-      "reason": "Stable deal pipeline, currency tailwinds"
+      "direction": "DOWN",
+      "reason": "Tech sector weakness affects sentiment"
     },
     {
       "symbol": "HDFCBANK",
@@ -1017,45 +1022,45 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
-        "headline": "Paytm among 6 stocks hitting 52-week highs; surge up to 27% in a month",
+        "headline": "Titan Company among 4 stocks to hit 52-week highs and surge up to 25% in a month",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/paytm-among-6-stocks-hitting-52-week-highs-surge-up-to-27-in-a-month/slideshow/133106021.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "These large-caps have \u2018strong buy\u2019 & \u2018buy\u2019 recos and an upside potential of more than 23%",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-large-caps-have-strong-buy-buy-recos-and-an-upside-potential-of-more-than-23/articleshow/133124950.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Two Trades for Today: A realty major for an upmove of 7.05%, a mid-cap chemical stock for a gain of about 6%",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-realty-major-for-an-upmove-of-7-05-a-mid-cap-chemical-stock-for-a-gain-of-about-6/articleshow/133113516.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Market wrap: Titan Company, Bajaj Finance, SBI among top gainers and losers on Nifty and Sensex on Monday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-titan-company-bajaj-finance-sbi-among-top-gainers-and-losers-on-nifty-and-sensex-on-monday/articleshow/133101990.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/titan-company-among-4-stocks-to-hit-52-week-highs-and-surge-up-to-25-in-a-month/slideshow/133154265.cms",
         "sentiment": "positive",
         "stocks": [
-          "SBI",
-          "BAJAJ",
           "TITAN"
         ],
         "category": "general"
       },
       {
-        "headline": "Ahead of Market: 10 things that will decide stock market action on Tuesday",
+        "headline": "Two Trades for Today: A city gas distributor for a gain of 7.6%, a mid-cap fintech stock for a rise of about 6%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-tuesday/articleshow/133117226.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-city-gas-distributor-for-a-gain-of-7-6-a-mid-cap-fintech-stock-for-a-rise-of-about-6/articleshow/133158830.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Axis Direct highlights 3 stocks showing bullish momentum for August. Do you own any?",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/axis-direct-highlights-3-stocks-showing-bullish-momentum-for-august-do-you-own-any/slideshow/133149615.cms",
+        "sentiment": "positive",
+        "stocks": [
+          "AXIS"
+        ],
+        "category": "general"
+      },
+      {
+        "headline": "Intel\u2019s $15 billion stock sale. Why shares fell despite AI boom",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/intels-15-billion-stock-sale-why-shares-fell-despite-ai-boom/slideshow/133148896.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Ahead of Market: 10 things that will decide stock market action on Wednesday",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-wednesday/articleshow/133159099.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "general"
@@ -1063,34 +1068,34 @@ const DASHBOARD_DATA = {
     ],
     "earnings": [
       {
-        "headline": "Bharat Forge shares plunge 9% after firm posts Rs 90 crore Q1 net loss on exceptional items, revenue rises 19%",
+        "headline": "India govt says retail option trader losses fell 18% after regulatory curbs",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bharat-forge-shares-plunge-9-after-firm-posts-rs-90-crore-q1-net-loss-on-exceptional-items-revenue-rises-19/articleshow/133097144.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/india-says-retail-option-trader-losses-fell-18-after-regulatory-curbs/articleshow/133156271.cms",
         "sentiment": "negative",
         "stocks": [],
         "category": "earnings"
       },
       {
-        "headline": "Vijay Kedia-backed Atul Auto shares fall 9% despite nearly 4x YoY surge in Q1 profit",
+        "headline": "KPI Green Energy shares fall 6% after Q1 results. What's worrying investors?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/vijay-kedia-backed-atul-auto-shares-fall-9-despite-nearly-4x-yoy-surge-in-q1-profit/articleshow/133094415.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/kpi-green-energy-shares-fall-6-after-q1-results-whats-worrying-investors/articleshow/133148158.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Lumax Auto Technologies shares rally 19% after Q1 earnings",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/lumax-auto-technologies-shares-rally-19-after-q1-earnings/articleshow/133147709.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
       },
       {
-        "headline": "Akums Drugs shares rally 9% hit 52-week high after Q1 results; stock up 67% YTD",
+        "headline": "ideaForge Technology shares slide 5% after Q1 gross profit margin falls 49%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/akums-drugs-shares-rally-9-hit-52-week-high-after-q1-results-stock-up-67-ytd/articleshow/133094389.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "earnings"
-      },
-      {
-        "headline": "Astra Microwave shares tank 9% after profit, revenue take a hit in Q1FY27",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/astra-microwave-shares-tank-9-after-profit-revenue-take-a-hit-in-q1fy27/articleshow/133097251.cms",
-        "sentiment": "positive",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ideaforge-technology-shares-slide-5-after-q1-gross-profit-margin-falls-49/articleshow/133147754.cms",
+        "sentiment": "neutral",
         "stocks": [],
         "category": "earnings"
       }
@@ -1098,9 +1103,9 @@ const DASHBOARD_DATA = {
     "orders": [],
     "regulatory": [
       {
-        "headline": "Project Sudarsan: How Sebi is using AI to police finfluencers with 60% of investors trusting their advice",
+        "headline": "Sebi proposes to bring all bullion trades under vault management rules",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/project-sudarsan-how-sebi-is-using-ai-to-police-finfluencers-with-60-of-investors-trusting-their-advice/articleshow/133099411.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-proposes-to-bring-all-bullion-trades-under-vault-management-rules/articleshow/133158951.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
@@ -1108,10 +1113,10 @@ const DASHBOARD_DATA = {
     ],
     "insider": [
       {
-        "headline": "\u200bFIIs more than doubled their stake in these 11 multibagger stocks. Do you own any?",
+        "headline": "MFs pull back: Stakes cut in 12 smallcap stocks after two quarters of buying; stocks fall up to 40%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fiis-more-than-doubled-their-stakes-in-11-multibaggers-in-june-quarter-do-you-own-any/slideshow/133096409.cms",
-        "sentiment": "neutral",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mfs-pull-back-stakes-cut-in-12-smallcap-stocks-after-two-quarters-of-buying-stocks-fall-up-to-40/slideshow/133149530.cms",
+        "sentiment": "negative",
         "stocks": [],
         "category": "insider"
       }
