@@ -1,86 +1,86 @@
-// Auto-generated on 2026-08-11T23:12:41.620927
+// Auto-generated on 2026-08-12T23:11:24.219764
 const DASHBOARD_DATA = {
-  "timestamp": "2026-08-11T23:12:10.893389",
+  "timestamp": "2026-08-12T23:10:45.992777",
   "indices": {
     "nifty50": {
-      "value": 24583.8,
+      "value": 24471.7,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 78542.44,
+      "value": 78154.25,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57686.95,
+      "value": 57446.25,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 31631.45,
+      "value": 31823.15,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 12.25,
+      "value": 11.86,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 53791.85,
-      "change": -184.13,
-      "change_pct": -0.34,
+      "value": 53770.27,
+      "change": -21.58,
+      "change_pct": -0.04,
       "direction": "negative"
     },
     "nasdaq": {
-      "value": 26445.45,
-      "change": -159.91,
-      "change_pct": -0.6,
-      "direction": "negative"
+      "value": 26588.49,
+      "change": 143.04,
+      "change_pct": 0.54,
+      "direction": "positive"
     },
     "usdinr": {
-      "value": 95.43,
-      "change": 0.03,
-      "change_pct": 0.03,
+      "value": 95.38,
+      "change": 0.0,
+      "change_pct": 0.0,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4427.0,
-      "change": 65.2,
-      "change_pct": 1.49,
+      "value": 4461.5,
+      "change": 78.5,
+      "change_pct": 1.79,
       "direction": "positive"
     },
     "silver": {
-      "value": 64.96,
-      "change": -0.15,
-      "change_pct": -0.22,
-      "direction": "negative"
+      "value": 65.29,
+      "change": 0.52,
+      "change_pct": 0.8,
+      "direction": "positive"
     },
     "copper": {
-      "value": 6.63,
-      "change": 0.04,
-      "change_pct": 0.6,
-      "direction": "positive"
+      "value": 6.6,
+      "change": -0.01,
+      "change_pct": -0.12,
+      "direction": "negative"
     },
     "crude": {
-      "value": 83.5,
-      "change": 1.37,
-      "change_pct": 1.67,
-      "direction": "positive"
+      "value": 82.74,
+      "change": -0.46,
+      "change_pct": -0.55,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.75,
-      "change": -0.04,
-      "change_pct": -1.57,
-      "direction": "negative"
+      "value": 2.79,
+      "change": 0.03,
+      "change_pct": 0.94,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -133,7 +133,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "PAYTM",
         "sector": "Technology",
-        "old_price": 1598.5,
+        "old_price": 1639.9,
         "current_price": NaN,
         "low_52w": 930.6,
         "fall_pct": NaN,
@@ -151,9 +151,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NHPC",
         "sector": "Utilities",
-        "old_price": 87.64,
+        "old_price": 87.4,
         "current_price": NaN,
-        "low_52w": 71.62,
+        "low_52w": 71.42,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -241,7 +241,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 223.17,
+        "old_price": 223.1,
         "current_price": NaN,
         "low_52w": 130.0,
         "fall_pct": NaN,
@@ -270,7 +270,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "PAYTM",
         "sector": "Technology",
-        "old_price": 1598.5,
+        "old_price": 1639.9,
         "current_price": NaN,
         "low_52w": 930.6,
         "fall_pct": NaN,
@@ -288,9 +288,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NHPC",
         "sector": "Utilities",
-        "old_price": 87.64,
+        "old_price": 87.4,
         "current_price": NaN,
-        "low_52w": 71.62,
+        "low_52w": 71.42,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -378,7 +378,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 223.17,
+        "old_price": 223.1,
         "current_price": NaN,
         "low_52w": 130.0,
         "fall_pct": NaN,
@@ -515,7 +515,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 223.17,
+        "old_price": 223.1,
         "current_price": NaN,
         "low_52w": 130.0,
         "fall_pct": NaN,
@@ -607,7 +607,7 @@ const DASHBOARD_DATA = {
         "sector": "Consumer Cyclical",
         "old_price": 348.0,
         "current_price": NaN,
-        "low_52w": 200.14,
+        "low_52w": 202.64,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -652,7 +652,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 223.17,
+        "old_price": 223.1,
         "current_price": NaN,
         "low_52w": 130.0,
         "fall_pct": NaN,
@@ -744,7 +744,7 @@ const DASHBOARD_DATA = {
         "sector": "Consumer Cyclical",
         "old_price": 348.0,
         "current_price": NaN,
-        "low_52w": 200.14,
+        "low_52w": 202.64,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -780,7 +780,7 @@ const DASHBOARD_DATA = {
         "sector": "Utilities",
         "old_price": 254.2,
         "current_price": NaN,
-        "low_52w": 114.24,
+        "low_52w": 116.22,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -823,7 +823,7 @@ const DASHBOARD_DATA = {
         "high_52w": 307.5,
         "low_52w": 219.45,
         "fall_pct": NaN,
-        "rsi": 27.0,
+        "rsi": 25.3,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -836,7 +836,7 @@ const DASHBOARD_DATA = {
         "high_52w": 324.95,
         "low_52w": 247.22,
         "fall_pct": NaN,
-        "rsi": 22.1,
+        "rsi": 19.7,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -849,7 +849,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1891.1,
         "low_52w": 1285.08,
         "fall_pct": NaN,
-        "rsi": 20.7,
+        "rsi": 23.5,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -862,7 +862,7 @@ const DASHBOARD_DATA = {
         "high_52w": 64.95,
         "low_52w": 38.19,
         "fall_pct": NaN,
-        "rsi": 19.5,
+        "rsi": 20.9,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -875,7 +875,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1003.9,
         "low_52w": 714.83,
         "fall_pct": NaN,
-        "rsi": 33.9,
+        "rsi": 36.0,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -888,7 +888,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1467.63,
         "low_52w": 1177.67,
         "fall_pct": NaN,
-        "rsi": 51.1,
+        "rsi": 52.4,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -901,7 +901,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1212.84,
         "low_52w": 784.36,
         "fall_pct": NaN,
-        "rsi": 66.1,
+        "rsi": 69.7,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -914,7 +914,7 @@ const DASHBOARD_DATA = {
         "high_52w": 452.42,
         "low_52w": 344.9,
         "fall_pct": NaN,
-        "rsi": 68.9,
+        "rsi": 60.3,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -925,17 +925,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "11 Aug 2026",
+        "date": "12 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "10 Aug 2026",
+        "date": "11 Aug 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "09 Aug 2026",
+        "date": "10 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -950,63 +950,58 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
-    "summary": "\ud83d\udcca Markets trading sideways with mixed global cues",
+    "sentiment": "BULLISH",
+    "badge_class": "bullish",
+    "summary": "\ud83c\udf0f US markets positive: Dow -0.0%, NASDAQ +0.5%",
     "vix": {
-      "value": 12.25,
+      "value": 11.86,
       "change_pct": 0.0
     },
     "crude": {
-      "value": 83.5,
-      "change_pct": 1.67
+      "value": 82.74,
+      "change_pct": -0.55
     },
     "reasons": [
-      "\ud83d\udcca Markets trading sideways with mixed global cues"
+      "\ud83c\udf0f US markets positive: Dow -0.0%, NASDAQ +0.5%"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 12.25",
+        "label": "VIX 11.86",
         "sublabel": "+0.0%",
         "status": "positive"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $83.50",
-        "sublabel": "+1.7%",
-        "status": "negative"
+        "label": "Crude $82.74",
+        "sublabel": "-0.6%",
+        "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow -0.3%",
+        "label": "Dow -0.0%",
         "sublabel": "US Markets",
         "status": "negative"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ -0.6%",
+        "label": "NASDAQ +0.5%",
         "sublabel": "Tech Sentiment",
-        "status": "negative"
+        "status": "positive"
       }
     ],
-    "score": 1
+    "score": 4
   },
   "predictions": [
     {
-      "symbol": "ONGC",
-      "direction": "UP",
-      "reason": "Crude up 1.7%, benefits upstream O&G"
-    },
-    {
       "symbol": "RELIANCE",
       "direction": "UP",
-      "reason": "Refining margins improve on higher crude"
+      "reason": "Lower crude costs benefit refining; Jio/retail growth"
     },
     {
-      "symbol": "TCS",
-      "direction": "DOWN",
-      "reason": "Tech sector weakness affects sentiment"
+      "symbol": "INFY",
+      "direction": "UP",
+      "reason": "NASDAQ +0.5%, positive for IT sentiment"
     },
     {
       "symbol": "HDFCBANK",
@@ -1022,101 +1017,86 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
-        "headline": "Titan Company among 4 stocks to hit 52-week highs and surge up to 25% in a month",
+        "headline": "These mid-cap stocks with \u2018Strong Buy\u2019 & \u2018Buy\u2019 recos can rally over 25%, according to analysts",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/titan-company-among-4-stocks-to-hit-52-week-highs-and-surge-up-to-25-in-a-month/slideshow/133154265.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-mid-cap-stocks-with-strong-buy-buy-recos-can-rally-over-25-according-to-analysts/articleshow/133191222.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Two Trades for Today: A metals major for an upmove of 7.8%, a mid-cap chemical stock for a gain of about 7.5%",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-metals-major-for-an-upmove-of-7-8-a-mid-cap-chemical-stock-for-a-gain-of-about-7-5/articleshow/133192264.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Market wrap: Bharti Airtel , Hindalco, TCS, M&M top gainers and losers on Nifty and Sensex on Wednesday",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-bharti-airtel-hindalco-tcs-mm-top-gainers-and-losers-on-nifty-and-sensex-on-wednesday/articleshow/133182617.cms",
         "sentiment": "positive",
         "stocks": [
-          "TITAN"
+          "HINDALCO",
+          "BHARTI",
+          "TCS"
         ],
         "category": "general"
       },
       {
-        "headline": "Two Trades for Today: A city gas distributor for a gain of 7.6%, a mid-cap fintech stock for a rise of about 6%",
+        "headline": "Groww shares climb 2% after July client additions; market share rises to 28.88%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-city-gas-distributor-for-a-gain-of-7-6-a-mid-cap-fintech-stock-for-a-rise-of-about-6/articleshow/133158830.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/groww-shares-climb-2-after-july-client-additions-market-share-rises-to-28-88/articleshow/133179929.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Axis Direct highlights 3 stocks showing bullish momentum for August. Do you own any?",
+        "headline": "N Chandrasekaran era delivered 3.3X market cap growth. Can Tata stocks keep winning after his exit?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/axis-direct-highlights-3-stocks-showing-bullish-momentum-for-august-do-you-own-any/slideshow/133149615.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/n-chandrasekaran-era-delivered-3-3x-market-cap-growth-can-tata-stocks-keep-winning-after-his-exit/articleshow/133176756.cms",
         "sentiment": "positive",
         "stocks": [
-          "AXIS"
+          "TATA"
         ],
-        "category": "general"
-      },
-      {
-        "headline": "Intel\u2019s $15 billion stock sale. Why shares fell despite AI boom",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/intels-15-billion-stock-sale-why-shares-fell-despite-ai-boom/slideshow/133148896.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Ahead of Market: 10 things that will decide stock market action on Wednesday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-wednesday/articleshow/133159099.cms",
-        "sentiment": "neutral",
-        "stocks": [],
         "category": "general"
       }
     ],
     "earnings": [
       {
-        "headline": "India govt says retail option trader losses fell 18% after regulatory curbs",
+        "headline": "Marksans Pharma shares rally over 9% after Q1 profit spikes 174% YoY to Rs 159 crore",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/india-says-retail-option-trader-losses-fell-18-after-regulatory-curbs/articleshow/133156271.cms",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "earnings"
-      },
-      {
-        "headline": "KPI Green Energy shares fall 6% after Q1 results. What's worrying investors?",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/kpi-green-energy-shares-fall-6-after-q1-results-whats-worrying-investors/articleshow/133148158.cms",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "earnings"
-      },
-      {
-        "headline": "Lumax Auto Technologies shares rally 19% after Q1 earnings",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/lumax-auto-technologies-shares-rally-19-after-q1-earnings/articleshow/133147709.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/marksans-pharma-shares-rally-over-9-after-q1-profit-spikes-174-yoy-to-rs-159-crore/articleshow/133178142.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
       },
       {
-        "headline": "ideaForge Technology shares slide 5% after Q1 gross profit margin falls 49%",
+        "headline": "Cupid shares jump nearly 9% in two days post Q1 earnings",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ideaforge-technology-shares-slide-5-after-q1-gross-profit-margin-falls-49/articleshow/133147754.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/cupid-shares-jump-nearly-9-in-two-days-post-q1-earnings/articleshow/133177435.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Ashish Kacholia, Vijay Kedia beat Nifty in Q1, portfolios swell up to 40%",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ashish-kacholia-vijay-kedia-beat-nifty-in-q1-portfolios-swell-up-to-40/articleshow/133176614.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "earnings"
       }
     ],
     "orders": [],
-    "regulatory": [
-      {
-        "headline": "Sebi proposes to bring all bullion trades under vault management rules",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-proposes-to-bring-all-bullion-trades-under-vault-management-rules/articleshow/133158951.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      }
-    ],
+    "regulatory": [],
     "insider": [
       {
-        "headline": "MFs pull back: Stakes cut in 12 smallcap stocks after two quarters of buying; stocks fall up to 40%",
+        "headline": "BofA to invest $1.9 billion for 49.9% stake in Jio Financial NBFC unit",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mfs-pull-back-stakes-cut-in-12-smallcap-stocks-after-two-quarters-of-buying-stocks-fall-up-to-40/slideshow/133149530.cms",
-        "sentiment": "negative",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/update-1-bofa-to-invest-1-9-billion-for-49-9-stake-in-jio-financial-nbfc-unit/articleshow/133187370.cms",
+        "sentiment": "neutral",
         "stocks": [],
         "category": "insider"
       }
