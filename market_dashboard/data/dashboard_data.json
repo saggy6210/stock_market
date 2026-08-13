@@ -1,50 +1,50 @@
 {
-  "timestamp": "2026-08-12T23:10:45.992777",
+  "timestamp": "2026-08-13T23:11:56.045222",
   "indices": {
     "nifty50": {
-      "value": 24471.7,
+      "value": 24435.95,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 78154.25,
+      "value": 77966.35,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57446.25,
+      "value": 57885.85,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 31823.15,
+      "value": 31332.55,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 11.86,
+      "value": 11.69,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 53770.27,
-      "change": -21.58,
-      "change_pct": -0.04,
-      "direction": "negative"
+      "value": 53839.99,
+      "change": 69.72,
+      "change_pct": 0.13,
+      "direction": "positive"
     },
     "nasdaq": {
-      "value": 26588.49,
-      "change": 143.04,
-      "change_pct": 0.54,
+      "value": 26803.03,
+      "change": 214.54,
+      "change_pct": 0.81,
       "direction": "positive"
     },
     "usdinr": {
-      "value": 95.38,
+      "value": 95.34,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
@@ -52,34 +52,34 @@
   },
   "commodities": {
     "gold": {
-      "value": 4461.5,
-      "change": 78.5,
-      "change_pct": 1.79,
+      "value": 4409.3,
+      "change": 0.4,
+      "change_pct": 0.01,
       "direction": "positive"
     },
     "silver": {
-      "value": 65.29,
-      "change": 0.52,
-      "change_pct": 0.8,
-      "direction": "positive"
+      "value": 64.63,
+      "change": -0.93,
+      "change_pct": -1.41,
+      "direction": "negative"
     },
     "copper": {
-      "value": 6.6,
+      "value": 6.59,
       "change": -0.01,
-      "change_pct": -0.12,
+      "change_pct": -0.17,
       "direction": "negative"
     },
     "crude": {
-      "value": 82.74,
-      "change": -0.46,
-      "change_pct": -0.55,
+      "value": 81.1,
+      "change": -2.17,
+      "change_pct": -2.61,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.79,
-      "change": 0.03,
-      "change_pct": 0.94,
-      "direction": "positive"
+      "value": 2.73,
+      "change": -0.07,
+      "change_pct": -2.6,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -87,9 +87,9 @@
       {
         "symbol": "RAILTEL",
         "sector": "Communication Services",
-        "old_price": 410.35,
+        "old_price": 408.55,
         "current_price": NaN,
-        "low_52w": 245.0,
+        "low_52w": 243.93,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -114,7 +114,7 @@
       {
         "symbol": "SUZLON",
         "sector": "Industrials",
-        "old_price": 64.95,
+        "old_price": 63.8,
         "current_price": NaN,
         "low_52w": 38.19,
         "fall_pct": NaN,
@@ -606,7 +606,7 @@
         "sector": "Consumer Cyclical",
         "old_price": 348.0,
         "current_price": NaN,
-        "low_52w": 202.64,
+        "low_52w": 210.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -743,7 +743,7 @@
         "sector": "Consumer Cyclical",
         "old_price": 348.0,
         "current_price": NaN,
-        "low_52w": 202.64,
+        "low_52w": 210.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -822,7 +822,7 @@
         "high_52w": 307.5,
         "low_52w": 219.45,
         "fall_pct": NaN,
-        "rsi": 25.3,
+        "rsi": 28.8,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -835,7 +835,7 @@
         "high_52w": 324.95,
         "low_52w": 247.22,
         "fall_pct": NaN,
-        "rsi": 19.7,
+        "rsi": 23.9,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -848,7 +848,7 @@
         "high_52w": 1891.1,
         "low_52w": 1285.08,
         "fall_pct": NaN,
-        "rsi": 23.5,
+        "rsi": 24.3,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -858,10 +858,10 @@
         "symbol": "SUZLON",
         "sector": "Renewable",
         "current_price": NaN,
-        "high_52w": 64.95,
+        "high_52w": 63.8,
         "low_52w": 38.19,
         "fall_pct": NaN,
-        "rsi": 20.9,
+        "rsi": 20.8,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -874,7 +874,7 @@
         "high_52w": 1003.9,
         "low_52w": 714.83,
         "fall_pct": NaN,
-        "rsi": 36.0,
+        "rsi": 38.6,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -887,7 +887,7 @@
         "high_52w": 1467.63,
         "low_52w": 1177.67,
         "fall_pct": NaN,
-        "rsi": 52.4,
+        "rsi": 53.7,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -900,7 +900,7 @@
         "high_52w": 1212.84,
         "low_52w": 784.36,
         "fall_pct": NaN,
-        "rsi": 69.7,
+        "rsi": 72.5,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -913,7 +913,7 @@
         "high_52w": 452.42,
         "low_52w": 344.9,
         "fall_pct": NaN,
-        "rsi": 60.3,
+        "rsi": 59.0,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -924,17 +924,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "12 Aug 2026",
+        "date": "13 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "11 Aug 2026",
+        "date": "12 Aug 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "10 Aug 2026",
+        "date": "11 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -951,45 +951,46 @@
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\ud83c\udf0f US markets positive: Dow -0.0%, NASDAQ +0.5%",
+    "summary": "\u26fd Crude oil down 2.6% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +0.1%, NASDAQ +0.8%",
     "vix": {
-      "value": 11.86,
+      "value": 11.69,
       "change_pct": 0.0
     },
     "crude": {
-      "value": 82.74,
-      "change_pct": -0.55
+      "value": 81.1,
+      "change_pct": -2.61
     },
     "reasons": [
-      "\ud83c\udf0f US markets positive: Dow -0.0%, NASDAQ +0.5%"
+      "\u26fd Crude oil down 2.6% - positive for India (import dependent)",
+      "\ud83c\udf0f US markets positive: Dow +0.1%, NASDAQ +0.8%"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 11.86",
+        "label": "VIX 11.69",
         "sublabel": "+0.0%",
         "status": "positive"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $82.74",
-        "sublabel": "-0.6%",
+        "label": "Crude $81.10",
+        "sublabel": "-2.6%",
         "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow -0.0%",
+        "label": "Dow +0.1%",
         "sublabel": "US Markets",
-        "status": "negative"
+        "status": "positive"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ +0.5%",
+        "label": "NASDAQ +0.8%",
         "sublabel": "Tech Sentiment",
         "status": "positive"
       }
     ],
-    "score": 4
+    "score": 5
   },
   "predictions": [
     {
@@ -1000,7 +1001,7 @@
     {
       "symbol": "INFY",
       "direction": "UP",
-      "reason": "NASDAQ +0.5%, positive for IT sentiment"
+      "reason": "NASDAQ +0.8%, positive for IT sentiment"
     },
     {
       "symbol": "HDFCBANK",
@@ -1016,85 +1017,120 @@
   "news": {
     "top_stories": [
       {
-        "headline": "These mid-cap stocks with \u2018Strong Buy\u2019 & \u2018Buy\u2019 recos can rally over 25%, according to analysts",
+        "headline": "Lenskart Solutions among 7 stocks hitting 52-week highs; surge up to 20% in a month",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-mid-cap-stocks-with-strong-buy-buy-recos-can-rally-over-25-according-to-analysts/articleshow/133191222.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/lenskart-solutions-among-7-stocks-hitting-52-week-highs-surge-up-to-20-in-a-month/slideshow/133210592.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Two Trades for Today: A metals major for an upmove of 7.8%, a mid-cap chemical stock for a gain of about 7.5%",
+        "headline": "Two Trades for Today: A top realty firm for a rise of 5.4%, a mid-cap IT stock for a gain of almost 7.5%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-metals-major-for-an-upmove-of-7-8-a-mid-cap-chemical-stock-for-a-gain-of-about-7-5/articleshow/133192264.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-top-realty-firm-for-a-rise-of-5-4-a-mid-cap-it-stock-for-a-gain-of-almost-7-5/articleshow/133214282.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Market wrap: Bharti Airtel , Hindalco, TCS, M&M top gainers and losers on Nifty and Sensex on Wednesday",
+        "headline": "Sugar stocks Balrampur Chini, Dhampur Sugar, Dalmia Bharat Sugar, others rally up to 7%. Here\u2019s why",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-bharti-airtel-hindalco-tcs-mm-top-gainers-and-losers-on-nifty-and-sensex-on-wednesday/articleshow/133182617.cms",
-        "sentiment": "positive",
-        "stocks": [
-          "HINDALCO",
-          "BHARTI",
-          "TCS"
-        ],
-        "category": "general"
-      },
-      {
-        "headline": "Groww shares climb 2% after July client additions; market share rises to 28.88%",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/groww-shares-climb-2-after-july-client-additions-market-share-rises-to-28-88/articleshow/133179929.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sugar-stocks-balrampur-chini-dhampur-sugar-dalmia-bharat-sugar-others-rally-up-to-7-heres-why/articleshow/133203995.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "N Chandrasekaran era delivered 3.3X market cap growth. Can Tata stocks keep winning after his exit?",
+        "headline": "UBS upgrades MCX to Buy with Rs 3,800 target price: Can it boost the stock?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/n-chandrasekaran-era-delivered-3-3x-market-cap-growth-can-tata-stocks-keep-winning-after-his-exit/articleshow/133176756.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ubs-upgrades-mcx-rating-to-buy-with-rs-3800-target-price-can-it-boost-the-stock/articleshow/133203886.cms",
         "sentiment": "positive",
-        "stocks": [
-          "TATA"
-        ],
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Ahead of Market: 10 things that will decide stock market action on Friday",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-friday/articleshow/133218209.cms",
+        "sentiment": "neutral",
+        "stocks": [],
         "category": "general"
       }
     ],
     "earnings": [
       {
-        "headline": "Marksans Pharma shares rally over 9% after Q1 profit spikes 174% YoY to Rs 159 crore",
+        "headline": "Solar Industries shares jump 8% to fresh lifetime high after Q1 net profit soars 93% YoY to Rs 653 crore",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/marksans-pharma-shares-rally-over-9-after-q1-profit-spikes-174-yoy-to-rs-159-crore/articleshow/133178142.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/solar-industries-shares-jump-8-to-fresh-lifetime-high-after-q1-net-profit-soars-93-yoy-to-rs-653-crore/articleshow/133207168.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
       },
       {
-        "headline": "Cupid shares jump nearly 9% in two days post Q1 earnings",
+        "headline": "Munjal Auto Industries shares soar 15%, hit 52-week high after Q1 results. What moved the stock?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/cupid-shares-jump-nearly-9-in-two-days-post-q1-earnings/articleshow/133177435.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/munjal-auto-industries-shares-soar-15-hit-52-week-high-after-q1-results-what-moved-the-stock/articleshow/133204093.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
       },
       {
-        "headline": "Ashish Kacholia, Vijay Kedia beat Nifty in Q1, portfolios swell up to 40%",
+        "headline": "Earnings growth to play larger role in determining portfolio returns than valuation re-rating: Nilesh Shah",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ashish-kacholia-vijay-kedia-beat-nifty-in-q1-portfolios-swell-up-to-40/articleshow/133176614.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/earnings-growth-to-play-larger-role-in-determining-portfolio-returns-than-valuation-re-rating-nilesh-shah/articleshow/133211910.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Q1 earnings show resilience as demand, cost headwinds prove less severe than expected: ICRA",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/q1-earnings-show-resilience-as-demand-cost-headwinds-prove-less-severe-than-expected-icra/articleshow/133204304.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "earnings"
       }
     ],
     "orders": [],
-    "regulatory": [],
+    "regulatory": [
+      {
+        "headline": "FPIs emerge as biggest sellers among anchor investors in IPOs' 30-day window: Sebi study",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fpis-emerge-as-biggest-sellers-among-anchor-investors-in-ipos-30-day-window-sebi-study/articleshow/133219168.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Sebi seeks public comments on review of Accredited Investor framework",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-seeks-public-comments-on-review-of-accredited-investor-framework/articleshow/133216989.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Sebi proposes asset threshold for individuals, corporates to widen accredited investor pool",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-proposes-asset-threshold-for-individuals-corporates-to-widen-accredited-investor-pool/articleshow/133214378.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Sebi mulls Rs 5 cr securities asset route for accredited investor status for individuals",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-mulls-rs-5-cr-securities-asset-route-for-accredited-investor-status-for-individuals/articleshow/133210632.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      }
+    ],
     "insider": [
       {
-        "headline": "BofA to invest $1.9 billion for 49.9% stake in Jio Financial NBFC unit",
+        "headline": "Thyrocare shares crack 8% as promoter Docon Technologies sells 10% stake",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/update-1-bofa-to-invest-1-9-billion-for-49-9-stake-in-jio-financial-nbfc-unit/articleshow/133187370.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/thyrocare-shares-crack-8-as-promoter-docon-technologies-sells-10-stake/articleshow/133204744.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "insider"
