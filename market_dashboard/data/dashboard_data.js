@@ -1,85 +1,85 @@
-// Auto-generated on 2026-08-13T23:12:23.210758
+// Auto-generated on 2026-08-14T22:50:15.325113
 const DASHBOARD_DATA = {
-  "timestamp": "2026-08-13T23:11:56.045222",
+  "timestamp": "2026-08-14T22:49:49.481283",
   "indices": {
     "nifty50": {
-      "value": 24435.95,
+      "value": 24395.85,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 77966.35,
+      "value": 78079.96,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57885.85,
+      "value": 57635.25,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 31332.55,
+      "value": 31453.9,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 11.69,
+      "value": 11.42,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 53839.99,
-      "change": 69.72,
-      "change_pct": 0.13,
-      "direction": "positive"
+      "value": 53732.41,
+      "change": -107.58,
+      "change_pct": -0.2,
+      "direction": "negative"
     },
     "nasdaq": {
-      "value": 26803.03,
-      "change": 214.54,
-      "change_pct": 0.81,
-      "direction": "positive"
+      "value": 26729.16,
+      "change": -73.87,
+      "change_pct": -0.28,
+      "direction": "negative"
     },
     "usdinr": {
-      "value": 95.34,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 95.42,
+      "change": 0.07,
+      "change_pct": 0.07,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4409.3,
-      "change": 0.4,
-      "change_pct": 0.01,
+      "value": 4432.0,
+      "change": 68.4,
+      "change_pct": 1.57,
       "direction": "positive"
     },
     "silver": {
-      "value": 64.63,
-      "change": -0.93,
-      "change_pct": -1.41,
+      "value": 64.82,
+      "change": -0.05,
+      "change_pct": -0.07,
       "direction": "negative"
     },
     "copper": {
-      "value": 6.59,
-      "change": -0.01,
-      "change_pct": -0.17,
-      "direction": "negative"
+      "value": 6.61,
+      "change": 0.01,
+      "change_pct": 0.21,
+      "direction": "positive"
     },
     "crude": {
-      "value": 81.1,
-      "change": -2.17,
-      "change_pct": -2.61,
-      "direction": "negative"
+      "value": 82.4,
+      "change": 1.15,
+      "change_pct": 1.42,
+      "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.73,
-      "change": -0.07,
-      "change_pct": -2.6,
+      "value": 2.71,
+      "change": -0.01,
+      "change_pct": -0.44,
       "direction": "negative"
     }
   },
@@ -115,7 +115,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "SUZLON",
         "sector": "Industrials",
-        "old_price": 63.8,
+        "old_price": 61.64,
         "current_price": NaN,
         "low_52w": 38.19,
         "fall_pct": NaN,
@@ -133,7 +133,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "PAYTM",
         "sector": "Technology",
-        "old_price": 1639.9,
+        "old_price": 1649.5,
         "current_price": NaN,
         "low_52w": 930.6,
         "fall_pct": NaN,
@@ -178,9 +178,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "RECLTD",
         "sector": "Financial Services",
-        "old_price": 383.06,
+        "old_price": 381.34,
         "current_price": NaN,
-        "low_52w": 300.6,
+        "low_52w": 299.26,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -241,9 +241,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 223.1,
+        "old_price": 219.71,
         "current_price": NaN,
-        "low_52w": 130.0,
+        "low_52w": 128.02,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -270,7 +270,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "PAYTM",
         "sector": "Technology",
-        "old_price": 1639.9,
+        "old_price": 1649.5,
         "current_price": NaN,
         "low_52w": 930.6,
         "fall_pct": NaN,
@@ -315,9 +315,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "RECLTD",
         "sector": "Financial Services",
-        "old_price": 383.06,
+        "old_price": 381.34,
         "current_price": NaN,
-        "low_52w": 300.6,
+        "low_52w": 299.26,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -378,9 +378,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 223.1,
+        "old_price": 219.71,
         "current_price": NaN,
-        "low_52w": 130.0,
+        "low_52w": 128.02,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -452,9 +452,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "RECLTD",
         "sector": "Financial Services",
-        "old_price": 383.06,
+        "old_price": 381.34,
         "current_price": NaN,
-        "low_52w": 300.6,
+        "low_52w": 299.26,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -515,9 +515,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 223.1,
+        "old_price": 219.71,
         "current_price": NaN,
-        "low_52w": 130.0,
+        "low_52w": 128.02,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -607,7 +607,7 @@ const DASHBOARD_DATA = {
         "sector": "Consumer Cyclical",
         "old_price": 348.0,
         "current_price": NaN,
-        "low_52w": 210.0,
+        "low_52w": 211.16,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -652,9 +652,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 223.1,
+        "old_price": 219.71,
         "current_price": NaN,
-        "low_52w": 130.0,
+        "low_52w": 128.02,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -744,7 +744,7 @@ const DASHBOARD_DATA = {
         "sector": "Consumer Cyclical",
         "old_price": 348.0,
         "current_price": NaN,
-        "low_52w": 210.0,
+        "low_52w": 211.16,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -817,26 +817,13 @@ const DASHBOARD_DATA = {
     "buy": [],
     "avoid": [
       {
-        "symbol": "ONGC",
-        "sector": "Oil & Gas",
-        "current_price": NaN,
-        "high_52w": 307.5,
-        "low_52w": 219.45,
-        "fall_pct": NaN,
-        "rsi": 28.8,
-        "risk_level": "Medium",
-        "downside_pct": 15,
-        "signal": "Avoid",
-        "reason": "Crude price exposure"
-      },
-      {
         "symbol": "POWERGRID",
         "sector": "Power",
         "current_price": NaN,
         "high_52w": 324.95,
         "low_52w": 247.22,
         "fall_pct": NaN,
-        "rsi": 23.9,
+        "rsi": 20.8,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -849,7 +836,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1891.1,
         "low_52w": 1285.08,
         "fall_pct": NaN,
-        "rsi": 24.3,
+        "rsi": 22.7,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -859,10 +846,10 @@ const DASHBOARD_DATA = {
         "symbol": "SUZLON",
         "sector": "Renewable",
         "current_price": NaN,
-        "high_52w": 63.8,
+        "high_52w": 61.64,
         "low_52w": 38.19,
         "fall_pct": NaN,
-        "rsi": 20.8,
+        "rsi": 14.7,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -875,7 +862,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1003.9,
         "low_52w": 714.83,
         "fall_pct": NaN,
-        "rsi": 38.6,
+        "rsi": 38.1,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -888,7 +875,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1467.63,
         "low_52w": 1177.67,
         "fall_pct": NaN,
-        "rsi": 53.7,
+        "rsi": 41.5,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -901,7 +888,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1212.84,
         "low_52w": 784.36,
         "fall_pct": NaN,
-        "rsi": 72.5,
+        "rsi": 71.6,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -914,28 +901,41 @@ const DASHBOARD_DATA = {
         "high_52w": 452.42,
         "low_52w": 344.9,
         "fall_pct": NaN,
-        "rsi": 59.0,
+        "rsi": 61.4,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
         "reason": "Asset quality improvement"
+      },
+      {
+        "symbol": "AXISBANK",
+        "sector": "Banking",
+        "current_price": NaN,
+        "high_52w": 1417.21,
+        "low_52w": 1041.7,
+        "fall_pct": NaN,
+        "rsi": 47.9,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "Corporate banking recovery"
       }
     ]
   },
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "13 Aug 2026",
+        "date": "14 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "12 Aug 2026",
+        "date": "13 Aug 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "11 Aug 2026",
+        "date": "12 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -950,59 +950,63 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "BULLISH",
-    "badge_class": "bullish",
-    "summary": "\u26fd Crude oil down 2.6% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +0.1%, NASDAQ +0.8%",
+    "sentiment": "NEUTRAL",
+    "badge_class": "neutral",
+    "summary": "\ud83d\udcca Markets trading sideways with mixed global cues",
     "vix": {
-      "value": 11.69,
+      "value": 11.42,
       "change_pct": 0.0
     },
     "crude": {
-      "value": 81.1,
-      "change_pct": -2.61
+      "value": 82.4,
+      "change_pct": 1.42
     },
     "reasons": [
-      "\u26fd Crude oil down 2.6% - positive for India (import dependent)",
-      "\ud83c\udf0f US markets positive: Dow +0.1%, NASDAQ +0.8%"
+      "\ud83d\udcca Markets trading sideways with mixed global cues"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 11.69",
+        "label": "VIX 11.42",
         "sublabel": "+0.0%",
         "status": "positive"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $81.10",
-        "sublabel": "-2.6%",
-        "status": "positive"
+        "label": "Crude $82.40",
+        "sublabel": "+1.4%",
+        "status": "negative"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow +0.1%",
+        "label": "Dow -0.2%",
         "sublabel": "US Markets",
-        "status": "positive"
+        "status": "negative"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ +0.8%",
+        "label": "NASDAQ -0.3%",
         "sublabel": "Tech Sentiment",
-        "status": "positive"
+        "status": "negative"
       }
     ],
-    "score": 5
+    "score": 2
   },
   "predictions": [
     {
-      "symbol": "RELIANCE",
+      "symbol": "ONGC",
       "direction": "UP",
-      "reason": "Lower crude costs benefit refining; Jio/retail growth"
+      "reason": "Crude up 1.4%, benefits upstream O&G"
     },
     {
-      "symbol": "INFY",
+      "symbol": "RELIANCE",
       "direction": "UP",
-      "reason": "NASDAQ +0.8%, positive for IT sentiment"
+      "reason": "Refining margins improve on higher crude"
+    },
+    {
+      "symbol": "TCS",
+      "direction": "UP",
+      "reason": "Stable deal pipeline, currency tailwinds"
     },
     {
       "symbol": "HDFCBANK",
@@ -1018,41 +1022,41 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
-        "headline": "Lenskart Solutions among 7 stocks hitting 52-week highs; surge up to 20% in a month",
+        "headline": "Galaxy Surfactants among 5 commodities stocks that hit 52-week highs and surged up to 28% in a month",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/lenskart-solutions-among-7-stocks-hitting-52-week-highs-surge-up-to-20-in-a-month/slideshow/133210592.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/galaxy-surfactants-among-5-commodities-stocks-that-hit-52-week-highs-and-surged-up-to-28-in-a-month/slideshow/133240606.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Two Trades for Today: A top realty firm for a rise of 5.4%, a mid-cap IT stock for a gain of almost 7.5%",
+        "headline": "Sensex falls 71 points, Nifty closes below 24,400; broader markets underperform. What lies ahead?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-top-realty-firm-for-a-rise-of-5-4-a-mid-cap-it-stock-for-a-gain-of-almost-7-5/articleshow/133214282.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sensex-falls-71-points-nifty-closes-below-24400-broader-markets-underperform-what-lies-ahead/articleshow/133237775.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "15 stocks held by 100+ MFs in July surged up to 131%; 3 turned multibaggers in CY26",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/15-stocks-held-by-100-mfs-in-july-surged-up-to-131-3-turned-multibaggers-in-cy26/slideshow/133232865.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Sugar stocks Balrampur Chini, Dhampur Sugar, Dalmia Bharat Sugar, others rally up to 7%. Here\u2019s why",
+        "headline": "LEAP India shares fall 12% post-listing, slip below IPO price. What should investors do?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sugar-stocks-balrampur-chini-dhampur-sugar-dalmia-bharat-sugar-others-rally-up-to-7-heres-why/articleshow/133203995.cms",
-        "sentiment": "positive",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/leap-india-shares-fall-12-post-listing-slip-below-ipo-price-what-should-investors-do/articleshow/133231868.cms",
+        "sentiment": "negative",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "UBS upgrades MCX to Buy with Rs 3,800 target price: Can it boost the stock?",
+        "headline": "Stock picks of the week: 5 stocks with consistent score improvement and upside potential of up to 29%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ubs-upgrades-mcx-rating-to-buy-with-rs-3800-target-price-can-it-boost-the-stock/articleshow/133203886.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Ahead of Market: 10 things that will decide stock market action on Friday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-friday/articleshow/133218209.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stock-picks-of-the-week-5-stocks-with-consistent-score-improvement-and-upside-potential-of-up-to-29/articleshow/133249875.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "general"
@@ -1060,33 +1064,17 @@ const DASHBOARD_DATA = {
     ],
     "earnings": [
       {
-        "headline": "Solar Industries shares jump 8% to fresh lifetime high after Q1 net profit soars 93% YoY to Rs 653 crore",
+        "headline": "Bharat Dynamics Q1 Results: Net profit soars 6x to Rs 119 crore, revenue surges 131% YoY",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/solar-industries-shares-jump-8-to-fresh-lifetime-high-after-q1-net-profit-soars-93-yoy-to-rs-653-crore/articleshow/133207168.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bharat-dynamics-q1-results-net-profit-soars-6x-to-rs-119-crore-revenue-surges-131-yoy/articleshow/133233995.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
       },
       {
-        "headline": "Munjal Auto Industries shares soar 15%, hit 52-week high after Q1 results. What moved the stock?",
+        "headline": "Cochin Shipyard Q1 Results: Profit falls 19% YoY to Rs 151 crore, revenue up marginally",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/munjal-auto-industries-shares-soar-15-hit-52-week-high-after-q1-results-what-moved-the-stock/articleshow/133204093.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "earnings"
-      },
-      {
-        "headline": "Earnings growth to play larger role in determining portfolio returns than valuation re-rating: Nilesh Shah",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/earnings-growth-to-play-larger-role-in-determining-portfolio-returns-than-valuation-re-rating-nilesh-shah/articleshow/133211910.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "earnings"
-      },
-      {
-        "headline": "Q1 earnings show resilience as demand, cost headwinds prove less severe than expected: ICRA",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/q1-earnings-show-resilience-as-demand-cost-headwinds-prove-less-severe-than-expected-icra/articleshow/133204304.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/cochin-shipyard-q1-results-profit-falls-19-yoy-to-rs-151-crore-revenue-up-marginally/articleshow/133243674.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "earnings"
@@ -1095,33 +1083,41 @@ const DASHBOARD_DATA = {
     "orders": [],
     "regulatory": [
       {
-        "headline": "FPIs emerge as biggest sellers among anchor investors in IPOs' 30-day window: Sebi study",
+        "headline": "Accel India IV offloads 1.3 pc stake in Urban Company",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fpis-emerge-as-biggest-sellers-among-anchor-investors-in-ipos-30-day-window-sebi-study/articleshow/133219168.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/accel-india-iv-offloads-1-3-pc-stake-in-urban-company/articleshow/133245881.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Sebi seeks public comments on review of Accredited Investor framework",
+        "headline": "Sebi proposes to rationalise penalties for settling ongoing cases",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-seeks-public-comments-on-review-of-accredited-investor-framework/articleshow/133216989.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-proposes-to-rationalise-penalties-for-settling-ongoing-cases/articleshow/133245779.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Sebi proposes asset threshold for individuals, corporates to widen accredited investor pool",
+        "headline": "Sebi mulls digital onboarding for individual foreign investors to boost participation in securities mkt",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-proposes-asset-threshold-for-individuals-corporates-to-widen-accredited-investor-pool/articleshow/133214378.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-mulls-digital-onboarding-for-individual-foreign-investors-to-boost-participation-in-securities-mkt/articleshow/133245737.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Sebi mulls Rs 5 cr securities asset route for accredited investor status for individuals",
+        "headline": "Sebi revises InvIT cash flow framework to allow adding back external debt-funded maintenance costs",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-mulls-rs-5-cr-securities-asset-route-for-accredited-investor-status-for-individuals/articleshow/133210632.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-revises-invit-cash-flow-framework-to-allow-adding-back-external-debt-funded-maintenance-costs/articleshow/133243215.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Anchor investors stay put after IPO lock-in expiry, but half their bets are gone within a year: Sebi",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/anchor-investors-stay-put-after-ipo-lock-in-but-half-their-bets-are-gone-within-a-year-sebi/articleshow/133242283.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
@@ -1129,9 +1125,9 @@ const DASHBOARD_DATA = {
     ],
     "insider": [
       {
-        "headline": "Thyrocare shares crack 8% as promoter Docon Technologies sells 10% stake",
+        "headline": "WeWork Global sells 2.5% stake in WeWork India Management for Rs 244 crore",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/thyrocare-shares-crack-8-as-promoter-docon-technologies-sells-10-stake/articleshow/133204744.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/wework-global-sells-2-5-stake-in-wework-india-management-for-rs-244-crore/articleshow/133245632.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "insider"
