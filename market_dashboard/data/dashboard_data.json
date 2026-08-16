@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-15T22:47:30.683312",
+  "timestamp": "2026-08-16T22:46:47.072542",
   "indices": {
     "nifty50": {
       "value": 24366.0,
@@ -44,42 +44,42 @@
       "direction": "negative"
     },
     "usdinr": {
-      "value": 95.43,
-      "change": 0.03,
-      "change_pct": 0.03,
+      "value": 95.42,
+      "change": 0.01,
+      "change_pct": 0.01,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4380.4,
-      "change": 16.8,
-      "change_pct": 0.38,
+      "value": 4433.0,
+      "change": 52.6,
+      "change_pct": 1.2,
       "direction": "positive"
     },
     "silver": {
-      "value": 64.99,
-      "change": 0.11,
-      "change_pct": 0.18,
+      "value": 65.12,
+      "change": 0.13,
+      "change_pct": 0.2,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.6,
-      "change": 0.01,
-      "change_pct": 0.11,
+      "value": 6.63,
+      "change": 0.03,
+      "change_pct": 0.51,
       "direction": "positive"
     },
     "crude": {
-      "value": 82.4,
-      "change": 1.15,
-      "change_pct": 1.42,
+      "value": 82.45,
+      "change": 0.05,
+      "change_pct": 0.06,
       "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.73,
-      "change": 0.01,
-      "change_pct": 0.22,
-      "direction": "positive"
+      "value": 2.69,
+      "change": -0.05,
+      "change_pct": -1.72,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -139,6 +139,15 @@
         "buy_signal": "Strong Buy"
       },
       {
+        "symbol": "INFY",
+        "sector": "Technology",
+        "old_price": 1691.4,
+        "current_price": 1169.2,
+        "low_52w": 982.4,
+        "fall_pct": -30.87,
+        "buy_signal": "Strong Buy"
+      },
+      {
         "symbol": "HINDCOPPER",
         "sector": "Basic Materials",
         "old_price": 758.83,
@@ -159,9 +168,9 @@
       {
         "symbol": "NBCC",
         "sector": "Industrials",
-        "old_price": 125.69,
-        "current_price": 89.15,
-        "low_52w": 77.18,
+        "old_price": 125.48,
+        "current_price": 89.0,
+        "low_52w": 77.05,
         "fall_pct": -29.07,
         "buy_signal": "Buy"
       },
@@ -238,15 +247,6 @@
         "buy_signal": "Buy"
       },
       {
-        "symbol": "PFC",
-        "sector": "Financial Services",
-        "old_price": 481.99,
-        "current_price": 376.0,
-        "low_52w": 321.1,
-        "fall_pct": -21.99,
-        "buy_signal": "Buy"
-      },
-      {
         "symbol": "HCLTECH",
         "sector": "Technology",
         "old_price": 1729.01,
@@ -258,9 +258,9 @@
       {
         "symbol": "HUDCO",
         "sector": "Financial Services",
-        "old_price": 241.12,
-        "current_price": 189.99,
-        "low_52w": 157.99,
+        "old_price": 239.22,
+        "current_price": 188.49,
+        "low_52w": 156.74,
         "fall_pct": -21.21,
         "buy_signal": "Buy"
       }
@@ -276,6 +276,15 @@
         "buy_signal": "Strong Buy"
       },
       {
+        "symbol": "INFY",
+        "sector": "Technology",
+        "old_price": 1691.4,
+        "current_price": 1169.2,
+        "low_52w": 982.4,
+        "fall_pct": -30.87,
+        "buy_signal": "Strong Buy"
+      },
+      {
         "symbol": "HINDCOPPER",
         "sector": "Basic Materials",
         "old_price": 758.83,
@@ -296,9 +305,9 @@
       {
         "symbol": "NBCC",
         "sector": "Industrials",
-        "old_price": 125.69,
-        "current_price": 89.15,
-        "low_52w": 77.18,
+        "old_price": 125.48,
+        "current_price": 89.0,
+        "low_52w": 77.05,
         "fall_pct": -29.07,
         "buy_signal": "Buy"
       },
@@ -375,15 +384,6 @@
         "buy_signal": "Buy"
       },
       {
-        "symbol": "PFC",
-        "sector": "Financial Services",
-        "old_price": 481.99,
-        "current_price": 376.0,
-        "low_52w": 321.1,
-        "fall_pct": -21.99,
-        "buy_signal": "Buy"
-      },
-      {
         "symbol": "HCLTECH",
         "sector": "Technology",
         "old_price": 1729.01,
@@ -395,9 +395,9 @@
       {
         "symbol": "HUDCO",
         "sector": "Financial Services",
-        "old_price": 241.12,
-        "current_price": 189.99,
-        "low_52w": 157.99,
+        "old_price": 239.22,
+        "current_price": 188.49,
+        "low_52w": 156.74,
         "fall_pct": -21.21,
         "buy_signal": "Buy"
       },
@@ -449,6 +449,15 @@
     ],
     "may25": [
       {
+        "symbol": "IREDA",
+        "sector": "Financial Services",
+        "old_price": 162.49,
+        "current_price": 116.25,
+        "low_52w": 108.08,
+        "fall_pct": -28.46,
+        "buy_signal": "Hold"
+      },
+      {
         "symbol": "TCS",
         "sector": "Technology",
         "old_price": 3287.16,
@@ -512,15 +521,6 @@
         "buy_signal": "Buy"
       },
       {
-        "symbol": "PFC",
-        "sector": "Financial Services",
-        "old_price": 481.99,
-        "current_price": 376.0,
-        "low_52w": 321.1,
-        "fall_pct": -21.99,
-        "buy_signal": "Buy"
-      },
-      {
         "symbol": "HCLTECH",
         "sector": "Technology",
         "old_price": 1729.01,
@@ -532,9 +532,9 @@
       {
         "symbol": "HUDCO",
         "sector": "Financial Services",
-        "old_price": 241.12,
-        "current_price": 189.99,
-        "low_52w": 157.99,
+        "old_price": 239.22,
+        "current_price": 188.49,
+        "low_52w": 156.74,
         "fall_pct": -21.21,
         "buy_signal": "Buy"
       },
@@ -631,6 +631,15 @@
     ],
     "jan25": [
       {
+        "symbol": "SUZLON",
+        "sector": "Industrials",
+        "old_price": 61.64,
+        "current_price": 47.1,
+        "low_52w": 38.19,
+        "fall_pct": -23.59,
+        "buy_signal": "Buy"
+      },
+      {
         "symbol": "ONGC",
         "sector": "Energy",
         "old_price": 307.5,
@@ -649,15 +658,6 @@
         "buy_signal": "Buy"
       },
       {
-        "symbol": "PFC",
-        "sector": "Financial Services",
-        "old_price": 481.99,
-        "current_price": 376.0,
-        "low_52w": 321.1,
-        "fall_pct": -21.99,
-        "buy_signal": "Buy"
-      },
-      {
         "symbol": "HCLTECH",
         "sector": "Technology",
         "old_price": 1729.01,
@@ -669,9 +669,9 @@
       {
         "symbol": "HUDCO",
         "sector": "Financial Services",
-        "old_price": 241.12,
-        "current_price": 189.99,
-        "low_52w": 157.99,
+        "old_price": 239.22,
+        "current_price": 188.49,
+        "low_52w": 156.74,
         "fall_pct": -21.21,
         "buy_signal": "Buy"
       },
@@ -1065,17 +1065,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "15 Aug 2026",
+        "date": "16 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "14 Aug 2026",
+        "date": "15 Aug 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "13 Aug 2026",
+        "date": "14 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1098,8 +1098,8 @@
       "change_pct": -0.96
     },
     "crude": {
-      "value": 82.4,
-      "change_pct": 1.42
+      "value": 82.45,
+      "change_pct": 0.06
     },
     "reasons": [
       "\ud83d\udcca Markets trading sideways with mixed global cues"
@@ -1113,8 +1113,8 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $82.40",
-        "sublabel": "+1.4%",
+        "label": "Crude $82.45",
+        "sublabel": "+0.1%",
         "status": "negative"
       },
       {
@@ -1134,14 +1134,9 @@
   },
   "predictions": [
     {
-      "symbol": "ONGC",
-      "direction": "UP",
-      "reason": "Crude up 1.4%, benefits upstream O&G"
-    },
-    {
       "symbol": "RELIANCE",
       "direction": "UP",
-      "reason": "Refining margins improve on higher crude"
+      "reason": "Lower crude costs benefit refining; Jio/retail growth"
     },
     {
       "symbol": "TCS",
@@ -1170,6 +1165,14 @@
         "category": "general"
       },
       {
+        "headline": "9 penny stocks surge up to 325% in 2026 so far; 3 turn multibaggers. Did you own any?",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/9-penny-stocks-surge-up-to-325-in-2026-so-far-3-turn-multibaggers-did-you-own-any/slideshow/133271258.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
         "headline": "Madhusudan Kela\u2019s portfolio: 7 stocks rally up to 135% in CY26",
         "source": "Economic Times",
         "url": "https://economictimes.indiatimes.com/markets/stocks/news/madhusudan-kelas-portfolio-7-stocks-rally-up-to-135-in-cy26/slideshow/133259821.cms",
@@ -1178,51 +1181,49 @@
         "category": "general"
       },
       {
-        "headline": "Independence Day 2026: 4 stocks that have been part of Sensex since inception. Do you own any?",
+        "headline": "Ahead of Market: 10 things that will decide stock market action on Monday",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/independence-day-2026-4-stocks-that-have-been-part-of-sensex-since-inception-do-you-own-any/slideshow/133257115.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-monday/articleshow/133273600.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Three key milestones on the road to financial freedom",
+        "headline": "9 Sensex stocks with up to 41% upside potential. Are these in your portfolio?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/three-key-milestones-on-the-road-to-financial-freedom/articleshow/133256905.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Independence Day 2026: How Sensex skyrocketed 8,500% in less than 35 years since 1991 liberalisation reforms",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/independence-day-2026-how-sensex-skyrocketed-8500-in-less-than-35-years-since-1991-liberalisation-reforms/articleshow/133255819.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/9-sensex-stocks-with-up-to-41-upside-potential-are-these-in-your-portfolio/slideshow/133271796.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       }
     ],
-    "earnings": [
-      {
-        "headline": "Cochin Shipyard Q1 Results: Profit falls 19% YoY to Rs 151 crore, revenue up marginally",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/cochin-shipyard-q1-results-profit-falls-19-yoy-to-rs-151-crore-revenue-up-marginally/articleshow/133243674.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "earnings"
-      }
-    ],
-    "orders": [
-      {
-        "headline": "D-Street ends in red for a third week on West Asia deal delay, oil spike",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/d-street-ends-in-red-for-a-third-week-on-west-asia-deal-delay-oil-spike/articleshow/133255400.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "orders"
-      }
-    ],
+    "earnings": [],
+    "orders": [],
     "regulatory": [
+      {
+        "headline": "Two Trades for Today: A PSU bank for a gain of 6.85%, a mid-cap capital goods stock for an almost 7% upmove",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-psu-bank-for-a-gain-of-6-85-a-mid-cap-capital-goods-stock-for-an-almost-7-upmove/articleshow/133276491.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Big Bull's magic: How Rakesh Jhunjhunwala turned Rs 1 crore into Rs 20 crore overnight after the 1989 budget",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/big-bulls-magic-how-rakesh-jhunjhunwala-turned-rs-1-crore-into-rs-20-crore-overnight-after-the-1989-budget/articleshow/133272063.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Bonus, stock splits & dividends: Bandhan Bank, MGL, Mazagon Dock among nearly 100 stocks turning ex-record date this week",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bonus-stock-splits-dividends-bandhan-bank-mgl-mazagon-dock-among-nearly-100-stocks-turning-ex-record-date-this-week/articleshow/133270824.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "regulatory"
+      },
       {
         "headline": "Adani Enterprises, HDFC Bank among 10 stocks with highest increase in mutual fund holdings in value terms",
         "source": "Economic Times",
@@ -1233,58 +1234,9 @@
           "ADANI"
         ],
         "category": "regulatory"
-      },
-      {
-        "headline": "Accel India IV offloads 1.3 pc stake in Urban Company",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/accel-india-iv-offloads-1-3-pc-stake-in-urban-company/articleshow/133245881.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi proposes to rationalise penalties for settling ongoing cases",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-proposes-to-rationalise-penalties-for-settling-ongoing-cases/articleshow/133245779.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi mulls digital onboarding for individual foreign investors to boost participation in securities mkt",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-mulls-digital-onboarding-for-individual-foreign-investors-to-boost-participation-in-securities-mkt/articleshow/133245737.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi revises InvIT cash flow framework to allow adding back external debt-funded maintenance costs",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-revises-invit-cash-flow-framework-to-allow-adding-back-external-debt-funded-maintenance-costs/articleshow/133243215.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
       }
     ],
-    "insider": [
-      {
-        "headline": "Neo Wealth buys a 9.9% stake in Keertana Finserv",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/neo-wealth-buys-a-9-6-stake-in-keertana-finserv/articleshow/133249881.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "insider"
-      },
-      {
-        "headline": "WeWork Global sells 2.5% stake in WeWork India Management for Rs 244 crore",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/wework-global-sells-2-5-stake-in-wework-india-management-for-rs-244-crore/articleshow/133245632.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "insider"
-      }
-    ],
+    "insider": [],
     "geopolitical": [
       {
         "headline": "\ud83d\udd4a\ufe0f Global Markets Rally on Easing Geopolitical Tensions",
