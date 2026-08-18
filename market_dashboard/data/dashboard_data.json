@@ -1,84 +1,84 @@
 {
-  "timestamp": "2026-08-17T22:50:27.847945",
+  "timestamp": "2026-08-18T22:50:54.862248",
   "indices": {
     "nifty50": {
-      "value": 24366.0,
+      "value": 24287.65,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 78009.25,
+      "value": 77728.16,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57491.1,
+      "value": 57497.8,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 31357.75,
+      "value": 30807.8,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 11.31,
+      "value": 11.33,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 53459.78,
-      "change": -272.63,
-      "change_pct": -0.51,
+      "value": 53343.4,
+      "change": -116.38,
+      "change_pct": -0.22,
       "direction": "negative"
     },
     "nasdaq": {
-      "value": 26644.91,
-      "change": -84.25,
-      "change_pct": -0.32,
+      "value": 26289.71,
+      "change": -355.2,
+      "change_pct": -1.33,
       "direction": "negative"
     },
     "usdinr": {
-      "value": 95.59,
-      "change": 0.19,
-      "change_pct": 0.2,
+      "value": 95.67,
+      "change": 0.22,
+      "change_pct": 0.23,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4469.8,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 4386.6,
+      "change": -31.2,
+      "change_pct": -0.71,
+      "direction": "negative"
     },
     "silver": {
-      "value": 65.85,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 63.29,
+      "change": -2.83,
+      "change_pct": -4.28,
+      "direction": "negative"
     },
     "copper": {
-      "value": 6.61,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 6.45,
+      "change": -0.16,
+      "change_pct": -2.37,
+      "direction": "negative"
     },
     "crude": {
-      "value": 85.12,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 84.49,
+      "change": -0.01,
+      "change_pct": -0.01,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.7,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 2.79,
+      "change": 0.1,
+      "change_pct": 3.79,
       "direction": "positive"
     }
   },
@@ -195,9 +195,9 @@
       {
         "symbol": "RVNL",
         "sector": "Industrials",
-        "old_price": 399.45,
+        "old_price": 398.2,
         "current_price": NaN,
-        "low_52w": 220.16,
+        "low_52w": 219.48,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -332,9 +332,9 @@
       {
         "symbol": "RVNL",
         "sector": "Industrials",
-        "old_price": 399.45,
+        "old_price": 398.2,
         "current_price": NaN,
-        "low_52w": 220.16,
+        "low_52w": 219.48,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -469,9 +469,9 @@
       {
         "symbol": "RVNL",
         "sector": "Industrials",
-        "old_price": 399.45,
+        "old_price": 398.2,
         "current_price": NaN,
-        "low_52w": 220.16,
+        "low_52w": 219.48,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -822,11 +822,24 @@
         "high_52w": 324.95,
         "low_52w": 247.22,
         "fall_pct": NaN,
-        "rsi": 22.6,
+        "rsi": 24.5,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
         "reason": "Transmission monopoly"
+      },
+      {
+        "symbol": "SUNPHARMA",
+        "sector": "Pharma",
+        "current_price": NaN,
+        "high_52w": 2046.9,
+        "low_52w": 1533.99,
+        "fall_pct": NaN,
+        "rsi": 15.7,
+        "risk_level": "Medium",
+        "downside_pct": 15,
+        "signal": "Avoid",
+        "reason": "Specialty pharma focus"
       },
       {
         "symbol": "HDFCBANK",
@@ -835,7 +848,7 @@
         "high_52w": 1003.9,
         "low_52w": 714.83,
         "fall_pct": NaN,
-        "rsi": 42.9,
+        "rsi": 30.2,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -848,7 +861,7 @@
         "high_52w": 1467.63,
         "low_52w": 1177.67,
         "fall_pct": NaN,
-        "rsi": 49.4,
+        "rsi": 46.4,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -861,7 +874,7 @@
         "high_52w": 1212.84,
         "low_52w": 784.36,
         "fall_pct": NaN,
-        "rsi": 67.9,
+        "rsi": 65.0,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -874,7 +887,7 @@
         "high_52w": 452.42,
         "low_52w": 344.9,
         "fall_pct": NaN,
-        "rsi": 58.5,
+        "rsi": 60.3,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -887,7 +900,7 @@
         "high_52w": 1417.21,
         "low_52w": 1041.7,
         "fall_pct": NaN,
-        "rsi": 47.8,
+        "rsi": 47.1,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -900,41 +913,28 @@
         "high_52w": 3287.16,
         "low_52w": 1966.02,
         "fall_pct": NaN,
-        "rsi": 46.9,
+        "rsi": 38.9,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
         "reason": "Stable deal wins, AI investments"
-      },
-      {
-        "symbol": "INFY",
-        "sector": "IT",
-        "current_price": NaN,
-        "high_52w": 1691.4,
-        "low_52w": 982.4,
-        "fall_pct": NaN,
-        "rsi": 65.8,
-        "risk_level": "Low",
-        "downside_pct": 8,
-        "signal": "Hold",
-        "reason": "Large deal momentum"
       }
     ]
   },
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "17 Aug 2026",
+        "date": "18 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "16 Aug 2026",
+        "date": "17 Aug 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "15 Aug 2026",
+        "date": "16 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -951,45 +951,45 @@
   "market_outlook": {
     "sentiment": "NEUTRAL",
     "badge_class": "neutral",
-    "summary": "\ud83c\udf0f US markets weak: Dow -0.5%, NASDAQ -0.3%",
+    "summary": "\ud83d\udcca Markets trading sideways with mixed global cues",
     "vix": {
-      "value": 11.31,
+      "value": 11.33,
       "change_pct": 0.0
     },
     "crude": {
-      "value": 85.12,
-      "change_pct": 0.0
+      "value": 84.49,
+      "change_pct": -0.01
     },
     "reasons": [
-      "\ud83c\udf0f US markets weak: Dow -0.5%, NASDAQ -0.3%"
+      "\ud83d\udcca Markets trading sideways with mixed global cues"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 11.31",
+        "label": "VIX 11.33",
         "sublabel": "+0.0%",
         "status": "positive"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $85.12",
-        "sublabel": "+0.0%",
-        "status": "negative"
+        "label": "Crude $84.49",
+        "sublabel": "-0.0%",
+        "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow -0.5%",
+        "label": "Dow -0.2%",
         "sublabel": "US Markets",
         "status": "negative"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ -0.3%",
+        "label": "NASDAQ -1.3%",
         "sublabel": "Tech Sentiment",
         "status": "negative"
       }
     ],
-    "score": 1
+    "score": 2
   },
   "predictions": [
     {
@@ -999,8 +999,8 @@
     },
     {
       "symbol": "TCS",
-      "direction": "UP",
-      "reason": "Stable deal pipeline, currency tailwinds"
+      "direction": "DOWN",
+      "reason": "Tech sector weakness affects sentiment"
     },
     {
       "symbol": "HDFCBANK",
@@ -1016,103 +1016,96 @@
   "news": {
     "top_stories": [
       {
-        "headline": "KEI Industries among 4 midcap stocks to hit 52-week highs & surge up to 15% in a month",
+        "headline": "Jefferies raises Belrise Industries target price, sees 18% upside on strong demand, business expansion",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/kei-industries-among-4-midcap-stocks-to-hit-52-week-highs-amp-surge-up-to-15-in-a-month/slideshow/133295787.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-raises-belrise-industries-target-price-sees-18-upside-on-strong-demand-business-expansion/articleshow/133319608.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Two Trades for Today: A capital market player for a 6.45% rise, a mid-cap pharma stock for an almost 6% gain",
+        "headline": "Ajanta Pharma among 5 midcap stocks to hit 52-week highs & surge up to 18% in a month",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-capital-market-player-for-a-6-45-rise-a-mid-cap-pharma-stock-for-an-almost-6-gain/articleshow/133299394.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ajanta-pharma-among-5-midcap-stocks-to-hit-52-week-highs-amp-surge-up-to-18-in-a-month/slideshow/133321586.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "BSE shares tumble 5% after Jefferies downgrades stock to 'underperform'. Here\u2019s why",
+        "headline": "Regulatory tailwinds to boost growth for MCX, says HDFC Securities, retains Buy for 18% gains",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bse-shares-tumble-5-after-jefferies-downgrades-stock-to-underperform-heres-why/articleshow/133290430.cms",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "These large-caps have \u2018strong buy\u2019 & \u2018buy\u2019 recos and an upside potential of up to 25%",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-large-caps-have-strong-buy-buy-recos-and-an-upside-potential-of-up-to-25/articleshow/133302418.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Reliance Industries share price: Morgan Stanley reiterates positive view after Rolls-Royce partnership plan",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/reliance-industries-share-price-morgan-stanley-reiterates-positive-view-after-rolls-royce-partnership-plan/articleshow/133294926.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/regulatory-tailwinds-to-boost-growth-for-mcx-says-hdfc-securities-retains-buy-for-18-gains/articleshow/133322360.cms",
         "sentiment": "positive",
         "stocks": [
-          "RELIANCE"
+          "HDFC"
         ],
+        "category": "general"
+      },
+      {
+        "headline": "Two Trades for Today: A private sector defence firm for a 7.65% upmove, a mid-cap capital goods stock for an almost 6% gain",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-private-sector-defence-firm-for-a-7-65-upmove-a-mid-cap-capital-goods-stock-for-an-almost-6-gain/articleshow/133326541.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Defence stocks fire up! Paras Defence, GRSE, other stocks jump up to 10% as govt notifies 6th indigenisation list",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/defence-stocks-fire-up-paras-defence-grse-other-stocks-jump-up-to-10-as-govt-notifies-6th-indigenisation-list/articleshow/133318729.cms",
+        "sentiment": "positive",
+        "stocks": [],
         "category": "general"
       }
     ],
-    "earnings": [],
-    "orders": [
+    "earnings": [
       {
-        "headline": "BSE launches 3-day SLB contracts to boost short-term securities borrowing",
+        "headline": "Tube Investments of India shares surge 8% after Q1 earnings. What Motilal Oswal is saying",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bse-launches-3-day-slb-contracts-to-boost-short-term-securities-borrowing/articleshow/133290993.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "orders"
-      }
-    ],
-    "regulatory": [
-      {
-        "headline": "Following live trading strategies on social media? Sebi has a warning for you",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/following-live-trading-strategies-on-social-media-sebi-has-a-warning-for-you/articleshow/133300766.cms",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "RBI loan recovery rules 2027: What recovery agents can and cannot do",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/rbi-loan-recovery-rules-2027-what-recovery-agents-can-and-cannot-do/videoshow/133295256.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi chairman says cyber defence must move from IT issue to boardroom priority",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-chairman-says-cyber-defence-must-move-from-it-issue-to-boardroom-priority/articleshow/133294633.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      }
-    ],
-    "insider": [
-      {
-        "headline": "Paytm block deal: Resilient Asset to sell up to Rs 4,895 crore stake at 3% discount",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/paytm-block-deal-resilient-asset-to-sell-up-to-rs-4895-crore-stake-at-3-discount/articleshow/133300443.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "insider"
-      },
-      {
-        "headline": "FIIs raise stakes in 12 stocks for three straight quarters; shares surge up to 130%, 3 turn multibaggers",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fiis-raise-stakes-in-12-stocks-for-three-straight-quarters-shares-surge-up-to-130-3-turn-multibaggers/slideshow/133291970.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/tube-investments-of-india-shares-surge-8-after-q1-earnings-what-motilal-oswal-is-saying/articleshow/133315012.cms",
         "sentiment": "positive",
         "stocks": [],
-        "category": "insider"
+        "category": "earnings"
+      },
+      {
+        "headline": "Ashok Leyland just had a record June quarter. So why did the margin fall a full point?",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ashok-leyland-just-had-a-record-june-quarter-so-why-did-the-margin-fall-a-full-point/articleshow/133325764.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "earnings"
       }
     ],
+    "orders": [],
+    "regulatory": [
+      {
+        "headline": "These 7 bank stocks have an upside potential of up to 27% in one year, according to analysts",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-7-bank-stocks-have-an-upside-potential-of-up-to-27-in-one-year-according-to-analysts/articleshow/133329016.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Sebi bars merchant banker Corporate Capital Ventures from new assignments for one month",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-bars-merchant-banker-corporate-capital-ventures-from-new-assignments-for-one-month/articleshow/133323604.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Market wrap:  M&M, Axis Bank, Asian Paints, Infosys top gainers and losers on Nifty and Sensex on Tuesday",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-mm-axis-bank-asian-paints-infosys-top-gainers-and-losers-on-nifty-and-sensex-on-tuesday/articleshow/133320240.cms",
+        "sentiment": "positive",
+        "stocks": [
+          "AXIS"
+        ],
+        "category": "regulatory"
+      }
+    ],
+    "insider": [],
     "geopolitical": [
       {
         "headline": "\ud83d\udd4a\ufe0f Global Markets Rally on Easing Geopolitical Tensions",
