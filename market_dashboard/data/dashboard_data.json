@@ -1,85 +1,85 @@
 {
-  "timestamp": "2026-08-19T22:50:58.402596",
+  "timestamp": "2026-08-20T22:55:33.282414",
   "indices": {
     "nifty50": {
-      "value": 24154.9,
+      "value": 24078.3,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 77235.46,
+      "value": 76909.68,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57262.4,
+      "value": 57239.75,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 30213.45,
+      "value": 30433.05,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 11.39,
+      "value": 11.32,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 53463.05,
-      "change": 119.65,
-      "change_pct": 0.22,
-      "direction": "positive"
+      "value": 52759.21,
+      "change": -703.84,
+      "change_pct": -1.32,
+      "direction": "negative"
     },
     "nasdaq": {
-      "value": 26331.09,
-      "change": 41.38,
-      "change_pct": 0.16,
-      "direction": "positive"
+      "value": 26067.17,
+      "change": -263.92,
+      "change_pct": -1.0,
+      "direction": "negative"
     },
     "usdinr": {
-      "value": 95.74,
-      "change": 0.05,
-      "change_pct": 0.05,
-      "direction": "positive"
+      "value": 95.69,
+      "change": -0.12,
+      "change_pct": -0.13,
+      "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4576.3,
-      "change": 210.3,
-      "change_pct": 4.82,
+      "value": 4579.2,
+      "change": 89.8,
+      "change_pct": 2.0,
       "direction": "positive"
     },
     "silver": {
-      "value": 67.0,
-      "change": 3.06,
-      "change_pct": 4.78,
+      "value": 68.26,
+      "change": 2.53,
+      "change_pct": 3.85,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.5,
-      "change": 0.02,
-      "change_pct": 0.33,
-      "direction": "positive"
-    },
-    "crude": {
-      "value": 84.26,
-      "change": -0.68,
-      "change_pct": -0.8,
+      "value": 6.48,
+      "change": -0.01,
+      "change_pct": -0.08,
       "direction": "negative"
     },
-    "naturalgas": {
-      "value": 2.78,
-      "change": 0.0,
-      "change_pct": 0.11,
+    "crude": {
+      "value": 86.29,
+      "change": 0.46,
+      "change_pct": 0.54,
       "direction": "positive"
+    },
+    "naturalgas": {
+      "value": 2.77,
+      "change": -0.05,
+      "change_pct": -1.74,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -98,7 +98,7 @@
         "sector": "Financial Services",
         "old_price": 135.73,
         "current_price": NaN,
-        "low_52w": 86.02,
+        "low_52w": 85.0,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -606,7 +606,7 @@
         "sector": "Consumer Cyclical",
         "old_price": 348.0,
         "current_price": NaN,
-        "low_52w": 215.59,
+        "low_52w": 223.3,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -743,7 +743,7 @@
         "sector": "Consumer Cyclical",
         "old_price": 348.0,
         "current_price": NaN,
-        "low_52w": 215.59,
+        "low_52w": 223.3,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -822,7 +822,7 @@
         "high_52w": 1003.9,
         "low_52w": 714.83,
         "fall_pct": NaN,
-        "rsi": 18.2,
+        "rsi": 19.3,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -835,7 +835,7 @@
         "high_52w": 1807.04,
         "low_52w": 1271.07,
         "fall_pct": NaN,
-        "rsi": 20.3,
+        "rsi": 23.0,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -848,11 +848,24 @@
         "high_52w": 324.95,
         "low_52w": 247.22,
         "fall_pct": NaN,
-        "rsi": 22.2,
+        "rsi": 20.2,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
         "reason": "Transmission monopoly"
+      },
+      {
+        "symbol": "MARUTI",
+        "sector": "Auto",
+        "current_price": NaN,
+        "high_52w": 17197.29,
+        "low_52w": 12079.68,
+        "fall_pct": NaN,
+        "rsi": 28.0,
+        "risk_level": "Medium",
+        "downside_pct": 15,
+        "signal": "Avoid",
+        "reason": "SUV portfolio expansion"
       },
       {
         "symbol": "SUNPHARMA",
@@ -861,11 +874,24 @@
         "high_52w": 2046.9,
         "low_52w": 1533.99,
         "fall_pct": NaN,
-        "rsi": 8.8,
+        "rsi": 23.0,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
         "reason": "Specialty pharma focus"
+      },
+      {
+        "symbol": "COALINDIA",
+        "sector": "Mining",
+        "current_price": NaN,
+        "high_52w": 484.77,
+        "low_52w": 349.57,
+        "fall_pct": NaN,
+        "rsi": 26.1,
+        "risk_level": "Medium",
+        "downside_pct": 15,
+        "signal": "Avoid",
+        "reason": "Dividend yield play"
       },
       {
         "symbol": "ICICIBANK",
@@ -874,7 +900,7 @@
         "high_52w": 1467.63,
         "low_52w": 1177.67,
         "fall_pct": NaN,
-        "rsi": 46.6,
+        "rsi": 43.1,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -887,54 +913,28 @@
         "high_52w": 1212.84,
         "low_52w": 784.36,
         "fall_pct": NaN,
-        "rsi": 59.0,
+        "rsi": 56.8,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
         "reason": "PSU bank recovery play"
-      },
-      {
-        "symbol": "KOTAKBANK",
-        "sector": "Banking",
-        "current_price": NaN,
-        "high_52w": 452.42,
-        "low_52w": 344.9,
-        "fall_pct": NaN,
-        "rsi": 46.5,
-        "risk_level": "Low",
-        "downside_pct": 8,
-        "signal": "Hold",
-        "reason": "Asset quality improvement"
-      },
-      {
-        "symbol": "AXISBANK",
-        "sector": "Banking",
-        "current_price": NaN,
-        "high_52w": 1417.21,
-        "low_52w": 1041.7,
-        "fall_pct": NaN,
-        "rsi": 54.8,
-        "risk_level": "Low",
-        "downside_pct": 8,
-        "signal": "Hold",
-        "reason": "Corporate banking recovery"
       }
     ]
   },
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "19 Aug 2026",
+        "date": "20 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "18 Aug 2026",
+        "date": "19 Aug 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "17 Aug 2026",
+        "date": "18 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -949,47 +949,47 @@
     }
   },
   "market_outlook": {
-    "sentiment": "BULLISH",
-    "badge_class": "bullish",
-    "summary": "\ud83d\udcca Markets trading sideways with mixed global cues",
+    "sentiment": "NEUTRAL",
+    "badge_class": "neutral",
+    "summary": "\ud83c\udf0f US markets weak: Dow -1.3%, NASDAQ -1.0%",
     "vix": {
-      "value": 11.39,
+      "value": 11.32,
       "change_pct": 0.0
     },
     "crude": {
-      "value": 84.26,
-      "change_pct": -0.8
+      "value": 86.29,
+      "change_pct": 0.54
     },
     "reasons": [
-      "\ud83d\udcca Markets trading sideways with mixed global cues"
+      "\ud83c\udf0f US markets weak: Dow -1.3%, NASDAQ -1.0%"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 11.39",
+        "label": "VIX 11.32",
         "sublabel": "+0.0%",
         "status": "positive"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $84.26",
-        "sublabel": "-0.8%",
-        "status": "positive"
+        "label": "Crude $86.29",
+        "sublabel": "+0.5%",
+        "status": "negative"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow +0.2%",
+        "label": "Dow -1.3%",
         "sublabel": "US Markets",
-        "status": "positive"
+        "status": "negative"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ +0.2%",
+        "label": "NASDAQ -1.0%",
         "sublabel": "Tech Sentiment",
-        "status": "positive"
+        "status": "negative"
       }
     ],
-    "score": 3
+    "score": 0
   },
   "predictions": [
     {
@@ -999,8 +999,8 @@
     },
     {
       "symbol": "TCS",
-      "direction": "UP",
-      "reason": "Stable deal pipeline, currency tailwinds"
+      "direction": "DOWN",
+      "reason": "Tech sector weakness affects sentiment"
     },
     {
       "symbol": "HDFCBANK",
@@ -1016,43 +1016,43 @@
   "news": {
     "top_stories": [
       {
-        "headline": "Two Trades for Today: A top EMS company for a 8.5% gain, a mid-cap IT stock for an almost 7% rise",
+        "headline": "Two Trades for Today: An IT services firm for a 5.7% rise, a solar module and cell maker\u2019s stock for a 7% gain",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-top-ems-company-for-a-8-5-gain-a-mid-cap-it-stock-for-an-almost-7-rise/articleshow/133352187.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-an-it-services-firm-for-a-5-7-rise-a-solar-module-and-cell-makers-stock-for-a-7-gain/articleshow/133382659.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Lenskart Solutions among 4 stocks to hit 52-week highs & surge up to 25% in a month",
+        "headline": "Tourism Finance Corporation among 6 financial services stocks to hit 52-week highs & surge up to 60% in a month",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/lenskart-solutions-among-4-stocks-to-hit-52-week-highs-amp-surge-up-to-25-in-a-month/slideshow/133348316.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/tourism-finance-corporation-among-6-financial-services-stocks-to-hit-52-week-highs-amp-surge-up-to-60-in-a-month/slideshow/133380020.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Market wrap:  HCL Tech, Sun Pharma, Power Grid, Bajaj Finance top gainers and losers on Nifty and Sensex on Wednesday",
+        "headline": "Gautam Adani\u2019s big comeback: Adani Enterprises eyes Nifty crown",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-hcl-tech-sun-pharma-power-grid-bajaj-finance-top-gainers-and-losers-on-nifty-and-sensex-on-wednesday/articleshow/133347947.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/gautam-adanis-big-comeback-adani-enterprises-eyes-nifty-crown/videoshow/133376693.cms",
         "sentiment": "positive",
         "stocks": [
-          "BAJAJ"
+          "ADANI"
         ],
         "category": "general"
       },
       {
-        "headline": "Behari Lal Engineering shares rally 14% after stellar debut. What are brokerages saying?",
+        "headline": "Ahead of Market: 10 things that will decide stock market action on Friday",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/behari-lal-engineering-shares-rally-14-after-stellar-debut-what-are-brokerages-saying/articleshow/133343201.cms",
-        "sentiment": "positive",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-friday/articleshow/133382660.cms",
+        "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Ahead of Market: 10 things that will decide stock market action on Thursday",
+        "headline": "Market Trading Guide: GMR Airports among 2 stock recommendations for Friday",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-thursday/articleshow/133352726.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-trading-guide-gmr-airports-among-2-stock-recommendations-for-friday/articleshow/133381762.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "general"
@@ -1060,59 +1060,77 @@
     ],
     "earnings": [
       {
-        "headline": "Jefferies cuts target price for Jupiter Wagons, maintains Underperform after Q1 earnings. Here\u2019s why",
+        "headline": "F&O trading bill: Retail traders pay Rs 25,000 crore transaction costs in FY26 despite big losses",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-cuts-target-price-for-jupiter-wagons-maintains-underperform-after-q1-earnings-heres-why/articleshow/133341991.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fo-trading-bill-retail-traders-pay-rs-25000-crore-transaction-costs-in-fy26-despite-big-losses/articleshow/133382436.cms",
         "sentiment": "negative",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Jefferies favours two-wheeler stocks over four-wheeler stocks as earnings gap widens",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-favours-two-wheeler-stocks-over-four-wheeler-stocks-as-earnings-gap-widens/articleshow/133375203.cms",
+        "sentiment": "neutral",
         "stocks": [],
         "category": "earnings"
       }
     ],
-    "orders": [
-      {
-        "headline": "Rs 3 crore to Rs 4,925 crore: Sebi order gives details on Dhenu Buildcon market cap surge",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/rs-3-crore-to-rs-4925-crore-sebi-order-gives-details-on-dhenu-buildcon-market-cap-surge/articleshow/133350443.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "orders"
-      }
-    ],
+    "orders": [],
     "regulatory": [
       {
-        "headline": "Sebi flags manipulative trades during CAS on Sensex expiry day, fines two entities",
+        "headline": "Retail F&O boom hits reverse gear as active trader base falls 18% in FY26: Sebi",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-flags-manipulative-trades-during-cas-on-sensex-expiry-day-fines-two-entities/articleshow/133352303.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/retail-fo-boom-hits-reverse-gear-as-active-trader-base-falls-18-in-fy26-sebi/articleshow/133382023.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Sebi to soon roll out AI rules with a \u2018kill switch\u2019 for stock market",
+        "headline": "Rs 91,685 crore gone! 88% retail investors lost money in F&O trading in FY26 even after strict Sebi rules",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-to-soon-roll-out-ai-rules-with-a-kill-switch-for-stock-market/articleshow/133343252.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/rs-91685-crore-gone-88-retail-investors-lost-money-in-fo-trading-in-fy26-even-after-strict-sebi-rules/articleshow/133381520.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "BlackRock, Capital Group anchor IDFC FIRST Bank\u2019s maiden $500 million global bond",
+        "headline": "Sebi unlocks digital POAs for FPIs, waives notarisation & apostillisation",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/blackrock-capital-group-anchor-idfc-first-banks-maiden-500-million-global-bond/articleshow/133342921.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-unlocks-digital-poas-for-fpis-waives-notarisation-apostillisation/articleshow/133377609.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Indian Bank raises $400 million for four years",
+        "headline": "Sebi eases FPI onboarding by allowing digitally signed Power of Attorney",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/indian-bank-raises-400-million-for-four-years/articleshow/133342708.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-eases-fpi-onboarding-by-allowing-digitally-signed-power-of-attorney/articleshow/133377407.cms",
         "sentiment": "neutral",
         "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Market wrap:  Eternal Kotak Bank, HCL Tech, InterGlobe top gainers and losers on Nifty and Sensex on Thursday",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-eternal-kotak-bank-hcl-tech-interglobe-top-gainers-and-losers-on-nifty-and-sensex-on-thursday/articleshow/133375367.cms",
+        "sentiment": "positive",
+        "stocks": [
+          "KOTAK"
+        ],
         "category": "regulatory"
       }
     ],
-    "insider": [],
+    "insider": [
+      {
+        "headline": "General Atlantic Singapore sells Rs 1,400 crore KFin Technologies stake; Invesco, Mirae Asset, HSBC MF among buyers",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/general-atlantic-singapore-sells-rs-1400-crore-kfin-technologies-stake-invesco-mirae-asset-hsbc-mf-among-buyers/articleshow/133382597.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "insider"
+      }
+    ],
     "geopolitical": [
       {
         "headline": "\ud83d\udd4a\ufe0f Global Markets Rally on Easing Geopolitical Tensions",
