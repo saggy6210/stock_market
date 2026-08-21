@@ -1,86 +1,86 @@
-// Auto-generated on 2026-08-20T22:55:50.806266
+// Auto-generated on 2026-08-21T22:51:24.630595
 const DASHBOARD_DATA = {
-  "timestamp": "2026-08-20T22:55:33.282414",
+  "timestamp": "2026-08-21T22:50:58.441347",
   "indices": {
     "nifty50": {
-      "value": 24078.3,
+      "value": 24231.85,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 76909.68,
+      "value": 77537.72,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57239.75,
+      "value": 57495.9,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 30433.05,
+      "value": 30673.05,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 11.32,
+      "value": 10.76,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 52759.21,
-      "change": -703.84,
-      "change_pct": -1.32,
-      "direction": "negative"
+      "value": 53277.01,
+      "change": 517.8,
+      "change_pct": 0.98,
+      "direction": "positive"
     },
     "nasdaq": {
-      "value": 26067.17,
-      "change": -263.92,
-      "change_pct": -1.0,
-      "direction": "negative"
+      "value": 26180.46,
+      "change": 113.29,
+      "change_pct": 0.43,
+      "direction": "positive"
     },
     "usdinr": {
-      "value": 95.69,
-      "change": -0.12,
-      "change_pct": -0.13,
-      "direction": "negative"
+      "value": 95.68,
+      "change": 0.19,
+      "change_pct": 0.2,
+      "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4579.2,
-      "change": 89.8,
-      "change_pct": 2.0,
+      "value": 4661.6,
+      "change": 145.3,
+      "change_pct": 3.22,
       "direction": "positive"
     },
     "silver": {
-      "value": 68.26,
-      "change": 2.53,
-      "change_pct": 3.85,
+      "value": 69.01,
+      "change": 0.98,
+      "change_pct": 1.45,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.48,
-      "change": -0.01,
-      "change_pct": -0.08,
-      "direction": "negative"
-    },
-    "crude": {
-      "value": 86.29,
-      "change": 0.46,
-      "change_pct": 0.54,
+      "value": 6.58,
+      "change": 0.12,
+      "change_pct": 1.86,
       "direction": "positive"
     },
-    "naturalgas": {
-      "value": 2.77,
-      "change": -0.05,
-      "change_pct": -1.74,
+    "crude": {
+      "value": 86.64,
+      "change": -1.19,
+      "change_pct": -1.35,
       "direction": "negative"
+    },
+    "naturalgas": {
+      "value": 2.8,
+      "change": 0.07,
+      "change_pct": 2.38,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -241,7 +241,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 219.22,
+        "old_price": 218.93,
         "current_price": NaN,
         "low_52w": 128.02,
         "fall_pct": NaN,
@@ -378,7 +378,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 219.22,
+        "old_price": 218.93,
         "current_price": NaN,
         "low_52w": 128.02,
         "fall_pct": NaN,
@@ -515,7 +515,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 219.22,
+        "old_price": 218.93,
         "current_price": NaN,
         "low_52w": 128.02,
         "fall_pct": NaN,
@@ -652,7 +652,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 219.22,
+        "old_price": 218.93,
         "current_price": NaN,
         "low_52w": 128.02,
         "fall_pct": NaN,
@@ -823,7 +823,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1003.9,
         "low_52w": 714.83,
         "fall_pct": NaN,
-        "rsi": 19.3,
+        "rsi": 19.7,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -836,7 +836,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1807.04,
         "low_52w": 1271.07,
         "fall_pct": NaN,
-        "rsi": 23.0,
+        "rsi": 25.1,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -849,24 +849,11 @@ const DASHBOARD_DATA = {
         "high_52w": 324.95,
         "low_52w": 247.22,
         "fall_pct": NaN,
-        "rsi": 20.2,
+        "rsi": 16.8,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
         "reason": "Transmission monopoly"
-      },
-      {
-        "symbol": "MARUTI",
-        "sector": "Auto",
-        "current_price": NaN,
-        "high_52w": 17197.29,
-        "low_52w": 12079.68,
-        "fall_pct": NaN,
-        "rsi": 28.0,
-        "risk_level": "Medium",
-        "downside_pct": 15,
-        "signal": "Avoid",
-        "reason": "SUV portfolio expansion"
       },
       {
         "symbol": "SUNPHARMA",
@@ -875,7 +862,7 @@ const DASHBOARD_DATA = {
         "high_52w": 2046.9,
         "low_52w": 1533.99,
         "fall_pct": NaN,
-        "rsi": 23.0,
+        "rsi": 29.4,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -888,7 +875,7 @@ const DASHBOARD_DATA = {
         "high_52w": 484.77,
         "low_52w": 349.57,
         "fall_pct": NaN,
-        "rsi": 26.1,
+        "rsi": 27.6,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
@@ -901,7 +888,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1467.63,
         "low_52w": 1177.67,
         "fall_pct": NaN,
-        "rsi": 43.1,
+        "rsi": 31.3,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -914,28 +901,41 @@ const DASHBOARD_DATA = {
         "high_52w": 1212.84,
         "low_52w": 784.36,
         "fall_pct": NaN,
-        "rsi": 56.8,
+        "rsi": 51.1,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
         "reason": "PSU bank recovery play"
+      },
+      {
+        "symbol": "KOTAKBANK",
+        "sector": "Banking",
+        "current_price": NaN,
+        "high_52w": 452.42,
+        "low_52w": 344.9,
+        "fall_pct": NaN,
+        "rsi": 49.8,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "Asset quality improvement"
       }
     ]
   },
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "20 Aug 2026",
+        "date": "21 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "19 Aug 2026",
+        "date": "20 Aug 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "18 Aug 2026",
+        "date": "19 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -950,47 +950,48 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
-    "summary": "\ud83c\udf0f US markets weak: Dow -1.3%, NASDAQ -1.0%",
+    "sentiment": "BULLISH",
+    "badge_class": "bullish",
+    "summary": "\u26fd Crude oil down 1.4% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +0.4%",
     "vix": {
-      "value": 11.32,
+      "value": 10.76,
       "change_pct": 0.0
     },
     "crude": {
-      "value": 86.29,
-      "change_pct": 0.54
+      "value": 86.64,
+      "change_pct": -1.35
     },
     "reasons": [
-      "\ud83c\udf0f US markets weak: Dow -1.3%, NASDAQ -1.0%"
+      "\u26fd Crude oil down 1.4% - positive for India (import dependent)",
+      "\ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +0.4%"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 11.32",
+        "label": "VIX 10.76",
         "sublabel": "+0.0%",
         "status": "positive"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $86.29",
-        "sublabel": "+0.5%",
-        "status": "negative"
+        "label": "Crude $86.64",
+        "sublabel": "-1.4%",
+        "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow -1.3%",
+        "label": "Dow +1.0%",
         "sublabel": "US Markets",
-        "status": "negative"
+        "status": "positive"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ -1.0%",
+        "label": "NASDAQ +0.4%",
         "sublabel": "Tech Sentiment",
-        "status": "negative"
+        "status": "positive"
       }
     ],
-    "score": 0
+    "score": 5
   },
   "predictions": [
     {
@@ -999,9 +1000,9 @@ const DASHBOARD_DATA = {
       "reason": "Lower crude costs benefit refining; Jio/retail growth"
     },
     {
-      "symbol": "TCS",
-      "direction": "DOWN",
-      "reason": "Tech sector weakness affects sentiment"
+      "symbol": "INFY",
+      "direction": "UP",
+      "reason": "NASDAQ +0.4%, positive for IT sentiment"
     },
     {
       "symbol": "HDFCBANK",
@@ -1017,43 +1018,43 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
-        "headline": "Two Trades for Today: An IT services firm for a 5.7% rise, a solar module and cell maker\u2019s stock for a 7% gain",
+        "headline": "Shanti Gold among 7 consumer discretionary stocks that hit 52-week highs and surged up to 37% in a month",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-an-it-services-firm-for-a-5-7-rise-a-solar-module-and-cell-makers-stock-for-a-7-gain/articleshow/133382659.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/shanti-gold-among-7-consumer-discretionary-stocks-that-hit-52-week-highs-and-surged-up-to-37-in-a-month/slideshow/133404296.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Tourism Finance Corporation among 6 financial services stocks to hit 52-week highs & surge up to 60% in a month",
+        "headline": "Bharat Coking Coal shares jump over 7%. What's behind the sharp surge?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/tourism-finance-corporation-among-6-financial-services-stocks-to-hit-52-week-highs-amp-surge-up-to-60-in-a-month/slideshow/133380020.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Gautam Adani\u2019s big comeback: Adani Enterprises eyes Nifty crown",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/gautam-adanis-big-comeback-adani-enterprises-eyes-nifty-crown/videoshow/133376693.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bharat-coking-coal-shares-jump-over-7-whats-behind-the-sharp-surge/articleshow/133397234.cms",
         "sentiment": "positive",
         "stocks": [
-          "ADANI"
+          "COAL"
         ],
         "category": "general"
       },
       {
-        "headline": "Ahead of Market: 10 things that will decide stock market action on Friday",
+        "headline": "MCX shares jump 8% in 3 days as gold, silver futures rise. What lies ahead for investors?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-friday/articleshow/133382660.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mcx-shares-jump-8-in-3-days-as-gold-silver-futures-rise-what-lies-ahead-for-investors/articleshow/133396946.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Stock picks of the week: 6 stocks with consistent score improvement and upside potential of up to 29%",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stock-picks-of-the-week-6-stocks-with-consistent-score-improvement-and-upside-potential-of-up-to-29/articleshow/133410937.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Market Trading Guide: GMR Airports among 2 stock recommendations for Friday",
+        "headline": "IPO-bound Upstox crosses 2 crore customers, eyes 10 crore users in five years",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-trading-guide-gmr-airports-among-2-stock-recommendations-for-friday/articleshow/133381762.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ipo-bound-upstox-crosses-2-crore-customers-eyes-10-crore-users-in-five-years/articleshow/133403976.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "general"
@@ -1061,72 +1062,71 @@ const DASHBOARD_DATA = {
     ],
     "earnings": [
       {
-        "headline": "F&O trading bill: Retail traders pay Rs 25,000 crore transaction costs in FY26 despite big losses",
+        "headline": "Tata Steel, Adani Ports among top 10 stocks downgraded by Motilal Oswal after Q1 results",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fo-trading-bill-retail-traders-pay-rs-25000-crore-transaction-costs-in-fy26-despite-big-losses/articleshow/133382436.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/tata-steel-adani-ports-among-top-10-stocks-downgraded-by-motilal-oswal-after-q1-results/slideshow/133397759.cms",
         "sentiment": "negative",
+        "stocks": [
+          "TATA",
+          "ADANI"
+        ],
+        "category": "earnings"
+      },
+      {
+        "headline": "Multibaggers: 12 stocks with profit margins above 10% for 8 straight quarters. Do you own any?",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/multibaggers-12-stocks-with-profit-margins-above-10-for-8-straight-quarters-do-you-own-any/slideshow/133401278.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
       },
       {
-        "headline": "Jefferies favours two-wheeler stocks over four-wheeler stocks as earnings gap widens",
+        "headline": "ICICI Bank, Federal Bank among top bank picks by Axis Direct after Q1 earnings season",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-favours-two-wheeler-stocks-over-four-wheeler-stocks-as-earnings-gap-widens/articleshow/133375203.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/icici-bank-federal-bank-among-top-bank-picks-by-axis-direct-after-q1-earnings-season/slideshow/133398012.cms",
         "sentiment": "neutral",
-        "stocks": [],
+        "stocks": [
+          "ICICI",
+          "AXIS"
+        ],
         "category": "earnings"
       }
     ],
     "orders": [],
     "regulatory": [
       {
-        "headline": "Retail F&O boom hits reverse gear as active trader base falls 18% in FY26: Sebi",
+        "headline": "Sebi cancels registration of 15 investment advisers for non-payment of renewal fees",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/retail-fo-boom-hits-reverse-gear-as-active-trader-base-falls-18-in-fy26-sebi/articleshow/133382023.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-cancels-registration-of-15-investment-advisers-for-non-payment-of-renewal-fees/articleshow/133404099.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Rs 91,685 crore gone! 88% retail investors lost money in F&O trading in FY26 even after strict Sebi rules",
+        "headline": "Market wrap:  Kotak Mahindra Bank, Power Grid, Maruti Suzuki, Trent top gainers and losers on Nifty and Sensex on Friday",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/rs-91685-crore-gone-88-retail-investors-lost-money-in-fo-trading-in-fy26-even-after-strict-sebi-rules/articleshow/133381520.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi unlocks digital POAs for FPIs, waives notarisation & apostillisation",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-unlocks-digital-poas-for-fpis-waives-notarisation-apostillisation/articleshow/133377609.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi eases FPI onboarding by allowing digitally signed Power of Attorney",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-eases-fpi-onboarding-by-allowing-digitally-signed-power-of-attorney/articleshow/133377407.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Market wrap:  Eternal Kotak Bank, HCL Tech, InterGlobe top gainers and losers on Nifty and Sensex on Thursday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-eternal-kotak-bank-hcl-tech-interglobe-top-gainers-and-losers-on-nifty-and-sensex-on-thursday/articleshow/133375367.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-kotak-mahindra-bank-power-grid-maruti-suzuki-trent-top-gainers-and-losers-on-nifty-and-sensex-on-friday/articleshow/133402032.cms",
         "sentiment": "positive",
         "stocks": [
-          "KOTAK"
+          "KOTAK",
+          "MARUTI"
         ],
+        "category": "regulatory"
+      },
+      {
+        "headline": "PSU banks offer highest alpha potential; IT faces uncertainty: Omniscience Capital",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/psu-banks-offer-highest-alpha-potential-it-faces-uncertainty-omniscience-capital/articleshow/133397041.cms",
+        "sentiment": "positive",
+        "stocks": [],
         "category": "regulatory"
       }
     ],
     "insider": [
       {
-        "headline": "General Atlantic Singapore sells Rs 1,400 crore KFin Technologies stake; Invesco, Mirae Asset, HSBC MF among buyers",
+        "headline": "Accel, 2 others sell nearly 5% stake in Amagi Media Labs for Rs 587 crore",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/general-atlantic-singapore-sells-rs-1400-crore-kfin-technologies-stake-invesco-mirae-asset-hsbc-mf-among-buyers/articleshow/133382597.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/accel-2-others-sell-nearly-5-stake-in-amagi-media-labs-for-rs-587-crore/articleshow/133407721.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "insider"
