@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-22T22:48:12.791178",
+  "timestamp": "2026-08-23T22:47:58.052437",
   "indices": {
     "nifty50": {
       "value": 24252.0,
@@ -44,41 +44,41 @@
       "direction": "positive"
     },
     "usdinr": {
-      "value": 95.71,
-      "change": -0.06,
-      "change_pct": -0.06,
+      "value": 95.68,
+      "change": -0.09,
+      "change_pct": -0.1,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4624.1,
-      "change": 107.8,
-      "change_pct": 2.39,
+      "value": 4671.8,
+      "change": 47.7,
+      "change_pct": 1.03,
       "direction": "positive"
     },
     "silver": {
-      "value": 69.47,
-      "change": 1.44,
-      "change_pct": 2.12,
-      "direction": "positive"
+      "value": 69.14,
+      "change": -0.33,
+      "change_pct": -0.47,
+      "direction": "negative"
     },
     "copper": {
-      "value": 6.58,
-      "change": 0.12,
-      "change_pct": 1.85,
-      "direction": "positive"
+      "value": 6.57,
+      "change": -0.0,
+      "change_pct": -0.07,
+      "direction": "negative"
     },
     "crude": {
-      "value": 87.06,
-      "change": -0.77,
-      "change_pct": -0.88,
+      "value": 86.35,
+      "change": -0.71,
+      "change_pct": -0.82,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.77,
-      "change": 0.04,
-      "change_pct": 1.46,
+      "value": 2.78,
+      "change": 0.01,
+      "change_pct": 0.25,
       "direction": "positive"
     }
   },
@@ -114,9 +114,9 @@
       {
         "symbol": "SJVN",
         "sector": "Utilities",
-        "old_price": 99.57,
-        "current_price": 66.06,
-        "low_52w": 63.02,
+        "old_price": 99.04,
+        "current_price": 65.71,
+        "low_52w": 62.69,
         "fall_pct": -33.65,
         "buy_signal": "Avoid"
       },
@@ -1065,17 +1065,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "22 Aug 2026",
+        "date": "23 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "21 Aug 2026",
+        "date": "22 Aug 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "20 Aug 2026",
+        "date": "21 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1098,8 +1098,8 @@
       "change_pct": 4.09
     },
     "crude": {
-      "value": 87.06,
-      "change_pct": -0.88
+      "value": 86.35,
+      "change_pct": -0.82
     },
     "reasons": [
       "\ud83d\udcc8 VIX up 4.1% indicating rising market uncertainty",
@@ -1114,8 +1114,8 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $87.06",
-        "sublabel": "-0.9%",
+        "label": "Crude $86.35",
+        "sublabel": "-0.8%",
         "status": "positive"
       },
       {
@@ -1158,57 +1158,68 @@
   "news": {
     "top_stories": [
       {
-        "headline": "CAS chaos triggers liquidity spiral: Nuvama says higher participation needed to break cycle",
+        "headline": "Two Trades for Today: A top realty firm for a 6.7% upmove, a mid-cap iron and steel pipe maker\u2019s stock for a gain of 6%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/cas-chaos-triggers-liquidity-spiral-nuvama-says-higher-participation-needed-to-break-cycle/articleshow/133421238.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-top-realty-firm-for-a-6-7-upmove-a-mid-cap-iron-and-steel-pipe-makers-stock-for-a-gain-of-6/articleshow/133441075.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Vijay Kedia Portfolio: 5 stocks surge up to 55% in CY26; 1 new addition in June quarter",
+        "headline": "15 penny stocks crash up to 50% in 3 months: Are you holding any?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/vijay-kedia-portfolio-5-stocks-surge-up-to-55-in-cy26-1-new-addition-in-june-quarter/slideshow/133419471.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/15-penny-stocks-crash-up-to-50-in-3-months-are-you-holding-any/slideshow/133435070.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Bonus, dividends & stock splits: Paras Defence, NBCC, MCX among 67 stocks turning ex-record date this week. Do you own any?",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bonus-dividends-stock-splits-paras-defence-nbcc-mcx-among-67-stocks-turning-ex-record-date-this-week-do-you-own-any/articleshow/133434336.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Concurrent Gainers: 13 smallcap stocks that gained for 5 days in a row",
+        "headline": "Market Trading Guide: Jayaswal Neco Industries among 2 stock recommendations for Monday",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-13-smallcap-stocks-that-gained-for-5-days-in-a-row/slideshow/133418816.cms",
-        "sentiment": "positive",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-trading-guide-jayaswal-neco-industries-among-2-stock-recommendations-for-monday/articleshow/133438554.cms",
+        "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Sugar stocks rally! How Balrampur Chini, Triveni Engineering, Shree Renuka Sugars, other stocks performed this week?",
+        "headline": "20 IPOs on investors' radar next week. GMPs indicate up to 90% returns",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sugar-stocks-rally-how-balrampur-chini-triveni-engineering-shree-renuka-sugars-other-stocks-performed-this-week/slideshow/133418401.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Power sector stocks: Rising demand, uneven risk; best owned as a basket. 10 power stocks with upside potential of up to 28%",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/power-sector-stocks-rising-demand-uneven-risk-best-owned-as-a-basket-10-power-stocks-with-upside-potential-of-up-to-28/articleshow/133429052.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/20-ipos-on-investors-radar-next-week-gmps-indicate-up-to-90-returns/slideshow/133436601.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       }
     ],
-    "earnings": [],
+    "earnings": [
+      {
+        "headline": "FPIs invest Rs 23,544 crore in Indian equities in Aug on earnings revival, rupee stability",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fpis-invest-rs-23544-crore-in-indian-equities-in-aug-on-earnings-revival-rupee-stability/articleshow/133435870.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Earnings recovery still not priced in, says Kotak Life's Hemant Kanawala",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/earnings-recovery-still-not-priced-in-says-kotak-lifes-hemant-kanawala/articleshow/133434366.cms",
+        "sentiment": "neutral",
+        "stocks": [
+          "KOTAK"
+        ],
+        "category": "earnings"
+      }
+    ],
     "orders": [],
     "regulatory": [
-      {
-        "headline": "Bank stocks to buy: Goldman Sachs remains bullish on 6 private bank stocks. Do you own any?",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bank-stocks-to-buy-goldman-sachs-remains-bullish-on-6-private-bank-stocks-do-you-own-any/slideshow/133420450.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "regulatory"
-      },
       {
         "headline": "Sebi proposes tighter curbs on promotional claims by online bond platforms",
         "source": "Economic Times",
@@ -1216,29 +1227,9 @@
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
-      },
-      {
-        "headline": "Goldman Sachs picks ICICI Bank, Kotak Mahindra Bank as top banking bets",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/goldman-sachs-picks-icici-bank-kotak-mahindra-bank-as-top-banking-bets/articleshow/133416320.cms",
-        "sentiment": "neutral",
-        "stocks": [
-          "KOTAK",
-          "ICICI"
-        ],
-        "category": "regulatory"
       }
     ],
-    "insider": [
-      {
-        "headline": "Zee Entertainment allots 20.94 cr convertible warrants to promoter group entity",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/zee-entertainment-allots-20-94-cr-convertible-warrants-to-promoter-group-entity/articleshow/133421533.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "insider"
-      }
-    ],
+    "insider": [],
     "geopolitical": [
       {
         "headline": "\ud83d\udd4a\ufe0f Global Markets Rally on Easing Geopolitical Tensions",
