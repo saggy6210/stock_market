@@ -1,85 +1,85 @@
-// Auto-generated on 2026-08-24T22:54:22.139099
+// Auto-generated on 2026-08-25T22:55:45.619755
 const DASHBOARD_DATA = {
-  "timestamp": "2026-08-24T22:53:47.665460",
+  "timestamp": "2026-08-25T22:55:19.099552",
   "indices": {
     "nifty50": {
-      "value": 24252.0,
+      "value": 24219.05,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 77540.83,
+      "value": 77369.11,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57761.95,
+      "value": 57525.95,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 30532.25,
+      "value": 30596.9,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 11.2,
+      "value": 11.53,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 53417.16,
-      "change": 140.15,
-      "change_pct": 0.26,
+      "value": 53577.4,
+      "change": 160.24,
+      "change_pct": 0.3,
       "direction": "positive"
     },
     "nasdaq": {
-      "value": 25980.19,
-      "change": -200.27,
-      "change_pct": -0.76,
-      "direction": "negative"
+      "value": 26151.3,
+      "change": 171.11,
+      "change_pct": 0.66,
+      "direction": "positive"
     },
     "usdinr": {
-      "value": 95.74,
-      "change": -0.04,
-      "change_pct": -0.04,
+      "value": 95.4,
+      "change": -0.3,
+      "change_pct": -0.31,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4717.9,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 4727.5,
+      "change": 86.7,
+      "change_pct": 1.87,
       "direction": "positive"
     },
     "silver": {
-      "value": 69.11,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 68.95,
+      "change": 0.41,
+      "change_pct": 0.6,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.61,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 6.71,
+      "change": 0.11,
+      "change_pct": 1.65,
       "direction": "positive"
     },
     "crude": {
-      "value": 85.08,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 80.97,
+      "change": -4.04,
+      "change_pct": -4.75,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.81,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 2.85,
+      "change": 0.06,
+      "change_pct": 2.26,
       "direction": "positive"
     }
   },
@@ -817,56 +817,56 @@ const DASHBOARD_DATA = {
     "buy": [],
     "avoid": [
       {
-        "symbol": "HDFCBANK",
-        "sector": "Banking",
-        "current_price": NaN,
-        "high_52w": 1003.9,
-        "low_52w": 714.83,
-        "fall_pct": NaN,
-        "rsi": 29.6,
-        "risk_level": "Medium",
-        "downside_pct": 15,
-        "signal": "Avoid",
-        "reason": "Strong fundamentals, market leader"
-      },
-      {
         "symbol": "TECHM",
         "sector": "IT",
         "current_price": NaN,
         "high_52w": 1807.04,
         "low_52w": 1271.07,
         "fall_pct": NaN,
-        "rsi": 23.5,
+        "rsi": 22.5,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
         "reason": "5G and enterprise growth"
       },
       {
-        "symbol": "MARUTI",
-        "sector": "Auto",
+        "symbol": "TATAPOWER",
+        "sector": "Power",
         "current_price": NaN,
-        "high_52w": 17197.29,
-        "low_52w": 12079.68,
+        "high_52w": 462.04,
+        "low_52w": 340.39,
         "fall_pct": NaN,
         "rsi": 29.3,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
-        "reason": "SUV portfolio expansion"
+        "reason": "Clean energy transition"
       },
       {
-        "symbol": "SUNPHARMA",
-        "sector": "Pharma",
+        "symbol": "BAJFINANCE",
+        "sector": "Finance",
         "current_price": NaN,
-        "high_52w": 2046.9,
-        "low_52w": 1533.99,
+        "high_52w": 1176.4,
+        "low_52w": 783.09,
         "fall_pct": NaN,
-        "rsi": 28.8,
+        "rsi": 26.8,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
-        "reason": "Specialty pharma focus"
+        "reason": "Consumer lending growth"
+      },
+      {
+        "symbol": "HDFCBANK",
+        "sector": "Banking",
+        "current_price": NaN,
+        "high_52w": 1003.9,
+        "low_52w": 714.83,
+        "fall_pct": NaN,
+        "rsi": 40.6,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "Strong fundamentals, market leader"
       },
       {
         "symbol": "ICICIBANK",
@@ -875,7 +875,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1467.63,
         "low_52w": 1177.67,
         "fall_pct": NaN,
-        "rsi": 36.9,
+        "rsi": 36.7,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -888,7 +888,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1212.84,
         "low_52w": 784.36,
         "fall_pct": NaN,
-        "rsi": 52.2,
+        "rsi": 44.3,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -901,7 +901,7 @@ const DASHBOARD_DATA = {
         "high_52w": 452.42,
         "low_52w": 344.9,
         "fall_pct": NaN,
-        "rsi": 55.7,
+        "rsi": 51.8,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -914,7 +914,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1417.21,
         "low_52w": 1041.7,
         "fall_pct": NaN,
-        "rsi": 43.5,
+        "rsi": 42.8,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -925,17 +925,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "24 Aug 2026",
+        "date": "25 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "23 Aug 2026",
+        "date": "24 Aug 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "22 Aug 2026",
+        "date": "23 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -950,32 +950,33 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
-    "summary": "\ud83d\udcca Markets trading sideways with mixed global cues",
+    "sentiment": "BULLISH",
+    "badge_class": "bullish",
+    "summary": "\u26fd Crude oil down 4.8% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +0.3%, NASDAQ +0.7%",
     "vix": {
-      "value": 11.2,
+      "value": 11.53,
       "change_pct": 0.0
     },
     "crude": {
-      "value": 85.08,
-      "change_pct": 0.0
+      "value": 80.97,
+      "change_pct": -4.75
     },
     "reasons": [
-      "\ud83d\udcca Markets trading sideways with mixed global cues"
+      "\u26fd Crude oil down 4.8% - positive for India (import dependent)",
+      "\ud83c\udf0f US markets positive: Dow +0.3%, NASDAQ +0.7%"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 11.20",
+        "label": "VIX 11.53",
         "sublabel": "+0.0%",
         "status": "positive"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $85.08",
-        "sublabel": "+0.0%",
-        "status": "negative"
+        "label": "Crude $80.97",
+        "sublabel": "-4.8%",
+        "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
@@ -985,12 +986,12 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ -0.8%",
+        "label": "NASDAQ +0.7%",
         "sublabel": "Tech Sentiment",
-        "status": "negative"
+        "status": "positive"
       }
     ],
-    "score": 1
+    "score": 5
   },
   "predictions": [
     {
@@ -999,9 +1000,9 @@ const DASHBOARD_DATA = {
       "reason": "Lower crude costs benefit refining; Jio/retail growth"
     },
     {
-      "symbol": "TCS",
-      "direction": "DOWN",
-      "reason": "Tech sector weakness affects sentiment"
+      "symbol": "INFY",
+      "direction": "UP",
+      "reason": "NASDAQ +0.7%, positive for IT sentiment"
     },
     {
       "symbol": "HDFCBANK",
@@ -1017,92 +1018,90 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
-        "headline": "Lenskart Solutions among 4 stocks to hit 52-week highs & surge up to 20% in a month",
+        "headline": "Paytm among 4 stocks hitting 52-week highs; surge up to 35% in a month",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/lenskart-solutions-among-4-stocks-to-hit-52-week-highs-amp-surge-up-to-20-in-a-month/slideshow/133468092.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/paytm-among-4-stocks-hitting-52-week-highs-surge-up-to-35-in-a-month/slideshow/133510158.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Market wrap: Tata Steel, HCL Tech, Bajaj Finance, Adani Ports top gainers and losers on Nifty and Sensex on Monday",
+        "headline": "Market wrap: Adani Enterprise, InterGlobe, HDFC Life, HCL Tech, top gainers and losers on Nifty and Sensex on Tuesday",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-tata-steel-hcl-tech-bajaj-finance-adani-ports-top-gainers-and-losers-on-nifty-and-sensex-on-monday/articleshow/133463103.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-adani-enterprise-interglobe-hdfc-life-hcl-tech-top-gainers-and-losers-on-nifty-and-sensex-on-tuesday/articleshow/133509563.cms",
         "sentiment": "positive",
         "stocks": [
-          "BAJAJ",
-          "TATA",
+          "HDFC",
           "ADANI"
         ],
         "category": "general"
       },
       {
-        "headline": "Shanthi Gears shares surge 37% in two trading sessions. Here's why",
+        "headline": "Market Trading Guide: Adani Enterprises, Dixon Tech among 4 stock recommendations for Wednesday",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/shanthi-gears-shares-surge-37-in-two-trading-sessions-heres-why/articleshow/133460616.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-trading-guide-adani-enterprises-dixontechamong-4-stock-recommendations-for-wednesday/slideshow/133515517.cms",
+        "sentiment": "positive",
+        "stocks": [
+          "ADANI"
+        ],
+        "category": "general"
+      },
+      {
+        "headline": "Multibagger stocks: Ather Energy, Hind Copper, MCX among stocks which surged up to 250% in one year",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/multibagger-stocks-ather-energy-hind-copper-mcx-among-stocks-which-surged-up-to-250-in-one-year/slideshow/133506231.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Ahead of Market: 10 things that will decide stock market action on Tuesday",
+        "headline": "Sensex rises 287 points, Nifty closes above 24,300 as market swings into green on first monthly expiry after CAS",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-tuesday/articleshow/133472692.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Market Trading Guide: Siemens among 2 stock recommendations for Tuesday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-trading-guide-siemens-among-2-stock-recommendations-for-tuesday/articleshow/133472552.cms",
-        "sentiment": "neutral",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sensex-rises-287-points-nifty-closes-above-24300-as-market-swings-into-green-on-first-monthly-expiry-after-cas/articleshow/133505296.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "general"
       }
     ],
     "earnings": [],
-    "orders": [
-      {
-        "headline": "Y Combinator sells Meesho shares worth Rs 970 crore in block deals; Morgan Stanley, Goldman Sachs, Citigroup among buyers",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/y-combinator-sells-meesho-shares-worth-rs-970-crore-in-block-deals-morgan-stanley-goldman-sachs-citigroup-among-buyers/articleshow/133472470.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "orders"
-      }
-    ],
+    "orders": [],
     "regulatory": [
       {
-        "headline": "Sebi drops proceedings against Max Financial, Axis Bank in Max Life deal case",
+        "headline": "These 8 banking stocks have an upside potential of up to 22% in 1 year, according to analysts",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-drops-proceedings-against-max-financial-axis-bank-in-max-life-deal-case/articleshow/133473094.cms",
-        "sentiment": "neutral",
-        "stocks": [
-          "AXIS"
-        ],
-        "category": "regulatory"
-      },
-      {
-        "headline": "SoftBank pares nearly 2.6% stake in Lenskart for Rs 2,888 crore",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/softbank-pares-nearly-2-6-stake-in-lenskart-for-rs-2888-crore/articleshow/133472713.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-8-banking-stocks-have-an-upside-potential-of-up-to-22-in-1-year-according-to-analysts/articleshow/133520222.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Two Trades for Today: A small private bank for a 7.7% rise, a large-cap NBFC stock for a gain of 7%",
+        "headline": "IPO fund diversion: Sebi bars Varanium Cloud, promoter for 7 years from markets",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-small-private-bank-for-a-7-7-rise-a-large-cap-nbfc-stock-for-a-gain-of-7/articleshow/133472120.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ipo-fund-diversion-sebi-bars-varanium-cloud-promoter-for-7-years-from-markets/articleshow/133513410.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Two Trades for Today: A mid-sized private bank for an 8.3% upmove, a mid-cap commercial services stock for a 7% gain",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-mid-sized-private-bank-for-an-8-3-upmove-a-mid-cap-commercial-services-stock-for-a-7-gain/articleshow/133512399.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Sebi introduces IT Resilience Index for market infrastructure institutions: Here's what you need to know",
+        "headline": "Jefferies picks 4 NBFCs with up to 20% upside that may continue outperforming Nifty, bank stocks. Here\u2019s why",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-introduces-it-resilience-index-for-market-infrastructure-institutions-heres-what-you-need-to-know/articleshow/133466515.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-picks-4-nbfcs-with-up-to-20-upside-that-may-continue-outperforming-nifty-bank-stocks-heres-why/articleshow/133507167.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Rays of Belief IPO: Mom's Belief operator announces price band for issue opening on September 1",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/rays-of-belief-ipo-moms-belief-operator-announces-price-band-for-issue-opening-on-september-1/articleshow/133506271.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
@@ -1110,10 +1109,34 @@ const DASHBOARD_DATA = {
     ],
     "insider": [
       {
-        "headline": "Govt to sell up to 6% stake in Hindustan Copper via OFS; floor price at 10% discount",
+        "headline": "Welspun Corp promoter group, CEO to sell up to Rs 1,417 crore stake via block deal",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/govt-to-sell-up-to-6-stake-in-hindustan-copper-via-ofs-floor-price-at-10-discount/articleshow/133469842.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/welspun-corp-promoter-group-ceo-to-sell-up-to-rs-1417-crore-stake-via-block-deal/articleshow/133516717.cms",
         "sentiment": "neutral",
+        "stocks": [],
+        "category": "insider"
+      },
+      {
+        "headline": "HEG demerger to take effect on September 1; record date fixed for September 7",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/heg-demerger-to-take-effect-on-september-1-record-date-fixed-for-september-7/articleshow/133513282.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "insider"
+      },
+      {
+        "headline": "Block deal ahead! Ribbit Capital likely to offload 1.6% stake in Groww for Rs 1,914 crore",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/block-deal-alert-ribbit-capital-to-likely-offload-1-6-stake-in-groww-for-rs-1914-crore/articleshow/133510922.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "insider"
+      },
+      {
+        "headline": "Federal Bank falls 3% on report of Jana Small Finance Bank stake acquisition",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/federal-bank-falls-4-on-report-of-jana-small-finance-bank-stake-acquisition/articleshow/133507065.cms",
+        "sentiment": "negative",
         "stocks": [],
         "category": "insider"
       }
