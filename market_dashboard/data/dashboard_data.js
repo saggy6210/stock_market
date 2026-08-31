@@ -1,6 +1,6 @@
-// Auto-generated on 2026-08-31T18:05:30.261137
+// Auto-generated on 2026-08-31T18:18:24.358473
 const DASHBOARD_DATA = {
-  "timestamp": "2026-08-31T18:04:33.044719",
+  "timestamp": "2026-08-31T18:17:51.543892",
   "indices": {
     "nifty50": {
       "value": 24080.4,
@@ -33,15 +33,15 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "dow": {
-      "value": 53250.52,
-      "change": -309.47,
-      "change_pct": -0.58,
+      "value": 53253.84,
+      "change": -306.15,
+      "change_pct": -0.57,
       "direction": "negative"
     },
     "nasdaq": {
-      "value": 26323.2,
-      "change": -79.22,
-      "change_pct": -0.3,
+      "value": 26319.78,
+      "change": -82.64,
+      "change_pct": -0.31,
       "direction": "negative"
     },
     "usdinr": {
@@ -53,31 +53,31 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4488.3,
+      "value": 4481.3,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "silver": {
-      "value": 67.11,
+      "value": 66.95,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.69,
+      "value": 6.68,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "crude": {
-      "value": 85.57,
+      "value": 85.55,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.94,
+      "value": 2.93,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
@@ -1099,7 +1099,7 @@ const DASHBOARD_DATA = {
       "change_pct": 4.78
     },
     "crude": {
-      "value": 85.57,
+      "value": 85.55,
       "change_pct": 0.0
     },
     "reasons": [
@@ -1115,7 +1115,7 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $85.57",
+        "label": "Crude $85.55",
         "sublabel": "+0.0%",
         "status": "negative"
       },
