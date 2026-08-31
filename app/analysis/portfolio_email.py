@@ -36,7 +36,7 @@ class PortfolioEmailGenerator:
         outlook_html = self._build_market_outlook(insights, market_data)
         indices_html = self._build_global_indices(market_data)
         indicators_html = self._build_market_indicators(market_data)
-        predictions_html = self._build_top5_predictions(insights)
+        predictions_html = self._build_top5_predictions(market_data)
         headlines_html = self._build_news_headlines(insights)
         earnings_html = self._build_earnings_news(insights)
         regulatory_html = self._build_regulatory_news(insights)
@@ -93,6 +93,7 @@ class PortfolioEmailGenerator:
         try:
             from app.analysis.market_overview import MarketOverviewFetcher
             from app.analysis.market_intelligence import MarketIntelligenceService
+            from app.analysis.news_aggregator import NewsAggregator
             
             # Fetch market overview
             overview_fetcher = MarketOverviewFetcher()
@@ -101,6 +102,10 @@ class PortfolioEmailGenerator:
             # Fetch market intelligence (FII/DII, VIX, etc.)
             intel_service = MarketIntelligenceService()
             intel = intel_service.get_market_intelligence()
+            
+            # Fetch news aggregator for general market predictions
+            news_aggregator = NewsAggregator()
+            market_news = news_aggregator.fetch_all_news()
             
             return {
                 "sensex": overview.sensex,
@@ -115,6 +120,7 @@ class PortfolioEmailGenerator:
                 "vix": intel.india_vix if intel else 0,
                 "crude": intel.crude_oil if intel else 0,
                 "gold": intel.gold if intel else 0,
+                "stock_movements": market_news.stock_movements if market_news else [],
             }
         except Exception as e:
             logger.warning(f"Failed to fetch market data: {e}")
@@ -294,19 +300,20 @@ class PortfolioEmailGenerator:
                         </td>
                     </tr>"""
     
-    def _build_top5_predictions(self, insights: PortfolioInsights) -> str:
-        """Build top 5 general stock movement predictions."""
-        predictions = insights.predictions[:5] if insights.predictions else []
+    def _build_top5_predictions(self, market_data: dict) -> str:
+        """Build top 5 general stock movement predictions from news sentiment."""
+        predictions = market_data.get("stock_movements", [])[:5]
         if not predictions:
             return ""
         
         rows = ""
-        for h in predictions:
-            if h.predicted_direction == "UP":
+        for pred in predictions:
+            direction = pred.get("direction", "HOLD")
+            if direction == "UP":
                 arrow = "▲"
                 color = "#22c55e"
                 bg = "#22c55e"
-            elif h.predicted_direction == "DOWN":
+            elif direction == "DOWN":
                 arrow = "▼"
                 color = "#ef4444"
                 bg = "#ef4444"
@@ -315,15 +322,19 @@ class PortfolioEmailGenerator:
                 color = "#f59e0b"
                 bg = "#f59e0b"
             
+            stock = pred.get("stock", "")
+            confidence = pred.get("confidence", 50)
+            reason = pred.get("reason", "")[:30]
+            
             rows += f"""
                                             <tr>
                                                 <td style="padding: 8px 0; border-bottom: 1px solid #1e293b;">
                                                     <table role="presentation" width="100%">
                                                         <tr>
                                                             <td width="8%" style="text-align: center;"><span style="color: {color}; font-size: 16px;">{arrow}</span></td>
-                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">{h.symbol}</span></td>
-                                                            <td width="24%"><span style="display: inline-block; background: {bg}; color: #ffffff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">{h.predicted_confidence:.0f}% CONF</span></td>
-                                                            <td><span style="color: #94a3b8; font-size: 11px;">{h.prediction_reason[:30]}</span></td>
+                                                            <td width="28%"><span style="color: #ffffff; font-size: 14px; font-weight: 700;">{stock}</span></td>
+                                                            <td width="24%"><span style="display: inline-block; background: {bg}; color: #ffffff; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 600;">{confidence:.0f}% CONF</span></td>
+                                                            <td><span style="color: #94a3b8; font-size: 11px;">{reason}</span></td>
                                                         </tr>
                                                     </table>
                                                 </td>
@@ -794,26 +805,13 @@ class PortfolioEmailGenerator:
     
     def _build_footer(self, insights: PortfolioInsights) -> str:
         """Build email footer."""
-        profit_loss_url = settings.dashboard_url.rstrip('/') + "/profit-loss.html"
-        
         return f"""
-                    <!-- CTA Buttons -->
+                    <!-- CTA Button -->
                     <tr>
                         <td style="padding: 0 16px 20px 16px; text-align: center;">
-                            <table role="presentation" width="100%" cellpadding="0" cellspacing="8">
-                                <tr>
-                                    <td width="50%" style="text-align: right;">
-                                        <a href="{settings.dashboard_url}" style="display: inline-block; background: #0f172a; color: #ffffff; padding: 14px 24px; text-decoration: none; font-size: 12px; font-weight: 700; border-radius: 8px;">
-                                            📊 Dashboard →
-                                        </a>
-                                    </td>
-                                    <td width="50%" style="text-align: left;">
-                                        <a href="{profit_loss_url}" style="display: inline-block; background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: #ffffff; padding: 14px 24px; text-decoration: none; font-size: 12px; font-weight: 700; border-radius: 8px;">
-                                            💰 P&L Report →
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
+                            <a href="{settings.dashboard_url}" style="display: inline-block; background: #0f172a; color: #ffffff; padding: 14px 32px; text-decoration: none; font-size: 13px; font-weight: 700; border-radius: 8px;">
+                                View Full Dashboard →
+                            </a>
                         </td>
                     </tr>
 
@@ -824,7 +822,7 @@ class PortfolioEmailGenerator:
                                 NSE • Yahoo Finance • MoneyControl • Economic Times
                             </p>
                             <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 9px;">
-                                Generated {insights.date} • For informational purposes only. DYOR.
+                                For informational purposes only. DYOR.
                             </p>
                         </td>
                     </tr>"""

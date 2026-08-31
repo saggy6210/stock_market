@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260831">
 </head>
 <body>
     <!-- Navigation -->
@@ -24,6 +24,7 @@
                 <li><a href="#overview" class="nav-link">Overview</a></li>
                 <li><a href="#recommendations" class="nav-link">Recommendations</a></li>
                 <li><a href="#news" class="nav-link">News</a></li>
+                <li><a href="profit-loss.html" class="nav-link">P&amp;L Report</a></li>
             </ul>
             <div class="nav-date" id="currentDate">
                 <span class="live-indicator"><span class="live-dot"></span>LIVE</span>
@@ -172,15 +173,9 @@
             
             <!-- GIFT Nifty & Currency -->
             <h3 style="font-size: 0.9rem; color: #6c757d; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">
-                🌏 GIFT Nifty & 💱 Currency
+                🌏 Currency
             </h3>
             <div class="indices-grid">
-                <div class="index-card positive" id="gift-card">
-                    <div class="index-region">SGX/GIFT</div>
-                    <div class="index-name">GIFT Nifty</div>
-                    <div class="index-value" id="gift-value">24,135.00</div>
-                    <div class="index-change positive" id="gift-change">▲ 84.40 (0.35%)</div>
-                </div>
                 <div class="index-card negative" id="usdinr-card">
                     <div class="index-region">FOREX</div>
                     <div class="index-name">USD/INR</div>
@@ -211,9 +206,9 @@
                 <div class="indicator-icon oil"><i class="fas fa-oil-can"></i></div>
                 <div class="indicator-info">
                     <div class="indicator-name">Crude Oil (Brent)</div>
-                    <div class="indicator-subtitle">$/Barrel - Iran-US talks easing</div>
+                    <div class="indicator-subtitle">$/Barrel</div>
                 </div>
-                <div class="indicator-value">$96.57</div>
+                <div class="indicator-value">$85.69</div>
                 <div class="indicator-change text-red">▼ 1.33%</div>
                 <div class="indicator-impact impact-positive">POSITIVE</div>
             </div>
@@ -230,73 +225,43 @@
             </div>
         </section>
 
-        <!-- ===== COMMODITY PRICES (Gold, Silver, Copper) ===== -->
+        <!-- ===== COMMODITY PRICES (International COMEX/NYMEX, USD) ===== -->
         <section class="market-section">
             <div class="section-header">
                 <h2 class="section-title"><i class="fas fa-gem"></i> 💰 Commodity Prices</h2>
+                <span style="font-size: 0.75rem; color: #6c757d;">International (COMEX/NYMEX) • USD</span>
             </div>
             
             <div class="indices-grid">
-                <div class="index-card negative" id="gold-card">
-                    <div class="index-region">MCX</div>
+                <div class="index-card" id="gold-card">
+                    <div class="index-region">COMEX</div>
                     <div class="index-name">🥇 Gold</div>
-                    <div class="index-value" id="gold-value">₹1,42,850/10gm</div>
-                    <div class="index-change negative" id="gold-change">▼ 920 (0.64%)</div>
+                    <div class="index-value" id="gold-value">$4,480.50/oz</div>
+                    <div class="index-change" id="gold-change">—</div>
                 </div>
-                <div class="index-card positive" id="silver-card">
-                    <div class="index-region">MCX</div>
+                <div class="index-card" id="silver-card">
+                    <div class="index-region">COMEX</div>
                     <div class="index-name">🥈 Silver</div>
-                    <div class="index-value" id="silver-value">₹2,28,560/kg</div>
-                    <div class="index-change positive" id="silver-change">▲ 115 (0.05%)</div>
+                    <div class="index-value" id="silver-value">$66.94/oz</div>
+                    <div class="index-change" id="silver-change">—</div>
                 </div>
-                <div class="index-card positive" id="copper-card">
-                    <div class="index-region">MCX</div>
+                <div class="index-card" id="copper-card">
+                    <div class="index-region">COMEX</div>
                     <div class="index-name">🔶 Copper</div>
-                    <div class="index-value" id="copper-value">₹985.60/kg</div>
-                    <div class="index-change positive" id="copper-change">▲ 20.40 (2.11%)</div>
+                    <div class="index-value" id="copper-value">$6.68/lb</div>
+                    <div class="index-change" id="copper-change">—</div>
                 </div>
-                <div class="index-card negative" id="crudeoil-card">
-                    <div class="index-region">MCX</div>
-                    <div class="index-name">⛽ Crude Oil</div>
-                    <div class="index-value" id="crudeoil-value">₹8,045/barrel</div>
-                    <div class="index-change negative" id="crudeoil-change">▼ 108 (1.33%)</div>
+                <div class="index-card" id="crude-card">
+                    <div class="index-region">NYMEX</div>
+                    <div class="index-name">⛽ Crude Oil (WTI)</div>
+                    <div class="index-value" id="crude-value">$85.69/bbl</div>
+                    <div class="index-change" id="crude-change">—</div>
                 </div>
-                <div class="index-card positive" id="naturalgas-card">
-                    <div class="index-region">MCX</div>
+                <div class="index-card" id="natgas-card">
+                    <div class="index-region">NYMEX</div>
                     <div class="index-name">🔥 Natural Gas</div>
-                    <div class="index-value" id="naturalgas-value">₹234.50/MMBtu</div>
-                    <div class="index-change positive" id="naturalgas-change">▲ 3.20 (1.38%)</div>
-                </div>
-                <div class="index-card negative" id="aluminium-card">
-                    <div class="index-region">MCX</div>
-                    <div class="index-name">🪨 Aluminium</div>
-                    <div class="index-value" id="aluminium-value">₹234.80/kg</div>
-                    <div class="index-change negative" id="aluminium-change">▼ 1.20 (0.51%)</div>
-                </div>
-            </div>
-            
-            <!-- International Prices -->
-            <h3 style="font-size: 0.9rem; color: #6c757d; margin: 20px 0 12px; text-transform: uppercase; letter-spacing: 1px;">
-                🌍 International Prices (COMEX/NYMEX) - Verified
-            </h3>
-            <div class="indices-grid">
-                <div class="index-card negative">
-                    <div class="index-region">COMEX</div>
-                    <div class="index-name">🥇 Gold Futures</div>
-                    <div class="index-value">$4,787.40/oz</div>
-                    <div class="index-change negative">▼ 30.60 (0.64%)</div>
-                </div>
-                <div class="index-card positive">
-                    <div class="index-region">COMEX</div>
-                    <div class="index-name">🥈 Silver Futures</div>
-                    <div class="index-value">$76.48/oz</div>
-                    <div class="index-change positive">▲ 0.04 (0.05%)</div>
-                </div>
-                <div class="index-card positive">
-                    <div class="index-region">COMEX</div>
-                    <div class="index-name">🔶 Copper Futures</div>
-                    <div class="index-value">$5.89/lb</div>
-                    <div class="index-change positive">▲ 0.12 (2.11%)</div>
+                    <div class="index-value" id="natgas-value">$2.94/MMBtu</div>
+                    <div class="index-change" id="natgas-change">—</div>
                 </div>
             </div>
         </section>
@@ -734,7 +699,7 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="data/dashboard_data.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="data/dashboard_data.js?v=20260831"></script>
+    <script src="assets/js/main.js?v=20260831"></script>
 </body>
 </html>

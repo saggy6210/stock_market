@@ -72,22 +72,26 @@ function updateDateTime() {
 }
 
 /**
- * Load all dashboard data
+ * Load all dashboard data.
+ * Renders the generated snapshot (DASHBOARD_DATA) first so the page is always
+ * populated, then enhances with live backend data if a backend is reachable.
  */
 async function loadAllData() {
     console.log('📊 Loading all market data...');
-    
+
+    // 1. Always render from the generated snapshot (works on static hosting)
+    loadFallbackData();
+
+    // 2. Enhance with live backend data if available
     try {
-        // Try to load from backend API
         await loadFromBackendAPI();
     } catch (e) {
-        console.log('⚠️ Backend API unavailable, using fallback data');
-        loadFallbackData();
+        console.log('ℹ️ Live backend unavailable, using generated snapshot');
     }
-    
-    // Load screener data
+
+    // 3. Load screener data (skips if already provided by the snapshot)
     await loadScreenerData();
-    
+
     console.log('✅ Dashboard data loaded successfully');
 }
 
@@ -173,45 +177,70 @@ function updateIndexCard(id, data) {
     }
     
     if (changeEl) {
-        const symbol = data.is_positive ? '▲' : '▼';
         const changeVal = Math.abs(data.change || 0);
         const changePct = Math.abs(data.change_pct || 0);
-        changeEl.textContent = `${symbol} ${formatIndianNumber(changeVal)} (${changePct.toFixed(2)}%)`;
-        changeEl.className = `index-change ${data.is_positive ? 'positive' : 'negative'}`;
+        if (changePct === 0 && changeVal === 0) {
+            changeEl.textContent = '— unch';
+            changeEl.className = 'index-change';
+        } else {
+            const symbol = data.is_positive ? '▲' : '▼';
+            changeEl.textContent = `${symbol} ${formatIndianNumber(changeVal)} (${changePct.toFixed(2)}%)`;
+            changeEl.className = `index-change ${data.is_positive ? 'positive' : 'negative'}`;
+        }
     }
     
     if (cardEl) {
-        cardEl.className = `index-card ${data.is_positive ? 'positive' : 'negative'}`;
+        const changePct = Math.abs(data.change_pct || 0);
+        const changeVal = Math.abs(data.change || 0);
+        cardEl.className = (changePct === 0 && changeVal === 0)
+            ? 'index-card'
+            : `index-card ${data.is_positive ? 'positive' : 'negative'}`;
     }
 }
 
 /**
- * Update commodity prices
+ * Update commodity prices (international COMEX/NYMEX, USD)
  */
 function updateCommodities(commodities) {
+    // Maps generated data key -> { id, unit }
     const commodityMap = {
-        'gold': 'gold',
-        'silver': 'silver',
-        'copper': 'copper',
-        'crude_oil': 'crude',
-        'natural_gas': 'natgas'
+        'gold': { id: 'gold', unit: '/oz' },
+        'silver': { id: 'silver', unit: '/oz' },
+        'copper': { id: 'copper', unit: '/lb' },
+        'crude_oil': { id: 'crude', unit: '/bbl' },
+        'natural_gas': { id: 'natgas', unit: '/MMBtu' }
     };
-    
-    for (const [key, id] of Object.entries(commodityMap)) {
+
+    for (const [key, cfg] of Object.entries(commodityMap)) {
         const data = commodities[key];
-        if (data) {
-            const valueEl = document.getElementById(`${id}-value`);
-            const changeEl = document.getElementById(`${id}-change`);
-            
-            if (valueEl) {
-                valueEl.textContent = `$${formatIndianNumber(data.value)}`;
+        if (!data) continue;
+
+        const valueEl = document.getElementById(`${cfg.id}-value`);
+        const changeEl = document.getElementById(`${cfg.id}-change`);
+        const cardEl = document.getElementById(`${cfg.id}-card`);
+        const isPositive = data.is_positive !== undefined ? data.is_positive : (data.change_pct || 0) >= 0;
+
+        if (valueEl) {
+            valueEl.textContent = `$${formatIndianNumber(data.value)}${cfg.unit}`;
+        }
+
+        if (changeEl) {
+            const changePct = Math.abs(data.change_pct || 0);
+            if (changePct === 0) {
+                changeEl.textContent = '— unch';
+                changeEl.className = 'index-change';
+            } else {
+                const symbol = isPositive ? '▲' : '▼';
+                changeEl.textContent = `${symbol} ${changePct.toFixed(2)}%`;
+                changeEl.className = `index-change ${isPositive ? 'positive' : 'negative'}`;
             }
-            
-            if (changeEl) {
-                const symbol = data.is_positive ? '▲' : '▼';
-                changeEl.textContent = `${symbol} ${Math.abs(data.change_pct).toFixed(2)}%`;
-                changeEl.className = `index-change ${data.is_positive ? 'positive' : 'negative'}`;
-            }
+        }
+
+        if (cardEl) {
+            const changePct = Math.abs(data.change_pct || 0);
+            cardEl.className = changePct === 0
+                ? 'index-card'
+                : `index-card ${isPositive ? 'positive' : 'negative'}`;
         }
     }
 }
