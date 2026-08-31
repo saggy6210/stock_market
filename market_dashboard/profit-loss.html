@@ -97,6 +97,53 @@
             color: rgba(255,255,255,0.9);
         }
         
+        /* Key Metrics Strip */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .metric-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 22px 16px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+        }
+        
+        .metric-value {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.1;
+        }
+        
+        .metric-value.green { color: #4ade80; }
+        .metric-value.red { color: #f87171; }
+        .metric-value.purple { color: #a78bfa; }
+        
+        .metric-label {
+            font-size: 0.78rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+        
+        .metric-sub {
+            font-size: 0.72rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        
         /* Summary Cards */
         .summary-grid {
             display: grid;
@@ -399,8 +446,16 @@
         }
         
         .data-table th:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(30, 41, 59, 0.98);
             color: #ffffff;
+        }
+        
+        /* Sticky header on scroll within tall tables */
+        .data-table thead th {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            background: #16223a;
         }
         
         .data-table th.sorted-asc::after { content: ' ↑'; color: #7c3aed; }
@@ -438,7 +493,18 @@
         
         /* Responsive */
         .table-scroll {
-            overflow-x: auto;
+            overflow: auto;
+            max-height: 600px;
+        }
+        
+        .scroll-hint {
+            display: none;
+            font-size: 0.75rem;
+            color: #64748b;
+            padding: 6px 24px 0;
+        }
+        @media (max-width: 768px) {
+            .scroll-hint { display: block; }
         }
         
         /* Footer */
@@ -494,6 +560,30 @@
             <div class="label">Total Realised P&L (All Time)</div>
             <div class="amount">₹6,60,555.47</div>
             <div class="trades">179 Total Trades • 174 Profitable • 5 Loss</div>
+        </div>
+        
+        <!-- Key Metrics -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value green">97.2%</div>
+                <div class="metric-label">Win Rate</div>
+                <div class="metric-sub">174 of 179 trades</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">₹3,690</div>
+                <div class="metric-label">Avg P&L / Trade</div>
+                <div class="metric-sub">Across all trades</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value green">₹43,959</div>
+                <div class="metric-label">Biggest Winner</div>
+                <div class="metric-sub">SILVERCASE +99.17%</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value red">-₹6,121</div>
+                <div class="metric-label">Biggest Loser</div>
+                <div class="metric-sub">DHARAN-Z -84.67%</div>
+            </div>
         </div>
         
         <!-- FY Summary Cards -->
@@ -908,12 +998,22 @@
         </div>
         
         <div class="footer">
-            <p>Data from Zerodha • Updated July 2026</p>
+            <p>Data from Zerodha • Last updated <span id="lastUpdated">August 2026</span></p>
             <p><a href="index.html">← Back to Dashboard</a></p>
         </div>
     </div>
     
     <script>
+        // Footer last-updated timestamp
+        (function () {
+            const el = document.getElementById('lastUpdated');
+            if (el) {
+                el.textContent = new Date().toLocaleDateString('en-IN', {
+                    year: 'numeric', month: 'long', day: 'numeric'
+                });
+            }
+        })();
+
         // Tab switching
         document.querySelectorAll('.tab').forEach(tab => {
             tab.addEventListener('click', () => {

@@ -805,13 +805,25 @@ class PortfolioEmailGenerator:
     
     def _build_footer(self, insights: PortfolioInsights) -> str:
         """Build email footer."""
+        profit_loss_url = settings.dashboard_url.rstrip('/') + "/profit-loss.html"
         return f"""
-                    <!-- CTA Button -->
+                    <!-- CTA Buttons -->
                     <tr>
                         <td style="padding: 0 16px 20px 16px; text-align: center;">
-                            <a href="{settings.dashboard_url}" style="display: inline-block; background: #0f172a; color: #ffffff; padding: 14px 32px; text-decoration: none; font-size: 13px; font-weight: 700; border-radius: 8px;">
-                                View Full Dashboard →
-                            </a>
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="8">
+                                <tr>
+                                    <td width="50%" style="text-align: right;">
+                                        <a href="{settings.dashboard_url}" style="display: inline-block; background: #0f172a; color: #ffffff; padding: 14px 24px; text-decoration: none; font-size: 12px; font-weight: 700; border-radius: 8px;">
+                                            📊 Dashboard →
+                                        </a>
+                                    </td>
+                                    <td width="50%" style="text-align: left;">
+                                        <a href="{profit_loss_url}" style="display: inline-block; background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: #ffffff; padding: 14px 24px; text-decoration: none; font-size: 12px; font-weight: 700; border-radius: 8px;">
+                                            💰 P&L Report →
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
 
@@ -993,6 +1005,7 @@ class PortfolioEmailGenerator:
             "=" * 70,
             "",
             f"📈 VIEW FULL MARKET DASHBOARD: {settings.dashboard_url}",
+            f"💰 PROFIT & LOSS REPORT: {settings.dashboard_url.rstrip('/')}/profit-loss.html",
             "",
             "=" * 70,
         ])
