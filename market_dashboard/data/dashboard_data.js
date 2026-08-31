@@ -1,42 +1,48 @@
-// Auto-generated on 2026-08-31T17:37:20.623540
+// Auto-generated on 2026-08-31T18:05:30.261137
 const DASHBOARD_DATA = {
-  "timestamp": "2026-08-31T17:35:56.832076",
+  "timestamp": "2026-08-31T18:04:33.044719",
   "indices": {
     "nifty50": {
       "value": 24080.4,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "change": -95.25,
+      "change_pct": -0.39,
+      "direction": "negative"
     },
     "sensex": {
       "value": 76957.27,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "change": -307.23,
+      "change_pct": -0.4,
+      "direction": "negative"
     },
     "niftybank": {
       "value": 58024.95,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "change": 528.65,
+      "change_pct": 0.92,
       "direction": "positive"
     },
     "niftyit": {
       "value": 31191.45,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "change": -90.25,
+      "change_pct": -0.29,
+      "direction": "negative"
     },
     "vix": {
       "value": 11.19,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "change": 0.51,
+      "change_pct": 4.78,
       "direction": "positive"
     },
+    "dow": {
+      "value": 53250.52,
+      "change": -309.47,
+      "change_pct": -0.58,
+      "direction": "negative"
+    },
     "nasdaq": {
-      "value": 26283.06,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 26323.2,
+      "change": -79.22,
+      "change_pct": -0.3,
+      "direction": "negative"
     },
     "usdinr": {
       "value": 95.15,
@@ -47,25 +53,25 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4480.5,
+      "value": 4488.3,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "silver": {
-      "value": 66.94,
+      "value": 67.11,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.68,
+      "value": 6.69,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "crude": {
-      "value": 85.69,
+      "value": 85.57,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
@@ -1049,7 +1055,7 @@ const DASHBOARD_DATA = {
         "high_52w": 2046.9,
         "low_52w": 1533.99,
         "fall_pct": -3.03,
-        "rsi": 59.4,
+        "rsi": 58.7,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -1087,45 +1093,46 @@ const DASHBOARD_DATA = {
   "market_outlook": {
     "sentiment": "NEUTRAL",
     "badge_class": "neutral",
-    "summary": "\ud83d\udcca Markets trading sideways with mixed global cues",
+    "summary": "\ud83d\udcc8 VIX up 4.8% indicating rising market uncertainty. \ud83c\udf0f US markets weak: Dow -0.6%, NASDAQ -0.3%",
     "vix": {
       "value": 11.19,
-      "change_pct": 0.0
+      "change_pct": 4.78
     },
     "crude": {
-      "value": 85.69,
+      "value": 85.57,
       "change_pct": 0.0
     },
     "reasons": [
-      "\ud83d\udcca Markets trading sideways with mixed global cues"
+      "\ud83d\udcc8 VIX up 4.8% indicating rising market uncertainty",
+      "\ud83c\udf0f US markets weak: Dow -0.6%, NASDAQ -0.3%"
     ],
     "factors": [
       {
-        "icon": "\ud83d\udcc9",
+        "icon": "\ud83d\udcc8",
         "label": "VIX 11.19",
-        "sublabel": "+0.0%",
-        "status": "positive"
+        "sublabel": "+4.8%",
+        "status": "neutral"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $85.69",
+        "label": "Crude $85.57",
         "sublabel": "+0.0%",
         "status": "negative"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow +0.0%",
+        "label": "Dow -0.6%",
         "sublabel": "US Markets",
         "status": "negative"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ +0.0%",
+        "label": "NASDAQ -0.3%",
         "sublabel": "Tech Sentiment",
         "status": "negative"
       }
     ],
-    "score": 2
+    "score": 1
   },
   "predictions": [
     {
@@ -1214,22 +1221,6 @@ const DASHBOARD_DATA = {
         "category": "earnings"
       },
       {
-        "headline": "Nomura retains 'Buy' on Star Health, Niva Bupa; sees more predictable loss ratios",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/stocks/nomura-retains-buy-on-star-health-niva-bupa-sees-more-predictable-loss-ratios-14019004.html",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "earnings"
-      },
-      {
-        "headline": "FIIs raised stakes in these 12 smallcap stocks in Q1; shares surge up to 123%",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fiis-raise-stake-in-these-12-smallcap-stocks-in-q1-shares-surge-up-to-123/slideshow/133649177.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "earnings"
-      },
-      {
         "headline": "Britannia, Nestl\u00e9 India, Godrej Consumer, paints face raw material pressure; Nomura sees 2QFY27 margin hit",
         "source": "MoneyControl",
         "url": "https://www.moneycontrol.com/news/business/stocks/britannia-nestl-india-godrej-consumer-paints-face-raw-material-pressure-nomura-sees-2qfy27-margin-hit-14019028.html",
@@ -1299,6 +1290,16 @@ const DASHBOARD_DATA = {
         "url": "https://www.moneycontrol.com/news/business/markets/grt-jewellers-to-acquire-74-stake-of-tribhovandas-bhimji-zaveri-for-rs-1-034-crore-14019120.html",
         "sentiment": "neutral",
         "stocks": [],
+        "category": "insider"
+      },
+      {
+        "headline": "ITC Infotech to merge with Happiest Minds, buy 22% promoter stake for Rs 1,330 crore",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/itc-infotech-to-merge-with-happiest-minds-buy-22-promoter-stake-for-rs-1330-crore/articleshow/133659997.cms",
+        "sentiment": "neutral",
+        "stocks": [
+          "ITC"
+        ],
         "category": "insider"
       },
       {
