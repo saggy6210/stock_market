@@ -1,6 +1,6 @@
-// Auto-generated on 2026-08-30T00:34:40.415838
+// Auto-generated on 2026-08-31T00:46:22.173005
 const DASHBOARD_DATA = {
-  "timestamp": "2026-08-30T00:33:43.959902",
+  "timestamp": "2026-08-31T00:45:50.352510",
   "indices": {
     "nifty50": {
       "value": 24175.65,
@@ -45,41 +45,41 @@ const DASHBOARD_DATA = {
       "direction": "negative"
     },
     "usdinr": {
-      "value": 95.38,
-      "change": -0.09,
-      "change_pct": -0.09,
-      "direction": "negative"
+      "value": 95.47,
+      "change": 0.0,
+      "change_pct": 0.0,
+      "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4478.1,
-      "change": -131.6,
-      "change_pct": -2.85,
-      "direction": "negative"
+      "value": 4516.0,
+      "change": 37.9,
+      "change_pct": 0.85,
+      "direction": "positive"
     },
     "silver": {
-      "value": 67.0,
-      "change": -2.43,
-      "change_pct": -3.51,
-      "direction": "negative"
+      "value": 67.41,
+      "change": 0.42,
+      "change_pct": 0.62,
+      "direction": "positive"
     },
     "copper": {
-      "value": 6.56,
-      "change": -0.03,
-      "change_pct": -0.38,
-      "direction": "negative"
+      "value": 6.63,
+      "change": 0.07,
+      "change_pct": 1.03,
+      "direction": "positive"
     },
     "crude": {
-      "value": 83.4,
-      "change": -0.13,
-      "change_pct": -0.16,
-      "direction": "negative"
+      "value": 84.14,
+      "change": 0.74,
+      "change_pct": 0.89,
+      "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.89,
-      "change": -0.02,
-      "change_pct": -0.65,
+      "value": 2.84,
+      "change": -0.05,
+      "change_pct": -1.77,
       "direction": "negative"
     }
   },
@@ -1066,17 +1066,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "30 Aug 2026",
+        "date": "31 Aug 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "29 Aug 2026",
+        "date": "30 Aug 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "28 Aug 2026",
+        "date": "29 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1099,8 +1099,8 @@ const DASHBOARD_DATA = {
       "change_pct": -3.52
     },
     "crude": {
-      "value": 83.4,
-      "change_pct": -0.16
+      "value": 84.14,
+      "change_pct": 0.89
     },
     "reasons": [
       "\ud83d\udcc9 VIX down 3.5% indicating declining volatility/fear"
@@ -1114,9 +1114,9 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $83.40",
-        "sublabel": "-0.2%",
-        "status": "positive"
+        "label": "Crude $84.14",
+        "sublabel": "+0.9%",
+        "status": "negative"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
@@ -1131,7 +1131,7 @@ const DASHBOARD_DATA = {
         "status": "negative"
       }
     ],
-    "score": 2
+    "score": 1
   },
   "predictions": [
     {
@@ -1158,124 +1158,96 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
-        "headline": "MCX logs record daily turnover of Rs 62.93 lakh crore amid strong activity",
+        "headline": "Two Trades for Today: A PSU engineering major for an 8.1% gain, a large-cap IT stock for rise of 7%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mcx-logs-record-daily-turnover-of-rs-62-93-lakh-crore-amid-strong-activity/articleshow/133610287.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-psu-engineering-major-for-an-8-1-gain-a-large-cap-it-stock-for-rise-of-7/articleshow/133631362.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Concurrent Gainers: 13 smallcap stocks that gain for 5 days in a row, surge up to 45%",
+        "headline": "Pre-market action: Here's the trade setup for today's session",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-13-smallcap-stocks-that-gain-for-5-days-in-a-row-surge-up-to-45/slideshow/133605584.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "First drones, now missiles. The spending is certain, who gets the maximum is not: 14 stocks from the defence ecosystem",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/from-drones-to-missiles-spending-is-certain-which-company-benefits-is-not-so-own-the-ecosystem-14-defence-stocks-to-watch/articleshow/133617758.cms",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Vanguard\u2019s India Portfolio: 12 stocks surge up to 190% in CY26; 3 multibaggers, 3 new entrants",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/vanguards-india-portfolio-12-stocks-surge-up-to-190-in-cy26-3-multibaggers-3-new-entrants/slideshow/133607138.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Nearly half of BSE 200 stocks fail to deliver returns in 2026. What\u2019s dragging them down?",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nearly-half-of-bse-200-stocks-fail-to-deliver-returns-in-2026-whats-dragging-them-down/articleshow/133603293.cms",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "general"
-      }
-    ],
-    "earnings": [
-      {
-        "headline": "Vedanta, Wipro among 10 stocks that saw biggest jump in retail holders in Q1. See full list",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/vedanta-wipro-among-10-stocks-that-saw-biggest-jump-in-retail-holders-in-q1-see-full-list/slideshow/133608528.cms",
-        "sentiment": "positive",
-        "stocks": [
-          "VEDANTA",
-          "WIPRO"
-        ],
-        "category": "earnings"
-      },
-      {
-        "headline": "BSE, Hindustan Zinc among 5 stocks with revenue growth of up to 64% in 1 year. Check details",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bse-hindustan-zinc-among-5-stocks-with-revenue-growth-of-up-to-64-in-1-year-check-details/slideshow/133604773.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "earnings"
-      },
-      {
-        "headline": "Suzlon, Tata Motors among 10 stocks that saw sharpest drop in retail shareholders in Q1. Own any?",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/suzlon-tata-motors-among-10-stocks-that-saw-the-sharpest-drop-in-retail-shareholders-in-q1-own-any/slideshow/133603296.cms",
-        "sentiment": "negative",
-        "stocks": [
-          "TATA"
-        ],
-        "category": "earnings"
-      },
-      {
-        "headline": "Bajaj Finance, L&T Finance poised to benefit as NBFC earnings recovery broadens: Siddhartha Khemka",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-lt-finance-poised-to-benefit-as-nbfc-earnings-recovery-broadens-siddhartha-khemka/articleshow/133604560.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/pre-market-action-heres-the-trade-setup-for-todays-session/articleshow/133632361.cms",
         "sentiment": "neutral",
-        "stocks": [
-          "BAJAJ"
-        ],
-        "category": "earnings"
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "10 largecap stocks with up to 40% upside potential. Do you own any?",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/10-largecap-stocks-with-up-to-40-upside-potential-do-you-own-any/slideshow/133626995.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "FPIs lobby for faster access to bourses with link to servers",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fpis-lobby-for-faster-access-to-bourses-with-link-to-servers/articleshow/133639119.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Ahead of Market: 10 things that will decide stock market action on Monday",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-monday/articleshow/133628353.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "general"
       }
     ],
-    "orders": [],
+    "earnings": [],
+    "orders": [
+      {
+        "headline": "Block, bulk deals hit 14-month high in August at Rs 80,000 crore",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/block-bulk-deals-hit-14-month-high-in-august-at-rs-80000-crore/articleshow/133639060.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "orders"
+      }
+    ],
     "regulatory": [
       {
-        "headline": "Sebi bars Trafiksol ITS, its promoters from securities market for 1 year; slaps Rs 1.05 cr fine",
+        "headline": "Stocks in news: HDFC Bank, Ola Electric Mobility, NBCC and Knowledge Realty Trust",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-bars-trafiksol-its-its-promoters-from-securities-market-for-1-year-slaps-rs-1-05-cr-fine/articleshow/133610810.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stocks-in-news-hdfc-bank-ola-electric-mobility-nbcc-and-knowledge-realty-trust/articleshow/133632751.cms",
+        "sentiment": "neutral",
+        "stocks": [
+          "HDFC"
+        ],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Numbers Boost: FCNR-B inflows help banks cut expensive bulk deposits",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/numbers-boost-fcnr-b-inflows-help-banks-cut-expensive-bulk-deposits/articleshow/133639082.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Former BJP MP Kirit Somaiya seeks SEBI probe into sharp Sensex swing during CAS",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/former-bjp-mp-kirit-somaiya-seeks-sebi-probe-into-sharp-sensex-swing-during-cas/articleshow/133627517.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Indian bank stocks show widest exchange price gap in decades",
+        "headline": "SBI, SBI Capital Markets plan 1% NSE stake sale via IPO: Bank Chairman C S Setty",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/indian-bank-stocks-show-widest-exchange-price-gap-in-decades/articleshow/133604969.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sbi-sbi-capital-markets-plan-1-nse-stake-sale-via-ipo/articleshow/133624789.cms",
         "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi plans bigger institutional role in public offers by small firms, sources say",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-plans-bigger-institutional-role-in-public-offers-by-small-firms-sources-say/articleshow/133596132.cms",
-        "sentiment": "neutral",
-        "stocks": [],
+        "stocks": [
+          "SBI"
+        ],
         "category": "regulatory"
       }
     ],
-    "insider": [
-      {
-        "headline": "Hero MotoCorp buys Rs 1,758 crore Ather Energy stake in block deal",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/hero-motocorp-buys-rs-1758-crore-ather-energy-stake-in-block-deal/articleshow/133594919.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "insider"
-      }
-    ],
+    "insider": [],
     "geopolitical": [
       {
         "headline": "\ud83d\udd4a\ufe0f Global Markets Rally on Easing Geopolitical Tensions",
