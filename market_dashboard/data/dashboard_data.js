@@ -1,85 +1,85 @@
-// Auto-generated on 2026-09-01T01:22:36.636252
+// Auto-generated on 2026-09-02T00:25:00.805366
 const DASHBOARD_DATA = {
-  "timestamp": "2026-09-01T01:21:56.702603",
+  "timestamp": "2026-09-02T00:24:36.802516",
   "indices": {
     "nifty50": {
-      "value": 24175.65,
+      "value": 24080.4,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "sensex": {
-      "value": 77264.51,
+      "value": 76957.27,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 57496.3,
+      "value": 58024.95,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 31281.7,
+      "value": 31191.45,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "vix": {
-      "value": 10.68,
+      "value": 11.19,
       "change": 0.0,
       "change_pct": 0.0,
       "direction": "positive"
     },
     "dow": {
-      "value": 53185.9,
-      "change": -374.09,
-      "change_pct": -0.7,
+      "value": 52766.88,
+      "change": -419.02,
+      "change_pct": -0.79,
       "direction": "negative"
     },
     "nasdaq": {
-      "value": 26370.89,
-      "change": -31.53,
-      "change_pct": -0.12,
+      "value": 26099.77,
+      "change": -271.12,
+      "change_pct": -1.03,
       "direction": "negative"
     },
     "usdinr": {
-      "value": 95.15,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 94.94,
+      "change": -0.17,
+      "change_pct": -0.18,
+      "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4496.2,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 4373.5,
+      "change": -57.6,
+      "change_pct": -1.3,
+      "direction": "negative"
     },
     "silver": {
-      "value": 67.32,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 64.79,
+      "change": -1.43,
+      "change_pct": -2.15,
+      "direction": "negative"
     },
     "copper": {
-      "value": 6.73,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 6.55,
+      "change": -0.04,
+      "change_pct": -0.62,
+      "direction": "negative"
     },
     "crude": {
-      "value": 86.48,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 90.99,
+      "change": 5.23,
+      "change_pct": 6.1,
       "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.92,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 2.96,
+      "change": 0.03,
+      "change_pct": 0.85,
       "direction": "positive"
     }
   },
@@ -99,7 +99,7 @@ const DASHBOARD_DATA = {
         "sector": "Financial Services",
         "old_price": 135.73,
         "current_price": NaN,
-        "low_52w": 83.65,
+        "low_52w": 82.9,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -198,7 +198,7 @@ const DASHBOARD_DATA = {
         "sector": "Industrials",
         "old_price": 398.2,
         "current_price": NaN,
-        "low_52w": 214.0,
+        "low_52w": 209.5,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -335,7 +335,7 @@ const DASHBOARD_DATA = {
         "sector": "Industrials",
         "old_price": 398.2,
         "current_price": NaN,
-        "low_52w": 214.0,
+        "low_52w": 209.5,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -441,7 +441,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "COFORGE",
         "sector": "Technology",
-        "old_price": 2016.5,
+        "old_price": 2021.2,
         "current_price": NaN,
         "low_52w": 1003.45,
         "fall_pct": NaN,
@@ -472,7 +472,7 @@ const DASHBOARD_DATA = {
         "sector": "Industrials",
         "old_price": 398.2,
         "current_price": NaN,
-        "low_52w": 214.0,
+        "low_52w": 209.5,
         "fall_pct": NaN,
         "buy_signal": "Hold"
       },
@@ -578,7 +578,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "COFORGE",
         "sector": "Technology",
-        "old_price": 2016.5,
+        "old_price": 2021.2,
         "current_price": NaN,
         "low_52w": 1003.45,
         "fall_pct": NaN,
@@ -605,7 +605,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NYKAA",
         "sector": "Consumer Cyclical",
-        "old_price": 348.0,
+        "old_price": 349.55,
         "current_price": NaN,
         "low_52w": 227.9,
         "fall_pct": NaN,
@@ -715,7 +715,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "COFORGE",
         "sector": "Technology",
-        "old_price": 2016.5,
+        "old_price": 2021.2,
         "current_price": NaN,
         "low_52w": 1003.45,
         "fall_pct": NaN,
@@ -742,7 +742,7 @@ const DASHBOARD_DATA = {
       {
         "symbol": "NYKAA",
         "sector": "Consumer Cyclical",
-        "old_price": 348.0,
+        "old_price": 349.55,
         "current_price": NaN,
         "low_52w": 227.9,
         "fall_pct": NaN,
@@ -817,17 +817,43 @@ const DASHBOARD_DATA = {
     "buy": [],
     "avoid": [
       {
+        "symbol": "RELIANCE",
+        "sector": "Energy",
+        "current_price": NaN,
+        "high_52w": 1604.38,
+        "low_52w": 1249.8,
+        "fall_pct": NaN,
+        "rsi": 26.4,
+        "risk_level": "Medium",
+        "downside_pct": 15,
+        "signal": "Avoid",
+        "reason": "Jio and retail growth"
+      },
+      {
         "symbol": "ONGC",
         "sector": "Oil & Gas",
         "current_price": NaN,
         "high_52w": 307.5,
         "low_52w": 220.06,
         "fall_pct": NaN,
-        "rsi": 28.7,
+        "rsi": 28.6,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
         "reason": "Crude price exposure"
+      },
+      {
+        "symbol": "NTPC",
+        "sector": "Power",
+        "current_price": NaN,
+        "high_52w": 414.4,
+        "low_52w": 313.19,
+        "fall_pct": NaN,
+        "rsi": 29.5,
+        "risk_level": "Medium",
+        "downside_pct": 15,
+        "signal": "Avoid",
+        "reason": "Capacity addition"
       },
       {
         "symbol": "TATAPOWER",
@@ -836,33 +862,33 @@ const DASHBOARD_DATA = {
         "high_52w": 462.04,
         "low_52w": 340.39,
         "fall_pct": NaN,
-        "rsi": 9.6,
+        "rsi": 8.6,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
         "reason": "Clean energy transition"
       },
       {
-        "symbol": "MARUTI",
-        "sector": "Auto",
+        "symbol": "BHARTIARTL",
+        "sector": "Telecom",
         "current_price": NaN,
-        "high_52w": 17197.29,
-        "low_52w": 12079.68,
+        "high_52w": 2147.47,
+        "low_52w": 1718.87,
         "fall_pct": NaN,
-        "rsi": 23.0,
+        "rsi": 29.2,
         "risk_level": "Medium",
         "downside_pct": 15,
         "signal": "Avoid",
-        "reason": "SUV portfolio expansion"
+        "reason": "ARPU improvement, 5G"
       },
       {
         "symbol": "HDFCBANK",
         "sector": "Banking",
         "current_price": NaN,
         "high_52w": 1003.9,
-        "low_52w": 707.0,
+        "low_52w": 704.15,
         "fall_pct": NaN,
-        "rsi": 41.8,
+        "rsi": 34.5,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -875,7 +901,7 @@ const DASHBOARD_DATA = {
         "high_52w": 1467.63,
         "low_52w": 1177.67,
         "fall_pct": NaN,
-        "rsi": 47.2,
+        "rsi": 57.3,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -888,54 +914,28 @@ const DASHBOARD_DATA = {
         "high_52w": 1212.84,
         "low_52w": 788.44,
         "fall_pct": NaN,
-        "rsi": 39.5,
+        "rsi": 37.0,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
         "reason": "PSU bank recovery play"
-      },
-      {
-        "symbol": "KOTAKBANK",
-        "sector": "Banking",
-        "current_price": NaN,
-        "high_52w": 452.42,
-        "low_52w": 344.9,
-        "fall_pct": NaN,
-        "rsi": 79.7,
-        "risk_level": "Low",
-        "downside_pct": 8,
-        "signal": "Hold",
-        "reason": "Asset quality improvement"
-      },
-      {
-        "symbol": "AXISBANK",
-        "sector": "Banking",
-        "current_price": NaN,
-        "high_52w": 1417.21,
-        "low_52w": 1044.19,
-        "fall_pct": NaN,
-        "rsi": 66.2,
-        "risk_level": "Low",
-        "downside_pct": 8,
-        "signal": "Hold",
-        "reason": "Corporate banking recovery"
       }
     ]
   },
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "01 Sep 2026",
+        "date": "02 Sep 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "31 Aug 2026",
+        "date": "01 Sep 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "30 Aug 2026",
+        "date": "31 Aug 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -950,58 +950,64 @@ const DASHBOARD_DATA = {
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
-    "summary": "\ud83c\udf0f US markets weak: Dow -0.7%, NASDAQ -0.1%",
+    "sentiment": "BEARISH",
+    "badge_class": "bearish",
+    "summary": "\u26fd Crude oil up 6.1% - negative for India's trade balance. \ud83c\udf0f US markets weak: Dow -0.8%, NASDAQ -1.0%",
     "vix": {
-      "value": 10.68,
+      "value": 11.19,
       "change_pct": 0.0
     },
     "crude": {
-      "value": 86.48,
-      "change_pct": 0.0
+      "value": 90.99,
+      "change_pct": 6.1
     },
     "reasons": [
-      "\ud83c\udf0f US markets weak: Dow -0.7%, NASDAQ -0.1%"
+      "\u26fd Crude oil up 6.1% - negative for India's trade balance",
+      "\ud83c\udf0f US markets weak: Dow -0.8%, NASDAQ -1.0%"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 10.68",
+        "label": "VIX 11.19",
         "sublabel": "+0.0%",
         "status": "positive"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $86.48",
-        "sublabel": "+0.0%",
+        "label": "Crude $90.99",
+        "sublabel": "+6.1%",
         "status": "negative"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow -0.7%",
+        "label": "Dow -0.8%",
         "sublabel": "US Markets",
         "status": "negative"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ -0.1%",
+        "label": "NASDAQ -1.0%",
         "sublabel": "Tech Sentiment",
         "status": "negative"
       }
     ],
-    "score": 1
+    "score": -2
   },
   "predictions": [
     {
+      "symbol": "ONGC",
+      "direction": "UP",
+      "reason": "Crude up 6.1%, benefits upstream O&G"
+    },
+    {
       "symbol": "RELIANCE",
       "direction": "UP",
-      "reason": "Lower crude costs benefit refining; Jio/retail growth"
+      "reason": "Refining margins improve on higher crude"
     },
     {
       "symbol": "TCS",
-      "direction": "UP",
-      "reason": "Stable deal pipeline, currency tailwinds"
+      "direction": "DOWN",
+      "reason": "Tech sector weakness affects sentiment"
     },
     {
       "symbol": "HDFCBANK",
@@ -1017,123 +1023,91 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
-        "headline": "These large-caps have \u2018strong buy\u2019 & \u2018buy\u2019 recos and an upside potential of more than 20%",
+        "headline": "Two Trades for Today: A graphite electrode maker for a 7.9% rise, a mid-cap pharma stock for a gain of about 6%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-large-caps-have-strong-buy-buy-recos-and-an-upside-potential-of-more-than-20/articleshow/133665527.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-graphite-electrode-maker-for-a-7-9-rise-a-mid-cap-pharma-stock-for-a-gain-of-about-6/articleshow/133684514.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "NSE records Rs 39,718 cr turnover in closing auction session on first index rebalancing day",
+        "headline": "Ace investor Ashish Dhawan picks up 35 lakh shares in Religare Enterprises; stock jumps 5%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nse-records-rs-39718-cr-turnover-in-closing-auction-session-on-first-index-rebalancing-day/articleshow/133657169.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ace-investor-ashish-dhawan-picks-up-35-lakh-shares-in-religare-enterprises-stock-jumps-5/articleshow/133671894.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Adani group stocks face heavy selling pressure; Adani Enterprises tumbles nearly 8%",
+        "headline": "CAS weighs on derivatives volumes, raising financial markets concerns",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/adani-group-stocks-face-heavy-selling-pressure-adani-enterprises-tumbles-nearly-8/articleshow/133657152.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/cas-weighs-on-derivatives-volumes-raising-financial-markets-concerns/articleshow/133694177.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "For investors who can bear the noise created by Trump and missiles: 5 mid-cap stocks with upside potential of up to 22%",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/for-investors-who-can-bear-the-noise-created-by-trump-and-missiles-5-mid-cap-stocks-with-upside-potential-of-up-to-22/articleshow/133675477.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Ather Energy\u2019s 130% stock surge leaves Tesla and BYD behind in 2026",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ather-energys-130-stock-surge-leaves-tesla-and-byd-behind-in-2026/articleshow/133672575.cms",
         "sentiment": "positive",
-        "stocks": [
-          "ADANI"
-        ],
-        "category": "general"
-      },
-      {
-        "headline": "Stocks in news: Bharti Airtel, Happiest Minds Technologies, PVR INOX, Milky Mist Dairy and Mankind Pharma",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stocks-in-news-bharti-airtel-happiest-minds-technologies-pvr-inox-milky-mist-dairy-and-mankind-pharma/articleshow/133658328.cms",
-        "sentiment": "neutral",
-        "stocks": [
-          "BHARTI"
-        ],
-        "category": "general"
-      },
-      {
-        "headline": "Mid, smallcaps likely to outperform in September; Nifty seen range-bound: Analysts",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mid-small-caps-do-well-in-sept-and-it-looks-no-different-this-time/articleshow/133665449.cms",
-        "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       }
     ],
     "earnings": [],
-    "orders": [
-      {
-        "headline": "Rajesh Exports repays \u20b9510 crore dues to Canara Bank after DRT order",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/rajesh-exports-repays-510-crore-dues-to-canara-bank-after-drt-order/articleshow/133665428.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "orders"
-      },
-      {
-        "headline": "New trade rules raise compliance worries for banks over cross-border payments",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/new-trade-rules-raise-compliance-worries-for-banks-over-cross-border-payments/articleshow/133665342.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "orders"
-      }
-    ],
+    "orders": [],
     "regulatory": [
       {
-        "headline": "RBI's net short forward positions hit record $137 billion in July",
+        "headline": "FCNR rush leaves banks swimming in \u20b96.65 lakh crore liquidity",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/rbis-net-short-forward-positions-hit-record-137-billion-in-july/articleshow/133665649.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "MSCI rejig disrupts arbitrage playbook, fuels late-session volatility",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/msci-index-rebalancing-causes-sharp-stock-swings-with-new-cas/articleshow/133665601.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fcnr-rush-leaves-banks-swimming-in-6-65-lakh-crore-liquidity/articleshow/133694544.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Sebi bars Tarapur Transformers, promoters from markets for 5 years in fund diversion case",
+        "headline": "No more hush-hush: Tax portal opens door to misconduct complaints",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-bars-tarapur-transformers-promoters-from-markets-for-5-years-in-fund-diversion-case/articleshow/133658566.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/no-more-hush-hush-tax-portal-opens-door-to-misconduct-complaints/articleshow/133694536.cms",
         "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Indian banks slash FCNR deposit rates by up to 310 basis points",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/indian-banks-slash-fcnr-deposit-rates-by-up-to-310-basis-points/articleshow/133694499.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "These 6 banking stocks have an upside potential of up to 26% in 1 year, according to analysts",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-6-banking-stocks-have-an-upside-potential-of-up-to-26-in-1-year-according-to-analysts/articleshow/133688582.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Ujjivan Small Finance Bank CEO & MD Sanjeev Nautiyal steps down on health grounds",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ujjivan-small-finance-bank-ceo-md-sanjeev-nautiyal-steps-down-on-health-grounds/articleshow/133694565.cms",
+        "sentiment": "negative",
         "stocks": [],
         "category": "regulatory"
       }
     ],
-    "insider": [
-      {
-        "headline": "ITC Infotech to merge with Happiest Minds, buy 22% promoter stake for Rs 1,330 crore",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/itc-infotech-to-merge-with-happiest-minds-buy-22-promoter-stake-for-rs-1330-crore/articleshow/133659997.cms",
-        "sentiment": "neutral",
-        "stocks": [
-          "ITC"
-        ],
-        "category": "insider"
-      },
-      {
-        "headline": "GRT Jewellers to buy controlling stake in TBZ for up to Rs 1,034 crore",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/grt-jewellers-to-buy-controlling-stake-in-tbz-for-up-to-rs-1034-crore/articleshow/133657769.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "insider"
-      },
-      {
-        "headline": "Blackstone-backed Epsilon Bidco may sell 26% stake in EPL in Rs 1,985-crore block deal",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/blackstone-backed-epsilon-bidco-may-sell-26-stake-in-epl-in-rs-1985-crore-block-deal/articleshow/133657355.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "insider"
-      }
-    ],
+    "insider": [],
     "geopolitical": [
       {
         "headline": "\ud83d\udd4a\ufe0f Global Markets Rally on Easing Geopolitical Tensions",
