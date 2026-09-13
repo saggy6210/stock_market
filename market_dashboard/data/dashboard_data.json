@@ -1,34 +1,34 @@
 {
-  "timestamp": "2026-09-12T00:28:13.401717",
+  "timestamp": "2026-09-13T00:08:28.057087",
   "indices": {
     "nifty50": {
-      "value": 23477.8,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 23398.1,
+      "change": -79.7,
+      "change_pct": -0.34,
+      "direction": "negative"
     },
     "sensex": {
-      "value": 74902.59,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 74781.76,
+      "change": -120.84,
+      "change_pct": -0.16,
+      "direction": "negative"
     },
     "niftybank": {
-      "value": 56471.95,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 56606.55,
+      "change": 134.6,
+      "change_pct": 0.24,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 28890.9,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 28921.5,
+      "change": 30.6,
+      "change_pct": 0.11,
       "direction": "positive"
     },
     "vix": {
-      "value": 11.8,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 12.29,
+      "change": 0.49,
+      "change_pct": 4.15,
       "direction": "positive"
     },
     "dow": {
@@ -39,46 +39,46 @@
     },
     "nasdaq": {
       "value": 26333.04,
-      "change": 251.31,
+      "change": 251.32,
       "change_pct": 0.96,
       "direction": "positive"
     },
     "usdinr": {
       "value": 95.54,
-      "change": 0.43,
-      "change_pct": 0.45,
-      "direction": "positive"
+      "change": -0.15,
+      "change_pct": -0.16,
+      "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4390.0,
-      "change": 25.5,
-      "change_pct": 0.58,
+      "value": 4366.2,
+      "change": 1.7,
+      "change_pct": 0.04,
       "direction": "positive"
     },
     "silver": {
-      "value": 65.02,
-      "change": 0.74,
-      "change_pct": 1.14,
+      "value": 64.55,
+      "change": 0.27,
+      "change_pct": 0.42,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.56,
-      "change": 0.09,
-      "change_pct": 1.39,
+      "value": 6.47,
+      "change": 0.0,
+      "change_pct": 0.04,
       "direction": "positive"
     },
     "crude": {
-      "value": 99.99,
-      "change": -2.49,
-      "change_pct": -2.43,
+      "value": 100.05,
+      "change": -2.43,
+      "change_pct": -2.37,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.82,
-      "change": -0.01,
-      "change_pct": -0.49,
+      "value": 2.83,
+      "change": -0.0,
+      "change_pct": -0.11,
       "direction": "negative"
     }
   },
@@ -229,6 +229,15 @@
         "buy_signal": "Buy"
       },
       {
+        "symbol": "MARUTI",
+        "sector": "Consumer Cyclical",
+        "old_price": 17197.29,
+        "current_price": 12400.0,
+        "low_52w": 12079.68,
+        "fall_pct": -27.9,
+        "buy_signal": "Avoid"
+      },
+      {
         "symbol": "HUDCO",
         "sector": "Financial Services",
         "old_price": 239.22,
@@ -254,15 +263,6 @@
         "low_52w": 317.66,
         "fall_pct": -25.87,
         "buy_signal": "Buy"
-      },
-      {
-        "symbol": "ONGC",
-        "sector": "Energy",
-        "old_price": 306.2,
-        "current_price": 232.5,
-        "low_52w": 220.31,
-        "fall_pct": -24.07,
-        "buy_signal": "Hold"
       }
     ],
     "jan26": [
@@ -366,6 +366,15 @@
         "buy_signal": "Buy"
       },
       {
+        "symbol": "MARUTI",
+        "sector": "Consumer Cyclical",
+        "old_price": 17197.29,
+        "current_price": 12400.0,
+        "low_52w": 12079.68,
+        "fall_pct": -27.9,
+        "buy_signal": "Avoid"
+      },
+      {
         "symbol": "HUDCO",
         "sector": "Financial Services",
         "old_price": 239.22,
@@ -436,15 +445,6 @@
         "low_52w": 1249.8,
         "fall_pct": -21.62,
         "buy_signal": "Avoid"
-      },
-      {
-        "symbol": "ADANIGREEN",
-        "sector": "Utilities",
-        "old_price": 1631.5,
-        "current_price": 1281.3,
-        "low_52w": 765.0,
-        "fall_pct": -21.46,
-        "buy_signal": "Buy"
       }
     ],
     "may25": [
@@ -503,6 +503,15 @@
         "buy_signal": "Buy"
       },
       {
+        "symbol": "MARUTI",
+        "sector": "Consumer Cyclical",
+        "old_price": 17197.29,
+        "current_price": 12400.0,
+        "low_52w": 12079.68,
+        "fall_pct": -27.9,
+        "buy_signal": "Avoid"
+      },
+      {
         "symbol": "HUDCO",
         "sector": "Financial Services",
         "old_price": 239.22,
@@ -602,30 +611,21 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "RECLTD",
+        "sector": "Financial Services",
+        "old_price": 381.34,
+        "current_price": 312.7,
+        "low_52w": 299.26,
+        "fall_pct": -18.0,
+        "buy_signal": "Hold"
+      },
+      {
         "symbol": "SBIN",
         "sector": "Financial Services",
         "old_price": 1212.84,
         "current_price": 995.7,
         "low_52w": 804.5,
         "fall_pct": -17.9,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "ADANIPOWER",
-        "sector": "Utilities",
-        "old_price": 254.2,
-        "current_price": 209.97,
-        "low_52w": 120.0,
-        "fall_pct": -17.4,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "POWERGRID",
-        "sector": "Utilities",
-        "old_price": 324.95,
-        "current_price": 269.1,
-        "low_52w": 247.22,
-        "fall_pct": -17.19,
         "buy_signal": "Hold"
       }
     ],
@@ -640,6 +640,15 @@
         "buy_signal": "Buy"
       },
       {
+        "symbol": "MARUTI",
+        "sector": "Consumer Cyclical",
+        "old_price": 17197.29,
+        "current_price": 12400.0,
+        "low_52w": 12079.68,
+        "fall_pct": -27.9,
+        "buy_signal": "Avoid"
+      },
+      {
         "symbol": "HUDCO",
         "sector": "Financial Services",
         "old_price": 239.22,
@@ -739,6 +748,15 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "RECLTD",
+        "sector": "Financial Services",
+        "old_price": 381.34,
+        "current_price": 312.7,
+        "low_52w": 299.26,
+        "fall_pct": -18.0,
+        "buy_signal": "Hold"
+      },
+      {
         "symbol": "SBIN",
         "sector": "Financial Services",
         "old_price": 1212.84,
@@ -766,48 +784,30 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "DELHIVERY",
+        "sector": "Industrials",
+        "old_price": 524.0,
+        "current_price": 439.0,
+        "low_52w": 374.45,
+        "fall_pct": -16.22,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "PERSISTENT",
+        "sector": "Technology",
+        "old_price": 6552.65,
+        "current_price": 5516.0,
+        "low_52w": 4229.81,
+        "fall_pct": -15.82,
+        "buy_signal": "Hold"
+      },
+      {
         "symbol": "BHARTIARTL",
         "sector": "Communication Services",
         "old_price": 2147.47,
         "current_price": 1831.1,
         "low_52w": 1718.87,
         "fall_pct": -14.73,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "TECHM",
-        "sector": "Technology",
-        "old_price": 1807.04,
-        "current_price": 1541.0,
-        "low_52w": 1271.07,
-        "fall_pct": -14.72,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "NHPC",
-        "sector": "Utilities",
-        "old_price": 87.4,
-        "current_price": 76.38,
-        "low_52w": 71.42,
-        "fall_pct": -12.61,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "AXISBANK",
-        "sector": "Financial Services",
-        "old_price": 1417.21,
-        "current_price": 1246.0,
-        "low_52w": 1068.18,
-        "fall_pct": -12.08,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "BAJFINANCE",
-        "sector": "Financial Services",
-        "old_price": 1176.4,
-        "current_price": 1034.5,
-        "low_52w": 783.09,
-        "fall_pct": -12.06,
         "buy_signal": "Hold"
       }
     ]
@@ -957,19 +957,6 @@
     ],
     "avoid": [
       {
-        "symbol": "MARUTI",
-        "sector": "Auto",
-        "current_price": NaN,
-        "high_52w": 17197.29,
-        "low_52w": 12079.68,
-        "fall_pct": NaN,
-        "rsi": 18.5,
-        "risk_level": "Medium",
-        "downside_pct": 15,
-        "signal": "Avoid",
-        "reason": "SUV portfolio expansion"
-      },
-      {
         "symbol": "INFY",
         "sector": "IT",
         "current_price": 1037.7,
@@ -1007,6 +994,19 @@
         "downside_pct": 8.8,
         "signal": "Avoid",
         "reason": "Strong fundamentals, market leader"
+      },
+      {
+        "symbol": "MARUTI",
+        "sector": "Auto",
+        "current_price": 12400.0,
+        "high_52w": 17197.29,
+        "low_52w": 12079.68,
+        "fall_pct": -27.9,
+        "rsi": 16.6,
+        "risk_level": "High",
+        "downside_pct": 8.4,
+        "signal": "Avoid",
+        "reason": "SUV portfolio expansion"
       },
       {
         "symbol": "ICICIBANK",
@@ -1065,17 +1065,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "12 Sep 2026",
+        "date": "13 Sep 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "11 Sep 2026",
+        "date": "12 Sep 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "10 Sep 2026",
+        "date": "11 Sep 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1092,29 +1092,30 @@
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\u26fd Crude oil down 2.4% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +1.0%",
+    "summary": "\ud83d\udcc8 VIX up 4.2% indicating rising market uncertainty. \u26fd Crude oil down 2.4% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +1.0%",
     "vix": {
-      "value": 11.8,
-      "change_pct": 0.0
+      "value": 12.29,
+      "change_pct": 4.15
     },
     "crude": {
-      "value": 99.99,
-      "change_pct": -2.43
+      "value": 100.05,
+      "change_pct": -2.37
     },
     "reasons": [
+      "\ud83d\udcc8 VIX up 4.2% indicating rising market uncertainty",
       "\u26fd Crude oil down 2.4% - positive for India (import dependent)",
       "\ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +1.0%"
     ],
     "factors": [
       {
-        "icon": "\ud83d\udcc9",
-        "label": "VIX 11.80",
-        "sublabel": "+0.0%",
-        "status": "positive"
+        "icon": "\ud83d\udcc8",
+        "label": "VIX 12.29",
+        "sublabel": "+4.2%",
+        "status": "neutral"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $99.99",
+        "label": "Crude $100.05",
         "sublabel": "-2.4%",
         "status": "positive"
       },
@@ -1158,58 +1159,75 @@
   "news": {
     "top_stories": [
       {
-        "headline": "6 stocks with consistent score improvement and upside potential of up to 24% in one year, according to analysts",
+        "headline": "Goldman Sachs\u2019 India Portfolio; 10 stocks rally up to 130% in CY26",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/6-stocks-with-consistent-score-improvement-and-upside-potential-of-up-to-24-in-one-year-according-to-analysts/articleshow/134081297.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/goldman-sachs-india-portfolio-10-stocks-rally-up-to-130-in-cy26/slideshow/134116554.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Dalal Street Week Ahead: Weak technical setup to keep bulls under pressure",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/dalal-street-week-ahead-weak-technical-setup-to-keep-bulls-under-pressure/articleshow/134125578.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Concurrent Gainers: 9 smallcap stocks gain for 5 days in a row",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-9-smallcap-stocks-gain-for-5-days-in-a-row/slideshow/134112346.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Short-term headwind? Yes. But the structure stays intact: 5 large-cap stocks with upside potential of up to 19%",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/short-term-headwind-yes-but-the-structure-stays-intact-5-large-cap-stocks-with-upside-potential-of-up-to-19/articleshow/134165797.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "IRCTC among 8 midcap stocks hitting 52-week low; slipped up to 18% in a month",
+        "headline": "Demat 2.0 explained: Why it matters for bond market investors",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/irctc-among-8-midcap-stocks-hitting-52-week-low-slipped-up-to-18-in-a-month/slideshow/134064040.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "How NSE helped Zerodha start when it had little money: Nithin Kamath recalls ahead of IPO",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/how-nse-helped-zerodha-start-when-it-had-little-money-nithin-kamath-recalls-ahead-of-ipo/articleshow/134064067.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "LG Electronics India in Jefferies\u2019 \u2018pole position\u2019; bull case points to 21% upside",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/lg-electronics-india-in-jefferies-pole-position-bull-case-points-to-21-upside/articleshow/134061715.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "ET Alpha Wealth Summit 2.0: How are India's family offices investing in 2026?",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/et-alpha-wealth-summit-2-0-how-are-indias-family-offices-investing-in-2026/articleshow/134059475.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/demat-2-0-explained-why-it-matters-for-bond-market-investors/articleshow/134116662.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       }
     ],
-    "earnings": [
-      {
-        "headline": "Counting Rs 4 lakh crore loss in RIL? Dangote refinery listing in Nigeria could trigger a 30% rally",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/counting-rs-4-lakh-crore-lossinrildangote-refinery-listinginnigeria-could-triggera30rally/articleshow/134063393.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "earnings"
-      }
-    ],
+    "earnings": [],
     "orders": [],
     "regulatory": [
+      {
+        "headline": "HDFC Bank submits two candidates to RBI for next CEO",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/hdfc-bank-submits-names-of-two-ceo-candidates-to-rbi-reports/articleshow/134129717.cms",
+        "sentiment": "neutral",
+        "stocks": [
+          "HDFC"
+        ],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Explained: What Sebi\u2019s proposed CAS changes mean for expiry-day trading and settlement",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/explained-what-sebis-proposed-cas-changes-mean-for-expiry-day-trading-and-settlement/articleshow/134122773.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Sebi proposes new CAS framework, two options for expiry-day settlement",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-proposes-new-cas-framework-two-options-for-expiry-day-settlement/articleshow/134113792.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
       {
         "headline": "Demat 2.0 will bring instant bond settlement closer, trading after regulation and market readiness: NSDL MD",
         "source": "Economic Times",
@@ -1217,54 +1235,14 @@
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
-      },
-      {
-        "headline": "NSEL settlement scheme: Sebi settles proceedings against 91 commodity brokers",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nsel-settlement-scheme-sebi-settles-proceedings-against-91-commodity-brokers/articleshow/134074347.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi imposes Rs 2 lakh penalty on Emami Realty for regulatory lapses",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-imposes-rs-2-lakh-penalty-on-emami-realty-for-regulatory-lapses/articleshow/134067540.cms",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi proposes extending cybersecurity rules to subsidiaries of MIIs",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-proposes-extending-cybersecurity-rules-to-subsidiaries-of-miis/articleshow/134066718.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi proposes extending IT, cyber security framework of MIIs to their arms",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-proposes-extending-it-cyber-security-framework-of-miis-to-their-arms/articleshow/134063604.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
       }
     ],
     "insider": [
       {
-        "headline": "Granules India promoter sells 1.72 crore shares worth Rs 1,500 crore; Goldman Sachs, BNP Paribas among investors",
+        "headline": "Oversold markets may stage near-term rebound, say analysts",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/granules-india-promoter-sells-1-72-crore-shares-worth-rs-1500-crore-goldman-sachs-bnp-paribas-among-investors/articleshow/134077487.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/indian-equities-end-lower-for-fifth-week-amid-oil-us-yields-concerns/articleshow/134102236.cms",
         "sentiment": "neutral",
-        "stocks": [],
-        "category": "insider"
-      },
-      {
-        "headline": "Sri Lotus Developers shares jump 3% to fresh 52-week high after Capital Group buys nearly 2% stake",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sri-lotus-developers-shares-jump-3-to-fresh-52-week-high-after-capital-group-buys-nearly-2-stake/articleshow/134056130.cms",
-        "sentiment": "positive",
         "stocks": [],
         "category": "insider"
       }
