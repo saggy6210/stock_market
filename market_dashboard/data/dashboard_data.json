@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-13T00:08:28.057087",
+  "timestamp": "2026-09-14T00:20:58.388248",
   "indices": {
     "nifty50": {
       "value": 23398.1,
@@ -52,34 +52,34 @@
   },
   "commodities": {
     "gold": {
-      "value": 4366.2,
-      "change": 1.7,
-      "change_pct": 0.04,
+      "value": 4387.1,
+      "change": 20.9,
+      "change_pct": 0.48,
       "direction": "positive"
     },
     "silver": {
-      "value": 64.55,
-      "change": 0.27,
-      "change_pct": 0.42,
+      "value": 64.69,
+      "change": 0.14,
+      "change_pct": 0.22,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.47,
-      "change": 0.0,
-      "change_pct": 0.04,
+      "value": 6.53,
+      "change": 0.07,
+      "change_pct": 1.01,
       "direction": "positive"
     },
     "crude": {
-      "value": 100.05,
-      "change": -2.43,
-      "change_pct": -2.37,
-      "direction": "negative"
+      "value": 102.42,
+      "change": 2.37,
+      "change_pct": 2.37,
+      "direction": "positive"
     },
     "naturalgas": {
-      "value": 2.83,
-      "change": -0.0,
-      "change_pct": -0.11,
-      "direction": "negative"
+      "value": 2.87,
+      "change": 0.04,
+      "change_pct": 1.27,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -1065,17 +1065,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "13 Sep 2026",
+        "date": "14 Sep 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "12 Sep 2026",
+        "date": "13 Sep 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "11 Sep 2026",
+        "date": "12 Sep 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1090,20 +1090,20 @@
     }
   },
   "market_outlook": {
-    "sentiment": "BULLISH",
-    "badge_class": "bullish",
-    "summary": "\ud83d\udcc8 VIX up 4.2% indicating rising market uncertainty. \u26fd Crude oil down 2.4% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +1.0%",
+    "sentiment": "NEUTRAL",
+    "badge_class": "neutral",
+    "summary": "\ud83d\udcc8 VIX up 4.2% indicating rising market uncertainty. \u26fd Crude oil up 2.4% - negative for India's trade balance. \ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +1.0%",
     "vix": {
       "value": 12.29,
       "change_pct": 4.15
     },
     "crude": {
-      "value": 100.05,
-      "change_pct": -2.37
+      "value": 102.42,
+      "change_pct": 2.37
     },
     "reasons": [
       "\ud83d\udcc8 VIX up 4.2% indicating rising market uncertainty",
-      "\u26fd Crude oil down 2.4% - positive for India (import dependent)",
+      "\u26fd Crude oil up 2.4% - negative for India's trade balance",
       "\ud83c\udf0f US markets positive: Dow +1.0%, NASDAQ +1.0%"
     ],
     "factors": [
@@ -1115,9 +1115,9 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $100.05",
-        "sublabel": "-2.4%",
-        "status": "positive"
+        "label": "Crude $102.42",
+        "sublabel": "+2.4%",
+        "status": "negative"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
@@ -1132,13 +1132,18 @@
         "status": "positive"
       }
     ],
-    "score": 6
+    "score": 2
   },
   "predictions": [
     {
+      "symbol": "ONGC",
+      "direction": "UP",
+      "reason": "Crude up 2.4%, benefits upstream O&G"
+    },
+    {
       "symbol": "RELIANCE",
       "direction": "UP",
-      "reason": "Lower crude costs benefit refining; Jio/retail growth"
+      "reason": "Refining margins improve on higher crude"
     },
     {
       "symbol": "INFY",
@@ -1159,10 +1164,18 @@
   "news": {
     "top_stories": [
       {
-        "headline": "Goldman Sachs\u2019 India Portfolio; 10 stocks rally up to 130% in CY26",
+        "headline": "Dividends and stock splits: Hindustan Copper, Cochin Shipyard among 200+ stocks with record dates this week. Check full list",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/goldman-sachs-india-portfolio-10-stocks-rally-up-to-130-in-cy26/slideshow/134116554.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/dividends-and-stock-splits-hindustan-copper-cochin-shipyard-among-200-stocks-with-record-dates-this-week-check-full-list/articleshow/134185981.cms",
         "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "EV-related stocks: Own the chain, not the guess; 13 stocks with upside potential of up to 28% and downside risk of -14%, according to analysts",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ev-related-stocks-own-the-chain-not-the-guess-13-stocks-with-upside-potential-of-up-to-28-and-downside-risk-of-14-according-to-analysts/articleshow/134167904.cms",
+        "sentiment": "negative",
         "stocks": [],
         "category": "general"
       },
@@ -1175,33 +1188,42 @@
         "category": "general"
       },
       {
-        "headline": "Concurrent Gainers: 9 smallcap stocks gain for 5 days in a row",
+        "headline": "Goldman Sachs\u2019 India Portfolio; 10 stocks rally up to 130% in CY26",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-9-smallcap-stocks-gain-for-5-days-in-a-row/slideshow/134112346.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/goldman-sachs-india-portfolio-10-stocks-rally-up-to-130-in-cy26/slideshow/134116554.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Short-term headwind? Yes. But the structure stays intact: 5 large-cap stocks with upside potential of up to 19%",
+        "headline": "Shapoorji Pallonji weighs options to refinance Rs 3,500 crore debt due this month",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/short-term-headwind-yes-but-the-structure-stays-intact-5-large-cap-stocks-with-upside-potential-of-up-to-19/articleshow/134165797.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Demat 2.0 explained: Why it matters for bond market investors",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/demat-2-0-explained-why-it-matters-for-bond-market-investors/articleshow/134116662.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/shapoorji-pallonji-weighs-options-to-refinance-rs-3500-crore-debt-due-this-month/articleshow/134229719.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       }
     ],
-    "earnings": [],
+    "earnings": [
+      {
+        "headline": "8 midcap stocks gave over 80% EBITDA growth in June quarter. Do you own any?",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/8-midcap-stocks-clock-up-to-245-ebitda-growth-in-june-quarter-do-you-own-any/slideshow/134182581.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      }
+    ],
     "orders": [],
     "regulatory": [
+      {
+        "headline": "Weekly Market Outlook: Can Nifty find its footing as crude, Fed policy drive markets?",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/weekly-market-outlook-can-nifty-find-its-footing-as-crude-fed-policy-drive-markets/articleshow/134178071.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
       {
         "headline": "HDFC Bank submits two candidates to RBI for next CEO",
         "source": "Economic Times",
@@ -1219,29 +1241,13 @@
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
-      },
-      {
-        "headline": "Sebi proposes new CAS framework, two options for expiry-day settlement",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-proposes-new-cas-framework-two-options-for-expiry-day-settlement/articleshow/134113792.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Demat 2.0 will bring instant bond settlement closer, trading after regulation and market readiness: NSDL MD",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/demat-2-0-will-bring-instant-bond-settlement-closer-trading-after-regulation-and-market-readiness-nsdl-md/articleshow/134080583.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
       }
     ],
     "insider": [
       {
-        "headline": "Oversold markets may stage near-term rebound, say analysts",
+        "headline": "Oriental Insurance hopes to turn corner in FY27 assisted by NSE stake dilution",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/indian-equities-end-lower-for-fifth-week-amid-oil-us-yields-concerns/articleshow/134102236.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/oriental-insurance-hopes-to-turn-corner-in-fy27-assisted-by-nse-stake-dilution/articleshow/134191606.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "insider"
