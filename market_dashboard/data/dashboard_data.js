@@ -1,6 +1,6 @@
-// Auto-generated on 2026-09-20T00:16:30.697967
+// Auto-generated on 2026-09-21T00:25:11.667459
 const DASHBOARD_DATA = {
-  "timestamp": "2026-09-20T00:15:49.704869",
+  "timestamp": "2026-09-21T00:24:47.307327",
   "indices": {
     "nifty50": {
       "value": 23346.4,
@@ -45,42 +45,42 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "usdinr": {
-      "value": 95.88,
-      "change": 0.08,
-      "change_pct": 0.08,
+      "value": 95.86,
+      "change": 0.06,
+      "change_pct": 0.07,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4424.9,
-      "change": 25.2,
-      "change_pct": 0.57,
-      "direction": "positive"
+      "value": 4403.3,
+      "change": -21.6,
+      "change_pct": -0.49,
+      "direction": "negative"
     },
     "silver": {
-      "value": 66.56,
-      "change": 1.09,
-      "change_pct": 1.66,
+      "value": 66.88,
+      "change": 0.32,
+      "change_pct": 0.48,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.61,
-      "change": 0.03,
-      "change_pct": 0.43,
+      "value": 6.72,
+      "change": 0.1,
+      "change_pct": 1.52,
       "direction": "positive"
     },
     "crude": {
-      "value": 100.3,
-      "change": -1.61,
-      "change_pct": -1.58,
+      "value": 95.82,
+      "change": -4.48,
+      "change_pct": -4.47,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.91,
-      "change": 0.01,
-      "change_pct": 0.38,
-      "direction": "positive"
+      "value": 2.89,
+      "change": -0.03,
+      "change_pct": -0.89,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -430,21 +430,21 @@ const DASHBOARD_DATA = {
         "buy_signal": "Avoid"
       },
       {
-        "symbol": "MPHASIS",
-        "sector": "Technology",
-        "old_price": 2957.9,
-        "current_price": 2300.4,
-        "low_52w": 1960.44,
-        "fall_pct": -22.23,
-        "buy_signal": "Buy"
-      },
-      {
         "symbol": "NTPC",
         "sector": "Utilities",
         "old_price": 409.97,
         "current_price": 323.65,
         "low_52w": 309.84,
         "fall_pct": -21.06,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "BPCL",
+        "sector": "Energy",
+        "old_price": 391.65,
+        "current_price": 314.0,
+        "low_52w": 266.6,
+        "fall_pct": -19.83,
         "buy_signal": "Hold"
       }
     ],
@@ -567,15 +567,6 @@ const DASHBOARD_DATA = {
         "buy_signal": "Avoid"
       },
       {
-        "symbol": "MPHASIS",
-        "sector": "Technology",
-        "old_price": 2957.9,
-        "current_price": 2300.4,
-        "low_52w": 1960.44,
-        "fall_pct": -22.23,
-        "buy_signal": "Buy"
-      },
-      {
         "symbol": "NTPC",
         "sector": "Utilities",
         "old_price": 409.97,
@@ -591,15 +582,6 @@ const DASHBOARD_DATA = {
         "current_price": 314.0,
         "low_52w": 266.6,
         "fall_pct": -19.83,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "TATAPOWER",
-        "sector": "Utilities",
-        "old_price": 462.04,
-        "current_price": 374.8,
-        "low_52w": 340.39,
-        "fall_pct": -18.88,
         "buy_signal": "Hold"
       },
       {
@@ -627,6 +609,24 @@ const DASHBOARD_DATA = {
         "current_price": 1334.5,
         "low_52w": 765.0,
         "fall_pct": -18.2,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "RECLTD",
+        "sector": "Financial Services",
+        "old_price": 381.34,
+        "current_price": 312.0,
+        "low_52w": 299.26,
+        "fall_pct": -18.18,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "SBIN",
+        "sector": "Financial Services",
+        "old_price": 1212.84,
+        "current_price": 996.2,
+        "low_52w": 834.26,
+        "fall_pct": -17.86,
         "buy_signal": "Hold"
       }
     ],
@@ -704,15 +704,6 @@ const DASHBOARD_DATA = {
         "buy_signal": "Avoid"
       },
       {
-        "symbol": "MPHASIS",
-        "sector": "Technology",
-        "old_price": 2957.9,
-        "current_price": 2300.4,
-        "low_52w": 1960.44,
-        "fall_pct": -22.23,
-        "buy_signal": "Buy"
-      },
-      {
         "symbol": "NTPC",
         "sector": "Utilities",
         "old_price": 409.97,
@@ -728,15 +719,6 @@ const DASHBOARD_DATA = {
         "current_price": 314.0,
         "low_52w": 266.6,
         "fall_pct": -19.83,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "TATAPOWER",
-        "sector": "Utilities",
-        "old_price": 462.04,
-        "current_price": 374.8,
-        "low_52w": 340.39,
-        "fall_pct": -18.88,
         "buy_signal": "Hold"
       },
       {
@@ -809,6 +791,24 @@ const DASHBOARD_DATA = {
         "current_price": 1537.1,
         "low_52w": 1271.07,
         "fall_pct": -14.94,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "STARHEALTH",
+        "sector": "Financial Services",
+        "old_price": 624.9,
+        "current_price": 547.05,
+        "low_52w": 416.55,
+        "fall_pct": -12.46,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "NHPC",
+        "sector": "Utilities",
+        "old_price": 87.4,
+        "current_price": 76.95,
+        "low_52w": 71.42,
+        "fall_pct": -11.95,
         "buy_signal": "Hold"
       }
     ]
@@ -886,20 +886,6 @@ const DASHBOARD_DATA = {
         "timeframe": "3-6 months"
       },
       {
-        "symbol": "TATAPOWER",
-        "sector": "Power",
-        "current_price": 374.8,
-        "high_52w": 462.04,
-        "low_52w": 340.39,
-        "fall_pct": -18.88,
-        "rsi": 76.8,
-        "target_price": 442.26,
-        "upside_pct": 18,
-        "signal": "Buy",
-        "reason": "Clean energy transition",
-        "timeframe": "3-6 months"
-      },
-      {
         "symbol": "AXISBANK",
         "sector": "Banking",
         "current_price": 1257.0,
@@ -954,9 +940,36 @@ const DASHBOARD_DATA = {
         "signal": "Buy",
         "reason": "Order book strength",
         "timeframe": "3-6 months"
+      },
+      {
+        "symbol": "BHARTIARTL",
+        "sector": "Telecom",
+        "current_price": 1893.3,
+        "high_52w": 2147.47,
+        "low_52w": 1718.87,
+        "fall_pct": -11.84,
+        "rsi": 65.4,
+        "target_price": 2120.5,
+        "upside_pct": 12,
+        "signal": "Buy",
+        "reason": "ARPU improvement, 5G",
+        "timeframe": "3-6 months"
       }
     ],
     "avoid": [
+      {
+        "symbol": "SUNPHARMA",
+        "sector": "Pharma",
+        "current_price": NaN,
+        "high_52w": 2046.9,
+        "low_52w": 1533.99,
+        "fall_pct": NaN,
+        "rsi": 18.7,
+        "risk_level": "Medium",
+        "downside_pct": 15,
+        "signal": "Avoid",
+        "reason": "Specialty pharma focus"
+      },
       {
         "symbol": "INFY",
         "sector": "IT",
@@ -1012,71 +1025,58 @@ const DASHBOARD_DATA = {
       {
         "symbol": "KOTAKBANK",
         "sector": "Banking",
-        "current_price": 412.5,
+        "current_price": NaN,
         "high_52w": 452.42,
         "low_52w": 344.9,
-        "fall_pct": -8.82,
-        "rsi": 42.8,
+        "fall_pct": NaN,
+        "rsi": 46.7,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
         "reason": "Asset quality improvement"
       },
       {
-        "symbol": "ADANIPORTS",
-        "sector": "Infrastructure",
-        "current_price": 1824.0,
-        "high_52w": 1891.1,
-        "low_52w": 1286.58,
-        "fall_pct": -3.55,
-        "rsi": 80.4,
+        "symbol": "TATAPOWER",
+        "sector": "Power",
+        "current_price": NaN,
+        "high_52w": 462.04,
+        "low_52w": 340.39,
+        "fall_pct": NaN,
+        "rsi": 73.9,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
-        "reason": "Port capacity growth"
+        "reason": "Clean energy transition"
       },
       {
-        "symbol": "ONGC",
-        "sector": "Oil & Gas",
-        "current_price": 232.8,
-        "high_52w": 306.2,
-        "low_52w": 222.41,
-        "fall_pct": -23.97,
-        "rsi": 53.3,
-        "risk_level": "Medium",
-        "downside_pct": 7.2,
-        "signal": "Avoid",
-        "reason": "Crude price exposure"
-      },
-      {
-        "symbol": "RELIANCE",
-        "sector": "Energy",
-        "current_price": 1226.4,
-        "high_52w": 1604.38,
-        "low_52w": 1226.4,
-        "fall_pct": -23.56,
-        "rsi": 35.9,
-        "risk_level": "High",
-        "downside_pct": 7.1,
-        "signal": "Avoid",
-        "reason": "Jio and retail growth"
+        "symbol": "COALINDIA",
+        "sector": "Mining",
+        "current_price": NaN,
+        "high_52w": 478.71,
+        "low_52w": 355.18,
+        "fall_pct": NaN,
+        "rsi": 69.1,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "Dividend yield play"
       }
     ]
   },
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "20 Sep 2026",
+        "date": "21 Sep 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "19 Sep 2026",
+        "date": "20 Sep 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "18 Sep 2026",
+        "date": "19 Sep 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1093,18 +1093,18 @@ const DASHBOARD_DATA = {
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\ud83d\udcc9 VIX down 7.3% indicating declining volatility/fear. \u26fd Crude oil down 1.6% - positive for India (import dependent)",
+    "summary": "\ud83d\udcc9 VIX down 7.3% indicating declining volatility/fear. \u26fd Crude oil down 4.5% - positive for India (import dependent)",
     "vix": {
       "value": 11.39,
       "change_pct": -7.32
     },
     "crude": {
-      "value": 100.3,
-      "change_pct": -1.58
+      "value": 95.82,
+      "change_pct": -4.47
     },
     "reasons": [
       "\ud83d\udcc9 VIX down 7.3% indicating declining volatility/fear",
-      "\u26fd Crude oil down 1.6% - positive for India (import dependent)"
+      "\u26fd Crude oil down 4.5% - positive for India (import dependent)"
     ],
     "factors": [
       {
@@ -1115,8 +1115,8 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $100.30",
-        "sublabel": "-1.6%",
+        "label": "Crude $95.82",
+        "sublabel": "-4.5%",
         "status": "positive"
       },
       {
@@ -1159,53 +1159,55 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
+        "headline": "Two Trades for Today: An infrastructure firm for a 7.2% gain, a mid-cap media stock for an almost 7% upmove",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-an-infrastructure-firm-for-a-7-2-gain-a-mid-cap-media-stock-for-an-almost-7-upmove/articleshow/134371894.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Dividends and stock splits: IRCTC, BEML among 150+ stocks with record dates this week. Check full list",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/dividends-and-stock-splits-irctc-beml-among-150-stocks-with-record-dates-this-week-check-full-list/articleshow/134363543.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "These 9 penny stocks plunge up to 67% in 3 months",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-9-penny-stocks-plunge-up-to-67-in-3-months/slideshow/134363360.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Will Nifty extend gains to 4th session on Monday? US sanctions on Russia among factors to decide D-Street action",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/will-nifty-extend-gains-to-4th-session-on-monday-us-sanctions-on-russia-among-factors-to-decide-d-street-action/articleshow/134363267.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
         "headline": "Concurrent Gainers: 10 smallcap stocks that gain for 5 days in a row",
         "source": "Economic Times",
         "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-10-smallcap-stocks-that-gain-for-5-days-in-a-row/slideshow/134348701.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
-      },
-      {
-        "headline": "Stock split alert! 3 stocks turning ex-record date for stock splits next week. Do you own any?",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stock-split-alert-3-stocks-turning-ex-record-date-for-stock-splits-next-week-do-you-own-any/slideshow/134347867.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Market wrap:  Adani Ports, Adani Ports SEZ, TCS, Tata Motors PV top gainers and losers on Nifty and Sensex on Friday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-adani-ports-adani-ports-sez-tcs-tata-motors-pv-top-gainers-and-losers-on-nifty-and-sensex-on-friday/articleshow/134332633.cms",
-        "sentiment": "positive",
-        "stocks": [
-          "TATA",
-          "ADANI",
-          "TCS"
-        ],
-        "category": "general"
-      },
-      {
-        "headline": "Adani stocks soar up to 12% after Jefferies sees up to 53% upside in Adani Energy and others",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/adani-stocks-soar-up-to-12-after-jefferies-sees-up-to-53-upside-in-adani-energy-and-others/articleshow/134332474.cms",
-        "sentiment": "positive",
-        "stocks": [
-          "ADANI"
-        ],
-        "category": "general"
-      },
-      {
-        "headline": "Bodal Chemicals among 5 commodities stocks that hit 52-week highs & rallied up to 175% in a month",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bodal-chemicals-among-5-commodities-stocks-that-hit-52-week-highs-amp-rallied-up-to-175-in-a-month/slideshow/134332435.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
       }
     ],
     "earnings": [
+      {
+        "headline": "10 midcap stocks post highest quarterly profit in 10 quarters",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/10-midcap-stocks-post-highest-quarterly-profit-in-10-quarters/slideshow/134363456.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
       {
         "headline": "Ashish Kacholia's Portfolio: 10 stocks rally up to 180% in CY26, 4 turn multibaggers; 1 new Q1 bet",
         "source": "Economic Times",
@@ -1215,29 +1217,18 @@ const DASHBOARD_DATA = {
         "category": "earnings"
       }
     ],
-    "orders": [
+    "orders": [],
+    "regulatory": [
       {
-        "headline": "HDFC Mutual Fund buys 13.9 lakh Entero Healthcare shares from Prasid Uno Family Trust in Rs 236 crore block deal",
+        "headline": "'FCNR haul to power HSBC's India wealth, retail banking push'",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/hdfc-mutual-fund-buys-13-9-lakh-entero-healthcare-shares-from-prasid-uno-family-trust-in-rs-236-crore-block-deal/articleshow/134338556.cms",
-        "sentiment": "neutral",
-        "stocks": [
-          "HDFC"
-        ],
-        "category": "orders"
-      }
-    ],
-    "regulatory": [],
-    "insider": [
-      {
-        "headline": "Lenskart block deal: Rs 2,047 crore stake sale likely; Platinum Jasmine may offload 1.7% holding",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/lenskart-block-deal-rs-2047-crore-stake-sale-likely-platinum-jasmine-may-offload-1-7-holding/articleshow/134338290.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fcnr-haul-to-power-hsbcs-india-wealth-retail-banking-push/articleshow/134377366.cms",
         "sentiment": "neutral",
         "stocks": [],
-        "category": "insider"
+        "category": "regulatory"
       }
     ],
+    "insider": [],
     "geopolitical": [
       {
         "headline": "\ud83d\udd4a\ufe0f Global Markets Rally on Easing Geopolitical Tensions",
