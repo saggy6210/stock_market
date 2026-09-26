@@ -227,13 +227,17 @@ class StockService:
     
     def _send_report_email(self, report: DailyReport, market_overview: Optional[MarketOverview] = None, newsletter: Optional[Newsletter] = None, portfolio_insights: Optional[PortfolioInsights] = None) -> bool:
         """Send daily report via email (includes portfolio analysis at the end)."""
-        subject = f"Stock Market Daily Recommendation - {report.date}"
+        subject = f"Daily Market Prediction - {report.date}"
         
         # Build plain text body
         body = self._build_text_report(report, market_overview, newsletter, portfolio_insights)
         
-        # Build HTML body
-        html_body = self._build_html_report(report, market_overview, newsletter, portfolio_insights)
+        # Use the portfolio prediction template when portfolio data is available.
+        html_body = (
+            self._portfolio_email_generator.generate_html(portfolio_insights)
+            if portfolio_insights
+            else self._build_html_report(report, market_overview, newsletter, portfolio_insights)
+        )
         
         return self._email_notifier.send(subject, body, html_body)
     
@@ -241,7 +245,7 @@ class StockService:
         """Build plain text report with table format."""
         lines = [
             "=" * 70,
-            f"STOCK MARKET DAILY RECOMMENDATION - {report.date}",
+            f"DAILY MARKET PREDICTION - {report.date}",
             "=" * 70,
         ]
         

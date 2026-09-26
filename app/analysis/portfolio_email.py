@@ -129,6 +129,8 @@ class PortfolioEmailGenerator:
     def _build_modern_header(self, insights: PortfolioInsights, market_data: dict) -> str:
         """Build modern header with portfolio summary."""
         summary = insights.summary
+        report_date = datetime.strptime(insights.date, "%Y-%m-%d")
+        formatted_date = f"{report_date:%B} {report_date.day}, {report_date:%Y} • {report_date:%A}"
         pnl_color = "#f87171" if summary.total_pnl < 0 else "#4ade80"
         pnl_sign = "" if summary.total_pnl < 0 else "+"
         
@@ -140,7 +142,7 @@ class PortfolioEmailGenerator:
                                 <tr>
                                     <td>
                                         <span style="font-size: 20px; font-weight: 700; color: #ffffff;">📈 Daily Market Prediction</span>
-                                        <span style="display: block; color: #94a3b8; font-size: 13px; margin-top: 4px;">{insights.date}</span>
+                                        <span style="display: block; color: #94a3b8; font-size: 13px; margin-top: 4px;">{formatted_date}</span>
                                     </td>
                                     <td style="text-align: right;">
                                         <span style="display: block; color: #fbbf24; font-size: 11px;">Your Portfolio</span>
