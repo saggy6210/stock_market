@@ -1,36 +1,36 @@
-// Auto-generated on 2026-09-26T00:47:15.679099
+// Auto-generated on 2026-09-26T16:02:20.419924
 const DASHBOARD_DATA = {
-  "timestamp": "2026-09-26T00:46:38.031834",
+  "timestamp": "2026-09-26T16:01:58.073698",
   "indices": {
     "nifty50": {
-      "value": 23063.1,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 23140.5,
+      "change": 77.4,
+      "change_pct": 0.34,
       "direction": "positive"
     },
     "sensex": {
-      "value": 73580.54,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 73895.74,
+      "change": 315.2,
+      "change_pct": 0.43,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 55438.5,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 55580.4,
+      "change": 141.9,
+      "change_pct": 0.26,
       "direction": "positive"
     },
     "niftyit": {
-      "value": 28208.85,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 28160.9,
+      "change": -47.95,
+      "change_pct": -0.17,
+      "direction": "negative"
     },
     "vix": {
-      "value": 12.69,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 12.16,
+      "change": -0.53,
+      "change_pct": -4.18,
+      "direction": "negative"
     },
     "dow": {
       "value": 51828.62,
@@ -45,41 +45,41 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "usdinr": {
-      "value": 95.8,
-      "change": 0.06,
-      "change_pct": 0.06,
-      "direction": "positive"
+      "value": 95.82,
+      "change": -0.34,
+      "change_pct": -0.35,
+      "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4320.5,
-      "change": 22.5,
-      "change_pct": 0.52,
+      "value": 4321.2,
+      "change": 23.2,
+      "change_pct": 0.54,
       "direction": "positive"
     },
     "silver": {
-      "value": 64.71,
-      "change": 1.25,
-      "change_pct": 1.97,
+      "value": 64.25,
+      "change": 0.79,
+      "change_pct": 1.24,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.78,
-      "change": 0.06,
-      "change_pct": 0.9,
-      "direction": "positive"
+      "value": 6.7,
+      "change": -0.02,
+      "change_pct": -0.34,
+      "direction": "negative"
     },
     "crude": {
-      "value": 92.44,
-      "change": -2.17,
-      "change_pct": -2.29,
+      "value": 92.41,
+      "change": -2.2,
+      "change_pct": -2.33,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.25,
-      "change": -0.05,
-      "change_pct": -1.4,
+      "value": 3.2,
+      "change": -0.1,
+      "change_pct": -3.06,
       "direction": "negative"
     }
   },
@@ -119,6 +119,15 @@ const DASHBOARD_DATA = {
         "current_price": 1166.0,
         "low_52w": 1115.0,
         "fall_pct": -40.64,
+        "buy_signal": "Avoid"
+      },
+      {
+        "symbol": "NCC",
+        "sector": "Industrials",
+        "old_price": 213.95,
+        "current_price": 132.82,
+        "low_52w": 128.02,
+        "fall_pct": -37.92,
         "buy_signal": "Avoid"
       },
       {
@@ -185,6 +194,15 @@ const DASHBOARD_DATA = {
         "buy_signal": "Hold"
       },
       {
+        "symbol": "SJVN",
+        "sector": "Utilities",
+        "old_price": 91.29,
+        "current_price": 61.76,
+        "low_52w": 61.21,
+        "fall_pct": -32.35,
+        "buy_signal": "Avoid"
+      },
+      {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
         "old_price": 1965.63,
@@ -246,27 +264,18 @@ const DASHBOARD_DATA = {
         "low_52w": 1019.59,
         "fall_pct": -27.24,
         "buy_signal": "Buy"
-      },
-      {
-        "symbol": "HDFCBANK",
-        "sector": "Financial Services",
-        "old_price": 1003.9,
-        "current_price": 735.6,
-        "low_52w": 681.9,
-        "fall_pct": -26.73,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "IOC",
-        "sector": "Energy",
-        "old_price": 184.96,
-        "current_price": 135.7,
-        "low_52w": 129.07,
-        "fall_pct": -26.63,
-        "buy_signal": "Hold"
       }
     ],
     "jan26": [
+      {
+        "symbol": "WIPRO",
+        "sector": "Technology",
+        "old_price": 263.22,
+        "current_price": 164.02,
+        "low_52w": 161.66,
+        "fall_pct": -37.69,
+        "buy_signal": "Avoid"
+      },
       {
         "symbol": "TCS",
         "sector": "Technology",
@@ -322,6 +331,15 @@ const DASHBOARD_DATA = {
         "buy_signal": "Hold"
       },
       {
+        "symbol": "SJVN",
+        "sector": "Utilities",
+        "old_price": 91.29,
+        "current_price": 61.76,
+        "low_52w": 61.21,
+        "fall_pct": -32.35,
+        "buy_signal": "Avoid"
+      },
+      {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
         "old_price": 1965.63,
@@ -428,27 +446,18 @@ const DASHBOARD_DATA = {
         "low_52w": 1960.44,
         "fall_pct": -22.89,
         "buy_signal": "Buy"
-      },
-      {
-        "symbol": "BPCL",
-        "sector": "Energy",
-        "old_price": 391.65,
-        "current_price": 308.5,
-        "low_52w": 266.6,
-        "fall_pct": -21.23,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "ADANIGREEN",
-        "sector": "Utilities",
-        "old_price": 1631.5,
-        "current_price": 1296.6,
-        "low_52w": 765.0,
-        "fall_pct": -20.53,
-        "buy_signal": "Buy"
       }
     ],
     "may25": [
+      {
+        "symbol": "SUZLON",
+        "sector": "Industrials",
+        "old_price": 61.5,
+        "current_price": 40.8,
+        "low_52w": 38.19,
+        "fall_pct": -33.66,
+        "buy_signal": "Hold"
+      },
       {
         "symbol": "NBCC",
         "sector": "Industrials",
@@ -459,6 +468,15 @@ const DASHBOARD_DATA = {
         "buy_signal": "Hold"
       },
       {
+        "symbol": "SJVN",
+        "sector": "Utilities",
+        "old_price": 91.29,
+        "current_price": 61.76,
+        "low_52w": 61.21,
+        "fall_pct": -32.35,
+        "buy_signal": "Avoid"
+      },
+      {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
         "old_price": 1965.63,
@@ -610,27 +628,27 @@ const DASHBOARD_DATA = {
         "low_52w": 128.1,
         "fall_pct": -20.24,
         "buy_signal": "Buy"
-      },
-      {
-        "symbol": "SBIN",
-        "sector": "Financial Services",
-        "old_price": 1212.84,
-        "current_price": 983.0,
-        "low_52w": 837.9,
-        "fall_pct": -18.95,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "PERSISTENT",
-        "sector": "Technology",
-        "old_price": 6552.65,
-        "current_price": 5372.0,
-        "low_52w": 4229.81,
-        "fall_pct": -18.02,
-        "buy_signal": "Hold"
       }
     ],
     "jan25": [
+      {
+        "symbol": "PFC",
+        "sector": "Financial Services",
+        "old_price": 476.83,
+        "current_price": 338.0,
+        "low_52w": 317.66,
+        "fall_pct": -29.12,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "BSE",
+        "sector": "Financial Services",
+        "old_price": 4435.12,
+        "current_price": 3191.5,
+        "low_52w": 2016.19,
+        "fall_pct": -28.04,
+        "buy_signal": "Buy"
+      },
       {
         "symbol": "IREDA",
         "sector": "Financial Services",
@@ -747,6 +765,15 @@ const DASHBOARD_DATA = {
         "low_52w": 128.1,
         "fall_pct": -20.24,
         "buy_signal": "Buy"
+      },
+      {
+        "symbol": "DELHIVERY",
+        "sector": "Industrials",
+        "old_price": 524.0,
+        "current_price": 422.7,
+        "low_52w": 374.45,
+        "fall_pct": -19.33,
+        "buy_signal": "Hold"
       },
       {
         "symbol": "SBIN",
@@ -782,33 +809,6 @@ const DASHBOARD_DATA = {
         "current_price": 1785.4,
         "low_52w": 1718.87,
         "fall_pct": -16.86,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "POWERGRID",
-        "sector": "Utilities",
-        "old_price": 323.44,
-        "current_price": 269.5,
-        "low_52w": 246.08,
-        "fall_pct": -16.68,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "BAJFINANCE",
-        "sector": "Financial Services",
-        "old_price": 1176.4,
-        "current_price": 996.9,
-        "low_52w": 783.09,
-        "fall_pct": -15.26,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "TECHM",
-        "sector": "Technology",
-        "old_price": 1807.04,
-        "current_price": 1548.0,
-        "low_52w": 1271.07,
-        "fall_pct": -14.34,
         "buy_signal": "Hold"
       }
     ]
@@ -900,6 +900,20 @@ const DASHBOARD_DATA = {
         "timeframe": "3-6 months"
       },
       {
+        "symbol": "KOTAKBANK",
+        "sector": "Banking",
+        "current_price": 404.0,
+        "high_52w": 452.42,
+        "low_52w": 344.9,
+        "fall_pct": -10.7,
+        "rsi": 30.9,
+        "target_price": 452.48,
+        "upside_pct": 12,
+        "signal": "Buy",
+        "reason": "Asset quality improvement",
+        "timeframe": "3-6 months"
+      },
+      {
         "symbol": "AXISBANK",
         "sector": "Banking",
         "current_price": 1222.4,
@@ -939,20 +953,6 @@ const DASHBOARD_DATA = {
         "upside_pct": 12,
         "signal": "Buy",
         "reason": "Order book strength",
-        "timeframe": "3-6 months"
-      },
-      {
-        "symbol": "COALINDIA",
-        "sector": "Mining",
-        "current_price": 426.1,
-        "high_52w": 478.71,
-        "low_52w": 355.18,
-        "fall_pct": -10.99,
-        "rsi": 55.2,
-        "target_price": 477.23,
-        "upside_pct": 12,
-        "signal": "Buy",
-        "reason": "Dividend yield play",
         "timeframe": "3-6 months"
       }
     ],
@@ -1023,19 +1023,6 @@ const DASHBOARD_DATA = {
         "reason": "SUV portfolio expansion"
       },
       {
-        "symbol": "KOTAKBANK",
-        "sector": "Banking",
-        "current_price": NaN,
-        "high_52w": 452.42,
-        "low_52w": 344.9,
-        "fall_pct": NaN,
-        "rsi": 31.5,
-        "risk_level": "Low",
-        "downside_pct": 8,
-        "signal": "Hold",
-        "reason": "Asset quality improvement"
-      },
-      {
         "symbol": "ONGC",
         "sector": "Oil & Gas",
         "current_price": 235.86,
@@ -1060,6 +1047,19 @@ const DASHBOARD_DATA = {
         "downside_pct": 8,
         "signal": "Hold",
         "reason": "Capacity addition"
+      },
+      {
+        "symbol": "M&M",
+        "sector": "Auto",
+        "current_price": 3035.0,
+        "high_52w": 3799.99,
+        "low_52w": 2865.9,
+        "fall_pct": -20.13,
+        "rsi": 31.1,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "Farm + auto strength"
       }
     ]
   },
@@ -1093,29 +1093,30 @@ const DASHBOARD_DATA = {
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\u26fd Crude oil down 2.3% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +0.9%, NASDAQ +0.5%",
+    "summary": "\ud83d\udcc9 VIX down 4.2% indicating declining volatility/fear. \u26fd Crude oil down 2.3% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +0.9%, NASDAQ +0.5%",
     "vix": {
-      "value": 12.69,
-      "change_pct": 0.0
+      "value": 12.16,
+      "change_pct": -4.18
     },
     "crude": {
-      "value": 92.44,
-      "change_pct": -2.29
+      "value": 92.41,
+      "change_pct": -2.33
     },
     "reasons": [
+      "\ud83d\udcc9 VIX down 4.2% indicating declining volatility/fear",
       "\u26fd Crude oil down 2.3% - positive for India (import dependent)",
       "\ud83c\udf0f US markets positive: Dow +0.9%, NASDAQ +0.5%"
     ],
     "factors": [
       {
         "icon": "\ud83d\udcc9",
-        "label": "VIX 12.69",
-        "sublabel": "+0.0%",
+        "label": "VIX 12.16",
+        "sublabel": "-4.2%",
         "status": "positive"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $92.44",
+        "label": "Crude $92.41",
         "sublabel": "-2.3%",
         "status": "positive"
       },
@@ -1159,41 +1160,41 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
-        "headline": "$500 billion flywheel! Macquarie lists 3 drivers for strong growth in capital market stocks, lists top picks",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/500-billion-flywheel-macquarie-lists-3-drivers-for-strong-growth-in-capital-market-stocks-lists-top-picks/articleshow/134480879.cms",
+        "headline": "Wall Street ends higher as investors buy AI stocks; Microsoft rallies",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/wall-street-ends-higher-as-investors-buy-ai-stocks-microsoft-rallies-14038771.html",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Engineers India among 7 stocks hitting 52-week highs; shares rallied up to 25% in a month",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/engineers-india-among-7-stocks-hitting-52-week-highs-shares-rallied-up-to-25-in-a-month/slideshow/134484033.cms",
+        "headline": "Radico Khaitan shares gain up to 3% as JM Financial sees 16% upside",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/radico-khaitan-shares-gain-as-jm-financial-sees-up-to-16-upside-14038287.html",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "ET Alpha Wealth Summit 2.0: Structured debt and the search for higher yields",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/et-alpha-wealth-summit-2-0-structured-debt-and-the-search-for-higher-yields/articleshow/134484486.cms",
+        "headline": "Indegene shares hit over one-year high as Motilal Oswal hikes target price",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/indegene-shares-hit-over-one-year-high-as-motilal-oswal-hikes-target-price-14038258.html",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Jefferies\u2019 Chris Wood calls energy India\u2019s best structural growth story; names Hitachi Energy as picks-and-shovels play",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-chris-wood-calls-energy-indias-best-structural-growth-story-names-hitachi-energy-as-picks-and-shovels-play/articleshow/134480234.cms",
+        "headline": "Juniper Green shares rise 3%; JM Financial initiates 'Buy', sees 39% upside to Rs 371 target",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/stocks/juniper-green-shares-rise-3-jm-financial-initiates-buy-sees-39-upside-to-rs-371-target-14038243.html",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Big AI reset ahead? Chris Wood doubts hyperscalers\u2019 $990 bn capex estimates, highlights India\u2019s reverse AI trade advantage",
+        "headline": "GIFT Nifty goes into overdrive, hits all-time high in volume and open interest",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/big-ai-reset-ahead-chris-wood-doubts-hyperscalers-990-bn-capex-estimates-highlights-indias-reverse-ai-trade-advantage/articleshow/134478611.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/gift-nifty-goes-into-overdrive-hits-all-time-high-in-volume-and-open-interest/articleshow/134499784.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
@@ -1201,15 +1202,25 @@ const DASHBOARD_DATA = {
     ],
     "earnings": [
       {
-        "headline": "Motilal Oswal group gets SEBI custodian licence to start operations from Q4",
+        "headline": "Nifty logs 7th straight weekly loss for the first time in 6 years: Time to be fearful, or can bulls pull off a comeback?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/motilal-oswal-group-gets-sebi-custodian-licence-to-start-operations-from-q4/articleshow/134478554.cms",
-        "sentiment": "neutral",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nifty-logs-7th-straight-weekly-losses-for-the-first-time-in-6-years-time-to-be-fearful-or-can-bulls-pull-off-a-comeback/articleshow/134498300.cms",
+        "sentiment": "negative",
         "stocks": [],
         "category": "earnings"
       }
     ],
     "orders": [
+      {
+        "headline": "Adani group entities swap 86 lakh shares of Adani Enterprises in Rs 2,498 crore block deal",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/adani-group-entities-swap-86-lakh-shares-of-adani-enterprises-in-rs-2-498-crore-block-deal-14038620.html",
+        "sentiment": "positive",
+        "stocks": [
+          "ADANI"
+        ],
+        "category": "orders"
+      },
       {
         "headline": "Adani group entities swap 86 lakh shares of Adani Enterprises in Rs 2,498 cr block deal",
         "source": "Economic Times",
@@ -1231,38 +1242,52 @@ const DASHBOARD_DATA = {
     ],
     "regulatory": [
       {
-        "headline": "Sebi bans Omaxe, 5 others for violating minimum public shareholding norms",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-bans-omaxe-5-others-for-violating-minimum-public-shareholding-norms/articleshow/134488287.cms",
+        "headline": "Naked trading vs defined risk - the mindset every trader needs: Shubham Agarwal",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/trends/expert-columns/naked-trading-vs-defined-risk-the-mindset-every-trader-needs-shubham-agarwal-14038778.html",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Market wrap: Axis Bank, Asian Paints, Max Healthcare, Infosys top gainers and losers on Nifty and Sensex on Friday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-axis-bank-asian-paints-max-healthcare-infosys-top-gainers-and-losers-on-nifty-and-sensex-on-friday/articleshow/134485432.cms",
-        "sentiment": "positive",
-        "stocks": [
-          "AXIS"
-        ],
+        "headline": "Daily Voice: Are private-sector banks trading at cheap valuations? Ladderup\u2019s Raghvendra Nath sees moderate festive demand this year",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-are-private-sector-banks-trading-at-cheap-valuations-ladderup-s-raghvendra-nath-sees-moderate-festive-demand-this-year-14038636.html",
+        "sentiment": "neutral",
+        "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Balrampur Chini Mills shares rally 4% as company receives Rs 75 crore BioE3 grant from government",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/balrampur-chini-mills-shares-rally-4-as-company-receives-rs-75-crore-bioe3-grant-from-government/articleshow/134477303.cms",
-        "sentiment": "positive",
+        "headline": "SEBI's new PMS rules could redraw competition for affluent investors",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/mutual-funds/sebi-s-new-pms-rules-could-redraw-competition-for-affluent-investors-14038436.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "SEBI finds Omaxe, promoter-linked entities breached MPS norms through 2013 OFS, imposes restraint and penalty",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-finds-omaxe-promoter-linked-entities-breached-mps-norms-through-2013-ofs-imposes-restraint-and-penalty-14038451.html",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Upcoming IPO: SME issue\u00a0Dove Soft to open for subscription next week; check price band, other key details",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/ipo/upcoming-ipo-sme-issue-dove-soft-to-open-for-subscription-next-week-check-price-band-other-key-details-14038402.html",
+        "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       }
     ],
     "insider": [
       {
-        "headline": "Retail investors raise stakes in 10 smallcaps; 3 turn multibaggers in 3 months",
+        "headline": "FIIs, MFs raise stakes in 10 stocks; shares gain up to 40% in 3 months",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/retail-investors-raise-stakes-in-10-smallcaps-3-turn-multibaggers-in-3-months/slideshow/134478529.cms",
-        "sentiment": "neutral",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fiis-mfs-raise-stakes-in-10-stocks-shares-gain-up-to-40-in-3-months/slideshow/134500775.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "insider"
       }
