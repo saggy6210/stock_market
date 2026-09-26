@@ -17,6 +17,7 @@ from app.analysis.market_overview import MarketOverviewFetcher, MarketOverview
 from app.analysis.newsletter import NewsletterGenerator, Newsletter
 from app.analysis.portfolio_insights import PortfolioInsightsGenerator, PortfolioInsights
 from app.analysis.portfolio_email import PortfolioEmailGenerator
+from app.analysis.ipo_tracker import IPOTracker
 from app.notification.emailer import EmailNotifier
 
 logger = logging.getLogger(__name__)
@@ -203,12 +204,13 @@ class StockService:
     def _send_portfolio_email(self, insights: PortfolioInsights) -> bool:
         """Send portfolio analysis email."""
         subject = f"Portfolio Analysis and Recommendations - {insights.date}"
+        ipo_data = IPOTracker().fetch()
         
         # Build plain text body
-        body = self._portfolio_email_generator.generate_text(insights)
+        body = self._portfolio_email_generator.generate_text(insights, ipo_data)
         
         # Build HTML body
-        html_body = self._portfolio_email_generator.generate_html(insights)
+        html_body = self._portfolio_email_generator.generate_html(insights, ipo_data)
         
         return self._email_notifier.send(subject, body, html_body)
     
@@ -228,16 +230,21 @@ class StockService:
     def _send_report_email(self, report: DailyReport, market_overview: Optional[MarketOverview] = None, newsletter: Optional[Newsletter] = None, portfolio_insights: Optional[PortfolioInsights] = None) -> bool:
         """Send daily report via email (includes portfolio analysis at the end)."""
         subject = f"Daily Market Prediction - {report.date}"
+        ipo_data = IPOTracker().fetch()
         
         # Build plain text body
         body = self._build_text_report(report, market_overview, newsletter, portfolio_insights)
+        body = f"{body}\n\n{IPOTracker.email_text(ipo_data)}"
         
         # Use the portfolio prediction template when portfolio data is available.
         html_body = (
-            self._portfolio_email_generator.generate_html(portfolio_insights)
+            self._portfolio_email_generator.generate_html(portfolio_insights, ipo_data)
             if portfolio_insights
             else self._build_html_report(report, market_overview, newsletter, portfolio_insights)
         )
+        if not portfolio_insights:
+            ipo_html = f'<table role="presentation" width="100%">{IPOTracker.email_html(ipo_data)}</table>'
+            html_body = html_body.replace("</body>", f"{ipo_html}</body>")
         
         return self._email_notifier.send(subject, body, html_body)
     

@@ -14,6 +14,7 @@ import yfinance as yf
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from app.analysis.ipo_tracker import IPOTracker
 
 logger = logging.getLogger(__name__)
 
@@ -88,6 +89,7 @@ class DashboardDataPipeline:
             self.data["market_outlook"] = self._generate_market_outlook()
             self.data["predictions"] = self._generate_predictions()
             self.data["news"] = self._fetch_news_data()
+            self.data["ipos"] = IPOTracker().fetch()
             
             # Save to JSON file
             self._save_data()

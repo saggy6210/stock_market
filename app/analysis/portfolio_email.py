@@ -6,9 +6,10 @@ Uses modern inline CSS template for email client compatibility.
 
 import logging
 from datetime import datetime
-from typing import Optional
+from typing import Any, Optional
 
 from app.config import settings
+from app.analysis.ipo_tracker import IPOTracker
 from app.analysis.portfolio_insights import (
     PortfolioInsights,
     PortfolioSignal,
@@ -24,12 +25,13 @@ logger = logging.getLogger(__name__)
 class PortfolioEmailGenerator:
     """Generate portfolio analysis emails with modern template."""
     
-    def generate_html(self, insights: PortfolioInsights) -> str:
+    def generate_html(self, insights: PortfolioInsights, ipo_data: Optional[dict[str, Any]] = None) -> str:
         """Generate HTML email content using Sample 5 template."""
         summary = insights.summary
         
         # Fetch market overview data
         market_data = self._fetch_market_overview()
+        ipo_data = ipo_data if ipo_data is not None else IPOTracker().fetch()
         
         # Build email sections
         header_html = self._build_modern_header(insights, market_data)
@@ -46,6 +48,7 @@ class PortfolioEmailGenerator:
         gainers_losers_html = self._build_gainers_losers(insights)
         risk_alerts_html = self._build_risk_alerts(insights)
         strategy_html = self._build_strategy_section(insights)
+        ipo_html = IPOTracker.email_html(ipo_data)
         footer_html = self._build_footer(insights)
         
         html = f"""<!DOCTYPE html>
@@ -76,6 +79,7 @@ class PortfolioEmailGenerator:
                     {gainers_losers_html}
                     {risk_alerts_html}
                     {strategy_html}
+                    {ipo_html}
                     {footer_html}
 
                 </table>
@@ -841,9 +845,10 @@ class PortfolioEmailGenerator:
                         </td>
                     </tr>"""
     
-    def generate_text(self, insights: PortfolioInsights) -> str:
+    def generate_text(self, insights: PortfolioInsights, ipo_data: Optional[dict[str, Any]] = None) -> str:
         """Generate plain text email content."""
         summary = insights.summary
+        ipo_data = ipo_data if ipo_data is not None else IPOTracker().fetch()
         
         lines = [
             "=" * 70,
@@ -863,6 +868,8 @@ class PortfolioEmailGenerator:
             f"Loss Making:         {summary.loss_making_stocks}",
             "",
         ]
+
+        lines.extend((IPOTracker.email_text(ipo_data), ""))
         
         # Risk flags
         if summary.risk_flags.get_flags():

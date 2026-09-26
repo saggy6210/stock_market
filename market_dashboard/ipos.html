@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Open and upcoming Indian IPO calendar with reported GMP, estimated listing prices, issue details and dates.">
+    <title>IPO Calendar & GMP | Share Market Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #172b32;
+            --muted: #667980;
+            --line: #dbe5e5;
+            --paper: #f3f7f5;
+            --white: #fff;
+            --green: #00866a;
+            --green-light: #e3f5ee;
+            --red: #b84b48;
+            --gold: #c18419;
+            --navy: #14272f;
+        }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, sans-serif; line-height: 1.5; }
+        a { color: inherit; }
+        .topbar { background: var(--navy); color: white; }
+        .topbar-inner { width: min(1160px, calc(100% - 40px)); margin: auto; min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .brand { font-size: 15px; font-weight: 700; text-decoration: none; }
+        .brand i { color: #65d5b1; margin-right: 9px; }
+        .nav-links { display: flex; align-items: center; gap: 24px; font-size: 13px; color: #c4d2d3; }
+        .nav-links a { text-decoration: none; }
+        .nav-links a[aria-current="page"] { color: #84e1bf; }
+        .hero { background: linear-gradient(115deg, #16353b 0%, #176551 62%, #228a69 100%); color: white; padding: 38px 0 34px; }
+        .wrap { width: min(1160px, calc(100% - 40px)); margin: auto; }
+        .eyebrow { text-transform: uppercase; color: #b5e9d7; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; }
+        h1 { max-width: 720px; font-size: 40px; line-height: 1.12; margin: 9px 0 10px; }
+        .hero p { color: #d5e8e3; max-width: 700px; margin: 0; font-size: 14px; }
+        .meta { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 22px; color: #d1e4df; font-size: 12px; }
+        .meta i { color: #91dfbf; margin-right: 6px; }
+        main { padding: 24px 0 42px; }
+        .controlbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+        .segmented { display: inline-flex; border: 1px solid #cbd8d7; background: white; padding: 3px; border-radius: 7px; }
+        .segmented button { border: 0; background: transparent; color: var(--muted); border-radius: 5px; padding: 8px 13px; font: 600 12px Inter, sans-serif; cursor: pointer; }
+        .segmented button[aria-pressed="true"] { background: var(--navy); color: white; }
+        .search { min-width: min(300px, 48vw); position: relative; }
+        .search i { position: absolute; left: 12px; top: 12px; color: #819197; font-size: 13px; }
+        .search input { width: 100%; height: 38px; border: 1px solid #cbd8d7; border-radius: 6px; background: white; padding: 0 12px 0 34px; font: 13px Inter, sans-serif; color: var(--ink); }
+        .lists { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+        .list-section { min-width: 0; }
+        .section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; border-bottom: 1px solid #cfdcda; padding-bottom: 11px; margin-bottom: 12px; }
+        .section-head h2 { margin: 0; font-size: 16px; }
+        .section-head p { margin: 3px 0 0; color: var(--muted); font-size: 11px; }
+        .count { color: var(--muted); font-size: 11px; white-space: nowrap; }
+        .ipo-list { display: grid; gap: 10px; }
+        .ipo-card { background: var(--white); border: 1px solid var(--line); border-radius: 7px; padding: 15px; box-shadow: 0 2px 8px rgba(22, 54, 58, .035); }
+        .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+        .ipo-name { margin: 0; font-size: 14px; line-height: 1.35; }
+        .company-meta { color: var(--muted); font-size: 10px; margin-top: 4px; }
+        .status { flex: 0 0 auto; border-radius: 3px; padding: 3px 7px; color: #006b53; background: var(--green-light); font-size: 9px; font-weight: 700; text-transform: uppercase; }
+        .gmp-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 13px 0 11px; }
+        .metric { border-left: 2px solid #e5ecea; padding-left: 8px; min-width: 0; }
+        .metric-label { display: block; color: var(--muted); font-size: 9px; text-transform: uppercase; }
+        .metric-value { display: block; margin-top: 2px; font-size: 13px; font-weight: 700; white-space: nowrap; }
+        .positive { color: var(--green); }
+        .negative { color: var(--red); }
+        .neutral { color: var(--muted); }
+        .date-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 12px; padding: 10px 0; border-top: 1px solid #edf1f0; border-bottom: 1px solid #edf1f0; }
+        .date-item { display: flex; justify-content: space-between; gap: 8px; font-size: 10px; }
+        .date-item span:first-child { color: var(--muted); }
+        .date-item strong { font-weight: 600; text-align: right; }
+        .detail-line { display: flex; flex-wrap: wrap; gap: 6px 13px; margin-top: 9px; color: #52656b; font-size: 10px; }
+        .detail-line b { color: var(--ink); font-weight: 600; }
+        .read { color: #52656b; font-size: 10px; margin: 10px 0 0; }
+        .card-bottom { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 11px; }
+        .updated { color: #88979b; font-size: 9px; }
+        .source-link { color: var(--green); font-size: 10px; font-weight: 600; text-decoration: none; }
+        .source-link:hover, .source-links a:hover { text-decoration: underline; }
+        .empty { border: 1px dashed #c7d5d2; border-radius: 7px; padding: 22px; text-align: center; color: var(--muted); font-size: 12px; background: rgba(255,255,255,.6); }
+        .disclaimer { margin-top: 22px; padding: 14px 16px; border-left: 3px solid var(--gold); background: #fff8e9; color: #665833; font-size: 11px; }
+        .source-strip { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; color: var(--muted); font-size: 10px; }
+        .source-links { display: flex; flex-wrap: wrap; gap: 10px; }
+        .source-links a { color: #176a57; text-decoration: none; font-weight: 600; }
+        footer { border-top: 1px solid var(--line); padding: 16px 0 22px; color: var(--muted); font-size: 10px; }
+        @media (max-width: 760px) {
+            .topbar-inner { width: min(100% - 28px, 1160px); min-height: 58px; }
+            .nav-links { gap: 13px; font-size: 11px; }
+            .wrap { width: min(100% - 28px, 1160px); }
+            .hero { padding: 30px 0; }
+            h1 { font-size: 30px; }
+            .lists { grid-template-columns: 1fr; gap: 28px; }
+            .controlbar { align-items: stretch; flex-direction: column; }
+            .search { min-width: 100%; }
+        }
+        @media (max-width: 420px) {
+            .nav-links { gap: 10px; }
+            .nav-links a:first-child { display: none; }
+            .gmp-row { gap: 4px; }
+            .metric { padding-left: 6px; }
+            .metric-value { font-size: 11px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="index.html"><i class="fas fa-chart-line"></i>Share Market Analysis</a>
+            <div class="nav-links">
+                <a href="index.html">Market dashboard</a>
+                <a href="profit-loss.html">P&amp;L report</a>
+                <a href="ipos.html" aria-current="page">IPO calendar</a>
+            </div>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="wrap">
+            <div class="eyebrow">Primary market · India</div>
+            <h1>Open &amp; Upcoming IPOs</h1>
+            <p>Track issue terms, subscription dates and indicative grey-market premiums. Lists are ranked by reported GMP percentage, not investment quality.</p>
+            <div class="meta"><span><i class="far fa-clock"></i>Snapshot: <strong id="updatedAt">Loading</strong></span><span><i class="fas fa-layer-group"></i><strong id="totalOpen">--</strong> open · <strong id="totalUpcoming">--</strong> upcoming</span></div>
+        </div>
+    </header>
+    <main class="wrap">
+        <div class="controlbar">
+            <div class="segmented" role="group" aria-label="Filter IPOs by board">
+                <button type="button" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" data-filter="Mainboard" aria-pressed="false">Mainboard</button>
+                <button type="button" data-filter="SME" aria-pressed="false">SME</button>
+            </div>
+            <label class="search"><i class="fas fa-search" aria-hidden="true"></i><input id="ipoSearch" type="search" placeholder="Search company or exchange" aria-label="Search company or exchange"></label>
+        </div>
+        <div class="lists">
+            <section class="list-section" aria-labelledby="openTitle">
+                <div class="section-head"><div><h2 id="openTitle">Top 5 Open IPOs</h2><p>Currently accepting applications</p></div><span class="count" id="openCount"></span></div>
+                <div class="ipo-list" id="openList" aria-live="polite"></div>
+            </section>
+            <section class="list-section" aria-labelledby="upcomingTitle">
+                <div class="section-head"><div><h2 id="upcomingTitle">Top 5 Upcoming IPOs</h2><p>Opening soon</p></div><span class="count" id="upcomingCount"></span></div>
+                <div class="ipo-list" id="upcomingList" aria-live="polite"></div>
+            </section>
+        </div>
+        <aside class="disclaimer"><strong>Important:</strong> Grey-market premium is informal, unregulated and can change rapidly. Estimated listing price is issue price plus reported GMP, not a prediction or guarantee. Subscription figures and dates are source-reported and may change; confirm offer details in the official offer documents before applying.</aside>
+        <div class="source-strip"><span>Data and context:</span><div class="source-links">
+            <a href="https://www.investorgain.com/report/ipo-gmp-live/331/" target="_blank" rel="noopener noreferrer">InvestorGain · Live GMP</a>
+            <a href="https://www.ipopremium.in/" target="_blank" rel="noopener noreferrer">IPO Premium · Calendar</a>
+            <a href="https://mainboardgmp.com/" target="_blank" rel="noopener noreferrer">MainboardGMP</a>
+            <a href="https://ipowatch.in/ipo-grey-market-premium-latest-ipo-gmp/" target="_blank" rel="noopener noreferrer">IPO Watch · GMP</a>
+            <a href="https://www.chittorgarh.com/book-chapter/ipo-grey-market-gmp/28/" target="_blank" rel="noopener noreferrer">Chittorgarh · GMP guide</a>
+        </div></div>
+    </main>
+    <footer><div class="wrap">For informational purposes only. This page does not provide IPO application advice or a guarantee of listing returns.</div></footer>
+    <script src="data/dashboard_data.js?v=20260926"></script>
+    <script>
+        const ipoData = typeof DASHBOARD_DATA !== 'undefined' ? DASHBOARD_DATA.ipos : null;
+        let boardFilter = 'all';
+        const searchInput = document.getElementById('ipoSearch');
+
+        function esc(value) {
+            return String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+        }
+
+        function money(value) {
+            return value == null ? 'Not reported' : `₹${Number(value).toLocaleString('en-IN', {maximumFractionDigits: 2})}`;
+        }
+
+        function dateLabel(value) {
+            if (!value) return 'Not announced';
+            const parsed = new Date(`${value}T00:00:00+05:30`);
+            return Number.isNaN(parsed.getTime()) ? 'Not announced' : parsed.toLocaleDateString('en-IN', {day:'2-digit', month:'short', year:'numeric', timeZone:'Asia/Kolkata'});
+        }
+
+        function card(ipo) {
+            const gmpText = ipo.gmp_pct == null ? 'Not reported' : `${money(ipo.gmp)} (${ipo.gmp_pct > 0 ? '+' : ''}${Number(ipo.gmp_pct).toFixed(2)}%)`;
+            const gmpClass = ipo.gmp_pct == null ? 'neutral' : ipo.gmp_pct > 0 ? 'positive' : ipo.gmp_pct < 0 ? 'negative' : 'neutral';
+            const dates = [['Open', ipo.open_date], ['Close', ipo.close_date], ['Allotment', ipo.allotment_date], ['Listing', ipo.listing_date]];
+            const sourceUrl = /^https:\/\//.test(ipo.source_url || '') ? ipo.source_url : 'https://www.investorgain.com/report/ipo-gmp-live/331/';
+            return `<article class="ipo-card">
+                <div class="card-top"><div><h3 class="ipo-name">${esc(ipo.name)}</h3><div class="company-meta">${esc(ipo.category)} · ${esc(ipo.exchange || 'Exchange not reported')}</div></div><span class="status">${esc(ipo.status)}</span></div>
+                <div class="gmp-row">
+                    <div class="metric"><span class="metric-label">Reported GMP</span><span class="metric-value ${gmpClass}">${gmpText}</span></div>
+                    <div class="metric"><span class="metric-label">Issue price</span><span class="metric-value">${money(ipo.issue_price)}</span></div>
+                    <div class="metric"><span class="metric-label">Est. listing</span><span class="metric-value">${money(ipo.estimated_listing_price)}</span></div>
+                </div>
+                <div class="date-grid">${dates.map(([label,value]) => `<div class="date-item"><span>${label}</span><strong>${dateLabel(value)}</strong></div>`).join('')}</div>
+                <div class="detail-line"><span>Issue size <b>${esc(ipo.issue_size || 'Not reported')}</b></span><span>Lot <b>${esc(ipo.lot_size ?? 'Not reported')}</b></span><span>Subscription <b>${esc(ipo.subscription || 'Not reported')}</b></span><span>Anchor <b>${esc(ipo.anchor_status || 'Not reported')}</b></span></div>
+                <p class="read">${esc(ipo.market_read || 'No market read available.')}</p>
+                <div class="card-bottom"><span class="updated">Source update: ${esc(ipo.source_updated || 'Not reported')}</span><a class="source-link" href="${esc(sourceUrl)}" target="_blank" rel="noopener noreferrer">IPO details <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+            </article>`;
+        }
+
+        function renderList(key, elementId, countId) {
+            const list = Array.isArray(ipoData?.[key]) ? ipoData[key] : [];
+            const filtered = list.filter(ipo => (boardFilter === 'all' || ipo.category === boardFilter) && `${ipo.name} ${ipo.exchange}`.toLowerCase().includes(searchInput.value.trim().toLowerCase()));
+            const ranked = [...filtered].sort((a,b) => (b.gmp_pct ?? -Infinity) - (a.gmp_pct ?? -Infinity)).slice(0,5);
+            document.getElementById(countId).textContent = `${filtered.length} tracked`;
+            const target = document.getElementById(elementId);
+            target.innerHTML = ranked.length ? ranked.map(card).join('') : `<div class="empty">${ipoData?.error ? 'IPO data could not be refreshed. Check the source links below.' : 'No matching IPO records in this snapshot.'}</div>`;
+        }
+
+        function render() {
+            renderList('open', 'openList', 'openCount');
+            renderList('upcoming', 'upcomingList', 'upcomingCount');
+        }
+
+        document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
+            boardFilter = button.dataset.filter;
+            document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+            render();
+        }));
+        searchInput.addEventListener('input', render);
+
+        if (ipoData?.fetched_at) {
+            const fetched = new Date(ipoData.fetched_at);
+            document.getElementById('updatedAt').textContent = fetched.toLocaleString('en-IN', {dateStyle:'medium', timeStyle:'short', timeZone:'Asia/Kolkata'}) + ' IST';
+        } else {
+            document.getElementById('updatedAt').textContent = 'Unavailable';
+        }
+        document.getElementById('totalOpen').textContent = ipoData?.open?.length ?? 0;
+        document.getElementById('totalUpcoming').textContent = ipoData?.upcoming?.length ?? 0;
+        render();
+    </script>
+</body>
+</html>
