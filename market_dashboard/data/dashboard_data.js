@@ -1,6 +1,6 @@
-// Auto-generated on 2026-09-27T00:46:55.648983
+// Auto-generated on 2026-09-28T01:02:25.491476
 const DASHBOARD_DATA = {
-  "timestamp": "2026-09-27T00:46:28.253648",
+  "timestamp": "2026-09-28T01:02:07.931605",
   "indices": {
     "nifty50": {
       "value": 23140.5,
@@ -45,41 +45,41 @@ const DASHBOARD_DATA = {
       "direction": "positive"
     },
     "usdinr": {
-      "value": 95.82,
-      "change": -0.34,
-      "change_pct": -0.35,
+      "value": 95.8,
+      "change": -0.36,
+      "change_pct": -0.37,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4321.2,
-      "change": 23.2,
-      "change_pct": 0.54,
-      "direction": "positive"
+      "value": 4266.6,
+      "change": -54.6,
+      "change_pct": -1.26,
+      "direction": "negative"
     },
     "silver": {
-      "value": 64.25,
-      "change": 0.79,
-      "change_pct": 1.24,
-      "direction": "positive"
+      "value": 63.67,
+      "change": -0.57,
+      "change_pct": -0.89,
+      "direction": "negative"
     },
     "copper": {
       "value": 6.7,
-      "change": -0.02,
-      "change_pct": -0.34,
-      "direction": "negative"
+      "change": 0.0,
+      "change_pct": 0.06,
+      "direction": "positive"
     },
     "crude": {
-      "value": 92.41,
-      "change": -2.2,
-      "change_pct": -2.33,
-      "direction": "negative"
+      "value": 93.0,
+      "change": 0.59,
+      "change_pct": 0.64,
+      "direction": "positive"
     },
     "naturalgas": {
-      "value": 3.2,
-      "change": -0.1,
-      "change_pct": -3.06,
+      "value": 3.12,
+      "change": -0.08,
+      "change_pct": -2.5,
       "direction": "negative"
     }
   },
@@ -1066,17 +1066,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "27 Sep 2026",
+        "date": "28 Sep 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "26 Sep 2026",
+        "date": "27 Sep 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "25 Sep 2026",
+        "date": "26 Sep 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1093,18 +1093,17 @@ const DASHBOARD_DATA = {
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\ud83d\udcc9 VIX down 4.2% indicating declining volatility/fear. \u26fd Crude oil down 2.3% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +0.9%, NASDAQ +0.5%",
+    "summary": "\ud83d\udcc9 VIX down 4.2% indicating declining volatility/fear. \ud83c\udf0f US markets positive: Dow +0.9%, NASDAQ +0.5%",
     "vix": {
       "value": 12.16,
       "change_pct": -4.18
     },
     "crude": {
-      "value": 92.41,
-      "change_pct": -2.33
+      "value": 93.0,
+      "change_pct": 0.64
     },
     "reasons": [
       "\ud83d\udcc9 VIX down 4.2% indicating declining volatility/fear",
-      "\u26fd Crude oil down 2.3% - positive for India (import dependent)",
       "\ud83c\udf0f US markets positive: Dow +0.9%, NASDAQ +0.5%"
     ],
     "factors": [
@@ -1116,9 +1115,9 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $92.41",
-        "sublabel": "-2.3%",
-        "status": "positive"
+        "label": "Crude $93.00",
+        "sublabel": "+0.6%",
+        "status": "negative"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
@@ -1133,7 +1132,7 @@ const DASHBOARD_DATA = {
         "status": "positive"
       }
     ],
-    "score": 5
+    "score": 3
   },
   "predictions": [
     {
@@ -1160,106 +1159,70 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
-        "headline": "GIFT Nifty goes into overdrive, hits all-time high in volume and open interest",
+        "headline": "Two Trades for Today: An auto ancillary for a 7.05% gain, a large-cap electronics maker\u2019s stock for an almost 8% rise",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/gift-nifty-goes-into-overdrive-hits-all-time-high-in-volume-and-open-interest/articleshow/134499784.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-an-auto-ancillary-for-a-7-05-gain-a-large-cap-electronics-makers-stock-for-an-almost-8-rise/articleshow/134520202.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Concurrent Gainers: 10 smallcap stocks that gained for 5 days in a row",
+        "headline": "11 penny stocks surged up to 110% in just 3 months. 3 turned multibaggers",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-10-smallcap-stocks-that-gained-for-5-days-in-a-row/slideshow/134498802.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/11-penny-stocks-surged-up-to-110-in-just-3-months-3-turned-multibaggers/slideshow/134515254.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "ET Alpha Wealth Summit 2.0: Structured debt and the search for higher yields",
+        "headline": "Bonus & dividends: SAIL, IGL among 10 stocks turning ex-record date this week. Do you own any?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/et-alpha-wealth-summit-2-0-structured-debt-and-the-search-for-higher-yields/articleshow/134484486.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bonus-dividends-sail-igl-among-10-stocks-turning-ex-record-date-this-week-do-you-own-any/articleshow/134514676.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Engineers India among 7 stocks hitting 52-week highs; shares rallied up to 25% in a month",
+        "headline": "Equities must remain in retirement portfolio despite market swings: Hsu",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/engineers-india-among-7-stocks-hitting-52-week-highs-shares-rallied-up-to-25-in-a-month/slideshow/134484033.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Same playbook, different numbers: Why FPI selling may not be the story it looks like",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/same-playbook-different-numbers-why-fpi-selling-may-not-be-the-story-it-looks-like/articleshow/134503513.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/equities-must-remain-in-retirement-portfolio-despite-market-swings-hsu/articleshow/134529128.cms",
         "sentiment": "neutral",
         "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Stocks in news: Adani Power, SAIL, BCCL, SAIL, Cupid and CleanMax Enviro",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stocks-in-news-adani-power-sail-bccl-sail-cupid-and-cleanmax-enviro/articleshow/134495513.cms",
+        "sentiment": "neutral",
+        "stocks": [
+          "ADANI"
+        ],
         "category": "general"
       }
     ],
     "earnings": [
       {
-        "headline": "Nifty logs 7th straight weekly loss for the first time in 6 years: Time to be fearful, or can bulls pull off a comeback?",
+        "headline": "9 midcap stocks with over 50% YoY sales growth",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nifty-logs-7th-straight-weekly-losses-for-the-first-time-in-6-years-time-to-be-fearful-or-can-bulls-pull-off-a-comeback/articleshow/134498300.cms",
-        "sentiment": "negative",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/9-midcap-stocks-with-over-50-yoy-sales-growth/slideshow/134516221.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
       }
     ],
     "orders": [
       {
-        "headline": "Adani group entities swap 86 lakh shares of Adani Enterprises in Rs 2,498 cr block deal",
+        "headline": "Father time always wins! What Warren Buffett\u2019s 4-word farewell message means",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/adani-group-entities-swap-86-lakh-shares-of-adani-enterprises-in-rs-2498-cr-block-deal/articleshow/134488246.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/father-time-always-wins-what-warren-buffetts-4-word-farewell-message-means/articleshow/134519388.cms",
         "sentiment": "positive",
-        "stocks": [
-          "ADANI"
-        ],
-        "category": "orders"
-      },
-      {
-        "headline": "CleanMax Enviro block deal: Augment India Holdings likely to divest 85 lakh shares worth Rs 1,063 crore",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/cleanmax-enviro-block-deal-augment-india-holdings-likely-to-divest-85-lakh-shares-worth-rs-1063-crore/articleshow/134488759.cms",
-        "sentiment": "neutral",
         "stocks": [],
         "category": "orders"
       }
     ],
-    "regulatory": [
-      {
-        "headline": "Sebi bans Omaxe, 5 others for violating minimum public shareholding norms",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-bans-omaxe-5-others-for-violating-minimum-public-shareholding-norms/articleshow/134488287.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Market wrap: Axis Bank, Asian Paints, Max Healthcare, Infosys top gainers and losers on Nifty and Sensex on Friday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-axis-bank-asian-paints-max-healthcare-infosys-top-gainers-and-losers-on-nifty-and-sensex-on-friday/articleshow/134485432.cms",
-        "sentiment": "positive",
-        "stocks": [
-          "AXIS"
-        ],
-        "category": "regulatory"
-      }
-    ],
-    "insider": [
-      {
-        "headline": "FIIs, MFs raise stakes in 10 stocks; shares gain up to 40% in 3 months",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fiis-mfs-raise-stakes-in-10-stocks-shares-gain-up-to-40-in-3-months/slideshow/134500775.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "insider"
-      }
-    ],
+    "regulatory": [],
+    "insider": [],
     "geopolitical": [
       {
         "headline": "\ud83d\udd4a\ufe0f Global Markets Rally on Easing Geopolitical Tensions",
@@ -1296,7 +1259,7 @@ const DASHBOARD_DATA = {
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-09-27T06:16:55.420608+05:30",
+    "fetched_at": "2026-09-28T06:32:25.292113+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [
       {
@@ -1318,7 +1281,7 @@ const DASHBOARD_DATA = {
         "subscription": "5.35x",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 6:02",
         "source_url": "https://www.investorgain.com/gmp/roopa-screen-ipo/1920/"
       },
       {
@@ -1340,7 +1303,7 @@ const DASHBOARD_DATA = {
         "subscription": "6.22x",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 6:02",
         "source_url": "https://www.investorgain.com/gmp/moneyview-ipo/2198/"
       },
       {
@@ -1348,10 +1311,10 @@ const DASHBOARD_DATA = {
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "open",
-        "gmp": 86.0,
-        "gmp_pct": 31.62,
+        "gmp": 90.0,
+        "gmp_pct": 33.09,
         "issue_price": 272.0,
-        "estimated_listing_price": 358.0,
+        "estimated_listing_price": 362.0,
         "market_read": "Strong positive GMP snapshot, but grey-market quotes are unofficial and can reverse. Overall subscription reported at 2.07x.",
         "issue_size": "\u20b9552.00 Cr",
         "lot_size": 55,
@@ -1362,7 +1325,7 @@ const DASHBOARD_DATA = {
         "subscription": "2.07x",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 6:02",
         "source_url": "https://www.investorgain.com/gmp/orient-cables-ipo/1832/"
       },
       {
@@ -1370,11 +1333,11 @@ const DASHBOARD_DATA = {
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "open",
-        "gmp": 27.5,
-        "gmp_pct": 19.78,
+        "gmp": 29.0,
+        "gmp_pct": 20.86,
         "issue_price": 139.0,
-        "estimated_listing_price": 166.5,
-        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 1.82x.",
+        "estimated_listing_price": 168.0,
+        "market_read": "Strong positive GMP snapshot, but grey-market quotes are unofficial and can reverse. Overall subscription reported at 1.82x.",
         "issue_size": "\u20b9303.90 Cr",
         "lot_size": 107,
         "open_date": "2026-09-25",
@@ -1382,9 +1345,9 @@ const DASHBOARD_DATA = {
         "allotment_date": "2026-09-30",
         "listing_date": "2026-10-05",
         "subscription": "1.82x",
-        "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+        "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 6:02",
         "source_url": "https://www.investorgain.com/gmp/german-green-steel-and-power-ipo/1812/"
       },
       {
@@ -1392,10 +1355,10 @@ const DASHBOARD_DATA = {
         "exchange": "NSE SME",
         "category": "SME",
         "status": "open",
-        "gmp": 16.0,
-        "gmp_pct": 14.55,
+        "gmp": 18.0,
+        "gmp_pct": 16.36,
         "issue_price": 110.0,
-        "estimated_listing_price": 126.0,
+        "estimated_listing_price": 128.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 0.26x.",
         "issue_size": "\u20b942.44 Cr",
         "lot_size": 1200,
@@ -1406,7 +1369,7 @@ const DASHBOARD_DATA = {
         "subscription": "0.26x",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 6:02",
         "source_url": "https://www.investorgain.com/gmp/bench-mark-infotech-services-ipo/2366/"
       },
       {
@@ -1428,7 +1391,7 @@ const DASHBOARD_DATA = {
         "subscription": "1.43x",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 6:02",
         "source_url": "https://www.investorgain.com/gmp/a-one-steels-ipo/1611/"
       },
       {
@@ -1450,40 +1413,18 @@ const DASHBOARD_DATA = {
         "subscription": "0.08x",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 6:02",
         "source_url": "https://www.investorgain.com/gmp/dudani-retail-ipo/2259/"
-      },
-      {
-        "name": "Acevector",
-        "exchange": "IPO",
-        "category": "Mainboard",
-        "status": "open",
-        "gmp": 2.0,
-        "gmp_pct": 6.25,
-        "issue_price": 32.0,
-        "estimated_listing_price": 34.0,
-        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 0.24x.",
-        "issue_size": "\u20b9420.00 Cr",
-        "lot_size": 468,
-        "open_date": "2026-09-25",
-        "close_date": "2026-09-29",
-        "allotment_date": "2026-09-30",
-        "listing_date": "2026-10-05",
-        "subscription": "0.24x",
-        "rating": "\ud83d\udd25\ud83d\udd25",
-        "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
-        "source_url": "https://www.investorgain.com/gmp/snapdeal-ipo/1840/"
       },
       {
         "name": "Runwal Enterprises",
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "open",
-        "gmp": 14.5,
-        "gmp_pct": 4.75,
+        "gmp": 14.0,
+        "gmp_pct": 4.59,
         "issue_price": 305.0,
-        "estimated_listing_price": 319.5,
+        "estimated_listing_price": 319.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 0.44x.",
         "issue_size": "\u20b9499.83 Cr",
         "lot_size": 49,
@@ -1494,8 +1435,30 @@ const DASHBOARD_DATA = {
         "subscription": "0.44x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 6:02",
         "source_url": "https://www.investorgain.com/gmp/runwal-enterprises-ipo/1711/"
+      },
+      {
+        "name": "Acevector",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "open",
+        "gmp": 1.0,
+        "gmp_pct": 3.12,
+        "issue_price": 32.0,
+        "estimated_listing_price": 33.0,
+        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 0.24x.",
+        "issue_size": "\u20b9420.00 Cr",
+        "lot_size": 468,
+        "open_date": "2026-09-25",
+        "close_date": "2026-09-29",
+        "allotment_date": "2026-09-30",
+        "listing_date": "2026-10-05",
+        "subscription": "0.24x",
+        "rating": "\ud83d\udd25",
+        "anchor_status": "\u2705",
+        "source_updated": "28-Sep 6:02",
+        "source_url": "https://www.investorgain.com/gmp/snapdeal-ipo/1840/"
       },
       {
         "name": "Himalayan Solar",
@@ -1516,7 +1479,7 @@ const DASHBOARD_DATA = {
         "subscription": "0.51x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:29",
+        "source_updated": "28-Sep 6:00",
         "source_url": "https://www.investorgain.com/gmp/himalayan-solar-ipo/1975/"
       },
       {
@@ -1538,7 +1501,7 @@ const DASHBOARD_DATA = {
         "subscription": "0.04x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:34",
+        "source_updated": "28-Sep 6:01",
         "source_url": "https://www.investorgain.com/gmp/sai-urja-indo-ipo/1924/"
       },
       {
@@ -1560,7 +1523,7 @@ const DASHBOARD_DATA = {
         "subscription": "2.03x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "26-Sep 23:30",
+        "source_updated": "28-Sep 5:58",
         "source_url": "https://www.investorgain.com/gmp/peshwa-wheat-ipo/2063/"
       },
       {
@@ -1582,7 +1545,7 @@ const DASHBOARD_DATA = {
         "subscription": "0.03x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "26-Sep 23:30",
+        "source_updated": "28-Sep 5:54",
         "source_url": "https://www.investorgain.com/gmp/green-asia-impex-ipo/2224/"
       }
     ],
@@ -1606,7 +1569,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 6:02",
         "source_url": "https://www.investorgain.com/gmp/vans-electroengineerings-ipo/2351/"
       },
       {
@@ -1614,10 +1577,10 @@ const DASHBOARD_DATA = {
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "upcoming",
-        "gmp": 32.0,
-        "gmp_pct": 24.62,
+        "gmp": 33.0,
+        "gmp_pct": 25.38,
         "issue_price": 130.0,
-        "estimated_listing_price": 162.0,
+        "estimated_listing_price": 163.0,
         "market_read": "Strong positive GMP snapshot, but grey-market quotes are unofficial and can reverse.",
         "issue_size": "\u20b9218.40 Cr",
         "lot_size": 115,
@@ -1628,8 +1591,30 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 6:02",
         "source_url": "https://www.investorgain.com/gmp/srit-india-ipo/2121/"
+      },
+      {
+        "name": "Acme India Industries",
+        "exchange": "BSE SME",
+        "category": "SME",
+        "status": "upcoming",
+        "gmp": 30.0,
+        "gmp_pct": 15.31,
+        "issue_price": 196.0,
+        "estimated_listing_price": 226.0,
+        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
+        "issue_size": "\u20b9121.69 Cr",
+        "lot_size": 600,
+        "open_date": "2026-09-30",
+        "close_date": "2026-10-06",
+        "allotment_date": "2026-10-07",
+        "listing_date": "2026-10-09",
+        "subscription": "-",
+        "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+        "anchor_status": "\u2705",
+        "source_updated": "28-Sep 6:02",
+        "source_url": "https://www.investorgain.com/gmp/acme-india-industries-ipo/2006/"
       },
       {
         "name": "EverestIMS Technologies",
@@ -1650,8 +1635,30 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 6:02",
         "source_url": "https://www.investorgain.com/gmp/everestims-technologies-ipo/1637/"
+      },
+      {
+        "name": "Shivchem Agro",
+        "exchange": "BSE SME",
+        "category": "SME",
+        "status": "upcoming",
+        "gmp": 6.0,
+        "gmp_pct": 9.68,
+        "issue_price": 62.0,
+        "estimated_listing_price": 68.0,
+        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
+        "issue_size": "\u20b914.01 Cr",
+        "lot_size": 2000,
+        "open_date": "2026-09-28",
+        "close_date": "2026-09-30",
+        "allotment_date": "2026-10-01",
+        "listing_date": "2026-10-06",
+        "subscription": "-",
+        "rating": "\ud83d\udd25\ud83d\udd25",
+        "anchor_status": "\u274c",
+        "source_updated": "28-Sep 6:02",
+        "source_url": "https://www.investorgain.com/gmp/shivchem-agro-ipo/1956/"
       },
       {
         "name": "Shah Investor's Home",
@@ -1672,7 +1679,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 6:02",
         "source_url": "https://www.investorgain.com/gmp/shah-investors-home-ipo/1926/"
       },
       {
@@ -1694,7 +1701,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 5:54",
         "source_url": "https://www.investorgain.com/gmp/tna-solutions-ipo/2370/"
       },
       {
@@ -1716,30 +1723,8 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "26-Sep 23:29",
+        "source_updated": "28-Sep 5:58",
         "source_url": "https://www.investorgain.com/gmp/paramount-syntex-ipo/2001/"
-      },
-      {
-        "name": "Acme India Industries",
-        "exchange": "BSE SME",
-        "category": "SME",
-        "status": "upcoming",
-        "gmp": null,
-        "gmp_pct": null,
-        "issue_price": 196.0,
-        "estimated_listing_price": null,
-        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
-        "issue_size": "\u20b9121.69 Cr",
-        "lot_size": 600,
-        "open_date": "2026-09-30",
-        "close_date": "2026-10-06",
-        "allotment_date": "2026-10-07",
-        "listing_date": "2026-10-09",
-        "subscription": "-",
-        "rating": "\ud83d\udd25",
-        "anchor_status": "\u2705",
-        "source_updated": "26-Sep 5:55",
-        "source_url": "https://www.investorgain.com/gmp/acme-india-industries-ipo/2006/"
       },
       {
         "name": "Nityas Gems & Jewellery",
@@ -1760,7 +1745,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 5:55",
+        "source_updated": "28-Sep 6:01",
         "source_url": "https://www.investorgain.com/gmp/nityas-gems-jewellery-ipo/2235/"
       },
       {
@@ -1782,7 +1767,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 5:55",
+        "source_updated": "28-Sep 6:00",
         "source_url": "https://www.investorgain.com/gmp/eventions-ipo/2267/"
       },
       {
@@ -1804,7 +1789,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "26-Sep 23:34",
+        "source_updated": "28-Sep 6:01",
         "source_url": "https://www.investorgain.com/gmp/sollfege-smart-electronics-ipo/2274/"
       },
       {
@@ -1826,7 +1811,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 5:53",
         "source_url": "https://www.investorgain.com/gmp/sjp-ultrasonic-ipo/1964/"
       },
       {
@@ -1848,7 +1833,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "",
+        "source_updated": "28-Sep 5:58",
         "source_url": "https://www.investorgain.com/gmp/vishal-nirmiti-ipo/1602/"
       },
       {
@@ -1870,7 +1855,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:33",
+        "source_updated": "28-Sep 6:00",
         "source_url": "https://www.investorgain.com/gmp/shree-tnb-polymers-ipo/2282/"
       },
       {
@@ -1892,7 +1877,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "26-Sep 23:36",
+        "source_updated": "28-Sep 5:56",
         "source_url": "https://www.investorgain.com/gmp/dove-soft-ipo/1781/"
       },
       {
@@ -1914,7 +1899,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "26-Sep 23:31",
+        "source_updated": "28-Sep 5:57",
         "source_url": "https://www.investorgain.com/gmp/omara-ventures-india-ipo/2347/"
       },
       {
@@ -1936,7 +1921,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 5:57",
         "source_url": "https://www.investorgain.com/gmp/papadmalji-agro-foods-ipo/2077/"
       },
       {
@@ -1958,30 +1943,8 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:29",
+        "source_updated": "28-Sep 5:56",
         "source_url": "https://www.investorgain.com/gmp/black-opal-consultants-ipo/2052/"
-      },
-      {
-        "name": "Shivchem Agro",
-        "exchange": "BSE SME",
-        "category": "SME",
-        "status": "upcoming",
-        "gmp": null,
-        "gmp_pct": null,
-        "issue_price": 62.0,
-        "estimated_listing_price": null,
-        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
-        "issue_size": "\u20b914.01 Cr",
-        "lot_size": 2000,
-        "open_date": "2026-09-28",
-        "close_date": "2026-09-30",
-        "allotment_date": "2026-10-01",
-        "listing_date": "2026-10-06",
-        "subscription": "-",
-        "rating": "\ud83d\udd25",
-        "anchor_status": "\u274c",
-        "source_updated": "26-Sep 23:36",
-        "source_url": "https://www.investorgain.com/gmp/shivchem-agro-ipo/1956/"
       },
       {
         "name": "Pind Hospitality",
@@ -2002,7 +1965,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "26-Sep 23:28",
+        "source_updated": "28-Sep 6:00",
         "source_url": "https://www.investorgain.com/gmp/pind-hospitality-ipo/1683/"
       },
       {
@@ -2024,7 +1987,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "26-Sep 23:37",
+        "source_updated": "28-Sep 5:55",
         "source_url": "https://www.investorgain.com/gmp/acme-universal-safezone-9-ipo/2360/"
       }
     ]
