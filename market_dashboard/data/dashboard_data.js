@@ -1,6 +1,6 @@
-// Auto-generated on 2026-10-04T01:49:40.411339
+// Auto-generated on 2026-10-05T01:08:03.522737
 const DASHBOARD_DATA = {
-  "timestamp": "2026-10-04T01:48:58.129802",
+  "timestamp": "2026-10-05T01:07:39.618592",
   "indices": {
     "nifty50": {
       "value": 22421.95,
@@ -53,34 +53,34 @@ const DASHBOARD_DATA = {
   },
   "commodities": {
     "gold": {
-      "value": 4162.3,
-      "change": -40.0,
-      "change_pct": -0.95,
-      "direction": "negative"
+      "value": 4183.1,
+      "change": 20.8,
+      "change_pct": 0.5,
+      "direction": "positive"
     },
     "silver": {
-      "value": 59.98,
-      "change": -0.75,
-      "change_pct": -1.23,
-      "direction": "negative"
+      "value": 61.54,
+      "change": 1.56,
+      "change_pct": 2.61,
+      "direction": "positive"
     },
     "copper": {
-      "value": 6.49,
-      "change": 0.01,
-      "change_pct": 0.15,
+      "value": 6.62,
+      "change": 0.12,
+      "change_pct": 1.91,
       "direction": "positive"
     },
     "crude": {
-      "value": 91.11,
-      "change": -1.76,
-      "change_pct": -1.9,
+      "value": 90.45,
+      "change": -0.66,
+      "change_pct": -0.72,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.04,
-      "change": 0.07,
-      "change_pct": 2.29,
-      "direction": "positive"
+      "value": 3.03,
+      "change": -0.0,
+      "change_pct": -0.1,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -1066,17 +1066,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "04 Oct 2026",
+        "date": "05 Oct 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "03 Oct 2026",
+        "date": "04 Oct 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "02 Oct 2026",
+        "date": "03 Oct 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1093,17 +1093,16 @@ const DASHBOARD_DATA = {
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\u26fd Crude oil down 1.9% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +0.5%, NASDAQ +1.2%",
+    "summary": "\ud83c\udf0f US markets positive: Dow +0.5%, NASDAQ +1.2%",
     "vix": {
       "value": 14.46,
       "change_pct": 0.0
     },
     "crude": {
-      "value": 91.11,
-      "change_pct": -1.9
+      "value": 90.45,
+      "change_pct": -0.72
     },
     "reasons": [
-      "\u26fd Crude oil down 1.9% - positive for India (import dependent)",
       "\ud83c\udf0f US markets positive: Dow +0.5%, NASDAQ +1.2%"
     ],
     "factors": [
@@ -1115,8 +1114,8 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $91.11",
-        "sublabel": "-1.9%",
+        "label": "Crude $90.45",
+        "sublabel": "-0.7%",
         "status": "positive"
       },
       {
@@ -1132,7 +1131,7 @@ const DASHBOARD_DATA = {
         "status": "positive"
       }
     ],
-    "score": 5
+    "score": 4
   },
   "predictions": [
     {
@@ -1159,136 +1158,94 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
-        "headline": "Defence stocks: Time to change strategy in a bearish market? An ecosystem with down and upside potential of -39% to plus 37%",
+        "headline": "Stock Radar: Dr Lal PathLabs stock hits fresh record high in September; will the rally continue in October 2026?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/defence-stocks-time-to-change-strategy-in-a-bearish-market-an-ecosystem-with-down-and-upside-potential-of-39-to-plus-37/articleshow/134668714.cms",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Concurrent Losers: 14 midcap stocks decline for 5 consecutive sessions",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-losers-14-midcap-stocks-decline-for-5-consecutive-sessions/slideshow/134652347.cms",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Equities close higher as softer jobs data quiets rate-hike expectations",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/equities-close-higher-as-softer-jobs-data-quiets-rate-hike-expectations-14043628.html",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stock-radar-dr-lal-pathlabs-stock-hits-fresh-record-high-in-september-will-the-rally-continue-in-october-2026/articleshow/134671281.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Chartist Talk: Is Nifty more likely to witness a pullback than a breakdown below 22,000 next week? SBI Securities' Sudeep Shah answers",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/chartist-talk-is-nifty-more-likely-to-witness-a-pullback-than-a-breakdown-below-22-000-next-week-sbi-securities-sudeep-shah-answers-14043604.html",
-        "sentiment": "negative",
-        "stocks": [
-          "SBI"
-        ],
+        "headline": "September IPO rush draws $1 billion FPI money even as listed stocks see record outflows",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/september-ipo-rush-draws-1-billion-fpi-money-even-as-listed-stocks-see-record-outflows/articleshow/134683037.cms",
+        "sentiment": "positive",
+        "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Higher for longer is no longer a forecast, it is the new normal",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/opinion/higher-for-longer-is-no-longer-a-forecast-it-is-the-new-normal-14043593.html",
+        "headline": "Two Trades for Today: A private energy player for an 8.55% upmove, a mid-cap graphite maker\u2019s stock for a gain of almost 8%",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-private-energy-player-for-an-8-55-upmove-a-mid-cap-graphite-makers-stock-for-a-gain-of-almost-8/articleshow/134673016.cms",
         "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Blockbuster Accenture show holds out hope for battered Indian IT",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/blockbuster-accenture-show-holds-out-hope-for-battered-indian-it/articleshow/134683352.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Largecaps bear brunt of selloff as 84% of Nifty50 stocks slip below 200-DMAs",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/largecaps-bear-brunt-of-selloff-as-84-of-nifty-50-stocks-slip-below-200-dma/articleshow/134683107.cms",
+        "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       }
     ],
     "earnings": [
       {
-        "headline": "Tesla stock jumps as Q3 vehicle sales beat estimates despite 2% YoY decline",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/tesla-stock-jumps-as-q3-vehicle-sales-beat-estimates-despite-2-yoy-decline-14043590.html",
-        "sentiment": "neutral",
+        "headline": "IT Q2 Preview: Muted growth, steady margins likely; deal conversion, AI deflation in focus",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/it-q2-preview-muted-growth-steady-margins-likely-deal-conversion-ai-deflation-in-focus/articleshow/134672682.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
       }
     ],
-    "orders": [
-      {
-        "headline": "Cube Highways Trust secures Rs.1,150 crore through AAA-rated NCDs",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/cube-highways-trust-secures-rs-1150-crore-through-aaa-rated-ncds/articleshow/134655392.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "orders"
-      },
-      {
-        "headline": "Sebi examining position limits for non-agri contracts to boost liquidity",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-examining-position-limits-for-non-agri-contracts-to-boost-liquidity/articleshow/134656225.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "orders"
-      }
-    ],
+    "orders": [],
     "regulatory": [
       {
-        "headline": "SEBI receives 20,000 comments on Closing Auction Session, market timings consultation paper",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/sebi-receives-20-000-comments-on-closing-auction-session-market-timings-consultation-paper-14043970.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "A tricky rate hike to consider, but change in RBI\u2019s policy stance unlikely",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/opinion/a-tricky-rate-hike-to-consider-but-change-in-rbi-s-policy-stance-unlikely-14043599.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Daily Voice: Time for RBI to shift towards tightening, limited room for accommodative stance, says Anuj Jain",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-time-for-rbi-to-shift-towards-tightening-limited-room-for-accommodative-stance-says-anuj-jain-14043596.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "SEBI revamps document verification system, adds subject matter as mandatory field",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/sebi-revamps-document-verification-system-adds-subject-matter-as-mandatory-field-14043122.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi to soon issue framework on Closing Auction Session; receives over 3,500 comments",
+        "headline": "Stocks in news: HDFC Bank, Infosys, Yes Bank, Hindustan Zinc and RVNL",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-to-soon-issue-framework-on-closing-auction-session-receives-over-3500-comments/articleshow/134655426.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stocks-in-news-hdfc-bank-infosys-yes-bank-hindustan-zinc-and-rvnl/articleshow/134678258.cms",
+        "sentiment": "neutral",
+        "stocks": [
+          "HDFC"
+        ],
+        "category": "regulatory"
+      },
+      {
+        "headline": "RBI likely to hike repo rate by 25 bps to 5.50% in October policy: ET Poll",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/rbi-likely-to-hike-repo-rate-by-25-bps-to-5-50-in-october-policy-et-poll/articleshow/134683262.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
-      }
-    ],
-    "insider": [
-      {
-        "headline": "INRE Fund acquires Rs 142 crore Nirlon stake from Nihar Nandan Nilekani",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/inre-fund-acquires-rs-142-crore-nirlon-stake-from-nihar-nandan-nilekani-14043199.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "insider"
       },
       {
-        "headline": "Dalal Street Week Ahead: Oversold Nifty may rebound as volatility stays high",
+        "headline": "RBI could keep rates higher for longer amid global and local risks",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/dalal-street-week-ahead-oversold-nifty-may-rebound-as-volatility-stays-high/articleshow/134654990.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/rbi-could-keep-rates-higher-for-longer-amid-global-and-local-risks/articleshow/134683344.cms",
         "sentiment": "positive",
         "stocks": [],
-        "category": "insider"
+        "category": "regulatory"
+      },
+      {
+        "headline": "National Housing Bank set to conduct forensic audit of SRG Housing Finance",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/national-housing-bank-set-to-conduct-forensic-audit-of-srg-housing-finance/articleshow/134683279.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
       }
     ],
+    "insider": [],
     "geopolitical": [
       {
         "headline": "\ud83d\udd4a\ufe0f Global Markets Rally on Easing Geopolitical Tensions",
@@ -1325,7 +1282,7 @@ const DASHBOARD_DATA = {
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-10-04T07:19:40.231863+05:30",
+    "fetched_at": "2026-10-05T06:38:03.332670+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [
       {
@@ -1347,7 +1304,7 @@ const DASHBOARD_DATA = {
         "subscription": "1.7x",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "3-Oct 23:37",
+        "source_updated": "4-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/everestims-technologies-ipo/1637/"
       },
       {
@@ -1369,7 +1326,7 @@ const DASHBOARD_DATA = {
         "subscription": "1.97x",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "3-Oct 23:37",
+        "source_updated": "4-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/acme-india-industries-ipo/2006/"
       },
       {
@@ -1391,7 +1348,7 @@ const DASHBOARD_DATA = {
         "subscription": "1.71x",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "3-Oct 23:37",
+        "source_updated": "4-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/tna-solutions-ipo/2370/"
       },
       {
@@ -1413,7 +1370,7 @@ const DASHBOARD_DATA = {
         "subscription": "0.6x",
         "rating": "\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "3-Oct 23:37",
+        "source_updated": "4-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/vishal-nirmiti-ipo/1602/"
       },
       {
@@ -1421,10 +1378,10 @@ const DASHBOARD_DATA = {
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "open",
-        "gmp": 3.0,
-        "gmp_pct": 4.0,
+        "gmp": 2.0,
+        "gmp_pct": 2.67,
         "issue_price": 75.0,
-        "estimated_listing_price": 78.0,
+        "estimated_listing_price": 77.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 0.69x.",
         "issue_size": "\u20b9108.35 Cr",
         "lot_size": 200,
@@ -1435,7 +1392,7 @@ const DASHBOARD_DATA = {
         "subscription": "0.69x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "3-Oct 23:37",
+        "source_updated": "4-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/nityas-gems-jewellery-ipo/2235/"
       },
       {
@@ -1457,7 +1414,7 @@ const DASHBOARD_DATA = {
         "subscription": "1.35x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "3-Oct 23:29",
+        "source_updated": "4-Oct 23:35",
         "source_url": "https://www.investorgain.com/gmp/paramount-syntex-ipo/2001/"
       },
       {
@@ -1479,7 +1436,7 @@ const DASHBOARD_DATA = {
         "subscription": "0.86x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "3-Oct 23:35",
+        "source_updated": "4-Oct 23:31",
         "source_url": "https://www.investorgain.com/gmp/dove-soft-ipo/1781/"
       },
       {
@@ -1501,7 +1458,7 @@ const DASHBOARD_DATA = {
         "subscription": "1.8x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "3-Oct 23:35",
+        "source_updated": "4-Oct 23:30",
         "source_url": "https://www.investorgain.com/gmp/eventions-ipo/2267/"
       },
       {
@@ -1523,7 +1480,7 @@ const DASHBOARD_DATA = {
         "subscription": "1.86x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "3-Oct 23:31",
+        "source_updated": "4-Oct 23:33",
         "source_url": "https://www.investorgain.com/gmp/sollfege-smart-electronics-ipo/2274/"
       },
       {
@@ -1545,7 +1502,7 @@ const DASHBOARD_DATA = {
         "subscription": "0.98x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "3-Oct 23:33",
+        "source_updated": "4-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/shree-tnb-polymers-ipo/2282/"
       },
       {
@@ -1567,7 +1524,7 @@ const DASHBOARD_DATA = {
         "subscription": "0.54x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "3-Oct 23:33",
+        "source_updated": "4-Oct 23:28",
         "source_url": "https://www.investorgain.com/gmp/sjp-ultrasonic-ipo/1964/"
       },
       {
@@ -1589,11 +1546,33 @@ const DASHBOARD_DATA = {
         "subscription": "0.69x",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "3-Oct 23:28",
+        "source_updated": "4-Oct 23:36",
         "source_url": "https://www.investorgain.com/gmp/omara-ventures-india-ipo/2347/"
       }
     ],
     "upcoming": [
+      {
+        "name": "Jio Platforms",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "upcoming",
+        "gmp": null,
+        "gmp_pct": null,
+        "issue_price": 0.0,
+        "estimated_listing_price": null,
+        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
+        "issue_size": "-",
+        "lot_size": null,
+        "open_date": null,
+        "close_date": null,
+        "allotment_date": null,
+        "listing_date": null,
+        "subscription": "-",
+        "rating": "\ud83d\udd25",
+        "anchor_status": "\u2705",
+        "source_updated": "4-Oct 23:37",
+        "source_url": "https://www.investorgain.com/gmp/jio-platforms-ipo/2306/"
+      },
       {
         "name": "R.K.Fashion Accessories",
         "exchange": "NSE SME",
@@ -1613,7 +1592,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u274c",
-        "source_updated": "3-Oct 23:33",
+        "source_updated": "4-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/rkfashion-accessories-ipo/2292/"
       }
     ]
