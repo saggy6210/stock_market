@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-11T01:07:59.876413",
+  "timestamp": "2026-10-12T01:33:12.045639",
   "indices": {
     "nifty50": {
       "value": 22520.45,
@@ -44,42 +44,42 @@
       "direction": "positive"
     },
     "usdinr": {
-      "value": 96.73,
-      "change": -0.09,
-      "change_pct": -0.1,
+      "value": 96.78,
+      "change": -0.04,
+      "change_pct": -0.04,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4216.3,
-      "change": 59.3,
-      "change_pct": 1.43,
+      "value": 4235.8,
+      "change": 19.5,
+      "change_pct": 0.46,
       "direction": "positive"
     },
     "silver": {
-      "value": 60.67,
-      "change": 1.61,
-      "change_pct": 2.72,
+      "value": 61.65,
+      "change": 0.98,
+      "change_pct": 1.62,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.64,
-      "change": 0.12,
-      "change_pct": 1.89,
+      "value": 6.74,
+      "change": 0.09,
+      "change_pct": 1.4,
       "direction": "positive"
     },
     "crude": {
-      "value": 91.85,
-      "change": 0.36,
-      "change_pct": 0.39,
-      "direction": "positive"
+      "value": 90.17,
+      "change": -1.68,
+      "change_pct": -1.83,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.22,
-      "change": 0.05,
-      "change_pct": 1.64,
-      "direction": "positive"
+      "value": 3.16,
+      "change": -0.06,
+      "change_pct": -1.89,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -1065,17 +1065,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "11 Oct 2026",
+        "date": "12 Oct 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "10 Oct 2026",
+        "date": "11 Oct 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "09 Oct 2026",
+        "date": "10 Oct 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1092,17 +1092,18 @@
   "market_outlook": {
     "sentiment": "BULLISH",
     "badge_class": "bullish",
-    "summary": "\ud83d\udcc9 VIX down 5.9% indicating declining volatility/fear. \ud83c\udf0f US markets positive: Dow +0.8%, NASDAQ +0.6%",
+    "summary": "\ud83d\udcc9 VIX down 5.9% indicating declining volatility/fear. \u26fd Crude oil down 1.8% - positive for India (import dependent). \ud83c\udf0f US markets positive: Dow +0.8%, NASDAQ +0.6%",
     "vix": {
       "value": 14.38,
       "change_pct": -5.89
     },
     "crude": {
-      "value": 91.85,
-      "change_pct": 0.39
+      "value": 90.17,
+      "change_pct": -1.83
     },
     "reasons": [
       "\ud83d\udcc9 VIX down 5.9% indicating declining volatility/fear",
+      "\u26fd Crude oil down 1.8% - positive for India (import dependent)",
       "\ud83c\udf0f US markets positive: Dow +0.8%, NASDAQ +0.6%"
     ],
     "factors": [
@@ -1114,9 +1115,9 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $91.85",
-        "sublabel": "+0.4%",
-        "status": "negative"
+        "label": "Crude $90.17",
+        "sublabel": "-1.8%",
+        "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
@@ -1131,7 +1132,7 @@
         "status": "positive"
       }
     ],
-    "score": 4
+    "score": 6
   },
   "predictions": [
     {
@@ -1158,41 +1159,44 @@
   "news": {
     "top_stories": [
       {
-        "headline": "8 midcap stocks rally up to 135% in a year; 2 turn multibaggers",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/8-midcap-stocks-rally-up-to-135-in-a-year-2-turn-multibaggers/slideshow/134850262.cms",
+        "headline": "Wall Street's rate shock spreads beneath AI-fueled market rally",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/wall-street-s-rate-shock-spreads-beneath-ai-fueled-market-rally-14049058.html",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Concurrent Gainers: 14 smallcap stocks that gain for 5 days in a row",
+        "headline": "DBS Chief sees overseas confidence in India despite capital outflow concerns",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-14-smallcap-stocks-that-gain-for-5-days-in-a-row/slideshow/134851402.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/dbs-chief-sees-overseas-confidence-in-india-despite-capital-outflow-concerns/articleshow/134880062.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "9 penny stocks surged up to 315% in 6 months; 3 turned multibaggers",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/9-penny-stocks-surged-up-to-315-in-6-months-3-turned-multibaggers/slideshow/134866632.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Nifty bulls regain momentum, but can bears strike back? 5 factors to decide D-Street\u2019s fate next week",
+        "headline": "Bonus, dividends, rights issues and stock splits: TCS, Vedanta, Ola Electric among 14 stocks turning ex-record date this week",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nifty-bulls-regain-momentum-but-can-bears-strike-back-5-factors-to-decide-d-streets-fate-next-week/articleshow/134848721.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bonus-dividends-rights-issues-and-stock-splits-tcs-vedanta-ola-electric-among-14-stocks-turning-ex-record-date-this-week/articleshow/134865638.cms",
         "sentiment": "positive",
-        "stocks": [],
+        "stocks": [
+          "TCS",
+          "VEDANTA"
+        ],
         "category": "general"
       },
       {
-        "headline": "IT stocks surge despite US immigration curbs",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/it-stocks-surge-despite-us-immigration-curbs/articleshow/134847206.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "In a world no one forecast, own a business that outlives presidential social posts: 6 large-cap stocks with upside potential of up to 29%",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/in-a-world-no-one-forecast-own-a-business-that-outlives-presidential-social-posts-6-large-cap-stocks-with-upside-potential-of-up-to-29/articleshow/134863727.cms",
+        "headline": "Stocks to Watch Today: DMart, Canara Robeco AMC, Anand Rathi Wealth, Poonawalla Fincorp, Lenskart, KEC International, Viviana Power, Shilpa Medicare in focus on 12 October",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-dmart-canara-robeco-amc-anand-rathi-wealth-poonawalla-fincorp-lenskart-kec-international-viviana-power-shilpa-medicare-in-focus-on-12-october-14049666.html",
         "sentiment": "neutral",
         "stocks": [],
         "category": "general"
@@ -1200,53 +1204,90 @@
     ],
     "earnings": [
       {
-        "headline": "Adani Green Energy H1 Update: Operational capacity rises 24% YoY to 20,763 MW, energy sales jump 32%",
+        "headline": "Stock Radar: TD Power Systems retreats after hitting fresh record high in October 2026. Time to buy or book profits?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/adani-green-energy-h1-update-operational-capacity-rises-24-yoy-to-20763-mw-energy-sales-jump-32/articleshow/134852554.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stock-radar-td-power-systems-retreats-after-hitting-fresh-record-high-in-october-2026-time-to-buy-or-book-profits/articleshow/134868073.cms",
         "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "DMart\u2019s Q2FY27 net profit rises 8.5% to Rs 743 crore, revenue grows 17.8%",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/earnings/dmart-s-q2fy27-net-profit-rises-8-5-to-rs-743-crore-revenue-grows-17-8-14049152.html",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Daily Voice: Market nearing a bottom as valuations turn attractive; Q2 earnings growth to beat Q1, says Shriram AMC fund manager",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-market-nearing-a-bottom-as-valuations-turn-attractive-q2-earnings-growth-to-beat-q1-says-shriram-amc-fund-manager-14049247.html",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Chartist Talk: Are bears finally losing their grip after Nifty 50 snaps 8-week losses? Sudeep Shah of SBI Securities answers",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/chartist-talk-are-bears-finally-losing-their-grip-after-nifty-50-snaps-8-week-losses-sudeep-shah-of-sbi-securities-answers-14049244.html",
+        "sentiment": "negative",
         "stocks": [
-          "ADANI"
+          "SBI"
         ],
+        "category": "earnings"
+      },
+      {
+        "headline": "Q2 earnings, inflation data, oil prices to guide stock markets this week: Analysts",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/q2-earnings-inflation-data-oil-prices-to-guide-stock-markets-this-week-analysts-14049458.html",
+        "sentiment": "neutral",
+        "stocks": [],
         "category": "earnings"
       }
     ],
-    "orders": [
-      {
-        "headline": "Anthem Biosciences block deal: Portsmouth Technologies sells 30 lakh shares worth Rs 250 crore",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/anthem-biosciences-block-deal-portsmouth-technologies-sells-30-lakh-shares-worth-rs-250-crore/articleshow/134838383.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "orders"
-      }
-    ],
+    "orders": [],
     "regulatory": [
       {
-        "headline": "Sebi\u2019s CAS guidelines likely within a week, says chief Tuhin Kanta Pandey",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebis-cas-guidelines-likely-within-a-week-says-chief-tuhin-kanta-pandey/articleshow/134855486.cms",
+        "headline": "SEBI to issue CAS guidelines in a week, says chief Tuhin Kanta Pandey",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-to-issue-cas-guidelines-in-a-week-says-chief-tuhin-kanta-pandey-14049170.html",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Sebi notifies new settlement rule; unveils formula, fast-track route. Check details",
+        "headline": "Two Trades for Today: A liquor major for a 5.45% rise, a mid-cap private bank stock for a gain of about 5%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-notifies-new-settlement-rule-unveils-formula-fast-track-route-check-details/articleshow/134847119.cms",
-        "sentiment": "neutral",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-liquor-major-for-a-5-45-rise-a-mid-cap-private-bank-stock-for-a-gain-of-about-5/articleshow/134869292.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "regulatory"
       }
     ],
     "insider": [
       {
-        "headline": "Adani Power shares: GQG Partners-managed entities cut stake to 5.72% from 5.74%",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/adani-power-shares-gqg-partners-managed-entities-cut-stake-to-5-72-from-5-74/articleshow/134834452.cms",
+        "headline": "FII selling tops Rs 45,000 crore over six sessions in October, Rs 3.6 lakh crore sold-off this year",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/fii-selling-tops-rs-45-000-crore-over-six-sessions-in-october-rs-3-6-lakh-crore-sold-off-this-year-14049668.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "insider"
+      },
+      {
+        "headline": "Power transmission components maker Bonfiglioli Transmissions to open IPO on October 15, entirely an OFS by promoter",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/ipo/power-transmission-components-maker-bonfiglioli-transmissions-to-open-ipo-on-october-15-entirely-an-ofs-by-promoter-14049460.html",
         "sentiment": "negative",
-        "stocks": [
-          "ADANI"
-        ],
+        "stocks": [],
+        "category": "insider"
+      },
+      {
+        "headline": "9 stocks zoom up to 37% in 3 months; MFs raise stakes in September quarter",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/9-stocks-zoom-up-to-37-in-3-months-mfs-raise-stakes-in-september-quarter/slideshow/134867235.cms",
+        "sentiment": "neutral",
+        "stocks": [],
         "category": "insider"
       }
     ],
@@ -1286,7 +1327,7 @@
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-10-11T06:38:36.612156+05:30",
+    "fetched_at": "2026-10-12T07:03:42.942753+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [],
     "upcoming": [
@@ -1295,10 +1336,10 @@
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "upcoming",
-        "gmp": 75.0,
-        "gmp_pct": 27.68,
+        "gmp": 86.0,
+        "gmp_pct": 31.73,
         "issue_price": 271.0,
-        "estimated_listing_price": 346.0,
+        "estimated_listing_price": 357.0,
         "market_read": "Strong positive GMP snapshot, but grey-market quotes are unofficial and can reverse.",
         "issue_size": "\u20b9712.31 Cr",
         "lot_size": 55,
@@ -1309,40 +1350,18 @@
         "subscription": "-",
         "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "10-Oct 23:37",
+        "source_updated": "11-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/hd-fire-protect-ipo/1902/"
-      },
-      {
-        "name": "Fusion CX",
-        "exchange": "IPO",
-        "category": "Mainboard",
-        "status": "upcoming",
-        "gmp": 53.0,
-        "gmp_pct": 18.34,
-        "issue_price": 289.0,
-        "estimated_listing_price": 342.0,
-        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
-        "issue_size": "\u20b9702.00 Cr",
-        "lot_size": 51,
-        "open_date": "2026-10-14",
-        "close_date": "2026-10-16",
-        "allotment_date": "2026-10-19",
-        "listing_date": "2026-10-22",
-        "subscription": "-",
-        "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25",
-        "anchor_status": "\u2705",
-        "source_updated": "10-Oct 23:37",
-        "source_url": "https://www.investorgain.com/gmp/fusion-cx-ipo/1792/"
       },
       {
         "name": "Ravita Engineering Services",
         "exchange": "NSE SME",
         "category": "SME",
         "status": "upcoming",
-        "gmp": 12.0,
-        "gmp_pct": 10.71,
+        "gmp": 10.0,
+        "gmp_pct": 8.93,
         "issue_price": 112.0,
-        "estimated_listing_price": 124.0,
+        "estimated_listing_price": 122.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
         "issue_size": "\u20b9116.05 Cr",
         "lot_size": 1200,
@@ -1351,54 +1370,32 @@
         "allotment_date": "2026-10-16",
         "listing_date": "2026-10-21",
         "subscription": "-",
-        "rating": "\ud83d\udd25\ud83d\udd25\ud83d\udd25",
+        "rating": "\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "10-Oct 23:37",
+        "source_updated": "11-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/ravita-engineering-services-ipo/2220/"
       },
       {
-        "name": "Sahajanand Medical Technologies",
+        "name": "Fusion CX",
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "upcoming",
-        "gmp": null,
-        "gmp_pct": null,
-        "issue_price": null,
-        "estimated_listing_price": null,
-        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
-        "issue_size": "-",
-        "lot_size": null,
-        "open_date": "2026-10-15",
-        "close_date": "2026-10-19",
-        "allotment_date": "2026-10-21",
-        "listing_date": "2026-10-23",
+        "gmp": 22.0,
+        "gmp_pct": 7.61,
+        "issue_price": 289.0,
+        "estimated_listing_price": 311.0,
+        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
+        "issue_size": "\u20b9702.00 Cr",
+        "lot_size": 51,
+        "open_date": "2026-10-14",
+        "close_date": "2026-10-16",
+        "allotment_date": "2026-10-19",
+        "listing_date": "2026-10-22",
         "subscription": "-",
-        "rating": "\ud83d\udd25",
+        "rating": "\ud83d\udd25\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "10-Oct 20:40",
-        "source_url": "https://www.investorgain.com/gmp/sahajanand-medical-technologies-ipo/1842/"
-      },
-      {
-        "name": "Jio Platforms",
-        "exchange": "IPO",
-        "category": "Mainboard",
-        "status": "upcoming",
-        "gmp": null,
-        "gmp_pct": null,
-        "issue_price": 0.0,
-        "estimated_listing_price": null,
-        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
-        "issue_size": "-",
-        "lot_size": null,
-        "open_date": null,
-        "close_date": null,
-        "allotment_date": null,
-        "listing_date": null,
-        "subscription": "-",
-        "rating": "\ud83d\udd25",
-        "anchor_status": "\u2705",
-        "source_updated": "10-Oct 23:37",
-        "source_url": "https://www.investorgain.com/gmp/jio-platforms-ipo/2306/"
+        "source_updated": "11-Oct 23:37",
+        "source_url": "https://www.investorgain.com/gmp/fusion-cx-ipo/1792/"
       },
       {
         "name": "Bonfiglioli Transmissions",
@@ -1419,8 +1416,96 @@
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "10-Oct 23:37",
+        "source_updated": "11-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/bonfiglioli-transmissions-ipo/2124/"
+      },
+      {
+        "name": "Jio Platforms",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "upcoming",
+        "gmp": null,
+        "gmp_pct": null,
+        "issue_price": 0.0,
+        "estimated_listing_price": null,
+        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
+        "issue_size": "-",
+        "lot_size": null,
+        "open_date": null,
+        "close_date": null,
+        "allotment_date": null,
+        "listing_date": null,
+        "subscription": "-",
+        "rating": "\ud83d\udd25",
+        "anchor_status": "\u2705",
+        "source_updated": "11-Oct 23:37",
+        "source_url": "https://www.investorgain.com/gmp/jio-platforms-ipo/2306/"
+      },
+      {
+        "name": "Tonbo Imaging India",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "upcoming",
+        "gmp": null,
+        "gmp_pct": null,
+        "issue_price": 0.0,
+        "estimated_listing_price": null,
+        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
+        "issue_size": "-",
+        "lot_size": null,
+        "open_date": "2026-10-15",
+        "close_date": "2026-10-19",
+        "allotment_date": "2026-10-21",
+        "listing_date": "2026-10-23",
+        "subscription": "-",
+        "rating": "\ud83d\udd25",
+        "anchor_status": "\u2705",
+        "source_updated": "11-Oct 23:37",
+        "source_url": "https://www.investorgain.com/gmp/tonbo-imaging-india-ipo/2369/"
+      },
+      {
+        "name": "Zetwerk",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "upcoming",
+        "gmp": null,
+        "gmp_pct": null,
+        "issue_price": 0.0,
+        "estimated_listing_price": null,
+        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
+        "issue_size": "",
+        "lot_size": null,
+        "open_date": "2026-10-15",
+        "close_date": "2026-10-19",
+        "allotment_date": "2026-10-21",
+        "listing_date": "2026-10-23",
+        "subscription": "-",
+        "rating": "\ud83d\udd25",
+        "anchor_status": "\u2705",
+        "source_updated": "11-Oct 23:37",
+        "source_url": "https://www.investorgain.com/gmp/zetwerk-ipo/2279/"
+      },
+      {
+        "name": "Sahajanand Medical Technologies",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "upcoming",
+        "gmp": null,
+        "gmp_pct": null,
+        "issue_price": 0.0,
+        "estimated_listing_price": null,
+        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
+        "issue_size": "-",
+        "lot_size": null,
+        "open_date": "2026-10-15",
+        "close_date": "2026-10-19",
+        "allotment_date": "2026-10-21",
+        "listing_date": "2026-10-23",
+        "subscription": "-",
+        "rating": "\ud83d\udd25",
+        "anchor_status": "\u2705",
+        "source_updated": "11-Oct 23:37",
+        "source_url": "https://www.investorgain.com/gmp/sahajanand-medical-technologies-ipo/1842/"
       },
       {
         "name": "Vaibhav Vyapaar",
@@ -1441,7 +1526,7 @@
         "subscription": "-",
         "rating": "\ud83d\udd25",
         "anchor_status": "\u2705",
-        "source_updated": "10-Oct 23:35",
+        "source_updated": "11-Oct 23:29",
         "source_url": "https://www.investorgain.com/gmp/vaibhav-vyapaar-ipo/2335/"
       }
     ]
