@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-18T00:09:46.818080",
+  "timestamp": "2026-10-19T00:21:38.547802",
   "indices": {
     "nifty50": {
       "value": 23146.15,
@@ -44,41 +44,41 @@
       "direction": "negative"
     },
     "usdinr": {
-      "value": 94.96,
-      "change": 0.44,
-      "change_pct": 0.46,
+      "value": 94.95,
+      "change": 0.43,
+      "change_pct": 0.45,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4181.1,
-      "change": 11.0,
-      "change_pct": 0.26,
+      "value": 4203.2,
+      "change": 22.1,
+      "change_pct": 0.53,
       "direction": "positive"
     },
     "silver": {
-      "value": 56.99,
-      "change": 0.16,
-      "change_pct": 0.28,
+      "value": 57.51,
+      "change": 0.51,
+      "change_pct": 0.89,
       "direction": "positive"
     },
     "copper": {
-      "value": 6.53,
-      "change": 0.02,
-      "change_pct": 0.3,
+      "value": 6.59,
+      "change": 0.06,
+      "change_pct": 0.89,
       "direction": "positive"
     },
     "crude": {
-      "value": 101.41,
-      "change": 3.44,
-      "change_pct": 3.51,
-      "direction": "positive"
+      "value": 97.51,
+      "change": -3.9,
+      "change_pct": -3.85,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.12,
-      "change": -0.12,
-      "change_pct": -3.71,
+      "value": 3.05,
+      "change": -0.06,
+      "change_pct": -2.05,
       "direction": "negative"
     }
   },
@@ -1065,17 +1065,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "18 Oct 2026",
+        "date": "19 Oct 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "17 Oct 2026",
+        "date": "18 Oct 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "16 Oct 2026",
+        "date": "17 Oct 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1090,19 +1090,19 @@
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
-    "summary": "\u26fd Crude oil up 3.5% - negative for India's trade balance",
+    "sentiment": "BULLISH",
+    "badge_class": "bullish",
+    "summary": "\u26fd Crude oil down 3.9% - positive for India (import dependent)",
     "vix": {
       "value": 14.06,
       "change_pct": 0.21
     },
     "crude": {
-      "value": 101.41,
-      "change_pct": 3.51
+      "value": 97.51,
+      "change_pct": -3.85
     },
     "reasons": [
-      "\u26fd Crude oil up 3.5% - negative for India's trade balance"
+      "\u26fd Crude oil down 3.9% - positive for India (import dependent)"
     ],
     "factors": [
       {
@@ -1113,9 +1113,9 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $101.41",
-        "sublabel": "+3.5%",
-        "status": "negative"
+        "label": "Crude $97.51",
+        "sublabel": "-3.9%",
+        "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
@@ -1130,18 +1130,13 @@
         "status": "negative"
       }
     ],
-    "score": -1
+    "score": 3
   },
   "predictions": [
     {
-      "symbol": "ONGC",
-      "direction": "UP",
-      "reason": "Crude up 3.5%, benefits upstream O&G"
-    },
-    {
       "symbol": "RELIANCE",
       "direction": "UP",
-      "reason": "Refining margins improve on higher crude"
+      "reason": "Lower crude costs benefit refining; Jio/retail growth"
     },
     {
       "symbol": "TCS",
@@ -1162,33 +1157,25 @@
   "news": {
     "top_stories": [
       {
-        "headline": "IT's time to celebrate when chips are down; Nifty IT soars 11.7% to log biggest weekly rally since 2008",
+        "headline": "Right question for a bearish market: Not \u2018will it fall\u2019, but \u2018is the business falling\u2019? 5 large-caps with upside potential of up to 29%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/its-time-to-celebrate-when-chips-are-down-nifty-it-soars-11-7-to-log-biggest-weekly-rally-since-2008/articleshow/135007166.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/right-question-for-a-bearish-market-not-will-it-fall-but-is-the-business-falling-5-large-caps-with-upside-potential-of-up-to-29/articleshow/135022606.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Nifty gains 3% as analysts predict recovery; key resistance levels ahead",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nifty-gains-3-as-analysts-predict-recovery-key-resistance-levels-ahead/articleshow/135037107.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Nifty reclaims 200 WMA; eyes further gains as key resistance shapes next move",
+        "headline": "Mcap of nine of top-10 most valued firms surges by Rs 3.65 lakh cr; TCS shines",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nifty-reclaims-200-wma-eyes-further-gains-as-key-resistance-shapes-next-move/articleshow/135011480.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Concurrent Gainers: 15 stocks gain for 5 days in a row",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-15-stocks-gain-for-5-days-in-a-row/slideshow/135008981.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Market wrap: Tech Mahindra, TCS, InterGlobe, BSE top gainers and losers on Nifty and Sensex on Friday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-tech-mahindra-tcs-interglobe-bse-top-gainers-and-losers-on-nifty-and-sensex-on-friday/articleshow/134992216.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mcap-of-nine-of-top-10-most-valued-firms-surges-by-rs-3-65-lakh-cr-tcs-shines/articleshow/135024970.cms",
         "sentiment": "positive",
         "stocks": [
           "TCS"
@@ -1196,41 +1183,48 @@
         "category": "general"
       },
       {
-        "headline": "Laurus Labs shifts gears as CDMO emerges as key growth driver; Nuvama sees 24% upside",
+        "headline": "Bonus issues, stock splits & dividends: HDB Financial, IRFC, TechM among 19 stocks turning ex-record date this week",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/laurus-labs-shifts-gears-as-cdmo-emerges-as-key-growth-driver-nuvama-sees-24-upside/articleshow/134990332.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bonus-issues-stock-splits-dividends-hdb-financial-irfc-techm-among-19-stocks-turning-ex-record-date-this-week/articleshow/135024511.cms",
         "sentiment": "positive",
+        "stocks": [
+          "TECHM"
+        ],
+        "category": "general"
+      },
+      {
+        "headline": "10 penny stocks plunge up to 75% in six months",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/10-penny-stocks-plunge-up-to-75-in-six-months/slideshow/135024478.cms",
+        "sentiment": "negative",
         "stocks": [],
         "category": "general"
       }
     ],
-    "earnings": [],
+    "earnings": [
+      {
+        "headline": "DIIs increase stake in 8 midcap stocks in Q2FY27",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/diis-increase-stake-in-8-midcap-stocks-in-q2fy27/slideshow/135027062.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "earnings"
+      }
+    ],
     "orders": [],
     "regulatory": [
       {
-        "headline": "Kotak Mahindra Bank among 5 stocks that hit 52-week highs & rallied up to 15% in a month",
+        "headline": "Public sector banks' Rs 7.8 lakh core corporate loan pipeline signals capex revival",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/kotak-mahindra-bank-among-5-stocks-that-hit-52-week-highs-amp-rallied-up-to-15-in-a-month/slideshow/134995212.cms",
-        "sentiment": "positive",
-        "stocks": [
-          "KOTAK"
-        ],
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/public-sector-banks-rs-7-8-lakh-core-corporate-loan-pipeline-signals-capex-revival/articleshow/135037258.cms",
+        "sentiment": "neutral",
+        "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Mukesh Ambani taps massive Reliance workforce to boost Jio\u2019s record IPO",
+        "headline": "Two Trades for Today: A top PSU bank for a 4.95% gain, a mid-cap NBFC stock for a rise of almost 7%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mukesh-ambani-taps-massive-reliance-workforce-to-boost-jios-record-ipo/articleshow/134988928.cms",
-        "sentiment": "positive",
-        "stocks": [
-          "RELIANCE"
-        ],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Indian Bank reports a Rs 1,388 crore gain from sale of NSE shares",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/indian-bank-reports-a-rs-1388-crore-gain-from-sale-of-nse-shares/articleshow/134985719.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-top-psu-bank-for-a-4-95-gain-a-mid-cap-nbfc-stock-for-a-rise-of-almost-7/articleshow/135029799.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "regulatory"
@@ -1273,7 +1267,7 @@
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-10-18T05:40:13.143438+05:30",
+    "fetched_at": "2026-10-19T05:52:07.606042+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [
       {
@@ -1281,10 +1275,10 @@
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "open",
-        "gmp": 505.0,
-        "gmp_pct": 72.14,
+        "gmp": 515.0,
+        "gmp_pct": 73.57,
         "issue_price": 700.0,
-        "estimated_listing_price": 1205.0,
+        "estimated_listing_price": 1215.0,
         "market_read": "Strong positive GMP snapshot, but grey-market quotes are unofficial and can reverse. Overall subscription reported at 7.78x.",
         "issue_size": "\u20b9852.18 Cr",
         "lot_size": 21,
@@ -1295,7 +1289,7 @@
         "subscription": "7.78x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "17-Oct 23:37",
+        "source_updated": "18-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/tonbo-imaging-india-ipo/2369/"
       },
       {
@@ -1303,10 +1297,10 @@
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "open",
-        "gmp": 132.0,
-        "gmp_pct": 22.53,
+        "gmp": 130.0,
+        "gmp_pct": 22.18,
         "issue_price": 586.0,
-        "estimated_listing_price": 718.0,
+        "estimated_listing_price": 716.0,
         "market_read": "Strong positive GMP snapshot, but grey-market quotes are unofficial and can reverse. Overall subscription reported at 0.99x.",
         "issue_size": "\u20b92533.66 Cr",
         "lot_size": 25,
@@ -1317,7 +1311,7 @@
         "subscription": "0.99x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "17-Oct 23:37",
+        "source_updated": "18-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/bonfiglioli-transmissions-ipo/2124/"
       },
       {
@@ -1325,10 +1319,10 @@
         "exchange": "BSE SME",
         "category": "SME",
         "status": "open",
-        "gmp": 25.0,
-        "gmp_pct": 13.97,
+        "gmp": 35.0,
+        "gmp_pct": 19.55,
         "issue_price": 179.0,
-        "estimated_listing_price": 204.0,
+        "estimated_listing_price": 214.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 0.89x.",
         "issue_size": "\u20b959.97 Cr",
         "lot_size": 800,
@@ -1339,40 +1333,18 @@
         "subscription": "0.89x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "17-Oct 23:37",
+        "source_updated": "18-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/shellz-india-ipo/2228/"
-      },
-      {
-        "name": "Zetwerk",
-        "exchange": "IPO",
-        "category": "Mainboard",
-        "status": "open",
-        "gmp": 7.2,
-        "gmp_pct": 4.77,
-        "issue_price": 151.0,
-        "estimated_listing_price": 158.2,
-        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 0.31x.",
-        "issue_size": "\u20b95012.33 Cr",
-        "lot_size": 99,
-        "open_date": "2026-10-15",
-        "close_date": "2026-10-19",
-        "allotment_date": "2026-10-21",
-        "listing_date": "2026-10-23",
-        "subscription": "0.31x",
-        "rating": "",
-        "anchor_status": "\u2705",
-        "source_updated": "17-Oct 23:37",
-        "source_url": "https://www.investorgain.com/gmp/zetwerk-ipo/2279/"
       },
       {
         "name": "Sahajanand Medical Technologies",
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "open",
-        "gmp": 15.0,
-        "gmp_pct": 4.36,
+        "gmp": 25.0,
+        "gmp_pct": 7.27,
         "issue_price": 344.0,
-        "estimated_listing_price": 359.0,
+        "estimated_listing_price": 369.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 0.83x.",
         "issue_size": "\u20b9475.48 Cr",
         "lot_size": 43,
@@ -1383,8 +1355,30 @@
         "subscription": "0.83x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "17-Oct 23:37",
+        "source_updated": "18-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/sahajanand-medical-technologies-ipo/1842/"
+      },
+      {
+        "name": "Zetwerk",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "open",
+        "gmp": 5.0,
+        "gmp_pct": 3.31,
+        "issue_price": 151.0,
+        "estimated_listing_price": 156.0,
+        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 0.31x.",
+        "issue_size": "\u20b95012.33 Cr",
+        "lot_size": 99,
+        "open_date": "2026-10-15",
+        "close_date": "2026-10-19",
+        "allotment_date": "2026-10-21",
+        "listing_date": "2026-10-23",
+        "subscription": "0.31x",
+        "rating": "",
+        "anchor_status": "\u2705",
+        "source_updated": "18-Oct 23:37",
+        "source_url": "https://www.investorgain.com/gmp/zetwerk-ipo/2279/"
       }
     ],
     "upcoming": [
@@ -1393,10 +1387,10 @@
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "upcoming",
-        "gmp": 235.0,
-        "gmp_pct": 21.0,
+        "gmp": 250.0,
+        "gmp_pct": 22.34,
         "issue_price": 1119.0,
-        "estimated_listing_price": 1354.0,
+        "estimated_listing_price": 1369.0,
         "market_read": "Strong positive GMP snapshot, but grey-market quotes are unofficial and can reverse.",
         "issue_size": "\u20b930213.00 Cr",
         "lot_size": 12,
@@ -1407,7 +1401,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "17-Oct 23:37",
+        "source_updated": "18-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/jio-platforms-ipo/2306/"
       },
       {
@@ -1415,10 +1409,10 @@
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "upcoming",
-        "gmp": 96.0,
-        "gmp_pct": 13.85,
+        "gmp": 92.0,
+        "gmp_pct": 13.28,
         "issue_price": 693.0,
-        "estimated_listing_price": 789.0,
+        "estimated_listing_price": 785.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
         "issue_size": "\u20b91450.00 Cr",
         "lot_size": 21,
@@ -1429,7 +1423,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "17-Oct 23:37",
+        "source_updated": "18-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/paras-healthcare-ipo/1728/"
       }
     ]
