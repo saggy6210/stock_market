@@ -1,35 +1,35 @@
-// Auto-generated on 2026-10-24T00:57:08.143876
+// Auto-generated on 2026-10-25T00:27:48.182610
 const DASHBOARD_DATA = {
-  "timestamp": "2026-10-24T00:56:21.700990",
+  "timestamp": "2026-10-25T00:27:28.829115",
   "indices": {
     "nifty50": {
-      "value": 22687.65,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 22600.0,
+      "change": -87.65,
+      "change_pct": -0.39,
+      "direction": "negative"
     },
     "sensex": {
-      "value": 73249.39,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 73123.83,
+      "change": -125.56,
+      "change_pct": -0.17,
+      "direction": "negative"
     },
     "niftybank": {
-      "value": 54925.7,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 54287.35,
+      "change": -638.35,
+      "change_pct": -1.16,
+      "direction": "negative"
     },
     "niftyit": {
-      "value": 32081.25,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 31995.5,
+      "change": -85.75,
+      "change_pct": -0.27,
+      "direction": "negative"
     },
     "vix": {
-      "value": 15.76,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 16.86,
+      "change": 1.1,
+      "change_pct": 6.98,
       "direction": "positive"
     },
     "dow": {
@@ -45,42 +45,42 @@ const DASHBOARD_DATA = {
       "direction": "negative"
     },
     "usdinr": {
-      "value": 94.93,
-      "change": 0.62,
-      "change_pct": 0.65,
+      "value": 94.94,
+      "change": 0.23,
+      "change_pct": 0.24,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4010.0,
-      "change": -50.4,
-      "change_pct": -1.24,
+      "value": 4007.9,
+      "change": -52.5,
+      "change_pct": -1.29,
       "direction": "negative"
     },
     "silver": {
-      "value": 53.96,
-      "change": -0.8,
-      "change_pct": -1.47,
+      "value": 53.71,
+      "change": -1.05,
+      "change_pct": -1.92,
       "direction": "negative"
     },
     "copper": {
-      "value": 6.5,
-      "change": 0.13,
-      "change_pct": 2.12,
+      "value": 6.48,
+      "change": 0.11,
+      "change_pct": 1.78,
       "direction": "positive"
     },
     "crude": {
-      "value": 103.44,
-      "change": 3.97,
-      "change_pct": 3.99,
+      "value": 103.27,
+      "change": 3.8,
+      "change_pct": 3.82,
       "direction": "positive"
     },
     "naturalgas": {
-      "value": 3.05,
-      "change": 0.25,
-      "change_pct": 8.98,
-      "direction": "positive"
+      "value": 2.64,
+      "change": -0.16,
+      "change_pct": -5.58,
+      "direction": "negative"
     }
   },
   "screener": {
@@ -149,6 +149,15 @@ const DASHBOARD_DATA = {
         "buy_signal": "Avoid"
       },
       {
+        "symbol": "SBICARD",
+        "sector": "Financial Services",
+        "old_price": 961.63,
+        "current_price": 545.55,
+        "low_52w": 525.0,
+        "fall_pct": -43.27,
+        "buy_signal": "Avoid"
+      },
+      {
         "symbol": "RAILTEL",
         "sector": "Communication Services",
         "old_price": 387.93,
@@ -167,12 +176,30 @@ const DASHBOARD_DATA = {
         "buy_signal": "Avoid"
       },
       {
+        "symbol": "HUDCO",
+        "sector": "Financial Services",
+        "old_price": 239.22,
+        "current_price": 146.02,
+        "low_52w": 144.14,
+        "fall_pct": -38.96,
+        "buy_signal": "Avoid"
+      },
+      {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
         "old_price": 1853.28,
         "current_price": 1139.9,
         "low_52w": 1126.7,
         "fall_pct": -38.49,
+        "buy_signal": "Avoid"
+      },
+      {
+        "symbol": "IREDA",
+        "sector": "Financial Services",
+        "old_price": 154.89,
+        "current_price": 100.27,
+        "low_52w": 99.13,
+        "fall_pct": -35.26,
         "buy_signal": "Avoid"
       },
       {
@@ -237,33 +264,6 @@ const DASHBOARD_DATA = {
         "low_52w": 128.1,
         "fall_pct": -28.39,
         "buy_signal": "Buy"
-      },
-      {
-        "symbol": "IDEA",
-        "sector": "Communication Services",
-        "old_price": 15.79,
-        "current_price": 11.36,
-        "low_52w": 8.13,
-        "fall_pct": -28.06,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "BPCL",
-        "sector": "Energy",
-        "old_price": 391.65,
-        "current_price": 281.95,
-        "low_52w": 266.6,
-        "fall_pct": -28.01,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "WIPRO",
-        "sector": "Technology",
-        "old_price": 263.22,
-        "current_price": 189.84,
-        "low_52w": 156.79,
-        "fall_pct": -27.88,
-        "buy_signal": "Buy"
       }
     ],
     "jan26": [
@@ -286,6 +286,15 @@ const DASHBOARD_DATA = {
         "buy_signal": "Avoid"
       },
       {
+        "symbol": "SBICARD",
+        "sector": "Financial Services",
+        "old_price": 961.63,
+        "current_price": 545.55,
+        "low_52w": 525.0,
+        "fall_pct": -43.27,
+        "buy_signal": "Avoid"
+      },
+      {
         "symbol": "RAILTEL",
         "sector": "Communication Services",
         "old_price": 387.93,
@@ -304,12 +313,30 @@ const DASHBOARD_DATA = {
         "buy_signal": "Avoid"
       },
       {
+        "symbol": "HUDCO",
+        "sector": "Financial Services",
+        "old_price": 239.22,
+        "current_price": 146.02,
+        "low_52w": 144.14,
+        "fall_pct": -38.96,
+        "buy_signal": "Avoid"
+      },
+      {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
         "old_price": 1853.28,
         "current_price": 1139.9,
         "low_52w": 1126.7,
         "fall_pct": -38.49,
+        "buy_signal": "Avoid"
+      },
+      {
+        "symbol": "IREDA",
+        "sector": "Financial Services",
+        "old_price": 154.89,
+        "current_price": 100.27,
+        "low_52w": 99.13,
+        "fall_pct": -35.26,
         "buy_signal": "Avoid"
       },
       {
@@ -419,36 +446,36 @@ const DASHBOARD_DATA = {
         "low_52w": 292.05,
         "fall_pct": -27.31,
         "buy_signal": "Avoid"
-      },
-      {
-        "symbol": "BSE",
-        "sector": "Financial Services",
-        "old_price": 4435.12,
-        "current_price": 3230.8,
-        "low_52w": 2319.99,
-        "fall_pct": -27.15,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "RELIANCE",
-        "sector": "Energy",
-        "old_price": 1604.38,
-        "current_price": 1190.0,
-        "low_52w": 1152.2,
-        "fall_pct": -25.83,
-        "buy_signal": "Avoid"
-      },
-      {
-        "symbol": "ONGC",
-        "sector": "Energy",
-        "old_price": 306.2,
-        "current_price": 227.5,
-        "low_52w": 218.53,
-        "fall_pct": -25.7,
-        "buy_signal": "Hold"
       }
     ],
     "may25": [
+      {
+        "symbol": "HUDCO",
+        "sector": "Financial Services",
+        "old_price": 239.22,
+        "current_price": 146.02,
+        "low_52w": 144.14,
+        "fall_pct": -38.96,
+        "buy_signal": "Avoid"
+      },
+      {
+        "symbol": "COCHINSHIP",
+        "sector": "Industrials",
+        "old_price": 1853.28,
+        "current_price": 1139.9,
+        "low_52w": 1126.7,
+        "fall_pct": -38.49,
+        "buy_signal": "Avoid"
+      },
+      {
+        "symbol": "IREDA",
+        "sector": "Financial Services",
+        "old_price": 154.89,
+        "current_price": 100.27,
+        "low_52w": 99.13,
+        "fall_pct": -35.26,
+        "buy_signal": "Avoid"
+      },
       {
         "symbol": "MARUTI",
         "sector": "Consumer Cyclical",
@@ -601,36 +628,36 @@ const DASHBOARD_DATA = {
         "low_52w": 242.3,
         "fall_pct": -23.51,
         "buy_signal": "Avoid"
-      },
-      {
-        "symbol": "RECLTD",
-        "sector": "Financial Services",
-        "old_price": 381.34,
-        "current_price": 293.95,
-        "low_52w": 286.2,
-        "fall_pct": -22.92,
-        "buy_signal": "Avoid"
-      },
-      {
-        "symbol": "TCS",
-        "sector": "Technology",
-        "old_price": 3269.78,
-        "current_price": 2530.0,
-        "low_52w": 1955.62,
-        "fall_pct": -22.62,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "BAJFINANCE",
-        "sector": "Financial Services",
-        "old_price": 1176.4,
-        "current_price": 928.95,
-        "low_52w": 783.09,
-        "fall_pct": -21.03,
-        "buy_signal": "Buy"
       }
     ],
     "jan25": [
+      {
+        "symbol": "INFY",
+        "sector": "Technology",
+        "old_price": 1691.4,
+        "current_price": 1153.8,
+        "low_52w": 980.4,
+        "fall_pct": -31.78,
+        "buy_signal": "Strong Buy"
+      },
+      {
+        "symbol": "HDFCBANK",
+        "sector": "Financial Services",
+        "old_price": 1003.9,
+        "current_price": 692.8,
+        "low_52w": 681.9,
+        "fall_pct": -30.99,
+        "buy_signal": "Avoid"
+      },
+      {
+        "symbol": "IOC",
+        "sector": "Energy",
+        "old_price": 184.96,
+        "current_price": 129.09,
+        "low_52w": 124.92,
+        "fall_pct": -30.21,
+        "buy_signal": "Avoid"
+      },
       {
         "symbol": "DELHIVERY",
         "sector": "Industrials",
@@ -783,33 +810,6 @@ const DASHBOARD_DATA = {
         "low_52w": 69.03,
         "fall_pct": -19.35,
         "buy_signal": "Avoid"
-      },
-      {
-        "symbol": "COALINDIA",
-        "sector": "Energy",
-        "old_price": 478.71,
-        "current_price": 397.45,
-        "low_52w": 355.18,
-        "fall_pct": -16.98,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "PAYTM",
-        "sector": "Technology",
-        "old_price": 1855.5,
-        "current_price": 1616.1,
-        "low_52w": 930.6,
-        "fall_pct": -12.9,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "IREDA",
-        "sector": "Financial Services",
-        "old_price": 154.89,
-        "current_price": NaN,
-        "low_52w": 101.46,
-        "fall_pct": NaN,
-        "buy_signal": "Hold"
       }
     ]
   },
@@ -1066,17 +1066,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "24 Oct 2026",
+        "date": "25 Oct 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "23 Oct 2026",
+        "date": "24 Oct 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "22 Oct 2026",
+        "date": "23 Oct 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1093,30 +1093,31 @@ const DASHBOARD_DATA = {
   "market_outlook": {
     "sentiment": "NEUTRAL",
     "badge_class": "neutral",
-    "summary": "\u26fd Crude oil up 4.0% - negative for India's trade balance. \ud83c\udf0f US markets weak: Dow -1.2%, NASDAQ -0.2%",
+    "summary": "\ud83d\udcc8 VIX up 7.0% indicating rising market uncertainty. \u26fd Crude oil up 3.8% - negative for India's trade balance. \ud83c\udf0f US markets weak: Dow -1.2%, NASDAQ -0.2%",
     "vix": {
-      "value": 15.76,
-      "change_pct": 0.0
+      "value": 16.86,
+      "change_pct": 6.98
     },
     "crude": {
-      "value": 103.44,
-      "change_pct": 3.99
+      "value": 103.27,
+      "change_pct": 3.82
     },
     "reasons": [
-      "\u26fd Crude oil up 4.0% - negative for India's trade balance",
+      "\ud83d\udcc8 VIX up 7.0% indicating rising market uncertainty",
+      "\u26fd Crude oil up 3.8% - negative for India's trade balance",
       "\ud83c\udf0f US markets weak: Dow -1.2%, NASDAQ -0.2%"
     ],
     "factors": [
       {
-        "icon": "\ud83d\udcc9",
-        "label": "VIX 15.76",
-        "sublabel": "+0.0%",
-        "status": "positive"
+        "icon": "\ud83d\udcc8",
+        "label": "VIX 16.86",
+        "sublabel": "+7.0%",
+        "status": "neutral"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $103.44",
-        "sublabel": "+4.0%",
+        "label": "Crude $103.27",
+        "sublabel": "+3.8%",
         "status": "negative"
       },
       {
@@ -1138,7 +1139,7 @@ const DASHBOARD_DATA = {
     {
       "symbol": "ONGC",
       "direction": "UP",
-      "reason": "Crude up 4.0%, benefits upstream O&G"
+      "reason": "Crude up 3.8%, benefits upstream O&G"
     },
     {
       "symbol": "RELIANCE",
@@ -1164,81 +1165,67 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
-        "headline": "Market wrap: Eternal, Apollo Hospital, Shriram Finance, Adani Enterprises among top gainers and losers on Nifty and Sensex on Friday",
+        "headline": "Concurrent Losers: 13 stocks decline for 5 consecutive sessions",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-eternal-apollo-hospital-shriram-finance-adani-enterprises-among-top-gainers-and-losers-on-nifty-and-sensex-on-friday/articleshow/135144888.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-losers-13-stocks-decline-for-5-consecutive-sessions/slideshow/135164244.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Tourism is the sector the market writes off in a downturn. Is it indicating something else? 7 stocks with upside potential of up to 27%",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/tourism-is-the-sector-the-market-writes-off-in-a-downturn-is-it-indicating-something-else-7-stocks-with-upside-potential-of-up-to-27/articleshow/135174608.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "When noise is high, separate short-term headwinds from long-term business. 5 large-cap stocks with upside potential of up to 23%",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/when-noise-is-high-separate-short-term-headwinds-from-long-term-business-5-large-cap-stocks-with-upside-potential-of-up-to-23/articleshow/135173366.cms",
         "sentiment": "positive",
-        "stocks": [
-          "ADANI"
-        ],
-        "category": "general"
-      },
-      {
-        "headline": "Hindustan Zinc shares drop 4% as India allows large silver imports despite weak demand",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/hindustan-zinc-shares-drop-4-as-india-allows-large-silver-imports-despite-weak-demand/articleshow/135135402.cms",
-        "sentiment": "negative",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Bharat Electronics among 4 Sensex stocks to hit 52-week lows; shares fall up to 9% in a month",
+        "headline": "Govt of Singapore\u2019s India portfolio: 10 stocks rally up to 100% in FY27 so far",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bharat-electronics-among-4-sensex-stocks-to-hit-52-week-lows-shares-fall-up-to-9-in-a-month/slideshow/135147674.cms",
-        "sentiment": "negative",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/govt-of-singapores-india-portfolio-10-stocks-rally-up-to-100-in-fy27-so-far/slideshow/135167433.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "D-Street bleeds! Market value of all BSE-listed firms falls below Rs 450 lakh crore for first time since April. More pain ahead?",
+        "headline": "Jio IPO GMP today: Grey market signals over 22% listing gains; check allotment, listing date",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/d-street-bleeds-market-value-of-all-bse-listed-firms-falls-below-rs-450-lakh-crore-for-first-time-since-april-more-pain-ahead/articleshow/135140291.cms",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Broader markets crash! Small, midcap indices tumble up to 4%. Why analysts are sounding the alarm",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/broader-markets-crash-small-midcap-indices-tumble-up-to-4-why-analysts-are-sounding-the-alarm/articleshow/135138924.cms",
-        "sentiment": "negative",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jio-ipo-gmp-today-grey-market-signals-over-22-listing-gains-check-allotment-listing-date/articleshow/135163795.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "general"
       }
     ],
     "earnings": [
       {
-        "headline": "Cyient shares rally 9% after Q2 revenue rises 25%; board declares Rs 12/sh interim dividend",
+        "headline": "Swiggy sinks 16% to record low as quick-commerce losses widen",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/cyient-shares-rally-9-after-q2-revenue-rises-25-board-declares-rs-12/sh-interim-dividend/articleshow/135137782.cms",
-        "sentiment": "positive",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/swiggy-falls-16-to-new-low-qcomm-losses-spook-street/articleshow/135160761.cms",
+        "sentiment": "neutral",
         "stocks": [],
         "category": "earnings"
-      },
-      {
-        "headline": "This Tata Group stock plunged 10% a day after rallying 19% post Q2 results. Do you own?",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/this-tata-group-stock-plunged-10-a-day-after-rallying-19-post-q2-results-do-you-own/articleshow/135138992.cms",
-        "sentiment": "neutral",
-        "stocks": [
-          "TATA"
-        ],
-        "category": "earnings"
       }
     ],
-    "orders": [],
-    "regulatory": [
+    "orders": [
       {
-        "headline": "RBI governor reiterates listing requirement for top NBFCs as focus intensifies on Tata Sons",
+        "headline": "Sebi orders Avadhut Sathe, academy to refund Rs 546 crore",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/rbi-governor-reiterates-listing-requirement-for-top-nbfcs-as-focus-intensifies-on-tata-sons/articleshow/135149631.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-orders-avadhut-sathe-academy-to-refund-rs-546-crore/articleshow/135162877.cms",
         "sentiment": "neutral",
-        "stocks": [
-          "TATA"
-        ],
-        "category": "regulatory"
+        "stocks": [],
+        "category": "orders"
       }
     ],
+    "regulatory": [],
     "insider": [],
     "geopolitical": [
       {
@@ -1276,7 +1263,7 @@ const DASHBOARD_DATA = {
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-10-24T06:27:07.983338+05:30",
+    "fetched_at": "2026-10-25T05:57:47.988559+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [
       {
@@ -1298,7 +1285,7 @@ const DASHBOARD_DATA = {
         "subscription": "0.08x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "23-Oct 23:32",
+        "source_updated": "24-Oct 23:35",
         "source_url": "https://www.investorgain.com/gmp/core4-engineers-ipo/2229/"
       }
     ],
@@ -1322,7 +1309,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "23-Oct 23:37",
+        "source_updated": "24-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/bls-polymers-ipo/1849/"
       },
       {
@@ -1344,40 +1331,18 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "23-Oct 23:37",
+        "source_updated": "24-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/bombay-coated-and-special-steels-ipo/1936/"
-      },
-      {
-        "name": "EAAA India Alternatives",
-        "exchange": "IPO",
-        "category": "Mainboard",
-        "status": "upcoming",
-        "gmp": 121.0,
-        "gmp_pct": 7.27,
-        "issue_price": 1665.0,
-        "estimated_listing_price": 1786.0,
-        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
-        "issue_size": "\u20b91200.00 Cr",
-        "lot_size": 9,
-        "open_date": "2026-10-26",
-        "close_date": "2026-10-28",
-        "allotment_date": "2026-10-29",
-        "listing_date": "2026-11-02",
-        "subscription": "-",
-        "rating": "",
-        "anchor_status": "\u2705",
-        "source_updated": "23-Oct 23:37",
-        "source_url": "https://www.investorgain.com/gmp/eaaa-india-alternatives-ipo/1635/"
       },
       {
         "name": "SFC Environmental Technologies",
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "upcoming",
-        "gmp": 21.0,
-        "gmp_pct": 6.36,
+        "gmp": 32.0,
+        "gmp_pct": 9.7,
         "issue_price": 330.0,
-        "estimated_listing_price": 351.0,
+        "estimated_listing_price": 362.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
         "issue_size": "\u20b9667.53 Cr",
         "lot_size": 45,
@@ -1388,8 +1353,74 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "23-Oct 23:37",
+        "source_updated": "24-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/sfc-environmental-technologies-ipo/1642/"
+      },
+      {
+        "name": "M.K.Sons Fine Jewels",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "upcoming",
+        "gmp": 7.0,
+        "gmp_pct": 4.32,
+        "issue_price": 162.0,
+        "estimated_listing_price": 169.0,
+        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
+        "issue_size": "\u20b9275.40 Cr",
+        "lot_size": 91,
+        "open_date": "2026-10-28",
+        "close_date": "2026-10-30",
+        "allotment_date": "2026-11-02",
+        "listing_date": "2026-11-04",
+        "subscription": "-",
+        "rating": "",
+        "anchor_status": "\u2705",
+        "source_updated": "24-Oct 23:37",
+        "source_url": "https://www.investorgain.com/gmp/mksons-fine-jewels-ipo/2288/"
+      },
+      {
+        "name": "EAAA India Alternatives",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "upcoming",
+        "gmp": 45.0,
+        "gmp_pct": 2.7,
+        "issue_price": 1665.0,
+        "estimated_listing_price": 1710.0,
+        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
+        "issue_size": "\u20b91200.00 Cr",
+        "lot_size": 9,
+        "open_date": "2026-10-26",
+        "close_date": "2026-10-28",
+        "allotment_date": "2026-10-29",
+        "listing_date": "2026-11-02",
+        "subscription": "-",
+        "rating": "",
+        "anchor_status": "\u2705",
+        "source_updated": "24-Oct 23:37",
+        "source_url": "https://www.investorgain.com/gmp/eaaa-india-alternatives-ipo/1635/"
+      },
+      {
+        "name": "Antala Industries",
+        "exchange": "BSE SME",
+        "category": "SME",
+        "status": "upcoming",
+        "gmp": null,
+        "gmp_pct": null,
+        "issue_price": 67.0,
+        "estimated_listing_price": null,
+        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
+        "issue_size": "\u20b923.33 Cr",
+        "lot_size": 2000,
+        "open_date": "2026-10-29",
+        "close_date": "2026-11-02",
+        "allotment_date": "2026-11-03",
+        "listing_date": "2026-11-05",
+        "subscription": "-",
+        "rating": "",
+        "anchor_status": "\u274c",
+        "source_updated": "",
+        "source_url": "https://www.investorgain.com/gmp/antala-industries-ipo/2375/"
       },
       {
         "name": "Carver Roboweld",
@@ -1410,30 +1441,30 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "23-Oct 23:30",
+        "source_updated": "24-Oct 23:30",
         "source_url": "https://www.investorgain.com/gmp/carver-roboweld-ipo/2393/"
       },
       {
-        "name": "M.K.Sons Fine Jewels",
-        "exchange": "IPO",
-        "category": "Mainboard",
+        "name": "Ajwa Projects",
+        "exchange": "BSE SME",
+        "category": "SME",
         "status": "upcoming",
         "gmp": null,
         "gmp_pct": null,
-        "issue_price": 162.0,
+        "issue_price": 203.0,
         "estimated_listing_price": null,
         "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
-        "issue_size": "\u20b9275.40 Cr",
-        "lot_size": 91,
+        "issue_size": "\u20b938.05 Cr",
+        "lot_size": 600,
         "open_date": "2026-10-28",
         "close_date": "2026-10-30",
         "allotment_date": "2026-11-02",
         "listing_date": "2026-11-04",
         "subscription": "-",
         "rating": "",
-        "anchor_status": "\u2705",
-        "source_updated": "23-Oct 23:35",
-        "source_url": "https://www.investorgain.com/gmp/mksons-fine-jewels-ipo/2288/"
+        "anchor_status": "\u274c",
+        "source_updated": "",
+        "source_url": "https://www.investorgain.com/gmp/ajwa-projects-ipo/2017/"
       },
       {
         "name": "Wiscon Industries",
@@ -1454,7 +1485,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "23-Oct 23:30",
+        "source_updated": "24-Oct 23:30",
         "source_url": "https://www.investorgain.com/gmp/wiscon-industries-ipo/2356/"
       }
     ]
