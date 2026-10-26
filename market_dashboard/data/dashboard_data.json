@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-25T00:27:28.829115",
+  "timestamp": "2026-10-26T00:33:39.688010",
   "indices": {
     "nifty50": {
       "value": 22600.0,
@@ -44,42 +44,42 @@
       "direction": "negative"
     },
     "usdinr": {
-      "value": 94.94,
-      "change": 0.23,
-      "change_pct": 0.24,
+      "value": 94.93,
+      "change": 0.22,
+      "change_pct": 0.23,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4007.9,
-      "change": -52.5,
-      "change_pct": -1.29,
+      "value": 4001.9,
+      "change": -6.0,
+      "change_pct": -0.15,
       "direction": "negative"
     },
     "silver": {
-      "value": 53.71,
-      "change": -1.05,
-      "change_pct": -1.92,
-      "direction": "negative"
+      "value": 54.03,
+      "change": 0.32,
+      "change_pct": 0.6,
+      "direction": "positive"
     },
     "copper": {
-      "value": 6.48,
-      "change": 0.11,
-      "change_pct": 1.78,
+      "value": 6.5,
+      "change": 0.02,
+      "change_pct": 0.32,
       "direction": "positive"
     },
     "crude": {
-      "value": 103.27,
-      "change": 3.8,
-      "change_pct": 3.82,
-      "direction": "positive"
+      "value": 101.78,
+      "change": -1.49,
+      "change_pct": -1.44,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 2.64,
-      "change": -0.16,
-      "change_pct": -5.58,
-      "direction": "negative"
+      "value": 2.99,
+      "change": 0.35,
+      "change_pct": 13.18,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -1065,17 +1065,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "25 Oct 2026",
+        "date": "26 Oct 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "24 Oct 2026",
+        "date": "25 Oct 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "23 Oct 2026",
+        "date": "24 Oct 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1090,20 +1090,20 @@
     }
   },
   "market_outlook": {
-    "sentiment": "NEUTRAL",
-    "badge_class": "neutral",
-    "summary": "\ud83d\udcc8 VIX up 7.0% indicating rising market uncertainty. \u26fd Crude oil up 3.8% - negative for India's trade balance. \ud83c\udf0f US markets weak: Dow -1.2%, NASDAQ -0.2%",
+    "sentiment": "BULLISH",
+    "badge_class": "bullish",
+    "summary": "\ud83d\udcc8 VIX up 7.0% indicating rising market uncertainty. \u26fd Crude oil down 1.4% - positive for India (import dependent). \ud83c\udf0f US markets weak: Dow -1.2%, NASDAQ -0.2%",
     "vix": {
       "value": 16.86,
       "change_pct": 6.98
     },
     "crude": {
-      "value": 103.27,
-      "change_pct": 3.82
+      "value": 101.78,
+      "change_pct": -1.44
     },
     "reasons": [
       "\ud83d\udcc8 VIX up 7.0% indicating rising market uncertainty",
-      "\u26fd Crude oil up 3.8% - negative for India's trade balance",
+      "\u26fd Crude oil down 1.4% - positive for India (import dependent)",
       "\ud83c\udf0f US markets weak: Dow -1.2%, NASDAQ -0.2%"
     ],
     "factors": [
@@ -1115,9 +1115,9 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $103.27",
-        "sublabel": "+3.8%",
-        "status": "negative"
+        "label": "Crude $101.78",
+        "sublabel": "-1.4%",
+        "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
@@ -1132,18 +1132,13 @@
         "status": "negative"
       }
     ],
-    "score": -1
+    "score": 3
   },
   "predictions": [
     {
-      "symbol": "ONGC",
-      "direction": "UP",
-      "reason": "Crude up 3.8%, benefits upstream O&G"
-    },
-    {
       "symbol": "RELIANCE",
       "direction": "UP",
-      "reason": "Refining margins improve on higher crude"
+      "reason": "Lower crude costs benefit refining; Jio/retail growth"
     },
     {
       "symbol": "TCS",
@@ -1164,67 +1159,69 @@
   "news": {
     "top_stories": [
       {
-        "headline": "Concurrent Losers: 13 stocks decline for 5 consecutive sessions",
+        "headline": "Two Trades for Today: A digital tech solutions company for a 5.4% rise, a top pharma stock for an almost 7% gain",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-losers-13-stocks-decline-for-5-consecutive-sessions/slideshow/135164244.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-digital-tech-solutions-company-for-a-5-4-rise-a-top-pharma-stock-for-an-almost-7-gain/articleshow/135186245.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Nifty outlook bearish, but near-term recovery in sight: Analysts",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nifty-outlook-can-the-index-rebound-despite-bearish-signals/articleshow/135199446.cms",
         "sentiment": "negative",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Tourism is the sector the market writes off in a downturn. Is it indicating something else? 7 stocks with upside potential of up to 27%",
+        "headline": "11 Penny stocks surged up to 180% in 3 months. Do you own any?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/tourism-is-the-sector-the-market-writes-off-in-a-downturn-is-it-indicating-something-else-7-stocks-with-upside-potential-of-up-to-27/articleshow/135174608.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/10-penny-stocks-surged-up-to-180-in-3-months-do-you-own-any/slideshow/135185427.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "F&O Talk: Nifty plunged 2% this week. Are charts indicating a deeper sell-off?",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fo-talk-nifty-plunged-2-this-week-do-charts-indicate-a-bearish-picture-for-coming-week/articleshow/135186474.cms",
         "sentiment": "negative",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "When noise is high, separate short-term headwinds from long-term business. 5 large-cap stocks with upside potential of up to 23%",
+        "headline": "Dividends & stock splits: L&T Tech, Shriram Finance among 24 stocks turning ex-record date this week. Do you own?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/when-noise-is-high-separate-short-term-headwinds-from-long-term-business-5-large-cap-stocks-with-upside-potential-of-up-to-23/articleshow/135173366.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/dividends-stock-splits-lt-tech-shriram-finance-among-24-stocks-turning-ex-record-date-this-week-do-you-own/articleshow/135183913.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
+      }
+    ],
+    "earnings": [],
+    "orders": [],
+    "regulatory": [
+      {
+        "headline": "Mcap of 8 of top-10 firms erodes by Rs 1.55 lakh cr; HDFC Bank, Bajaj Fin biggest laggards",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mcap-of-8-of-top-10-firms-erodes-by-rs-1-55-lakh-cr-hdfc-bank-bajaj-fin-biggest-laggards/articleshow/135186713.cms",
+        "sentiment": "neutral",
+        "stocks": [
+          "BAJAJ",
+          "HDFC"
+        ],
+        "category": "regulatory"
       },
       {
-        "headline": "Govt of Singapore\u2019s India portfolio: 10 stocks rally up to 100% in FY27 so far",
+        "headline": "Sebi to revamp short-selling, securities lending rules",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/govt-of-singapores-india-portfolio-10-stocks-rally-up-to-100-in-fy27-so-far/slideshow/135167433.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Jio IPO GMP today: Grey market signals over 22% listing gains; check allotment, listing date",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jio-ipo-gmp-today-grey-market-signals-over-22-listing-gains-check-allotment-listing-date/articleshow/135163795.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      }
-    ],
-    "earnings": [
-      {
-        "headline": "Swiggy sinks 16% to record low as quick-commerce losses widen",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/swiggy-falls-16-to-new-low-qcomm-losses-spook-street/articleshow/135160761.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-to-revamp-short-selling-securities-lending-rules/articleshow/135182788.cms",
         "sentiment": "neutral",
         "stocks": [],
-        "category": "earnings"
+        "category": "regulatory"
       }
     ],
-    "orders": [
-      {
-        "headline": "Sebi orders Avadhut Sathe, academy to refund Rs 546 crore",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-orders-avadhut-sathe-academy-to-refund-rs-546-crore/articleshow/135162877.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "orders"
-      }
-    ],
-    "regulatory": [],
     "insider": [],
     "geopolitical": [
       {
@@ -1262,7 +1259,7 @@
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-10-25T05:57:47.988559+05:30",
+    "fetched_at": "2026-10-26T06:04:17.336043+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [
       {
@@ -1284,7 +1281,7 @@
         "subscription": "0.08x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "24-Oct 23:35",
+        "source_updated": "25-Oct 23:33",
         "source_url": "https://www.investorgain.com/gmp/core4-engineers-ipo/2229/"
       }
     ],
@@ -1308,7 +1305,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "24-Oct 23:37",
+        "source_updated": "25-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/bls-polymers-ipo/1849/"
       },
       {
@@ -1330,7 +1327,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "24-Oct 23:37",
+        "source_updated": "25-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/bombay-coated-and-special-steels-ipo/1936/"
       },
       {
@@ -1352,7 +1349,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "24-Oct 23:37",
+        "source_updated": "25-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/sfc-environmental-technologies-ipo/1642/"
       },
       {
@@ -1374,7 +1371,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "24-Oct 23:37",
+        "source_updated": "25-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/mksons-fine-jewels-ipo/2288/"
       },
       {
@@ -1382,10 +1379,10 @@
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "upcoming",
-        "gmp": 45.0,
-        "gmp_pct": 2.7,
+        "gmp": 33.0,
+        "gmp_pct": 1.98,
         "issue_price": 1665.0,
-        "estimated_listing_price": 1710.0,
+        "estimated_listing_price": 1698.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
         "issue_size": "\u20b91200.00 Cr",
         "lot_size": 9,
@@ -1396,7 +1393,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "24-Oct 23:37",
+        "source_updated": "25-Oct 23:37",
         "source_url": "https://www.investorgain.com/gmp/eaaa-india-alternatives-ipo/1635/"
       },
       {
@@ -1418,7 +1415,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u274c",
-        "source_updated": "",
+        "source_updated": "25-Oct 23:31",
         "source_url": "https://www.investorgain.com/gmp/antala-industries-ipo/2375/"
       },
       {
@@ -1440,7 +1437,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "24-Oct 23:30",
+        "source_updated": "25-Oct 23:32",
         "source_url": "https://www.investorgain.com/gmp/carver-roboweld-ipo/2393/"
       },
       {
@@ -1462,7 +1459,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u274c",
-        "source_updated": "",
+        "source_updated": "25-Oct 23:34",
         "source_url": "https://www.investorgain.com/gmp/ajwa-projects-ipo/2017/"
       },
       {
@@ -1484,7 +1481,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "24-Oct 23:30",
+        "source_updated": "25-Oct 23:36",
         "source_url": "https://www.investorgain.com/gmp/wiscon-industries-ipo/2356/"
       }
     ]
