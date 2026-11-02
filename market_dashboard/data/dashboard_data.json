@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-01T01:21:12.275887",
+  "timestamp": "2026-11-02T01:42:23.201812",
   "indices": {
     "nifty50": {
       "value": 23053.1,
@@ -44,42 +44,42 @@
       "direction": "negative"
     },
     "usdinr": {
-      "value": 94.95,
-      "change": -0.2,
-      "change_pct": -0.21,
+      "value": 94.94,
+      "change": -0.21,
+      "change_pct": -0.22,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 3898.9,
-      "change": -132.5,
-      "change_pct": -3.29,
-      "direction": "negative"
-    },
-    "silver": {
-      "value": 49.1,
-      "change": -3.09,
-      "change_pct": -5.93,
-      "direction": "negative"
-    },
-    "copper": {
-      "value": 6.46,
-      "change": -0.12,
-      "change_pct": -1.86,
-      "direction": "negative"
-    },
-    "crude": {
-      "value": 104.12,
-      "change": 2.12,
-      "change_pct": 2.08,
+      "value": 3921.6,
+      "change": 22.7,
+      "change_pct": 0.58,
       "direction": "positive"
     },
-    "naturalgas": {
-      "value": 2.9,
-      "change": -0.05,
-      "change_pct": -1.83,
+    "silver": {
+      "value": 50.08,
+      "change": 0.98,
+      "change_pct": 2.0,
+      "direction": "positive"
+    },
+    "copper": {
+      "value": 6.51,
+      "change": 0.06,
+      "change_pct": 0.87,
+      "direction": "positive"
+    },
+    "crude": {
+      "value": 101.64,
+      "change": -2.48,
+      "change_pct": -2.38,
       "direction": "negative"
+    },
+    "naturalgas": {
+      "value": 2.91,
+      "change": 0.01,
+      "change_pct": 0.41,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -1065,17 +1065,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "01 Nov 2026",
+        "date": "02 Nov 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "31 Oct 2026",
+        "date": "01 Nov 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "30 Oct 2026",
+        "date": "31 Oct 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1090,19 +1090,19 @@
     }
   },
   "market_outlook": {
-    "sentiment": "BEARISH",
-    "badge_class": "bearish",
-    "summary": "\u26fd Crude oil up 2.1% - negative for India's trade balance. \ud83c\udf0f US markets weak: Dow -1.1%, NASDAQ -2.9%",
+    "sentiment": "NEUTRAL",
+    "badge_class": "neutral",
+    "summary": "\u26fd Crude oil down 2.4% - positive for India (import dependent). \ud83c\udf0f US markets weak: Dow -1.1%, NASDAQ -2.9%",
     "vix": {
       "value": 15.3,
       "change_pct": 1.19
     },
     "crude": {
-      "value": 104.12,
-      "change_pct": 2.08
+      "value": 101.64,
+      "change_pct": -2.38
     },
     "reasons": [
-      "\u26fd Crude oil up 2.1% - negative for India's trade balance",
+      "\u26fd Crude oil down 2.4% - positive for India (import dependent)",
       "\ud83c\udf0f US markets weak: Dow -1.1%, NASDAQ -2.9%"
     ],
     "factors": [
@@ -1114,9 +1114,9 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $104.12",
-        "sublabel": "+2.1%",
-        "status": "negative"
+        "label": "Crude $101.64",
+        "sublabel": "-2.4%",
+        "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
@@ -1131,18 +1131,13 @@
         "status": "negative"
       }
     ],
-    "score": -2
+    "score": 2
   },
   "predictions": [
     {
-      "symbol": "ONGC",
-      "direction": "UP",
-      "reason": "Crude up 2.1%, benefits upstream O&G"
-    },
-    {
       "symbol": "RELIANCE",
       "direction": "UP",
-      "reason": "Refining margins improve on higher crude"
+      "reason": "Lower crude costs benefit refining; Jio/retail growth"
     },
     {
       "symbol": "TCS",
@@ -1163,41 +1158,41 @@
   "news": {
     "top_stories": [
       {
-        "headline": "Coforge among 6 stocks hitting 52-week highs; rally up to 20% in a month",
+        "headline": "Two Trades for Today: A capital market stock for a 4.55% gain, a large-cap IT services company for a rise of about 7%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/coforge-among-6-stocks-hitting-52-week-highs-rally-up-to-20-in-a-month/slideshow/135359688.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-a-capital-market-stock-for-a-4-55-gain-a-large-cap-it-services-company-for-a-rise-of-about-7/articleshow/135425609.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Short-term headwinds, yes; owning the ecosystem is better: 20 healthcare stocks with downside risk of 23% to upside potential of 41%",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/short-term-headwinds-yes-owning-the-ecosystem-is-better-20-healthcare-stocks-with-downside-risk-of-23-to-upside-potential-of-41/articleshow/135409428.cms",
+        "headline": "Sensex Today | Stock Market LIVE Updates: GIFT Nifty hints at gap-up opening; US, Asian markets decline",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/stock-market-live-updates-nifty50-share-price-sensex-share-price-crude-fii-gift-nifty-rupee-latest-updates-02-11-2026-alpha-liveblog-14065647.html",
         "sentiment": "negative",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Dalal Street Weak Ahead: Nifty stands on firmer footing, but can it break past 23,450?",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/dalal-street-weak-ahead-nifty-stands-on-firmer-footing-but-can-it-break-past-23450/articleshow/135396431.cms",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Concurrent Gainers: 8 stocks that gain for 5 days in a row",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-8-stocks-that-gain-for-5-days-in-a-row/slideshow/135392399.cms",
+        "headline": "Chartist Talk: IT stocks to extend rally? This CEO picks 2 stocks with 20-25% upside potential",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/chartist-talk-it-stocks-to-extend-rally-this-ceo-picks-2-stocks-with-20-25-upside-potential-14065626.html",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Market wrap:  Shriram Finance, Nestle India, Trent, InterGlobe top gainers and losers on Nifty and Sensex on Friday",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-wrap-shriram-finance-nestle-india-trent-interglobe-top-gainers-and-losers-on-nifty-and-sensex-on-friday/articleshow/135357312.cms",
+        "headline": "Broader markets outperform; Ather Energy, Piramal Pharma, Laurus Labs surge over 20% each",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/broader-markets-outperform-ather-energy-piramal-pharma-laurus-labs-surge-over-20-each-14065365.html",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Chartist Talk: Can confident bulls drive Nifty 50 beyond 23,500 next week? Sudeep Shah spots bullish momentum in 2 stocks",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/chartist-talk-can-confident-bulls-drive-nifty-50-beyond-23-500-next-week-sudeep-shah-spots-bullish-momentum-in-2-stocks-14065189.html",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
@@ -1205,17 +1200,43 @@
     ],
     "earnings": [
       {
-        "headline": "8 midcap stocks with over 100% profit growth in Q2FY27",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/8-midcap-stocks-with-over-100-profit-growth-in-q2fy27/slideshow/135358493.cms",
+        "headline": "Daily Voice: Elara's Harendra Kumar sees scope for positive earnings surprises; says telecom merits strategic allocation in long-term portfolios",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-elara-s-harendra-kumar-sees-scope-for-positive-earnings-surprises-says-telecom-merits-strategic-allocation-in-long-term-portfolios-14065190.html",
         "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
       },
       {
-        "headline": "Turnaround Story: 8 stocks shift from loss to profit in September '26 quarter",
+        "headline": "AI spending concerns deepen Wall Street selloff as Big Tech earnings disappoint investors",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/ai-spending-concerns-deepen-wall-street-selloff-as-big-tech-earnings-disappoint-investors-14065179.html",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Reliance Retail says profit margins will improve from next year as its online business investments pay off",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/turnaround-story-8-stocks-shift-from-loss-to-profit-in-september-26-quarter/slideshow/135395511.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/reliance-retail-says-profit-margins-will-improve-from-next-year-as-its-online-business-investments-pay-off/articleshow/135441678.cms",
+        "sentiment": "positive",
+        "stocks": [
+          "RELIANCE"
+        ],
+        "category": "earnings"
+      },
+      {
+        "headline": "IOC, BPCL, HPCL clock Rs 30,106 cr Q2 profit, nearly 39 pc of last year's annual earnings",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ioc-bpcl-hpcl-clock-rs-30106-cr-q2-profit-nearly-39-pc-of-last-years-annual-earnings/articleshow/135420177.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Dalal Street Week Ahead: US midterm elections, jobs data, Q2 earnings, PMI numbers, oil prices among 10 key factors to watch",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/dalal-street-week-ahead-us-midterm-elections-jobs-data-q2-earnings-pmi-numbers-oil-prices-among-10-key-factors-to-watch-14065576.html",
         "sentiment": "neutral",
         "stocks": [],
         "category": "earnings"
@@ -1224,29 +1245,49 @@
     "orders": [],
     "regulatory": [
       {
-        "headline": "Sebi to release FII compliance consultation paper within weeks, says chairman Tuhin Kanta Pandey",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-to-release-fii-compliance-consultation-paper-within-weeks-says-chairman-tuhin-kanta-pandey/articleshow/135400429.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi pushes for resilient capital markets, focuses on investor protection: Chairman",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-pushes-for-resilient-capital-markets-focuses-on-investor-protection-chairman/articleshow/135393379.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sebi issues final order against Axis Capital, imposes regulatory censure; Axis Bank shares fall over 1%",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-issues-final-order-against-axis-capital-imposes-regulatory-censure-axis-bank-shares-fall-over-1/articleshow/135357153.cms",
+        "headline": "Daily Voice: Banks, healthcare or IT? Kotak Life's Kanawala reveals where he sees opportunities for 2027",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-banks-healthcare-or-it-kotak-life-s-kanawala-reveals-where-he-sees-opportunities-for-2027-14065627.html",
         "sentiment": "neutral",
         "stocks": [
-          "AXIS"
+          "KOTAK"
         ],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Stocks to Watch Today: RIL, Maruti Suzuki, EAAA, NTPC, Affle, KIMS, NCC, Jio Platforms, Coal India, Granules, RBM Infracon, Bank of Baroda in focus on 2 November",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/stocks-to-watch-today-ril-maruti-suzuki-eaaa-ntpc-affle-kims-ncc-jio-platforms-coal-india-granules-rbm-infracon-bank-of-baroda-in-focus-on-2-november-14065603.html",
+        "sentiment": "neutral",
+        "stocks": [
+          "COAL",
+          "NTPC",
+          "MARUTI"
+        ],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Sebi bars EKI Energy, MD Manish Dabkara from securities market over financial misrepresentation; imposes penalty",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-bars-eki-energy-md-manish-dabkara-from-securities-market-over-financial-misrepresentation-imposes-penalty-14065166.html",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Banks seek microloan guarantee extension",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/banks-seek-microloan-guarantee-extension/articleshow/135441691.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Banks report 10-50% gains in productivity, turnaround time and costs from AI-led initiatives",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/banks-report-10-50-gains-in-productivity-turnaround-time-and-costs-from-ai-led-initiatives/articleshow/135441609.cms",
+        "sentiment": "positive",
+        "stocks": [],
         "category": "regulatory"
       }
     ],
@@ -1287,7 +1328,7 @@
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-11-01T06:51:47.629475+05:30",
+    "fetched_at": "2026-11-02T07:13:02.112481+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [
       {
@@ -1309,7 +1350,7 @@
         "subscription": "4.67x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "1-Nov 6:02",
+        "source_updated": "1-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/maxwell-engineering-solutions-ipo/1965/"
       },
       {
@@ -1331,7 +1372,7 @@
         "subscription": "1.16x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "1-Nov 6:02",
+        "source_updated": "1-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/hgs-india-ipo/2241/"
       },
       {
@@ -1339,10 +1380,10 @@
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "open",
-        "gmp": 8.5,
-        "gmp_pct": 10.37,
+        "gmp": 9.0,
+        "gmp_pct": 10.98,
         "issue_price": 82.0,
-        "estimated_listing_price": 90.5,
+        "estimated_listing_price": 91.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 3.98x.",
         "issue_size": "\u20b9183.06 Cr",
         "lot_size": 182,
@@ -1353,7 +1394,7 @@
         "subscription": "3.98x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "1-Nov 6:02",
+        "source_updated": "1-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/bombay-coated-and-special-steels-ipo/1936/"
       },
       {
@@ -1375,7 +1416,7 @@
         "subscription": "1.14x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "1-Nov 6:02",
+        "source_updated": "1-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/johnsoncab-electricals-ipo/2371/"
       },
       {
@@ -1397,7 +1438,7 @@
         "subscription": "1.2x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "1-Nov 5:57",
+        "source_updated": "1-Nov 23:31",
         "source_url": "https://www.investorgain.com/gmp/vectras-enprocon-ipo/1998/"
       },
       {
@@ -1419,7 +1460,7 @@
         "subscription": "0.82x",
         "rating": "",
         "anchor_status": "\u274c",
-        "source_updated": "1-Nov 5:56",
+        "source_updated": "1-Nov 23:28",
         "source_url": "https://www.investorgain.com/gmp/antala-industries-ipo/2375/"
       }
     ],
@@ -1429,10 +1470,10 @@
         "exchange": "NSE SME",
         "category": "SME",
         "status": "upcoming",
-        "gmp": 5.0,
-        "gmp_pct": 5.32,
+        "gmp": 15.0,
+        "gmp_pct": 15.96,
         "issue_price": 94.0,
-        "estimated_listing_price": 99.0,
+        "estimated_listing_price": 109.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
         "issue_size": "\u20b956.68 Cr",
         "lot_size": 1200,
@@ -1443,7 +1484,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u274c",
-        "source_updated": "1-Nov 6:02",
+        "source_updated": "1-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/vedant-poly-fabs-ipo/2297/"
       }
     ]
