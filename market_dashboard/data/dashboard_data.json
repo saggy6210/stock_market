@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-10T04:14:41.444670",
+  "timestamp": "2026-11-11T02:04:43.344596",
   "indices": {
     "nifty50": {
       "value": 25044.65,
@@ -32,53 +32,53 @@
       "direction": "negative"
     },
     "dow": {
-      "value": 52389.8,
-      "change": 1104.07,
-      "change_pct": 2.15,
-      "direction": "positive"
+      "value": 52231.89,
+      "change": -157.86,
+      "change_pct": -0.3,
+      "direction": "negative"
     },
     "nasdaq": {
-      "value": 25253.14,
-      "change": 673.71,
-      "change_pct": 2.74,
-      "direction": "positive"
+      "value": 25065.88,
+      "change": -187.27,
+      "change_pct": -0.74,
+      "direction": "negative"
     },
     "usdinr": {
       "value": 93.92,
-      "change": 0.01,
-      "change_pct": 0.02,
-      "direction": "positive"
+      "change": -0.03,
+      "change_pct": -0.03,
+      "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 4120.2,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 4053.4,
+      "change": -61.1,
+      "change_pct": -1.48,
+      "direction": "negative"
     },
     "silver": {
-      "value": 53.0,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 52.27,
+      "change": -0.29,
+      "change_pct": -0.56,
+      "direction": "negative"
     },
     "copper": {
-      "value": 6.34,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 6.3,
+      "change": -0.03,
+      "change_pct": -0.41,
+      "direction": "negative"
     },
     "crude": {
-      "value": 85.9,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "direction": "positive"
+      "value": 86.24,
+      "change": -0.61,
+      "change_pct": -0.7,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.2,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 3.31,
+      "change": 0.09,
+      "change_pct": 2.73,
       "direction": "positive"
     }
   },
@@ -141,9 +141,9 @@
       {
         "symbol": "NBCC",
         "sector": "Industrials",
-        "old_price": 124.83,
-        "current_price": 80.4,
-        "low_52w": 67.02,
+        "old_price": 124.44,
+        "current_price": 80.15,
+        "low_52w": 66.81,
         "fall_pct": -35.59,
         "buy_signal": "Strong Buy"
       },
@@ -195,9 +195,9 @@
       {
         "symbol": "HUDCO",
         "sector": "Financial Services",
-        "old_price": 239.22,
-        "current_price": 169.14,
-        "low_52w": 141.81,
+        "old_price": 237.31,
+        "current_price": 167.79,
+        "low_52w": 140.68,
         "fall_pct": -29.29,
         "buy_signal": "Buy"
       },
@@ -278,9 +278,9 @@
       {
         "symbol": "NBCC",
         "sector": "Industrials",
-        "old_price": 124.83,
-        "current_price": 80.4,
-        "low_52w": 67.02,
+        "old_price": 124.44,
+        "current_price": 80.15,
+        "low_52w": 66.81,
         "fall_pct": -35.59,
         "buy_signal": "Strong Buy"
       },
@@ -332,9 +332,9 @@
       {
         "symbol": "HUDCO",
         "sector": "Financial Services",
-        "old_price": 239.22,
-        "current_price": 169.14,
-        "low_52w": 141.81,
+        "old_price": 237.31,
+        "current_price": 167.79,
+        "low_52w": 140.68,
         "fall_pct": -29.29,
         "buy_signal": "Buy"
       },
@@ -469,9 +469,9 @@
       {
         "symbol": "HUDCO",
         "sector": "Financial Services",
-        "old_price": 239.22,
-        "current_price": 169.14,
-        "low_52w": 141.81,
+        "old_price": 237.31,
+        "current_price": 167.79,
+        "low_52w": 140.68,
         "fall_pct": -29.29,
         "buy_signal": "Buy"
       },
@@ -1065,17 +1065,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "10 Nov 2026",
+        "date": "11 Nov 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "09 Nov 2026",
+        "date": "10 Nov 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "08 Nov 2026",
+        "date": "09 Nov 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1090,19 +1090,19 @@
     }
   },
   "market_outlook": {
-    "sentiment": "BULLISH",
-    "badge_class": "bullish",
-    "summary": "\ud83c\udf0f US markets positive: Dow +2.1%, NASDAQ +2.7%",
+    "sentiment": "NEUTRAL",
+    "badge_class": "neutral",
+    "summary": "\ud83d\udcca Markets trading sideways with mixed global cues",
     "vix": {
       "value": 17.42,
       "change_pct": -0.29
     },
     "crude": {
-      "value": 85.9,
-      "change_pct": 0.0
+      "value": 86.24,
+      "change_pct": -0.7
     },
     "reasons": [
-      "\ud83c\udf0f US markets positive: Dow +2.1%, NASDAQ +2.7%"
+      "\ud83d\udcca Markets trading sideways with mixed global cues"
     ],
     "factors": [
       {
@@ -1113,24 +1113,24 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $85.90",
-        "sublabel": "+0.0%",
-        "status": "negative"
+        "label": "Crude $86.24",
+        "sublabel": "-0.7%",
+        "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow +2.1%",
+        "label": "Dow -0.3%",
         "sublabel": "US Markets",
-        "status": "positive"
+        "status": "negative"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ +2.7%",
+        "label": "NASDAQ -0.7%",
         "sublabel": "Tech Sentiment",
-        "status": "positive"
+        "status": "negative"
       }
     ],
-    "score": 4
+    "score": 2
   },
   "predictions": [
     {
@@ -1139,9 +1139,9 @@
       "reason": "Lower crude costs benefit refining; Jio/retail growth"
     },
     {
-      "symbol": "INFY",
-      "direction": "UP",
-      "reason": "NASDAQ +2.7%, positive for IT sentiment"
+      "symbol": "TCS",
+      "direction": "DOWN",
+      "reason": "Tech sector weakness affects sentiment"
     },
     {
       "symbol": "HDFCBANK",
@@ -1157,41 +1157,41 @@
   "news": {
     "top_stories": [
       {
-        "headline": "Uno Minda among 7 stocks hitting 52-week highs; rally up to 26% in a month",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/uno-minda-among-7-stocks-hitting-52-week-highs-rally-up-to-26-in-a-month/slideshow/135681703.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "India VIX jumps 68% in three weeks despite 7% rally in Sensex, Nifty",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/india-vix-jumps-68-despite-7-rally-in-sensex-nifty/articleshow/135695931.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "South Korean stocks jump as chipmakers roar back on dip buying",
+        "headline": "US stocks, bonds fall as CPI data fuel Fed-hike bets",
         "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/south-korean-stocks-jump-as-chipmakers-roar-back-on-dip-buying-14075829.html",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "S&P 500 rallies most since April as oil drop lures back buyers",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/s-p-500-rallies-most-since-april-as-oil-drop-lures-back-buyers-14075820.html",
+        "url": "https://www.moneycontrol.com/news/business/markets/us-stocks-bonds-fall-as-cpi-data-fuel-fed-hike-bets-14076482.html",
         "sentiment": "negative",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "These large-caps have \u2018strong buy\u2019 & \u2018buy\u2019 recos and an upside potential of over 25%",
+        "headline": "Nvidia heads for $470 billion two-day wipeout as CEO affair fallout deepens",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/artificial-intelligence/nvidia-heads-for-400-billion-two-day-wipeout-as-ceo-affair-fallout-deepens-article-14076455.html",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Brent crude falls below $90 on Iran war de-escalation optimism",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/brent-crude-falls-below-90-on-iran-war-de-escalation-optimism-14076241.html",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Time to shed fear and think positive? 5 mid-cap stocks from different sectors with upside potential of up to 33%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-large-caps-have-strong-buy-buy-recos-and-an-upside-potential-of-over-25/articleshow/135695910.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/time-to-shed-fear-and-think-positive-5-mid-cap-stocks-from-different-sectors-with-upside-potential-of-up-to-33/articleshow/135721842.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Dividend alert! MRF announces Rs 3/share interim dividend. Check record date",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/dividendalert-mrfannouncesrs3/shareinterimdividend-checkrecorddate/articleshow/135707505.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
@@ -1199,90 +1199,110 @@
     ],
     "earnings": [
       {
-        "headline": "Gland Pharma shares rally 8% to hit 4-year-high post strong Q2; what brokerages say, check target prices",
+        "headline": "MRF Q2 net profit falls 28% to Rs 369 crore on higher raw material costs; revenue rises 18%",
         "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/gland-pharma-shares-rally-8-to-hit-4-year-high-post-strong-q2-what-brokerages-say-check-target-prices-14075696.html",
+        "url": "https://www.moneycontrol.com/news/business/earnings/mrf-q2-net-profit-falls-28pc-to-rs-369-crore-on-higher-raw-material-costs-revenue-rises-18pc-14076126.html",
         "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
       },
       {
-        "headline": "HSBC upgrades Indian stocks to \u2018overweight\u2019, downgrades China to \u2018neutral\u2019 amid improving earnings outlook",
+        "headline": "Kalyan Jewellers Q2 net profit jumps 64% to Rs 427 crore",
         "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/hsbc-upgrades-indian-stocks-to-overweight-downgrades-china-to-neutral-14075534.html",
-        "sentiment": "negative",
+        "url": "https://www.moneycontrol.com/news/business/earnings/kalyan-jewellers-q2-net-profit-jumps-64-to-rs-427-crore-14076429.html",
+        "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
       },
       {
-        "headline": "Tata Steel shares down 3% post-Q2 results, brokerages cautious about UK operations' growth",
+        "headline": "Cochin Shipyard Q2 net profit halves to Rs 54 crore; declares dividend",
         "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/tata-steel-shares-down-3-post-q2-results-brokerages-cautious-about-uk-operations-growth-14075524.html",
+        "url": "https://www.moneycontrol.com/news/business/markets/cochin-shipyard-q2-net-profit-halves-to-rs-54-crore-declares-dividend-14076175.html",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Manyavar maker Vedant Fashions struggles to revive growth as same-store sales drop 5.8% in Q2",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/manyavar-maker-vedant-fashions-struggles-to-revive-growth-as-same-store-sales-drop-5-8-in-q2/articleshow/135722233.cms",
         "sentiment": "neutral",
-        "stocks": [
-          "TATA"
-        ],
+        "stocks": [],
         "category": "earnings"
       }
     ],
     "orders": [],
     "regulatory": [
       {
-        "headline": "Daily Voice: Double-digit equity returns possible by end of Samvat 2083? Nimesh Chandan bets on private sector banks, internet platforms",
+        "headline": "India's 11% dollar-growth pitch could draw FPIs back, but tax U-turn risks spoiling the party, says Samir Arora",
         "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-double-digit-equity-returns-possible-by-end-of-samvat-2083-nimesh-chandan-bets-on-private-sector-banks-internet-platforms-14075900.html",
-        "sentiment": "neutral",
+        "url": "https://www.moneycontrol.com/news/business/markets/india-s-11-dollar-growth-pitch-could-draw-fpis-back-but-tax-u-turn-risks-spoiling-the-party-says-samir-arora-14076517.html",
+        "sentiment": "positive",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Norwest Venture Partners and Kedaara Capital-backed Veritas Finance IPO gets SEBI nod",
+        "headline": "Budget 2027: PHDCCI seeks scrapping of LTCG tax on equities, cut in STCG rate to 10%",
         "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/ipo/norwest-venture-partners-and-kedaara-capital-backed-veritas-finance-ipo-gets-sebi-nod-14075645.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Technical View: Nifty 50 must cross 25,200 to resume uptrend, until then range-bound trading may continue; Bank Nifty faces crucial resistance at 60,400",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/technical-view-nifty-50-must-cross-25-200-to-resume-uptrend-until-then-range-bound-trading-may-continue-bank-nifty-faces-crucial-resistance-at-60-400-14075563.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "SAT upholds SEBI fraud findings against former Ricoh India CEO Takano, cuts penalty to Rs 10 lakh",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/sat-upholds-sebi-fraud-findings-against-former-ricoh-india-ceo-takano-cuts-penalty-to-rs-10-lakh-14075566.html",
+        "url": "https://www.moneycontrol.com/budget/budget-2027-phdcci-seeks-scrapping-of-ltcg-tax-on-equities-cut-in-stcg-rate-to-10-article-14076351.html",
         "sentiment": "negative",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "LIC wants to become financial conglomerate, open to banking opportunities if rules change: CEO",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/videos/business/markets/lic-wants-to-become-financial-conglomerate-open-to-banking-opportunities-if-rules-change-ceo-14075552.html",
+        "headline": "These 7 private and public banking stocks have an upside of up to 20% in one year, according to analyst",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-7-private-and-public-banking-stocks-have-an-upside-of-up-to-20-in-one-year-according-to-analyst/articleshow/135722081.cms",
         "sentiment": "neutral",
         "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Two Trades for Today: Two large-cap PSU banks, one for a gain of 7.6%, and the other for a 6% rise",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-two-large-cap-psu-banks-one-for-a-gain-of-7-6-and-the-other-for-a-6-rise/articleshow/135707750.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Jefferies sees largecaps benefiting from FPI revival; Reliance, HDFC Bank, Axis Bank among potential beneficiaries",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-sees-large-caps-benefiting-from-fpi-revival-reliance-hdfc-bank-axis-bank-among-potential-beneficiaries/articleshow/135706815.cms",
+        "sentiment": "neutral",
+        "stocks": [
+          "HDFC",
+          "RELIANCE",
+          "AXIS"
+        ],
         "category": "regulatory"
       }
     ],
     "insider": [
       {
-        "headline": "Goldman Sachs pares stake in MK Sons Fine Jewels through bulk deal",
+        "headline": "Blackstone leads Rs 6,414-crore fundraise in IIFL Finance, to acquire 16% stake",
         "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/goldman-sachs-pares-stake-in-mk-sons-fine-jewels-through-bulk-deal-14075805.html",
+        "url": "https://www.moneycontrol.com/news/business/companies/blackstone-iifl-finance-promoters-to-invest-rs-6-414-crore-in-nbfc-14076344.html",
         "sentiment": "neutral",
         "stocks": [],
         "category": "insider"
       },
       {
-        "headline": "FIIs cut stake in 10 smallcap stocks for 3 consecutive quarters; shares fall up to 70% in CY26",
+        "headline": "Blackstone to invest Rs 5,000 crore in IIFL Finance for 16% stake as company raises Rs 6,414 crore",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fiis-cut-stake-in-10-smallcap-stocks-for-3-consecutive-quarters-shares-fall-up-to-70-in-cy26/slideshow/135680171.cms",
-        "sentiment": "negative",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/blackstone-to-invest-rs-5000-crore-in-iifl-finance-for-16-stake-as-company-raises-rs-6414-crore/articleshow/135721960.cms",
+        "sentiment": "neutral",
         "stocks": [],
+        "category": "insider"
+      },
+      {
+        "headline": "Bajaj Finance issues 5.74 crore warrants to promoter for Rs 5,799 crore",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-issues-5-74-crore-warrants-to-promoter-for-rs-5799-crore/articleshow/135708439.cms",
+        "sentiment": "neutral",
+        "stocks": [
+          "BAJAJ"
+        ],
         "category": "insider"
       }
     ],
@@ -1322,7 +1342,7 @@
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-11-10T09:45:00.788987+05:30",
+    "fetched_at": "2026-11-11T07:35:10.348897+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [],
     "upcoming": []
