@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-14T02:36:48.004694",
+  "timestamp": "2026-11-15T02:02:22.035165",
   "indices": {
     "nifty50": {
       "value": 25144.3,
@@ -44,41 +44,41 @@
       "direction": "negative"
     },
     "usdinr": {
-      "value": 94.03,
-      "change": 0.34,
-      "change_pct": 0.36,
+      "value": 94.24,
+      "change": 0.21,
+      "change_pct": 0.22,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 3887.6,
-      "change": 2.3,
-      "change_pct": 0.06,
+      "value": 3886.3,
+      "change": 1.0,
+      "change_pct": 0.03,
       "direction": "positive"
     },
     "silver": {
-      "value": 48.65,
-      "change": -1.32,
-      "change_pct": -2.65,
+      "value": 49.03,
+      "change": -0.94,
+      "change_pct": -1.88,
       "direction": "negative"
     },
     "copper": {
-      "value": 6.06,
-      "change": -0.12,
-      "change_pct": -1.92,
+      "value": 6.08,
+      "change": -0.1,
+      "change_pct": -1.67,
       "direction": "negative"
     },
     "crude": {
-      "value": 88.92,
-      "change": 0.18,
-      "change_pct": 0.2,
-      "direction": "positive"
+      "value": 88.56,
+      "change": -0.18,
+      "change_pct": -0.2,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.24,
-      "change": -0.1,
-      "change_pct": -2.93,
+      "value": 3.23,
+      "change": -0.11,
+      "change_pct": -3.29,
       "direction": "negative"
     }
   },
@@ -193,6 +193,15 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "HUDCO",
+        "sector": "Financial Services",
+        "old_price": 237.31,
+        "current_price": 167.6,
+        "low_52w": 140.68,
+        "fall_pct": -29.37,
+        "buy_signal": "Buy"
+      },
+      {
         "symbol": "NCC",
         "sector": "Industrials",
         "old_price": 184.95,
@@ -253,15 +262,6 @@
         "current_price": 302.0,
         "low_52w": 266.6,
         "fall_pct": -22.89,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "IOC",
-        "sector": "Energy",
-        "old_price": 184.96,
-        "current_price": 144.04,
-        "low_52w": 124.92,
-        "fall_pct": -22.12,
         "buy_signal": "Buy"
       }
     ],
@@ -330,6 +330,15 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "HUDCO",
+        "sector": "Financial Services",
+        "old_price": 237.31,
+        "current_price": 167.6,
+        "low_52w": 140.68,
+        "fall_pct": -29.37,
+        "buy_signal": "Buy"
+      },
+      {
         "symbol": "NCC",
         "sector": "Industrials",
         "old_price": 184.95,
@@ -435,15 +444,6 @@
         "current_price": 301.85,
         "low_52w": 280.3,
         "fall_pct": -19.9,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "HDFCBANK",
-        "sector": "Financial Services",
-        "old_price": 1000.94,
-        "current_price": 804.0,
-        "low_52w": 669.2,
-        "fall_pct": -19.68,
         "buy_signal": "Hold"
       }
     ],
@@ -467,6 +467,15 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "HUDCO",
+        "sector": "Financial Services",
+        "old_price": 237.31,
+        "current_price": 167.6,
+        "low_52w": 140.68,
+        "fall_pct": -29.37,
+        "buy_signal": "Buy"
+      },
+      {
         "symbol": "NCC",
         "sector": "Industrials",
         "old_price": 184.95,
@@ -611,25 +620,25 @@
         "buy_signal": "Hold"
       },
       {
-        "symbol": "RELIANCE",
-        "sector": "Energy",
-        "old_price": 1604.38,
-        "current_price": 1339.7,
-        "low_52w": 1152.2,
-        "fall_pct": -16.5,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "MPHASIS",
-        "sector": "Technology",
-        "old_price": 2897.32,
-        "current_price": 2455.0,
-        "low_52w": 1960.44,
-        "fall_pct": -15.27,
+        "symbol": "DELHIVERY",
+        "sector": "Industrials",
+        "old_price": 524.0,
+        "current_price": 436.3,
+        "low_52w": 364.65,
+        "fall_pct": -16.74,
         "buy_signal": "Hold"
       }
     ],
     "jan25": [
+      {
+        "symbol": "WIPRO",
+        "sector": "Technology",
+        "old_price": 263.22,
+        "current_price": 194.6,
+        "low_52w": 156.79,
+        "fall_pct": -26.07,
+        "buy_signal": "Buy"
+      },
       {
         "symbol": "MARUTI",
         "sector": "Consumer Cyclical",
@@ -745,6 +754,15 @@
         "current_price": 205.67,
         "low_52w": 128.1,
         "fall_pct": -19.09,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "DELHIVERY",
+        "sector": "Industrials",
+        "old_price": 524.0,
+        "current_price": 436.3,
+        "low_52w": 364.65,
+        "fall_pct": -16.74,
         "buy_signal": "Hold"
       },
       {
@@ -790,24 +808,6 @@
         "current_price": 75.83,
         "low_52w": 68.79,
         "fall_pct": -12.43,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "BSE",
-        "sector": "Financial Services",
-        "old_price": 4435.12,
-        "current_price": 3937.7,
-        "low_52w": 2523.35,
-        "fall_pct": -11.22,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "SBIN",
-        "sector": "Financial Services",
-        "old_price": 1212.84,
-        "current_price": 1080.0,
-        "low_52w": 927.73,
-        "fall_pct": -10.95,
         "buy_signal": "Hold"
       }
     ]
@@ -1065,17 +1065,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "14 Nov 2026",
+        "date": "15 Nov 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "13 Nov 2026",
+        "date": "14 Nov 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "12 Nov 2026",
+        "date": "13 Nov 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1098,8 +1098,8 @@
       "change_pct": -6.74
     },
     "crude": {
-      "value": 88.92,
-      "change_pct": 0.2
+      "value": 88.56,
+      "change_pct": -0.2
     },
     "reasons": [
       "\ud83d\udcc9 VIX down 6.7% indicating declining volatility/fear"
@@ -1113,9 +1113,9 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $88.92",
-        "sublabel": "+0.2%",
-        "status": "negative"
+        "label": "Crude $88.56",
+        "sublabel": "-0.2%",
+        "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
@@ -1130,7 +1130,7 @@
         "status": "negative"
       }
     ],
-    "score": 1
+    "score": 2
   },
   "predictions": [
     {
@@ -1157,9 +1157,9 @@
   "news": {
     "top_stories": [
       {
-        "headline": "NSE shares cross Rs 2,000 mark for first time, jump 22% from record low in less than a month. More upside ahead?",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nse-shares-cross-rs-2000-mark-for-first-time-jump-22-from-record-low-in-less-than-a-month-more-upside-ahead/articleshow/135794955.cms",
+        "headline": "FPIs pump over Rs 76,000 crore into equities in November so far, monthly record in sight",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/fpis-pump-over-rs-76-000-crore-into-equities-in-november-so-far-monthly-record-in-sight-14080181.html",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
@@ -1181,17 +1181,17 @@
         "category": "general"
       },
       {
-        "headline": "IRDAI may modify draft distribution paper, reports CNBC-TV18; PB Fintech shares rise nearly 5%",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/irdai-may-modify-draft-distribution-paper-reports-cnbc-tv18-pb-fintech-shares-rise-nearly-5-14079551.html",
+        "headline": "Concurrent Gainers: 8 stocks gain for 5 days in a row",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-8-stocks-gain-for-5-days-in-a-row/slideshow/135828499.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Mutlibaggers: 7 stocks held by 100+ MF schemes in October rally up to 300% in FY27",
+        "headline": "General insurers clock 10.5% premium growth in October",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mutlibaggers-7-stocks-held-by-100-mf-schemes-in-october-rally-up-to-300-in-fy27/slideshow/135802136.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/general-insurers-clock-10-5-premium-growth-in-october/articleshow/135821007.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
@@ -1199,18 +1199,10 @@
     ],
     "earnings": [
       {
-        "headline": "Q2 results impact: FACT shares jump 3% as net profit rises 88% YoY",
+        "headline": "Commodity markets eye Fed signals, Nvidia earnings and Iran risks",
         "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-fact-shares-jump-3-as-net-profit-rises-88-yoy-14079398.html",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "earnings"
-      },
-      {
-        "headline": "Black Box sees data centre revenue share rising to 30%, explores acquisitions amid strong AI demand",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/black-box-sees-data-centre-revenue-share-rising-to-30-explores-acquisitions-amid-strong-ai-demand-14079399.html",
-        "sentiment": "positive",
+        "url": "https://www.moneycontrol.com/news/opinion/commodity-markets-eye-fed-signals-nvidia-earnings-and-iran-risks-14080281.html",
+        "sentiment": "neutral",
         "stocks": [],
         "category": "earnings"
       },
@@ -1221,26 +1213,26 @@
         "sentiment": "neutral",
         "stocks": [],
         "category": "earnings"
-      },
-      {
-        "headline": "Q2 results impact: Turtlemint shares hit 5% upper circuit as it expects revenue to grow 40% in FY7; Motilal sees 23% upside",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/q2-results-impact-turtlemint-shares-hit-5-upper-circuit-as-it-expects-revenue-to-grow-40-in-fy7-motilal-sees-23-upside-14079286.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "earnings"
-      },
-      {
-        "headline": "AI relief fails to lift legacy IT stocks as earnings worries weigh",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ai-relief-fails-to-lift-legacy-it-stocks-as-earnings-worries-weigh/articleshow/135820139.cms",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "earnings"
       }
     ],
     "orders": [],
     "regulatory": [
+      {
+        "headline": "Take time to understand products, weigh risks before investing: SEBI chief",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/take-time-to-understand-products-weigh-risks-before-investing-sebi-chief-14080244.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Daily Voice: RBI rate hike in December cannot be ruled out, says Nine Rivers Capital founder",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-rbi-rate-hike-in-december-cannot-be-ruled-out-says-nine-rivers-capital-founder-14079850.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
       {
         "headline": "BCAS urges SEBI to allow CA firms to monitor fund use in smaller issues",
         "source": "MoneyControl",
@@ -1261,22 +1253,6 @@
         "headline": "Sembcorp Green Infra, Razorpay, MakeMyTrip get SEBI nod for IPOs",
         "source": "MoneyControl",
         "url": "https://www.moneycontrol.com/news/business/ipo/sembcorp-green-infra-razorpay-makemytrip-get-sebi-nod-for-ipos-14079725.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Crystal Crop Protection IPO GMP at 17% ahead of issue opening on November 18; check issue size, price band and key details here",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/ipo/crystal-crop-protection-ipo-gmp-at-17-ahead-of-issue-opening-on-november-18-check-issue-size-price-band-and-key-details-here-14079687.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Paytm shares reclaim listing price for first time in five years; RBI nod for wallet business boosts sentiment",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/paytm-shares-reclaim-listing-price-for-first-time-in-five-years-rbi-nod-for-wallet-business-boosts-sentiment-14079592.html",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
@@ -1319,7 +1295,7 @@
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-11-14T08:07:15.399967+05:30",
+    "fetched_at": "2026-11-15T07:32:42.738992+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [],
     "upcoming": [
@@ -1328,10 +1304,10 @@
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "upcoming",
-        "gmp": 40.0,
-        "gmp_pct": 14.71,
+        "gmp": 27.0,
+        "gmp_pct": 9.93,
         "issue_price": 272.0,
-        "estimated_listing_price": 312.0,
+        "estimated_listing_price": 299.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
         "issue_size": "\u20b9455.49 Cr",
         "lot_size": 55,
@@ -1342,7 +1318,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "13-Nov 23:37",
+        "source_updated": "15-Nov 6:37",
         "source_url": "https://www.investorgain.com/gmp/crystal-crop-protection-ipo/2067/"
       },
       {
@@ -1350,10 +1326,10 @@
         "exchange": "NSE SME",
         "category": "SME",
         "status": "upcoming",
-        "gmp": 16.0,
-        "gmp_pct": 6.53,
+        "gmp": 22.0,
+        "gmp_pct": 8.98,
         "issue_price": 245.0,
-        "estimated_listing_price": 261.0,
+        "estimated_listing_price": 267.0,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
         "issue_size": "\u20b9120.10 Cr",
         "lot_size": 600,
@@ -1364,8 +1340,30 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "13-Nov 23:37",
+        "source_updated": "15-Nov 6:37",
         "source_url": "https://www.investorgain.com/gmp/watrana-rentals-ipo/1818/"
+      },
+      {
+        "name": "Mahanadi Coalfields",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "upcoming",
+        "gmp": null,
+        "gmp_pct": null,
+        "issue_price": 0.0,
+        "estimated_listing_price": null,
+        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
+        "issue_size": "-",
+        "lot_size": null,
+        "open_date": "2026-11-19",
+        "close_date": "2026-11-23",
+        "allotment_date": "2026-11-25",
+        "listing_date": "2026-11-27",
+        "subscription": "-",
+        "rating": "",
+        "anchor_status": "\u2705",
+        "source_updated": "15-Nov 6:37",
+        "source_url": "https://www.investorgain.com/gmp/mahanadi-coalfields-ipo/2401/"
       }
     ]
   }
