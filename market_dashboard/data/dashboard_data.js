@@ -1,6 +1,6 @@
-// Auto-generated on 2026-11-15T02:02:42.938171
+// Auto-generated on 2026-11-16T02:19:55.757403
 const DASHBOARD_DATA = {
-  "timestamp": "2026-11-15T02:02:22.035165",
+  "timestamp": "2026-11-16T02:19:08.200829",
   "indices": {
     "nifty50": {
       "value": 25144.3,
@@ -45,41 +45,41 @@ const DASHBOARD_DATA = {
       "direction": "negative"
     },
     "usdinr": {
-      "value": 94.24,
-      "change": 0.21,
-      "change_pct": 0.22,
+      "value": 94.23,
+      "change": 0.2,
+      "change_pct": 0.21,
       "direction": "positive"
     }
   },
   "commodities": {
     "gold": {
-      "value": 3886.3,
-      "change": 1.0,
-      "change_pct": 0.03,
-      "direction": "positive"
+      "value": 3885.8,
+      "change": -0.5,
+      "change_pct": -0.01,
+      "direction": "negative"
     },
     "silver": {
-      "value": 49.03,
-      "change": -0.94,
-      "change_pct": -1.88,
+      "value": 47.81,
+      "change": -1.22,
+      "change_pct": -2.48,
       "direction": "negative"
     },
     "copper": {
-      "value": 6.08,
-      "change": -0.1,
-      "change_pct": -1.67,
+      "value": 6.05,
+      "change": -0.03,
+      "change_pct": -0.54,
       "direction": "negative"
     },
     "crude": {
-      "value": 88.56,
-      "change": -0.18,
-      "change_pct": -0.2,
+      "value": 88.22,
+      "change": -0.34,
+      "change_pct": -0.38,
       "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.23,
-      "change": -0.11,
-      "change_pct": -3.29,
+      "value": 3.16,
+      "change": -0.07,
+      "change_pct": -2.29,
       "direction": "negative"
     }
   },
@@ -142,9 +142,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
-        "old_price": 1840.73,
-        "current_price": 1178.0,
-        "low_52w": 1101.2,
+        "old_price": 1836.04,
+        "current_price": 1175.0,
+        "low_52w": 1098.4,
         "fall_pct": -36.0,
         "buy_signal": "Hold"
       },
@@ -279,9 +279,9 @@ const DASHBOARD_DATA = {
       {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
-        "old_price": 1840.73,
-        "current_price": 1178.0,
-        "low_52w": 1101.2,
+        "old_price": 1836.04,
+        "current_price": 1175.0,
+        "low_52w": 1098.4,
         "fall_pct": -36.0,
         "buy_signal": "Hold"
       },
@@ -1066,17 +1066,17 @@ const DASHBOARD_DATA = {
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "15 Nov 2026",
+        "date": "16 Nov 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "14 Nov 2026",
+        "date": "15 Nov 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "13 Nov 2026",
+        "date": "14 Nov 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1099,8 +1099,8 @@ const DASHBOARD_DATA = {
       "change_pct": -6.74
     },
     "crude": {
-      "value": 88.56,
-      "change_pct": -0.2
+      "value": 88.22,
+      "change_pct": -0.38
     },
     "reasons": [
       "\ud83d\udcc9 VIX down 6.7% indicating declining volatility/fear"
@@ -1114,8 +1114,8 @@ const DASHBOARD_DATA = {
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $88.56",
-        "sublabel": "-0.2%",
+        "label": "Crude $88.22",
+        "sublabel": "-0.4%",
         "status": "positive"
       },
       {
@@ -1158,6 +1158,22 @@ const DASHBOARD_DATA = {
   "news": {
     "top_stories": [
       {
+        "headline": "D-Street poised for positive start as GIFT Nifty signals gains",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/pre-market-action-heres-the-trade-setup-for-todays-session/articleshow/135864093.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Daily Voice: Nifty no longer cheap after 14% rally? Green Portfolio CIO flags 3 risks, names 4 sectors to watch",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-nifty-no-longer-cheap-after-14-rally-green-portfolio-cio-flags-3-risks-names-4-sectors-to-watch-14080311.html",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
         "headline": "FPIs pump over Rs 76,000 crore into equities in November so far, monthly record in sight",
         "source": "MoneyControl",
         "url": "https://www.moneycontrol.com/news/business/markets/fpis-pump-over-rs-76-000-crore-into-equities-in-november-so-far-monthly-record-in-sight-14080181.html",
@@ -1166,39 +1182,41 @@ const DASHBOARD_DATA = {
         "category": "general"
       },
       {
-        "headline": "AMD tumbles 10%, Nvidia falls 4%: But who's winning the 5-day chip race?",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/amd-tumbles-10-nvidia-falls-4-but-who-s-winning-the-5-day-chip-race-14079828.html",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Microsoft shares fall 2.5% as massive outage disrupts Outlook, Teams, AI services worldwide",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/microsoft-shares-fall-2-5-as-massive-outage-disrupts-outlook-teams-ai-services-worldwide-14079664.html",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Concurrent Gainers: 8 stocks gain for 5 days in a row",
+        "headline": "FPI buying hits 5-year high in November. What's driving the $7.5 billion inflow?",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-8-stocks-gain-for-5-days-in-a-row/slideshow/135828499.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fpis-return-with-a-bang-november-inflows-hit-five-year-high-at-7-5-billion/articleshow/135868833.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "General insurers clock 10.5% premium growth in October",
+        "headline": "Stocks in news: Tata Motors PV, Eicher Motors, Belrise Industries and Patanjali Foods",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/general-insurers-clock-10-5-premium-growth-in-october/articleshow/135821007.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stocks-in-news-tata-motors-pv-eicher-motors-belrise-industries-and-patanjali-foods/articleshow/135863309.cms",
         "sentiment": "positive",
-        "stocks": [],
+        "stocks": [
+          "TATA"
+        ],
         "category": "general"
       }
     ],
     "earnings": [
+      {
+        "headline": "Trading Plan: Can Nifty 50, Bank Nifty rebound after profit booking?",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/trading-plan-can-nifty-50-bank-nifty-rebound-after-profit-booking-14080723.html",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "ET Poll: India growth seen at 7.7% in Q2; on track for 7.3% in FY2",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/et-poll-india-growth-seen-at-7-7-in-q2-on-track-for-7-3-in-fy2/articleshow/135869322.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
       {
         "headline": "Commodity markets eye Fed signals, Nvidia earnings and Iran risks",
         "source": "MoneyControl",
@@ -1206,18 +1224,26 @@ const DASHBOARD_DATA = {
         "sentiment": "neutral",
         "stocks": [],
         "category": "earnings"
-      },
-      {
-        "headline": "Technical View: Nifty 50 break below 25,000 may extend profit booking; Bearish Harami confirmation next week may intensify Bank Nifty selling",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/technical-view-nifty-50-break-below-25-000-may-extend-profit-booking-bearish-harami-confirmation-next-week-may-intensify-bank-nifty-selling-14079630.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "earnings"
       }
     ],
     "orders": [],
     "regulatory": [
+      {
+        "headline": "SEBI to issue AI usage guidelines for capital markets, focus on investor protection: Chairman",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-to-issue-ai-usage-guidelines-for-capital-markets-focus-on-investor-protection-chairman-14080601.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Daily Voice: Nifty could end 2026 at all-time high as market rally broadens, says Abhishek Banerjee",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-nifty-could-end-2026-at-all-time-high-as-market-rally-broadens-says-abhishek-banerjee-14080258.html",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "regulatory"
+      },
       {
         "headline": "Take time to understand products, weigh risks before investing: SEBI chief",
         "source": "MoneyControl",
@@ -1235,25 +1261,9 @@ const DASHBOARD_DATA = {
         "category": "regulatory"
       },
       {
-        "headline": "BCAS urges SEBI to allow CA firms to monitor fund use in smaller issues",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/bcas-urges-sebi-to-allow-ca-firms-to-monitor-fund-use-in-smaller-issues-14079839.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "SoftBank sells 1.65% stake in Meesho for Rs 1,885 crore; Fidelity, Societe Generale among 16 buyers",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/softbank-sells-1-65-stake-in-meesho-for-rs-1-885-crore-fidelity-societe-generale-among-16-buyers-14079735.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Sembcorp Green Infra, Razorpay, MakeMyTrip get SEBI nod for IPOs",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/ipo/sembcorp-green-infra-razorpay-makemytrip-get-sebi-nod-for-ipos-14079725.html",
+        "headline": "Sun Pharma eyes $4 billion loan for Organon buy, five banks likely to anchor refinancing",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sun-pharma-eyes-4-billion-loan-for-organon-buy-five-banks-likely-to-anchor-refinancing/articleshow/135869340.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
@@ -1296,32 +1306,10 @@ const DASHBOARD_DATA = {
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-11-15T07:32:42.738992+05:30",
+    "fetched_at": "2026-11-16T07:49:55.409628+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [],
     "upcoming": [
-      {
-        "name": "Crystal Crop Protection",
-        "exchange": "IPO",
-        "category": "Mainboard",
-        "status": "upcoming",
-        "gmp": 27.0,
-        "gmp_pct": 9.93,
-        "issue_price": 272.0,
-        "estimated_listing_price": 299.0,
-        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
-        "issue_size": "\u20b9455.49 Cr",
-        "lot_size": 55,
-        "open_date": "2026-11-18",
-        "close_date": "2026-11-20",
-        "allotment_date": "2026-11-23",
-        "listing_date": "2026-11-26",
-        "subscription": "-",
-        "rating": "",
-        "anchor_status": "\u2705",
-        "source_updated": "15-Nov 6:37",
-        "source_url": "https://www.investorgain.com/gmp/crystal-crop-protection-ipo/2067/"
-      },
       {
         "name": "Watrana Rentals",
         "exchange": "NSE SME",
@@ -1341,8 +1329,30 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "15-Nov 6:37",
+        "source_updated": "15-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/watrana-rentals-ipo/1818/"
+      },
+      {
+        "name": "Crystal Crop Protection",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "upcoming",
+        "gmp": 15.0,
+        "gmp_pct": 5.51,
+        "issue_price": 272.0,
+        "estimated_listing_price": 287.0,
+        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast.",
+        "issue_size": "\u20b9455.49 Cr",
+        "lot_size": 55,
+        "open_date": "2026-11-18",
+        "close_date": "2026-11-20",
+        "allotment_date": "2026-11-23",
+        "listing_date": "2026-11-26",
+        "subscription": "-",
+        "rating": "",
+        "anchor_status": "\u2705",
+        "source_updated": "15-Nov 23:37",
+        "source_url": "https://www.investorgain.com/gmp/crystal-crop-protection-ipo/2067/"
       },
       {
         "name": "Mahanadi Coalfields",
@@ -1363,7 +1373,7 @@ const DASHBOARD_DATA = {
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "15-Nov 6:37",
+        "source_updated": "15-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/mahanadi-coalfields-ipo/2401/"
       }
     ]
