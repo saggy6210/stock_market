@@ -1,85 +1,85 @@
 {
-  "timestamp": "2026-11-20T03:39:24.224087",
+  "timestamp": "2026-11-21T03:21:14.853110",
   "indices": {
     "nifty50": {
-      "value": 25368.0,
-      "change": -146.3,
-      "change_pct": -0.57,
-      "direction": "negative"
+      "value": 25800.6,
+      "change": 286.3,
+      "change_pct": 1.12,
+      "direction": "positive"
     },
     "sensex": {
-      "value": 83021.75,
-      "change": 989.94,
-      "change_pct": 1.21,
+      "value": 83919.71,
+      "change": 897.96,
+      "change_pct": 1.08,
       "direction": "positive"
     },
     "niftybank": {
-      "value": 62656.65,
-      "change": -406.35,
-      "change_pct": -0.64,
-      "direction": "negative"
+      "value": 64635.2,
+      "change": 1572.2,
+      "change_pct": 2.49,
+      "direction": "positive"
     },
     "niftyit": {
-      "value": 30763.95,
-      "change": -155.5,
-      "change_pct": -0.5,
-      "direction": "negative"
+      "value": 31322.65,
+      "change": 403.2,
+      "change_pct": 1.3,
+      "direction": "positive"
     },
     "vix": {
-      "value": 15.57,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 17.32,
+      "change": 1.21,
+      "change_pct": 7.51,
       "direction": "positive"
     },
     "dow": {
-      "value": 49097.06,
-      "change": -1101.11,
-      "change_pct": -2.19,
+      "value": 48147.33,
+      "change": -949.73,
+      "change_pct": -1.93,
       "direction": "negative"
     },
     "nasdaq": {
-      "value": 23879.2,
-      "change": -550.68,
-      "change_pct": -2.25,
+      "value": 22617.73,
+      "change": -1261.47,
+      "change_pct": -5.28,
       "direction": "negative"
     },
     "usdinr": {
-      "value": 93.1,
-      "change": -0.36,
-      "change_pct": -0.39,
+      "value": 93.29,
+      "change": -0.17,
+      "change_pct": -0.18,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 3525.0,
-      "change": -216.9,
-      "change_pct": -5.8,
+      "value": 3539.0,
+      "change": -146.5,
+      "change_pct": -3.98,
       "direction": "negative"
     },
     "silver": {
-      "value": 41.33,
-      "change": -3.67,
-      "change_pct": -8.16,
+      "value": 41.08,
+      "change": -3.24,
+      "change_pct": -7.31,
       "direction": "negative"
     },
     "copper": {
-      "value": 5.51,
-      "change": -0.15,
-      "change_pct": -2.6,
+      "value": 5.47,
+      "change": -0.16,
+      "change_pct": -2.84,
       "direction": "negative"
     },
     "crude": {
-      "value": 82.72,
-      "change": -0.54,
-      "change_pct": -0.65,
-      "direction": "negative"
+      "value": 83.62,
+      "change": 0.41,
+      "change_pct": 0.49,
+      "direction": "positive"
     },
     "naturalgas": {
-      "value": 3.25,
-      "change": -0.12,
-      "change_pct": -3.53,
-      "direction": "negative"
+      "value": 3.79,
+      "change": 0.52,
+      "change_pct": 16.0,
+      "direction": "positive"
     }
   },
   "screener": {
@@ -88,180 +88,180 @@
         "symbol": "RVNL",
         "sector": "Industrials",
         "old_price": 398.2,
-        "current_price": 195.0,
+        "current_price": 191.0,
         "low_52w": 177.86,
-        "fall_pct": -51.03,
+        "fall_pct": -52.03,
         "buy_signal": "Avoid"
       },
       {
         "symbol": "POLICYBZR",
         "sector": "Financial Services",
         "old_price": 1964.2,
-        "current_price": 1015.0,
+        "current_price": 1022.8,
         "low_52w": 916.0,
-        "fall_pct": -48.33,
-        "buy_signal": "Avoid"
+        "fall_pct": -47.93,
+        "buy_signal": "Hold"
       },
       {
         "symbol": "HINDCOPPER",
         "sector": "Basic Materials",
         "old_price": 755.97,
-        "current_price": 425.45,
+        "current_price": 419.05,
         "low_52w": 306.84,
-        "fall_pct": -43.72,
+        "fall_pct": -44.57,
         "buy_signal": "Strong Buy"
       },
       {
         "symbol": "SUZLON",
         "sector": "Industrials",
         "old_price": 60.45,
-        "current_price": 36.95,
+        "current_price": 36.96,
         "low_52w": 33.15,
-        "fall_pct": -38.88,
+        "fall_pct": -38.86,
         "buy_signal": "Hold"
       },
       {
         "symbol": "COCHINSHIP",
         "sector": "Industrials",
         "old_price": 1836.04,
-        "current_price": 1138.2,
+        "current_price": 1125.0,
         "low_52w": 1098.4,
-        "fall_pct": -38.01,
+        "fall_pct": -38.73,
         "buy_signal": "Avoid"
       },
       {
         "symbol": "IRFC",
         "sector": "Financial Services",
         "old_price": 133.7,
-        "current_price": 84.26,
+        "current_price": 83.74,
         "low_52w": 72.95,
-        "fall_pct": -36.98,
+        "fall_pct": -37.37,
         "buy_signal": "Strong Buy"
-      },
-      {
-        "symbol": "SBICARD",
-        "sector": "Financial Services",
-        "old_price": 903.24,
-        "current_price": 572.65,
-        "low_52w": 519.05,
-        "fall_pct": -36.6,
-        "buy_signal": "Hold"
       },
       {
         "symbol": "NBCC",
         "sector": "Industrials",
         "old_price": 124.44,
-        "current_price": 79.5,
+        "current_price": 79.6,
         "low_52w": 66.81,
-        "fall_pct": -36.11,
+        "fall_pct": -36.03,
         "buy_signal": "Strong Buy"
       },
       {
         "symbol": "SJVN",
         "sector": "Utilities",
         "old_price": 86.98,
-        "current_price": 56.2,
+        "current_price": 55.78,
         "low_52w": 46.08,
-        "fall_pct": -35.39,
+        "fall_pct": -35.87,
+        "buy_signal": "Strong Buy"
+      },
+      {
+        "symbol": "SBICARD",
+        "sector": "Financial Services",
+        "old_price": 903.24,
+        "current_price": 579.25,
+        "low_52w": 519.05,
+        "fall_pct": -35.87,
         "buy_signal": "Strong Buy"
       },
       {
         "symbol": "RAILTEL",
         "sector": "Communication Services",
         "old_price": 386.25,
-        "current_price": 251.76,
+        "current_price": 249.32,
         "low_52w": 219.89,
-        "fall_pct": -34.82,
+        "fall_pct": -35.45,
         "buy_signal": "Strong Buy"
       },
       {
         "symbol": "INFY",
         "sector": "Technology",
         "old_price": 1653.52,
-        "current_price": 1091.9,
+        "current_price": 1098.0,
         "low_52w": 958.44,
-        "fall_pct": -33.97,
+        "fall_pct": -33.6,
+        "buy_signal": "Strong Buy"
+      },
+      {
+        "symbol": "HUDCO",
+        "sector": "Financial Services",
+        "old_price": 233.89,
+        "current_price": 162.91,
+        "low_52w": 140.68,
+        "fall_pct": -30.35,
         "buy_signal": "Strong Buy"
       },
       {
         "symbol": "WIPRO",
         "sector": "Technology",
         "old_price": 263.22,
-        "current_price": 183.93,
+        "current_price": 185.7,
         "low_52w": 156.79,
-        "fall_pct": -30.12,
-        "buy_signal": "Strong Buy"
-      },
-      {
-        "symbol": "HUDCO",
-        "sector": "Financial Services",
-        "old_price": 235.85,
-        "current_price": 165.68,
-        "low_52w": 140.68,
-        "fall_pct": -29.75,
+        "fall_pct": -29.45,
         "buy_signal": "Buy"
       },
       {
         "symbol": "PFC",
         "sector": "Financial Services",
         "old_price": 470.95,
-        "current_price": 331.6,
+        "current_price": 332.9,
         "low_52w": 306.48,
-        "fall_pct": -29.59,
+        "fall_pct": -29.31,
         "buy_signal": "Hold"
       },
       {
         "symbol": "TCS",
         "sector": "Technology",
         "old_price": 3269.78,
-        "current_price": 2342.7,
+        "current_price": 2376.2,
         "low_52w": 1955.62,
-        "fall_pct": -28.35,
+        "fall_pct": -27.33,
         "buy_signal": "Buy"
       },
       {
         "symbol": "TATAPOWER",
         "sector": "Utilities",
         "old_price": 462.04,
-        "current_price": 340.0,
+        "current_price": 339.7,
         "low_52w": 333.2,
-        "fall_pct": -26.41,
+        "fall_pct": -26.48,
         "buy_signal": "Avoid"
       },
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 180.02,
-        "current_price": 134.68,
+        "old_price": 178.01,
+        "current_price": 131.69,
         "low_52w": 113.5,
-        "fall_pct": -25.19,
+        "fall_pct": -26.02,
         "buy_signal": "Buy"
       },
       {
         "symbol": "ONGC",
         "sector": "Energy",
         "old_price": 295.76,
-        "current_price": 224.52,
+        "current_price": 223.46,
         "low_52w": 211.08,
-        "fall_pct": -24.09,
+        "fall_pct": -24.45,
         "buy_signal": "Hold"
       },
       {
         "symbol": "IDEA",
         "sector": "Communication Services",
         "old_price": 15.79,
-        "current_price": 12.11,
+        "current_price": 12.15,
         "low_52w": 8.13,
-        "fall_pct": -23.31,
+        "fall_pct": -23.05,
         "buy_signal": "Buy"
       },
       {
         "symbol": "HCLTECH",
         "sector": "Technology",
         "old_price": 1713.75,
-        "current_price": 1332.9,
+        "current_price": 1344.4,
         "low_52w": 1010.59,
-        "fall_pct": -22.22,
+        "fall_pct": -21.55,
         "buy_signal": "Buy"
       }
     ],
@@ -270,180 +270,180 @@
         "symbol": "IRFC",
         "sector": "Financial Services",
         "old_price": 133.7,
-        "current_price": 84.26,
+        "current_price": 83.74,
         "low_52w": 72.95,
-        "fall_pct": -36.98,
+        "fall_pct": -37.37,
         "buy_signal": "Strong Buy"
-      },
-      {
-        "symbol": "SBICARD",
-        "sector": "Financial Services",
-        "old_price": 903.24,
-        "current_price": 572.65,
-        "low_52w": 519.05,
-        "fall_pct": -36.6,
-        "buy_signal": "Hold"
       },
       {
         "symbol": "NBCC",
         "sector": "Industrials",
         "old_price": 124.44,
-        "current_price": 79.5,
+        "current_price": 79.6,
         "low_52w": 66.81,
-        "fall_pct": -36.11,
+        "fall_pct": -36.03,
         "buy_signal": "Strong Buy"
       },
       {
         "symbol": "SJVN",
         "sector": "Utilities",
         "old_price": 86.98,
-        "current_price": 56.2,
+        "current_price": 55.78,
         "low_52w": 46.08,
-        "fall_pct": -35.39,
+        "fall_pct": -35.87,
+        "buy_signal": "Strong Buy"
+      },
+      {
+        "symbol": "SBICARD",
+        "sector": "Financial Services",
+        "old_price": 903.24,
+        "current_price": 579.25,
+        "low_52w": 519.05,
+        "fall_pct": -35.87,
         "buy_signal": "Strong Buy"
       },
       {
         "symbol": "RAILTEL",
         "sector": "Communication Services",
         "old_price": 386.25,
-        "current_price": 251.76,
+        "current_price": 249.32,
         "low_52w": 219.89,
-        "fall_pct": -34.82,
+        "fall_pct": -35.45,
         "buy_signal": "Strong Buy"
       },
       {
         "symbol": "INFY",
         "sector": "Technology",
         "old_price": 1653.52,
-        "current_price": 1091.9,
+        "current_price": 1098.0,
         "low_52w": 958.44,
-        "fall_pct": -33.97,
+        "fall_pct": -33.6,
+        "buy_signal": "Strong Buy"
+      },
+      {
+        "symbol": "HUDCO",
+        "sector": "Financial Services",
+        "old_price": 233.89,
+        "current_price": 162.91,
+        "low_52w": 140.68,
+        "fall_pct": -30.35,
         "buy_signal": "Strong Buy"
       },
       {
         "symbol": "WIPRO",
         "sector": "Technology",
         "old_price": 263.22,
-        "current_price": 183.93,
+        "current_price": 185.7,
         "low_52w": 156.79,
-        "fall_pct": -30.12,
-        "buy_signal": "Strong Buy"
-      },
-      {
-        "symbol": "HUDCO",
-        "sector": "Financial Services",
-        "old_price": 235.85,
-        "current_price": 165.68,
-        "low_52w": 140.68,
-        "fall_pct": -29.75,
+        "fall_pct": -29.45,
         "buy_signal": "Buy"
       },
       {
         "symbol": "PFC",
         "sector": "Financial Services",
         "old_price": 470.95,
-        "current_price": 331.6,
+        "current_price": 332.9,
         "low_52w": 306.48,
-        "fall_pct": -29.59,
+        "fall_pct": -29.31,
         "buy_signal": "Hold"
       },
       {
         "symbol": "TCS",
         "sector": "Technology",
         "old_price": 3269.78,
-        "current_price": 2342.7,
+        "current_price": 2376.2,
         "low_52w": 1955.62,
-        "fall_pct": -28.35,
+        "fall_pct": -27.33,
         "buy_signal": "Buy"
       },
       {
         "symbol": "TATAPOWER",
         "sector": "Utilities",
         "old_price": 462.04,
-        "current_price": 340.0,
+        "current_price": 339.7,
         "low_52w": 333.2,
-        "fall_pct": -26.41,
+        "fall_pct": -26.48,
         "buy_signal": "Avoid"
       },
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 180.02,
-        "current_price": 134.68,
+        "old_price": 178.01,
+        "current_price": 131.69,
         "low_52w": 113.5,
-        "fall_pct": -25.19,
+        "fall_pct": -26.02,
         "buy_signal": "Buy"
       },
       {
         "symbol": "ONGC",
         "sector": "Energy",
         "old_price": 295.76,
-        "current_price": 224.52,
+        "current_price": 223.46,
         "low_52w": 211.08,
-        "fall_pct": -24.09,
+        "fall_pct": -24.45,
         "buy_signal": "Hold"
       },
       {
         "symbol": "IDEA",
         "sector": "Communication Services",
         "old_price": 15.79,
-        "current_price": 12.11,
+        "current_price": 12.15,
         "low_52w": 8.13,
-        "fall_pct": -23.31,
+        "fall_pct": -23.05,
         "buy_signal": "Buy"
       },
       {
         "symbol": "HCLTECH",
         "sector": "Technology",
         "old_price": 1713.75,
-        "current_price": 1332.9,
+        "current_price": 1344.4,
         "low_52w": 1010.59,
-        "fall_pct": -22.22,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "BPCL",
-        "sector": "Energy",
-        "old_price": 391.65,
-        "current_price": 308.1,
-        "low_52w": 266.6,
-        "fall_pct": -21.33,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "MARUTI",
-        "sector": "Consumer Cyclical",
-        "old_price": 17197.29,
-        "current_price": 13589.0,
-        "low_52w": 10985.0,
-        "fall_pct": -20.98,
+        "fall_pct": -21.55,
         "buy_signal": "Buy"
       },
       {
         "symbol": "RECLTD",
         "sector": "Financial Services",
         "old_price": 376.84,
-        "current_price": 299.0,
+        "current_price": 298.1,
         "low_52w": 280.3,
-        "fall_pct": -20.66,
+        "fall_pct": -20.89,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "BPCL",
+        "sector": "Energy",
+        "old_price": 391.65,
+        "current_price": 314.1,
+        "low_52w": 266.6,
+        "fall_pct": -19.8,
         "buy_signal": "Hold"
       },
       {
         "symbol": "IOC",
         "sector": "Energy",
         "old_price": 184.96,
-        "current_price": 147.8,
+        "current_price": 150.5,
         "low_52w": 124.92,
-        "fall_pct": -20.09,
-        "buy_signal": "Buy"
+        "fall_pct": -18.63,
+        "buy_signal": "Hold"
       },
       {
-        "symbol": "NTPC",
+        "symbol": "MARUTI",
+        "sector": "Consumer Cyclical",
+        "old_price": 17197.29,
+        "current_price": 14011.0,
+        "low_52w": 10985.0,
+        "fall_pct": -18.53,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "ADANIPOWER",
         "sector": "Utilities",
-        "old_price": 406.09,
-        "current_price": 325.0,
-        "low_52w": 289.28,
-        "fall_pct": -19.97,
+        "old_price": 254.2,
+        "current_price": 211.95,
+        "low_52w": 128.1,
+        "fall_pct": -16.62,
         "buy_signal": "Hold"
       }
     ],
@@ -452,180 +452,180 @@
         "symbol": "INFY",
         "sector": "Technology",
         "old_price": 1653.52,
-        "current_price": 1091.9,
+        "current_price": 1098.0,
         "low_52w": 958.44,
-        "fall_pct": -33.97,
+        "fall_pct": -33.6,
+        "buy_signal": "Strong Buy"
+      },
+      {
+        "symbol": "HUDCO",
+        "sector": "Financial Services",
+        "old_price": 233.89,
+        "current_price": 162.91,
+        "low_52w": 140.68,
+        "fall_pct": -30.35,
         "buy_signal": "Strong Buy"
       },
       {
         "symbol": "WIPRO",
         "sector": "Technology",
         "old_price": 263.22,
-        "current_price": 183.93,
+        "current_price": 185.7,
         "low_52w": 156.79,
-        "fall_pct": -30.12,
-        "buy_signal": "Strong Buy"
-      },
-      {
-        "symbol": "HUDCO",
-        "sector": "Financial Services",
-        "old_price": 235.85,
-        "current_price": 165.68,
-        "low_52w": 140.68,
-        "fall_pct": -29.75,
+        "fall_pct": -29.45,
         "buy_signal": "Buy"
       },
       {
         "symbol": "PFC",
         "sector": "Financial Services",
         "old_price": 470.95,
-        "current_price": 331.6,
+        "current_price": 332.9,
         "low_52w": 306.48,
-        "fall_pct": -29.59,
+        "fall_pct": -29.31,
         "buy_signal": "Hold"
       },
       {
         "symbol": "TCS",
         "sector": "Technology",
         "old_price": 3269.78,
-        "current_price": 2342.7,
+        "current_price": 2376.2,
         "low_52w": 1955.62,
-        "fall_pct": -28.35,
+        "fall_pct": -27.33,
         "buy_signal": "Buy"
       },
       {
         "symbol": "TATAPOWER",
         "sector": "Utilities",
         "old_price": 462.04,
-        "current_price": 340.0,
+        "current_price": 339.7,
         "low_52w": 333.2,
-        "fall_pct": -26.41,
+        "fall_pct": -26.48,
         "buy_signal": "Avoid"
       },
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 180.02,
-        "current_price": 134.68,
+        "old_price": 178.01,
+        "current_price": 131.69,
         "low_52w": 113.5,
-        "fall_pct": -25.19,
+        "fall_pct": -26.02,
         "buy_signal": "Buy"
       },
       {
         "symbol": "ONGC",
         "sector": "Energy",
         "old_price": 295.76,
-        "current_price": 224.52,
+        "current_price": 223.46,
         "low_52w": 211.08,
-        "fall_pct": -24.09,
+        "fall_pct": -24.45,
         "buy_signal": "Hold"
       },
       {
         "symbol": "IDEA",
         "sector": "Communication Services",
         "old_price": 15.79,
-        "current_price": 12.11,
+        "current_price": 12.15,
         "low_52w": 8.13,
-        "fall_pct": -23.31,
+        "fall_pct": -23.05,
         "buy_signal": "Buy"
       },
       {
         "symbol": "HCLTECH",
         "sector": "Technology",
         "old_price": 1713.75,
-        "current_price": 1332.9,
+        "current_price": 1344.4,
         "low_52w": 1010.59,
-        "fall_pct": -22.22,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "BPCL",
-        "sector": "Energy",
-        "old_price": 391.65,
-        "current_price": 308.1,
-        "low_52w": 266.6,
-        "fall_pct": -21.33,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "MARUTI",
-        "sector": "Consumer Cyclical",
-        "old_price": 17197.29,
-        "current_price": 13589.0,
-        "low_52w": 10985.0,
-        "fall_pct": -20.98,
+        "fall_pct": -21.55,
         "buy_signal": "Buy"
       },
       {
         "symbol": "RECLTD",
         "sector": "Financial Services",
         "old_price": 376.84,
-        "current_price": 299.0,
+        "current_price": 298.1,
         "low_52w": 280.3,
-        "fall_pct": -20.66,
+        "fall_pct": -20.89,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "BPCL",
+        "sector": "Energy",
+        "old_price": 391.65,
+        "current_price": 314.1,
+        "low_52w": 266.6,
+        "fall_pct": -19.8,
         "buy_signal": "Hold"
       },
       {
         "symbol": "IOC",
         "sector": "Energy",
         "old_price": 184.96,
-        "current_price": 147.8,
+        "current_price": 150.5,
         "low_52w": 124.92,
-        "fall_pct": -20.09,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "NTPC",
-        "sector": "Utilities",
-        "old_price": 406.09,
-        "current_price": 325.0,
-        "low_52w": 289.28,
-        "fall_pct": -19.97,
+        "fall_pct": -18.63,
         "buy_signal": "Hold"
       },
       {
-        "symbol": "MPHASIS",
-        "sector": "Technology",
-        "old_price": 2897.32,
-        "current_price": 2356.0,
-        "low_52w": 1960.44,
-        "fall_pct": -18.68,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "HDFCBANK",
-        "sector": "Financial Services",
-        "old_price": 1000.94,
-        "current_price": 821.8,
-        "low_52w": 669.2,
-        "fall_pct": -17.9,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "POWERGRID",
-        "sector": "Utilities",
-        "old_price": 319.73,
-        "current_price": 264.5,
-        "low_52w": 239.52,
-        "fall_pct": -17.27,
+        "symbol": "MARUTI",
+        "sector": "Consumer Cyclical",
+        "old_price": 17197.29,
+        "current_price": 14011.0,
+        "low_52w": 10985.0,
+        "fall_pct": -18.53,
         "buy_signal": "Hold"
       },
       {
         "symbol": "ADANIPOWER",
         "sector": "Utilities",
         "old_price": 254.2,
-        "current_price": 210.5,
+        "current_price": 211.95,
         "low_52w": 128.1,
-        "fall_pct": -17.19,
+        "fall_pct": -16.62,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "MPHASIS",
+        "sector": "Technology",
+        "old_price": 2897.32,
+        "current_price": 2420.0,
+        "low_52w": 1960.44,
+        "fall_pct": -16.47,
         "buy_signal": "Hold"
       },
       {
         "symbol": "COALINDIA",
         "sector": "Energy",
         "old_price": 466.69,
-        "current_price": 391.5,
+        "current_price": 390.0,
         "low_52w": 346.54,
-        "fall_pct": -16.11,
+        "fall_pct": -16.43,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "POWERGRID",
+        "sector": "Utilities",
+        "old_price": 319.73,
+        "current_price": 269.0,
+        "low_52w": 239.52,
+        "fall_pct": -15.87,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "HDFCBANK",
+        "sector": "Financial Services",
+        "old_price": 1000.94,
+        "current_price": 846.0,
+        "low_52w": 669.2,
+        "fall_pct": -15.48,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "BSE",
+        "sector": "Financial Services",
+        "old_price": 4435.12,
+        "current_price": 3781.0,
+        "low_52w": 2523.35,
+        "fall_pct": -14.75,
         "buy_signal": "Hold"
       }
     ],
@@ -634,180 +634,180 @@
         "symbol": "TATAPOWER",
         "sector": "Utilities",
         "old_price": 462.04,
-        "current_price": 340.0,
+        "current_price": 339.7,
         "low_52w": 333.2,
-        "fall_pct": -26.41,
+        "fall_pct": -26.48,
         "buy_signal": "Avoid"
       },
       {
         "symbol": "NCC",
         "sector": "Industrials",
-        "old_price": 180.02,
-        "current_price": 134.68,
+        "old_price": 178.01,
+        "current_price": 131.69,
         "low_52w": 113.5,
-        "fall_pct": -25.19,
+        "fall_pct": -26.02,
         "buy_signal": "Buy"
       },
       {
         "symbol": "ONGC",
         "sector": "Energy",
         "old_price": 295.76,
-        "current_price": 224.52,
+        "current_price": 223.46,
         "low_52w": 211.08,
-        "fall_pct": -24.09,
+        "fall_pct": -24.45,
         "buy_signal": "Hold"
       },
       {
         "symbol": "IDEA",
         "sector": "Communication Services",
         "old_price": 15.79,
-        "current_price": 12.11,
+        "current_price": 12.15,
         "low_52w": 8.13,
-        "fall_pct": -23.31,
+        "fall_pct": -23.05,
         "buy_signal": "Buy"
       },
       {
         "symbol": "HCLTECH",
         "sector": "Technology",
         "old_price": 1713.75,
-        "current_price": 1332.9,
+        "current_price": 1344.4,
         "low_52w": 1010.59,
-        "fall_pct": -22.22,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "BPCL",
-        "sector": "Energy",
-        "old_price": 391.65,
-        "current_price": 308.1,
-        "low_52w": 266.6,
-        "fall_pct": -21.33,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "MARUTI",
-        "sector": "Consumer Cyclical",
-        "old_price": 17197.29,
-        "current_price": 13589.0,
-        "low_52w": 10985.0,
-        "fall_pct": -20.98,
+        "fall_pct": -21.55,
         "buy_signal": "Buy"
       },
       {
         "symbol": "RECLTD",
         "sector": "Financial Services",
         "old_price": 376.84,
-        "current_price": 299.0,
+        "current_price": 298.1,
         "low_52w": 280.3,
-        "fall_pct": -20.66,
+        "fall_pct": -20.89,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "BPCL",
+        "sector": "Energy",
+        "old_price": 391.65,
+        "current_price": 314.1,
+        "low_52w": 266.6,
+        "fall_pct": -19.8,
         "buy_signal": "Hold"
       },
       {
         "symbol": "IOC",
         "sector": "Energy",
         "old_price": 184.96,
-        "current_price": 147.8,
+        "current_price": 150.5,
         "low_52w": 124.92,
-        "fall_pct": -20.09,
-        "buy_signal": "Buy"
-      },
-      {
-        "symbol": "NTPC",
-        "sector": "Utilities",
-        "old_price": 406.09,
-        "current_price": 325.0,
-        "low_52w": 289.28,
-        "fall_pct": -19.97,
+        "fall_pct": -18.63,
         "buy_signal": "Hold"
       },
       {
-        "symbol": "MPHASIS",
-        "sector": "Technology",
-        "old_price": 2897.32,
-        "current_price": 2356.0,
-        "low_52w": 1960.44,
-        "fall_pct": -18.68,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "HDFCBANK",
-        "sector": "Financial Services",
-        "old_price": 1000.94,
-        "current_price": 821.8,
-        "low_52w": 669.2,
-        "fall_pct": -17.9,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "POWERGRID",
-        "sector": "Utilities",
-        "old_price": 319.73,
-        "current_price": 264.5,
-        "low_52w": 239.52,
-        "fall_pct": -17.27,
+        "symbol": "MARUTI",
+        "sector": "Consumer Cyclical",
+        "old_price": 17197.29,
+        "current_price": 14011.0,
+        "low_52w": 10985.0,
+        "fall_pct": -18.53,
         "buy_signal": "Hold"
       },
       {
         "symbol": "ADANIPOWER",
         "sector": "Utilities",
         "old_price": 254.2,
-        "current_price": 210.5,
+        "current_price": 211.95,
         "low_52w": 128.1,
-        "fall_pct": -17.19,
+        "fall_pct": -16.62,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "MPHASIS",
+        "sector": "Technology",
+        "old_price": 2897.32,
+        "current_price": 2420.0,
+        "low_52w": 1960.44,
+        "fall_pct": -16.47,
         "buy_signal": "Hold"
       },
       {
         "symbol": "COALINDIA",
         "sector": "Energy",
         "old_price": 466.69,
-        "current_price": 391.5,
+        "current_price": 390.0,
         "low_52w": 346.54,
-        "fall_pct": -16.11,
+        "fall_pct": -16.43,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "POWERGRID",
+        "sector": "Utilities",
+        "old_price": 319.73,
+        "current_price": 269.0,
+        "low_52w": 239.52,
+        "fall_pct": -15.87,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "HDFCBANK",
+        "sector": "Financial Services",
+        "old_price": 1000.94,
+        "current_price": 846.0,
+        "low_52w": 669.2,
+        "fall_pct": -15.48,
         "buy_signal": "Hold"
       },
       {
         "symbol": "BSE",
         "sector": "Financial Services",
         "old_price": 4435.12,
-        "current_price": 3765.0,
+        "current_price": 3781.0,
         "low_52w": 2523.35,
-        "fall_pct": -15.11,
+        "fall_pct": -14.75,
         "buy_signal": "Hold"
       },
       {
         "symbol": "RELIANCE",
         "sector": "Energy",
         "old_price": 1604.38,
-        "current_price": 1375.6,
+        "current_price": 1377.5,
         "low_52w": 1152.2,
-        "fall_pct": -14.26,
+        "fall_pct": -14.14,
         "buy_signal": "Hold"
       },
       {
         "symbol": "ADANIGREEN",
         "sector": "Utilities",
         "old_price": 1631.5,
-        "current_price": 1425.0,
+        "current_price": 1435.0,
         "low_52w": 765.0,
-        "fall_pct": -12.66,
+        "fall_pct": -12.04,
         "buy_signal": "Hold"
       },
       {
-        "symbol": "IREDA",
-        "sector": "Financial Services",
-        "old_price": 147.71,
-        "current_price": 129.8,
-        "low_52w": 98.78,
-        "fall_pct": -12.12,
+        "symbol": "NHPC",
+        "sector": "Utilities",
+        "old_price": 86.59,
+        "current_price": 76.61,
+        "low_52w": 68.79,
+        "fall_pct": -11.53,
         "buy_signal": "Hold"
       },
       {
         "symbol": "PAYTM",
         "sector": "Technology",
         "old_price": 1960.0,
-        "current_price": 1725.9,
+        "current_price": 1740.0,
         "low_52w": 930.6,
-        "fall_pct": -11.94,
+        "fall_pct": -11.22,
+        "buy_signal": "Hold"
+      },
+      {
+        "symbol": "IREDA",
+        "sector": "Financial Services",
+        "old_price": 147.71,
+        "current_price": 131.7,
+        "low_52w": 98.78,
+        "fall_pct": -10.84,
         "buy_signal": "Hold"
       }
     ]
@@ -817,12 +817,12 @@
       {
         "symbol": "TCS",
         "sector": "IT",
-        "current_price": 2342.7,
+        "current_price": 2376.2,
         "high_52w": 3269.78,
         "low_52w": 1955.62,
-        "fall_pct": -28.35,
-        "rsi": 22.2,
-        "target_price": 2928.37,
+        "fall_pct": -27.33,
+        "rsi": 30.3,
+        "target_price": 2970.25,
         "upside_pct": 25,
         "signal": "Strong Buy",
         "reason": "Stable deal wins, AI investments",
@@ -831,12 +831,12 @@
       {
         "symbol": "INFY",
         "sector": "IT",
-        "current_price": 1091.9,
+        "current_price": 1098.0,
         "high_52w": 1653.52,
         "low_52w": 958.44,
-        "fall_pct": -33.97,
-        "rsi": 34.0,
-        "target_price": 1364.88,
+        "fall_pct": -33.6,
+        "rsi": 35.9,
+        "target_price": 1372.5,
         "upside_pct": 25,
         "signal": "Strong Buy",
         "reason": "Large deal momentum",
@@ -845,12 +845,12 @@
       {
         "symbol": "WIPRO",
         "sector": "IT",
-        "current_price": 183.93,
+        "current_price": 185.7,
         "high_52w": 263.22,
         "low_52w": 156.79,
-        "fall_pct": -30.12,
-        "rsi": 41.3,
-        "target_price": 229.91,
+        "fall_pct": -29.45,
+        "rsi": 28.3,
+        "target_price": 232.12,
         "upside_pct": 25,
         "signal": "Strong Buy",
         "reason": "Margin recovery focus",
@@ -859,12 +859,12 @@
       {
         "symbol": "HDFCBANK",
         "sector": "Banking",
-        "current_price": 821.8,
+        "current_price": 846.0,
         "high_52w": 1000.94,
         "low_52w": 669.2,
-        "fall_pct": -17.9,
-        "rsi": 89.7,
-        "target_price": 969.72,
+        "fall_pct": -15.48,
+        "rsi": 91.1,
+        "target_price": 998.28,
         "upside_pct": 18,
         "signal": "Buy",
         "reason": "Strong fundamentals, market leader",
@@ -873,40 +873,26 @@
       {
         "symbol": "HCLTECH",
         "sector": "IT",
-        "current_price": 1332.9,
+        "current_price": 1344.4,
         "high_52w": 1713.75,
         "low_52w": 1010.59,
-        "fall_pct": -22.22,
-        "rsi": 34.2,
-        "target_price": 1572.82,
+        "fall_pct": -21.55,
+        "rsi": 30.3,
+        "target_price": 1586.39,
         "upside_pct": 18,
         "signal": "Buy",
         "reason": "Products and services mix",
         "timeframe": "3-6 months"
       },
       {
-        "symbol": "NTPC",
-        "sector": "Power",
-        "current_price": 325.0,
-        "high_52w": 406.09,
-        "low_52w": 289.28,
-        "fall_pct": -19.97,
-        "rsi": 62.5,
-        "target_price": 383.5,
-        "upside_pct": 18,
-        "signal": "Buy",
-        "reason": "Capacity addition",
-        "timeframe": "3-6 months"
-      },
-      {
         "symbol": "POWERGRID",
         "sector": "Power",
-        "current_price": 264.5,
+        "current_price": 269.0,
         "high_52w": 319.73,
         "low_52w": 239.52,
-        "fall_pct": -17.27,
-        "rsi": 57.4,
-        "target_price": 312.11,
+        "fall_pct": -15.87,
+        "rsi": 57.1,
+        "target_price": 317.42,
         "upside_pct": 18,
         "signal": "Buy",
         "reason": "Transmission monopoly",
@@ -915,12 +901,12 @@
       {
         "symbol": "MARUTI",
         "sector": "Auto",
-        "current_price": 13589.0,
+        "current_price": 14011.0,
         "high_52w": 17197.29,
         "low_52w": 10985.0,
-        "fall_pct": -20.98,
-        "rsi": 82.0,
-        "target_price": 16035.02,
+        "fall_pct": -18.53,
+        "rsi": 84.0,
+        "target_price": 16532.98,
         "upside_pct": 18,
         "signal": "Buy",
         "reason": "SUV portfolio expansion",
@@ -929,12 +915,12 @@
       {
         "symbol": "COALINDIA",
         "sector": "Mining",
-        "current_price": 391.5,
+        "current_price": 390.0,
         "high_52w": 466.69,
         "low_52w": 346.54,
-        "fall_pct": -16.11,
-        "rsi": 60.3,
-        "target_price": 461.97,
+        "fall_pct": -16.43,
+        "rsi": 58.8,
+        "target_price": 460.2,
         "upside_pct": 18,
         "signal": "Buy",
         "reason": "Dividend yield play",
@@ -943,15 +929,29 @@
       {
         "symbol": "IDEA",
         "sector": "Telecom",
-        "current_price": 12.11,
+        "current_price": 12.15,
         "high_52w": 15.79,
         "low_52w": 8.13,
-        "fall_pct": -23.31,
-        "rsi": 55.7,
-        "target_price": 14.29,
+        "fall_pct": -23.05,
+        "rsi": 56.4,
+        "target_price": 14.34,
         "upside_pct": 18,
         "signal": "Buy",
         "reason": "Debt restructuring risk",
+        "timeframe": "3-6 months"
+      },
+      {
+        "symbol": "RELIANCE",
+        "sector": "Energy",
+        "current_price": 1377.5,
+        "high_52w": 1604.38,
+        "low_52w": 1152.2,
+        "fall_pct": -14.14,
+        "rsi": 98.2,
+        "target_price": 1542.8,
+        "upside_pct": 12,
+        "signal": "Buy",
+        "reason": "Jio and retail growth",
         "timeframe": "3-6 months"
       }
     ],
@@ -959,10 +959,10 @@
       {
         "symbol": "SUZLON",
         "sector": "Renewable",
-        "current_price": 36.95,
+        "current_price": 36.96,
         "high_52w": 60.45,
         "low_52w": 33.15,
-        "fall_pct": -38.88,
+        "fall_pct": -38.86,
         "rsi": 67.7,
         "risk_level": "Medium",
         "downside_pct": 11.7,
@@ -972,11 +972,11 @@
       {
         "symbol": "ICICIBANK",
         "sector": "Banking",
-        "current_price": 1608.9,
-        "high_52w": 1616.0,
+        "current_price": 1640.0,
+        "high_52w": 1645.0,
         "low_52w": 1177.67,
-        "fall_pct": -0.44,
-        "rsi": 87.6,
+        "fall_pct": -0.3,
+        "rsi": 88.8,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -985,11 +985,11 @@
       {
         "symbol": "SBIN",
         "sector": "Banking",
-        "current_price": 1156.0,
+        "current_price": 1165.1,
         "high_52w": 1212.84,
         "low_52w": 927.73,
-        "fall_pct": -4.69,
-        "rsi": 90.3,
+        "fall_pct": -3.94,
+        "rsi": 90.7,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -998,11 +998,11 @@
       {
         "symbol": "KOTAKBANK",
         "sector": "Banking",
-        "current_price": 503.0,
-        "high_52w": 503.05,
+        "current_price": 515.8,
+        "high_52w": 516.6,
         "low_52w": 344.9,
-        "fall_pct": -0.01,
-        "rsi": 77.8,
+        "fall_pct": -0.15,
+        "rsi": 83.6,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -1011,11 +1011,11 @@
       {
         "symbol": "AXISBANK",
         "sector": "Banking",
-        "current_price": 1380.8,
-        "high_52w": 1417.21,
+        "current_price": 1446.0,
+        "high_52w": 1450.0,
         "low_52w": 1149.41,
-        "fall_pct": -2.57,
-        "rsi": 83.1,
+        "fall_pct": -0.28,
+        "rsi": 86.6,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -1024,37 +1024,37 @@
       {
         "symbol": "TECHM",
         "sector": "IT",
-        "current_price": 1723.0,
+        "current_price": 1746.2,
         "high_52w": 1860.0,
         "low_52w": 1260.64,
-        "fall_pct": -7.37,
-        "rsi": 39.1,
+        "fall_pct": -6.12,
+        "rsi": 39.7,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
         "reason": "5G and enterprise growth"
       },
       {
-        "symbol": "ONGC",
-        "sector": "Oil & Gas",
-        "current_price": 224.52,
-        "high_52w": 295.76,
-        "low_52w": 211.08,
-        "fall_pct": -24.09,
-        "rsi": 60.0,
+        "symbol": "NTPC",
+        "sector": "Power",
+        "current_price": NaN,
+        "high_52w": 406.09,
+        "low_52w": 289.28,
+        "fall_pct": NaN,
+        "rsi": 62.5,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
-        "reason": "Crude price exposure"
+        "reason": "Capacity addition"
       },
       {
         "symbol": "M&M",
         "sector": "Auto",
-        "current_price": 3509.0,
+        "current_price": 3545.0,
         "high_52w": 3799.99,
         "low_52w": 2744.3,
-        "fall_pct": -7.66,
-        "rsi": 83.0,
+        "fall_pct": -6.71,
+        "rsi": 83.6,
         "risk_level": "Low",
         "downside_pct": 8,
         "signal": "Hold",
@@ -1065,17 +1065,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "20 Nov 2026",
+        "date": "21 Nov 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "19 Nov 2026",
+        "date": "20 Nov 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "18 Nov 2026",
+        "date": "19 Nov 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1092,45 +1092,46 @@
   "market_outlook": {
     "sentiment": "NEUTRAL",
     "badge_class": "neutral",
-    "summary": "\ud83c\udf0f US markets weak: Dow -2.2%, NASDAQ -2.2%",
+    "summary": "\ud83d\udcc8 VIX up 7.5% indicating rising market uncertainty. \ud83c\udf0f US markets weak: Dow -1.9%, NASDAQ -5.3%",
     "vix": {
-      "value": 15.57,
-      "change_pct": 0.0
+      "value": 17.32,
+      "change_pct": 7.51
     },
     "crude": {
-      "value": 82.72,
-      "change_pct": -0.65
+      "value": 83.62,
+      "change_pct": 0.49
     },
     "reasons": [
-      "\ud83c\udf0f US markets weak: Dow -2.2%, NASDAQ -2.2%"
+      "\ud83d\udcc8 VIX up 7.5% indicating rising market uncertainty",
+      "\ud83c\udf0f US markets weak: Dow -1.9%, NASDAQ -5.3%"
     ],
     "factors": [
       {
-        "icon": "\ud83d\udcc9",
-        "label": "VIX 15.57",
-        "sublabel": "+0.0%",
-        "status": "positive"
+        "icon": "\ud83d\udcc8",
+        "label": "VIX 17.32",
+        "sublabel": "+7.5%",
+        "status": "neutral"
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $82.72",
-        "sublabel": "-0.7%",
-        "status": "positive"
+        "label": "Crude $83.62",
+        "sublabel": "+0.5%",
+        "status": "negative"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
-        "label": "Dow -2.2%",
+        "label": "Dow -1.9%",
         "sublabel": "US Markets",
         "status": "negative"
       },
       {
         "icon": "\ud83d\udcca",
-        "label": "NASDAQ -2.2%",
+        "label": "NASDAQ -5.3%",
         "sublabel": "Tech Sentiment",
         "status": "negative"
       }
     ],
-    "score": 1
+    "score": 0
   },
   "predictions": [
     {
@@ -1157,51 +1158,51 @@
   "news": {
     "top_stories": [
       {
-        "headline": "GIFT Nifty plunges over 200 pts, signals sharp fall for Sensex, Nifty as Nasdaq sinks 2.3%, Asian markets crash",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/gift-nifty-plunges-over-200-pts-signals-sharp-fall-for-sensex-nifty-as-nasdaq-sinks-2-3-asian-markets-crash-14085307.html",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "KOSPI plunges nearly 5%, Nikkei crashes over 4%; Hang Seng nears bear market as AI selloff deepens",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/kospi-plunges-nearly-5-nikkei-crashes-over-4-hang-seng-nears-bear-market-as-ai-selloff-deepens-14085334.html",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Anthropic shares jump 17% in record Nasdaq debut despite Wall Street sell-off and AI bubble fears",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/anthropic-shares-jump-17-in-record-nasdaq-debut-despite-wall-street-sell-off-and-ai-bubble-fears-14085235.html",
+        "headline": "Why did market rally today? Sensex surges 1,500 pts from day's low, Nifty ends above 25,800. 6 Key factors driving the rally",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/why-is-market-rising-today-sensex-surges-1200-pts-from-days-low-nifty-above-25700-6-key-factors-driving-the-rally/articleshow/136016888.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "D-Street braces for gap-down opening on negative GIFT Nifty cues",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/pre-market-action-heres-the-trade-setup-for-todays-session/articleshow/135981229.cms",
+        "headline": "Anthropic share slump nearly erases IPO pop as AI trade unravels",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/anthropic-share-slump-nearly-erases-ipo-pop-as-ai-trade-unravels-14085850.html",
         "sentiment": "negative",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Sensex Today | Stock Market LIVE Updates: Sensex, Nifty fall at pre-open; Paytm, Voltas, Ashoka Buildcon in focus",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/stock-market-live-updates-nifty50-share-price-sensex-share-price-crude-fii-gift-nifty-rupee-latest-updates-20-11-2026-alpha-liveblog-14085261.html",
+        "headline": "Elara Capital cuts target price for Garden Reach Shipbuilders stock, maintains \u2018reduce\u2019 rating; here\u2019s why",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/elara-capital-cuts-target-price-for-garden-reach-shipbuilders-stock-maintains-reduce-rating-heres-why/articleshow/136026153.cms",
         "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Jefferies\u2019 Chris Wood increases India bet; reduces Taiwan weight as AI stocks walk on thin ice",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-chris-wood-increases-india-bet-reduces-taiwan-weight-as-ai-stocks-walk-on-thin-ice/articleshow/136018276.cms",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Nasdaq 100 has worst week since 2020 on AI drama",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/nasdaq-100-has-worst-week-since-2020-on-ai-drama-14085933.html",
+        "sentiment": "neutral",
         "stocks": [],
         "category": "general"
       }
     ],
     "earnings": [
       {
-        "headline": "Trading Plan: Can Nifty 50, Bank Nifty witness profit booking after stellar rally?",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/trading-plan-can-nifty-50-bank-nifty-witness-profit-booking-after-stellar-rally-14085292.html",
+        "headline": "HSBC says Q2 earnings surprised but Q3, Q4 growth likely to slow down; sees this as a bigger downside risk",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/hsbc-says-q2-earnings-surprised-but-q3-q4-growth-likely-to-slow-down-sees-this-as-a-bigger-downside-risk/articleshow/136021266.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "earnings"
@@ -1210,53 +1211,65 @@
     "orders": [],
     "regulatory": [
       {
-        "headline": "SEBI showcases AI, SupTech tools at IOSCO roundtable; regulators discuss T+1 settlement, tokenisation",
+        "headline": "SEBI proposes tighter tenure, age limits for MII directors; extends restrictions on PIDs",
         "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/sebi-showcases-ai-suptech-tools-at-iosco-roundtable-regulators-discuss-t-1-settlement-tokenisation-14085186.html",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-proposes-tighter-tenure-age-limits-for-mii-directors-extends-restrictions-on-pids-14085906.html",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "SEBI WTM Murty flags regulatory challenges from AI-powered trading agents; plans responsible AI guidelines",
+        "headline": "SEBI proposes scrapping FPI concentration, size-based disclosures; seeks review of beneficial ownership norms",
         "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/sebi-wtm-murty-flags-regulatory-challenges-from-ai-powered-trading-agents-plans-responsible-ai-guidelines-14085179.html",
+        "url": "https://www.moneycontrol.com/news/business/markets/sebi-proposes-scrapping-fpi-concentration-size-based-disclosures-seeks-review-of-beneficial-ownership-norms-14085824.html",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "Sebi, NISM plan capacity-building network for independent directors",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sebi-nism-plan-capacity-building-network-for-independent-directors/articleshow/136009310.cms",
+        "headline": "Pristine Logistics, Arohan Financial Services get SEBI nod to launch IPOs",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/ipo/pristine-logistics-arohan-financial-services-get-sebi-nod-to-launch-ipos-14085798.html",
         "sentiment": "neutral",
         "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Technical View: Bulls charge towards 26,000 on Nifty 50 after decisive breakout; Bank Nifty eyes 65,000 next week as record rally continues",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/technical-view-bulls-charge-towards-26-000-on-nifty-50-after-decisive-breakout-bank-nifty-eyes-65-000-next-week-as-record-rally-continues-14085729.html",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Bank Nifty surges 2.5% to hit all-time high of 64,600; IndusInd, Axis Bank lead gains: Check key trading levels",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/bank-nifty-surges-2-5-to-hit-all-time-high-of-64-600-indusind-axis-bank-lead-gains-check-key-trading-levels-14085758.html",
+        "sentiment": "positive",
+        "stocks": [
+          "AXIS"
+        ],
         "category": "regulatory"
       }
     ],
     "insider": [
       {
-        "headline": "Wasatch Advisors sells 0.51% stake in Medi Assist; Craft Emerging Market Fund offloads 2.48% in Value 360",
+        "headline": "TPG-backed Newquest sells Rs 115-crore Shadowfax stake; Gallantt Ispat promoter offloads 0.66%",
         "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/wasatch-advisors-sells-0-51-stake-in-medi-assist-craft-emerging-market-fund-offloads-2-48-in-value-360-14085142.html",
+        "url": "https://www.moneycontrol.com/news/business/markets/tpg-backed-newquest-sells-rs-115-crore-shadowfax-stake-gallantt-ispat-promoter-offloads-0-66-14085871.html",
         "sentiment": "neutral",
         "stocks": [],
         "category": "insider"
       },
       {
-        "headline": "Fairfax raises stake in IIFL Capital Services to 52.63% with Rs 1,540-crore acquisition",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/fairfax-raises-stake-in-iifl-capital-services-to-52-63-with-rs-1-540-crore-acquisition-14085110.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "insider"
-      },
-      {
-        "headline": "Fairfax raises stake in IIFL Capital to 44.06%",
+        "headline": "Reliance Industries promoters buy 4.26 lakh shares from open market; stock up 14% in 1 month",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fairfax-raises-stake-in-iifl-capital-to-44-06/articleshow/136010311.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/reliance-industries-promoters-buy-4-26-lakh-shares-from-open-market-stock-up-14-in-1-month/articleshow/136023461.cms",
         "sentiment": "neutral",
-        "stocks": [],
+        "stocks": [
+          "RELIANCE"
+        ],
         "category": "insider"
       }
     ],
@@ -1296,7 +1309,7 @@
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-11-20T09:09:43.806161+05:30",
+    "fetched_at": "2026-11-21T08:51:36.154512+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [
       {
@@ -1308,17 +1321,17 @@
         "gmp_pct": 27.35,
         "issue_price": 245.0,
         "estimated_listing_price": 312.0,
-        "market_read": "Strong positive GMP snapshot, but grey-market quotes are unofficial and can reverse. Overall subscription reported at 3.78x.",
+        "market_read": "Strong positive GMP snapshot, but grey-market quotes are unofficial and can reverse. Overall subscription reported at 11.98x.",
         "issue_size": "\u20b9120.10 Cr",
         "lot_size": 600,
         "open_date": "2026-11-19",
         "close_date": "2026-11-23",
         "allotment_date": "2026-11-25",
         "listing_date": "2026-11-27",
-        "subscription": "3.78x",
+        "subscription": "11.98x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "20-Nov 8:02",
+        "source_updated": "21-Nov 7:37",
         "source_url": "https://www.investorgain.com/gmp/watrana-rentals-ipo/1818/"
       },
       {
@@ -1326,25 +1339,69 @@
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "open",
-        "gmp": 1.8,
-        "gmp_pct": 1.32,
+        "gmp": 0.75,
+        "gmp_pct": 0.55,
         "issue_price": 136.0,
-        "estimated_listing_price": 137.8,
-        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 0.38x.",
+        "estimated_listing_price": 136.75,
+        "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 0.49x.",
         "issue_size": "\u20b98981.12 Cr",
         "lot_size": 110,
         "open_date": "2026-11-19",
         "close_date": "2026-11-23",
         "allotment_date": "2026-11-25",
         "listing_date": "2026-11-27",
-        "subscription": "0.38x",
+        "subscription": "0.49x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "20-Nov 8:02",
+        "source_updated": "21-Nov 7:37",
         "source_url": "https://www.investorgain.com/gmp/mahanadi-coalfields-ipo/2401/"
       }
     ],
     "upcoming": [
+      {
+        "name": "Monomark Engineering",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "upcoming",
+        "gmp": null,
+        "gmp_pct": null,
+        "issue_price": null,
+        "estimated_listing_price": null,
+        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
+        "issue_size": "-",
+        "lot_size": null,
+        "open_date": null,
+        "close_date": null,
+        "allotment_date": null,
+        "listing_date": null,
+        "subscription": "-",
+        "rating": "",
+        "anchor_status": "\u2705",
+        "source_updated": "21-Nov 5:55",
+        "source_url": "https://www.investorgain.com/gmp/monomark-engineering-ipo/2232/"
+      },
+      {
+        "name": "Integris Medtech",
+        "exchange": "IPO",
+        "category": "Mainboard",
+        "status": "upcoming",
+        "gmp": null,
+        "gmp_pct": null,
+        "issue_price": null,
+        "estimated_listing_price": null,
+        "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
+        "issue_size": "",
+        "lot_size": null,
+        "open_date": "2026-11-27",
+        "close_date": "2026-12-01",
+        "allotment_date": "2026-12-02",
+        "listing_date": "2026-12-04",
+        "subscription": "-",
+        "rating": "",
+        "anchor_status": "\u2705",
+        "source_updated": "21-Nov 5:55",
+        "source_url": "https://www.investorgain.com/gmp/integris-medtech-ipo/2029/"
+      },
       {
         "name": "Foodlink F&B Holdings",
         "exchange": "IPO",
@@ -1364,7 +1421,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "20-Nov 8:02",
+        "source_updated": "21-Nov 7:37",
         "source_url": "https://www.investorgain.com/gmp/foodlink-fb-ipo/1810/"
       },
       {
@@ -1386,7 +1443,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u274c",
-        "source_updated": "20-Nov 8:01",
+        "source_updated": "21-Nov 7:31",
         "source_url": "https://www.investorgain.com/gmp/shree-siddhivinayak-greentech-industries-ipo/2349/"
       }
     ]
