@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-21T03:21:14.853110",
+  "timestamp": "2026-11-22T02:29:57.469849",
   "indices": {
     "nifty50": {
       "value": 25800.6,
@@ -44,41 +44,41 @@
       "direction": "negative"
     },
     "usdinr": {
-      "value": 93.29,
-      "change": -0.17,
-      "change_pct": -0.18,
+      "value": 92.67,
+      "change": -0.62,
+      "change_pct": -0.67,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 3539.0,
-      "change": -146.5,
-      "change_pct": -3.98,
+      "value": 3515.4,
+      "change": -170.1,
+      "change_pct": -4.62,
       "direction": "negative"
     },
     "silver": {
-      "value": 41.08,
-      "change": -3.24,
-      "change_pct": -7.31,
+      "value": 41.03,
+      "change": -3.28,
+      "change_pct": -7.41,
       "direction": "negative"
     },
     "copper": {
-      "value": 5.47,
-      "change": -0.16,
-      "change_pct": -2.84,
+      "value": 5.48,
+      "change": -0.15,
+      "change_pct": -2.63,
       "direction": "negative"
     },
     "crude": {
-      "value": 83.62,
-      "change": 0.41,
-      "change_pct": 0.49,
+      "value": 83.98,
+      "change": 0.77,
+      "change_pct": 0.93,
       "direction": "positive"
     },
     "naturalgas": {
-      "value": 3.79,
-      "change": 0.52,
-      "change_pct": 16.0,
+      "value": 3.41,
+      "change": 0.14,
+      "change_pct": 4.38,
       "direction": "positive"
     }
   },
@@ -411,6 +411,15 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "NTPC",
+        "sector": "Utilities",
+        "old_price": 406.09,
+        "current_price": 321.5,
+        "low_52w": 289.28,
+        "fall_pct": -20.83,
+        "buy_signal": "Buy"
+      },
+      {
         "symbol": "BPCL",
         "sector": "Energy",
         "old_price": 391.65,
@@ -435,15 +444,6 @@
         "current_price": 14011.0,
         "low_52w": 10985.0,
         "fall_pct": -18.53,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "ADANIPOWER",
-        "sector": "Utilities",
-        "old_price": 254.2,
-        "current_price": 211.95,
-        "low_52w": 128.1,
-        "fall_pct": -16.62,
         "buy_signal": "Hold"
       }
     ],
@@ -548,6 +548,15 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "NTPC",
+        "sector": "Utilities",
+        "old_price": 406.09,
+        "current_price": 321.5,
+        "low_52w": 289.28,
+        "fall_pct": -20.83,
+        "buy_signal": "Buy"
+      },
+      {
         "symbol": "BPCL",
         "sector": "Energy",
         "old_price": 391.65,
@@ -618,15 +627,6 @@
         "low_52w": 669.2,
         "fall_pct": -15.48,
         "buy_signal": "Hold"
-      },
-      {
-        "symbol": "BSE",
-        "sector": "Financial Services",
-        "old_price": 4435.12,
-        "current_price": 3781.0,
-        "low_52w": 2523.35,
-        "fall_pct": -14.75,
-        "buy_signal": "Hold"
       }
     ],
     "jan25": [
@@ -683,6 +683,15 @@
         "low_52w": 280.3,
         "fall_pct": -20.89,
         "buy_signal": "Hold"
+      },
+      {
+        "symbol": "NTPC",
+        "sector": "Utilities",
+        "old_price": 406.09,
+        "current_price": 321.5,
+        "low_52w": 289.28,
+        "fall_pct": -20.83,
+        "buy_signal": "Buy"
       },
       {
         "symbol": "BPCL",
@@ -775,6 +784,15 @@
         "buy_signal": "Hold"
       },
       {
+        "symbol": "DELHIVERY",
+        "sector": "Industrials",
+        "old_price": 524.0,
+        "current_price": 458.9,
+        "low_52w": 364.65,
+        "fall_pct": -12.42,
+        "buy_signal": "Hold"
+      },
+      {
         "symbol": "ADANIGREEN",
         "sector": "Utilities",
         "old_price": 1631.5,
@@ -790,24 +808,6 @@
         "current_price": 76.61,
         "low_52w": 68.79,
         "fall_pct": -11.53,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "PAYTM",
-        "sector": "Technology",
-        "old_price": 1960.0,
-        "current_price": 1740.0,
-        "low_52w": 930.6,
-        "fall_pct": -11.22,
-        "buy_signal": "Hold"
-      },
-      {
-        "symbol": "IREDA",
-        "sector": "Financial Services",
-        "old_price": 147.71,
-        "current_price": 131.7,
-        "low_52w": 98.78,
-        "fall_pct": -10.84,
         "buy_signal": "Hold"
       }
     ]
@@ -885,6 +885,20 @@
         "timeframe": "3-6 months"
       },
       {
+        "symbol": "NTPC",
+        "sector": "Power",
+        "current_price": 321.5,
+        "high_52w": 406.09,
+        "low_52w": 289.28,
+        "fall_pct": -20.83,
+        "rsi": 58.1,
+        "target_price": 379.37,
+        "upside_pct": 18,
+        "signal": "Buy",
+        "reason": "Capacity addition",
+        "timeframe": "3-6 months"
+      },
+      {
         "symbol": "POWERGRID",
         "sector": "Power",
         "current_price": 269.0,
@@ -938,20 +952,6 @@
         "upside_pct": 18,
         "signal": "Buy",
         "reason": "Debt restructuring risk",
-        "timeframe": "3-6 months"
-      },
-      {
-        "symbol": "RELIANCE",
-        "sector": "Energy",
-        "current_price": 1377.5,
-        "high_52w": 1604.38,
-        "low_52w": 1152.2,
-        "fall_pct": -14.14,
-        "rsi": 98.2,
-        "target_price": 1542.8,
-        "upside_pct": 12,
-        "signal": "Buy",
-        "reason": "Jio and retail growth",
         "timeframe": "3-6 months"
       }
     ],
@@ -1035,19 +1035,6 @@
         "reason": "5G and enterprise growth"
       },
       {
-        "symbol": "NTPC",
-        "sector": "Power",
-        "current_price": NaN,
-        "high_52w": 406.09,
-        "low_52w": 289.28,
-        "fall_pct": NaN,
-        "rsi": 62.5,
-        "risk_level": "Low",
-        "downside_pct": 8,
-        "signal": "Hold",
-        "reason": "Capacity addition"
-      },
-      {
         "symbol": "M&M",
         "sector": "Auto",
         "current_price": 3545.0,
@@ -1059,23 +1046,36 @@
         "downside_pct": 8,
         "signal": "Hold",
         "reason": "Farm + auto strength"
+      },
+      {
+        "symbol": "BAJFINANCE",
+        "sector": "Finance",
+        "current_price": 1122.0,
+        "high_52w": 1176.4,
+        "low_52w": 783.09,
+        "fall_pct": -4.62,
+        "rsi": 80.6,
+        "risk_level": "Low",
+        "downside_pct": 8,
+        "signal": "Hold",
+        "reason": "Consumer lending growth"
       }
     ]
   },
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "21 Nov 2026",
+        "date": "22 Nov 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "20 Nov 2026",
+        "date": "21 Nov 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "19 Nov 2026",
+        "date": "20 Nov 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1098,8 +1098,8 @@
       "change_pct": 7.51
     },
     "crude": {
-      "value": 83.62,
-      "change_pct": 0.49
+      "value": 83.98,
+      "change_pct": 0.93
     },
     "reasons": [
       "\ud83d\udcc8 VIX up 7.5% indicating rising market uncertainty",
@@ -1114,8 +1114,8 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $83.62",
-        "sublabel": "+0.5%",
+        "label": "Crude $83.98",
+        "sublabel": "+0.9%",
         "status": "negative"
       },
       {
@@ -1158,10 +1158,10 @@
   "news": {
     "top_stories": [
       {
-        "headline": "Why did market rally today? Sensex surges 1,500 pts from day's low, Nifty ends above 25,800. 6 Key factors driving the rally",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/why-is-market-rising-today-sensex-surges-1200-pts-from-days-low-nifty-above-25700-6-key-factors-driving-the-rally/articleshow/136016888.cms",
-        "sentiment": "positive",
+        "headline": "Medicap Healthcare cuts IPO size by 29% to Rs 170 crore, drops pre-IPO placement",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/ipo/medicap-healthcare-cuts-ipo-size-by-29-to-rs-170-crore-drops-pre-ipo-placement-14086163.html",
+        "sentiment": "negative",
         "stocks": [],
         "category": "general"
       },
@@ -1174,42 +1174,66 @@
         "category": "general"
       },
       {
-        "headline": "Elara Capital cuts target price for Garden Reach Shipbuilders stock, maintains \u2018reduce\u2019 rating; here\u2019s why",
+        "headline": "Nifty eyes 26,200 as rally strengthens; 6 sectors signal outperformance",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/elara-capital-cuts-target-price-for-garden-reach-shipbuilders-stock-maintains-reduce-rating-heres-why/articleshow/136026153.cms",
-        "sentiment": "negative",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nifty-eyes-26200-as-rally-strengthens-6-sectors-signal-outperformance/articleshow/136050218.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Jefferies\u2019 Chris Wood increases India bet; reduces Taiwan weight as AI stocks walk on thin ice",
+        "headline": "Concurrent Gainers: These 13 stocks gained for 5 days in a row, all rose over 27%",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-chris-wood-increases-india-bet-reduces-taiwan-weight-as-ai-stocks-walk-on-thin-ice/articleshow/136018276.cms",
-        "sentiment": "negative",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-these-13-stocks-gained-for-5-days-in-a-row-all-rose-over-27/slideshow/136047969.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Nasdaq 100 has worst week since 2020 on AI drama",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/nasdaq-100-has-worst-week-since-2020-on-ai-drama-14085933.html",
-        "sentiment": "neutral",
+        "headline": "Market winners: Max Healthcare, Deepak Fertilisers among 10 stocks that surged up to 14% in last week",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-winners-max-healthcare-deepak-fertilisers-among-10-stocks-that-surged-up-to-14-in-last-week/slideshow/136046616.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "general"
       }
     ],
     "earnings": [
       {
-        "headline": "HSBC says Q2 earnings surprised but Q3, Q4 growth likely to slow down; sees this as a bigger downside risk",
+        "headline": "Stocks to buy: HSBC lists 19 Indian stocks that saw FY27 earnings upgrades, check target prices",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/hsbc-says-q2-earnings-surprised-but-q3-q4-growth-likely-to-slow-down-sees-this-as-a-bigger-downside-risk/articleshow/136021266.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stocks-to-buy-hsbc-lists-19-indian-stocks-that-saw-fy27-earnings-upgrades-check-target-prices/slideshow/136048231.cms",
         "sentiment": "positive",
+        "stocks": [],
+        "category": "earnings"
+      },
+      {
+        "headline": "Daily Voice: Q3 results may not match Q2 FY27 performance; large caps best positioned to outperform broader market, says Raghvendra Nath",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-q3-results-may-not-match-q2-fy27-performance-large-caps-best-positioned-to-outperform-broader-market-says-raghvendra-nath-14086341.html",
+        "sentiment": "neutral",
         "stocks": [],
         "category": "earnings"
       }
     ],
     "orders": [],
     "regulatory": [
+      {
+        "headline": "Passenger mobility company Chartered Speed cuts IPO size to Rs 433 crore after SEBI regulatory changes",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/ipo/passenger-mobility-company-chartered-speed-cuts-ipo-size-to-rs-433-crore-after-sebi-regulatory-changes-14085875.html",
+        "sentiment": "negative",
+        "stocks": [],
+        "category": "regulatory"
+      },
+      {
+        "headline": "Taiwan bans short sales of stocks in new move to calm markets",
+        "source": "MoneyControl",
+        "url": "https://www.moneycontrol.com/news/business/markets/taiwan-bans-short-sales-of-stocks-in-new-move-to-calm-markets-14086116.html",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "regulatory"
+      },
       {
         "headline": "SEBI proposes tighter tenure, age limits for MII directors; extends restrictions on PIDs",
         "source": "MoneyControl",
@@ -1233,24 +1257,6 @@
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
-      },
-      {
-        "headline": "Technical View: Bulls charge towards 26,000 on Nifty 50 after decisive breakout; Bank Nifty eyes 65,000 next week as record rally continues",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/technical-view-bulls-charge-towards-26-000-on-nifty-50-after-decisive-breakout-bank-nifty-eyes-65-000-next-week-as-record-rally-continues-14085729.html",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Bank Nifty surges 2.5% to hit all-time high of 64,600; IndusInd, Axis Bank lead gains: Check key trading levels",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/bank-nifty-surges-2-5-to-hit-all-time-high-of-64-600-indusind-axis-bank-lead-gains-check-key-trading-levels-14085758.html",
-        "sentiment": "positive",
-        "stocks": [
-          "AXIS"
-        ],
-        "category": "regulatory"
       }
     ],
     "insider": [
@@ -1260,16 +1266,6 @@
         "url": "https://www.moneycontrol.com/news/business/markets/tpg-backed-newquest-sells-rs-115-crore-shadowfax-stake-gallantt-ispat-promoter-offloads-0-66-14085871.html",
         "sentiment": "neutral",
         "stocks": [],
-        "category": "insider"
-      },
-      {
-        "headline": "Reliance Industries promoters buy 4.26 lakh shares from open market; stock up 14% in 1 month",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/reliance-industries-promoters-buy-4-26-lakh-shares-from-open-market-stock-up-14-in-1-month/articleshow/136023461.cms",
-        "sentiment": "neutral",
-        "stocks": [
-          "RELIANCE"
-        ],
         "category": "insider"
       }
     ],
@@ -1309,7 +1305,7 @@
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-11-21T08:51:36.154512+05:30",
+    "fetched_at": "2026-11-22T08:00:33.174401+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [
       {
@@ -1317,10 +1313,10 @@
         "exchange": "NSE SME",
         "category": "SME",
         "status": "open",
-        "gmp": 67.0,
-        "gmp_pct": 27.35,
+        "gmp": 65.0,
+        "gmp_pct": 26.53,
         "issue_price": 245.0,
-        "estimated_listing_price": 312.0,
+        "estimated_listing_price": 310.0,
         "market_read": "Strong positive GMP snapshot, but grey-market quotes are unofficial and can reverse. Overall subscription reported at 11.98x.",
         "issue_size": "\u20b9120.10 Cr",
         "lot_size": 600,
@@ -1331,7 +1327,7 @@
         "subscription": "11.98x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "21-Nov 7:37",
+        "source_updated": "21-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/watrana-rentals-ipo/1818/"
       },
       {
@@ -1339,10 +1335,10 @@
         "exchange": "IPO",
         "category": "Mainboard",
         "status": "open",
-        "gmp": 0.75,
-        "gmp_pct": 0.55,
+        "gmp": 0.7,
+        "gmp_pct": 0.51,
         "issue_price": 136.0,
-        "estimated_listing_price": 136.75,
+        "estimated_listing_price": 136.7,
         "market_read": "Positive but modest GMP snapshot; it is not a reliable listing forecast. Overall subscription reported at 0.49x.",
         "issue_size": "\u20b98981.12 Cr",
         "lot_size": 110,
@@ -1353,7 +1349,7 @@
         "subscription": "0.49x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "21-Nov 7:37",
+        "source_updated": "21-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/mahanadi-coalfields-ipo/2401/"
       }
     ],
@@ -1421,7 +1417,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "21-Nov 7:37",
+        "source_updated": "21-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/foodlink-fb-ipo/1810/"
       },
       {
@@ -1443,7 +1439,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u274c",
-        "source_updated": "21-Nov 7:31",
+        "source_updated": "21-Nov 23:30",
         "source_url": "https://www.investorgain.com/gmp/shree-siddhivinayak-greentech-industries-ipo/2349/"
       }
     ]
