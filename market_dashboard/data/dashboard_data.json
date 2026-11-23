@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-22T02:29:57.469849",
+  "timestamp": "2026-11-23T02:58:18.615521",
   "indices": {
     "nifty50": {
       "value": 25800.6,
@@ -44,41 +44,41 @@
       "direction": "negative"
     },
     "usdinr": {
-      "value": 92.67,
-      "change": -0.62,
-      "change_pct": -0.67,
+      "value": 92.66,
+      "change": -0.63,
+      "change_pct": -0.68,
       "direction": "negative"
     }
   },
   "commodities": {
     "gold": {
-      "value": 3515.4,
-      "change": -170.1,
-      "change_pct": -4.62,
-      "direction": "negative"
+      "value": 3579.7,
+      "change": 64.3,
+      "change_pct": 1.83,
+      "direction": "positive"
     },
     "silver": {
-      "value": 41.03,
-      "change": -3.28,
-      "change_pct": -7.41,
-      "direction": "negative"
+      "value": 41.42,
+      "change": 0.39,
+      "change_pct": 0.95,
+      "direction": "positive"
     },
     "copper": {
-      "value": 5.48,
-      "change": -0.15,
-      "change_pct": -2.63,
+      "value": 5.43,
+      "change": -0.05,
+      "change_pct": -0.92,
       "direction": "negative"
     },
     "crude": {
-      "value": 83.98,
-      "change": 0.77,
-      "change_pct": 0.93,
-      "direction": "positive"
+      "value": 82.86,
+      "change": -1.12,
+      "change_pct": -1.33,
+      "direction": "negative"
     },
     "naturalgas": {
-      "value": 3.41,
-      "change": 0.14,
-      "change_pct": 4.38,
+      "value": 3.62,
+      "change": 0.2,
+      "change_pct": 6.01,
       "direction": "positive"
     }
   },
@@ -1065,17 +1065,17 @@
   "fii_dii": {
     "last_sessions": [
       {
-        "date": "22 Nov 2026",
+        "date": "23 Nov 2026",
         "fii_net": 672.09,
         "dii_net": 410.05
       },
       {
-        "date": "21 Nov 2026",
+        "date": "22 Nov 2026",
         "fii_net": -1711.19,
         "dii_net": 955.9
       },
       {
-        "date": "20 Nov 2026",
+        "date": "21 Nov 2026",
         "fii_net": -2811.97,
         "dii_net": 4168.17
       }
@@ -1092,17 +1092,18 @@
   "market_outlook": {
     "sentiment": "NEUTRAL",
     "badge_class": "neutral",
-    "summary": "\ud83d\udcc8 VIX up 7.5% indicating rising market uncertainty. \ud83c\udf0f US markets weak: Dow -1.9%, NASDAQ -5.3%",
+    "summary": "\ud83d\udcc8 VIX up 7.5% indicating rising market uncertainty. \u26fd Crude oil down 1.3% - positive for India (import dependent). \ud83c\udf0f US markets weak: Dow -1.9%, NASDAQ -5.3%",
     "vix": {
       "value": 17.32,
       "change_pct": 7.51
     },
     "crude": {
-      "value": 83.98,
-      "change_pct": 0.93
+      "value": 82.86,
+      "change_pct": -1.33
     },
     "reasons": [
       "\ud83d\udcc8 VIX up 7.5% indicating rising market uncertainty",
+      "\u26fd Crude oil down 1.3% - positive for India (import dependent)",
       "\ud83c\udf0f US markets weak: Dow -1.9%, NASDAQ -5.3%"
     ],
     "factors": [
@@ -1114,9 +1115,9 @@
       },
       {
         "icon": "\u26fd",
-        "label": "Crude $83.98",
-        "sublabel": "+0.9%",
-        "status": "negative"
+        "label": "Crude $82.86",
+        "sublabel": "-1.3%",
+        "status": "positive"
       },
       {
         "icon": "\ud83c\uddfa\ud83c\uddf8",
@@ -1131,7 +1132,7 @@
         "status": "negative"
       }
     ],
-    "score": 0
+    "score": 2
   },
   "predictions": [
     {
@@ -1158,112 +1159,90 @@
   "news": {
     "top_stories": [
       {
-        "headline": "Medicap Healthcare cuts IPO size by 29% to Rs 170 crore, drops pre-IPO placement",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/ipo/medicap-healthcare-cuts-ipo-size-by-29-to-rs-170-crore-drops-pre-ipo-placement-14086163.html",
+        "headline": "Positive Breakout: These 7 stocks cross above their 200 DMAs",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/positive-breakout-these-7-stocks-cross-above-their-200-dmas/slideshow/136086994.cms",
+        "sentiment": "positive",
+        "stocks": [],
+        "category": "general"
+      },
+      {
+        "headline": "Select HFCs offer rate cuts, top-ups to retain borrowers",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/select-hfcs-offer-rate-cuts-top-ups-to-retain-borrowers/articleshow/136086443.cms",
         "sentiment": "negative",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Anthropic share slump nearly erases IPO pop as AI trade unravels",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/anthropic-share-slump-nearly-erases-ipo-pop-as-ai-trade-unravels-14085850.html",
-        "sentiment": "negative",
-        "stocks": [],
-        "category": "general"
-      },
-      {
-        "headline": "Nifty eyes 26,200 as rally strengthens; 6 sectors signal outperformance",
+        "headline": "D-Street poised for a gap-up start as GIFT Nifty trades firmly higher",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nifty-eyes-26200-as-rally-strengthens-6-sectors-signal-outperformance/articleshow/136050218.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/pre-market-action-heres-the-trade-setup-for-todays-session/articleshow/136080174.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Concurrent Gainers: These 13 stocks gained for 5 days in a row, all rose over 27%",
+        "headline": "Two Trades for Today: An IT major for a 6.35% gain, a mid-cap healthcare service stock for a 7% upmove",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/concurrent-gainers-these-13-stocks-gained-for-5-days-in-a-row-all-rose-over-27/slideshow/136047969.cms",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/two-trades-for-today-an-it-major-for-a-6-35-gain-a-mid-cap-healthcare-service-stock-for-a-7-upmove/articleshow/136074527.cms",
         "sentiment": "positive",
         "stocks": [],
         "category": "general"
       },
       {
-        "headline": "Market winners: Max Healthcare, Deepak Fertilisers among 10 stocks that surged up to 14% in last week",
+        "headline": "Persistent Systems among 4 stocks showing RSI trending up",
         "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-winners-max-healthcare-deepak-fertilisers-among-10-stocks-that-surged-up-to-14-in-last-week/slideshow/136046616.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "general"
-      }
-    ],
-    "earnings": [
-      {
-        "headline": "Stocks to buy: HSBC lists 19 Indian stocks that saw FY27 earnings upgrades, check target prices",
-        "source": "Economic Times",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stocks-to-buy-hsbc-lists-19-indian-stocks-that-saw-fy27-earnings-upgrades-check-target-prices/slideshow/136048231.cms",
-        "sentiment": "positive",
-        "stocks": [],
-        "category": "earnings"
-      },
-      {
-        "headline": "Daily Voice: Q3 results may not match Q2 FY27 performance; large caps best positioned to outperform broader market, says Raghvendra Nath",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/daily-voice-q3-results-may-not-match-q2-fy27-performance-large-caps-best-positioned-to-outperform-broader-market-says-raghvendra-nath-14086341.html",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/persistent-systems-among-4-stocks-showing-rsi-trending-up/slideshow/136087624.cms",
         "sentiment": "neutral",
         "stocks": [],
-        "category": "earnings"
+        "category": "general"
       }
     ],
+    "earnings": [],
     "orders": [],
     "regulatory": [
       {
-        "headline": "Passenger mobility company Chartered Speed cuts IPO size to Rs 433 crore after SEBI regulatory changes",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/ipo/passenger-mobility-company-chartered-speed-cuts-ipo-size-to-rs-433-crore-after-sebi-regulatory-changes-14085875.html",
-        "sentiment": "negative",
-        "stocks": [],
+        "headline": "Stocks in news: Adani Energy, Maruti Suzuki, RailTel, Waaree Energies and Indian Bank",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stocks-in-news-adani-energy-maruti-suzuki-railtel-waaree-energies-and-indian-bank/articleshow/136080618.cms",
+        "sentiment": "neutral",
+        "stocks": [
+          "ADANI",
+          "MARUTI"
+        ],
         "category": "regulatory"
       },
       {
-        "headline": "Taiwan bans short sales of stocks in new move to calm markets",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/taiwan-bans-short-sales-of-stocks-in-new-move-to-calm-markets-14086116.html",
+        "headline": "Nifty eyes 26,300 as analysts favour banking, auto and realty stocks",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/nifty-targets-26300-banks-auto-and-realty-look-strong/articleshow/136085634.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "regulatory"
       },
       {
-        "headline": "SEBI proposes tighter tenure, age limits for MII directors; extends restrictions on PIDs",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/sebi-proposes-tighter-tenure-age-limits-for-mii-directors-extends-restrictions-on-pids-14085906.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "SEBI proposes scrapping FPI concentration, size-based disclosures; seeks review of beneficial ownership norms",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/sebi-proposes-scrapping-fpi-concentration-size-based-disclosures-seeks-review-of-beneficial-ownership-norms-14085824.html",
-        "sentiment": "neutral",
-        "stocks": [],
-        "category": "regulatory"
-      },
-      {
-        "headline": "Pristine Logistics, Arohan Financial Services get SEBI nod to launch IPOs",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/ipo/pristine-logistics-arohan-financial-services-get-sebi-nod-to-launch-ipos-14085798.html",
-        "sentiment": "neutral",
+        "headline": "Banks warn higher costs could hit demand as RBI weighs further repo hike",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/banks-warn-higher-costs-could-hit-demand-as-rbi-weighs-further-repo-hike/articleshow/136086982.cms",
+        "sentiment": "positive",
         "stocks": [],
         "category": "regulatory"
       }
     ],
     "insider": [
       {
-        "headline": "TPG-backed Newquest sells Rs 115-crore Shadowfax stake; Gallantt Ispat promoter offloads 0.66%",
-        "source": "MoneyControl",
-        "url": "https://www.moneycontrol.com/news/business/markets/tpg-backed-newquest-sells-rs-115-crore-shadowfax-stake-gallantt-ispat-promoter-offloads-0-66-14085871.html",
+        "headline": "Mahindra Finance scouts gold loan firms for acquisition, evaluates four potential targets",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mahindra-finance-scouts-gold-loan-firms-for-acquisition-evaluates-four-potential-targets/articleshow/136086814.cms",
+        "sentiment": "neutral",
+        "stocks": [],
+        "category": "insider"
+      },
+      {
+        "headline": "Dividends, buybacks & stock splits alert: Zee Entertainment, Vraj Iron among 9 stocks turning ex-date this week. Do you own any?",
+        "source": "Economic Times",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/dividends-buybacks-stock-splits-alert-zee-entertainment-vraj-iron-among-9-stocks-trading-ex-date-this-week-do-you-own-any/articleshow/136073491.cms",
         "sentiment": "neutral",
         "stocks": [],
         "category": "insider"
@@ -1305,7 +1284,7 @@
   "ipos": {
     "source": "InvestorGain",
     "source_url": "https://www.investorgain.com/report/ipo-gmp-live/331/",
-    "fetched_at": "2026-11-22T08:00:33.174401+05:30",
+    "fetched_at": "2026-11-23T08:28:45.221368+05:30",
     "disclaimer": "Grey market premium is unofficial, unregulated and indicative only. It does not guarantee listing gains or represent investment advice.",
     "open": [
       {
@@ -1313,10 +1292,10 @@
         "exchange": "NSE SME",
         "category": "SME",
         "status": "open",
-        "gmp": 65.0,
-        "gmp_pct": 26.53,
+        "gmp": 55.0,
+        "gmp_pct": 22.45,
         "issue_price": 245.0,
-        "estimated_listing_price": 310.0,
+        "estimated_listing_price": 300.0,
         "market_read": "Strong positive GMP snapshot, but grey-market quotes are unofficial and can reverse. Overall subscription reported at 11.98x.",
         "issue_size": "\u20b9120.10 Cr",
         "lot_size": 600,
@@ -1327,7 +1306,7 @@
         "subscription": "11.98x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "21-Nov 23:37",
+        "source_updated": "22-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/watrana-rentals-ipo/1818/"
       },
       {
@@ -1349,7 +1328,7 @@
         "subscription": "0.49x",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "21-Nov 23:37",
+        "source_updated": "22-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/mahanadi-coalfields-ipo/2401/"
       }
     ],
@@ -1361,19 +1340,19 @@
         "status": "upcoming",
         "gmp": null,
         "gmp_pct": null,
-        "issue_price": null,
+        "issue_price": 0.0,
         "estimated_listing_price": null,
         "market_read": "No GMP quote reported; a GMP-based listing estimate is unavailable.",
         "issue_size": "-",
         "lot_size": null,
-        "open_date": null,
-        "close_date": null,
-        "allotment_date": null,
-        "listing_date": null,
+        "open_date": "2026-12-02",
+        "close_date": "2026-12-04",
+        "allotment_date": "2026-12-07",
+        "listing_date": "2026-12-09",
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "21-Nov 5:55",
+        "source_updated": "22-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/monomark-engineering-ipo/2232/"
       },
       {
@@ -1395,7 +1374,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "21-Nov 5:55",
+        "source_updated": "22-Nov 5:55",
         "source_url": "https://www.investorgain.com/gmp/integris-medtech-ipo/2029/"
       },
       {
@@ -1417,7 +1396,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u2705",
-        "source_updated": "21-Nov 23:37",
+        "source_updated": "22-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/foodlink-fb-ipo/1810/"
       },
       {
@@ -1439,7 +1418,7 @@
         "subscription": "-",
         "rating": "",
         "anchor_status": "\u274c",
-        "source_updated": "21-Nov 23:30",
+        "source_updated": "22-Nov 23:37",
         "source_url": "https://www.investorgain.com/gmp/shree-siddhivinayak-greentech-industries-ipo/2349/"
       }
     ]
